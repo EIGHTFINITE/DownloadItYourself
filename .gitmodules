@@ -2,3 +2,7 @@
 	path = bin/windows/x64/node
 	url = git@github.com:EIGHTFINITE-Vendor/node.git
 	branch = node-v8.9.4-win-x64
+[submodule "bin/windows/x86/node"]
+	path = bin/windows/x86/node
+	url = git@github.com:EIGHTFINITE-Vendor/node.git
+	branch = node-v8.9.4-win-x86
