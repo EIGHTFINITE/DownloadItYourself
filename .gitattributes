@@ -1,1 +1,4 @@
 * text=false
+.gitattributes export-ignore
+.gitignore export-ignore
+.gitmodules export-ignore
