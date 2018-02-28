@@ -1,7 +1,8 @@
 {
    "config":{
       "version":"1.7.10",
-      "curseforge-version":"1738749986%3A5"
+      "curseforge-version":"1738749986%3A5",
+      "folder":"mods"
    },
    "downloads":[
       {
