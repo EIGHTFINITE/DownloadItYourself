@@ -16,7 +16,7 @@ request(temp.href, function(err, response, html) {
         temp.file = $("div.info-data.overflow-tip").text().trim();
         console.log("[" + i + "] Downloading: " + temp.href + ' as "' + temp.file + '"');
         request(temp.href).pipe(fs.createWriteStream(obj.config.folder + "/" + temp.file)).on("finish", function() {
-            current.md5 = md5File.sync(obj.config.folder + "/" + temp.file);
+            current.md5 = md5File.sync(this.path);
             if (current.md5 !== temp.md5) {
                 console.log("[" + i + "] MD5 mismatch for " + (current.name ? current.name : current.url) + ". Download failed.");
                 throw new Error("MD5 mismatch");
