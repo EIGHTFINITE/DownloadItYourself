@@ -7,7 +7,7 @@ fs.readFile("downloadlist.json", "utf8", function(err, data) {
     if (err) throw err;
     var obj = JSON.parse(data);
     fs.ensureDirSync(obj.config.folder);
-    for (i = 0; i < obj.downloads.length; i++) {
+    for (var i = 0; i < obj.downloads.length; i++) {
         parseDownload(obj, obj.downloads[i]);
     }
 });
