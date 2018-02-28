@@ -2,10 +2,11 @@ var fs = require("fs-extra");
 var url = require("url");
 var request = require("request");
 var cheerio = require("cheerio");
+var obj;
 
 fs.readFile("downloadlist.json", "utf8", function(err, data) {
     if (err) throw err;
-    var obj = JSON.parse(data);
+    obj = JSON.parse(data);
     fs.ensureDirSync(obj.config.folder);
     for (var i = 0; i < obj.downloads.length; i++) {
         parseDownload(obj, obj.downloads[i], i);
@@ -21,3 +22,7 @@ function parseDownload(obj, current, i) {
         eval(script); // There must be a better way to do this.
     });
 }
+
+process.on('exit', function() {
+    fs.writeFileSync("downloadlist.json", JSON.stringify(obj, null, 4));
+});
