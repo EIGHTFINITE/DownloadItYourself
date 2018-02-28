@@ -22,4 +22,6 @@ request(temp.href, function(err, response, html) {
         console.log("[" + i + "] Downloading: " + temp.href + ' as "' + temp.file + '"');
         request(temp.href).pipe(fs.createWriteStream(obj.config.folder + "/" + temp.file));
     });
+	temp.name = $("h1.project-title").text().trim();
+	if(!current.name) current.name = temp.name;
 });
