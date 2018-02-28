@@ -6,6 +6,7 @@
   "author": "EIGHTFINITE",
   "dependencies": {
     "request": "latest",
-    "cheerio": "latest"
+    "cheerio": "latest",
+    "fs-extra": "latest"
   }
 }
