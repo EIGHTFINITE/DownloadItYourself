@@ -1,15 +1,17 @@
 {
-   "config":{
-      "version":"1.7.10",
-      "curseforge-version":"1738749986%3A5",
-      "folder":"mods"
-   },
-   "downloads":[
-      {
-         "url":"https://minecraft.curseforge.com/projects/born-in-a-barn"
-      },
-      {
-         "url":"https://minecraft.curseforge.com/projects/openeye"
-      }
-   ]
+    "config": {
+        "version": "1.7.10",
+        "curseforge-version": "1738749986%3A5",
+        "folder": "mods"
+    },
+    "downloads": [
+        {
+            "url": "https://minecraft.curseforge.com/projects/born-in-a-barn",
+            "name": "Born in a Barn"
+        },
+        {
+            "url": "https://minecraft.curseforge.com/projects/openeye",
+            "name": "OpenEye"
+        }
+    ]
 }
