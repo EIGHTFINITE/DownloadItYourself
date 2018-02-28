@@ -8,11 +8,11 @@ fs.readFile("downloadlist.json", "utf8", function(err, data) {
     var obj = JSON.parse(data);
     fs.ensureDirSync(obj.config.folder);
     for (var i = 0; i < obj.downloads.length; i++) {
-        parseDownload(obj, obj.downloads[i]);
+        parseDownload(obj, obj.downloads[i], i);
     }
 });
 
-function parseDownload(obj, current) {
+function parseDownload(obj, current, i) {
 	console.log("Checking " + (current.name ? current.name : current.url) + " for updates.");
     fs.readFile("drivers/" + url.parse(current.url).host + ".js", "utf8", function(err, script) {
         if (err) throw err;
