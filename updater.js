@@ -6,8 +6,7 @@ var cheerio = require("cheerio");
 fs.readFile("downloadlist.json", "utf8", function(err, data) {
     if (err) throw err;
     var obj = JSON.parse(data);
-    var dir = obj.config.folder;
-    fs.ensureDirSync(dir);
+    fs.ensureDirSync(obj.config.folder);
     for (i = 0; i < obj.downloads.length; i++) {
         parseDownload(obj, obj.downloads[i]);
     }
