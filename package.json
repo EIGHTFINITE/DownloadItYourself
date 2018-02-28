@@ -5,8 +5,9 @@
   "main": "updater.js",
   "author": "EIGHTFINITE",
   "dependencies": {
-    "request": "latest",
     "cheerio": "latest",
-    "fs-extra": "latest"
+    "fs-extra": "latest",
+    "request": "latest",
+    "md5-file": "latest"
   }
 }
