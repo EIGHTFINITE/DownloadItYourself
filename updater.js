@@ -13,8 +13,8 @@ fs.readFile("downloadlist.json", "utf8", function(err, data) {
 });
 
 function parseDownload(obj, current, i) {
-	console.log("Checking " + (current.name ? current.name : current.url) + " for updates.");
     fs.readFile("drivers/" + url.parse(current.url).host + ".js", "utf8", function(err, script) {
+        console.log("Checking " + (current.name ? current.name : current.url) + " for updates.");
         if (err) throw err;
         var temp = {};
         var $;
