@@ -14,10 +14,10 @@ fs.readFile("downloadlist.json", "utf8", function(err, data) {
 });
 
 function parseDownload(obj, current) {
-    var temp = {};
-    var $;
     fs.readFile("drivers/" + url.parse(current.url).host + ".js", "utf8", function(err, script) {
         if (err) throw err;
+        var temp = {};
+        var $;
         eval(script); // There must be a better way to do this.
     });
 }
