@@ -16,6 +16,6 @@ request(current.url + "/files?" + (obj.config["curseforge-version"] ? "filter-ga
         temp.path = $("a.button.fa-icon-download:not(.alt)").attr('href');
         temp.href = temp.protocol + "//" + temp.host + temp.path;
         temp.file = $("div.info-data.overflow-tip").text().trim();
-        request(temp.href).pipe(fs.createWriteStream(temp.file));
+        request(temp.href).pipe(fs.createWriteStream(obj.config.folder + "/" + temp.file));
     });
 });
