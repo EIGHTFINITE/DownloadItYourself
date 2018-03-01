@@ -14,7 +14,8 @@ request(current.url, function(err, response, html) {
         temp.file = $("span#Download a").text().trim().replace(/^(Download )/, "").trim();
         console.log("[" + i + "] Downloading: " + temp.href + ' as "' + temp.file + '"');
         request(temp.href).pipe(fs.createWriteStream(obj.config.folder + "/" + temp.file)).on("finish", function() {
-            console.log("[" + i + "] " + (current.name ? current.name : current.url) + " has successfully updated.")
+            console.log("[" + i + "] " + (current.name ? current.name : current.url) + " has successfully updated.");
+            current.file = temp.file;
         });
     });
     temp.name = $("h2:contains(" + obj.config.version + ")").next("h3").text().trim();
