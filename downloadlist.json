@@ -10,6 +10,9 @@
             "name": "OptiFine HD Ultra"
         },
         {
+            "url": "https://minecraft.curseforge.com/projects/applecore"
+        },
+        {
             "url": "https://minecraft.curseforge.com/projects/born-in-a-barn",
             "name": "Born in a Barn",
             "md5": "8e952a2bbca5039837d106b7c88e8920"
@@ -30,14 +33,23 @@
             "md5": "44c7c6828ac38026f443804827955345"
         },
         {
+            "url": "https://minecraft.curseforge.com/projects/inventory-tweaks"
+        },
+        {
             "url": "https://minecraft.curseforge.com/projects/journeymap",
             "name": "JourneyMap",
             "md5": "0c3daa19789a67da328437a8635c2cf3"
         },
         {
+            "url": "https://minecraft.curseforge.com/projects/notenoughitems"
+        },
+        {
             "url": "https://minecraft.curseforge.com/projects/openeye",
             "name": "OpenEye",
             "md5": "37241c2ff3d38546b5cef43c6900fdcd"
+        },
+        {
+            "url": "https://minecraft.curseforge.com/projects/waila"
         }
     ]
 }
