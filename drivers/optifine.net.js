@@ -10,8 +10,12 @@ request(current.url, function(err, response, html) {
         console.log("[" + i + "] Navigating to: " + temp.href);
         if (err) throw err;
         $ = cheerio.load(html);
-        temp.href = response.request.uri.protocol + "//" + response.request.uri.host + "/" + $("span#Download a").attr("href");
         temp.file = $("span#Download a").text().trim().replace(/^(Download )/, "").trim();
+        if(current.file === temp.file && fs.existsSync(obj.config.folder + "/" + temp.file)) {
+            console.log("[" + i + "] " + (current.name ? current.name : current.url) + " is already up to date.");
+            return;
+        }
+        temp.href = response.request.uri.protocol + "//" + response.request.uri.host + "/" + $("span#Download a").attr("href");
         console.log("[" + i + "] Downloading: " + temp.href + ' as "' + temp.file + '"');
         request(temp.href).pipe(fs.createWriteStream(obj.config.folder + "/" + temp.file)).on("finish", function() {
             console.log("[" + i + "] " + (current.name ? current.name : current.url) + " has successfully updated.");
