@@ -10,7 +10,9 @@
             "name": "OptiFine HD Ultra"
         },
         {
-            "url": "https://minecraft.curseforge.com/projects/applecore"
+            "url": "https://minecraft.curseforge.com/projects/applecore",
+            "name": "AppleCore",
+            "md5": "169c63b60ec8a8195733b94cb47ae694"
         },
         {
             "url": "https://minecraft.curseforge.com/projects/born-in-a-barn",
@@ -33,7 +35,9 @@
             "md5": "44c7c6828ac38026f443804827955345"
         },
         {
-            "url": "https://minecraft.curseforge.com/projects/inventory-tweaks"
+            "url": "https://minecraft.curseforge.com/projects/inventory-tweaks",
+            "name": "Inventory Tweaks",
+            "md5": "83f7ddcd5f5fd8d640aa15dc62acc6bf"
         },
         {
             "url": "https://minecraft.curseforge.com/projects/journeymap",
@@ -41,7 +45,9 @@
             "md5": "0c3daa19789a67da328437a8635c2cf3"
         },
         {
-            "url": "https://minecraft.curseforge.com/projects/notenoughitems"
+            "url": "https://minecraft.curseforge.com/projects/notenoughitems",
+            "name": "NotEnoughItems",
+            "md5": "742e865a9a80071e80976ffedc05700e"
         },
         {
             "url": "https://minecraft.curseforge.com/projects/openeye",
@@ -49,7 +55,9 @@
             "md5": "37241c2ff3d38546b5cef43c6900fdcd"
         },
         {
-            "url": "https://minecraft.curseforge.com/projects/waila"
+            "url": "https://minecraft.curseforge.com/projects/waila",
+            "name": "Waila",
+            "md5": "eeb36775188e70faa1c5ecd84f80076c"
         }
     ]
 }
