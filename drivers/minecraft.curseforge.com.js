@@ -22,6 +22,7 @@ request(temp.href, function(err, response, html) {
                 throw new Error("MD5 mismatch");
             }
             console.log("[" + i + "] " + (current.name ? current.name : current.url) + " has successfully updated. (MD5 matches)");
+            current.file = temp.file;
         });
     });
     temp.name = $("h1.project-title").text().trim();
