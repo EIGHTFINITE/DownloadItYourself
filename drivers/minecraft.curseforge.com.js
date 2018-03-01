@@ -17,6 +17,10 @@ request(temp.href, function(err, response, html) {
             console.log("[" + i + "] " + (current.name ? current.name : current.url) + " is already up to date.");
             return;
         }
+        if(current.file && fs.existsSync(obj.config.folder + "/" + current.file)) {
+            console.log("[" + i + '] Deleting outdated file: "' + current.file + '".');
+            fs.unlinkSync(obj.config.folder + "/" + current.file);
+        }
         temp.href = response.request.uri.protocol + "//" + response.request.uri.host + $("a.button.fa-icon-download:not(.alt)").attr("href");
         console.log("[" + i + "] Downloading: " + temp.href + ' as "' + temp.file + '"');
         request(temp.href).pipe(fs.createWriteStream(obj.config.folder + "/" + temp.file)).on("finish", function() {
