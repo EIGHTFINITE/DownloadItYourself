@@ -21,7 +21,7 @@ request(temp.href, function(err, response, html) {
                 console.log("[" + i + "] MD5 mismatch for " + (current.name ? current.name : current.url) + ". Download failed.");
                 throw new Error("MD5 mismatch");
             }
-            console.log("[" + i + "] MD5 matches. " + (current.name ? current.name : current.url) + " has successfully updated.");
+            console.log("[" + i + "] " + (current.name ? current.name : current.url) + " has successfully updated. (MD5 matches)");
         });
     });
     temp.name = $("h1.project-title").text().trim();
