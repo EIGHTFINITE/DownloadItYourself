@@ -15,16 +15,24 @@
             "md5": "8e952a2bbca5039837d106b7c88e8920"
         },
         {
-            "url": "https://minecraft.curseforge.com/projects/chickenchunks"
+            "url": "https://minecraft.curseforge.com/projects/chickenchunks",
+            "name": "ChickenChunks",
+            "md5": "5592eda79bd2b52adf1d4bdceaa59b73"
         },
         {
-            "url": "https://minecraft.curseforge.com/projects/codechickencore"
+            "url": "https://minecraft.curseforge.com/projects/codechickencore",
+            "name": "CodeChickenCore",
+            "md5": "07690caf86ecf79739852154f5e44750"
         },
         {
-            "url": "https://minecraft.curseforge.com/projects/fastcraft"
+            "url": "https://minecraft.curseforge.com/projects/fastcraft",
+            "name": "FastCraft",
+            "md5": "44c7c6828ac38026f443804827955345"
         },
         {
-            "url": "https://minecraft.curseforge.com/projects/journeymap"
+            "url": "https://minecraft.curseforge.com/projects/journeymap",
+            "name": "JourneyMap",
+            "md5": "0c3daa19789a67da328437a8635c2cf3"
         },
         {
             "url": "https://minecraft.curseforge.com/projects/openeye",
