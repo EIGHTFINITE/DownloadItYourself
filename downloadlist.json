@@ -7,60 +7,74 @@
     "downloads": [
         {
             "url": "https://optifine.net/downloads",
-            "name": "OptiFine HD Ultra"
+            "name": "OptiFine HD Ultra",
+            "file": "OptiFine_1.7.10_HD_U_E3.jar"
         },
         {
             "url": "https://minecraft.curseforge.com/projects/applecore",
             "name": "AppleCore",
-            "md5": "169c63b60ec8a8195733b94cb47ae694"
+            "md5": "169c63b60ec8a8195733b94cb47ae694",
+            "file": "AppleCore-mc1.7.10-3.1.1.jar"
         },
         {
             "url": "https://minecraft.curseforge.com/projects/born-in-a-barn",
             "name": "Born in a Barn",
-            "md5": "8e952a2bbca5039837d106b7c88e8920"
+            "md5": "8e952a2bbca5039837d106b7c88e8920",
+            "file": "Born in a Barn 1.7.x.jar"
         },
         {
             "url": "https://minecraft.curseforge.com/projects/chickenchunks",
             "name": "ChickenChunks",
-            "md5": "5592eda79bd2b52adf1d4bdceaa59b73"
+            "md5": "5592eda79bd2b52adf1d4bdceaa59b73",
+            "file": "ChickenChunks-1.7.10-1.3.4.19-universal.jar"
         },
         {
             "url": "https://minecraft.curseforge.com/projects/codechickencore",
             "name": "CodeChickenCore",
-            "md5": "07690caf86ecf79739852154f5e44750"
+            "md5": "07690caf86ecf79739852154f5e44750",
+            "file": "CodeChickenCore-1.7.10-1.0.7.47-universal.jar"
         },
         {
-            "url": "https://minecraft.curseforge.com/projects/et-futurum"
+            "url": "https://minecraft.curseforge.com/projects/et-futurum",
+            "name": "Et Futurum",
+            "md5": "1094c49073af0c67dd32b4c3257afdd9",
+            "file": "Et Futurum-1.5.5.jar"
         },
         {
             "url": "https://minecraft.curseforge.com/projects/fastcraft",
             "name": "FastCraft",
-            "md5": "44c7c6828ac38026f443804827955345"
+            "md5": "44c7c6828ac38026f443804827955345",
+            "file": "fastcraft-1.25.jar"
         },
         {
             "url": "https://minecraft.curseforge.com/projects/inventory-tweaks",
             "name": "Inventory Tweaks",
-            "md5": "83f7ddcd5f5fd8d640aa15dc62acc6bf"
+            "md5": "83f7ddcd5f5fd8d640aa15dc62acc6bf",
+            "file": "InventoryTweaks-1.59-dev-152.jar"
         },
         {
             "url": "https://minecraft.curseforge.com/projects/journeymap",
             "name": "JourneyMap",
-            "md5": "0c3daa19789a67da328437a8635c2cf3"
+            "md5": "0c3daa19789a67da328437a8635c2cf3",
+            "file": "journeymap-1.7.10-5.1.4p2-unlimited.jar"
         },
         {
             "url": "https://minecraft.curseforge.com/projects/notenoughitems",
             "name": "NotEnoughItems",
-            "md5": "742e865a9a80071e80976ffedc05700e"
+            "md5": "742e865a9a80071e80976ffedc05700e",
+            "file": "NotEnoughItems-1.7.10-1.0.5.120-universal.jar"
         },
         {
             "url": "https://minecraft.curseforge.com/projects/openeye",
             "name": "OpenEye",
-            "md5": "37241c2ff3d38546b5cef43c6900fdcd"
+            "md5": "37241c2ff3d38546b5cef43c6900fdcd",
+            "file": "OpenEye-1.7.10-0.8.jar"
         },
         {
             "url": "https://minecraft.curseforge.com/projects/waila",
             "name": "Waila",
-            "md5": "eeb36775188e70faa1c5ecd84f80076c"
+            "md5": "eeb36775188e70faa1c5ecd84f80076c",
+            "file": "Waila-1.5.10_1.7.10.jar"
         }
     ]
 }
