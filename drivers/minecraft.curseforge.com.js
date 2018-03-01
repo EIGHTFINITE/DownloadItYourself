@@ -12,8 +12,12 @@ request(temp.href, function(err, response, html) {
         if (err) throw err;
         $ = cheerio.load(html);
         temp.md5 = $("span.md5").text().trim();
-        temp.href = response.request.uri.protocol + "//" + response.request.uri.host + $("a.button.fa-icon-download:not(.alt)").attr("href");
         temp.file = $("div.info-data.overflow-tip").text().trim();
+        if(current.md5 === temp.md5 && current.file === temp.file && fs.existsSync(obj.config.folder + "/" + temp.file)) {
+            console.log("[" + i + "] " + (current.name ? current.name : current.url) + " is already up to date.");
+            return;
+        }
+        temp.href = response.request.uri.protocol + "//" + response.request.uri.host + $("a.button.fa-icon-download:not(.alt)").attr("href");
         console.log("[" + i + "] Downloading: " + temp.href + ' as "' + temp.file + '"');
         request(temp.href).pipe(fs.createWriteStream(obj.config.folder + "/" + temp.file)).on("finish", function() {
             current.md5 = md5File.sync(this.path);
