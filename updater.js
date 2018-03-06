@@ -55,7 +55,7 @@ process.on('exit', function() {
     obj.downloads.sort((a, b) => a.name.localeCompare(b.name, 'en', {
         sensitivity: 'base'
     }));
-    fs.writeFileSync("downloadlist.json", JSON.stringify(obj, null, 4));
+    fs.writeFileSync("downloadlist.json", JSON.stringify(obj, null, 4) + "\n");
 });
 
 })();
