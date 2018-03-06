@@ -12,9 +12,35 @@ fs.readFile("downloadlist.json", "utf8", function(err, data) {
     obj = JSON.parse(data);
     fs.ensureDirSync(obj.config.folder);
     for (var i = 0; i < obj.downloads.length; i++) {
+        checkFile(obj, obj.downloads[i], i);
         parseDownload(obj, obj.downloads[i], i);
     }
 });
+
+function checkFile(obj, current, i) {
+    console.log("[" + i + "] Checking " + (current.name ? current.name : current.url) + " file integrity.");
+    if (current.file) {
+        md5File(obj.config.folder + "/" + current.file, (err, md5) => {
+            if (err) {
+                if (err.code === "ENOENT") {
+                    console.log("[" + i + '] WARNING: "' + current.file + '" could not be found. Was it deleted?');
+                    return; // Nothing to check. Stop.
+                } else throw err;
+            }
+            if (!current.md5) {
+                console.log("[" + i + '] Missing MD5 for previously downloaded file: "' + current.file + '". Please delete the file and let it redownload.');
+                throw new Error("Missing MD5");
+            }
+            if (current.md5 !== md5) {
+                console.log("[" + i + '] MD5 mismatch on previously downloaded file: "' + current.file + '". Please delete the file and let it redownload.');
+                throw new Error("MD5 mismatch");
+            }
+            console.log("[" + i + "] Successfully checked " + (current.name ? current.name : current.url) + " file integrity.");
+        });
+    } else {
+        console.log("[" + i + "] Skipping file integrity check. " + (current.name ? current.name : current.url) + " has not been downloaded yet.");
+    }
+}
 
 function parseDownload(obj, current, i, temp, $) {
     temp = (typeof temp === 'undefined' ? {} : temp);
