@@ -15,7 +15,7 @@ fs.readFile("downloadlist.json", "utf8", function(err, data) {
 });
 
 function parseDownload(obj, current, i, temp, $) {
-	temp = (typeof temp === 'undefined' ?  {} : temp);
+    temp = (typeof temp === 'undefined' ? {} : temp);
     fs.readFile("drivers/" + url.parse(current.url).host + ".js", "utf8", function(err, script) {
         console.log("[" + i + "] Checking " + (current.name ? current.name : current.url) + " for updates.");
         if (err) throw err;
@@ -24,5 +24,8 @@ function parseDownload(obj, current, i, temp, $) {
 }
 
 process.on('exit', function() {
+    obj.downloads.sort((a, b) => a.name.localeCompare(b.name, 'en', {
+        sensitivity: 'base'
+    }));
     fs.writeFileSync("downloadlist.json", JSON.stringify(obj, null, 4));
 });
