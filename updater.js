@@ -1,3 +1,5 @@
+(function() {
+
 var fs = require("fs-extra");
 var url = require("url");
 var cheerio = require("cheerio");
@@ -29,3 +31,5 @@ process.on('exit', function() {
     }));
     fs.writeFileSync("downloadlist.json", JSON.stringify(obj, null, 4));
 });
+
+})();
