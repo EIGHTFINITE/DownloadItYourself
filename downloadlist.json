@@ -76,6 +76,24 @@
             "name": "Waila",
             "md5": "eeb36775188e70faa1c5ecd84f80076c",
             "file": "Waila-1.5.10_1.7.10.jar"
+        },
+        {
+            "url": "https://minecraft.curseforge.com/projects/chunkpregenerator"
+        },
+        {
+            "url": "https://minecraft.curseforge.com/projects/chicken-chunk-patcher"
+        },
+        {
+            "url": "https://minecraft.curseforge.com/projects/helpfixer"
+        },
+        {
+            "url": "https://minecraft.curseforge.com/projects/inpurecore"
+        },
+        {
+            "url": "https://minecraft.curseforge.com/projects/flatsigns"
+        },
+        {
+            "url": "https://minecraft.curseforge.com/projects/waila-harvestability"
         }
     ]
 }
