@@ -13,7 +13,7 @@ request(temp.href, function(err, response, html) {
         $ = cheerio.load(html);
         temp.md5 = $("span.md5").text().trim();
         temp.file = $("div.info-data.overflow-tip").text().trim();
-        if (current.md5 === temp.md5 && current.file === temp.file && fs.existsSync(obj.config.folder + "/" + temp.file)) { // Nothing to update.
+        if (current.md5 === temp.md5 && (current.file === temp.file || current.file === temp.file + ".disabled") && fs.existsSync(obj.config.folder + "/" + current.file)) { // Nothing to update.
             console.log("[" + iPad + "] " + (current.name ? current.name : current.url) + " is already up to date.");
             if (!current.disabled && current.file.endsWith(".disabled")) {
                 temp.file = current.file.substring(0, current.file.length - 9);
