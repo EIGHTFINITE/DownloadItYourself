@@ -18,12 +18,6 @@ fs.readFile("downloadlist.json", "utf8", function(err, data) {
         current = obj.downloads[i];
         checkFile(obj, current, i, iPad);
         if (current.url) parseDownload(obj, current, i, iPad);
-        else if (current.file && fs.existsSync(obj.config.folder + "/" + current.file)) {
-            console.log("[" + iPad + '] WARNING: "' + (current.name ? current.name : current.file) + ' has no URL. It will not be updated.');
-        } else {
-            console.log("[" + iPad + '] ERROR: "' + (current.name ? current.name : (current.file ? current.file : i + ": '" + JSON.stringify(current) + "'")) + '" is missing its file and has no URL to update from.');
-            throw new Error("Missing file");
-        }
     }
 });
 
@@ -33,6 +27,10 @@ function checkFile(obj, current, i, iPad) {
         md5File(obj.config.folder + "/" + current.file, (err, md5) => {
             if (err) {
                 if (err.code === "ENOENT") {
+                    if (!current.url) {
+                        console.log("[" + iPad + '] ERROR: "' + (current.name ? current.name : (current.file ? current.file : i + ": '" + JSON.stringify(current) + "'")) + '" is missing its file and has no URL to update from.');
+                        throw new Error("Missing file");
+                    }
                     console.log("[" + iPad + '] WARNING: "' + current.file + '" could not be found. Was it deleted?');
                     return; // Nothing to check. Stop.
                 } else throw err;
@@ -47,8 +45,10 @@ function checkFile(obj, current, i, iPad) {
             }
             console.log("[" + iPad + "] Successfully checked " + (current.name ? current.name : current.url) + " file integrity.");
         });
-    } else {
+    } else if (current.url) {
         console.log("[" + iPad + "] Skipping file integrity check. " + (current.name ? current.name : current.url) + " has not been downloaded yet.");
+    } else {
+        console.log("[" + iPad + '] WARNING: "' + (current.name ? current.name : current.file) + ' has no URL. It will not be updated.');
     }
 }
 
