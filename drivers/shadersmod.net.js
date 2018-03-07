@@ -22,4 +22,5 @@ request(current.url, function(err, response, html) {
         console.log("[" + iPad + "] " + (current.name ? current.name : current.url) + " has successfully updated.");
     });
     if (!current.name) current.name = "Shaders Mod";
+    if (!("disabled" in current)) current.disabled = false;
 });

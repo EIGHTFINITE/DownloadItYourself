@@ -28,5 +28,7 @@ request(current.url, function(err, response, html) {
             console.log("[" + iPad + "] " + (current.name ? current.name : current.url) + " has successfully updated.");
         });
     });
-    if (!current.name) current.name = $("h2:contains(" + obj.config.version + ")").next("h3").text().trim();;
+    if (!current.name) current.name = $("h2:contains(" + obj.config.version + ")").next("h3").text().trim();
+    if (!("disabled" in current)) current.disabled = false;
+    if (!("preview" in current)) current.preview = false;
 });

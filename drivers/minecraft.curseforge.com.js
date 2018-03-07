@@ -34,4 +34,5 @@ request(temp.href, function(err, response, html) {
         });
     });
     if (!current.name) current.name = $("h1.project-title").text().trim();
+    if (!("disabled" in current)) current.disabled = false;
 });
