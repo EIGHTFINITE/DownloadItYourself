@@ -22,19 +22,20 @@ fs.readFile("downloadlist.json", "utf8", function(err, data) {
 });
 
 function checkFile(obj, current, i, iPad) {
-    console.log("[" + iPad + "] Checking " + (current.name ? current.name : current.url) + " file integrity.");
+    console.log("[" + iPad + "] Checking " + (current.name ? current.name : (current.url ? current.url : (current.file ? current.file : i + ": '" + JSON.stringify(current) + "'"))) + " file integrity.");
     if (current.file) {
         md5File(obj.config.folder + "/" + current.file, (err, md5) => {
             if (err) {
                 if (err.code === "ENOENT") {
                     if (!current.url) {
-                        console.log("[" + iPad + '] ERROR: "' + (current.name ? current.name : (current.file ? current.file : i + ": '" + JSON.stringify(current) + "'")) + '" is missing its file and has no URL to update from.');
+                        console.log("[" + iPad + '] ERROR: "' + (current.name ? current.name : current.file) + '" is missing its file and has no URL to update from.');
                         throw new Error("Missing file");
                     }
                     console.log("[" + iPad + '] WARNING: "' + current.file + '" could not be found. Was it deleted?');
                     return; // Nothing to check. Stop.
                 } else throw err;
             }
+            if (!current.url) console.log("[" + iPad + '] WARNING: "' + (current.name ? current.name : current.file) + ' has no URL. It will not be updated.');
             if (!current.md5) {
                 console.log("[" + iPad + '] Missing MD5 for previously downloaded file: "' + current.file + '". Please delete the file and let it redownload.');
                 throw new Error("Missing MD5");
@@ -48,7 +49,8 @@ function checkFile(obj, current, i, iPad) {
     } else if (current.url) {
         console.log("[" + iPad + "] Skipping file integrity check. " + (current.name ? current.name : current.url) + " has not been downloaded yet.");
     } else {
-        console.log("[" + iPad + '] WARNING: "' + (current.name ? current.name : current.file) + ' has no URL. It will not be updated.');
+        console.log("[" + iPad + '] ERROR: "' + (current.name ? current.name : (current.url ? current.url : (current.file ? current.file : i + ": '" + JSON.stringify(current) + "'"))) + '" has no configured file or URL.');
+        throw new Error("Missing file");
     }
 }
 
