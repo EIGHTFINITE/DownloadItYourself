@@ -7,7 +7,7 @@ request(current.url, function(err, response, html) {
     $ = cheerio.load(html);
     temp.href = $("h2.header-version:contains(DOWNLOADS)").nextAll("p").find("a").attr("href");
     temp.file = temp.href.substring(temp.href.lastIndexOf("/") + 1);
-    if (current.file === temp.file && fs.existsSync(obj.config.folder + "/" + temp.file)) { // Nothing to update.
+    if ((current.file === temp.file || current.file === temp.file + ".disabled") && fs.existsSync(obj.config.folder + "/" + current.file)) { // Nothing to update.
         console.log("[" + iPad + "] " + (current.name ? current.name : current.url) + " is already up to date.");
         if (!current.disabled && current.file.endsWith(".disabled")) {
             temp.file = current.file.substring(0, current.file.length - 9);
