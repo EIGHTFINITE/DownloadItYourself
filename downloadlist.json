@@ -103,6 +103,12 @@
             "preview": true
         },
         {
+            "url": "http://shadersmod.net/version-1-7-10/",
+            "name": "Shaders Mod",
+            "md5": "f66374aea8dda5f3b7ccb20c230375d7",
+            "file": "ShadersModCore-v2.3.31-mc1.7.10-f.jar"
+        },
+        {
             "url": "https://minecraft.curseforge.com/projects/waila",
             "name": "Waila",
             "md5": "eeb36775188e70faa1c5ecd84f80076c",
@@ -113,9 +119,6 @@
             "name": "Waila Harvestability",
             "md5": "e9d81089ddec3da20f0bb144e7beb4da",
             "file": "WailaHarvestability-mc1.7.10-1.1.6.jar"
-        },
-        {
-            "url": "http://shadersmod.net/version-1-7-10/"
         }
     ]
 }
