@@ -123,7 +123,7 @@
             "name": "Shaders Mod",
             "md5": "f66374aea8dda5f3b7ccb20c230375d7",
             "file": "ShadersModCore-v2.3.31-mc1.7.10-f.jar",
-            "disabled": false
+            "disabled": true
         },
         {
             "url": "https://minecraft.curseforge.com/projects/waila",
