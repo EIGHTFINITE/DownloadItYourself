@@ -45,7 +45,7 @@ request(temp.href, function(err, response, html) {
         request(temp.href).pipe(fs.createWriteStream(obj.config.folder + "/" + temp.file)).on("finish", function() {
             current.md5 = md5File.sync(this.path);
             if (current.md5 !== temp.md5) {
-                console.log("[" + iPad + "] MD5 mismatch for " + (current.name ? current.name : current.url) + ". Download failed.");
+                console.log("[" + iPad + "] ERROR: MD5 mismatch for " + (current.name ? current.name : current.url) + ". Download failed.");
                 throw new Error("MD5 mismatch");
             }
             console.log("[" + iPad + "] " + (current.name ? current.name : current.url) + " has successfully updated. (MD5 matches)");
