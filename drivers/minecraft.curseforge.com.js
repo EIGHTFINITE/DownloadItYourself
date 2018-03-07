@@ -22,6 +22,7 @@ request(temp.href, function(err, response, html) {
             fs.unlinkSync(obj.config.folder + "/" + current.file);
         }
         temp.href = response.request.uri.protocol + "//" + response.request.uri.host + $("a.button.fa-icon-download:not(.alt)").attr("href");
+        if(current.disabled) temp.file = temp.file + ".disabled";
         console.log("[" + iPad + "] Downloading: " + temp.href + ' as "' + temp.file + '"');
         request(temp.href).pipe(fs.createWriteStream(obj.config.folder + "/" + temp.file)).on("finish", function() {
             current.md5 = md5File.sync(this.path);
