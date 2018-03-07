@@ -18,7 +18,12 @@ fs.readFile("downloadlist.json", "utf8", function(err, data) {
         current = obj.downloads[i];
         checkFile(obj, current, i, iPad);
         if (current.url) parseDownload(obj, current, i, iPad);
-        else console.log("[" + iPad + '] WARNING: "' + (current.name ? current.name : current.file) + '" has no URL. It will not be updated.');
+        else if (current.file && fs.existsSync(obj.config.folder + "/" + current.file)) {
+            console.log("[" + iPad + '] WARNING: "' + (current.name ? current.name : current.file) + ' has no URL. It will not be updated.');
+        } else {
+            console.log("[" + iPad + '] ERROR: "' + (current.name ? current.name : (current.file ? current.file : i + ": '" + JSON.stringify(current) + "'")) + '" is missing its file and has no URL to update from.');
+            throw new Error("Missing file");
+        }
     }
 });
 
