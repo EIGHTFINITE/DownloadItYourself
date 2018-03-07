@@ -33,6 +33,5 @@ request(temp.href, function(err, response, html) {
             current.file = temp.file;
         });
     });
-    temp.name = $("h1.project-title").text().trim();
-    if (!current.name) current.name = temp.name;
+    if (!current.name) current.name = $("h1.project-title").text().trim();
 });
