@@ -15,6 +15,7 @@ request(current.url, function(err, response, html) {
         console.log("[" + iPad + '] Deleting outdated file: "' + current.file + '".');
         fs.unlinkSync(obj.config.folder + "/" + current.file);
     }
+    if(current.disabled) temp.file = temp.file + ".disabled";
     console.log("[" + iPad + "] Downloading: " + temp.href + ' as "' + temp.file + '"');
     request(temp.href).pipe(fs.createWriteStream(obj.config.folder + "/" + temp.file)).on("finish", function() {
         current.md5 = md5File.sync(this.path);
