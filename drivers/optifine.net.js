@@ -12,7 +12,7 @@ request(current.url, function(err, response, html) {
         if (err) throw err;
         $ = cheerio.load(html);
         temp.file = $("span#Download a").text().trim().replace(/^(Download )/, "").trim();
-        if (current.file === temp.file && fs.existsSync(obj.config.folder + "/" + temp.file)) { // Nothing to update.
+        if ((current.file === temp.file || current.file === temp.file + ".disabled") && fs.existsSync(obj.config.folder + "/" + current.file)) { // Nothing to update.
             console.log("[" + iPad + "] " + (current.name ? current.name : current.url) + " is already up to date.");
             if (!current.disabled && current.file.endsWith(".disabled")) {
                 temp.file = current.file.substring(0, current.file.length - 9);
