@@ -113,6 +113,9 @@
             "name": "Waila Harvestability",
             "md5": "e9d81089ddec3da20f0bb144e7beb4da",
             "file": "WailaHarvestability-mc1.7.10-1.1.6.jar"
+        },
+        {
+            "url": "http://shadersmod.net/version-1-7-10/"
         }
     ]
 }
