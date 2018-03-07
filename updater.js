@@ -11,9 +11,14 @@ fs.readFile("downloadlist.json", "utf8", function(err, data) {
     if (err) throw err;
     obj = JSON.parse(data);
     fs.ensureDirSync(obj.config.folder);
+    var iPad = 0;
+    var current;
     for (var i = 0; i < obj.downloads.length; i++) {
-        checkFile(obj, obj.downloads[i], i, i.toString().padStart(obj.downloads.length.toString().length, "0"));
-        parseDownload(obj, obj.downloads[i], i, i.toString().padStart(obj.downloads.length.toString().length, "0"));
+        iPad = i.toString().padStart(obj.downloads.length.toString().length, "0");
+        current = obj.downloads[i];
+        checkFile(obj, current, i, iPad);
+        if (current.url) parseDownload(obj, current, i, iPad);
+        else console.log("[" + iPad + '] WARNING: "' + (current.name ? current.name : current.file) + '" has no URL. It will not be updated.');
     }
 });
 
