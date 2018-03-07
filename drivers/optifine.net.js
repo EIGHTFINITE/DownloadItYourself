@@ -28,6 +28,5 @@ request(current.url, function(err, response, html) {
             console.log("[" + iPad + "] " + (current.name ? current.name : current.url) + " has successfully updated.");
         });
     });
-    temp.name = $("h2:contains(" + obj.config.version + ")").next("h3").text().trim();
-    if (!current.name) current.name = temp.name;
+    if (!current.name) current.name = $("h2:contains(" + obj.config.version + ")").next("h3").text().trim();;
 });
