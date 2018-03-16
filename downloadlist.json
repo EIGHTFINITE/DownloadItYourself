@@ -3,7 +3,7 @@
         "version": "1.7.10",
         "curseforge-version": "1738749986%3A5",
         "delayed-log": true,
-        "folder": "mods"
+        "folder": "minecraft/mods"
     },
     "downloads": [
         {
