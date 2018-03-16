@@ -70,6 +70,14 @@
             "disabled": false
         },
         {
+            "url": "https://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.7.10.html",
+            "name": "Forge/FML",
+            "md5": "e69118167ebc00750f7cdc0a92603d64",
+            "file": "forge-1.7.10-10.13.4.1558-1.7.10-universal.jar",
+            "disabled": false,
+            "preview": false
+        },
+        {
             "url": "https://minecraft.curseforge.com/projects/helpfixer",
             "name": "HelpFixer",
             "md5": "0d6ce4776f981f97a13ab02029b5fb4d",
@@ -139,9 +147,6 @@
             "md5": "e9d81089ddec3da20f0bb144e7beb4da",
             "file": "WailaHarvestability-mc1.7.10-1.1.6.jar",
             "disabled": false
-        },
-        {
-            "url": "https://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.7.10.html"
         }
     ]
 }
