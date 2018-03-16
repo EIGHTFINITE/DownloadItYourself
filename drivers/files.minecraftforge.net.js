@@ -1,11 +1,13 @@
 /**
- * Driver for downloading from shadersmod.net
+ * Driver for downloading from files.minecraftforge.net
  */
 request(current.url, function(err, response, html) {
     console.log("[" + iPad + "] Navigating to: " + current.url);
     if (err) throw err;
     $ = cheerio.load(html);
-    temp.href = $("h2.header-version:contains(DOWNLOADS)").nextAll("p").find("a").attr("href");
+    if (current.preview === true) temp.href = $(".downloads>.download>.title>.promo-latest").parent().parent().find(".links .link .classifier-universal").parent().attr("href");
+    else temp.href = $(".downloads>.download>.title>.promo-recommended").parent().parent().find(".links .link .classifier-universal").parent().attr("href");
+    temp.href = temp.href.substring(temp.href.indexOf('&url=') + 5);
     temp.file = temp.href.substring(temp.href.lastIndexOf("/") + 1);
     if ((current.file === temp.file || current.file === temp.file + ".disabled") && fs.existsSync(obj.config.folder + "/" + current.file)) { // Nothing to update.
         console.log("[" + iPad + "] " + (current.name ? current.name : current.url) + " is already up to date.");
@@ -40,6 +42,7 @@ request(current.url, function(err, response, html) {
         current.file = temp.file;
         console.log("[" + iPad + "] " + (current.name ? current.name : current.url) + " has successfully updated.");
     });
-    if (!current.name) current.name = "Shaders Mod";
+    if (!current.name) current.name = "Forge/FML";
     if (!("disabled" in current)) current.disabled = false;
+    if (!("preview" in current)) current.preview = false;
 });
