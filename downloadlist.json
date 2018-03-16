@@ -139,6 +139,9 @@
             "md5": "e9d81089ddec3da20f0bb144e7beb4da",
             "file": "WailaHarvestability-mc1.7.10-1.1.6.jar",
             "disabled": false
+        },
+        {
+            "url": "https://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.7.10.html"
         }
     ]
 }
