@@ -12,12 +12,12 @@ request(current.url, function(err, response, html) {
         if (err) throw err;
         $ = cheerio.load(html);
         temp.file = $("span#Download a").text().trim().replace(/^(Download )/, "").trim();
-        if ((current.file === temp.file || current.file === temp.file + ".disabled") && fs.existsSync(obj.config.folder + "/" + current.file)) { // Nothing to update.
+        if ((current.file === temp.file || current.file === temp.file + ".disabled") && fs.existsSync((current["folder-override"] ? current["folder-override"] : obj.config.folder) + "/" + current.file)) { // Nothing to update.
             console.log("[" + iPad + "] " + (current.name ? current.name : current.url) + " is already up to date.");
             if (!current.disabled && current.file.endsWith(".disabled")) {
                 temp.file = current.file.substring(0, current.file.length - 9);
                 console.log("[" + iPad + "] Enabling " + (current.name ? current.name : current.url) + ".");
-                fs.rename(obj.config.folder + "/" + current.file, obj.config.folder + "/" + temp.file, function(err) {
+                fs.rename((current["folder-override"] ? current["folder-override"] : obj.config.folder) + "/" + current.file, (current["folder-override"] ? current["folder-override"] : obj.config.folder) + "/" + temp.file, function(err) {
                     if (err) throw err;
                     current.file = temp.file;
                 });
@@ -26,7 +26,7 @@ request(current.url, function(err, response, html) {
             if (current.disabled && !current.file.endsWith(".disabled")) {
                 temp.file = current.file + ".disabled";
                 console.log("[" + iPad + "] Disabling " + (current.name ? current.name : current.url) + ".");
-                fs.rename(obj.config.folder + "/" + current.file, obj.config.folder + "/" + temp.file, function(err) {
+                fs.rename((current["folder-override"] ? current["folder-override"] : obj.config.folder) + "/" + current.file, (current["folder-override"] ? current["folder-override"] : obj.config.folder) + "/" + temp.file, function(err) {
                     if (err) throw err;
                     current.file = temp.file;
                 });
@@ -34,14 +34,14 @@ request(current.url, function(err, response, html) {
             }
             return; // Nothing more to do. Stop.
         }
-        if (current.file && fs.existsSync(obj.config.folder + "/" + current.file)) {
+        if (current.file && fs.existsSync((current["folder-override"] ? current["folder-override"] : obj.config.folder) + "/" + current.file)) {
             console.log("[" + iPad + '] Deleting outdated file: "' + current.file + '".');
-            fs.unlinkSync(obj.config.folder + "/" + current.file);
+            fs.unlinkSync((current["folder-override"] ? current["folder-override"] : obj.config.folder) + "/" + current.file);
         }
         temp.href = response.request.uri.protocol + "//" + response.request.uri.host + "/" + $("span#Download a").attr("href");
         if (current.disabled) temp.file = temp.file + ".disabled";
         console.log("[" + iPad + "] Downloading: " + temp.href + ' as "' + temp.file + '"');
-        request(temp.href).pipe(fs.createWriteStream(obj.config.folder + "/" + temp.file)).on("finish", function() {
+        request(temp.href).pipe(fs.createWriteStream((current["folder-override"] ? current["folder-override"] : obj.config.folder) + "/" + temp.file)).on("finish", function() {
             current.md5 = md5File.sync(this.path);
             current.file = temp.file;
             console.log("[" + iPad + "] " + (current.name ? current.name : current.url) + " has successfully updated.");

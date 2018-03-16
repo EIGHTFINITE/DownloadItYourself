@@ -38,9 +38,10 @@ fs.readFile("downloadlist.json", "utf8", function(err, data) {
 });
 
 function checkFile(obj, current, i, iPad) {
+    if (current["folder-override"]) fs.ensureDirSync(current["folder-override"]);
     console.log("[" + iPad + "] Checking " + (current.name ? current.name : (current.url ? current.url : (current.file ? current.file : i + ": '" + JSON.stringify(current) + "'"))) + " file integrity.");
     if (current.file) {
-        md5File(obj.config.folder + "/" + current.file, (err, md5) => {
+        md5File((current["folder-override"] ? current["folder-override"] : obj.config.folder) + "/" + current.file, (err, md5) => {
             if (err) {
                 if (err.code === "ENOENT") {
                     if (!current.url) {
