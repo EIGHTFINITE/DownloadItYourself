@@ -6,6 +6,10 @@ var request = require("request");
 var md5File = require("md5-file");
 
 module.exports = function(obj, current, i, iPad, temp) {
+    // Override filename
+    // Yes, applies to additional folders too. This is intended.
+    temp.originalFilename = temp.file;
+    if (current["file-override"]) temp.file = current["file-override"];
     // Are we about to download the same file we already have?
     if ((current.md5 ? true : current.md5 === temp.md5) && (current.file === temp.file || current.file === temp.file + ".disabled") && fs.existsSync((current["folder-override"] ? current["folder-override"] : obj.config.folder) + "/" + current.file)) { // Nothing to update.
         console.log("[" + iPad + "] " + (current.name ? current.name : current.url) + " is already up to date.");
@@ -56,7 +60,7 @@ module.exports = function(obj, current, i, iPad, temp) {
         // Update successful.
         console.log("[" + iPad + "] " + (current.name ? current.name : current.url) + " has successfully updated." + ("md5" in temp ? " (MD5 matches)" : ""));
         // Update file location.
-        current.file = temp.file;
+        current.file = temp.originalFilename + (current.disabled ? ".disabled" : "");
     });
 }
 
