@@ -2,10 +2,6 @@
 
 // Libraries
 var fs = require("fs-extra");
-var url = require("url");
-var cheerio = require("cheerio");
-var request = require("request");
-var md5File = require("md5-file");
 
 // Functions
 var checkFile = require("./func/checkFile.js");
