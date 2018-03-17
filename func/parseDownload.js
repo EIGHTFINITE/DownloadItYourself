@@ -7,6 +7,9 @@ var cheerio = require("cheerio");
 var request = require("request");
 var md5File = require("md5-file");
 
+// Functions
+var downloadFile =  require("../func/downloadFile.js");
+
 module.exports = function(obj, current, i, iPad, temp, $) {
     temp = (typeof temp === 'undefined' ? {} : temp);
     fs.readFile("drivers/" + url.parse(current.url).host + ".js", "utf8", function(err, script) {
