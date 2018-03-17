@@ -192,6 +192,14 @@
             "file": "WailaHarvestability-mc1.7.10-1.1.6.jar",
             "additional-folder": "server/mods",
             "disabled": false
+        },
+        {
+            "url": "https://s3.amazonaws.com/Minecraft.Download/versions/1.7.10/minecraft_server.1.7.10.jar",
+            "folder-override": "server"
+        },
+        {
+            "url": "https://libraries.minecraft.net/net/minecraft/launchwrapper/1.12/launchwrapper-1.12.jar",
+            "folder-override": "server/net/minecraft/launchwrapper/1.12"
         }
     ]
 }
