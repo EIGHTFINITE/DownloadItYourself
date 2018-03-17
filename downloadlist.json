@@ -85,7 +85,7 @@
             "file": "forge-1.7.10-10.13.4.1558-1.7.10-universal.jar",
             "folder-override": "server",
             "disabled": false,
-            "preview": false
+            "preview": true
         },
         {
             "url": "https://minecraft.curseforge.com/projects/helpfixer",
