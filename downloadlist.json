@@ -81,8 +81,8 @@
         {
             "url": "https://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.7.10.html",
             "name": "Forge/FML",
-            "md5": "e69118167ebc00750f7cdc0a92603d64",
-            "file": "forge-1.7.10-10.13.4.1558-1.7.10-universal.jar",
+            "md5": "add0fba161c4652a96efb4264ec2d9ec",
+            "file": "forge-1.7.10-10.13.4.1614-1.7.10-universal.jar",
             "folder-override": "server",
             "disabled": false,
             "preview": true
