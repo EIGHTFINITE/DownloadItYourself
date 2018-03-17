@@ -7,6 +7,14 @@
     },
     "downloads": [
         {
+            "url": "https://minecraft.curseforge.com/projects/a-block-of-charcoal",
+            "name": "A Block of Charcoal",
+            "md5": "50dff6375b66c3e882157698ede23c9d",
+            "file": "A Block of Charcoal-1.0.jar",
+            "additional-folder": "server/mods",
+            "disabled": false
+        },
+        {
             "url": "https://minecraft.curseforge.com/projects/applecore",
             "name": "AppleCore",
             "md5": "169c63b60ec8a8195733b94cb47ae694",
@@ -43,6 +51,14 @@
             "name": "Chunk-Pregenerator",
             "md5": "6d508f9603c758dfd460107e4527ab3c",
             "file": "Chunk Pregenerator V1.7.10-1.7.1.jar",
+            "additional-folder": "server/mods",
+            "disabled": false
+        },
+        {
+            "url": "https://minecraft.curseforge.com/projects/cleanview",
+            "name": "CleanView",
+            "md5": "92e62db69e6d53bbce5558d91816d5f7",
+            "file": "CleanView-1.7.10-v2.jar",
             "additional-folder": "server/mods",
             "disabled": false
         },
@@ -121,6 +137,14 @@
             "disabled": false
         },
         {
+            "url": "https://minecraft.curseforge.com/projects/morpheus",
+            "name": "Morpheus",
+            "md5": "5d31a1480db8b091757ea5ccd4e220d9",
+            "file": "Morpheus-1.7.10-1.6.21.jar",
+            "additional-folder": "server/mods",
+            "disabled": false
+        },
+        {
             "url": "https://minecraft.curseforge.com/projects/notenoughitems",
             "name": "NotEnoughItems",
             "md5": "742e865a9a80071e80976ffedc05700e",
@@ -168,15 +192,6 @@
             "file": "WailaHarvestability-mc1.7.10-1.1.6.jar",
             "additional-folder": "server/mods",
             "disabled": false
-        },
-        {
-            "url": "https://minecraft.curseforge.com/projects/a-block-of-charcoal"
-        },
-        {
-            "url": "https://minecraft.curseforge.com/projects/morpheus"
-        },
-        {
-            "url": "https://minecraft.curseforge.com/projects/cleanview"
         }
     ]
 }
