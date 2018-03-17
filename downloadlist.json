@@ -168,6 +168,15 @@
             "file": "WailaHarvestability-mc1.7.10-1.1.6.jar",
             "additional-folder": "server/mods",
             "disabled": false
+        },
+        {
+            "url": "https://minecraft.curseforge.com/projects/a-block-of-charcoal"
+        },
+        {
+            "url": "https://minecraft.curseforge.com/projects/morpheus"
+        },
+        {
+            "url": "https://minecraft.curseforge.com/projects/cleanview"
         }
     ]
 }
