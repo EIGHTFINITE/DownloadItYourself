@@ -6,6 +6,7 @@ var fs = require("fs-extra");
 // Functions
 var checkFile = require("./func/checkFile.js");
 var parseDownload = require("./func/parseDownload.js");
+var downloadFile =  require("./func/downloadFile.js");
 
 // Variables
 var obj;
