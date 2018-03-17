@@ -137,6 +137,22 @@
             "disabled": false
         },
         {
+            "url": "https://libraries.minecraft.net/net/minecraft/launchwrapper/1.12/launchwrapper-1.12.jar",
+            "name": "LaunchWrapper",
+            "md5": "934b2d91c7c5be4a49577c9e6b40e8da",
+            "file": "launchwrapper-1.12.jar",
+            "folder-override": "server/libraries/net/minecraft/launchwrapper/1.12",
+            "disabled": false
+        },
+        {
+            "url": "https://s3.amazonaws.com/Minecraft.Download/versions/1.7.10/minecraft_server.1.7.10.jar",
+            "name": "Minecraft Server",
+            "md5": "3e8912b293b52bd54f879919bd6e4e44",
+            "file": "minecraft_server.1.7.10.jar",
+            "folder-override": "server",
+            "disabled": false
+        },
+        {
             "url": "https://minecraft.curseforge.com/projects/morpheus",
             "name": "Morpheus",
             "md5": "5d31a1480db8b091757ea5ccd4e220d9",
@@ -192,14 +208,6 @@
             "file": "WailaHarvestability-mc1.7.10-1.1.6.jar",
             "additional-folder": "server/mods",
             "disabled": false
-        },
-        {
-            "url": "https://s3.amazonaws.com/Minecraft.Download/versions/1.7.10/minecraft_server.1.7.10.jar",
-            "folder-override": "server"
-        },
-        {
-            "url": "https://libraries.minecraft.net/net/minecraft/launchwrapper/1.12/launchwrapper-1.12.jar",
-            "folder-override": "server/net/minecraft/launchwrapper/1.12"
         }
     ]
 }
