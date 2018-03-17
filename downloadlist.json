@@ -11,6 +11,7 @@
             "name": "AppleCore",
             "md5": "169c63b60ec8a8195733b94cb47ae694",
             "file": "AppleCore-mc1.7.10-3.1.1.jar",
+            "additional-folder": "server/mods",
             "disabled": false
         },
         {
@@ -18,6 +19,7 @@
             "name": "Born in a Barn",
             "md5": "8e952a2bbca5039837d106b7c88e8920",
             "file": "Born in a Barn 1.7.x.jar",
+            "additional-folder": "server/mods",
             "disabled": false
         },
         {
@@ -25,6 +27,7 @@
             "name": "Chicken Chunk Patcher",
             "md5": "598778ab931a7f20831a5c719c60b541",
             "file": "Chicken Chunk Patcher 1.1.jar",
+            "additional-folder": "server/mods",
             "disabled": false
         },
         {
@@ -32,6 +35,7 @@
             "name": "ChickenChunks",
             "md5": "5592eda79bd2b52adf1d4bdceaa59b73",
             "file": "ChickenChunks-1.7.10-1.3.4.19-universal.jar",
+            "additional-folder": "server/mods",
             "disabled": false
         },
         {
@@ -39,6 +43,7 @@
             "name": "Chunk-Pregenerator",
             "md5": "6d508f9603c758dfd460107e4527ab3c",
             "file": "Chunk Pregenerator V1.7.10-1.7.1.jar",
+            "additional-folder": "server/mods",
             "disabled": false
         },
         {
@@ -46,6 +51,7 @@
             "name": "CodeChickenCore",
             "md5": "07690caf86ecf79739852154f5e44750",
             "file": "CodeChickenCore-1.7.10-1.0.7.47-universal.jar",
+            "additional-folder": "server/mods",
             "disabled": false
         },
         {
@@ -53,6 +59,7 @@
             "name": "Et Futurum",
             "md5": "1094c49073af0c67dd32b4c3257afdd9",
             "file": "Et Futurum-1.5.5.jar",
+            "additional-folder": "server/mods",
             "disabled": false
         },
         {
@@ -60,6 +67,7 @@
             "name": "FastCraft",
             "md5": "44c7c6828ac38026f443804827955345",
             "file": "fastcraft-1.25.jar",
+            "additional-folder": "server/mods",
             "disabled": false
         },
         {
@@ -67,6 +75,7 @@
             "name": "FlatSigns",
             "md5": "836efa16b25141b15b5db3dd157e155b",
             "file": "FlatSigns-1.7.10-universal-2.1.0.19.jar",
+            "additional-folder": "server/mods",
             "disabled": false
         },
         {
@@ -83,6 +92,7 @@
             "name": "HelpFixer",
             "md5": "0d6ce4776f981f97a13ab02029b5fb4d",
             "file": "HelpFixer-1.0.7.jar",
+            "additional-folder": "server/mods",
             "disabled": false
         },
         {
@@ -90,6 +100,7 @@
             "name": "INpureCore",
             "md5": "89c7b3835cd2bdba7d8d054d75c7460c",
             "file": "INpureCore-[1.7.10]1.0.0B9-62.jar",
+            "additional-folder": "server/mods",
             "disabled": false
         },
         {
@@ -97,6 +108,7 @@
             "name": "Inventory Tweaks",
             "md5": "83f7ddcd5f5fd8d640aa15dc62acc6bf",
             "file": "InventoryTweaks-1.59-dev-152.jar",
+            "additional-folder": "server/mods",
             "disabled": false
         },
         {
@@ -104,6 +116,7 @@
             "name": "JourneyMap",
             "md5": "0c3daa19789a67da328437a8635c2cf3",
             "file": "journeymap-1.7.10-5.1.4p2-unlimited.jar",
+            "additional-folder": "server/mods",
             "disabled": false
         },
         {
@@ -111,6 +124,7 @@
             "name": "NotEnoughItems",
             "md5": "742e865a9a80071e80976ffedc05700e",
             "file": "NotEnoughItems-1.7.10-1.0.5.120-universal.jar",
+            "additional-folder": "server/mods",
             "disabled": false
         },
         {
@@ -118,6 +132,7 @@
             "name": "OpenEye",
             "md5": "37241c2ff3d38546b5cef43c6900fdcd",
             "file": "OpenEye-1.7.10-0.8.jar",
+            "additional-folder": "server/mods",
             "disabled": false
         },
         {
@@ -125,6 +140,7 @@
             "name": "OptiFine HD Ultra",
             "md5": "129233884bbceb95a4570b11a9cc4de8",
             "file": "preview_OptiFine_1.7.10_HD_U_E7_pre.jar",
+            "additional-folder": "server/mods",
             "disabled": false,
             "preview": true
         },
@@ -133,6 +149,7 @@
             "name": "Shaders Mod",
             "md5": "f66374aea8dda5f3b7ccb20c230375d7",
             "file": "ShadersModCore-v2.3.31-mc1.7.10-f.jar.disabled",
+            "additional-folder": "server/mods",
             "disabled": true
         },
         {
@@ -140,6 +157,7 @@
             "name": "Waila",
             "md5": "eeb36775188e70faa1c5ecd84f80076c",
             "file": "Waila-1.5.10_1.7.10.jar",
+            "additional-folder": "server/mods",
             "disabled": false
         },
         {
@@ -147,6 +165,7 @@
             "name": "Waila Harvestability",
             "md5": "e9d81089ddec3da20f0bb144e7beb4da",
             "file": "WailaHarvestability-mc1.7.10-1.1.6.jar",
+            "additional-folder": "server/mods",
             "disabled": false
         }
     ]
