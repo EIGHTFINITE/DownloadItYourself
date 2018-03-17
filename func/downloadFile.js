@@ -55,8 +55,10 @@ module.exports = function(obj, current, i, iPad, temp) {
             throw new Error("MD5 mismatch");
         }
         // Create copies of file in the additional folders.
-        if (current["additional-folder"]) fs.copySync((current["folder-override"] ? current["folder-override"] : obj.config.folder) + "/" + temp.file, current["additional-folder"] + "/" + temp.file);
-        console.log("[" + iPad + "] Copied " + (current.name ? current.name : current.url) + " to '" + current["additional-folder"] + "'");
+        if (current["additional-folder"]) {
+            fs.copySync((current["folder-override"] ? current["folder-override"] : obj.config.folder) + "/" + temp.file, current["additional-folder"] + "/" + temp.file);
+            console.log("[" + iPad + "] Copied " + (current.name ? current.name : current.url) + " to '" + current["additional-folder"] + "'");
+        }
         // Update successful.
         console.log("[" + iPad + "] " + (current.name ? current.name : current.url) + " has successfully updated." + ("md5" in temp ? " (MD5 matches)" : ""));
         // Update file location.
