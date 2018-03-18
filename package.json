@@ -12,6 +12,7 @@
   "dependencies": {
     "cheerio": "latest",
     "fs-extra": "latest",
+    "json-stable-stringify": "latest",
     "request": "latest",
     "md5-file": "latest"
   }
