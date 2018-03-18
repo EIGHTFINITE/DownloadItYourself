@@ -31,6 +31,10 @@
             "disabled": false
         },
         {
+            "url": "https://libraries.minecraft.net/com/google/guava/guava/17.0/guava-17.0.jar",
+            "folder-override": "com/google/guava/guava/17.0"
+        },
+        {
             "url": "https://minecraft.curseforge.com/projects/born-in-a-barn",
             "name": "Born in a Barn",
             "md5": "8e952a2bbca5039837d106b7c88e8920",
