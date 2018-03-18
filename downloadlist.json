@@ -15,6 +15,14 @@
             "disabled": false
         },
         {
+            "url": "https://libraries.minecraft.net/org/apache/commons/commons-lang3/3.3.2/commons-lang3-3.3.2.jar",
+            "name": "Apache Commons Lang",
+            "md5": "3128bf75a2549ebe38663401191bacab",
+            "file": "commons-lang3-3.3.2.jar",
+            "folder-override": "server/libraries/org/apache/commons/commons-lang3/3.3.2",
+            "disabled": false
+        },
+        {
             "url": "https://minecraft.curseforge.com/projects/applecore",
             "name": "AppleCore",
             "md5": "169c63b60ec8a8195733b94cb47ae694",
@@ -119,10 +127,6 @@
             "file": "guava-17.0.jar",
             "folder-override": "server/libraries/com/google/guava/guava/17.0",
             "disabled": false
-        },
-        {
-            "url": "https://libraries.minecraft.net/org/apache/commons/commons-lang3/3.3.2/commons-lang3-3.3.2.jar",
-            "folder-override": "server/libraries/org/apache/commons/commons-lang3/3.3.2"
         },
         {
             "url": "https://minecraft.curseforge.com/projects/helpfixer",
