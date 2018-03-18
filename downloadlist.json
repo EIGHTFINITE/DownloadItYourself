@@ -16,6 +16,14 @@
         },
         {
             "disabled": false,
+            "file": "akka-actor_2.11-2.3.3.jar.pack.xz",
+            "folder-override": "server/libraries/com/typesafe/akka/akka-actor_2.11/2.3.3",
+            "md5": "469367f3308e571b1bdf2192d7779807",
+            "name": "Akka Actor",
+            "url": "https://files.minecraftforge.net/maven/com/typesafe/akka/akka-actor_2.11/2.3.3/akka-actor_2.11-2.3.3.jar.pack.xz"
+        },
+        {
+            "disabled": false,
             "file": "commons-lang3-3.3.2.jar",
             "folder-override": "server/libraries/org/apache/commons/commons-lang3/3.3.2",
             "md5": "3128bf75a2549ebe38663401191bacab",
@@ -248,10 +256,6 @@
             "md5": "e9d81089ddec3da20f0bb144e7beb4da",
             "name": "Waila Harvestability",
             "url": "https://minecraft.curseforge.com/projects/waila-harvestability"
-        },
-        {
-            "folder-override": "server/libraries/com/typesafe/akka/akka-actor_2.11/2.3.3",
-            "url": "https://files.minecraftforge.net/maven/com/typesafe/akka/akka-actor_2.11/2.3.3/akka-actor_2.11-2.3.3.jar.pack.xz"
         }
     ]
 }
