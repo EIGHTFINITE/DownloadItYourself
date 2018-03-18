@@ -234,6 +234,78 @@
             "url": "https://optifine.net/downloads"
         },
         {
+            "disabled": false,
+            "file": "scala-actors-migration_2.11-1.1.0.jar.pack.xz",
+            "folder-override": "server/libraries/org/scala-lang/scala-actors-migration_2.11/1.1.0",
+            "md5": "1db3065628f697adc8b7f4d3bd5b59c2",
+            "name": "Scala Actor Migration Kit",
+            "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-actors-migration_2.11/1.1.0/scala-actors-migration_2.11-1.1.0.jar.pack.xz"
+        },
+        {
+            "disabled": false,
+            "file": "scala-compiler-2.11.1.jar.pack.xz",
+            "folder-override": "server/libraries/org/scala-lang/scala-compiler/2.11.1",
+            "md5": "9c88616e35796955e0ff1235b11f1475",
+            "name": "Scala Compiler API",
+            "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-compiler/2.11.1/scala-compiler-2.11.1.jar.pack.xz"
+        },
+        {
+            "disabled": false,
+            "file": "scala-continuations-library_2.11-1.0.2.jar.pack.xz",
+            "folder-override": "server/libraries/org/scala-lang/plugins/scala-continuations-library_2.11/1.0.2",
+            "md5": "f4be606c0d0b92e58ad7414cd72e6680",
+            "name": "Scala Continuations Library",
+            "url": "https://files.minecraftforge.net/maven/org/scala-lang/plugins/scala-continuations-library_2.11/1.0.2/scala-continuations-library_2.11-1.0.2.jar.pack.xz"
+        },
+        {
+            "disabled": false,
+            "file": "scala-continuations-plugin_2.11.1-1.0.2.jar.pack.xz",
+            "folder-override": "server/libraries/org/scala-lang/plugins/scala-continuations-plugin_2.11.1/1.0.2",
+            "md5": "b81f2ba4690d9d1d3d89ee3a560b4a50",
+            "name": "Scala Continuations Plugin",
+            "url": "https://files.minecraftforge.net/maven/org/scala-lang/plugins/scala-continuations-plugin_2.11.1/1.0.2/scala-continuations-plugin_2.11.1-1.0.2.jar.pack.xz"
+        },
+        {
+            "disabled": false,
+            "file": "scala-library-2.11.1.jar.pack.xz",
+            "folder-override": "server/libraries/org/scala-lang/scala-library/2.11.1",
+            "md5": "f2d0c1ce6ab76531bbd48acbcd3d4ff1",
+            "name": "Scala Library API",
+            "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-library/2.11.1/scala-library-2.11.1.jar.pack.xz"
+        },
+        {
+            "disabled": false,
+            "file": "scala-reflect-2.11.1.jar.pack.xz",
+            "folder-override": "server/libraries/org/scala-lang/scala-reflect/2.11.1",
+            "md5": "1d98cc27697573fb205bb5180165f74a",
+            "name": "Scala Reflection API",
+            "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-reflect/2.11.1/scala-reflect-2.11.1.jar.pack.xz"
+        },
+        {
+            "disabled": false,
+            "file": "scala-parser-combinators_2.11-1.0.1.jar.pack.xz",
+            "folder-override": "server/libraries/org/scala-lang/scala-parser-combinators_2.11/1.0.1",
+            "md5": "d45bb1657625464f46da3596c1f941de",
+            "name": "Scala Standard Parser Combinator Library",
+            "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-parser-combinators_2.11/1.0.1/scala-parser-combinators_2.11-1.0.1.jar.pack.xz"
+        },
+        {
+            "disabled": false,
+            "file": "scala-swing_2.11-1.0.1.jar.pack.xz",
+            "folder-override": "server/libraries/org/scala-lang/scala-swing_2.11/1.0.1",
+            "md5": "db6a3ef629c32bf9515c8937fe422786",
+            "name": "Scala Swing API",
+            "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-swing_2.11/1.0.1/scala-swing_2.11-1.0.1.jar.pack.xz"
+        },
+        {
+            "disabled": false,
+            "file": "scala-xml_2.11-1.0.2.jar.pack.xz",
+            "folder-override": "server/libraries/org/scala-lang/scala-xml_2.11/1.0.2",
+            "md5": "1c5a20efca1474626e0e0123f9cdd8ce",
+            "name": "Scala XML API",
+            "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-xml_2.11/1.0.2/scala-xml_2.11-1.0.2.jar.pack.xz"
+        },
+        {
             "additional-folder": "server/mods",
             "disabled": true,
             "file": "ShadersModCore-v2.3.31-mc1.7.10-f.jar.disabled",
@@ -264,42 +336,6 @@
             "md5": "e9d81089ddec3da20f0bb144e7beb4da",
             "name": "Waila Harvestability",
             "url": "https://minecraft.curseforge.com/projects/waila-harvestability"
-        },
-        {
-            "folder-override": "server/libraries/org/scala-lang/scala-actors-migration_2.11/1.1.0",
-            "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-actors-migration_2.11/1.1.0/scala-actors-migration_2.11-1.1.0.jar.pack.xz"
-        },
-        {
-            "folder-override": "server/libraries/org/scala-lang/scala-compiler/2.11.1",
-            "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-compiler/2.11.1/scala-compiler-2.11.1.jar.pack.xz"
-        },
-        {
-            "folder-override": "server/libraries/org/scala-lang/plugins/scala-continuations-library_2.11/1.0.2",
-            "url": "https://files.minecraftforge.net/maven/org/scala-lang/plugins/scala-continuations-library_2.11/1.0.2/scala-continuations-library_2.11-1.0.2.jar.pack.xz"
-        },
-        {
-            "folder-override": "server/libraries/org/scala-lang/plugins/scala-continuations-plugin_2.11.1/1.0.2",
-            "url": "https://files.minecraftforge.net/maven/org/scala-lang/plugins/scala-continuations-plugin_2.11.1/1.0.2/scala-continuations-plugin_2.11.1-1.0.2.jar.pack.xz"
-        },
-        {
-            "folder-override": "server/libraries/org/scala-lang/scala-library/2.11.1",
-            "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-library/2.11.1/scala-library-2.11.1.jar.pack.xz"
-        },
-        {
-            "folder-override": "server/libraries/org/scala-lang/scala-parser-combinators_2.11/1.0.1",
-            "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-parser-combinators_2.11/1.0.1/scala-parser-combinators_2.11-1.0.1.jar.pack.xz"
-        },
-        {
-            "folder-override": "server/libraries/org/scala-lang/scala-reflect/2.11.1",
-            "url": "http://files.minecraftforge.net/maven/org/scala-lang/scala-reflect/2.11.1/scala-reflect-2.11.1.jar.pack.xz"
-        },
-        {
-            "folder-override": "server/libraries/org/scala-lang/scala-swing_2.11/1.0.1",
-            "url": "http://files.minecraftforge.net/maven/org/scala-lang/scala-swing_2.11/1.0.1/scala-swing_2.11-1.0.1.jar.pack.xz"
-        },
-        {
-            "folder-override": "server/libraries/org/scala-lang/scala-xml_2.11/1.0.2",
-            "url": "http://files.minecraftforge.net/maven/org/scala-lang/scala-xml_2.11/1.0.2/scala-xml_2.11-1.0.2.jar.pack.xz"
         }
     ]
 }
