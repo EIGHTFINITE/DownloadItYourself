@@ -121,6 +121,10 @@
             "disabled": false
         },
         {
+            "url": "https://libraries.minecraft.net/org/apache/commons/commons-lang3/3.3.2/commons-lang3-3.3.2.jar",
+            "folder-override": "server/libraries/org/apache/commons/commons-lang3/3.3.2"
+        },
+        {
             "url": "https://minecraft.curseforge.com/projects/helpfixer",
             "name": "HelpFixer",
             "md5": "0d6ce4776f981f97a13ab02029b5fb4d",
