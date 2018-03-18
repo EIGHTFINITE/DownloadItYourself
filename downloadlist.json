@@ -264,6 +264,42 @@
             "md5": "e9d81089ddec3da20f0bb144e7beb4da",
             "name": "Waila Harvestability",
             "url": "https://minecraft.curseforge.com/projects/waila-harvestability"
+        },
+        {
+            "folder-override": "server/libraries/org/scala-lang/scala-actors-migration_2.11/1.1.0",
+            "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-actors-migration_2.11/1.1.0/scala-actors-migration_2.11-1.1.0.jar.pack.xz"
+        },
+        {
+            "folder-override": "server/libraries/org/scala-lang/scala-compiler/2.11.1",
+            "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-compiler/2.11.1/scala-compiler-2.11.1.jar.pack.xz"
+        },
+        {
+            "folder-override": "server/libraries/org/scala-lang/plugins/scala-continuations-library_2.11/1.0.2",
+            "url": "https://files.minecraftforge.net/maven/org/scala-lang/plugins/scala-continuations-library_2.11/1.0.2/scala-continuations-library_2.11-1.0.2.jar.pack.xz"
+        },
+        {
+            "folder-override": "server/libraries/org/scala-lang/plugins/scala-continuations-plugin_2.11.1/1.0.2",
+            "url": "https://files.minecraftforge.net/maven/org/scala-lang/plugins/scala-continuations-plugin_2.11.1/1.0.2/scala-continuations-plugin_2.11.1-1.0.2.jar.pack.xz"
+        },
+        {
+            "folder-override": "server/libraries/org/scala-lang/scala-library/2.11.1",
+            "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-library/2.11.1/scala-library-2.11.1.jar.pack.xz"
+        },
+        {
+            "folder-override": "server/libraries/org/scala-lang/scala-parser-combinators_2.11/1.0.1",
+            "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-parser-combinators_2.11/1.0.1/scala-parser-combinators_2.11-1.0.1.jar.pack.xz"
+        },
+        {
+            "folder-override": "server/libraries/org/scala-lang/scala-reflect/2.11.1",
+            "url": "http://files.minecraftforge.net/maven/org/scala-lang/scala-reflect/2.11.1/scala-reflect-2.11.1.jar.pack.xz"
+        },
+        {
+            "folder-override": "server/libraries/org/scala-lang/scala-swing_2.11/1.0.1",
+            "url": "http://files.minecraftforge.net/maven/org/scala-lang/scala-swing_2.11/1.0.1/scala-swing_2.11-1.0.1.jar.pack.xz"
+        },
+        {
+            "folder-override": "server/libraries/org/scala-lang/scala-xml_2.11/1.0.2",
+            "url": "http://files.minecraftforge.net/maven/org/scala-lang/scala-xml_2.11/1.0.2/scala-xml_2.11-1.0.2.jar.pack.xz"
         }
     ]
 }
