@@ -169,6 +169,10 @@
             "disabled": false
         },
         {
+            "url": "https://libraries.minecraft.net/net/sf/jopt-simple/jopt-simple/4.5/jopt-simple-4.5.jar",
+            "folder-override": "net/sf/jopt-simple/jopt-simple/4.5"
+        },
+        {
             "url": "https://s3.amazonaws.com/Minecraft.Download/versions/1.7.10/minecraft_server.1.7.10.jar",
             "name": "Minecraft Server",
             "md5": "3e8912b293b52bd54f879919bd6e4e44",
