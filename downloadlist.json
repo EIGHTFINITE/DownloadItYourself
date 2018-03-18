@@ -145,6 +145,10 @@
             "disabled": false
         },
         {
+            "url": "https://libraries.minecraft.net/org/ow2/asm/asm-all/5.0.3/asm-all-5.0.3.jar",
+            "folder-override": "server/libraries/org/ow2/asm/asm-all/5.0.3"
+        },
+        {
             "url": "https://s3.amazonaws.com/Minecraft.Download/versions/1.7.10/minecraft_server.1.7.10.jar",
             "name": "Minecraft Server",
             "md5": "3e8912b293b52bd54f879919bd6e4e44",
