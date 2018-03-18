@@ -5,7 +5,8 @@ temp.href = current.url;
 temp.file = temp.href.substring(temp.href.lastIndexOf("/") + 1);
 downloadFile(obj, current, i, iPad, temp);
 if (!current.name) {
-    if(temp.file === "asm-all-5.0.3.jar") current.name = "ASM";
+    if(temp.file === "commons-lang3-3.3.2.jar") current.name = "Apache Commons Lang";
+    else if(temp.file === "asm-all-5.0.3.jar") current.name = "ASM";
     else if(temp.file === "guava-17.0.jar") current.name = "Guava";
     else if(temp.file === "jopt-simple-4.5.jar") current.name = "JOpt Simple";
     else if(temp.file === "launchwrapper-1.12.jar") current.name = "LaunchWrapper";
