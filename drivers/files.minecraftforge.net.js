@@ -22,6 +22,7 @@ if (current.url.endsWith(".html")) {
     downloadFile(obj, current, i, iPad, temp);
     if (!current.name) {
         if (temp.file.includes("akka-actor")) current.name = "Akka Actor";
+        if (temp.file.includes("config")) current.name = "Typesafe Config";
     }
     if (!("disabled" in current)) current.disabled = false;
 }
