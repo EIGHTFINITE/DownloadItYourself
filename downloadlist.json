@@ -169,19 +169,19 @@
             "disabled": false
         },
         {
-            "url": "https://libraries.minecraft.net/net/minecraft/launchwrapper/1.12/launchwrapper-1.12.jar",
-            "name": "LaunchWrapper",
-            "md5": "934b2d91c7c5be4a49577c9e6b40e8da",
-            "file": "launchwrapper-1.12.jar",
-            "folder-override": "server/libraries/net/minecraft/launchwrapper/1.12",
-            "disabled": false
-        },
-        {
             "url": "https://libraries.minecraft.net/lzma/lzma/0.0.1/lzma-0.0.1.jar",
             "name": "LZMA",
             "md5": "a3e3c3186e41c4a1a3027ba2bb23cdc6",
             "file": "lzma-0.0.1.jar",
             "folder-override": "server/libraries/lzma/lzma/0.0.1",
+            "disabled": false
+        },
+        {
+            "url": "https://libraries.minecraft.net/net/minecraft/launchwrapper/1.12/launchwrapper-1.12.jar",
+            "name": "Minecraft LaunchWrapper",
+            "md5": "934b2d91c7c5be4a49577c9e6b40e8da",
+            "file": "launchwrapper-1.12.jar",
+            "folder-override": "server/libraries/net/minecraft/launchwrapper/1.12",
             "disabled": false
         },
         {
