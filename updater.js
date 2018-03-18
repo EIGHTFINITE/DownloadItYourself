@@ -2,6 +2,7 @@
 
 // Libraries
 var fs = require("fs-extra");
+var stringify = require("json-stable-stringify");
 
 // Functions
 var checkFile = require("./func/checkFile.js");
@@ -55,7 +56,7 @@ process.on('exit', function() {
     obj.downloads.sort((a, b) => a.name.localeCompare(b.name, 'en', {
         sensitivity: 'base'
     }));
-    fs.writeFileSync("downloadlist.json", JSON.stringify(obj, null, 4) + "\n");
+    fs.writeFileSync("downloadlist.json", stringify(obj, { space: 4 }) + "\n");
 });
 
 })();
