@@ -23,6 +23,15 @@ if (current.url.endsWith(".html")) {
     if (!current.name) {
         if (temp.file.includes("akka-actor")) current.name = "Akka Actor";
         if (temp.file.includes("config")) current.name = "Typesafe Config";
+        if (temp.file.includes("scala-actors-migration")) current.name = "Scala Actor Migration Kit";
+        if (temp.file.includes("scala-compiler")) current.name = "Scala Compiler API";
+        if (temp.file.includes("scala-continuations-library")) current.name = "Scala Continuations Library";
+        if (temp.file.includes("scala-continuations-plugin")) current.name = "Scala Continuations Plugin";
+        if (temp.file.includes("scala-library")) current.name = "Scala Library API";
+        if (temp.file.includes("scala-parser-combinators")) current.name = "Scala Standard Parser Combinator Library";
+        if (temp.file.includes("scala-reflect")) current.name = "Scala Reflection API";
+        if (temp.file.includes("scala-swing")) current.name = "Scala Swing API";
+        if (temp.file.includes("scala-xml")) current.name = "Scala XML API";
     }
     if (!("disabled" in current)) current.disabled = false;
 }
