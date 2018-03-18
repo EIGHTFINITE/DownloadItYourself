@@ -248,6 +248,10 @@
             "md5": "e9d81089ddec3da20f0bb144e7beb4da",
             "name": "Waila Harvestability",
             "url": "https://minecraft.curseforge.com/projects/waila-harvestability"
+        },
+        {
+            "folder-override": "server/libraries/com/typesafe/akka/akka-actor_2.11/2.3.3",
+            "url": "https://files.minecraftforge.net/maven/com/typesafe/akka/akka-actor_2.11/2.3.3/akka-actor_2.11-2.3.3.jar.pack.xz"
         }
     ]
 }
