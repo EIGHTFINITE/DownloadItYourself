@@ -242,6 +242,14 @@
             "url": "http://shadersmod.net/version-1-7-10/"
         },
         {
+            "disabled": false,
+            "file": "config-1.2.1.jar.pack.xz",
+            "folder-override": "server/libraries/com/typesafe/config/1.2.1",
+            "md5": "4f1a9214aed32ba3c4a55d89b0918a02",
+            "name": "Typesafe Config",
+            "url": "https://files.minecraftforge.net/maven/com/typesafe/config/1.2.1/config-1.2.1.jar.pack.xz"
+        },
+        {
             "additional-folder": "server/mods",
             "disabled": false,
             "file": "Waila-1.5.10_1.7.10.jar",
@@ -256,10 +264,6 @@
             "md5": "e9d81089ddec3da20f0bb144e7beb4da",
             "name": "Waila Harvestability",
             "url": "https://minecraft.curseforge.com/projects/waila-harvestability"
-        },
-        {
-            "folder-override": "server/libraries/com/typesafe/config/1.2.1",
-            "url": "https://files.minecraftforge.net/maven/com/typesafe/config/1.2.1/config-1.2.1.jar.pack.xz"
         }
     ]
 }
