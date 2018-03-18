@@ -145,6 +145,14 @@
             "disabled": false
         },
         {
+            "url": "https://libraries.minecraft.net/net/sf/jopt-simple/jopt-simple/4.5/jopt-simple-4.5.jar",
+            "name": "JOpt Simple",
+            "md5": "1372bd4823bb1ef61e7db6724f601150",
+            "file": "jopt-simple-4.5.jar",
+            "folder-override": "server/libraries/net/sf/jopt-simple/jopt-simple/4.5",
+            "disabled": false
+        },
+        {
             "url": "https://minecraft.curseforge.com/projects/journeymap",
             "name": "JourneyMap",
             "md5": "0c3daa19789a67da328437a8635c2cf3",
@@ -167,10 +175,6 @@
             "file": "lzma-0.0.1.jar",
             "folder-override": "server/libraries/lzma/lzma/0.0.1",
             "disabled": false
-        },
-        {
-            "url": "https://libraries.minecraft.net/net/sf/jopt-simple/jopt-simple/4.5/jopt-simple-4.5.jar",
-            "folder-override": "net/sf/jopt-simple/jopt-simple/4.5"
         },
         {
             "url": "https://s3.amazonaws.com/Minecraft.Download/versions/1.7.10/minecraft_server.1.7.10.jar",
