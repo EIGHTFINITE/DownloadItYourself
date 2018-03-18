@@ -7,6 +7,7 @@ downloadFile(obj, current, i, iPad, temp);
 if (!current.name) {
     if(temp.file === "asm-all-5.0.3.jar") current.name = "ASM";
     else if(temp.file === "guava-17.0.jar") current.name = "Guava";
+    else if(temp.file === "jopt-simple-4.5.jar") current.name = "JOpt Simple";
     else if(temp.file === "launchwrapper-1.12.jar") current.name = "LaunchWrapper";
     else if(temp.file === "lzma-0.0.1.jar") current.name = "LZMA";
 };
