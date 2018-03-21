@@ -1,7 +1,7 @@
 /**
  * Driver for downloading from minecraft.curseforge.com
  */
-temp.href = current.url + "/files?" + (global.list.config["curseforge-version"] ? "filter-game-version=" + global.list.config["curseforge-version"] : "");
+temp.href = current.url + "/files?" + (global.config["curseforge-version"] ? "filter-game-version=" + global.config["curseforge-version"] : "");
 request(temp.href, function(err, response, html) {
     console.log("[" + iPad + "] Navigating to: " + temp.href);
     if (err) throw err;

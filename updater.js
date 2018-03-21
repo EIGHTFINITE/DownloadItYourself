@@ -15,6 +15,8 @@ var downloadFile =  require("./func/downloadFile.js");
 
 // Globals
 global.list = void(0);
+global.downloads = void(0);
+global.config = void(0);
 
 // Variables
 var delayedLog = [];
@@ -22,11 +24,13 @@ var delayedLog = [];
 // Load config and get started
 fs.readFile("../downloadlist.json", "utf8", function(err, data) {
     if (err) throw err;
-	// Fill global object
+	// Fill globals
     global.list = JSON.parse(data);
+	global.downloads = global.list.downloads;
+	global.config = global.list.config;
 	// Delayed log
     console._log = console.log;
-    if (global.list.config["delayed-log"]) {
+    if (global.config["delayed-log"]) {
         console.log = function() {
             if (arguments.length && typeof arguments[0] === "string") {
                 if (arguments[0].startsWith("[")) {
@@ -43,9 +47,9 @@ fs.readFile("../downloadlist.json", "utf8", function(err, data) {
 	// Start working
     var iPad = "0";
     var current;
-    for (var i = 0; i < global.list.downloads.length; i++) {
-        iPad = i.toString().padStart(global.list.downloads.length.toString().length, "0");
-        current = global.list.downloads[i];
+    for (var i = 0; i < global.downloads.length; i++) {
+        iPad = i.toString().padStart(global.downloads.length.toString().length, "0");
+        current = global.downloads[i];
         checkFile(current, i, iPad);
         if (current.url) parseDownload(current, i, iPad);
     }
@@ -55,15 +59,15 @@ fs.readFile("../downloadlist.json", "utf8", function(err, data) {
 process.on('exit', function() {
     var delayedLogCopy = delayedLog.slice();
     delayedLog.sort(function(a, b) {
-        var aInt = parseInt(a.substring(1, global.list.downloads.length.toString().length + 1));
-        var bInt = parseInt(b.substring(1, global.list.downloads.length.toString().length + 1));
+        var aInt = parseInt(a.substring(1, global.downloads.length.toString().length + 1));
+        var bInt = parseInt(b.substring(1, global.downloads.length.toString().length + 1));
         if (aInt === bInt) return delayedLogCopy.indexOf(a) - delayedLogCopy.indexOf(b);
         return aInt - bInt;
     });
     while (delayedLog.length) {
         console._log(delayedLog.shift());
     }
-    global.list.downloads.sort((a, b) => a.name.localeCompare(b.name, 'en', {
+    global.downloads.sort((a, b) => a.name.localeCompare(b.name, 'en', {
         sensitivity: 'base'
     }));
     if(global.list !== void(0)) fs.writeFileSync("../downloadlist.json", stringify(global.list, { space: 4 }) + "\n");
