@@ -4,11 +4,11 @@
 var fs = require("fs-extra");
 var md5File = require("md5-file");
 
-module.exports = function(obj, current, i, iPad) {
+module.exports = function(current, i, iPad) {
     if (current["folder-override"]) fs.ensureDirSync(current["folder-override"]);
     console.log("[" + iPad + "] Checking " + (current.name ? current.name : (current.url ? current.url : (current.file ? current.file : i + ": '" + JSON.stringify(current) + "'"))) + " file integrity.");
     if (current.file) {
-        md5File((current["folder-override"] ? "../" + current["folder-override"] : "../" + obj.config.folder) + "/" + (current["file-override"] ? current["file-override"] : current.file), (err, md5) => {
+        md5File((current["folder-override"] ? "../" + current["folder-override"] : "../" + global.list.config.folder) + "/" + (current["file-override"] ? current["file-override"] : current.file), (err, md5) => {
             if (err) {
                 if (err.code === "ENOENT") {
                     if (!current.url) {
