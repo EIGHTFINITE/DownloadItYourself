@@ -1,7 +1,7 @@
 /**
  * Driver for downloading from minecraft.curseforge.com
  */
-temp.href = current.url + "/files?" + (obj.config["curseforge-version"] ? "filter-game-version=" + obj.config["curseforge-version"] : "");
+temp.href = current.url + "/files?" + (global.list.config["curseforge-version"] ? "filter-game-version=" + global.list.config["curseforge-version"] : "");
 request(temp.href, function(err, response, html) {
     console.log("[" + iPad + "] Navigating to: " + temp.href);
     if (err) throw err;
@@ -14,7 +14,7 @@ request(temp.href, function(err, response, html) {
         temp.md5 = $("span.md5").text().trim();
         temp.file = $("div.info-data.overflow-tip").text().trim();
         temp.href = response.request.uri.protocol + "//" + response.request.uri.host + $("a.button.fa-icon-download:not(.alt)").attr("href");
-        downloadFile(obj, current, i, iPad, temp);
+        downloadFile(current, i, iPad, temp);
     });
     if (!current.name) current.name = $("h1.project-title").text().trim();
     if (!("disabled" in current)) current.disabled = false;
