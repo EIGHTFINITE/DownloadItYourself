@@ -18,7 +18,7 @@ var obj;
 var delayedLog = [];
 
 // Load config and get started
-fs.readFile("downloadlist.json", "utf8", function(err, data) {
+fs.readFile("../downloadlist.json", "utf8", function(err, data) {
     if (err) throw err;
     obj = JSON.parse(data);
     console._log = console.log;
@@ -36,7 +36,7 @@ fs.readFile("downloadlist.json", "utf8", function(err, data) {
             return;
         }
     }
-    fs.ensureDirSync(obj.config.folder);
+    fs.ensureDirSync("../" + obj.config.folder);
     var iPad = "0";
     var current;
     for (var i = 0; i < obj.downloads.length; i++) {
@@ -62,7 +62,7 @@ process.on('exit', function() {
     obj.downloads.sort((a, b) => a.name.localeCompare(b.name, 'en', {
         sensitivity: 'base'
     }));
-    fs.writeFileSync("downloadlist.json", stringify(obj, { space: 4 }) + "\n");
+    fs.writeFileSync("../downloadlist.json", stringify(obj, { space: 4 }) + "\n");
 });
 
 })();
