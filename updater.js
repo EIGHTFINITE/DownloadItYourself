@@ -4,6 +4,10 @@
 var fs = require("fs-extra");
 var stringify = require("json-stable-stringify");
 
+// Ensure correct working directory
+fs.ensureDirSync(__dirname + "/_temp");
+process.chdir(__dirname + "/_temp");
+
 // Functions
 var checkFile = require("./func/checkFile.js");
 var parseDownload = require("./func/parseDownload.js");
@@ -13,6 +17,7 @@ var downloadFile =  require("./func/downloadFile.js");
 var obj;
 var delayedLog = [];
 
+// Load config and get started
 fs.readFile("downloadlist.json", "utf8", function(err, data) {
     if (err) throw err;
     obj = JSON.parse(data);
@@ -32,7 +37,7 @@ fs.readFile("downloadlist.json", "utf8", function(err, data) {
         }
     }
     fs.ensureDirSync(obj.config.folder);
-    var iPad = 0;
+    var iPad = "0";
     var current;
     for (var i = 0; i < obj.downloads.length; i++) {
         iPad = i.toString().padStart(obj.downloads.length.toString().length, "0");
@@ -42,6 +47,7 @@ fs.readFile("downloadlist.json", "utf8", function(err, data) {
     }
 });
 
+// After everything is done (even if we error out)
 process.on('exit', function() {
     var delayedLogCopy = delayedLog.slice();
     delayedLog.sort(function(a, b) {
