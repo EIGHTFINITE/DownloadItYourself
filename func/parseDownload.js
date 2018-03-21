@@ -9,10 +9,10 @@ var request = require("request");
 // Functions
 var downloadFile = require("../func/downloadFile.js");
 
-module.exports = function(current, i, iPad, temp, $) {
+module.exports = function(i, current, temp, $) {
     temp = (typeof temp === 'undefined' ? {} : temp);
     fs.readFile("../drivers/" + url.parse(current.url).host + ".js", "utf8", function(err, script) {
-        console.log("[" + iPad + "] Checking " + (current.name ? current.name : current.url) + " for updates.");
+        console.message("Checking " + (current.name ? current.name : current.url) + " for updates.", i);
         if (err) throw err;
         eval(script); // There must be a better way to do this.
     });

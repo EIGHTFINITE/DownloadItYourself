@@ -24,34 +24,27 @@ var delayedLog = [];
 // Load config and get started
 fs.readFile("../downloadlist.json", "utf8", function(err, data) {
     if (err) throw err;
-	// Fill globals
+    // Fill globals
     global.list = JSON.parse(data);
-	global.downloads = global.list.downloads;
-	global.config = global.list.config;
-	// Delayed log
-    console._log = console.log;
-    if (global.config["delayed-log"]) {
-        console.log = function() {
-            if (arguments.length && typeof arguments[0] === "string") {
-                if (arguments[0].startsWith("[")) {
-                    delayedLog.push(Array.prototype.slice.call(arguments).join(" "));
-                    return;
-                }
-                console._log.apply(this, arguments);
+    global.downloads = global.list.downloads;
+    global.config = global.list.config;
+    // Messaging
+    console.message = function(msg, i) {
+        if (typeof i === "number" && i >= 0) {
+            msg = "[" + i.toString().padStart(global.downloads.length.toString().length - 1, "0") + "] " + msg;
+            if (global.config["delayed-log"]) {
+                delayedLog.push(msg);
                 return;
             }
-            console._log.apply(this, arguments);
-            return;
         }
+        console.log(msg);
     }
-	// Start working
-    var iPad = "0";
+    // Start working
     var current;
     for (var i = 0; i < global.downloads.length; i++) {
-        iPad = i.toString().padStart(global.downloads.length.toString().length, "0");
         current = global.downloads[i];
-        checkFile(current, i, iPad);
-        if (current.url) parseDownload(current, i, iPad);
+        checkFile(i, current);
+        if (current.url) parseDownload(i, current);
     }
 });
 
@@ -65,7 +58,7 @@ process.on('exit', function() {
         return aInt - bInt;
     });
     while (delayedLog.length) {
-        console._log(delayedLog.shift());
+        console.log(delayedLog.shift());
     }
     global.downloads.sort((a, b) => a.name.localeCompare(b.name, 'en', {
         sensitivity: 'base'
