@@ -3,7 +3,7 @@
  */
 temp.href = current.url;
 temp.file = temp.href.substring(temp.href.lastIndexOf("/") + 1);
-downloadFile(obj, current, i, iPad, temp);
+downloadFile(current, i, iPad, temp);
 if (!current.name) {
     if(temp.file.includes("commons-lang3")) current.name = "Apache Commons Lang";
     else if(temp.file.includes("asm-all")) current.name = "ASM";
