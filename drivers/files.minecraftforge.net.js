@@ -4,7 +4,7 @@
 if (current.url.startsWith("http://")) current.url = current.url.replace("http://", "https://");
 if (current.url.endsWith(".html")) {
     request(current.url, function(err, response, html) {
-        console.message("Navigating to: " + current.url, i);
+        console.message("Navigating to: '" + current.url + "'.", i);
         if (err) throw err;
         $ = cheerio.load(html);
         if (current.preview === true) temp.href = $(".downloads>.download>.title>.promo-latest").parent().parent().find(".links .link .classifier-universal").parent().attr("href");
