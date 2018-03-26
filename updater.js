@@ -28,7 +28,7 @@ fs.readFile("../downloadlist.json", "utf8", function(err, data) {
     global.list = JSON.parse(data);
     global.downloads = global.list.downloads;
     global.config = global.list.config;
-    // Messaging
+    // Set up messaging
     console.message = function(msg, i) {
         if (typeof i === "number" && i >= 0) {
             msg = "[" + i.toString().padStart(global.downloads.length.toString().length - 1, "0") + "] " + msg;
