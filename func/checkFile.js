@@ -15,8 +15,8 @@ module.exports = function(i, current) {
             if (err) {
                 if (err.code === "ENOENT") {
                     if (!current.url) {
-                        console.message("ERROR: '" + localizedName(i) + "' is missing its file and has no URL to update from.", i);
-                        throw new Error("Missing file");
+                        console.message("WARNING: '" + localizedName(i) + "' is missing its file and has no URL to update from.", i);
+                        return; // Nothing to check. Stop.
                     }
                     console.message("WARNING: '" + current.file + "' could not be found. Was it deleted?", i);
                     return; // Nothing to check. Stop.
