@@ -5,7 +5,8 @@ request(current.url, function(err, response, html) {
     console.message("Navigating to: '" + current.url + "'.", i);
     if (err) throw err;
     $ = cheerio.load(html);
-    if (current.preview === true) temp.href = $("span#preview td.downloadLineFile:contains(1.7.10)").nextAll("td.downloadLineMirror").children("a").attr("href");
+    var previewBuilds = $("span#preview td.downloadLineFile:contains(1.7.10)").nextAll("td.downloadLineMirror").children("a");
+    if (current.preview === true && previewBuilds.length > 0) temp.href = previewBuilds.attr("href");
     else temp.href = $("h2:contains(" + global.config.version + ")").nextAll("table.downloadTable").first().find("td.downloadLineMirror a").attr("href");
     request(temp.href, function(err, response, html) {
         console.message("Navigating to: '" + temp.href + "'.", i);
