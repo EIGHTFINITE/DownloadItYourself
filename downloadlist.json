@@ -227,8 +227,8 @@
         {
             "additional-folder": "server/mods",
             "disabled": false,
-            "file": "preview_OptiFine_1.7.10_HD_U_E7_pre.jar",
-            "md5": "129233884bbceb95a4570b11a9cc4de8",
+            "file": "OptiFine_1.7.10_HD_U_E7.jar",
+            "md5": "445062f5aaf982c36c72d90530c26850",
             "name": "OptiFine HD Ultra",
             "preview": true,
             "url": "https://optifine.net/downloads"
