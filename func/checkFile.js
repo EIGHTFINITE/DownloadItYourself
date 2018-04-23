@@ -11,7 +11,7 @@ module.exports = function(i, current) {
     if (current["folder-override"]) fs.ensureDirSync(current["folder-override"]);
     console.message("Checking '" + localizedName(i) + "' file integrity.", i);
     if (current.file) {
-        md5File((current["folder-override"] ? "../" + current["folder-override"] : "../" + global.config.folder) + "/" + (current["file-override"] ? current["file-override"] : current.file), (err, md5) => {
+        md5File("../_temp" + "/" + (current["file-override"] ? current["file-override"] : current.file), (err, md5) => {
             if (err) {
                 if (err.code === "ENOENT") {
                     if (!current.url) {
