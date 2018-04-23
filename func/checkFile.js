@@ -8,7 +8,7 @@ var md5File = require("md5-file");
 var localizedName = require("../func/localizedName.js");
 
 module.exports = function(i, current) {
-    if (current["folder-override"]) fs.ensureDirSync(current["folder-override"]);
+    if (current["folder-override"]) fs.ensureDirSync("../" + current["folder-override"]);
     console.message("Checking '" + localizedName(i) + "' file integrity.", i);
     if (current.file) {
         md5File("../_temp" + "/" + (current["file-override"] ? current["file-override"] : current.file), (err, md5) => {
