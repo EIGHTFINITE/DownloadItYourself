@@ -72,8 +72,8 @@
         {
             "additional-folder": "server/mods",
             "disabled": false,
-            "file": "Chunk Pregenerator V1.7.10-1.7.1.jar",
-            "md5": "6d508f9603c758dfd460107e4527ab3c",
+            "file": "Chunk Pregenerator V1.7.10-1.8.jar",
+            "md5": "ccbfcc026f9c5977a3469c15bd3b0123",
             "name": "Chunk-Pregenerator",
             "url": "https://minecraft.curseforge.com/projects/chunkpregenerator"
         },
