@@ -14,7 +14,7 @@ module.exports = function(i, current, temp) {
     temp.originalFilename = temp.file;
     if (current["file-override"]) temp.file = current["file-override"];
     // Are we about to download the same file we already have?
-    if ((current.md5 ? true : current.md5 === temp.md5) && (current.file === temp.file || current.file === temp.file + ".disabled") && fs.existsSync("../_temp" + "/" + current.file)) { // Nothing to update.
+    if ((current.md5 && temp.md5 ? current.md5 === temp.md5 : true) && (current.file === temp.file || current.file === temp.file + ".disabled") && fs.existsSync("../_temp" + "/" + current.file)) { // Nothing to update.
         console.message("'" + localizedName(i) + "' is already up to date.", i);
         if (!current.disabled && current.file.endsWith(".disabled")) {
             temp.file = current.file.substring(0, current.file.length - 9);
