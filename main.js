@@ -21,6 +21,7 @@ global.downloads = void(0);
 global.config = void(0);
 global.delayedLog = [];
 global.finishedThreads = -1;
+global.threads = [];
 
 // Load config and get started
 fs.readFile("../downloadlist.json", "utf8", function(err, data) {
@@ -41,6 +42,13 @@ fs.readFile("../downloadlist.json", "utf8", function(err, data) {
 
 // After everything is done (even if we error out)
 process.on('exit', function() {
+	// Warn about unclosed threads
+	for (var j = 0; j < global.threads.length; j++) {
+		if(global.threads[j] === true) {
+			console.log("WARNING: Thread [" + j + "] has not been closed.");
+			global.threads[j] = false;
+		}
+	}
 	// Process leftover messages
 	if (global.config["delayed-log"] && global.delayedLog.length) {
 		console.log("WARNING: Not all messages were pushed to the console. Appending messages now.");
