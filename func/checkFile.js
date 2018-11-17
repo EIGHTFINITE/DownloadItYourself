@@ -12,34 +12,34 @@ var MESSAGE_VERBOSE = true;
 
 module.exports = function(i, current) {
     if (current["folder-override"]) fs.ensureDirSync("../" + current["folder-override"]);
-    console.message("Checking '" + localizedName(i) + "' file integrity.", i, MESSAGE_VERBOSE);
+    console.message(i, "Checking '" + localizedName(i) + "' file integrity.", MESSAGE_VERBOSE);
     if (current.file) {
         md5File("../_temp" + "/" + (current["file-override"] ? current["file-override"] : current.file), (err, md5) => {
             if (err) {
                 if (err.code === "ENOENT") {
                     if (!current.url) {
-                        console.message("WARNING: '" + localizedName(i) + "' is missing its file and has no URL to update from.", i);
+                        console.message(i, "WARNING: '" + localizedName(i) + "' is missing its file and has no URL to update from.");
                         return; // Nothing to check. Stop.
                     }
-                    console.message("WARNING: '" + current.file + "' could not be found. Was it deleted?", i, MESSAGE_VERBOSE);
+                    console.message(i, "WARNING: '" + current.file + "' could not be found. Was it deleted?", MESSAGE_VERBOSE);
                     return; // Nothing to check. Stop.
                 } else throw err;
             }
-            if (!current.url) console.message("WARNING: '" + localizedName(i) + "' has no URL. It will not be updated.", i, MESSAGE_VERBOSE);
+            if (!current.url) console.message(i, "WARNING: '" + localizedName(i) + "' has no URL. It will not be updated.", MESSAGE_VERBOSE);
             if (!current.md5) {
-                console.message("Missing MD5 for previously downloaded file: '" + current.file + "'. Please delete the file and let it redownload.", i);
+                console.message(i, "Missing MD5 for previously downloaded file: '" + current.file + "'. Please delete the file and let it redownload.");
                 throw new Error("Missing MD5");
             }
             if (current.md5 !== md5) {
-                console.message("MD5 mismatch on previously downloaded file: '" + current.file + "'. Please delete the file and let it redownload.");
+                console.message(i, "MD5 mismatch on previously downloaded file: '" + current.file + "'. Please delete the file and let it redownload.");
                 throw new Error("MD5 mismatch");
             }
-            console.message("Successfully checked '" + localizedName(i) + "' file integrity.", i);
+            console.message(i, "Successfully checked '" + localizedName(i) + "' file integrity.");
         });
     } else if (current.url) {
-        console.message("Skipping file integrity check. '" + localizedName(i) + "' has not been downloaded yet.", i, MESSAGE_VERBOSE);
+        console.message(i, "Skipping file integrity check. '" + localizedName(i) + "' has not been downloaded yet.", MESSAGE_VERBOSE);
     } else {
-        console.message("ERROR: '" + localizedName(i) + "' has no configured file or URL.", i);
+        console.message(i, "ERROR: '" + localizedName(i) + "' has no configured file or URL.");
         throw new Error("Missing file");
     }
 }
