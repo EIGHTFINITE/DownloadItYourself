@@ -4,7 +4,7 @@
 global.delayedLog = [];
 global.finishedThreads = -1;
 
-module.exports = function(msg, i, verbose) {
+module.exports = function(i, msg, verbose) {
     if (global.config.verbose || !verbose) {
         if (typeof i === "number") {
             var numberLength = global.downloads.length.toString().length;
