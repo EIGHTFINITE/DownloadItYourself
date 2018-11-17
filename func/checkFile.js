@@ -6,6 +6,7 @@ var md5File = require("md5-file");
 
 // Functions
 var localizedName = require("../func/localizedName.js");
+var closeThread = require("../func/closeThread.js");
 
 // Variables
 var MESSAGE_VERBOSE = true;
@@ -19,6 +20,7 @@ module.exports = function(i, current) {
                 if (err.code === "ENOENT") {
                     if (!current.url) {
                         console.message(i, "WARNING: '" + localizedName(i) + "' is missing its file and has no URL to update from.");
+						closeThread(i);
                         return; // Nothing to check. Stop.
                     }
                     console.message(i, "WARNING: '" + current.file + "' could not be found. Was it deleted?", MESSAGE_VERBOSE);
@@ -35,6 +37,12 @@ module.exports = function(i, current) {
                 throw new Error("MD5 mismatch");
             }
             console.message(i, "Successfully checked '" + localizedName(i) + "' file integrity.");
+			// Depending on what decided to execute first. Close the message thread once we know the file is both up to date and it's integrity has been checked.
+			if (typeof global.checks[i] === "object" && global.checks[i].eitherUpToDateOrChecked) closeThread(i);
+			else {
+				global.checks[i] = {};
+				global.checks[i].eitherUpToDateOrChecked = true;
+			}
         });
     } else if (current.url) {
         console.message(i, "Skipping file integrity check. '" + localizedName(i) + "' has not been downloaded yet.", MESSAGE_VERBOSE);

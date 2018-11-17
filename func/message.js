@@ -8,7 +8,7 @@ global.threads = [];
 module.exports = function(i, msg, verbose) {
     if (global.config.verbose || !verbose) {
         if (!global.threads[i] === true) {
-			throw new Error("Thread [" + i + "] is not active.");
+			throw new Error("Thread [" + i + '] is not active. Unable to push message: "' + msg + '".');
 		}
 		var numberLength = global.downloads.length.toString().length;
 		msg = "[" + i.toString().padStart(global.downloads.length.toString().length, "0") + "] " + msg;
