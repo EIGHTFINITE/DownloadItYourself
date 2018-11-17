@@ -2,7 +2,7 @@
   "name": "modpack-updater",
   "version": "0.0.1",
   "description": "Updates a given set of mods.",
-  "main": "updater.js",
+  "main": "main.js",
   "author": "EIGHTFINITE",
   "license": "MIT",
   "repository": {
