@@ -13,6 +13,7 @@ var checkFile = require("./func/checkFile.js");
 var parseDownload = require("./func/parseDownload.js");
 var downloadFile = require("./func/downloadFile.js");
 console.message = require("./func/message.js");
+var registerThread = require("./func/registerThread.js");
 
 // Globals
 global.list = void(0);
@@ -32,6 +33,7 @@ fs.readFile("../downloadlist.json", "utf8", function(err, data) {
     var current;
     for (var i = 0; i < global.downloads.length; i++) {
         current = global.downloads[i];
+		registerThread(i);
         checkFile(i, current);
         if (current.url) parseDownload(i, current);
     }
