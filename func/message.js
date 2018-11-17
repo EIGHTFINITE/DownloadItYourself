@@ -1,5 +1,8 @@
 (function() {
 
+// Functions
+var registerThread = require("../func/registerThread.js");
+
 // Globals
 global.delayedLog = [];
 global.finishedThreads = -1;
@@ -8,7 +11,7 @@ global.threads = [];
 module.exports = function(i, msg, verbose) {
     if (global.config.verbose || !verbose) {
         if (!global.threads[i] === true) {
-			throw new Error("Thread [" + i + '] is not active. Unable to push message: "' + msg + '".');
+			registerThread(i);
 		}
 		var numberLength = global.downloads.length.toString().length;
 		msg = "[" + i.toString().padStart(global.downloads.length.toString().length, "0") + "] " + msg;
