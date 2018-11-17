@@ -7,6 +7,7 @@ var md5File = require("md5-file");
 
 // Functions
 var localizedName = require("../func/localizedName.js");
+var closeThread = require("../func/closeThread.js");
 
 module.exports = function(i, current, temp) {
     // Override filename
@@ -16,6 +17,13 @@ module.exports = function(i, current, temp) {
     // Are we about to download the same file we already have?
     if ((current.md5 && temp.md5 ? current.md5 === temp.md5 : true) && (current.file === temp.file || current.file === temp.file + ".disabled") && fs.existsSync("../_temp" + "/" + current.file)) { // Nothing to update.
         console.message(i, "'" + localizedName(i) + "' is already up to date.");
+		// Depending on what decided to execute first. Close the message thread once we know the file is both up to date and it's integrity has been checked.
+		if (typeof global.checks[i] === "object" && global.checks[i].eitherUpToDateOrChecked) closeThread(i);
+		else {
+			global.checks[i] = {};
+			global.checks[i].eitherUpToDateOrChecked = true;
+		}
+		// Did the disabled state change?
         if (!current.disabled && current.file.endsWith(".disabled")) {
             temp.file = current.file.substring(0, current.file.length - 9);
             console.message(i, "Enabling '" + localizedName(i) + "'.");
@@ -64,6 +72,7 @@ module.exports = function(i, current, temp) {
         }
         // Update successful.
         console.message(i, "'" + localizedName(i) + "' has successfully updated." + ("md5" in temp ? " (MD5 matches)" : ""));
+		closeThread(i);
         // Update file location.
         current.file = temp.originalFilename + (current.disabled ? ".disabled" : "");
     });

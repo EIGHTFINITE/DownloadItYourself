@@ -22,6 +22,7 @@ global.config = void(0);
 global.delayedLog = [];
 global.finishedThreads = -1;
 global.threads = [];
+global.checks = [];
 
 // Load config and get started
 fs.readFile("../downloadlist.json", "utf8", function(err, data) {
