@@ -19,7 +19,6 @@ global.list = void(0);
 global.downloads = void(0);
 global.config = void(0);
 global.delayedLog = [];
-global.finishedThreads = -1;
 global.threads = [];
 global.checks = [];
 
