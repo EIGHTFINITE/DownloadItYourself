@@ -16,7 +16,7 @@ var MESSAGE_VERBOSE = true;
 module.exports = function(i, current, temp, $) {
     temp = (typeof temp === 'undefined' ? {} : temp);
     fs.readFile("../drivers/" + url.parse(current.url).host + ".js", "utf8", function(err, script) {
-        console.message("Checking '" + localizedName(i) + "' for updates.", i, MESSAGE_VERBOSE);
+        console.message(i, "Checking '" + localizedName(i) + "' for updates.", MESSAGE_VERBOSE);
         if (err) throw err;
         eval(script); // There must be a better way to do this.
     });
