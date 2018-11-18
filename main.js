@@ -11,7 +11,6 @@ process.chdir(__dirname + "/_temp");
 // Functions
 var checkFile = require("./func/checkFile.js");
 var updateFile = require("./func/updateFile.js");
-var downloadFile = require("./func/downloadFile.js");
 console.message = require("./func/message.js");
 
 // Globals

@@ -7,7 +7,7 @@ request(current.url, function(err, response, html) {
     $ = cheerio.load(html);
     temp.href = $("h2.header-version:contains(DOWNLOADS)").nextAll("p").find("a").attr("href");
     temp.file = temp.href.substring(temp.href.lastIndexOf("/") + 1);
-    downloadFile(i, current, temp);
+    updateFile(i, current, temp);
     if (!current.name) current.name = "Shaders Mod";
     if (!("disabled" in current)) current.disabled = false;
 });
