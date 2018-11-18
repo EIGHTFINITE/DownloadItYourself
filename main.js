@@ -10,7 +10,7 @@ process.chdir(__dirname + "/_temp");
 
 // Functions
 var checkFile = require("./func/checkFile.js");
-var parseDownload = require("./func/parseDownload.js");
+var updateFile = require("./func/updateFile.js");
 var downloadFile = require("./func/downloadFile.js");
 console.message = require("./func/message.js");
 
@@ -34,7 +34,7 @@ fs.readFile("../downloadlist.json", "utf8", function(err, data) {
     for (var i = 0; i < global.downloads.length; i++) {
         current = global.downloads[i];
         checkFile(i, current);
-        if (current.url) parseDownload(i, current);
+        if (current.url) updateFile(i, current);
     }
 });
 
