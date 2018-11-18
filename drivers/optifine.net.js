@@ -14,7 +14,7 @@ request(current.url, function(err, response, html) {
         $ = cheerio.load(html);
         temp.file = $("span#Download a").text().trim().replace(/^(Download )/, "").trim();
         temp.href = response.request.uri.protocol + "//" + response.request.uri.host + "/" + $("span#Download a").attr("href");
-        downloadFile(i, current, temp);
+        updateFile(i, current, temp);
     });
     if (!current.name) current.name = $("h2:contains(" + global.config.version + ")").next("h3").text().trim();
     if (!("disabled" in current)) current.disabled = false;
