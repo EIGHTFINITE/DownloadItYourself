@@ -44,6 +44,7 @@ function pushLateMessages() {
 module.exports = function(i, msg, verbose) {
 	if (arguments.length === 0) {
 		pushLateMessages();
+		return;
 	}
 	if (global.config.verbose || !verbose) {
 		if (!global.threads[i] === true) {

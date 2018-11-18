@@ -49,18 +49,7 @@ process.on('exit', function() {
 	}
 	// Process leftover messages
 	if (global.config["delayed-log"] && global.delayedLog.length) {
-		console.log("WARNING: Not all messages were pushed to the console. Appending messages now.");
-		var delayedLogCopy = global.delayedLog.slice();
-		var numberLength = global.downloads.length.toString().length;
-		global.delayedLog.sort(function(a, b) {
-			var aInt = parseInt(a.substring(1, numberLength + 1));
-			var bInt = parseInt(b.substring(1, numberLength + 1));
-			if (aInt === bInt) return delayedLogCopy.indexOf(a) - delayedLogCopy.indexOf(b);
-			return aInt - bInt;
-		});
-		while (global.delayedLog.length) {
-			console.log(global.delayedLog.shift());
-		}
+		console.message();
 	}
 	// Save downloadlist
     global.downloads.sort((a, b) => a.name.localeCompare(b.name, 'en', {
