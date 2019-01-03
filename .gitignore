@@ -1,3 +1,4 @@
-_temp/
-minecraft/
-server/
+/_temp/
+/minecraft/
+/server/
+.DS_Store
