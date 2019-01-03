@@ -5,31 +5,44 @@ var fs = require("fs-extra");
 var url = require("url");
 var cheerio = require("cheerio");
 var request = require("request");
+var md5File = require("md5-file");
 
 // Functions
 var localizedName = require("../func/localizedName.js");
+var closeThread = require("../func/closeThread.js");
 
 // Variables
 var MESSAGE_VERBOSE = true;
 
-module.exports = function(i, current, temp, $) {
-    if (typeof temp === 'undefined') temp = current;
-	if(true) {
-		// Url is a file
-		fs.readFile("../drivers/default.js", "utf8", function(err, script) {
-			console.message(i, "Downloading '" + localizedName(i) + "'.", MESSAGE_VERBOSE);
-			if (err) throw err;
-			eval(script); // There must be a better way to do this.
-		});
+module.exports = function(i, current, temp) {
+	var updateFile = module.exports;
+
+	// Copy current into temp
+	if (typeof temp === 'undefined') {
+		temp = Object.assign({}, current);
+		delete temp.file;
+		delete temp.md5;
 	}
-    else {
-		// Url is a web page
-		fs.readFile("../drivers/" + url.parse(current.url).host + ".js", "utf8", function(err, script) {
+
+	// Read the headers of our next url
+	request(temp.url).on('response', function(response) {
+		var remote = this;
+
+		if(response.headers['content-type'].startsWith('text/html')) {
+			// Url is a webpage
+			if(!fs.existsSync("../drivers/" + this.host + ".js"))
+				throw new Error('Missing driver for ' + this.host);
+			var script = fs.readFileSync("../drivers/" + this.host + ".js", "utf8")
 			console.message(i, "Checking '" + localizedName(i) + "' for updates.", MESSAGE_VERBOSE);
-			if (err) throw err;
-			eval(script); // There must be a better way to do this.
-		});
-	}
+			eval(script);
+		}
+		else {
+			// Url is a file
+			var script = fs.readFileSync("../drivers/default.js", "utf8");
+			console.message(i, "Downloading '" + localizedName(i) + "'.", MESSAGE_VERBOSE);
+			eval(script);
+		}
+	});
 }
 
 })();
