@@ -13,6 +13,6 @@ request(temp.url, function(err, response, html) {
 	else temp.url = $(".downloads>.download>.title>.promo-recommended").parent().parent().find(".links .link .classifier-universal").parent().attr("href");
 	temp.url = temp.url.substring(temp.url.indexOf('&url=') + 5);
 	temp.file = temp.url.substring(temp.url.lastIndexOf("/") + 1);
-	updateFile(i, current, temp);
+	updateFile(i, current, temp, callback);
 	if (!("preview" in current)) current.preview = false;
 });

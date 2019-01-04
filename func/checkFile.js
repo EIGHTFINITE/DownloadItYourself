@@ -11,7 +11,7 @@ var closeThread = require("../func/closeThread.js");
 // Variables
 var MESSAGE_VERBOSE = true;
 
-module.exports = function(i, current) {
+module.exports = function(i, current, callback) {
     if (current["folder-override"]) fs.ensureDirSync("../" + current["folder-override"]);
     console.message(i, "Checking '" + localizedName(i) + "' file integrity.", MESSAGE_VERBOSE);
     if (current.file) {
@@ -50,6 +50,7 @@ module.exports = function(i, current) {
         console.message(i, "ERROR: '" + localizedName(i) + "' has no configured file or URL.");
         throw new Error("Missing file");
     }
+	callback();
 }
 
 })();
