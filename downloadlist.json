@@ -120,10 +120,9 @@
         },
         {
             "disabled": false,
-            "file": "forge-1.7.10-10.13.4.1614-1.7.10-universal.jar",
-            "file-override": "FTBServer-1.7.10-1614.jar",
+            "file": "forge-1.7.10-10.13.4.1614-1.7.10-installer.jar",
             "folder-override": "server",
-            "md5": "add0fba161c4652a96efb4264ec2d9ec",
+            "md5": "f9b1c73625bb00a2f8b5f76a2217c0c9",
             "name": "Forge/FML",
             "preview": true,
             "url": "https://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.7.10.html"
