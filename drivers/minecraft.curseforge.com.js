@@ -14,7 +14,7 @@ request(temp.url, function(err, response, html) {
         temp.md5 = $("span.md5").text().trim();
         temp.file = $("div.info-data.overflow-tip").text().trim();
         temp.url = response.request.uri.protocol + "//" + response.request.uri.host + $("a.button.fa-icon-download:not(.alt)").attr("href");
-        updateFile(i, current, temp);
+        updateFile(i, current, temp, callback);
     });
     if (!current.name) current.name = $("h1.project-title").text().trim();
 });

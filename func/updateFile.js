@@ -14,8 +14,13 @@ var closeThread = require("../func/closeThread.js");
 // Variables
 var MESSAGE_VERBOSE = true;
 
-module.exports = function(i, current, temp) {
+module.exports = function(i, current, temp, callback) {
 	var updateFile = module.exports;
+
+	if(!current.url) {
+		console.message(i, "WARNING: '" + localizedName(i) + "' has no URL to update from.");
+		return;
+	}
 
 	// Copy current into temp
 	if (typeof temp === 'undefined') {

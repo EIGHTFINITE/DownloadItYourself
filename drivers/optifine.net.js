@@ -14,7 +14,7 @@ request(temp.url, function(err, response, html) {
         $ = cheerio.load(html);
         temp.file = $("span#Download a").text().trim().replace(/^(Download )/, "").trim();
         temp.url = response.request.uri.protocol + "//" + response.request.uri.host + "/" + $("span#Download a").attr("href");
-        updateFile(i, current, temp);
+        updateFile(i, current, temp, callback);
     });
     if (!current.name) current.name = $("h2:contains(" + global.config.version + ")").next("h3").text().trim();
     if (!("preview" in current)) current.preview = false;

@@ -47,11 +47,14 @@ module.exports = function(i, msg, verbose) {
 		return;
 	}
 	if (global.config.verbose || !verbose) {
-		if (!global.threads[i] === true) {
+		if (typeof global.threads[i] === "undefined") {
 			registerThread(i);
 		}
 		numberLength = global.downloads.length.toString().length;
 		msg = "[" + i.toString().padStart(numberLength, "0") + "] " + msg;
+		if (global.threads[i] === false) {
+			throw new Error('Attempting to send message "' + msg + '" to closed thread [' + i + "].");
+		}
 		if (global.config["delayed-log"]) {
 			// Keep our current message for later
 			global.delayedLog.push(msg);
