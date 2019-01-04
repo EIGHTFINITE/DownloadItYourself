@@ -18,11 +18,11 @@ module.exports = function(i, current) {
 	}
 
 	// Copy this file to the configured folder
-	fs.copySync("../_temp" + "/" + current.file, "../" + (current["folder-override"] ? current["folder-override"] : global.config.folder) + "/" + current.file);
+	fs.copySync("../_temp" + "/" + current.file, "../" + (current["folder-override"] ? current["folder-override"] : global.config.folder) + "/" + (current["file-override"] ? current["file-override"] : current.file));
 	console.message(i, "Copied '" + localizedName(i) + "' to '" + (current["folder-override"] ? current["folder-override"] : global.config.folder) + "/'");
 	// Copy this file to any additional folders
 	if (current["additional-folder"]) {
-		fs.copySync("../_temp" + "/" + current.file, "../" + current["additional-folder"] + "/" + current.file);
+		fs.copySync("../_temp" + "/" + current.file, "../" + current["additional-folder"] + "/" + (current["file-override"] ? current["file-override"] : current.file));
 		console.message(i, "Copied '" + localizedName(i) + "' to '" + current["additional-folder"] + "/'");
 	}
 	closeThread(i);
