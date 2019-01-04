@@ -9,8 +9,9 @@ request(temp.url, function(err, response, html) {
 	console.message(i, "Navigating to: '" + temp.url + "'.", MESSAGE_VERBOSE);
 	if (err) throw err;
 	var $ = cheerio.load(html);
-	temp.url = $(".downloads>.download>.title>" + (temp.preview === true ? ".promo-latest" : ".promo-recommended")).parent().parent().find(".links .link .classifier-installer").parent().attr("href");
-	temp.url = temp.url.substring(temp.url.indexOf('&url=') + 5);
+	temp.url = response.request.uri.protocol + "//" + response.request.uri.host + $(".download-list " + (temp.preview === true ? ".promo-latest" : ".promo-recommended")).parent().parent().find('a.info-link[href$="-installer.jar"]').attr("href");
+	temp.md5 = $(".download-list " + (temp.preview === true ? ".promo-latest" : ".promo-recommended")).parent().parent().find('a.info-link[href$="-installer.jar"]~div').text().trim().substr(4).trim();
+	temp.md5 = temp.md5.substring(0, temp.md5.indexOf('\n'));
 	temp.file = temp.url.substring(temp.url.lastIndexOf("/") + 1);
 	updateFile(i, current, temp, callback);
 	if (!("preview" in current)) current.preview = false;
