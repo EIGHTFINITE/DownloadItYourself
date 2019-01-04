@@ -1,6 +1,9 @@
 (function() {
 
 module.exports = function(i, skip) {
+	if(typeof global.downloads[i] === "undefined")
+		throw new Error("Array index '" + i + "' is out of bounds.");
+
     if(typeof skip !== "string") skip = "";
     if(!skip.includes("name") && global.downloads[i].name) return global.downloads[i].name.toString();
     if(!skip.includes("url") && global.downloads[i].url) return global.downloads[i].url.toString();
