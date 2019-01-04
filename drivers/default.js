@@ -11,12 +11,21 @@ remote.pipe(fs.createWriteStream("../_temp" + "/" + temp.file)).on("finish", fun
 		console.message(i, "ERROR: MD5 mismatch for '" + localizedName(i) + "'. Download failed.");
 		throw new Error("MD5 mismatch");
 	}
-	// Create copies of file in the additional folders.
-	if (current["additional-folder"]) {
-		fs.copySync("../_temp" + "/" + temp.file, "../" + current["additional-folder"] + "/" + temp.file);
-		console.message(i, "Copied '" + localizedName(i) + "' to '" + current["additional-folder"] + "/'");
-	}
 	// Update successful.
 	console.message(i, "'" + localizedName(i) + "' has successfully updated." + ("md5" in temp ? " (MD5 matches)" : ""));
+	// Copy this file to the configured folder
+	if (current["folder-override"]) {
+		fs.copySync("../_temp" + "/" + current.file, "../" + current["folder-override"] + "/" + current.file);
+		console.message(i, "Copied '" + localizedName(i) + "' to '" + current["folder-override"] + "/'");
+	}
+	else {
+		fs.copySync("../_temp" + "/" + current.file, "../" + global.config.folder + "/" + current.file);
+		console.message(i, "Copied '" + localizedName(i) + "' to '" + global.config.folder + "/'");
+	}
+	// Copy this file to any additional folders
+	if (current["additional-folder"]) {
+		fs.copySync("../_temp" + "/" + current.file, "../" + current["additional-folder"] + "/" + current.file);
+		console.message(i, "Copied '" + localizedName(i) + "' to '" + current["additional-folder"] + "/'");
+	}
 	closeThread(i);
 });
