@@ -11,6 +11,7 @@ process.chdir(__dirname + "/_temp");
 // Functions
 var checkFile = require("./func/checkFile.js");
 var updateFile = require("./func/updateFile.js");
+var copyFile = require("./func/copyFile.js");
 console.message = require("./func/message.js");
 
 // Globals
@@ -29,11 +30,16 @@ fs.readFile("../downloadlist.json", "utf8", function(err, data) {
     global.downloads = global.list.downloads;
     global.config = global.list.config;
     // Start working
-    var current;
     for (var i = 0; i < global.downloads.length; i++) {
-        current = global.downloads[i];
-        checkFile(i, current);
-        if (current.url) updateFile(i, current);
+		(function(i) {
+			var current = global.downloads[i];
+			var j = parseInt(i.toString());
+			var k = parseInt(i.toString());
+			var l = parseInt(i.toString());
+			checkFile(j, current, function(){ // Check integrity
+			updateFile(k, current, void(0), function(){ // Download updates
+			copyFile(l, current)})}); // Copy files
+		})(i);
     }
 });
 
