@@ -10,10 +10,11 @@ var closeThread = require("../func/closeThread.js");
 // Variables
 var MESSAGE_VERBOSE = true;
 
-module.exports = function(i, current) {
+module.exports = function(i, current, callback) {
 	// Check if file exists
 	if(!current.file || !fs.existsSync("../_temp" + "/" + current.file, "../" + (current["folder-override"] ? current["folder-override"] : global.config.folder) + "/" + current.file)) {
 		console.message(i, "WARNING: '" + localizedName(i) + "' is missing its file.");
+		callback();
 		return;
 	}
 
@@ -25,7 +26,10 @@ module.exports = function(i, current) {
 		fs.copySync("../_temp" + "/" + current.file, "../" + current["additional-folder"] + "/" + (current["file-override"] ? current["file-override"] : current.file) + (current["file-disabled"] ? ".disabled" : ""));
 		console.message(i, "Copied '" + localizedName(i) + "' to '" + current["additional-folder"] + "/'");
 	}
-	closeThread(i);
+
+	if(!current.exec || current.exec.length < 1)
+		closeThread(i);
+	callback();
 }
 
 })();
