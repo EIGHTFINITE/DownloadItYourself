@@ -19,6 +19,7 @@ module.exports = function(i, current, temp, callback) {
 
 	if(!current.url) {
 		console.message(i, "WARNING: '" + localizedName(i) + "' has no URL to update from.");
+		callback();
 		return;
 	}
 
