@@ -11,6 +11,7 @@ process.chdir(__dirname + "/_temp");
 // Functions
 var checkFile = require("./func/checkFile.js");
 var updateFile = require("./func/updateFile.js");
+var execCmd = require("./func/execCmd.js");
 var copyFile = require("./func/copyFile.js");
 console.message = require("./func/message.js");
 
@@ -36,9 +37,11 @@ fs.readFile("../downloadlist.json", "utf8", function(err, data) {
 			var j = parseInt(i.toString());
 			var k = parseInt(i.toString());
 			var l = parseInt(i.toString());
+			var m = parseInt(i.toString());
 			checkFile(j, current, function(){ // Check integrity
 			updateFile(k, current, void(0), function(){ // Download updates
-			copyFile(l, current)})}); // Copy files
+			copyFile(l, current, function(){ // Copy files
+			execCmd(m, current)})})}); // Execute commands
 		})(i);
     }
 });
