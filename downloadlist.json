@@ -119,13 +119,27 @@
             "url": "https://minecraft.curseforge.com/projects/flatsigns"
         },
         {
+            "exec": {
+                "args": "/c ___JAVA___ -jar ___FILE___ --installServer && ren forge-1.7.10-10.13.4.1614-1.7.10-universal.jar FTBServer-1.7.10-1614.jar",
+                "cmd": "cmd",
+                "dir": "../server/"
+            },
             "file": "forge-1.7.10-10.13.4.1614-1.7.10-installer.jar",
             "file-disabled": false,
             "folder-override": "server",
             "md5": "f9b1c73625bb00a2f8b5f76a2217c0c9",
-            "name": "Forge/FML",
+            "name": "Forge Installer",
             "preview": true,
             "url": "https://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.7.10.html"
+        },
+        {
+            "file": "forge-1.7.10-10.13.4.1614-1.7.10-universal.jar",
+            "file-disabled": false,
+            "file-override": "FTBServer-1.7.10-1614.jar",
+            "folder-override": "server",
+            "md5": "add0fba161c4652a96efb4264ec2d9ec",
+            "name": "Forge/FML",
+            "preview": true
         },
         {
             "file": "guava-17.0.jar",
