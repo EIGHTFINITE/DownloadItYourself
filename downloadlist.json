@@ -222,6 +222,14 @@
             "url": "https://minecraft.curseforge.com/projects/morpheus"
         },
         {
+            "file": "mmc-stable-win32.zip",
+            "folder-override": "MultiMC",
+            "md5": "070cf73a18a9b23aebe46c649d8082a6",
+            "name": "MultiMC",
+            "preview": false,
+            "url": "https://multimc.org/"
+        },
+        {
             "additional-folder": "server/mods",
             "file": "NotEnoughItems-1.7.10-1.0.5.120-universal.jar",
             "file-disabled": false,
