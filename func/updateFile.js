@@ -18,7 +18,7 @@ module.exports = function(i, current, temp, callback) {
 	var updateFile = module.exports;
 
 	if(!current.url) {
-		console.message(i, "WARNING: '" + localizedName(i) + "' has no URL to update from.");
+		console.message(i, "WARNING: '" + localizedName(i) + "' has no URL. It will not be updated.", MESSAGE_VERBOSE);
 		callback();
 		return;
 	}
@@ -39,13 +39,13 @@ module.exports = function(i, current, temp, callback) {
 			if(!fs.existsSync("../drivers/" + this.host + ".js"))
 				throw new Error('Missing driver for ' + this.host);
 			var script = fs.readFileSync("../drivers/" + this.host + ".js", "utf8")
-			console.message(i, "Checking '" + localizedName(i) + "' for updates.", MESSAGE_VERBOSE);
+			console.message(i, "Checking '" + localizedName(i) + "' for updates.");
 			eval(script);
 		}
 		else {
 			// Url is a file
 			var script = fs.readFileSync("../drivers/default.js", "utf8");
-			console.message(i, "Downloading '" + localizedName(i) + "'.", MESSAGE_VERBOSE);
+			console.message(i, "Downloading '" + remote.href + "' as '" + localizedName(i) + "'.");
 			eval(script);
 		}
 	});

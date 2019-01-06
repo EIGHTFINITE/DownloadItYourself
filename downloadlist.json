@@ -120,7 +120,7 @@
         },
         {
             "exec": {
-                "args": "/c ___JAVA___ -jar ___FILE___ --installServer && ren forge-1.7.10-10.13.4.1614-1.7.10-universal.jar FTBServer-1.7.10-1614.jar",
+                "args": "/c ___JAVA___ -jar ___FILE___ --installServer && copy forge-1.7.10-10.13.4.1614-1.7.10-universal.jar FTBServer-1.7.10-1614.jar /Y",
                 "cmd": "cmd",
                 "dir": "../server/"
             },
@@ -223,7 +223,7 @@
         },
         {
             "exec": {
-                "args": "/c ___7Z___ x ___FILE___ -o.. -y && ren MultiMC.exe Minecraft.exe",
+                "args": "/c ___7Z___ x ___FILE___ -o.. -y && copy MultiMC.exe Minecraft.exe /Y",
                 "cmd": "cmd",
                 "dir": "../MultiMC/"
             },

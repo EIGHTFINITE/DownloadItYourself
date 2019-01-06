@@ -18,16 +18,10 @@ module.exports = function(i, current, callback) {
         md5File("../_temp" + "/" + (current["file-override"] ? current["file-override"] : current.file), (err, md5) => {
             if (err) {
                 if (err.code === "ENOENT") {
-                    if (!current.url) {
-                        console.message(i, "WARNING: '" + localizedName(i) + "' is missing its file and has no URL to update from.");
-						closeThread(i);
-                        return; // Nothing to check. Stop.
-                    }
-                    console.message(i, "WARNING: '" + current.file + "' could not be found. Was it deleted?", MESSAGE_VERBOSE);
+                    console.message(i, "Skipping file integrity check. '" + localizedName(i) + "' has not yet been downloaded.", MESSAGE_VERBOSE);
                     return; // Nothing to check. Stop.
                 } else throw err;
             }
-            if (!current.url) console.message(i, "WARNING: '" + localizedName(i) + "' has no URL. It will not be updated.", MESSAGE_VERBOSE);
             if (!current.md5) {
                 console.message(i, "Missing MD5 for previously downloaded file: '" + current.file + "'. Please delete the file and let it redownload.");
                 throw new Error("Missing MD5");
@@ -36,7 +30,7 @@ module.exports = function(i, current, callback) {
                 console.message(i, "MD5 mismatch on previously downloaded file: '" + current.file + "'. Please delete the file and let it redownload.");
                 throw new Error("MD5 mismatch");
             }
-            console.message(i, "Successfully checked '" + localizedName(i) + "' file integrity.");
+            console.message(i, "Successfully checked '" + localizedName(i) + "' file integrity.", MESSAGE_VERBOSE);
 			// Depending on what decided to execute first. Close the message thread once we know the file is both up to date and it's integrity has been checked.
 			if (typeof global.checks[i] === "object" && global.checks[i].eitherUpToDateOrChecked) closeThread(i);
 			else {
@@ -45,7 +39,7 @@ module.exports = function(i, current, callback) {
 			}
         });
     } else if (current.url) {
-        console.message(i, "Skipping file integrity check. '" + localizedName(i) + "' has not been downloaded yet.", MESSAGE_VERBOSE);
+        console.message(i, "Skipping file integrity check. '" + localizedName(i) + "' has not yet been downloaded.", MESSAGE_VERBOSE);
     } else {
         console.message(i, "ERROR: '" + localizedName(i) + "' has no configured file or URL.");
         throw new Error("Missing file");
