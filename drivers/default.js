@@ -1,8 +1,6 @@
 /**
  * Driver for downloading binary files
  */
-if(!("file" in temp))
-	temp.file = temp.url.substring(temp.url.lastIndexOf("/") + 1);
 current.file = temp.file;
 remote.pipe(fs.createWriteStream("../_temp" + "/" + temp.file)).on("finish", function() {
 	current.md5 = md5File.sync("../_temp" + "/" + temp.file);
