@@ -2,7 +2,7 @@
  * Driver for downloading from shadersmod.net
  */
 request(temp.url, function(err, response, html) {
-    console.message(i, "Navigating to '" + temp.url + "'.");
+    console.message(i, "Navigating to '" + shortUrl(temp.url) + "'.");
     if (err) throw err;
     var $ = cheerio.load(html);
     temp.url = $("h2.header-version:contains(DOWNLOADS)").nextAll("p").find("a").attr("href");

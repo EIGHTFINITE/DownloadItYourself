@@ -10,6 +10,7 @@ var md5File = require("md5-file");
 // Functions
 var localizedName = require("../func/localizedName.js");
 var closeThread = require("../func/closeThread.js");
+var shortUrl = require("../func/shortUrl.js");
 
 // Variables
 var MESSAGE_VERBOSE = true;
@@ -22,6 +23,10 @@ module.exports = function(i, current, temp, callback) {
 		callback();
 		return;
 	}
+
+	// Check protocol
+	if(!current.url.startsWith('https://') && !current.url.startsWith('http://'))
+		throw new Error("Unknown protocol.");
 
 	// Copy current into temp
 	if (typeof temp === 'undefined') {
@@ -47,7 +52,8 @@ module.exports = function(i, current, temp, callback) {
 			var script = fs.readFileSync("../drivers/default.js", "utf8");
 			if(!("file" in temp))
 				temp.file = temp.url.substring(temp.url.lastIndexOf("/") + 1);
-			console.message(i, "Downloading '" + remote.href + "' as '" + temp.file + "'.");
+			var shortenedUrl = shortUrl(remote.href, temp.file);
+			console.message(i, "Downloading '" + shortenedUrl + (shortenedUrl.substring(shortenedUrl.lastIndexOf("/") + 1) === temp.file ? "" : "' as '" + temp.file) + "'.");
 			eval(script);
 		}
 	});
