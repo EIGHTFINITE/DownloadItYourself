@@ -10,21 +10,24 @@
         {
             "additional-folder": "server/mods",
             "file": "A Block of Charcoal-1.0.jar",
-            "file-disabled": false,
             "md5": "50dff6375b66c3e882157698ede23c9d",
             "name": "A Block of Charcoal",
             "url": "https://minecraft.curseforge.com/projects/a-block-of-charcoal"
         },
         {
-            "file": "akka-actor_2.11-2.3.3.jar",
-            "file-disabled": false,
+            "exec": {
+                "args": "-cp ___UNPACKER___ nice.work.forge.LibraryUnpacker --checksums ___FILE___",
+                "cmd": "___JAVA___",
+                "dir": "../server/libraries/com/typesafe/akka/akka-actor_2.11/2.3.3"
+            },
+            "file": "akka-actor_2.11-2.3.3.jar.pack.xz",
             "folder-override": "server/libraries/com/typesafe/akka/akka-actor_2.11/2.3.3",
             "md5": "469367f3308e571b1bdf2192d7779807",
-            "name": "Akka Actor"
+            "name": "Akka Actor",
+            "url": "https://files.minecraftforge.net/maven/com/typesafe/akka/akka-actor_2.11/2.3.3/akka-actor_2.11-2.3.3.jar.pack.xz"
         },
         {
             "file": "commons-lang3-3.3.2.jar",
-            "file-disabled": false,
             "folder-override": "server/libraries/org/apache/commons/commons-lang3/3.3.2",
             "md5": "3128bf75a2549ebe38663401191bacab",
             "name": "Apache Commons Lang",
@@ -33,14 +36,12 @@
         {
             "additional-folder": "server/mods",
             "file": "AppleCore-mc1.7.10-3.1.1.jar",
-            "file-disabled": false,
             "md5": "169c63b60ec8a8195733b94cb47ae694",
             "name": "AppleCore",
             "url": "https://minecraft.curseforge.com/projects/applecore"
         },
         {
             "file": "asm-all-5.0.3.jar",
-            "file-disabled": false,
             "folder-override": "server/libraries/org/ow2/asm/asm-all/5.0.3",
             "md5": "c5cc4613bbdfba3ccf5f0ab85390d0b8",
             "name": "ASM",
@@ -49,7 +50,6 @@
         {
             "additional-folder": "server/mods",
             "file": "Born in a Barn 1.7.x.jar",
-            "file-disabled": false,
             "md5": "8e952a2bbca5039837d106b7c88e8920",
             "name": "Born in a Barn",
             "url": "https://minecraft.curseforge.com/projects/born-in-a-barn"
@@ -57,7 +57,6 @@
         {
             "additional-folder": "server/mods",
             "file": "Chicken Chunk Patcher 1.1.jar",
-            "file-disabled": false,
             "md5": "598778ab931a7f20831a5c719c60b541",
             "name": "Chicken Chunk Patcher",
             "url": "https://minecraft.curseforge.com/projects/chicken-chunk-patcher"
@@ -65,7 +64,6 @@
         {
             "additional-folder": "server/mods",
             "file": "ChickenChunks-1.7.10-1.3.4.19-universal.jar",
-            "file-disabled": false,
             "md5": "5592eda79bd2b52adf1d4bdceaa59b73",
             "name": "ChickenChunks",
             "url": "https://minecraft.curseforge.com/projects/chickenchunks"
@@ -73,7 +71,6 @@
         {
             "additional-folder": "server/mods",
             "file": "Chunk Pregenerator V1.7.10-1.9.2.jar",
-            "file-disabled": false,
             "md5": "653e1d38389e61a3ecaace5af21ee230",
             "name": "Chunk-Pregenerator",
             "url": "https://minecraft.curseforge.com/projects/chunkpregenerator"
@@ -81,7 +78,6 @@
         {
             "additional-folder": "server/mods",
             "file": "CleanView-1.7.10-v2.jar",
-            "file-disabled": false,
             "md5": "92e62db69e6d53bbce5558d91816d5f7",
             "name": "CleanView",
             "url": "https://minecraft.curseforge.com/projects/cleanview"
@@ -89,15 +85,22 @@
         {
             "additional-folder": "server/mods",
             "file": "CodeChickenCore-1.7.10-1.0.7.47-universal.jar",
-            "file-disabled": false,
             "md5": "07690caf86ecf79739852154f5e44750",
             "name": "CodeChickenCore",
             "url": "https://minecraft.curseforge.com/projects/codechickencore"
         },
         {
+            "additional-folder": "server/mods/1.7.10",
+            "file": "CodeChickenLib-1.7.10-1.1.3.140-universal.jar",
+            "folder-override": "minecraft/mods/1.7.10",
+            "md5": "029aad229073319d260a3d3f390f4fbc",
+            "name": "CodeChickenLib",
+            "preview": true,
+            "url": "https://files.minecraftforge.net/CodeChickenLib/"
+        },
+        {
             "additional-folder": "server/mods",
             "file": "Et Futurum-1.5.5.jar",
-            "file-disabled": false,
             "md5": "1094c49073af0c67dd32b4c3257afdd9",
             "name": "Et Futurum",
             "url": "https://minecraft.curseforge.com/projects/et-futurum"
@@ -105,7 +108,6 @@
         {
             "additional-folder": "server/mods",
             "file": "fastcraft-1.25.jar",
-            "file-disabled": false,
             "md5": "44c7c6828ac38026f443804827955345",
             "name": "FastCraft",
             "url": "https://minecraft.curseforge.com/projects/fastcraft"
@@ -113,37 +115,21 @@
         {
             "additional-folder": "server/mods",
             "file": "FlatSigns-1.7.10-universal-2.1.0.19.jar",
-            "file-disabled": false,
             "md5": "836efa16b25141b15b5db3dd157e155b",
             "name": "FlatSigns",
             "url": "https://minecraft.curseforge.com/projects/flatsigns"
         },
         {
-            "exec": {
-                "args": "/c ___JAVA___ -jar ___FILE___ --installServer && move /Y forge-1.7.10-10.13.4.1614-1.7.10-universal.jar FTBServer-1.7.10-1614.jar",
-                "cmd": "cmd",
-                "dir": "../server/"
-            },
-            "file": "forge-1.7.10-10.13.4.1614-1.7.10-installer.jar",
-            "file-disabled": false,
-            "folder-override": "server",
-            "md5": "f9b1c73625bb00a2f8b5f76a2217c0c9",
-            "name": "Forge Installer",
-            "preview": true,
-            "url": "https://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.7.10.html"
-        },
-        {
             "file": "forge-1.7.10-10.13.4.1614-1.7.10-universal.jar",
-            "file-disabled": false,
             "file-override": "FTBServer-1.7.10-1614.jar",
             "folder-override": "server",
             "md5": "add0fba161c4652a96efb4264ec2d9ec",
             "name": "Forge/FML",
-            "preview": true
+            "preview": true,
+            "url": "https://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.7.10.html"
         },
         {
             "file": "guava-17.0.jar",
-            "file-disabled": false,
             "folder-override": "server/libraries/com/google/guava/guava/17.0",
             "md5": "89fef81c2adfa9b50a64ed5cd5d8c155",
             "name": "Guava",
@@ -152,7 +138,6 @@
         {
             "additional-folder": "server/mods",
             "file": "HelpFixer-1.0.7.jar",
-            "file-disabled": false,
             "md5": "0d6ce4776f981f97a13ab02029b5fb4d",
             "name": "HelpFixer",
             "url": "https://minecraft.curseforge.com/projects/helpfixer"
@@ -160,7 +145,6 @@
         {
             "additional-folder": "server/mods",
             "file": "INpureCore-[1.7.10]1.0.0B9-62.jar",
-            "file-disabled": false,
             "md5": "89c7b3835cd2bdba7d8d054d75c7460c",
             "name": "INpureCore",
             "url": "https://minecraft.curseforge.com/projects/inpurecore"
@@ -168,14 +152,12 @@
         {
             "additional-folder": "server/mods",
             "file": "InventoryTweaks-1.59-dev-152.jar",
-            "file-disabled": false,
             "md5": "83f7ddcd5f5fd8d640aa15dc62acc6bf",
             "name": "Inventory Tweaks",
             "url": "https://minecraft.curseforge.com/projects/inventory-tweaks"
         },
         {
             "file": "jopt-simple-4.5.jar",
-            "file-disabled": false,
             "folder-override": "server/libraries/net/sf/jopt-simple/jopt-simple/4.5",
             "md5": "1372bd4823bb1ef61e7db6724f601150",
             "name": "JOpt Simple",
@@ -184,14 +166,12 @@
         {
             "additional-folder": "server/mods",
             "file": "journeymap-1.7.10-5.1.4p2-unlimited.jar",
-            "file-disabled": false,
             "md5": "0c3daa19789a67da328437a8635c2cf3",
             "name": "JourneyMap",
             "url": "https://minecraft.curseforge.com/projects/journeymap"
         },
         {
             "file": "lzma-0.0.1.jar",
-            "file-disabled": false,
             "folder-override": "server/libraries/lzma/lzma/0.0.1",
             "md5": "a3e3c3186e41c4a1a3027ba2bb23cdc6",
             "name": "LZMA",
@@ -199,15 +179,18 @@
         },
         {
             "file": "launchwrapper-1.12.jar",
-            "file-disabled": false,
             "folder-override": "server/libraries/net/minecraft/launchwrapper/1.12",
             "md5": "934b2d91c7c5be4a49577c9e6b40e8da",
             "name": "Minecraft LaunchWrapper",
             "url": "https://libraries.minecraft.net/net/minecraft/launchwrapper/1.12/launchwrapper-1.12.jar"
         },
         {
+            "exec": {
+                "args": "/c ___SERVER_SETUP___",
+                "cmd": "cmd",
+                "dir": "../server"
+            },
             "file": "minecraft_server.1.7.10.jar",
-            "file-disabled": false,
             "folder-override": "server",
             "md5": "3e8912b293b52bd54f879919bd6e4e44",
             "name": "Minecraft Server",
@@ -216,20 +199,19 @@
         {
             "additional-folder": "server/mods",
             "file": "Morpheus-1.7.10-1.6.21.jar",
-            "file-disabled": false,
             "md5": "5d31a1480db8b091757ea5ccd4e220d9",
             "name": "Morpheus",
             "url": "https://minecraft.curseforge.com/projects/morpheus"
         },
         {
             "exec": {
-                "args": "/c ___7Z___ x ___FILE___ -o.. -y && move /Y MultiMC.exe Minecraft.exe",
+                "args": "/c ___7Z___ x ___FILE___ -o.. -y && cmd /c ___MULTIMC_SETUP___",
                 "cmd": "cmd",
-                "dir": "../MultiMC/"
+                "dir": "../MultiMC"
             },
             "file": "mmc-stable-win32.zip",
             "folder-override": "MultiMC",
-            "md5": "070cf73a18a9b23aebe46c649d8082a6",
+            "md5": "cbbdfc80e3bb8059f567b9798aa818c1",
             "name": "MultiMC",
             "preview": false,
             "url": "https://multimc.org/"
@@ -237,7 +219,6 @@
         {
             "additional-folder": "server/mods",
             "file": "NotEnoughItems-1.7.10-1.0.5.120-universal.jar",
-            "file-disabled": false,
             "md5": "742e865a9a80071e80976ffedc05700e",
             "name": "NotEnoughItems",
             "url": "https://minecraft.curseforge.com/projects/notenoughitems"
@@ -245,82 +226,126 @@
         {
             "additional-folder": "server/mods",
             "file": "OpenEye-1.7.10-0.8.jar",
-            "file-disabled": false,
             "md5": "37241c2ff3d38546b5cef43c6900fdcd",
             "name": "OpenEye",
             "url": "https://minecraft.curseforge.com/projects/openeye"
         },
         {
+            "additional-file-disabled": true,
             "additional-folder": "server/mods",
             "file": "OptiFine_1.7.10_HD_U_E7.jar",
-            "file-disabled": false,
             "md5": "445062f5aaf982c36c72d90530c26850",
             "name": "OptiFine HD Ultra",
             "preview": true,
             "url": "https://optifine.net/downloads"
         },
         {
-            "file": "scala-actors-migration_2.11-1.1.0.jar",
-            "file-disabled": false,
+            "exec": {
+                "args": "-cp ___UNPACKER___ nice.work.forge.LibraryUnpacker --checksums ___FILE___",
+                "cmd": "___JAVA___",
+                "dir": "../server/libraries/org/scala-lang/scala-actors-migration_2.11/1.1.0"
+            },
+            "file": "scala-actors-migration_2.11-1.1.0.jar.pack.xz",
             "folder-override": "server/libraries/org/scala-lang/scala-actors-migration_2.11/1.1.0",
             "md5": "1db3065628f697adc8b7f4d3bd5b59c2",
-            "name": "Scala Actor Migration Kit"
+            "name": "Scala Actor Migration Kit",
+            "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-actors-migration_2.11/1.1.0/scala-actors-migration_2.11-1.1.0.jar.pack.xz"
         },
         {
-            "file": "scala-compiler-2.11.1.jar",
-            "file-disabled": false,
+            "exec": {
+                "args": "-cp ___UNPACKER___ nice.work.forge.LibraryUnpacker --checksums ___FILE___",
+                "cmd": "___JAVA___",
+                "dir": "../server/libraries/org/scala-lang/scala-compiler/2.11.1"
+            },
+            "file": "scala-compiler-2.11.1.jar.pack.xz",
             "folder-override": "server/libraries/org/scala-lang/scala-compiler/2.11.1",
             "md5": "9c88616e35796955e0ff1235b11f1475",
-            "name": "Scala Compiler API"
+            "name": "Scala Compiler API",
+            "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-compiler/2.11.1/scala-compiler-2.11.1.jar.pack.xz"
         },
         {
-            "file": "scala-continuations-library_2.11-1.0.2.jar",
-            "file-disabled": false,
+            "exec": {
+                "args": "-cp ___UNPACKER___ nice.work.forge.LibraryUnpacker --checksums ___FILE___",
+                "cmd": "___JAVA___",
+                "dir": "../server/libraries/org/scala-lang/plugins/scala-continuations-library_2.11/1.0.2"
+            },
+            "file": "scala-continuations-library_2.11-1.0.2.jar.pack.xz",
             "folder-override": "server/libraries/org/scala-lang/plugins/scala-continuations-library_2.11/1.0.2",
             "md5": "f4be606c0d0b92e58ad7414cd72e6680",
-            "name": "Scala Continuations Library"
+            "name": "Scala Continuations Library",
+            "url": "https://files.minecraftforge.net/maven/org/scala-lang/plugins/scala-continuations-library_2.11/1.0.2/scala-continuations-library_2.11-1.0.2.jar.pack.xz"
         },
         {
-            "file": "scala-continuations-plugin_2.11.1-1.0.2.jar",
-            "file-disabled": false,
+            "exec": {
+                "args": "-cp ___UNPACKER___ nice.work.forge.LibraryUnpacker --checksums ___FILE___",
+                "cmd": "___JAVA___",
+                "dir": "../server/libraries/org/scala-lang/plugins/scala-continuations-plugin_2.11.1/1.0.2"
+            },
+            "file": "scala-continuations-plugin_2.11.1-1.0.2.jar.pack.xz",
             "folder-override": "server/libraries/org/scala-lang/plugins/scala-continuations-plugin_2.11.1/1.0.2",
             "md5": "b81f2ba4690d9d1d3d89ee3a560b4a50",
-            "name": "Scala Continuations Plugin"
+            "name": "Scala Continuations Plugin",
+            "url": "https://files.minecraftforge.net/maven/org/scala-lang/plugins/scala-continuations-plugin_2.11.1/1.0.2/scala-continuations-plugin_2.11.1-1.0.2.jar.pack.xz"
         },
         {
-            "file": "scala-library-2.11.1.jar",
-            "file-disabled": false,
+            "exec": {
+                "args": "-cp ___UNPACKER___ nice.work.forge.LibraryUnpacker --checksums ___FILE___",
+                "cmd": "___JAVA___",
+                "dir": "../server/libraries/org/scala-lang/scala-library/2.11.1"
+            },
+            "file": "scala-library-2.11.1.jar.pack.xz",
             "folder-override": "server/libraries/org/scala-lang/scala-library/2.11.1",
             "md5": "f2d0c1ce6ab76531bbd48acbcd3d4ff1",
-            "name": "Scala Library API"
+            "name": "Scala Library API",
+            "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-library/2.11.1/scala-library-2.11.1.jar.pack.xz"
         },
         {
-            "file": "scala-reflect-2.11.1.jar",
-            "file-disabled": false,
+            "exec": {
+                "args": "-cp ___UNPACKER___ nice.work.forge.LibraryUnpacker --checksums ___FILE___",
+                "cmd": "___JAVA___",
+                "dir": "../server/libraries/org/scala-lang/scala-reflect/2.11.1"
+            },
+            "file": "scala-reflect-2.11.1.jar.pack.xz",
             "folder-override": "server/libraries/org/scala-lang/scala-reflect/2.11.1",
             "md5": "1d98cc27697573fb205bb5180165f74a",
-            "name": "Scala Reflection API"
+            "name": "Scala Reflection API",
+            "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-reflect/2.11.1/scala-reflect-2.11.1.jar.pack.xz"
         },
         {
-            "file": "scala-parser-combinators_2.11-1.0.1.jar",
-            "file-disabled": false,
+            "exec": {
+                "args": "-cp ___UNPACKER___ nice.work.forge.LibraryUnpacker --checksums ___FILE___",
+                "cmd": "___JAVA___",
+                "dir": "../server/libraries/org/scala-lang/scala-parser-combinators_2.11/1.0.1"
+            },
+            "file": "scala-parser-combinators_2.11-1.0.1.jar.pack.xz",
             "folder-override": "server/libraries/org/scala-lang/scala-parser-combinators_2.11/1.0.1",
             "md5": "d45bb1657625464f46da3596c1f941de",
-            "name": "Scala Standard Parser Combinator Library"
+            "name": "Scala Standard Parser Combinator Library",
+            "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-parser-combinators_2.11/1.0.1/scala-parser-combinators_2.11-1.0.1.jar.pack.xz"
         },
         {
-            "file": "scala-swing_2.11-1.0.1.jar",
-            "file-disabled": false,
+            "exec": {
+                "args": "-cp ___UNPACKER___ nice.work.forge.LibraryUnpacker --checksums ___FILE___",
+                "cmd": "___JAVA___",
+                "dir": "../server/libraries/org/scala-lang/scala-swing_2.11/1.0.1"
+            },
+            "file": "scala-swing_2.11-1.0.1.jar.pack.xz",
             "folder-override": "server/libraries/org/scala-lang/scala-swing_2.11/1.0.1",
             "md5": "db6a3ef629c32bf9515c8937fe422786",
-            "name": "Scala Swing API"
+            "name": "Scala Swing API",
+            "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-swing_2.11/1.0.1/scala-swing_2.11-1.0.1.jar.pack.xz"
         },
         {
-            "file": "scala-xml_2.11-1.0.2.jar",
-            "file-disabled": false,
+            "exec": {
+                "args": "-cp ___UNPACKER___ nice.work.forge.LibraryUnpacker --checksums ___FILE___",
+                "cmd": "___JAVA___",
+                "dir": "../server/libraries/org/scala-lang/scala-xml_2.11/1.0.2"
+            },
+            "file": "scala-xml_2.11-1.0.2.jar.pack.xz",
             "folder-override": "server/libraries/org/scala-lang/scala-xml_2.11/1.0.2",
             "md5": "1c5a20efca1474626e0e0123f9cdd8ce",
-            "name": "Scala XML API"
+            "name": "Scala XML API",
+            "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-xml_2.11/1.0.2/scala-xml_2.11-1.0.2.jar.pack.xz"
         },
         {
             "additional-folder": "server/mods",
@@ -331,16 +356,20 @@
             "url": "http://shadersmod.net/version-1-7-10/"
         },
         {
-            "file": "config-1.2.1.jar",
-            "file-disabled": false,
+            "exec": {
+                "args": "-cp ___UNPACKER___ nice.work.forge.LibraryUnpacker --checksums ___FILE___",
+                "cmd": "___JAVA___",
+                "dir": "../server/libraries/com/typesafe/config/1.2.1"
+            },
+            "file": "config-1.2.1.jar.pack.xz",
             "folder-override": "server/libraries/com/typesafe/config/1.2.1",
             "md5": "4f1a9214aed32ba3c4a55d89b0918a02",
-            "name": "Typesafe Config"
+            "name": "Typesafe Config",
+            "url": "https://files.minecraftforge.net/maven/com/typesafe/config/1.2.1/config-1.2.1.jar.pack.xz"
         },
         {
             "additional-folder": "server/mods",
             "file": "Waila-1.5.10_1.7.10.jar",
-            "file-disabled": false,
             "md5": "eeb36775188e70faa1c5ecd84f80076c",
             "name": "Waila",
             "url": "https://minecraft.curseforge.com/projects/waila"
@@ -348,7 +377,6 @@
         {
             "additional-folder": "server/mods",
             "file": "WailaHarvestability-mc1.7.10-1.1.6.jar",
-            "file-disabled": false,
             "md5": "e9d81089ddec3da20f0bb144e7beb4da",
             "name": "Waila Harvestability",
             "url": "https://minecraft.curseforge.com/projects/waila-harvestability"
