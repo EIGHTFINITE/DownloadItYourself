@@ -12,6 +12,6 @@ remote.pipe(fs.createWriteStream("../_temp" + "/" + temp.file)).on("finish", fun
 		throw new Error("MD5 mismatch");
 	}
 	// Update successful.
-	console.message(i, "'" + localizedName(i) + "' has successfully updated." + ("md5" in temp ? " (MD5 matches)" : ""));
+	console.message(i, "'" + localizedName(i) + "' has successfully updated." + ("md5" in temp ? " (MD5 matches)" : ""), MESSAGE_VERBOSE);
 	callback();
 });

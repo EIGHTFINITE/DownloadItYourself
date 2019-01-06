@@ -6,7 +6,7 @@ if (temp.url.startsWith("http://"))
 if (current.url.startsWith("http://"))
 	current.url = current.url.replace("http://", "https://");
 request(temp.url, function(err, response, html) {
-	console.message(i, "Navigating to: '" + temp.url + "'.", MESSAGE_VERBOSE);
+	console.message(i, "Navigating to '" + temp.url + "'.");
 	if (err) throw err;
 	var $ = cheerio.load(html);
 	temp.url = response.request.uri.protocol + "//" + response.request.uri.host + $(".download-list " + (temp.preview === true ? ".promo-latest" : ".promo-recommended")).parent().parent().find('a.info-link[href$="-installer.jar"]').attr("href");
