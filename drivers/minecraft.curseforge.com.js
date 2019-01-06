@@ -1,15 +1,15 @@
 /**
  * Driver for downloading from minecraft.curseforge.com
  */
-console.message(i, "Navigating to '" + temp.url + "'.");
+console.message(i, "Navigating to '" + shortUrl(temp.url) + "'.");
 temp.url = temp.url + "/files?" + (global.config["minecraft-curseforge-version"] ? "filter-game-version=" + global.config["minecraft-curseforge-version"] : "");
 request(temp.url, function(err, response, html) {
-    console.message(i, "Navigating to '" + temp.url + "'.");
+    console.message(i, "Navigating to '" + shortUrl(temp.url) + "'.");
     if (err) throw err;
     var $ = cheerio.load(html);
     temp.url = response.request.uri.protocol + "//" + response.request.uri.host + $("a.overflow-tip.twitch-link").attr("href");
     request(temp.url, function(err, response, html) {
-        console.message(i, "Navigating to '" + temp.url + "'.");
+        console.message(i, "Navigating to '" + shortUrl(temp.url) + "'.");
         if (err) throw err;
         $ = cheerio.load(html);
         temp.md5 = $("span.md5").text().trim();

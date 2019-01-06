@@ -24,11 +24,11 @@ module.exports = function(i, current, callback) {
             }
             if (!current.md5) {
                 console.message(i, "Missing MD5 for previously downloaded file: '" + current.file + "'. Please delete the file and let it redownload.");
-                throw new Error("Missing MD5");
+                throw new Error("ERROR: Missing MD5 for '" + current.file + "'");
             }
             if (current.md5 !== md5) {
                 console.message(i, "MD5 mismatch on previously downloaded file: '" + current.file + "'. Please delete the file and let it redownload.");
-                throw new Error("MD5 mismatch");
+                throw new Error("ERROR: MD5 mismatch on '" + current.file + "'");
             }
             console.message(i, "Successfully checked '" + localizedName(i) + "' file integrity.", MESSAGE_VERBOSE);
 			// Depending on what decided to execute first. Close the message thread once we know the file is both up to date and it's integrity has been checked.
@@ -42,7 +42,7 @@ module.exports = function(i, current, callback) {
         console.message(i, "Skipping file integrity check. '" + localizedName(i) + "' has not yet been downloaded.", MESSAGE_VERBOSE);
     } else {
         console.message(i, "ERROR: '" + localizedName(i) + "' has no configured file or URL.");
-        throw new Error("Missing file");
+        throw new Error("Missing file '" + current.file + "'");
     }
 	callback();
 }

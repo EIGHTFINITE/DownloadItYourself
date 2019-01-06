@@ -34,14 +34,10 @@ fs.readFile("../downloadlist.json", "utf8", function(err, data) {
     for (var i = 0; i < global.downloads.length; i++) {
 		(function(i) {
 			var current = global.downloads[i];
-			var j = parseInt(i.toString());
-			var k = parseInt(i.toString());
-			var l = parseInt(i.toString());
-			var m = parseInt(i.toString());
-			checkFile(j, current, function(){ // Check integrity
-			updateFile(k, current, void(0), function(){ // Download updates
-			copyFile(l, current, function(){ // Copy files
-			execCmd(m, current)})})}); // Execute commands
+			checkFile(i, current, function(){ // Check integrity
+			updateFile(i, current, void(0), function(){ // Download updates
+			copyFile(i, current, function(){ // Copy files
+			execCmd(i, current)})})}); // Execute commands
 		})(i);
     }
 });

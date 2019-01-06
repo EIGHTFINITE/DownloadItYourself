@@ -2,7 +2,8 @@
 
 // Libraries
 var fs = require("fs-extra");
-var run = require('child_process').execFile;
+var run = require('child_process').exec;
+var path = require('path');
 
 // Functions
 var localizedName = require("../func/localizedName.js");
@@ -20,22 +21,25 @@ module.exports = function(i, current) {
 	var exec = Object.assign({}, current.exec);
 
 	// Replace
-	if(exec.args.includes("___7Z___"))
-		exec.args = exec.args.replace('___7Z___', '..\\bin\\windows\\x64\\7z\\7z.exe');
-	if(exec.args.includes("___JAVA___"))
-		exec.args = exec.args.replace('___JAVA___', '..\\bin\\windows\\x64\\JRE\\jre-8u152-windows-x64\\jre1.8.0_152\\bin\\java.exe');
-	if(exec.args.includes("___FILE___"))
-		exec.args = exec.args.replace('___FILE___', temp.file);
+	if(exec.cmd.includes("___JAVA___"))
+		exec.cmd = exec.cmd.replace('___JAVA___', path.resolve(__dirname, '../bin/windows/x64/JRE/jre-8u152-windows-x64/jre1.8.0_152/bin/java.exe'));
 
-	// Split arguments
-	if(exec.args && exec.args.length > 0)
-		exec.args = exec.args.split(" ");
-	else
-		exec.args = [];
+	if(exec.args.length > 0) {
+		if(exec.args.includes("___7Z___"))
+			exec.args = exec.args.replace('___7Z___', path.resolve(__dirname, '../bin/windows/x64/7z/7z.exe'));
+		if(exec.args.includes("___FILE___"))
+			exec.args = exec.args.replace('___FILE___', temp.file);
+		if(exec.args.includes("___SERVER_SETUP___"))
+			exec.args = exec.args.replace('___SERVER_SETUP___', path.resolve(__dirname, '../bin/windows/all/scripts/server-setup.bat'));
+		if(exec.args.includes("___MULTIMC_SETUP___"))
+			exec.args = exec.args.replace('___MULTIMC_SETUP___', path.resolve(__dirname, '../bin/windows/all/scripts/multimc-setup.bat'));
+		if(exec.args.includes("___UNPACKER___"))
+			exec.args = exec.args.replace('___UNPACKER___', path.resolve(__dirname, '../bin/all/all/library-unpacker/library-unpacker.jar'));
+	}
 
 	// Run
-	run(exec.cmd, exec.args, {cwd: exec.dir}, (err, stdout, stderr) => {
-		console.message(i, "Running " + exec.cmd + " on '" + localizedName(i) + "'.");
+	run((exec.args.length ? exec.cmd + " " + exec.args : exec.cmd), {cwd: exec.dir}, (err, stdout, stderr) => {
+		console.message(i, "Running " + path.parse(exec.cmd).name + " on '" + localizedName(i) + "'.");
 		if (err) throw err;
 		closeThread(i);
 	});
