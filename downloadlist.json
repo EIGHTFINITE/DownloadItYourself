@@ -222,6 +222,11 @@
             "url": "https://minecraft.curseforge.com/projects/morpheus"
         },
         {
+            "exec": {
+                "args": "/c ___7Z___ x ___FILE___ -o.. -y && ren MultiMC.exe Minecraft.exe",
+                "cmd": "cmd",
+                "dir": "../MultiMC/"
+            },
             "file": "mmc-stable-win32.zip",
             "folder-override": "MultiMC",
             "md5": "070cf73a18a9b23aebe46c649d8082a6",
