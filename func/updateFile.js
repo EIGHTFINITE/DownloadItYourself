@@ -45,7 +45,9 @@ module.exports = function(i, current, temp, callback) {
 		else {
 			// Url is a file
 			var script = fs.readFileSync("../drivers/default.js", "utf8");
-			console.message(i, "Downloading '" + remote.href + "' as '" + localizedName(i) + "'.");
+			if(!("file" in temp))
+				temp.file = temp.url.substring(temp.url.lastIndexOf("/") + 1);
+			console.message(i, "Downloading '" + remote.href + "' as '" + temp.file + "'.");
 			eval(script);
 		}
 	});
