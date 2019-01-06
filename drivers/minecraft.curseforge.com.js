@@ -1,6 +1,7 @@
 /**
  * Driver for downloading from minecraft.curseforge.com
  */
+console.message(i, "Navigating to '" + temp.url + "'.");
 temp.url = temp.url + "/files?" + (global.config["minecraft-curseforge-version"] ? "filter-game-version=" + global.config["minecraft-curseforge-version"] : "");
 request(temp.url, function(err, response, html) {
     console.message(i, "Navigating to '" + temp.url + "'.");
