@@ -24,7 +24,7 @@ module.exports = function(i, current, callback) {
 	console.message(i, "Copied '" + localizedName(i) + "' to '" + (current["folder-override"] ? current["folder-override"] : global.config.folder) + "/'", MESSAGE_VERBOSE);
 	// Copy this file to any additional folders
 	if (current["additional-folder"]) {
-		fs.copySync("../_temp" + "/" + current.file, "../" + current["additional-folder"] + "/" + (current["file-override"] ? current["file-override"] : current.file) + (current["file-disabled"] ? ".disabled" : ""));
+		fs.copySync("../_temp" + "/" + current.file, "../" + current["additional-folder"] + "/" + (current["file-override"] ? current["file-override"] : current.file) + (typeof current["additional-file-disabled"] !== 'undefined' ? (current["additional-file-disabled"] ? ".disabled" : "") : (current["file-disabled"] ? ".disabled" : "")));
 		console.message(i, "Copied '" + localizedName(i) + "' to '" + current["additional-folder"] + "/'", MESSAGE_VERBOSE);
 	}
 
