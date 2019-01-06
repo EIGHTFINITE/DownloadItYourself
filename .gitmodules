@@ -14,3 +14,11 @@
 	path = bin/windows/x86/JRE/jre-8u152-windows-i586/jre1.8.0_152
 	url = git@github.com:EIGHTFINITE-Vendor/JRE.git
 	branch = jre-8u152-windows-i586
+[submodule "bin/windows/x64/7z"]
+	path = bin/windows/x64/7z
+	url = git@github.com:EIGHTFINITE-Vendor/7z.git
+	branch = 7z1604-x64
+[submodule "bin/windows/x86/7z"]
+	path = bin/windows/x86/7z
+	url = git@github.com:EIGHTFINITE-Vendor/7z.git
+	branch = 7z1604
