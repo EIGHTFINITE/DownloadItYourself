@@ -136,6 +136,13 @@
             "url": "https://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.7.10.html"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "FactorizationAddons-1.7.10.jar",
+            "md5": "b40b1495ad5f8e0233b5714706277fb7",
+            "name": "FZAddons",
+            "url": "https://asie.pl/files/mods/FactorizationAddons-Fork/"
+        },
+        {
             "file": "guava-17.0.jar",
             "folder-override": "server/libraries/com/google/guava/guava/17.0",
             "md5": "89fef81c2adfa9b50a64ed5cd5d8c155",
