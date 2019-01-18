@@ -107,6 +107,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "Factorization-1.7.10-0.8.109.jar",
+            "md5": "fdfba4575e0d10c5fb31d24d1cd63941",
+            "name": "Factorization",
+            "url": "https://asie.pl/files/mods/Factorization/"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "fastcraft-1.25.jar",
             "md5": "44c7c6828ac38026f443804827955345",
             "name": "FastCraft",
