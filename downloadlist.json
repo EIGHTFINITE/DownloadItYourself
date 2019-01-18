@@ -41,6 +41,13 @@
             "url": "https://minecraft.curseforge.com/projects/applecore"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "AsieLib-1.7.10-0.4.8.jar",
+            "md5": "8764d6b5cdbb0363be74f47a64305245",
+            "name": "AsieLib",
+            "url": "https://files.vexatos.com/?dir=AsieLib"
+        },
+        {
             "file": "asm-all-5.0.3.jar",
             "folder-override": "server/libraries/org/ow2/asm/asm-all/5.0.3",
             "md5": "c5cc4613bbdfba3ccf5f0ab85390d0b8",
