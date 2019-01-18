@@ -33,6 +33,75 @@ echo :server_start>>ServerStart.bat
 echo ..\bin\windows\x64\JRE\jre-8u152-windows-x64\jre1.8.0_152\bin\java.exe -jar FTBServer-1.7.10-1614.jar nogui>>ServerStart.bat
 echo goto :EOF>>ServerStart.bat
 
+:: Create config directory
+mkdir config
+
+:: Configure Et Futurum
+echo general {>config\etfuturum.cfg
+echo     B:"Allow non-opaque armour"=true>>config\etfuturum.cfg
+echo     B:Anvil=true>>config\etfuturum.cfg
+echo     B:"Armour Stand"=true>>config\etfuturum.cfg
+echo     B:"Baby growth boost"=true>>config\etfuturum.cfg
+echo     B:Banners=true>>config\etfuturum.cfg
+echo     B:Beetroot=true>>config\etfuturum.cfg
+echo     B:"Bows render pulling animation on inventory"=true>>config\etfuturum.cfg
+echo     B:"Brewing Stands"=true>>config\etfuturum.cfg
+echo     B:"Chorus Fruit (and related blocks)"=true>>config\etfuturum.cfg
+echo     B:"Coarse Dirt"=true>>config\etfuturum.cfg
+echo     B:"Colourful Beacon Beams"=true>>config\etfuturum.cfg
+echo     B:"Crying Obsidian"=false>>config\etfuturum.cfg
+echo     B:"Dead Bushes drop sticks"=true>>config\etfuturum.cfg
+echo     B:Doors=true>>config\etfuturum.cfg
+echo     B:"Dragon respawning"=true>>config\etfuturum.cfg
+echo     B:Elytra=false>>config\etfuturum.cfg
+echo     B:"Enchanting Table"=true>>config\etfuturum.cfg
+echo     B:Endermite=false>>config\etfuturum.cfg
+echo     B:"Fancy Skulls"=true>>config\etfuturum.cfg
+echo     B:"Fences and Gates"=true>>config\etfuturum.cfg
+echo     B:"Fences, gates and dead bushes burn"=true>>config\etfuturum.cfg
+echo     B:"Frost Walker"=true>>config\etfuturum.cfg
+echo     I:"Frost Walker ID"=36>>config\etfuturum.cfg
+echo     B:"Grass Path"=true>>config\etfuturum.cfg
+echo     B:"Heart Damage Indicator"=false>>config\etfuturum.cfg
+echo     B:"Inverted Daylight Sensor"=true>>config\etfuturum.cfg
+echo     B:"Iron Trapdoor"=true>>config\etfuturum.cfg
+echo     B:"Lingering Potions"=true>>config\etfuturum.cfg
+echo     I:"Max number of 1.8 stones in a cluster"=33>>config\etfuturum.cfg
+echo     B:Mending=true>>config\etfuturum.cfg
+echo     I:"Mending ID"=37>>config\etfuturum.cfg
+echo     B:"Mushroom Blocks"=true>>config\etfuturum.cfg
+echo     B:Mutton=true>>config\etfuturum.cfg
+echo     B:"Old Gravel"=false>>config\etfuturum.cfg
+echo     B:"Old Roses"=true>>config\etfuturum.cfg
+echo     B:Prismarine=true>>config\etfuturum.cfg
+echo     B:Rabbits=true>>config\etfuturum.cfg
+echo     B:"Recipes for prismarine"=false>>config\etfuturum.cfg
+echo     B:"Red Sandstone"=true>>config\etfuturum.cfg
+echo     B:"Shearing Snow Golems"=true>>config\etfuturum.cfg
+echo     B:"Shears harvest cobwebs"=true>>config\etfuturum.cfg
+echo     B:"Skin overlays"=false>>config\etfuturum.cfg
+echo     B:"Skulls drop from charged creeper kills"=true>>config\etfuturum.cfg
+echo     B:"Slime Block"=true>>config\etfuturum.cfg
+echo     B:Sponge=true>>config\etfuturum.cfg
+echo     B:"Stone Brick Recipes"=true>>config\etfuturum.cfg
+echo     B:Stones=true>>config\etfuturum.cfg
+echo     B:"Tipped Arrows"=true>>config\etfuturum.cfg
+echo     B:"Use updated food values"=true>>config\etfuturum.cfg
+echo     B:"Use updated harvest levels"=true>>config\etfuturum.cfg
+echo     B:"Villager Zombies"=true>>config\etfuturum.cfg
+echo     B:"Villagers turn into Witches when struck by lightning"=true>>config\etfuturum.cfg
+echo }>>config\etfuturum.cfg
+
+:: Configure Morpheus
+echo settings {>config\Morpheus.cfg
+echo     B:AlertEnabled=true>>config\Morpheus.cfg
+echo     B:IncludeMiners=true>>config\Morpheus.cfg
+echo     S:OnMorningText=Wakey, wakey, rise and shine... Good Morning everyone!>>config\Morpheus.cfg
+echo     S:OnSleepText=is now sleeping.>>config\Morpheus.cfg
+echo     S:OnWakeText=has left their bed.>>config\Morpheus.cfg
+echo     I:SleeperPerc=50>>config\Morpheus.cfg
+echo }>>config\Morpheus.cfg
+
 :: Create shortcut
 if exist "..\Start Server.lnk" (
   del ""..\Start Server.lnk""
