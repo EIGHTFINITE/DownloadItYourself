@@ -405,6 +405,13 @@
             "url": "http://shadersmod.net/version-1-7-10/"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "shadowworld-1.3.3.jar",
+            "md5": "5e8ce556f03afd79698118d93313f582",
+            "name": "Shadow World",
+            "url": "https://web.archive.org/web/20180217153136/https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/wip-mods/1446206-shadow-world-1-3-3-1-3-3b"
+        },
+        {
             "exec": {
                 "args": "-cp ___UNPACKER___ nice.work.forge.LibraryUnpacker --checksums ___FILE___",
                 "cmd": "___JAVA___",

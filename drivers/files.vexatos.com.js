@@ -1,5 +1,5 @@
 /**
- * Driver for downloading from asie.pl
+ * Driver for downloading from files.vexatos.com
  */
 request(temp.url, function(err, response, html) {
 	console.message(i, "Navigating to '" + shortUrl(temp.url) + "'.");
