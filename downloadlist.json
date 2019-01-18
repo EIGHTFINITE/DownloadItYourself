@@ -70,6 +70,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "buildcraft-7.1.23.jar",
+            "md5": "5642e498a79c92f5e4994d10d3de7ac6",
+            "name": "Buildcraft",
+            "url": "https://minecraft.curseforge.com/projects/buildcraft"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "BuildCraftOilTweak-1.7.10-1.0.3.jar",
             "md5": "c4eb097f8a12d14e70b16851a898a376",
             "name": "BuildCraft Oil Tweak",
