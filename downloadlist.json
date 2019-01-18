@@ -77,6 +77,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "buildcraft-compat-7.1.7.jar",
+            "md5": "1683a1c6908ea22b268f6a8a747e8aa5",
+            "name": "Buildcraft Compat",
+            "url": "https://minecraft.curseforge.com/projects/buildcraft-compat"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "BuildCraftOilTweak-1.7.10-1.0.3.jar",
             "md5": "c4eb097f8a12d14e70b16851a898a376",
             "name": "BuildCraft Oil Tweak",
