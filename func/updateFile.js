@@ -11,6 +11,7 @@ var md5File = require("md5-file");
 var localizedName = require("../func/localizedName.js");
 var closeThread = require("../func/closeThread.js");
 var shortUrl = require("../func/shortUrl.js");
+var nthIndex = require("../func/nthIndex.js");
 
 // Variables
 var MESSAGE_VERBOSE = true;

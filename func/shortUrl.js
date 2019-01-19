@@ -1,13 +1,7 @@
 (function() {
 
-function nthIndex(str, pat, n){
-    var L= str.length, i= -1;
-    while(n-- && i++<L){
-        i= str.indexOf(pat, i);
-        if (i < 0) break;
-    }
-    return i;
-}
+// Functions
+var nthIndex = require("../func/nthIndex.js");
 
 module.exports = function(url, file) {
 	// Check protocol
