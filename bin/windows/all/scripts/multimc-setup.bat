@@ -28,11 +28,18 @@ echo name=default>>instances\default\instance.cfg
 echo SelectedInstance=default>>instances\default\instance.cfg
 
 :: Configure Minecraft
-echo difficulty:^3>..\minecraft\options.txt
-echo key_of.key.zoom:0>>..\minecraft\options.txt
+echo guiScale:^2>..\minecraft\options.txt
+echo difficulty:^3>>..\minecraft\options.txt
+echo key_key.streamStartStop:^0>>..\minecraft\options.txt
+echo key_of.key.zoom:^0>>..\minecraft\options.txt
 
 :: Configure OptiFine
 echo ofRandomMobs:false>..\minecraft\optionsof.txt
+
+:: Configure Shaders
+echo shaderPack=KUDA-Shaders v6.5.56.zip>..\minecraft\optionsshaders.txt
+echo tweakBlockDamage=true>>..\minecraft\optionsshaders.txt
+echo oldLighting=true>>..\minecraft\optionsshaders.txt
 
 :: Create config directory
 mkdir ..\minecraft\config
