@@ -228,6 +228,13 @@
             "url": "https://minecraft.curseforge.com/projects/journeymap"
         },
         {
+            "file": "KUDA-Shaders v6.5.56.zip",
+            "folder-override": "minecraft/shaderpacks",
+            "md5": "3f1dcea006911fa09bea293ca10f4b1a",
+            "name": "KUDA-Shaders",
+            "url": "https://dedelner.net/kuda-shaders/"
+        },
+        {
             "file": "lzma-0.0.1.jar",
             "folder-override": "server/libraries/lzma/lzma/0.0.1",
             "md5": "a3e3c3186e41c4a1a3027ba2bb23cdc6",
