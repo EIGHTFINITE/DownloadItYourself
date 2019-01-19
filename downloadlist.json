@@ -34,6 +34,13 @@
             "url": "https://files.minecraftforge.net/maven/com/typesafe/akka/akka-actor_2.11/2.3.3/akka-actor_2.11-2.3.3.jar.pack.xz"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "AOBD-2.9.2.jar",
+            "md5": "0864caf4280229154ca7f158502d4bee",
+            "name": "Another One Bites the Dust",
+            "url": "https://minecraft.curseforge.com/projects/another-one-bites-the-dust"
+        },
+        {
             "file": "commons-lang3-3.3.2.jar",
             "folder-override": "server/libraries/org/apache/commons/commons-lang3/3.3.2",
             "md5": "3128bf75a2549ebe38663401191bacab",
