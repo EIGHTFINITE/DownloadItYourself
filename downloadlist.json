@@ -201,6 +201,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "industrialcraft-2-2.2.827-experimental.jar",
+            "md5": "6fd8c3b8b87532c4c8884614fc2eb21d",
+            "name": "Industrial Craft",
+            "url": "https://minecraft.curseforge.com/projects/industrial-craft"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "INpureCore-[1.7.10]1.0.0B9-62.jar",
             "md5": "89c7b3835cd2bdba7d8d054d75c7460c",
             "name": "INpureCore",
