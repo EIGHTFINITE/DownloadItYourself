@@ -148,6 +148,13 @@
             "url": "https://files.minecraftforge.net/CodeChickenLib/"
         },
         {
+            "file": "commons-codec-1.9.jar",
+            "folder-override": "minecraft/mods/1.7.10",
+            "md5": "75615356605c8128013da9e3ac62a249",
+            "name": "Commons Codec",
+            "url": "https://libraries.minecraft.net/commons-codec/commons-codec/1.9/commons-codec-1.9.jar"
+        },
+        {
             "additional-file-disabled": true,
             "additional-folder": "server/mods",
             "file": "Dynamic Lights-1.3.9a-MC1.7.10.jar",
