@@ -428,6 +428,13 @@
             "url": "https://web.archive.org/web/20180217153136/https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/wip-mods/1446206-shadow-world-1-3-3-1-3-3b"
         },
         {
+            "file": "SEUS-v11.0.zip",
+            "folder-override": "minecraft/shaderpacks",
+            "md5": "4d919c05be8c20e2baf93e9ad3b0cebc",
+            "name": "Sonic Ether's Unbelievable Shaders",
+            "url": "https://sonicether.com/shaders/download/v11.0/"
+        },
+        {
             "exec": {
                 "args": "-cp ___UNPACKER___ nice.work.forge.LibraryUnpacker --checksums ___FILE___",
                 "cmd": "___JAVA___",
