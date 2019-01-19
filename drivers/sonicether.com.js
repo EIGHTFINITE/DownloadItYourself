@@ -1,5 +1,5 @@
 /**
- * Driver for downloading from shadersmod.net
+ * Driver for downloading from sonicether.com
  */
 request(temp.url, function(err, response, html) {
 	console.message(i, "Navigating to '" + shortUrl(temp.url) + "'.");

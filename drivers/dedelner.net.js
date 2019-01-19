@@ -1,5 +1,5 @@
 /**
- * Driver for downloading from files.vexatos.com
+ * Driver for downloading from dedelner.net
  */
 request(temp.url, function(err, response, html) {
 	console.message(i, "Navigating to '" + shortUrl(temp.url) + "'.");
