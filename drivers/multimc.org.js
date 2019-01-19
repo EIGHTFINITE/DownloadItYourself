@@ -1,5 +1,5 @@
 /**
- * Driver for downloading from files.minecraftforge.net
+ * Driver for downloading from multimc.org
  */
 request(temp.url, function(err, response, html) {
 	console.message(i, "Navigating to '" + shortUrl(temp.url) + "'.");

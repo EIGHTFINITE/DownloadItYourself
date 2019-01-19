@@ -15,6 +15,13 @@
             "url": "https://minecraft.curseforge.com/projects/a-block-of-charcoal"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "AdvancedMachinesAS-1.7.10.jar",
+            "md5": "43e9d2f702235b1025d52c237b8f6edd",
+            "name": "Advanced Machines",
+            "url": "http://atomicstryker.net/advancedmachines.php"
+        },
+        {
             "exec": {
                 "args": "-cp ___UNPACKER___ nice.work.forge.LibraryUnpacker --checksums ___FILE___",
                 "cmd": "___JAVA___",
