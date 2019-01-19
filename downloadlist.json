@@ -483,6 +483,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "UniDict-1.7.10-2.9.2.jar",
+            "md5": "07261f423e1d5c537c1a087185d9bff0",
+            "name": "UniDict",
+            "url": "https://minecraft.curseforge.com/projects/unidict"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "Waila-1.5.10_1.7.10.jar",
             "md5": "eeb36775188e70faa1c5ecd84f80076c",
             "name": "Waila",
