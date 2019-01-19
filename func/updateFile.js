@@ -36,7 +36,7 @@ module.exports = function(i, current, temp, callback) {
 	}
 
 	// Read the headers of our next url
-	request(temp.url).on('response', function(response) {
+	request(temp.cookie ? {headers: {"Cookie": temp.cookie}, url: temp.url} : temp.url).on('response', function(response) {
 		var remote = this;
 
 		if(response.headers['content-type'].startsWith('text/html')) {
