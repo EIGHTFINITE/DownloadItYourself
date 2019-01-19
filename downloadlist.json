@@ -456,6 +456,13 @@
             "url": "https://sonicether.com/shaders/download/v11.0/"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "TConstruct-1.7.10-1.8.8.build991.jar",
+            "md5": "b655f2f7994d9bd1112c826898390908",
+            "name": "Tinkers Construct",
+            "url": "https://minecraft.curseforge.com/projects/tinkers-construct"
+        },
+        {
             "exec": {
                 "args": "-cp ___UNPACKER___ nice.work.forge.LibraryUnpacker --checksums ___FILE___",
                 "cmd": "___JAVA___",
