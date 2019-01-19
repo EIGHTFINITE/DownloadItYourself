@@ -163,6 +163,13 @@
             "url": "https://minecraft.curseforge.com/projects/dynamic-lights"
         },
         {
+            "additional-folder": "server/mods/ic2",
+            "file": "EJML-core-0.26.jar",
+            "folder-override": "minecraft/mods/ic2",
+            "md5": "e440fb5889a2061e59b4e82ee0515691",
+            "name": "EJML Core"
+        },
+        {
             "additional-folder": "server/mods",
             "file": "Et Futurum-1.5.5.jar",
             "md5": "1094c49073af0c67dd32b4c3257afdd9",
@@ -222,6 +229,11 @@
         },
         {
             "additional-folder": "server/mods",
+            "exec": {
+                "args": "/c ___7Z___ e ../minecraft/mods/___FILE___ -o../minecraft/mods/ic2 lib/EJML-core-0.26.jar && ___7Z___ e ../server/mods/___FILE___ -o../server/mods/ic2 lib/EJML-core-0.26.jar",
+                "cmd": "cmd",
+                "dir": "."
+            },
             "file": "industrialcraft-2-2.2.827-experimental.jar",
             "md5": "6fd8c3b8b87532c4c8884614fc2eb21d",
             "name": "Industrial Craft",
