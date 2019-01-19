@@ -22,19 +22,19 @@ module.exports = function(i, current) {
 
 	// Replace
 	if(exec.cmd.includes("___JAVA___"))
-		exec.cmd = exec.cmd.replace('___JAVA___', path.resolve(__dirname, '../bin/windows/x64/JRE/jre-8u152-windows-x64/jre1.8.0_152/bin/java.exe'));
+		exec.cmd = exec.cmd.replace(/___JAVA___/g, path.resolve(__dirname, '../bin/windows/x64/JRE/jre-8u152-windows-x64/jre1.8.0_152/bin/java.exe'));
 
 	if(exec.args.length > 0) {
 		if(exec.args.includes("___7Z___"))
-			exec.args = exec.args.replace('___7Z___', path.resolve(__dirname, '../bin/windows/x64/7z/7z.exe'));
+			exec.args = exec.args.replace(/___7Z___/g, path.resolve(__dirname, '../bin/windows/x64/7z/7z.exe'));
 		if(exec.args.includes("___FILE___"))
-			exec.args = exec.args.replace('___FILE___', temp.file);
+			exec.args = exec.args.replace(/___FILE___/g, temp.file);
 		if(exec.args.includes("___SERVER_SETUP___"))
-			exec.args = exec.args.replace('___SERVER_SETUP___', path.resolve(__dirname, '../bin/windows/all/scripts/server-setup.bat'));
+			exec.args = exec.args.replace(/___SERVER_SETUP___/g, path.resolve(__dirname, '../bin/windows/all/scripts/server-setup.bat'));
 		if(exec.args.includes("___MULTIMC_SETUP___"))
-			exec.args = exec.args.replace('___MULTIMC_SETUP___', path.resolve(__dirname, '../bin/windows/all/scripts/multimc-setup.bat'));
+			exec.args = exec.args.replace(/___MULTIMC_SETUP___/g, path.resolve(__dirname, '../bin/windows/all/scripts/multimc-setup.bat'));
 		if(exec.args.includes("___UNPACKER___"))
-			exec.args = exec.args.replace('___UNPACKER___', path.resolve(__dirname, '../bin/all/all/library-unpacker/library-unpacker.jar'));
+			exec.args = exec.args.replace(/___UNPACKER___/g, path.resolve(__dirname, '../bin/all/all/library-unpacker/library-unpacker.jar'));
 	}
 
 	// Run
