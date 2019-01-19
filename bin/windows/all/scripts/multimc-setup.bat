@@ -37,6 +37,22 @@ echo ofRandomMobs:false>instances\default\.minecraft\optionsof.txt
 :: Create config directory
 mkdir instances\default\.minecraft\config
 
+:: Configure Dynamic Lights
+echo general {>instances\default\.minecraft\config\DynamicLights.cfg
+echo     # Comma separated list of items that do not give off light when dropped and in water, have to be present in Light Items.>>instances\default\.minecraft\config\DynamicLights.cfg
+echo     S:"Items Turned Off By Water"=torch,lava_bucket>>instances\default\.minecraft\config\DynamicLights.cfg
+echo.>>instances\default\.minecraft\config\DynamicLights.cfg
+echo     # Comma separated list of items that shine light when dropped in the World or held in player's or mob's hands.>>instances\default\.minecraft\config\DynamicLights.cfg
+echo     S:"Light Items"=torch,glowstone=12,glowstone_dust=10,lit_pumpkin,lava_bucket,redstone_torch=10,redstone=10,golden_helmet=14,easycoloredlights:easycoloredlightsCLStone=-1>>instances\default\.minecraft\config\DynamicLights.cfg
+echo.>>instances\default\.minecraft\config\DynamicLights.cfg
+echo     # Optifine has a Dynamic Lights of its own.  This mod will turn itself off if Optifine is loaded.>>instances\default\.minecraft\config\DynamicLights.cfg
+echo     # Set this to true if you aren't going to use Optifine's Dynamic Lights (even though they work just as well!).>>instances\default\.minecraft\config\DynamicLights.cfg
+echo     B:"Optifine Override"=true>>instances\default\.minecraft\config\DynamicLights.cfg
+echo.>>instances\default\.minecraft\config\DynamicLights.cfg
+echo     # Update Interval time in milliseconds. The lower the better and costlier.>>instances\default\.minecraft\config\DynamicLights.cfg
+echo     I:"Update Interval"=^0>>instances\default\.minecraft\config\DynamicLights.cfg
+echo }>>instances\default\.minecraft\config\DynamicLights.cfg
+
 :: Configure Et Futurum
 echo general {>instances\default\.minecraft\config\etfuturum.cfg
 echo     B:"Allow non-opaque armour"=true>>instances\default\.minecraft\config\etfuturum.cfg
