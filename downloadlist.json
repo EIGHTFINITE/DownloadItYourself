@@ -345,6 +345,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "mystcraft-1.7.10-0.12.3.04.jar",
+            "md5": "17fb799ca48e2d889cdb13b1c239d9ac",
+            "name": "Mystcraft",
+            "url": "https://minecraft.curseforge.com/projects/mystcraft"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "NotEnoughItems-1.7.10-1.0.5.120-universal.jar",
             "md5": "742e865a9a80071e80976ffedc05700e",
             "name": "NotEnoughItems",
