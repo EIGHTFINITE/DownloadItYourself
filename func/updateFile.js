@@ -34,6 +34,7 @@ module.exports = function(i, current, temp, callback) {
 		temp = Object.assign({}, current);
 		delete temp.file;
 		delete temp.md5;
+		console.message(i, "Checking '" + localizedName(i) + "' for updates.");
 	}
 
 	// Read the headers of our next url
@@ -45,7 +46,6 @@ module.exports = function(i, current, temp, callback) {
 			if(!fs.existsSync("../drivers/" + this.host + ".js"))
 				throw new Error('Missing driver for ' + this.host);
 			var script = fs.readFileSync("../drivers/" + this.host + ".js", "utf8")
-			console.message(i, "Checking '" + localizedName(i) + "' for updates.");
 			eval(script);
 		}
 		else {
