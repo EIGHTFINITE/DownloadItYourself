@@ -102,6 +102,19 @@ echo     S:OnWakeText=has left their bed.>>config\Morpheus.cfg
 echo     I:SleeperPerc=50>>config\Morpheus.cfg
 echo }>>config\Morpheus.cfg
 
+:: Configure StarMiner
+echo basics_server_side_property {>config\Starminer.cfg
+echo     I:GSODimentionId_byte=88>>config\Starminer.cfg
+echo     I:attractCheckTick=^8>>config\Starminer.cfg
+echo     D:bazookaStartSpeed=3.3>>config\Starminer.cfg
+echo     B:enableFakeRotatorOnlyVannilaBlock=true>>config\Starminer.cfg
+echo     B:generateOres=false>>config\Starminer.cfg
+echo     B:generateStars=false>>config\Starminer.cfg
+echo     I:maxGravityRad=54>>config\Starminer.cfg
+echo     I:maxStarRad=48>>config\Starminer.cfg
+echo     B:ticketFreeForTeleport=false>>config\Starminer.cfg
+echo }>>config\Starminer.cfg
+
 :: Create shortcut
 if exist "..\Start Server.lnk" (
   del ""..\Start Server.lnk""
