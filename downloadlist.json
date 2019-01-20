@@ -96,6 +96,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "Baubles-1.7.10-1.0.1.10.jar",
+            "md5": "0e711d6535970f62d4964edaa26f4623",
+            "name": "Baubles",
+            "url": "https://minecraft.curseforge.com/projects/baubles"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "Born in a Barn 1.7.x.jar",
             "md5": "8e952a2bbca5039837d106b7c88e8920",
             "name": "Born in a Barn",
