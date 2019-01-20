@@ -5,7 +5,7 @@ request(temp.url, function(err, response, html) {
 	console.message(i, "Navigating to '" + shortUrl(temp.url) + "'.");
 	if (err) throw err;
 	// Hardcoded forum.minecraftuser.jp URLs
-	if(temp.name === "StarMiner") {
+	if(temp.name === "StarMiner" || temp.name === "JointBlock") {
 		temp.url = "https://www.dropbox.com/sh/tvn0t4zofx5vqf5/AAC2dcW--1NoDrBUXCxXEsJGa?dl=0";
 		updateFile(i, current, temp, callback);
 		return;
