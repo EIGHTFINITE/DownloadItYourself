@@ -44,7 +44,7 @@ module.exports = function(i, current, temp, callback) {
 		if(response.headers['content-type'].startsWith('text/html')) {
 			// Url is a webpage
 			if(!fs.existsSync("../drivers/" + this.host + ".js"))
-				throw new Error('Missing driver for ' + this.host);
+				throw new Error("Missing driver for '" + this.host + "'. URL was '" + remote.href + "'");
 			var script = fs.readFileSync("../drivers/" + this.host + ".js", "utf8")
 			eval(script);
 		}
