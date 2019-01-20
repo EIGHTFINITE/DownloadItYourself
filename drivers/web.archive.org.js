@@ -6,7 +6,7 @@ request(temp.url, function(err, response, html) {
 	if (err) throw err;
 	// Hardcoded forum.minecraftuser.jp URLs
 	if(temp.url.includes("forum.minecraftuser.jp")) {
-		if(temp.name === "StarMiner") {
+		if(temp.name === "StarMiner" || temp.name === "JointBlock") {
 			temp.url = "https://www.dropbox.com/sh/tvn0t4zofx5vqf5/AAC2dcW--1NoDrBUXCxXEsJGa?dl=0";
 			updateFile(i, current, temp, callback);
 			return;
