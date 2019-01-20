@@ -126,6 +126,19 @@ echo     S:OnWakeText=has left their bed.>>..\minecraft\config\Morpheus.cfg
 echo     I:SleeperPerc=50>>..\minecraft\config\Morpheus.cfg
 echo }>>..\minecraft\config\Morpheus.cfg
 
+:: Configure StarMiner
+echo basics_server_side_property {>..\minecraft\config\Starminer.cfg
+echo     I:GSODimentionId_byte=88>>..\minecraft\config\Starminer.cfg
+echo     I:attractCheckTick=^8>>..\minecraft\config\Starminer.cfg
+echo     D:bazookaStartSpeed=3.3>>..\minecraft\config\Starminer.cfg
+echo     B:enableFakeRotatorOnlyVannilaBlock=true>>..\minecraft\config\Starminer.cfg
+echo     B:generateOres=false>>..\minecraft\config\Starminer.cfg
+echo     B:generateStars=false>>..\minecraft\config\Starminer.cfg
+echo     I:maxGravityRad=54>>..\minecraft\config\Starminer.cfg
+echo     I:maxStarRad=48>>..\minecraft\config\Starminer.cfg
+echo     B:ticketFreeForTeleport=false>>..\minecraft\config\Starminer.cfg
+echo }>>..\minecraft\config\Starminer.cfg
+
 :: Create shortcut
 if exist "..\Play Minecraft.lnk" (
   del ""..\Play Minecraft.lnk""
