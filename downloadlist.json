@@ -291,6 +291,14 @@
             "url": "https://dedelner.net/kuda-shaders/"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "LookingGlass-1.7.10-0.2.0.01.jar",
+            "file-disabled": true,
+            "md5": "f6fb78b54f2faf65bb1c5b16880c3f8f",
+            "name": "LookingGlass",
+            "url": "https://minecraft.curseforge.com/projects/lookingglass"
+        },
+        {
             "file": "lzma-0.0.1.jar",
             "folder-override": "server/libraries/lzma/lzma/0.0.1",
             "md5": "a3e3c3186e41c4a1a3027ba2bb23cdc6",
