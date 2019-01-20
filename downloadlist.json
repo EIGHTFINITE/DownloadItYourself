@@ -83,6 +83,18 @@
             "url": "https://libraries.minecraft.net/org/ow2/asm/asm-all/5.0.3/asm-all-5.0.3.jar"
         },
         {
+            "exec": {
+                "args": "/c ___7Z___ e ___FILE___ -o../minecraft/mods mods/BattleTowers-1.7.10.jar && ___7Z___ e ___FILE___ -o../server/mods mods/BattleTowers-1.7.10.jar",
+                "cmd": "cmd",
+                "dir": "."
+            },
+            "file": "BattleTowers-1.7.10.zip",
+            "folder-override": "",
+            "md5": "71f31f9fceca891f78cacbd0f9908cac",
+            "name": "AtomicStryker's Battle Towers",
+            "url": "http://atomicstryker.net/battletowers.php"
+        },
+        {
             "additional-folder": "server/mods",
             "file": "Born in a Barn 1.7.x.jar",
             "md5": "8e952a2bbca5039837d106b7c88e8920",
