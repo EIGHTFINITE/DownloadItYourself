@@ -148,11 +148,20 @@
             "url": "https://files.minecraftforge.net/CodeChickenLib/"
         },
         {
+            "additional-folder": "server/mods/1.7.10",
             "file": "commons-codec-1.9.jar",
             "folder-override": "minecraft/mods/1.7.10",
             "md5": "75615356605c8128013da9e3ac62a249",
             "name": "Commons Codec",
             "url": "https://libraries.minecraft.net/commons-codec/commons-codec/1.9/commons-codec-1.9.jar"
+        },
+        {
+            "additional-folder": "server/mods/1.7.10",
+            "file": "commons-compress-1.8.1.jar",
+            "folder-override": "minecraft/mods/1.7.10",
+            "md5": "d862e30ff6b5d78264677dcd6507abb8",
+            "name": "Commons Compress",
+            "url": "https://libraries.minecraft.net/org/apache/commons/commons-compress/1.8.1/commons-compress-1.8.1.jar"
         },
         {
             "additional-file-disabled": true,
