@@ -16,6 +16,16 @@ request(temp.url, function(err, response, html) {
 			});
 			return;
 		}
+		else if(temp.name === "JointBlock") {
+			temp.url = "https://www.dropbox.com/sh/tvn0t4zofx5vqf5/AADjpCA4lStE8dIYUXoXBlUSa/JointBlock?dl=0";
+			request(temp.url, function(err, response, html) {
+				console.message(i, "Navigating to '" + shortUrl(temp.url) + "'.");
+				temp.url = "https://www.dropbox.com/sh/tvn0t4zofx5vqf5/AAAMYsA3GCwHvoUR3zsRkQ5Ga/JointBlock/JointBlock1710-0_6_2_please_extract_.zip?dl=1";
+				temp.file = temp.url.substring(temp.url.lastIndexOf("/") + 1).replace(/\?.*$/, "");
+				updateFile(i, current, temp, callback);
+			});
+			return;
+		}
 	}
 	throw new Error("Unreachable");
 });

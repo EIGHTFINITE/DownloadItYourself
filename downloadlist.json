@@ -270,6 +270,13 @@
             "url": "https://minecraft.curseforge.com/projects/inventory-tweaks"
         },
         {
+            "file": "JointBlock1710-0_6_2_please_extract_.zip",
+            "folder-override": "",
+            "md5": "026526a7aaacf7ab9d5a352cfae6dd94",
+            "name": "JointBlock",
+            "url": "https://forum.minecraftuser.jp/viewtopic.php?f=13&t=17975"
+        },
+        {
             "file": "jopt-simple-4.5.jar",
             "folder-override": "server/libraries/net/sf/jopt-simple/jopt-simple/4.5",
             "md5": "1372bd4823bb1ef61e7db6724f601150",
