@@ -249,6 +249,13 @@
             "url": "https://asie.pl/files/mods/FactorizationAddons-Fork/"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "GildedGamesUtil-1.7.10-1.7.0.jar",
+            "md5": "b08006f643affbe71c585ea5bf5e3f9d",
+            "name": "Gilded Games Util",
+            "url": "https://web.archive.org/web/20180204190820/https://files.jellysquid.me/mirrors/aether/"
+        },
+        {
             "file": "guava-17.0.jar",
             "folder-override": "server/libraries/com/google/guava/guava/17.0",
             "md5": "89fef81c2adfa9b50a64ed5cd5d8c155",
