@@ -13,6 +13,13 @@ request(temp.url, function(err, response, html) {
 		}
 		throw new Error("Unreachable");
 	}
+	// Hardcoded files.jellysquid.me URLs
+	else if(temp.url.includes("files.jellysquid.me")) {
+		var $ = cheerio.load(html);
+		temp.url = response.request.uri.protocol + "//" + response.request.uri.host + response.request.uri.path.replace(/\/([0-9]+)\//, "/$1if_/") + $('a[href*="' + current.file + '"]').first().attr("href");
+		temp.file = temp.url.substring(temp.url.lastIndexOf("/") + 1).replace(/\?.*$/, "");
+		updateFile(i, current, temp, callback);
+	}
 	else {
 		var $ = cheerio.load(html);
 		// Need to know filename in advance
