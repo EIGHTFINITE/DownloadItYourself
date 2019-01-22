@@ -42,7 +42,152 @@ echo tweakBlockDamage=true>>..\minecraft\optionsshaders.txt
 echo oldLighting=true>>..\minecraft\optionsshaders.txt
 
 :: Create config directory
-mkdir ..\minecraft\config
+md ..\minecraft\config
+
+:: Configure Custom Main Menu
+md ..\minecraft\config\CustomMainMenu
+echo {>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo    "images": {>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo         "modpack": {>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "image": "mainmenu:modpack.png",>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "posX": -125,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "posY": -155,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "width": 250,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "height": 150,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "alignment": "center">>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo         }>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo     },>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo     "buttons": {>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo         "singleplayer": {>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "text": "menu.singleplayer",>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "posX": -100,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "posY": 25,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "width": 98,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "height": 20,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "alignment": "center",>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "texture": "mainmenu:shortbutton.png",>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "action": {>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo                 "type": "openGui",>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo                 "gui": "singleplayer">>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             }>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo         },>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo         "multiplayer": {>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "text": "menu.multiplayer",>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "posX": 2,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "posY": 25,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "width": 98,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "height": 20,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "alignment": "center",>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "texture": "mainmenu:shortbutton.png",>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "action": {>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo                 "type": "openGui",>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo                 "gui": "multiplayer">>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             }>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo         },>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo         "mods": {>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "text": "Mods",>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "posX": 2,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "posY": 50,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "width": 98,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "height": 20,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "alignment": "center",>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "texture": "mainmenu:shortbutton.png",>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "action": {>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo                 "type": "openGui",>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo                 "gui": "mods">>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             }>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo         },>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo         "options": {>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "text": "menu.options",>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "posX": -100,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "posY": 50,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "width": 98,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "height": 20,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "alignment": "center",>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "texture": "mainmenu:shortbutton.png",>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "action": {>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo                 "type": "openGui",>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo                 "gui": "options">>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             }>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo         },>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo         "quit": {>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "text": "menu.quit",>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "posX": -100,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "posY": 75,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "width": 200,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "height": 20,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "alignment": "center",>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "texture": "mainmenu:longbutton.png",>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "action": {>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo                 "type": "quit">>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             }>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo         }>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo     },>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo     "texts": {>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo         "mojang": {>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "text": "Copyright Mojang AB",>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "posX": -65,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "posY": -7,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "fontSize": .6,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "color": -1,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "hoverColor": -1,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "alignment": "bottom_right">>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo         },>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo         "forge": {>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "text": "Minecraft #mcversion#",>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "posX": 3,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "posY": -19,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "fontSize": .6,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "color": -1,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "hoverColor": -1,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "alignment": "bottom_left">>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo         },>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo         "modsloaded": {>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "text": "#modsloaded# Mods Loaded",>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "posX": 3,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "posY": -13,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "fontSize": .6,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "color": -1,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "hoverColor": -1,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "alignment": "bottom_left">>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo         },>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo         "modsactive": {>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "text": "#modsactive# Mods Active",>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "posX": 3,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "posY": -7,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "fontSize": .6,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "color": -1,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "hoverColor": -1,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "alignment": "bottom_left">>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo         },>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo         "modpack": {>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "text": "EIGHTFINITE",>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "posX": 3,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "posY": -25,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "fontSize": .6,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "color": -1,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "hoverColor": -1,>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "alignment": "bottom_left">>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo         }>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo     },>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo     "other": {>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo         "background": {>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "image": "mainmenu:background.png",>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo             "mode": "fill">>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo         }>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo     }>>..\minecraft\config\CustomMainMenu\mainmenu.json
+echo }>>..\minecraft\config\CustomMainMenu\mainmenu.json
+
+:: Custom Main Menu resources
+md ..\minecraft\resources
+md ..\minecraft\resources\mainmenu
+copy "%~dp0\assets\background.png" ..\minecraft\resources\mainmenu\background.png
+copy "%~dp0\assets\longbutton.png" ..\minecraft\resources\mainmenu\longbutton.png
+copy "%~dp0\assets\midbutton.png" ..\minecraft\resources\mainmenu\midbutton.png
+copy "%~dp0\assets\modpack.png" ..\minecraft\resources\mainmenu\modpack.png
+copy "%~dp0\assets\shortbutton.png" ..\minecraft\resources\mainmenu\shortbutton.png
+md ..\minecraft\mod-config
+copy "%~dp0\assets\menu.dat" ..\minecraft\mod-config\menu.dat
 
 :: Configure Dynamic Lights
 echo general {>..\minecraft\config\DynamicLights.cfg
