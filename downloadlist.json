@@ -632,6 +632,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "uniq-1.5.jar",
+            "md5": "bf5834441803ff5f8643ecf95e9b6172",
+            "name": "UniQ",
+            "url": "https://minecraft.curseforge.com/projects/uniq"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "Waila-1.5.10_1.7.10.jar",
             "md5": "eeb36775188e70faa1c5ecd84f80076c",
             "name": "Waila",
