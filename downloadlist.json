@@ -190,6 +190,13 @@
             "url": "https://libraries.minecraft.net/org/apache/commons/commons-compress/1.8.1/commons-compress-1.8.1.jar"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "CustomMainMenu-MC1.7.10-1.9.2.jar",
+            "md5": "7d0a3079e02fc07cd19a9558227e878b",
+            "name": "Custom Main Menu",
+            "url": "https://minecraft.curseforge.com/projects/custom-main-menu"
+        },
+        {
             "additional-file-disabled": true,
             "additional-folder": "server/mods",
             "file": "Dynamic Lights-1.3.9a-MC1.7.10.jar",
