@@ -17,7 +17,7 @@ request(temp.url, function(err, response, html) {
 		temp.file = temp.url.substring(temp.url.lastIndexOf("/") + 1);
 	} else {
 		// Basic page
-		temp.url = $('a[href*="' + (temp.preview === true ? global.config["minecraft-version"] : "1.1.3.138") + '"]:not([href$="-dev.jar"]):not([href$="-src.jar"])').first().attr("href");
+		temp.url = $('a[href*="' + (temp.preview === true ? global.config["minecraft-version"] : (function(){throw new Error("Unimplemented")}())) + '"]:not([href$="-dev.jar"]):not([href$="-src.jar"])').first().attr("href");
 		temp.file = temp.url.substring(temp.url.lastIndexOf("/") + 1);
 	}
 	if (temp.url.startsWith("http://"))
