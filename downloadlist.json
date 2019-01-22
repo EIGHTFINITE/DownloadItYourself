@@ -240,6 +240,15 @@
             "url": "https://minecraft.curseforge.com/projects/flatsigns"
         },
         {
+            "additional-folder": "server/mods/1.7.10",
+            "file": "ForgeMultipart-1.7.10-1.2.0.347-universal.jar",
+            "folder-override": "minecraft/mods/1.7.10",
+            "md5": "ca42e854acfe2334a9cdc0515d3dd1fe",
+            "name": "Forge Multi Part",
+            "preview": true,
+            "url": "https://files.minecraftforge.net/ForgeMultipart/"
+        },
+        {
             "file": "forge-1.7.10-10.13.4.1614-1.7.10-universal.jar",
             "file-override": "FTBServer-1.7.10-1614.jar",
             "folder-override": "server",
