@@ -3,7 +3,8 @@
  */
 request(temp.url, function(err, response, html) {
 	console.message(i, "Navigating to '" + shortUrl(temp.url) + "'.");
-	if (err) throw err;
+	if(err) throw err;
+	if(response.statusCode !== 200) throw new Error("Page failed to load: " + response.statusCode);
 	// Hardcoded forum.minecraftuser.jp URLs
 	if(temp.url.includes("forum.minecraftuser.jp")) {
 		if(temp.name === "StarMiner" || temp.name === "JointBlock") {
@@ -16,7 +17,10 @@ request(temp.url, function(err, response, html) {
 	// Hardcoded files.jellysquid.me URLs
 	else if(temp.url.includes("files.jellysquid.me")) {
 		var $ = cheerio.load(html);
-		temp.url = response.request.uri.protocol + "//" + response.request.uri.host + response.request.uri.path.replace(/\/([0-9]+)\//, "/$1if_/") + $('a[href*="' + current.file + '"]').first().attr("href");
+		temp.url = $('a[href*="' + current.file + '"]').first().attr("href");
+		if(typeof temp.url !== "string" || !temp.url.length)
+			throw new Error("Couldn't find any download links.");
+		temp.url = response.request.uri.protocol + "//" + response.request.uri.host + response.request.uri.path.replace(/\/([0-9]+)\//, "/$1if_/") + temp.url;
 		temp.file = temp.url.substring(temp.url.lastIndexOf("/") + 1).replace(/\?.*$/, "");
 		updateFile(i, current, temp, callback);
 	}
