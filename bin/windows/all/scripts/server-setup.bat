@@ -31,6 +31,10 @@ copy ..\docs\assets\config\atum.cfg config\atum.cfg
 md config\biomesoplenty
 copy ..\docs\assets\config\biomesoplenty\ids.cfg config\biomesoplenty\ids.cfg
 
+:: Configure Buildcraft
+md config\buildcraft
+copy ..\docs\assets\config\buildcraft\main.cfg config\buildcraft\main.cfg
+
 :: Configure The Erebus
 copy ..\docs\assets\config\erebus.cfg config\erebus.cfg
 
