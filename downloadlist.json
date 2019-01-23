@@ -117,6 +117,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "Atum-1.7.10-0.6.77.jar",
+            "md5": "2352e9136186274818a3d1773b7c1595",
+            "name": "Atum",
+            "url": "https://minecraft.curseforge.com/projects/atum"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "Baubles-1.7.10-1.0.1.10.jar",
             "md5": "0e711d6535970f62d4964edaa26f4623",
             "name": "Baubles",
