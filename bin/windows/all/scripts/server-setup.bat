@@ -35,6 +35,9 @@ copy ..\docs\assets\config\Starminer.cfg config\Starminer.cfg
 :: Configure Thaumcraft
 copy ..\docs\assets\config\Thaumcraft.cfg config\Thaumcraft.cfg
 
+:: Configure The Twilight Forest
+copy ..\docs\assets\config\TwilightForest.cfg config\TwilightForest.cfg
+
 :: Create shortcut
 if exist ..\Start Server.lnk (
   del ..\Start Server.lnk
