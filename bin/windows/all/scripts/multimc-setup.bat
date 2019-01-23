@@ -73,6 +73,9 @@ copy ..\docs\assets\config\mystcraft\core.cfg ..\minecraft\config\mystcraft\core
 :: Configure StarMiner
 copy ..\docs\assets\config\Starminer.cfg ..\minecraft\config\Starminer.cfg
 
+:: Configure Thaumcraft
+copy ..\docs\assets\config\Thaumcraft.cfg ..\minecraft\config\Thaumcraft.cfg
+
 :: Create shortcut
 if exist ..\Play Minecraft.lnk (
   del ..\Play Minecraft.lnk
