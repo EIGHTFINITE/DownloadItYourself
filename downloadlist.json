@@ -669,6 +669,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "StorageDrawers-BiomesOPlenty-1.7.10-1.1.1.jar",
+            "md5": "4124dfbc9f5f9e33f5aa78d21e78d243",
+            "name": "Storage Drawers: Biomes O' Plenty Pack",
+            "url": "https://minecraft.curseforge.com/projects/storage-drawers-biomes-o-plenty-pack"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "Thaumcraft-1.7.10-4.2.3.5.jar",
             "md5": "17f2e60dabd4961c9a3a2dad3ad6528a",
             "name": "Thaumcraft",
