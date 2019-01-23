@@ -263,6 +263,13 @@
             "url": "https://minecraft.curseforge.com/projects/flatsigns"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "forestry_1.7.10-4.2.16.64.jar",
+            "md5": "8213f5ef9944b9ed3261febc0bd21064",
+            "name": "Forestry",
+            "url": "https://minecraft.curseforge.com/projects/forestry"
+        },
+        {
             "additional-folder": "server/mods/1.7.10",
             "file": "ForgeMultipart-1.7.10-1.2.0.347-universal.jar",
             "folder-override": "minecraft/mods/1.7.10",
