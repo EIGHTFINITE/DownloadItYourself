@@ -32,6 +32,9 @@ copy ..\docs\assets\config\mystcraft\core.cfg config\mystcraft\core.cfg
 :: Configure StarMiner
 copy ..\docs\assets\config\Starminer.cfg config\Starminer.cfg
 
+:: Configure Thaumcraft
+copy ..\docs\assets\config\Thaumcraft.cfg config\Thaumcraft.cfg
+
 :: Create shortcut
 if exist ..\Start Server.lnk (
   del ..\Start Server.lnk
