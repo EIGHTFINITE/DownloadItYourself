@@ -117,6 +117,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "Botania r1.8-249.jar",
+            "md5": "757cfb6db285068b617c382fc7a1e9ed",
+            "name": "Botania",
+            "url": "https://minecraft.curseforge.com/projects/botania"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "buildcraft-7.1.23.jar",
             "md5": "5642e498a79c92f5e4994d10d3de7ac6",
             "name": "Buildcraft",
