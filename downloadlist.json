@@ -662,6 +662,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "StorageDrawers-1.7.10-1.10.9.jar",
+            "md5": "6fe615f1a9ff94dfe1b0641f1fc9fd18",
+            "name": "Storage Drawers",
+            "url": "https://minecraft.curseforge.com/projects/storage-drawers"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "Thaumcraft-1.7.10-4.2.3.5.jar",
             "md5": "17f2e60dabd4961c9a3a2dad3ad6528a",
             "name": "Thaumcraft",
