@@ -47,6 +47,9 @@ copy ..\docs\assets\config\AppliedEnergistics2\AppliedEnergistics2.cfg ..\minecr
 md ..\minecraft\config\AM2
 copy ..\docs\assets\config\AM2\AM2.cfg ..\minecraft\config\AM2\AM2.cfg
 
+:: Configure Atum
+copy ..\docs\assets\config\atum.cfg ..\minecraft\config\atum.cfg
+
 :: Configure Biomes O' Plenty
 md ..\minecraft\config\biomesoplenty
 copy ..\docs\assets\config\biomesoplenty\ids.cfg ..\minecraft\config\biomesoplenty\ids.cfg

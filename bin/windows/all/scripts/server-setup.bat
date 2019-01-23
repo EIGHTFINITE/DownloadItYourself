@@ -24,6 +24,9 @@ copy ..\docs\assets\config\AppliedEnergistics2\AppliedEnergistics2.cfg config\Ap
 md config\AM2
 copy ..\docs\assets\config\AM2\AM2.cfg config\AM2\AM2.cfg
 
+:: Configure Atum
+copy ..\docs\assets\config\atum.cfg config\atum.cfg
+
 :: Configure Biomes O' Plenty
 md config\biomesoplenty
 copy ..\docs\assets\config\biomesoplenty\ids.cfg config\biomesoplenty\ids.cfg
