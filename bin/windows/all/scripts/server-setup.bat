@@ -12,6 +12,9 @@ copy ..\docs\assets\ServerStart.bat ServerStart.bat
 :: Create config directory
 md config
 
+:: Configure The Erebus
+copy ..\docs\assets\config\erebus.cfg config\erebus.cfg
+
 :: Configure Et Futurum
 copy ..\docs\assets\config\etfuturum.cfg config\etfuturum.cfg
 
