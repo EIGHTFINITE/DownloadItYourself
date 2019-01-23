@@ -54,6 +54,10 @@ copy ..\docs\assets\config\atum.cfg ..\minecraft\config\atum.cfg
 md ..\minecraft\config\biomesoplenty
 copy ..\docs\assets\config\biomesoplenty\ids.cfg ..\minecraft\config\biomesoplenty\ids.cfg
 
+:: Configure Buildcraft
+md ..\minecraft\config\buildcraft
+copy ..\docs\assets\config\buildcraft\main.cfg ..\minecraft\config\buildcraft\main.cfg
+
 :: Configure Custom Main Menu
 md ..\minecraft\config\CustomMainMenu
 copy ..\docs\assets\config\CustomMainMenu\mainmenu.json ..\minecraft\config\CustomMainMenu\mainmenu.json
