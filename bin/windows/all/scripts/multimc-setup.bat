@@ -53,6 +53,9 @@ copy ..\docs\assets\menu.dat ..\minecraft\mod-config\menu.dat
 :: Configure Dynamic Lights
 copy ..\docs\assets\config\DynamicLights.cfg ..\minecraft\config\DynamicLights.cfg
 
+:: Configure The Erebus
+copy ..\docs\assets\config\erebus.cfg ..\minecraft\config\erebus.cfg
+
 :: Configure Et Futurum
 copy ..\docs\assets\config\etfuturum.cfg ..\minecraft\config\etfuturum.cfg
 
