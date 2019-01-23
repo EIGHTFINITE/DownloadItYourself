@@ -35,6 +35,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "AnimationAPI-1.7.10-1.2.4.jar",
+            "md5": "7ec0b391e527461196e86f4e4974f560",
+            "name": "AnimationAPI",
+            "url": "https://minecraft.curseforge.com/projects/animationapi"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "AOBD-2.9.2.jar",
             "md5": "0864caf4280229154ca7f158502d4bee",
             "name": "Another One Bites the Dust",
