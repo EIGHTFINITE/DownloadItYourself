@@ -56,6 +56,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "appliedenergistics2-rv3-beta-6.jar",
+            "md5": "0a555df010345a27e0956a3f05517510",
+            "name": "Applied Energistics 2",
+            "url": "https://minecraft.curseforge.com/projects/applied-energistics-2"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "Armor Overlay 2.0.jar",
             "md5": "a053d9941cc21811e3a1d0fa531edb0a",
             "name": "Armor Overlay",
