@@ -676,6 +676,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "TheErebus-0.4.7.jar",
+            "md5": "9109c09d3489191c16cee6999c065bc8",
+            "name": "The Erebus",
+            "url": "https://minecraft.curseforge.com/projects/the-erebus"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "TConstruct-1.7.10-1.8.8.build991.jar",
             "md5": "b655f2f7994d9bd1112c826898390908",
             "name": "Tinkers Construct",
