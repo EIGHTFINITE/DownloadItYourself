@@ -16,6 +16,10 @@ md config
 md config\aether
 copy "..\docs\assets\config\aether\Aether II.cfg" "config\aether\Aether II.cfg"
 
+:: Configure Applied Energistics 2
+md config\AppliedEnergistics2
+copy ..\docs\assets\config\AppliedEnergistics2\AppliedEnergistics2.cfg config\AppliedEnergistics2\AppliedEnergistics2.cfg
+
 :: Configure Ars Magica 2
 md config\AM2
 copy ..\docs\assets\config\AM2\AM2.cfg config\AM2\AM2.cfg

@@ -39,6 +39,10 @@ md ..\minecraft\config
 md ..\minecraft\config\aether
 copy "..\docs\assets\config\aether\Aether II.cfg" "..\minecraft\config\aether\Aether II.cfg"
 
+:: Configure Applied Energistics 2
+md ..\minecraft\config\AppliedEnergistics2
+copy ..\docs\assets\config\AppliedEnergistics2\AppliedEnergistics2.cfg ..\minecraft\config\AppliedEnergistics2\AppliedEnergistics2.cfg
+
 :: Configure Ars Magica 2
 md ..\minecraft\config\AM2
 copy ..\docs\assets\config\AM2\AM2.cfg ..\minecraft\config\AM2\AM2.cfg
