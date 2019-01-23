@@ -727,6 +727,13 @@
             "md5": "e9d81089ddec3da20f0bb144e7beb4da",
             "name": "Waila Harvestability",
             "url": "https://minecraft.curseforge.com/projects/waila-harvestability"
+        },
+        {
+            "additional-folder": "server/mods",
+            "file": "witchery-1.7.10-0.24.1.jar",
+            "md5": "22096b8e462fa5cca3a6c8054116d4fc",
+            "name": "Witchery",
+            "url": "https://minecraft.curseforge.com/projects/witchery"
         }
     ]
 }
