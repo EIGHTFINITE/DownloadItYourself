@@ -467,6 +467,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "natura-1.7.10-2.2.1a2.jar",
+            "md5": "482d41a7e4bab7f6fbd5c31dc9dcb372",
+            "name": "Natura",
+            "url": "https://minecraft.curseforge.com/projects/natura"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "NotEnoughItems-1.7.10-1.0.5.120-universal.jar",
             "md5": "742e865a9a80071e80976ffedc05700e",
             "name": "NotEnoughItems",
