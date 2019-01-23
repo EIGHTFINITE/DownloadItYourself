@@ -271,6 +271,22 @@ echo     S:OnWakeText=has left their bed.>>..\minecraft\config\Morpheus.cfg
 echo     I:SleeperPerc=50>>..\minecraft\config\Morpheus.cfg
 echo }>>..\minecraft\config\Morpheus.cfg
 
+:: Configure Mystcraft
+md ..\minecraft\config\mystcraft
+echo baselining {>..\minecraft\config\mystcraft\core.cfg
+echo     # If false, the profiling will run on game startup with the loading bar. If true, it will run in the background when playing. Setting this to false disables tickrate checking, even on the server.>>..\minecraft\config\mystcraft\core.cfg
+echo     B:client.persave=true>>..\minecraft\config\mystcraft\core.cfg
+echo.>>..\minecraft\config\mystcraft\core.cfg
+echo     # If set to true this will prevent clients from connecting while baseline profiling is ongoing (Only works on dedicated servers)>>..\minecraft\config\mystcraft\core.cfg
+echo     B:server.disconnectclients=false>>..\minecraft\config\mystcraft\core.cfg
+echo.>>..\minecraft\config\mystcraft\core.cfg
+echo     # This controls the minimum number of ticks to wait before a new chunk will be generated when doing the baseline profiling in the background.>>..\minecraft\config\mystcraft\core.cfg
+echo     I:tickrate.minimum=^5>>..\minecraft\config\mystcraft\core.cfg
+echo.>>..\minecraft\config\mystcraft\core.cfg
+echo     # If true, the baseline calculations won't run and instead a config file will be read.>>..\minecraft\config\mystcraft\core.cfg
+echo     B:useconfigs=true>>..\minecraft\config\mystcraft\core.cfg
+echo }>>..\minecraft\config\mystcraft\core.cfg
+
 :: Configure StarMiner
 echo basics_server_side_property {>..\minecraft\config\Starminer.cfg
 echo     I:GSODimentionId_byte=88>>..\minecraft\config\Starminer.cfg
