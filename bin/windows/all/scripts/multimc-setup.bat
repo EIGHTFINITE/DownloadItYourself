@@ -35,6 +35,10 @@ copy ..\docs\assets\optionsshaders.txt ..\minecraft\optionsshaders.txt
 :: Create config directory
 md ..\minecraft\config
 
+:: Configure Biomes O' Plenty
+md ..\minecraft\config\biomesoplenty
+copy ..\docs\assets\config\biomesoplenty\ids.cfg ..\minecraft\config\biomesoplenty\ids.cfg
+
 :: Configure Custom Main Menu
 md ..\minecraft\config\CustomMainMenu
 copy ..\docs\assets\config\CustomMainMenu\mainmenu.json ..\minecraft\config\CustomMainMenu\mainmenu.json

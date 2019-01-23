@@ -12,6 +12,10 @@ copy ..\docs\assets\ServerStart.bat ServerStart.bat
 :: Create config directory
 md config
 
+:: Configure Biomes O' Plenty
+md config\biomesoplenty
+copy ..\docs\assets\config\biomesoplenty\ids.cfg config\biomesoplenty\ids.cfg
+
 :: Configure The Erebus
 copy ..\docs\assets\config\erebus.cfg config\erebus.cfg
 
