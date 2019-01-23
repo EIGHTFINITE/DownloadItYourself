@@ -333,6 +333,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "ImmersiveEngineering-0.7.7.jar",
+            "md5": "24f8212228caf05e2031b1e9221146b5",
+            "name": "Immersive Engineering",
+            "url": "https://minecraft.curseforge.com/projects/immersive-engineering"
+        },
+        {
+            "additional-folder": "server/mods",
             "exec": {
                 "args": "/c ___7Z___ e ../minecraft/mods/___FILE___ -o../minecraft/mods/ic2 lib/EJML-core-0.26.jar && ___7Z___ e ../server/mods/___FILE___ -o../server/mods/ic2 lib/EJML-core-0.26.jar",
                 "cmd": "cmd",
