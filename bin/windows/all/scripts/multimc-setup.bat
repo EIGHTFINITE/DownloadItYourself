@@ -82,6 +82,10 @@ copy ..\docs\assets\config\erebus.cfg ..\minecraft\config\erebus.cfg
 :: Configure Et Futurum
 copy ..\docs\assets\config\etfuturum.cfg ..\minecraft\config\etfuturum.cfg
 
+:: Configure Mo' Creatures
+md ..\minecraft\config\MoCreatures
+copy ..\docs\assets\config\MoCreatures\MoCSettings.cfg ..\minecraft\config\MoCreatures\MoCSettings.cfg
+
 :: Configure Morpheus
 copy ..\docs\assets\config\Morpheus.cfg ..\minecraft\config\Morpheus.cfg
 
