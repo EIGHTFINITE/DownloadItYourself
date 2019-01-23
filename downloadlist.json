@@ -77,6 +77,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "AM2PlantFix-1.0.jar",
+            "md5": "ee429bee3d7344100d45aad826f91dea",
+            "name": "Ars Magica 2 Plant Fix",
+            "url": "https://minecraft.curseforge.com/projects/ars-magica-2-plant-fix"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "AsieLib-1.7.10-0.4.8.jar",
             "md5": "8764d6b5cdbb0363be74f47a64305245",
             "name": "AsieLib",
