@@ -93,6 +93,9 @@ copy ..\docs\assets\config\Morpheus.cfg ..\minecraft\config\Morpheus.cfg
 md ..\minecraft\config\mystcraft
 copy ..\docs\assets\config\mystcraft\core.cfg ..\minecraft\config\mystcraft\core.cfg
 
+:: Configure Shadow World
+copy ..\docs\assets\config\shadowworld.cfg ..\minecraft\config\shadowworld.cfg
+
 :: Configure StarMiner
 copy ..\docs\assets\config\Starminer.cfg ..\minecraft\config\Starminer.cfg
 
