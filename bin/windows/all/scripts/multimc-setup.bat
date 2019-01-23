@@ -39,6 +39,10 @@ md ..\minecraft\config
 md ..\minecraft\config\aether
 copy "..\docs\assets\config\aether\Aether II.cfg" "..\minecraft\config\aether\Aether II.cfg"
 
+:: Configure Ars Magica 2
+md ..\minecraft\config\AM2
+copy ..\docs\assets\config\AM2\AM2.cfg ..\minecraft\config\AM2\AM2.cfg
+
 :: Configure Biomes O' Plenty
 md ..\minecraft\config\biomesoplenty
 copy ..\docs\assets\config\biomesoplenty\ids.cfg ..\minecraft\config\biomesoplenty\ids.cfg

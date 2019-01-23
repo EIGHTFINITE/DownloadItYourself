@@ -16,6 +16,10 @@ md config
 md config\aether
 copy "..\docs\assets\config\aether\Aether II.cfg" "config\aether\Aether II.cfg"
 
+:: Configure Ars Magica 2
+md config\AM2
+copy ..\docs\assets\config\AM2\AM2.cfg config\AM2\AM2.cfg
+
 :: Configure Biomes O' Plenty
 md config\biomesoplenty
 copy ..\docs\assets\config\biomesoplenty\ids.cfg config\biomesoplenty\ids.cfg
