@@ -35,6 +35,10 @@ copy ..\docs\assets\optionsshaders.txt ..\minecraft\optionsshaders.txt
 :: Create config directory
 md ..\minecraft\config
 
+:: Configure The Aether II
+md ..\minecraft\config\aether
+copy "..\docs\assets\config\aether\Aether II.cfg" "..\minecraft\config\aether\Aether II.cfg"
+
 :: Configure Biomes O' Plenty
 md ..\minecraft\config\biomesoplenty
 copy ..\docs\assets\config\biomesoplenty\ids.cfg ..\minecraft\config\biomesoplenty\ids.cfg

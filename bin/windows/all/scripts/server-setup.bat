@@ -12,6 +12,10 @@ copy ..\docs\assets\ServerStart.bat ServerStart.bat
 :: Create config directory
 md config
 
+:: Configure The Aether II
+md config\aether
+copy "..\docs\assets\config\aether\Aether II.cfg" "config\aether\Aether II.cfg"
+
 :: Configure Biomes O' Plenty
 md config\biomesoplenty
 copy ..\docs\assets\config\biomesoplenty\ids.cfg config\biomesoplenty\ids.cfg
