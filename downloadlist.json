@@ -70,6 +70,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "1.7.10_AM2-1.4.0.009.jar",
+            "md5": "1e4b8c84cda22fd093c5e921374578e9",
+            "name": "Ars Magica 2",
+            "url": "https://minecraft.curseforge.com/projects/ars-magica-2"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "AsieLib-1.7.10-0.4.8.jar",
             "md5": "8764d6b5cdbb0363be74f47a64305245",
             "name": "AsieLib",
