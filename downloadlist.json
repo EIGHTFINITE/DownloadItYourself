@@ -760,6 +760,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "twilightforest-1.7.10-2.3.7.jar",
+            "md5": "7602ffcdcd8ee2f012caeed1e4d22655",
+            "name": "The Twilight Forest",
+            "url": "https://minecraft.curseforge.com/projects/the-twilight-forest"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "TConstruct-1.7.10-1.8.8.build991.jar",
             "md5": "b655f2f7994d9bd1112c826898390908",
             "name": "Tinkers Construct",
