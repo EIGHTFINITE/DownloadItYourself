@@ -1,0 +1,4 @@
+guiScale:2
+difficulty:3
+key_key.streamStartStop:0
+key_of.key.zoom:0
