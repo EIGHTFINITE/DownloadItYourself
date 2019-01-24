@@ -573,6 +573,13 @@
             "url": "https://minecraft.curseforge.com/projects/project-red-integration"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "ProjectRed-1.7.10-4.7.0pre12.95-Lighting.jar",
+            "md5": "e774c0bfc2f0e364a272cf159e89dc54",
+            "name": "Project Red - Lighting",
+            "url": "https://minecraft.curseforge.com/projects/project-red-lighting"
+        },
+        {
             "additional-file-disabled": true,
             "additional-folder": "server/mods",
             "file": "ResourceLoader-MC1.7.10-1.3.jar",
