@@ -321,6 +321,14 @@
             "url": "https://files.minecraftforge.net/ForgeMultipart/"
         },
         {
+            "additional-folder": "server/mods/1.7.10",
+            "file": "ForgeRelocation-0.0.1.4-universal.jar",
+            "folder-override": "minecraft/mods/1.7.10",
+            "md5": "2a7143a16683bb0989b15ba8c4ea17ca",
+            "name": "Forge Relocation",
+            "url": "https://minecraft.curseforge.com/projects/forge-relocation"
+        },
+        {
             "file": "forge-1.7.10-10.13.4.1614-1.7.10-universal.jar",
             "file-override": "FTBServer-1.7.10-1614.jar",
             "folder-override": "server",
