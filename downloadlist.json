@@ -166,6 +166,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "BiblioWoods[Natura][v1.5].jar",
+            "md5": "024d7f63683833acfa7aea93da18036e",
+            "name": "BiblioCraft: BiblioWoods Natura Edition",
+            "url": "https://minecraft.curseforge.com/projects/bibliocraft-bibliowoods-natura-edition"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "binnie-mods-1.7.10-2.0.22.7.jar",
             "md5": "d0e8ad1db21d4d9fa134d1f3e203f3da",
             "name": "Binnie's Mods",
