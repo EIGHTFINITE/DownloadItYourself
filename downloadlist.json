@@ -261,6 +261,13 @@
             "url": "https://repo1.maven.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2.jar"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "ComputerCraft1.75.jar",
+            "md5": "3d4ab469b955a3def59e260da660927c",
+            "name": "ComputerCraft",
+            "url": "https://minecraft.curseforge.com/projects/computercraft"
+        },
+        {
             "additional-file-disabled": true,
             "additional-folder": "server/mods",
             "file": "CustomMainMenu-MC1.7.10-1.9.2.jar",
