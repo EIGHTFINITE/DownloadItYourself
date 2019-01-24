@@ -268,6 +268,13 @@
             "url": "https://minecraft.curseforge.com/projects/computercraft"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "ComputerCraftEdu1.74.jar",
+            "md5": "826a389c9c80af6c3805e80311277be1",
+            "name": "ComputerCraftEdu",
+            "url": "https://minecraft.curseforge.com/projects/computercraftedu"
+        },
+        {
             "additional-file-disabled": true,
             "additional-folder": "server/mods",
             "file": "CustomMainMenu-MC1.7.10-1.9.2.jar",
