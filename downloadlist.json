@@ -329,6 +329,14 @@
             "url": "https://minecraft.curseforge.com/projects/forge-relocation"
         },
         {
+            "additional-folder": "server/mods/1.7.10",
+            "file": "ForgeRelocationFMP-0.0.1.2-universal.jar",
+            "folder-override": "minecraft/mods/1.7.10",
+            "md5": "eb6cb5103252e6870dec10fda67b1285",
+            "name": "Forge Relocation - FMP Plugin",
+            "url": "https://minecraft.curseforge.com/projects/forge-relocation-fmp-plugin"
+        },
+        {
             "file": "forge-1.7.10-10.13.4.1614-1.7.10-universal.jar",
             "file-override": "FTBServer-1.7.10-1614.jar",
             "folder-override": "server",
