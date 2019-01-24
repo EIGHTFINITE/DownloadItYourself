@@ -306,6 +306,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "Ex-Nihilo-1.38-53.jar",
+            "md5": "b3ba015e4bc919a1c5edc3877753333f",
+            "name": "Ex Nihilo",
+            "url": "https://minecraft.curseforge.com/projects/ex-nihilo"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "Factorization-1.7.10-0.8.109.jar",
             "md5": "fdfba4575e0d10c5fb31d24d1cd63941",
             "name": "Factorization",
