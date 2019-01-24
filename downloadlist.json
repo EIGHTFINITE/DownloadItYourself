@@ -649,6 +649,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "Peripherals++-1.3.6.jar",
+            "md5": "b354e7c7a7b3247c2b1534784bf4165f",
+            "name": "Peripherals++",
+            "url": "https://minecraft.curseforge.com/projects/peripherals"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "ProjectRed-1.7.10-4.7.0pre12.95-Base.jar",
             "md5": "4ca2c33c19252f4fcec87a7f28a9420c",
             "name": "Project Red - Base",
