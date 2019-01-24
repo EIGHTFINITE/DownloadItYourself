@@ -82,6 +82,9 @@ copy ..\docs\assets\config\erebus.cfg ..\minecraft\config\erebus.cfg
 :: Configure Et Futurum
 copy ..\docs\assets\config\etfuturum.cfg ..\minecraft\config\etfuturum.cfg
 
+:: Configure Industrial Craft
+copy ..\docs\assets\config\IC2.ini ..\minecraft\config\IC2.ini
+
 :: Configure Mo' Creatures
 md ..\minecraft\config\MoCreatures
 copy ..\docs\assets\config\MoCreatures\MoCSettings.cfg ..\minecraft\config\MoCreatures\MoCSettings.cfg
