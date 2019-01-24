@@ -145,6 +145,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "BiblioCraft[v1.11.7][MC1.7.10].jar",
+            "md5": "ff5aca99f8e04a8bb6077df853a9c72e",
+            "name": "BiblioCraft",
+            "url": "https://minecraft.curseforge.com/projects/bibliocraft"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "binnie-mods-1.7.10-2.0.22.7.jar",
             "md5": "d0e8ad1db21d4d9fa134d1f3e203f3da",
             "name": "Binnie's Mods",
