@@ -367,6 +367,14 @@
             "url": "https://web.archive.org/web/20180204190820/https://files.jellysquid.me/mirrors/aether/"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "ShadersModCore-v2.3.31-mc1.7.10-f.jar",
+            "file-disabled": true,
+            "md5": "f66374aea8dda5f3b7ccb20c230375d7",
+            "name": "GLSL Shaders Mod",
+            "url": "http://shadersmod.net/version-1-7-10/"
+        },
+        {
             "file": "guava-17.0.jar",
             "folder-override": "server/libraries/com/google/guava/guava/17.0",
             "md5": "89fef81c2adfa9b50a64ed5cd5d8c155",
@@ -761,14 +769,6 @@
             "md5": "1c5a20efca1474626e0e0123f9cdd8ce",
             "name": "Scala XML API",
             "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-xml_2.11/1.0.2/scala-xml_2.11-1.0.2.jar.pack.xz"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "ShadersModCore-v2.3.31-mc1.7.10-f.jar",
-            "file-disabled": true,
-            "md5": "f66374aea8dda5f3b7ccb20c230375d7",
-            "name": "Shaders Mod",
-            "url": "http://shadersmod.net/version-1-7-10/"
         },
         {
             "additional-folder": "server/mods",
