@@ -152,6 +152,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "BiblioWoods[BiomesOPlenty][v1.9].jar",
+            "md5": "3abcaaae14fd5e1ddb9b9af0642ce3c0",
+            "name": "BiblioCraft: BiblioWoods Biomes O'Plenty Edition",
+            "url": "https://minecraft.curseforge.com/projects/bibliocraft-bibliowoods-biomes-oplenty-edition"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "binnie-mods-1.7.10-2.0.22.7.jar",
             "md5": "d0e8ad1db21d4d9fa134d1f3e203f3da",
             "name": "Binnie's Mods",
