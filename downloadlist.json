@@ -511,6 +511,14 @@
             "url": "https://minecraft.curseforge.com/projects/morpheus"
         },
         {
+            "additional-folder": "server/mods/1.7.10",
+            "file": "MrTJPCore-1.1.0.33-universal.jar",
+            "folder-override": "minecraft/mods/1.7.10",
+            "md5": "e5c8aabd096cb0cde340bb86689a58cf",
+            "name": "MrTJPCore",
+            "url": "https://minecraft.curseforge.com/projects/mrtjpcore"
+        },
+        {
             "exec": {
                 "args": "/c ___7Z___ x ___FILE___ -o.. -y && cmd /c ___MULTIMC_SETUP___",
                 "cmd": "cmd",
