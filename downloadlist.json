@@ -237,6 +237,13 @@
             "url": "https://files.minecraftforge.net/CodeChickenLib/"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "CollectiveFramework-1.0.0-132.jar",
+            "md5": "2c353850493068eff6da6bd9c20b0064",
+            "name": "Collective Framework",
+            "url": "https://minecraft.curseforge.com/projects/collective-framework"
+        },
+        {
             "additional-folder": "server/mods/1.7.10",
             "file": "commons-codec-1.9.jar",
             "folder-override": "minecraft/mods/1.7.10",
