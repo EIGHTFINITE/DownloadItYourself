@@ -597,6 +597,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "neiaddons-1.12.15.41-mc1.7.10.jar",
+            "md5": "caf83daf3a9a5dbdc6386389ef977a95",
+            "name": "NEI Addons",
+            "url": "https://minecraft.curseforge.com/projects/nei-addons"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "NotEnoughItems-1.7.10-1.0.5.120-universal.jar",
             "md5": "742e865a9a80071e80976ffedc05700e",
             "name": "NotEnoughItems",
