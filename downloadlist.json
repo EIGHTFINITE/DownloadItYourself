@@ -552,6 +552,13 @@
             "url": "https://minecraft.curseforge.com/projects/project-red-base"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "ProjectRed-1.7.10-4.7.0pre12.95-Compat.jar",
+            "md5": "0c16c159b33115e5a317aa51524bc85d",
+            "name": "Project Red - Compat",
+            "url": "https://minecraft.curseforge.com/projects/project-red-compat"
+        },
+        {
             "additional-file-disabled": true,
             "additional-folder": "server/mods",
             "file": "ResourceLoader-MC1.7.10-1.3.jar",
