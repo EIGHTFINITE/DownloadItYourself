@@ -41,6 +41,9 @@ copy ..\docs\assets\config\erebus.cfg config\erebus.cfg
 :: Configure Et Futurum
 copy ..\docs\assets\config\etfuturum.cfg config\etfuturum.cfg
 
+:: Configure Industrial Craft
+copy ..\docs\assets\config\IC2.ini config\IC2.ini
+
 :: Configure Mo' Creatures
 md config\MoCreatures
 copy ..\docs\assets\config\MoCreatures\MoCSettings.cfg config\MoCreatures\MoCSettings.cfg
