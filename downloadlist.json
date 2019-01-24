@@ -292,6 +292,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "FastLeafDecay-1.7.10-1.4.jar",
+            "md5": "96404c6169bd47e011ca8f484969a8b4",
+            "name": "Fast Leaf Decay",
+            "url": "https://minecraft.curseforge.com/projects/fast-leaf-decay"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "fastcraft-1.25.jar",
             "md5": "44c7c6828ac38026f443804827955345",
             "name": "FastCraft",
