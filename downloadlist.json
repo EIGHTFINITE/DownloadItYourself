@@ -145,6 +145,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "binnie-mods-1.7.10-2.0.22.7.jar",
+            "md5": "d0e8ad1db21d4d9fa134d1f3e203f3da",
+            "name": "Binnie's Mods",
+            "url": "https://minecraft.curseforge.com/projects/binnies-mods"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "BiomesOPlenty-1.7.10-2.1.0.2308-universal.jar",
             "md5": "08d7ffbce53615cb516cb4d1916eecb5",
             "name": "Biomes O' Plenty",
