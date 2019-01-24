@@ -553,6 +553,14 @@
             "url": "https://minecraft.curseforge.com/projects/notenoughitems"
         },
         {
+            "additional-folder": "server/mods/1.7.10",
+            "file": "vorbis-java-core-0.8-20150201.161816-1.jar",
+            "folder-override": "minecraft/mods/1.7.10",
+            "md5": "1a0a194558fdb3f6329c9a785256c7ef",
+            "name": "Ogg and Vorbis For Java, Core",
+            "url": "https://web.archive.org/web/20150409134012if_/http://files.qmxtech.com/libs/vorbis-java-core-0.8-20150201.161816-1.jar"
+        },
+        {
             "additional-folder": "server/mods",
             "file": "OpenEye-1.7.10-0.8.jar",
             "md5": "37241c2ff3d38546b5cef43c6900fdcd",
