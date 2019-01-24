@@ -159,6 +159,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "BiblioWoods[Forestry][v1.7].jar",
+            "md5": "e96270e5c2fc9cf4e72b39d953eb0652",
+            "name": "BiblioCraft: BiblioWoods Forestry Edition",
+            "url": "https://minecraft.curseforge.com/projects/bibliocraft-bibliowoods-forestry-edition"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "binnie-mods-1.7.10-2.0.22.7.jar",
             "md5": "d0e8ad1db21d4d9fa134d1f3e203f3da",
             "name": "Binnie's Mods",
