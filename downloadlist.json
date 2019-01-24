@@ -567,6 +567,13 @@
             "url": "https://minecraft.curseforge.com/projects/notenoughitems"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "Numina-0.4.1.105.jar",
+            "md5": "70e1057487b873d7260afc7d7a85290e",
+            "name": "Numina",
+            "url": "https://minecraft.curseforge.com/projects/numina"
+        },
+        {
             "additional-folder": "server/mods/1.7.10",
             "file": "vorbis-java-core-0.8-20150201.161816-1.jar",
             "folder-override": "minecraft/mods/1.7.10",
