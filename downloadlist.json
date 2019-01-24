@@ -512,6 +512,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "ModularPowersuits-1.7.10-0.11.1.116.jar",
+            "md5": "70f26b56351f376c85d2534107a974c0",
+            "name": "Modular Powersuits",
+            "url": "https://minecraft.curseforge.com/projects/modular-powersuits"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "Morpheus-1.7.10-1.6.21.jar",
             "md5": "5d31a1480db8b091757ea5ccd4e220d9",
             "name": "Morpheus",
