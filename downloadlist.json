@@ -765,6 +765,14 @@
             "url": "https://web.archive.org/web/20180217153136/https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/wip-mods/1446206-shadow-world-1-3-3-1-3-3b"
         },
         {
+            "additional-folder": "server/mods/1.7.10",
+            "file": "slick-util-0.0b9db0b2.jar",
+            "folder-override": "minecraft/mods/1.7.10",
+            "md5": "0b9db0b296b5eb1df8d11eb30dc87b8f",
+            "name": "Slick-Util",
+            "url": "https://web.archive.org/web/20150409134031if_/http://files.qmxtech.com/libs/slick-util-0.0b9db0b2.jar"
+        },
+        {
             "file": "SEUS-v11.0.zip",
             "folder-override": "minecraft/shaderpacks",
             "md5": "4d919c05be8c20e2baf93e9ad3b0cebc",
