@@ -236,6 +236,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "Carpenter's Blocks v3.3.8.1 - MC 1.7.10.jar",
+            "md5": "796185b3d2cfd50f74955346ba92614c",
+            "name": "Carpenter's Blocks",
+            "url": "https://minecraft.curseforge.com/projects/carpenters-blocks"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "Chicken Chunk Patcher 1.1.jar",
             "md5": "598778ab931a7f20831a5c719c60b541",
             "name": "Chicken Chunk Patcher",
