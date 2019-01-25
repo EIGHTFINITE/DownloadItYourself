@@ -767,6 +767,13 @@
             "url": "https://minecraft.curseforge.com/projects/project-red-world"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "RedstoneArsenal-[1.7.10]1.1.2-92.jar",
+            "md5": "72f8414b856d40b07d6837560f067acc",
+            "name": "Redstone Arsenal",
+            "url": "https://minecraft.curseforge.com/projects/redstone-arsenal"
+        },
+        {
             "additional-file-disabled": true,
             "additional-folder": "server/mods",
             "file": "ResourceLoader-MC1.7.10-1.3.jar",
