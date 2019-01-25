@@ -31,6 +31,9 @@ copy ..\docs\assets\config\atum.cfg config\atum.cfg
 md config\biomesoplenty
 copy ..\docs\assets\config\biomesoplenty\ids.cfg config\biomesoplenty\ids.cfg
 
+:: Configure Botania
+copy ..\docs\assets\config\Botania.cfg config\Botania.cfg
+
 :: Configure Buildcraft
 md config\buildcraft
 copy ..\docs\assets\config\buildcraft\main.cfg config\buildcraft\main.cfg
