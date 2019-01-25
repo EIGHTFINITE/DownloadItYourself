@@ -55,6 +55,9 @@ copy ..\docs\assets\config\atum.cfg ..\minecraft\config\atum.cfg
 md ..\minecraft\config\biomesoplenty
 copy ..\docs\assets\config\biomesoplenty\ids.cfg ..\minecraft\config\biomesoplenty\ids.cfg
 
+:: Configure Blood Magic
+copy ..\docs\assets\config\AWWayofTime.cfg ..\minecraft\config\AWWayofTime.cfg
+
 :: Configure Botania
 copy ..\docs\assets\config\Botania.cfg ..\minecraft\config\Botania.cfg
 
