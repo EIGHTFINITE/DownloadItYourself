@@ -1031,6 +1031,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "ThermalFoundation-[1.7.10]1.2.6-118.jar",
+            "md5": "cc29ba7f9164bb5c78cee67a3a23a81d",
+            "name": "Thermal Foundation",
+            "url": "https://minecraft.curseforge.com/projects/thermal-foundation"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "TConstruct-1.7.10-1.8.8.build991.jar",
             "md5": "b655f2f7994d9bd1112c826898390908",
             "name": "Tinkers Construct",
