@@ -273,6 +273,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "CoFHTweaks-[1.7.10]1.1.3B3-94.jar",
+            "md5": "30710ffb1c9bf405592f3bd823ab3ef6",
+            "name": "CoFHTweaks",
+            "url": "https://minecraft.curseforge.com/projects/cofhtweaks"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "CollectiveFramework-1.0.0-132.jar",
             "md5": "2c353850493068eff6da6bd9c20b0064",
             "name": "Collective Framework",
