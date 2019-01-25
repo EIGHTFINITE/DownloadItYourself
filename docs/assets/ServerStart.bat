@@ -21,5 +21,5 @@ echo Exiting...
 exit /B
 
 :server_start
-..\bin\windows\x64\JRE\jre-8u152-windows-x64\jre1.8.0_152\bin\java.exe -server -XX:+UseG1GC -Xmx4G -Xms4G -Dsun.rmi.dgc.server.gcInterval=9223372036854775807L -Dsun.rmi.dgc.client.gcInterval=9223372036854775807L -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M -XX:+AggressiveOpts -XX:+ParallelRefProcEnabled -XX:+ExplicitGCInvokesConcurrent -jar FTBServer-1.7.10-1614.jar nogui
+..\bin\windows\x64\JRE\jre-8u152-windows-x64\jre1.8.0_152\bin\java.exe -server -XX:+UseG1GC -Xmx4096m -Xms4096m -Dsun.rmi.dgc.server.gcInterval=9223372036854775807L -Dsun.rmi.dgc.client.gcInterval=9223372036854775807L -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M -XX:+AggressiveOpts -XX:+ParallelRefProcEnabled -XX:+ExplicitGCInvokesConcurrent -jar FTBServer-1.7.10-1614.jar nogui
 goto :EOF
