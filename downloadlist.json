@@ -517,6 +517,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "FTBLib-1.7.10-1.0.18.3.jar",
+            "md5": "1753db050335f5725d1ea9e09b8f102b",
+            "name": "FTB Library",
+            "url": "https://minecraft.curseforge.com/projects/ftblib"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "FactorizationAddons-1.7.10.jar",
             "md5": "b40b1495ad5f8e0233b5714706277fb7",
             "name": "FZAddons",
