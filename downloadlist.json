@@ -341,6 +341,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "CompactSolars-1.7.10-4.4.39.315-universal.jar",
+            "md5": "a119946b82dfa6ee565b83acb080c50e",
+            "name": "Compact Solars",
+            "url": "https://minecraft.curseforge.com/projects/compact-solars"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "ComputerCraft1.75.jar",
             "md5": "3d4ab469b955a3def59e260da660927c",
             "name": "ComputerCraft",
