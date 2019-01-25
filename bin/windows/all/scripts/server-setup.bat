@@ -35,6 +35,10 @@ copy ..\docs\assets\config\biomesoplenty\ids.cfg config\biomesoplenty\ids.cfg
 md config\buildcraft
 copy ..\docs\assets\config\buildcraft\main.cfg config\buildcraft\main.cfg
 
+:: Configure CoFHTweaks
+md config\cofh\tweak
+copy ..\docs\assets\config\cofh\tweak\common.cfg config\cofh\tweak\common.cfg
+
 :: Configure The Erebus
 copy ..\docs\assets\config\erebus.cfg config\erebus.cfg
 
