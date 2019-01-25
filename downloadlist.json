@@ -399,6 +399,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "EnderStorage-1.7.10-1.4.7.37-universal.jar",
+            "md5": "0d3dcb31d90eb2eb748d5e0a901c20a6",
+            "name": "Ender Storage",
+            "url": "https://minecraft.curseforge.com/projects/ender-storage"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "EquivalentExchange3-1.7.10-0.3.0.547.jar",
             "md5": "646022e7a0aab8c703ee3b3cecd9137a",
             "name": "Equivalent Exchange 3",
