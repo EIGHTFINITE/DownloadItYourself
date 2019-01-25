@@ -1024,6 +1024,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "ThermalExpansion-[1.7.10]4.1.5-248.jar",
+            "md5": "8c0ca9e6cc197a13e6cdbaf53b8d60f5",
+            "name": "Thermal Expansion",
+            "url": "https://minecraft.curseforge.com/projects/thermalexpansion"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "TConstruct-1.7.10-1.8.8.build991.jar",
             "md5": "b655f2f7994d9bd1112c826898390908",
             "name": "Tinkers Construct",
