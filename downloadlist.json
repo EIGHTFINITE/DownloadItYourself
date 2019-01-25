@@ -807,7 +807,7 @@
             "folder-override": "minecraft/mods/1.7.10",
             "md5": "1a0a194558fdb3f6329c9a785256c7ef",
             "name": "Ogg and Vorbis For Java, Core",
-            "url": "https://web.archive.org/web/20150409134012if_/http://files.qmxtech.com/libs/vorbis-java-core-0.8-20150201.161816-1.jar"
+            "url": "https://archive.org/download/vorbis-java-core-0.8-20150201.161816-1/vorbis-java-core-0.8-20150201.161816-1.jar"
         },
         {
             "additional-folder": "server/mods",
@@ -1025,7 +1025,7 @@
             "folder-override": "minecraft/mods/1.7.10",
             "md5": "0b9db0b296b5eb1df8d11eb30dc87b8f",
             "name": "Slick-Util",
-            "url": "https://web.archive.org/web/20150409134031if_/http://files.qmxtech.com/libs/slick-util-0.0b9db0b2.jar"
+            "url": "https://archive.org/download/slick-util-0.0b9db0b2/slick-util-0.0b9db0b2.jar"
         },
         {
             "file": "SEUS-v11.0.zip",
