@@ -406,6 +406,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "EnderZoo-1.7.10-1.0.15.32.jar",
+            "md5": "577531417d0dc93fc264631f100f53ba",
+            "name": "Ender Zoo",
+            "url": "https://minecraft.curseforge.com/projects/ender-zoo"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "EquivalentExchange3-1.7.10-0.3.0.547.jar",
             "md5": "646022e7a0aab8c703ee3b3cecd9137a",
             "name": "Equivalent Exchange 3",
