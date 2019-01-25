@@ -369,6 +369,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "extrautilities-1.2.12.jar",
+            "md5": "0b1848ece3f6e1370e6caa8124c1480d",
+            "name": "Extra Utilities",
+            "url": "https://minecraft.curseforge.com/projects/extra-utilities"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "Factorization-1.7.10-0.8.109.jar",
             "md5": "fdfba4575e0d10c5fb31d24d1cd63941",
             "name": "Factorization",
