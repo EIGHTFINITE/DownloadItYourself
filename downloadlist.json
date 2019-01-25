@@ -413,6 +413,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "EnderCore-1.7.10-0.2.0.39_beta.jar",
+            "md5": "e6c8b5dc1ae0f01e34673ba608f8ffd9",
+            "name": "EnderCore",
+            "url": "https://minecraft.curseforge.com/projects/endercore"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "EquivalentExchange3-1.7.10-0.3.0.547.jar",
             "md5": "646022e7a0aab8c703ee3b3cecd9137a",
             "name": "Equivalent Exchange 3",
