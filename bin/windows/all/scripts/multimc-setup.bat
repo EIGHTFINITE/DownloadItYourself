@@ -19,6 +19,7 @@ echo AutoUpdate=false>multimc.cfg
 echo JavaPath=../bin/windows/x64/JRE/jre-8u152-windows-x64/jre1.8.0_152/bin/javaw.exe>>multimc.cfg
 echo Language=en>>multimc.cfg
 echo LastHostname=%computername%>>multimc.cfg
+echo SelectedInstance=default>>multimc.cfg
 
 :: Configure instance
 copy ..\docs\assets\instance.cfg instances\default\instance.cfg
