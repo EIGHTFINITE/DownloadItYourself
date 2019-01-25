@@ -691,6 +691,14 @@
             "url": "https://minecraft.curseforge.com/projects/mantle"
         },
         {
+            "additional-file-disabled": true,
+            "additional-folder": "server/mods",
+            "file": "MemoryCleaner-1.4-mc.1.7.10.jar",
+            "md5": "e841a57a3f1b4d7d2cea1b406a006bd3",
+            "name": "Memory Cleaner",
+            "url": "https://archive.org/download/MemoryCleaner-1.4-mc.1.7.10/MemoryCleaner-1.4-mc.1.7.10.jar"
+        },
+        {
             "file": "launchwrapper-1.12.jar",
             "folder-override": "server/libraries/net/minecraft/launchwrapper/1.12",
             "md5": "934b2d91c7c5be4a49577c9e6b40e8da",
