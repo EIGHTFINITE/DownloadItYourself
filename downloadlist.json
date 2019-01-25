@@ -392,6 +392,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "EnderIO-1.7.10-2.3.0.429_beta.jar",
+            "md5": "37089c0fd0769f27298fbc14665bafad",
+            "name": "Ender IO",
+            "url": "https://minecraft.curseforge.com/projects/ender-io"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "EquivalentExchange3-1.7.10-0.3.0.547.jar",
             "md5": "646022e7a0aab8c703ee3b3cecd9137a",
             "name": "Equivalent Exchange 3",
