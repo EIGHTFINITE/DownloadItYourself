@@ -16,6 +16,7 @@ var copyFile = require("./func/copyFile.js");
 console.message = require("./func/message.js");
 
 // Globals
+process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0; // Yes, I am aware of what this does. We don't care if the remote has a valid cert. We check file hashes after downloading.
 global.list = void(0);
 global.downloads = void(0);
 global.config = void(0);
