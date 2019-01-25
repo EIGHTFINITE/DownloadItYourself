@@ -369,6 +369,13 @@
             "url": "https://minecraft.curseforge.com/projects/custom-main-menu"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "denseores-1.6.2.jar",
+            "md5": "aab8a8aad4385de5367987d64317562c",
+            "name": "Dense Ores",
+            "url": "https://minecraft.curseforge.com/projects/dense-ores"
+        },
+        {
             "additional-file-disabled": true,
             "additional-folder": "server/mods",
             "file": "Dynamic Lights-1.3.9a-MC1.7.10.jar",
