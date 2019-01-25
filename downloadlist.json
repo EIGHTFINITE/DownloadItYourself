@@ -173,6 +173,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "BigReactors-0.4.3A.jar",
+            "md5": "b1c71b6a64a84f154af2d83bdc0d33bf",
+            "name": "Big Reactors",
+            "url": "https://minecraft.curseforge.com/projects/big-reactors"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "binnie-mods-1.7.10-2.0.22.7.jar",
             "md5": "d0e8ad1db21d4d9fa134d1f3e203f3da",
             "name": "Binnie's Mods",
