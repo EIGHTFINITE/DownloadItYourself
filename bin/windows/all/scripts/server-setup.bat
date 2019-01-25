@@ -35,6 +35,11 @@ copy ..\docs\assets\config\biomesoplenty\ids.cfg config\biomesoplenty\ids.cfg
 md config\buildcraft
 copy ..\docs\assets\config\buildcraft\main.cfg config\buildcraft\main.cfg
 
+:: Configure CoFH Core
+md config\cofh
+md config\cofh\core
+copy ..\docs\assets\config\cofh\core\common.cfg config\cofh\core\common.cfg
+
 :: Configure CoFHTweaks
 md config\cofh\tweak
 copy ..\docs\assets\config\cofh\tweak\common.cfg config\cofh\tweak\common.cfg

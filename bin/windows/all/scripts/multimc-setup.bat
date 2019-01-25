@@ -59,6 +59,11 @@ copy ..\docs\assets\config\biomesoplenty\ids.cfg ..\minecraft\config\biomesoplen
 md ..\minecraft\config\buildcraft
 copy ..\docs\assets\config\buildcraft\main.cfg ..\minecraft\config\buildcraft\main.cfg
 
+:: Configure CoFH Core
+md config\cofh
+md config\cofh\core
+copy ..\docs\assets\config\cofh\core\common.cfg ..\minecraft\config\cofh\core\common.cfg
+
 :: Configure Custom Main Menu
 md ..\minecraft\config\CustomMainMenu
 copy ..\docs\assets\config\CustomMainMenu\mainmenu.json ..\minecraft\config\CustomMainMenu\mainmenu.json
