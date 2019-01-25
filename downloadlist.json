@@ -257,6 +257,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "Chisel-2.9.5.11.jar",
+            "md5": "c76378129307ab7b371bb9b3b8631fce",
+            "name": "Chisel",
+            "url": "https://minecraft.curseforge.com/projects/chisel"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "Chunk Pregenerator V1.7.10-1.9.2.jar",
             "md5": "653e1d38389e61a3ecaace5af21ee230",
             "name": "Chunk-Pregenerator",
