@@ -272,8 +272,10 @@
             "url": "https://minecraft.curseforge.com/projects/cofhcore"
         },
         {
+            "additional-file-disabled": false,
             "additional-folder": "server/mods",
             "file": "CoFHTweaks-[1.7.10]1.1.3B3-94.jar",
+            "file-disabled": true,
             "md5": "30710ffb1c9bf405592f3bd823ab3ef6",
             "name": "CoFHTweaks",
             "url": "https://minecraft.curseforge.com/projects/cofhtweaks"
