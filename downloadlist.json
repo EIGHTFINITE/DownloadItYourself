@@ -524,6 +524,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "FTBUtilities-1.7.10-1.0.18.3.jar",
+            "md5": "d7611c7ea40480c17a6a5fd164dd21a8",
+            "name": "FTB Utilities",
+            "url": "https://minecraft.curseforge.com/projects/ftb-utilities"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "FactorizationAddons-1.7.10.jar",
             "md5": "b40b1495ad5f8e0233b5714706277fb7",
             "name": "FZAddons",
