@@ -266,6 +266,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "CoFHCore-[1.7.10]3.1.4-329.jar",
+            "md5": "de527c101a1f2c62203f99515f3d0957",
+            "name": "CoFH Core",
+            "url": "https://minecraft.curseforge.com/projects/cofhcore"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "CollectiveFramework-1.0.0-132.jar",
             "md5": "2c353850493068eff6da6bd9c20b0064",
             "name": "Collective Framework",
