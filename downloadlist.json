@@ -545,6 +545,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "gendustry-1.6.4.135-mc1.7.10.jar",
+            "md5": "2a3d8a317ade033610413424a7311982",
+            "name": "Gendustry",
+            "url": "https://minecraft.curseforge.com/projects/gendustry"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "GildedGamesUtil-1.7.10-1.7.0.jar",
             "md5": "b08006f643affbe71c585ea5bf5e3f9d",
             "name": "Gilded Games Util",
