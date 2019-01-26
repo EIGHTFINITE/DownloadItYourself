@@ -1044,6 +1044,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "Railcraft_1.7.10-9.12.2.1.jar",
+            "md5": "24cdef39ba06a2bb1121c679d80ca93c",
+            "name": "Railcraft",
+            "url": "https://minecraft.curseforge.com/projects/railcraft"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "RedstoneArsenal-[1.7.10]1.1.2-92.jar",
             "md5": "72f8414b856d40b07d6837560f067acc",
             "name": "Redstone Arsenal",
