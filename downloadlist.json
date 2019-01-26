@@ -981,6 +981,12 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "PneumaticCraft-1.7.10-1.12.7-152-universal.jar",
+            "md5": "7ccea567cb5af8c37e7929bf541d6171",
+            "name": "PneumaticCraft",
+            "url": "https://minecraft.curseforge.com/projects/pneumaticcraft"
+        },
+        {
             "file": "ProjectRed-1.7.10-4.7.0pre12.95-Base.jar",
             "md5": "4ca2c33c19252f4fcec87a7f28a9420c",
             "name": "Project Red - Base",
