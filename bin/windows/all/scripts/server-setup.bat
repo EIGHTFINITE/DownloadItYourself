@@ -82,6 +82,9 @@ copy ..\docs\assets\config\Thaumcraft.cfg config\Thaumcraft.cfg
 :: Configure Thaumic Exploration
 copy ..\docs\assets\config\ThaumicExploration.cfg config\ThaumicExploration.cfg
 
+:: Configure Thaumic Tinkerer
+copy ..\docs\assets\config\ThaumicTinkerer.cfg config\ThaumicTinkerer.cfg
+
 :: Configure The Twilight Forest
 copy ..\docs\assets\config\TwilightForest.cfg config\TwilightForest.cfg
 
