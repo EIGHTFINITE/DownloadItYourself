@@ -1237,6 +1237,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "StevesFactoryManagerA93.jar",
+            "md5": "825819de2d82cf7e9118353c0fc821b6",
+            "name": "Steve's Factory Manager",
+            "url": "https://minecraft.curseforge.com/projects/steves-factory-manager"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "StorageDrawers-1.7.10-1.10.9.jar",
             "md5": "6fe615f1a9ff94dfe1b0641f1fc9fd18",
             "name": "Storage Drawers",
