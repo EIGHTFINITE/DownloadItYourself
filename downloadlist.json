@@ -789,6 +789,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "MineTweaker3-1.7.10-3.0.10B.jar",
+            "md5": "884933d1b933e0bd2f93293201569f13",
+            "name": "MineTweaker3",
+            "url": "https://minecraft.curseforge.com/projects/minetweaker3"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "DrZharks MoCreatures Mod v6.3.1.zip",
             "md5": "70a039e42bdcf18f58ac694d0ecb65a4",
             "name": "Mo' Creatures",
