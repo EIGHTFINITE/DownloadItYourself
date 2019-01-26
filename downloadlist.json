@@ -936,6 +936,13 @@
             "url": "https://minecraft.curseforge.com/projects/openeye"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "OpenModsLib-1.7.10-0.10.jar",
+            "md5": "7af56161fea4b81d7c8504133b269710",
+            "name": "OpenModsLib",
+            "url": "https://minecraft.curseforge.com/projects/openmodslib"
+        },
+        {
             "additional-file-disabled": true,
             "additional-folder": "server/mods",
             "file": "OptiFine_1.7.10_HD_U_E7.jar",
