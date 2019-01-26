@@ -79,6 +79,9 @@ copy ..\docs\assets\config\Starminer.cfg config\Starminer.cfg
 :: Configure Thaumcraft
 copy ..\docs\assets\config\Thaumcraft.cfg config\Thaumcraft.cfg
 
+:: Configure Thaumic Exploration
+copy ..\docs\assets\config\ThaumicExploration.cfg config\ThaumicExploration.cfg
+
 :: Configure The Twilight Forest
 copy ..\docs\assets\config\TwilightForest.cfg config\TwilightForest.cfg
 
