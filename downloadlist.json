@@ -1065,6 +1065,13 @@
             "url": "https://minecraft.curseforge.com/projects/resource-loader"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "rftools-4.23.jar",
+            "md5": "3f8210b1cfca520753532cc89fc961d8",
+            "name": "RFTools",
+            "url": "https://minecraft.curseforge.com/projects/rftools"
+        },
+        {
             "exec": {
                 "args": "-cp ___UNPACKER___ nice.work.forge.LibraryUnpacker --checksums ___FILE___",
                 "cmd": "___JAVA___",
