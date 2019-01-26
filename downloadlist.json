@@ -632,6 +632,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "iChunUtil-4.2.3.jar",
+            "md5": "9f90848755f2c3002996b86b57dee2f1",
+            "name": "iChunUtil",
+            "url": "https://minecraft.curseforge.com/projects/ichunutil"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "ImmersiveEngineering-0.7.7.jar",
             "md5": "24f8212228caf05e2031b1e9221146b5",
             "name": "Immersive Engineering",
