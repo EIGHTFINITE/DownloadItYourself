@@ -950,6 +950,13 @@
             "url": "https://minecraft.curseforge.com/projects/openperipheraladdons"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "OpenPeripheralCore-1.7.10-1.4.jar",
+            "md5": "40a20aa1af43c8364293d7eeb0e1cbe2",
+            "name": "OpenPeripheralCore",
+            "url": "https://minecraft.curseforge.com/projects/openperipheralcore"
+        },
+        {
             "additional-file-disabled": true,
             "additional-folder": "server/mods",
             "file": "OptiFine_1.7.10_HD_U_E7.jar",
