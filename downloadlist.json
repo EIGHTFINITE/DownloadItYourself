@@ -595,6 +595,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "HatStand-4.0.0.jar",
+            "md5": "6d668669276027a99973b73e0677fc87",
+            "name": "Hat Stand",
+            "url": "https://minecraft.curseforge.com/projects/hat-stand"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "HelpFixer-1.0.7.jar",
             "md5": "0d6ce4776f981f97a13ab02029b5fb4d",
             "name": "HelpFixer",
