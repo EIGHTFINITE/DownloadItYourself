@@ -894,6 +894,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "IC2NuclearControl-2.4.3a.jar",
+            "md5": "8699c37cf6233651c8fdc745a395125f",
+            "name": "Nuclear Control 2",
+            "url": "https://minecraft.curseforge.com/projects/nuclear-control-2"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "Numina-0.4.1.105.jar",
             "md5": "70e1057487b873d7260afc7d7a85290e",
             "name": "Numina",
