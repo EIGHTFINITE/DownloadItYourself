@@ -873,6 +873,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "NEIIntegration-MC1.7.10-1.1.2.jar",
+            "md5": "54308ef273613b79870e9e46df86e7d9",
+            "name": "NEI Integration",
+            "url": "https://minecraft.curseforge.com/projects/nei-integration"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "NotEnoughItems-1.7.10-1.0.5.120-universal.jar",
             "md5": "742e865a9a80071e80976ffedc05700e",
             "name": "NotEnoughItems",
