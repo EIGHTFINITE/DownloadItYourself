@@ -740,6 +740,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "MSC2.jar",
+            "md5": "b8ecff81d787edc16cf09048c7ff4bc4",
+            "name": "Mob Spawn Controls 2",
+            "url": "https://archive.org/download/MSC2_201901/MSC2.jar"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "ModularPowersuits-1.7.10-0.11.1.116.jar",
             "md5": "70f26b56351f376c85d2534107a974c0",
             "name": "Modular Powersuits",
