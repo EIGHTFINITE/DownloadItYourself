@@ -1356,6 +1356,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "TiCTooltips-mc1.7.10-1.2.5.jar",
+            "md5": "d8178b20a554d3a0f3d0f374769acd02",
+            "name": "TiC Tooltips",
+            "url": "https://minecraft.curseforge.com/projects/tic-tooltips"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "TConstruct-1.7.10-1.8.8.build991.jar",
             "md5": "b655f2f7994d9bd1112c826898390908",
             "name": "Tinkers Construct",
