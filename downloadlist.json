@@ -588,6 +588,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "Guide-API-1.7.10-1.0.1-29.jar",
+            "md5": "85b1112cffe2f2316f174aa480e6bfb4",
+            "name": "Guide-API",
+            "url": "https://minecraft.curseforge.com/projects/guide-api"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "HelpFixer-1.0.7.jar",
             "md5": "0d6ce4776f981f97a13ab02029b5fb4d",
             "name": "HelpFixer",
