@@ -1307,6 +1307,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "ThaumicTinkerer-2.5-1.7.10-164.jar",
+            "md5": "8dc007673d1e79f00c3095317f53d0ce",
+            "name": "Thaumic Tinkerer",
+            "url": "https://minecraft.curseforge.com/projects/thaumic-tinkerer"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "AetherII-1.7.10-1.7.0.jar",
             "md5": "a0ea9bcd3ef8023e3d72d6219b4cf02c",
             "name": "The Aether II",
