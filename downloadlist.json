@@ -734,6 +734,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "magicbees-1.7.10-2.4.4.jar",
+            "md5": "37e76b00092972895c7e7118e82c9588",
+            "name": "Magic Bees",
+            "url": "https://minecraft.curseforge.com/projects/magic-bees"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "Mantle-1.7.10-0.3.2b.jar",
             "md5": "934fe4ef7a9b971f22b5dd53e57fa976",
             "name": "Mantle",
