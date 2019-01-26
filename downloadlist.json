@@ -987,6 +987,14 @@
             "url": "https://minecraft.curseforge.com/projects/pneumaticcraft"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "PortalGun-4.0.0-beta-6-fix-1.jar",
+            "md5": "318fb7d5510c6ae47cab5c3534cf7268",
+            "name": "Portal Gun",
+            "url": "https://minecraft.curseforge.com/projects/portal-gun"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "ProjectRed-1.7.10-4.7.0pre12.95-Base.jar",
             "md5": "4ca2c33c19252f4fcec87a7f28a9420c",
             "name": "Project Red - Base",
