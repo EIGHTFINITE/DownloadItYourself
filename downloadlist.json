@@ -1376,6 +1376,13 @@
             "url": "https://minecraft.curseforge.com/projects/tinkers-mechworks"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "Translocator-1.7.10-1.1.2.16-universal.jar",
+            "md5": "541e87b5d6f522415f8d9a05811377d8",
+            "name": "Translocators",
+            "url": "https://minecraft.curseforge.com/projects/translocators"
+        },
+        {
             "exec": {
                 "args": "-cp ___UNPACKER___ nice.work.forge.LibraryUnpacker --checksums ___FILE___",
                 "cmd": "___JAVA___",
