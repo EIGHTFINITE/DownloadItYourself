@@ -907,6 +907,13 @@
             "url": "https://minecraft.curseforge.com/projects/numina"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "ObsidiPlates-1.7.10-universal-3.0.0.18.jar",
+            "md5": "20fc7e4fde83c7be83358a19bfffc4b1",
+            "name": "ObsidiPlates",
+            "url": "https://minecraft.curseforge.com/projects/obsidiplates"
+        },
+        {
             "additional-folder": "server/mods/1.7.10",
             "file": "vorbis-java-core-0.8-20150201.161816-1.jar",
             "folder-override": "minecraft/mods/1.7.10",
