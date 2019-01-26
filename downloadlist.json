@@ -1230,6 +1230,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "StevesCarts2.0.0.b18.jar",
+            "md5": "0beb610ca0d65a1419fffabe7feb9dc2",
+            "name": "Steve's Carts 2",
+            "url": "https://minecraft.curseforge.com/projects/steves-carts-2"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "StorageDrawers-1.7.10-1.10.9.jar",
             "md5": "6fe615f1a9ff94dfe1b0641f1fc9fd18",
             "name": "Storage Drawers",
