@@ -671,6 +671,13 @@
             "url": "https://minecraft.curseforge.com/projects/inventory-tweaks"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "ironchest-1.7.10-6.0.62.742-universal.jar",
+            "md5": "48d942594459c437ce8e8648ca42a7b9",
+            "name": "Iron Chests",
+            "url": "https://minecraft.curseforge.com/projects/iron-chests"
+        },
+        {
             "exec": {
                 "args": "/c ___7Z___ e ___FILE___ -o../minecraft/mods JBRobotModel1710-0.6.0.jar JointBlock1710-0.6.2.jar && ___7Z___ e ___FILE___ -o../server/mods JBRobotModel1710-0.6.0.jar JointBlock1710-0.6.2.jar",
                 "cmd": "cmd",
