@@ -1428,6 +1428,13 @@
             "md5": "22096b8e462fa5cca3a6c8054116d4fc",
             "name": "Witchery",
             "url": "https://minecraft.curseforge.com/projects/witchery"
+        },
+        {
+            "additional-folder": "server/mods",
+            "file": "WR-CBE-1.7.10-1.4.1.9-universal.jar",
+            "md5": "c3477cd84ce90a85cce8ba8bb7b93809",
+            "name": "WR-CBE-Universal",
+            "url": "https://minecraft.curseforge.com/projects/wr-cbe-universal"
         }
     ]
 }
