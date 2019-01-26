@@ -923,6 +923,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "OpenBlocks-1.7.10-1.6.jar",
+            "md5": "26aa01a40b9eeb35a4d291ec9d6dd598",
+            "name": "OpenBlocks",
+            "url": "https://minecraft.curseforge.com/projects/openblocks"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "OpenEye-1.7.10-0.8.jar",
             "md5": "37241c2ff3d38546b5cef43c6900fdcd",
             "name": "OpenEye",
