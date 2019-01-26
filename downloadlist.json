@@ -880,6 +880,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "NotEnoughCodecs-1.7.10-0.4.jar",
+            "md5": "930a02ab8fa4b272292e0ee0a265909a",
+            "name": "NotEnoughCodecs",
+            "url": "https://minecraft.curseforge.com/projects/notenoughcodecs"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "NotEnoughItems-1.7.10-1.0.5.120-universal.jar",
             "md5": "742e865a9a80071e80976ffedc05700e",
             "name": "NotEnoughItems",
