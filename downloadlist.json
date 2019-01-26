@@ -678,6 +678,13 @@
             "url": "https://minecraft.curseforge.com/projects/iron-chests"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "Jabba-1.2.2_1.7.10.jar",
+            "md5": "9d35698387f75007c1c4dd0dcfec13e5",
+            "name": "Jabba",
+            "url": "https://minecraft.curseforge.com/projects/jabba"
+        },
+        {
             "exec": {
                 "args": "/c ___7Z___ e ___FILE___ -o../minecraft/mods JBRobotModel1710-0.6.0.jar JointBlock1710-0.6.2.jar && ___7Z___ e ___FILE___ -o../server/mods JBRobotModel1710-0.6.0.jar JointBlock1710-0.6.2.jar",
                 "cmd": "cmd",
