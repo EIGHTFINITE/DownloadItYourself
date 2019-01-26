@@ -747,6 +747,13 @@
             "url": "https://minecraft.curseforge.com/projects/mantle"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "mcjtylib-1.8.1.jar",
+            "md5": "2ebbefd7fa32bf96159f6d305f932fcf",
+            "name": "McJtyLib",
+            "url": "https://minecraft.curseforge.com/projects/mcjtylib"
+        },
+        {
             "additional-file-disabled": true,
             "additional-folder": "server/mods",
             "file": "MemoryCleaner-1.4-mc.1.7.10.jar",
