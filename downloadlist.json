@@ -1300,6 +1300,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "ThaumicExploration-1.7.10-1.1-53.jar",
+            "md5": "98e1277a33d6452c773fad1d28691815",
+            "name": "Thaumic Exploration",
+            "url": "https://minecraft.curseforge.com/projects/thaumic-exploration"
+        },
+        {
+            "additional-folder": "server/mods",
             "file": "AetherII-1.7.10-1.7.0.jar",
             "md5": "a0ea9bcd3ef8023e3d72d6219b4cf02c",
             "name": "The Aether II",
