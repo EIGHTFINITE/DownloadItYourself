@@ -1328,10 +1328,10 @@
         },
         {
             "additional-folder": "server/mods",
-            "file": "ThaumicExploration-1.7.10-1.1-53.jar",
-            "md5": "98e1277a33d6452c773fad1d28691815",
+            "file": "Thaumic-Exploration-[1.7.10] 1.1.73-0.jar",
+            "md5": "ae544cf66c07a5fb67f8f9a6d497181f",
             "name": "Thaumic Exploration",
-            "url": "https://minecraft.curseforge.com/projects/thaumic-exploration"
+            "url": "https://archive.org/download/Thaumic-Exploration-1.7.101.1.73-0/Thaumic-Exploration-[1.7.10] 1.1.73-0.jar"
         },
         {
             "additional-folder": "server/mods",
