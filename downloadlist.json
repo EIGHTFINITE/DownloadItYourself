@@ -646,6 +646,13 @@
         },
         {
             "additional-folder": "server/mods",
+            "file": "IGW-Mod-1.7.10-1.1.12-34-universal.jar",
+            "md5": "48cb8aa894d046bbbada670e124cbfaf",
+            "name": "In-Game Wiki Mod",
+            "url": "https://minecraft.curseforge.com/projects/in-game-wiki-mod"
+        },
+        {
+            "additional-folder": "server/mods",
             "exec": {
                 "args": "/c ___7Z___ e ../minecraft/mods/___FILE___ -o../minecraft/mods/ic2 lib/EJML-core-0.26.jar && ___7Z___ e ../server/mods/___FILE___ -o../server/mods/ic2 lib/EJML-core-0.26.jar",
                 "cmd": "cmd",
