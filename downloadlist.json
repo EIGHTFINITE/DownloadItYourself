@@ -390,6 +390,13 @@
             "url": "https://minecraft.curseforge.com/projects/dense-ores"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "DragonAPI 1.7.10 V22d.jar",
+            "md5": "5da85119c9e237bdb0453b8e1ad4fbf2",
+            "name": "DragonAPI",
+            "url": "https://minecraft.curseforge.com/projects/dragonapi"
+        },
+        {
             "additional-file-disabled": true,
             "additional-folder": "server/mods",
             "file": "Dynamic Lights-1.3.9a-MC1.7.10.jar",
