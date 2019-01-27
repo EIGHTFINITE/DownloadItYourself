@@ -740,6 +740,13 @@
             "url": "https://minecraft.curseforge.com/projects/lookingglass"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "LootGames-1.7.10-1.0.16.jar",
+            "md5": "091c9cb4378a777b1b8480bbbdf635e0",
+            "name": "LootGames",
+            "url": "https://archive.org/download/LootGames-1.7.10-1.0.16/LootGames-1.7.10-1.0.16.jar"
+        },
+        {
             "file": "lzma-0.0.1.jar",
             "folder-override": "server/libraries/lzma/lzma/0.0.1",
             "md5": "a3e3c3186e41c4a1a3027ba2bb23cdc6",
