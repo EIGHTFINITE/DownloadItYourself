@@ -1086,6 +1086,13 @@
             "url": "https://minecraft.curseforge.com/projects/rftools"
         },
         {
+            "additional-folder": "server/mods",
+            "file": "RotaryCraft 1.7.10 V22d.jar",
+            "md5": "837ed7bc5a3fd3718f93593e38c77a50",
+            "name": "RotaryCraft",
+            "url": "https://minecraft.curseforge.com/projects/rotarycraft"
+        },
+        {
             "exec": {
                 "args": "-cp ___UNPACKER___ nice.work.forge.LibraryUnpacker --checksums ___FILE___",
                 "cmd": "___JAVA___",
