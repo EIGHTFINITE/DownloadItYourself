@@ -1463,6 +1463,13 @@
             "md5": "c3477cd84ce90a85cce8ba8bb7b93809",
             "name": "WR-CBE-Universal",
             "url": "https://minecraft.curseforge.com/projects/wr-cbe-universal"
+        },
+        {
+            "additional-folder": "server/mods",
+            "file": "YAMCore-1.7.10-0.5.78.jar",
+            "md5": "4e2f11ce462b8b0e5b9772b1bb03ef7a",
+            "name": "YAMCore",
+            "url": "https://archive.org/download/YAMCore-1.7.10-0.5.78/YAMCore-1.7.10-0.5.78.jar"
         }
     ]
 }
