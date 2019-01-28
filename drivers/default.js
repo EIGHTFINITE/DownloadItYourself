@@ -1,6 +1,8 @@
 /**
  * Driver for downloading binary files
  */
+(function() {
+
 current.file = temp.file;
 remote.pipe(fs.createWriteStream("../_temp" + "/" + temp.file)).on("finish", function() {
 	current.md5 = md5File.sync("../_temp" + "/" + temp.file);
@@ -13,3 +15,5 @@ remote.pipe(fs.createWriteStream("../_temp" + "/" + temp.file)).on("finish", fun
 	console.message(i, "'" + localizedName(i) + "' has successfully updated." + ("md5" in temp ? " (MD5 matches)" : ""), MESSAGE_VERBOSE);
 	callback();
 });
+
+}());
