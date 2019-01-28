@@ -63,4 +63,4 @@ process.on('exit', function() {
     if(global.list !== void(0)) fs.writeFileSync("../downloadlist.json", stringify(global.list, { space: 4 }) + "\n");
 });
 
-})();
+}());

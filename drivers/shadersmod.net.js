@@ -1,13 +1,14 @@
 /**
  * Driver for downloading from shadersmod.net
  */
-request(temp.url, function(err, response, html) {
-    console.message(i, "Navigating to '" + shortUrl(temp.url) + "'.");
-    if (err) throw err;
-    var $ = cheerio.load(html);
-    temp.url = $("h2.header-version:contains(DOWNLOADS)").nextAll("p").find("a").attr("href");
-	if(temp.url.includes('shrinkearn.com'))
-		temp.url = 'http://www.karyonix.net/shadersmod/files/ShadersModCore-v2.3.31-mc1.7.10-f.jar';
-    updateFile(i, current, temp, callback);
-    if (!current.name) current.name = "Shaders Mod";
-});
+(function() {
+
+var $ = cheerio.load(html);
+var elem = $("h2.header-version:contains(DOWNLOADS)").nextAll("p").find("a").first();
+if(!elem.length)
+	throw new Error("Couldn't find download link.");
+temp.url = elem.attr("href");
+updateFile(i, current, temp, callback);
+if (!current.name) current.name = "GLSL Shaders Mod";
+
+}());

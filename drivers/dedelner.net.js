@@ -1,19 +1,28 @@
 /**
  * Driver for downloading from dedelner.net
  */
-request(temp.url, function(err, response, html) {
-	console.message(i, "Navigating to '" + shortUrl(temp.url) + "'.");
-	if (err) throw err;
-	var $ = cheerio.load(html);
-	temp.url = $('a[href^="https://dedelner.net/download/"]').last().attr("href");
-	request(temp.url, function(err, response, html) {
-		console.message(i, "Navigating to '" + shortUrl(temp.url) + "'.");
-		if (err) throw err;
-		var $ = cheerio.load(html);
-		temp.url = $('a.wpdm-download-link').attr("onclick");
-		temp.url = temp.url.substring(temp.url.indexOf("'") + 1, nthIndex(temp.url, "'", 2));
-		temp.file = "KUDA-Shaders v6.5.56.zip";
-		updateFile(i, current, temp, callback);
-	});
-	if (!current.name) current.name = "KUDA-Shaders";
-});
+(function() {
+
+var $ = cheerio.load(html);
+var elem;
+if(temp.url.startsWith("https://dedelner.net/download/")) {
+	// Download page
+	elem = $('a.wpdm-download-link').first();
+	if(!elem.length)
+		throw new Error("Couldn't find download link.");
+	temp.url = elem.attr("onclick");
+	temp.url = temp.url.substring(temp.url.indexOf("'") + 1, nthIndex(temp.url, "'", 2));
+	temp.file = "KUDA-Shaders v6.5.56.zip";
+	updateFile(i, current, temp, callback);
+}
+else {
+	// Regular page
+	elem = $('a[href^="https://dedelner.net/download/"]').last();
+	if(!elem.length)
+		throw new Error("Couldn't find download link.");
+	temp.url = elem.attr("href");
+	updateFile(i, current, temp, callback);
+}
+if (!current.name) current.name = "KUDA-Shaders";
+
+}());
