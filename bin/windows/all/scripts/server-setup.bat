@@ -70,6 +70,10 @@ copy ..\docs\assets\config\Morpheus.cfg config\Morpheus.cfg
 md config\mystcraft
 copy ..\docs\assets\config\mystcraft\core.cfg config\mystcraft\core.cfg
 
+:: Configure RotaryCraft
+md config\Reika
+copy ..\docs\assets\config\Reika\RotaryCraft.cfg Reika\RotaryCraft.cfg
+
 :: Configure Shadow World
 copy ..\docs\assets\config\shadowworld.cfg config\shadowworld.cfg
 
