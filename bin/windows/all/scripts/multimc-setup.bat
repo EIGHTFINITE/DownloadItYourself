@@ -33,6 +33,9 @@ copy ..\docs\assets\optionsof.txt ..\minecraft\optionsof.txt
 :: Configure Shaders
 copy ..\docs\assets\optionsshaders.txt ..\minecraft\optionsshaders.txt
 
+:: Copy ASM data
+robocopy ..\docs\assets\asm ..\minecraft\asm /S /NP /NJH /NJS
+
 :: Create config directory
 md ..\minecraft\config
 
