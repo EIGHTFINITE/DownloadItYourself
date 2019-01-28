@@ -108,6 +108,10 @@ copy ..\docs\assets\config\Morpheus.cfg ..\minecraft\config\Morpheus.cfg
 md ..\minecraft\config\mystcraft
 copy ..\docs\assets\config\mystcraft\core.cfg ..\minecraft\config\mystcraft\core.cfg
 
+:: Configure RotaryCraft
+md ..\minecraft\config\Reika
+copy ..\docs\assets\config\Reika\RotaryCraft.cfg ..\minecraft\config\Reika\RotaryCraft.cfg
+
 :: Configure Shadow World
 copy ..\docs\assets\config\shadowworld.cfg ..\minecraft\config\shadowworld.cfg
 
