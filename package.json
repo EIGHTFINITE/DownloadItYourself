@@ -7,13 +7,14 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/EIGHTFINITE/modpack-updater.git"
+    "url": "https://github.com/ModdingMinecraft/modpack-updater.git"
   },
   "dependencies": {
     "cheerio": "latest",
     "fs-extra": "latest",
     "json-stable-stringify": "latest",
     "request": "latest",
-    "md5-file": "latest"
+    "md5-file": "latest",
+    "wait-until": "latest"
   }
 }
