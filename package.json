@@ -10,11 +10,13 @@
     "url": "https://github.com/ModdingMinecraft/modpack-updater.git"
   },
   "dependencies": {
+    "brotli": "latest",
     "cheerio": "latest",
+    "cloudscraper": "latest",
     "fs-extra": "latest",
     "json-stable-stringify": "latest",
-    "request": "latest",
     "md5-file": "latest",
+    "request": "latest",
     "wait-until": "latest"
   }
 }
