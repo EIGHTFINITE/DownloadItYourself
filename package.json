@@ -2,6 +2,9 @@
   "name": "modpack-updater",
   "version": "0.0.1",
   "description": "Keeps a set of files up to date.",
+  "engines": {
+    "node": ">=12.10.0"
+  },
   "main": "main.js",
   "author": "EIGHTFINITE",
   "license": "MIT",
