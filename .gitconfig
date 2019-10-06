@@ -1,0 +1,16 @@
+[core]
+	ignorecase = false
+	fscache = true
+	autocrlf = false
+[index]
+	threads = 0
+[pack]
+	threads = 1
+[http]
+	postBuffer = 1048576000
+[merge]
+	renameLimit = 0
+[status]
+	renameLimit = 0
+[diff]
+	renameLimit = 0

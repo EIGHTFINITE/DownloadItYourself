@@ -1,7 +1,10 @@
 * text=false
 /.gitattributes export-ignore
+/.gitconfig export-ignore
 /.gitignore export-ignore
 /.gitmodules export-ignore
+/docs/archive/ export-ignore
+/docs/scripts/ export-ignore
 /README.md export-ignore
 /.github/ export-ignore
 /.github/* linguist-vendored
