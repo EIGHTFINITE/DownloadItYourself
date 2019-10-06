@@ -2,5 +2,7 @@
 /minecraft/
 /server/
 /MultiMC/
+[Tt]humbs.db
+[Dd]esktop.ini
 .DS_Store
 *.lnk
