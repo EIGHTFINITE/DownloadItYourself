@@ -3,6 +3,8 @@
 /.gitconfig export-ignore
 /.gitignore export-ignore
 /.gitmodules export-ignore
+/.npmignore export-ignore
+/.npmrc export-ignore
 /docs/archive/ export-ignore
 /docs/scripts/ export-ignore
 /README.md export-ignore
