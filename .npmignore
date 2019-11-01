@@ -4,6 +4,7 @@
 /.gitmodules
 /.npmignore
 /.npmrc
+/.dependabot/
 /.github/
 /docs/archive/
 /docs/scripts/

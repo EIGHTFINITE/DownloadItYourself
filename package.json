@@ -14,12 +14,12 @@
     "url": "https://github.com/ModdingMinecraft/modpack-updater.git"
   },
   "dependencies": {
-    "cheerio": "latest",
-    "cloudscraper": "latest",
-    "fs-extra": "latest",
-    "json-stable-stringify": "latest",
-    "md5-file": "latest",
-    "request": "latest",
-    "wait-until": "latest"
+    "cheerio": "1.0.0-rc.3",
+    "cloudscraper": "4.3.0",
+    "fs-extra": "8.1.0",
+    "json-stable-stringify": "1.0.1",
+    "md5-file": "4.0.0",
+    "request": "2.88.0",
+    "wait-until": "0.0.2"
   }
 }
