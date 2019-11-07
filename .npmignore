@@ -2,6 +2,7 @@
 /.gitconfig
 /.gitignore
 /.gitmodules
+/.mailmap
 /.npmignore
 /.npmrc
 /.dependabot/
