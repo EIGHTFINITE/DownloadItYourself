@@ -3,6 +3,7 @@
 /.gitconfig export-ignore
 /.gitignore export-ignore
 /.gitmodules export-ignore
+/.mailmap export-ignore
 /.npmignore export-ignore
 /.npmrc export-ignore
 /docs/archive/ export-ignore
