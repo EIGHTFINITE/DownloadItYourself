@@ -1,0 +1,26 @@
+name: jsonlint
+
+on: [push, pull_request]
+
+env:
+  CI: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+      with:
+        path: modpack-updater
+    - uses: actions/checkout@master
+      with:
+        repository: EIGHTFINITE/demjson
+        ref: refs/heads/master
+        path: demjson
+    - name: jsonlint
+      shell: bash
+      run: |
+        cd  /home/runner/work/modpack-updater/demjson
+        sudo python setup.py install
+        cd  /home/runner/work/modpack-updater/modpack-updater
+        if [[ $(find . -type f -name '*.json' -exec jsonlint -s --allow non-bmp,zero-byte --forbid bom,duplicate-keys,non-portable -e utf8 -- '{}' ';' | grep -v ': ok' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]; then exit 1; fi
