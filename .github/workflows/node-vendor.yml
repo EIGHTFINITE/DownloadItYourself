@@ -22,7 +22,7 @@ jobs:
         if [[ $(git config user.email | head -c1 | wc -c) -eq 0 ]]; then git config --local user.email "noreply@github.com"; fi
         rm -r node_modules/
         rm package-lock.json
-        bin/linux/x64/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-optional --no-bin-links --loglevel=error
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-optional --no-bin-links --loglevel=error
         grep -rl '"_where"' node_modules/ | xargs sed -i '/_where/d'
         grep -rl '"man": \[' node_modules/ | xargs sed -i '/"man": \[/,/\],/d'
         git add -A
