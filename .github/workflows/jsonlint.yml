@@ -11,9 +11,11 @@ jobs:
     steps:
     - uses: actions/checkout@master
       with:
+        fetch-depth: 1
         path: modpack-updater
     - uses: actions/checkout@master
       with:
+        fetch-depth: 1
         repository: EIGHTFINITE/demjson
         ref: refs/heads/master
         path: demjson
