@@ -16,3 +16,6 @@
 [submodule "bin/windows/x86/jre/jre-8u201-windows-i586/jre1.8.0_201/lib/applet"]
 	path = bin/windows/x86/jre/jre-8u201-windows-i586/jre1.8.0_201/lib/applet
 	url = git@github.com:EIGHTFINITE/void.git
+[submodule "bin/linux/x64/jre/jre-8u201-linux-x64/jre1.8.0_201/lib/applet"]
+	path = bin/linux/x64/jre/jre-8u201-linux-x64/jre1.8.0_201/lib/applet
+	url = git@github.com:EIGHTFINITE/void.git
