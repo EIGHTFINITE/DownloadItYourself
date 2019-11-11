@@ -13,6 +13,8 @@ jobs:
         os: [ubuntu-latest, windows-latest]
     steps:
     - uses: actions/checkout@master
+      with:
+        fetch-depth: 1
     - name: npm install (ubuntu-latest)
       if: matrix.os == 'ubuntu-latest'
       run: |
