@@ -36,5 +36,5 @@ jobs:
       with:
         source_branch: "actions/node-vendor"
         pr_title: "Update Node Modules"
-        pr_body: "Update Vendored Node Modules to the latest versions found in https://github.com/${{ github.repository }}/blob/${{ github.base_ref }}/package.json"
+        pr_body: "Update Vendored Node Modules to the latest versions found in https://github.com/${{ github.repository }}/blob/master/package.json"
         github_token: ${{ secrets.GITHUB_TOKEN }}
