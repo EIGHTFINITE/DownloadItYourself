@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "cheerio": "1.0.0-rc.3",
-    "cloudscraper": "codemanki/cloudscraper",
+    "cloudscraper": "codemanki/cloudscraper#f7dfa7001964ce0d76a94efc94acbb9c037204b1",
     "fs-extra": "8.1.0",
     "json-stable-stringify": "1.0.1",
     "md5-file": "4.0.0",
