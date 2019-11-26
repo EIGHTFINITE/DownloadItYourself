@@ -18,8 +18,11 @@ jobs:
       shell: bash
       run: |
         docs/scripts/configure-git.sh
-        if [[ $(git config user.name | head -c1 | wc -c) -eq 0 ]]; then git config --local user.name "GitHub"; fi
-        if [[ $(git config user.email | head -c1 | wc -c) -eq 0 ]]; then git config --local user.email "noreply@github.com"; fi
+        if [[ $(git config user.name | head -c1 | wc -c) -eq 0 ]] \
+        || [[ $(git config user.email | head -c1 | wc -c) -eq 0 ]]; then
+          git config --local user.name "GitHub"
+          git config --local user.email "noreply@github.com"
+        fi
         rm -r node_modules/
         rm package-lock.json
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-optional --no-bin-links --loglevel=error
