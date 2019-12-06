@@ -12,43 +12,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-      with:
-        fetch-depth: 1
     - name: Vendor Node Modules
       shell: bash
       run: |
         docs/scripts/configure-git.sh
-        if [[ $(git config user.name | head -c1 | wc -c) -eq 0 ]] \
-        || [[ $(git config user.email | head -c1 | wc -c) -eq 0 ]]; then
-          git config --local user.name "GitHub"
-          git config --local user.email "noreply@github.com"
-        fi
         rm -r node_modules/
         rm package-lock.json
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-optional --no-bin-links --loglevel=error
         grep -rl '"_where"' node_modules/ | xargs sed -i '/_where/d'
         grep -rl '"man": \[' node_modules/ | xargs sed -i '/"man": \[/,/\],/d'
-        git add -A
-        if [[ $(git config user.name) = 'GitHub' ]] \
-        && [[ $(git config user.email) = 'noreply@github.com' ]]; then
-          git diff-index --quiet HEAD \
-          || git commit \
-            --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" \
-            -m "Update Node Modules"
-        else
-          git diff-index --quiet HEAD \
-          || git commit \
-            -m "Update Node Modules"
-        fi
-    - uses: ad-m/github-push-action@master
+    - uses: peter-evans/create-pull-request@master
       with:
-        branch: "refs/heads/actions/node-vendor"
-        force: true
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-    - uses: repo-sync/pull-request@master
-      with:
-        source_branch: "actions/node-vendor"
-        pr_title: "Update Node Modules"
-        pr_body: "Update Vendored Node Modules to the latest versions found in https://github.com/${{ github.repository }}/blob/master/package.json"
-        pr_label: "dependencies"
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: Update Node Modules
+        author-name: github-actions[bot]
+        author-email: 41898282+github-actions[bot]@users.noreply.github.com
+        committer-name: GitHub
+        committer-email: noreply@github.com
+        title: Update Node Modules
+        body: |
+          Update Vendored Node Modules to the latest versions found in https://github.com/${{ github.repository }}/blob/master/package.json
+        labels: dependencies
+        branch: actions/node-vendor
+        base: master
+        branch-suffix: none
