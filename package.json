@@ -1,5 +1,5 @@
 {
-  "name": "modpack-updater",
+  "name": "EIGHTFINITE-build",
   "version": "0.0.1",
   "description": "Keeps a set of files up to date.",
   "engines": {
@@ -11,7 +11,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/ModdingMinecraft/modpack-updater.git"
+    "url": "https://github.com/ModdingMinecraft/EIGHTFINITE-build.git"
   },
   "dependencies": {
     "cheerio": "1.0.0-rc.3",
