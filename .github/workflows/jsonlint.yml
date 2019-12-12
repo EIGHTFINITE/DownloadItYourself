@@ -21,9 +21,9 @@ jobs:
         sudo python setup.py install
     - uses: actions/checkout@master
       with:
-        path: modpack-updater
+        path: EIGHTFINITE-build
     - name: jsonlint
       shell: bash
       run: |
-        cd  modpack-updater
+        cd  EIGHTFINITE-build
         if [[ $(find . -type f -name '*.json' -exec jsonlint -s --allow non-bmp,zero-byte --forbid bom,duplicate-keys,non-portable -e utf8 -- '{}' ';' | grep -v ': ok' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]; then exit 1; fi
