@@ -1,6 +1,6 @@
-This project is licensed under the MIT License. (See: `license-code.txt`)
+EIGHTFINITE-build is licensed under MIT-0. Please refer to LICENSE-code.txt
 
-This license does not apply to the works located in the `bin` and
-`node_modules` folders. These works retain their respective licenses and have
-NOT been made available under any other terms or licenses. This document does
-not apply to those works.
+This license does not apply to the works found in the `_download`, `bin`, and
+`node_modules` folders. These works remain licensed under their original terms
+and will not be made available under any other terms or licenses. This
+document does not apply to those works.
