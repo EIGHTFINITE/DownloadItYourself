@@ -19,7 +19,8 @@ jobs:
         rm -r node_modules/
         rm package-lock.json
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-optional --no-bin-links --ignore-scripts --loglevel=error
-        grep -rl '"_where"' node_modules/ | xargs sed -i '/_where/d'
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
+        grep -rl '"_where"' node_modules/ | xargs sed -i '/"_where"/d'
         grep -rl '"man": \[' node_modules/ | xargs sed -i '/"man": \[/,/\],/d'
     - uses: peter-evans/create-pull-request@master
       with:
