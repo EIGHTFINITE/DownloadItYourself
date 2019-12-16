@@ -1,5 +1,11 @@
 (function() {
 
+// Executable check
+var isIojs = require('is-iojs');
+if (isIojs) {
+	throw new Error("EIGHTFINITE-build does not support io.js");
+}
+
 // Libraries
 var fs = require("fs-extra");
 var stringify = require("json-stable-stringify");
