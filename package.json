@@ -2,8 +2,10 @@
   "name": "EIGHTFINITE-build",
   "version": "0.0.1",
   "description": "Keeps a set of files up to date.",
+  "engineStrict": true,
   "engines": {
-    "node": ">=12.10.0"
+    "node": "12.10.0",
+    "npm": "6.10.3"
   },
   "main": "main.js",
   "author": "EIGHTFINITE",
