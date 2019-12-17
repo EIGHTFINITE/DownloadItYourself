@@ -1,0 +1,34 @@
+name: Update AUTHORS
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+      with:
+        fetch-depth: 0
+    - name: Update AUTHORS
+      shell: bash
+      run: |
+        docs/scripts/configure-git.sh
+        git log --format='%aN <%aE>%n%cN <%cE>' | sort -u > AUTHORS.txt
+        printf '%s\0' .mailmap AUTHORS.txt | sort -u --files0-from=- -o .mailmap
+    - uses: peter-evans/create-pull-request@master
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: Update AUTHORS
+        author-name: github-actions[bot]
+        author-email: 41898282+github-actions[bot]@users.noreply.github.com
+        committer-name: GitHub
+        committer-email: noreply@github.com
+        title: Credit new contributors
+        body: |
+          Credit our new contributors :tada:
+        branch: actions/authors
+        base: master
+        branch-suffix: none
