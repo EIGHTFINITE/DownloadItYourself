@@ -26,4 +26,4 @@ jobs:
       shell: bash
       run: |
         cd  EIGHTFINITE-build
-        if [[ $(find . -type f -name '*.json' -exec jsonlint -s --allow non-bmp,zero-byte --forbid bom,duplicate-keys,non-portable -e utf8 -- '{}' ';' | grep -v ': ok' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]; then exit 1; fi
+        if [[ $(find . -type f -path ./.git -prune -o -name '*.json' -exec jsonlint -s --allow non-bmp,zero-byte --forbid bom,duplicate-keys,non-portable -e utf8 -- '{}' ';' | grep -v ': ok' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]; then exit 1; fi
