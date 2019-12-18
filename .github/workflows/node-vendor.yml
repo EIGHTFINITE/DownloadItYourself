@@ -16,6 +16,7 @@ jobs:
       shell: bash
       run: |
         docs/scripts/configure-git.sh
+        git reset --hard HEAD
         rm -r node_modules/
         rm package-lock.json
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-optional --no-bin-links --ignore-scripts --loglevel=error
