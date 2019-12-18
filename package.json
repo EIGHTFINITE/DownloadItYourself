@@ -19,7 +19,7 @@
     "@sindresorhus/is": "1.2.0",
     "cheerio": "1.0.0-rc.3",
     "cloudscraper": "4.5.0",
-    "electron": "7.1.5",
+    "electron": "7.1.6",
     "fs-extra": "8.1.0",
     "is-iojs": "1.1.0",
     "json-stable-stringify": "1.0.1",
