@@ -1,0 +1,44 @@
+name: Vendor Electron Artifacts
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+    - uses: actions/checkout@master
+    - name: Vendor Electron Artifacts (ubuntu-latest)
+      if: matrix.os == 'ubuntu-latest'
+      shell: bash
+      run: |
+        docs/scripts/configure-git.sh
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
+        split -db 104857600 --suffix-length=3 node_modules/electron/dist/electron node_modules/electron/dist/electron.
+        echo "node_modules/electron/dist/electron" > .git/info/exclude
+    - name: Vendor Electron Artifacts (windows-latest)
+      if: matrix.os == 'windows-latest'
+      shell: cmd
+      run: |
+        docs\scripts\configure-git.bat
+        cmd /c EIGHTFINITE-build\bin\windows\x64\node\node-v12.10.0-win-x64\node node_modules\electron\install.js
+    - uses: peter-evans/create-pull-request@master
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: Update Electron Artifacts
+        author-name: github-actions[bot]
+        author-email: 41898282+github-actions[bot]@users.noreply.github.com
+        committer-name: GitHub
+        committer-email: noreply@github.com
+        title: Update Electron Artifacts
+        body: |
+          Update Electron release artifacts to the latest versions found in https://github.com/${{ github.repository }}/blob/master/node_modules/electron/package.json
+        labels: dependencies
+        branch: actions/electron-vendor-${{ matrix.os }}
+        base: master
+        branch-suffix: none
