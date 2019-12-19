@@ -7,18 +7,29 @@ var path = require('path');
 
 // Functions
 var localizedName = require("../func/localizedName.js");
-var closeThread = require("../func/closeThread.js");
 
 // Variables
 var MESSAGE_VERBOSE = true;
+var CLOSE_THREAD = true;
+var NO_CLOSE_THREAD = false;
 
-module.exports = function(i, current) {
-	if(!current.exec || current.exec.length < 1)
+module.exports = function(i, current, callback) {
+	if(!current.url || !current.exec || current.url.startsWith('https://www.curseforge.com/')) { // TODO: Get CurseForge working again
+		console.message(i, "'" + localizedName(i) + "' has no defined executable commands.", MESSAGE_VERBOSE, global.noExecOrUpdateIsFinished[i] === true ? CLOSE_THREAD : NO_CLOSE_THREAD);
+		global.noExecOrUpdateIsFinished[i] = true;
+		callback(current);
 		return;
+	}
 
 	// Copy current into temp
 	var temp = Object.assign({}, current);
 	var exec = Object.assign({}, current.exec);
+	if(!exec.dir) {
+		if(current["folder-override"])
+			exec.dir = "../" + current["folder-override"];
+		else
+			exec.dir = "../_download/" + current.id;
+	}
 
 	// Replace
 	if(exec.cmd.includes("___JAVA___"))
@@ -34,14 +45,15 @@ module.exports = function(i, current) {
 		if(exec.args.includes("___MULTIMC_SETUP___"))
 			exec.args = exec.args.replace(/___MULTIMC_SETUP___/g, path.resolve(__dirname, '../bin/windows/all/scripts/multimc-setup.bat'));
 		if(exec.args.includes("___UNPACKER___"))
-			exec.args = exec.args.replace(/___UNPACKER___/g, path.resolve(__dirname, '../bin/all/all/library-unpacker/library-unpacker.jar'));
+			exec.args = exec.args.replace(/___UNPACKER___/g, path.resolve(__dirname, '../bin/all/all/library-unpacker/library-unpacker.jar nice.work.forge.LibraryUnpacker --checksums'));
 	}
 
-	// Run
+	console.message(i, "Running " + path.parse(exec.cmd).name + " on '" + current.file + "'.");
+	// Run command
 	run((exec.args.length ? exec.cmd + " " + exec.args : exec.cmd), {cwd: exec.dir}, (err, stdout, stderr) => {
-		console.message(i, "Running " + path.parse(exec.cmd).name + " on '" + localizedName(i) + "'.");
 		if (err) throw err;
-		closeThread(i);
+		console.message(i, path.parse(exec.cmd).name + " succeeded.", MESSAGE_VERBOSE, CLOSE_THREAD);
+		callback(current);
 	});
 }
 
