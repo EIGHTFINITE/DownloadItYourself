@@ -22,6 +22,7 @@ jobs:
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
         grep -rl '"_where"' node_modules/ | xargs sed -i '/"_where"/d'
         grep -rl '"man": \[' node_modules/ | xargs sed -i '/"man": \[/,/\],/d'
+        git update-index --assume-unchanged "node_modules/electron/path.txt"
     - uses: peter-evans/create-pull-request@master
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
