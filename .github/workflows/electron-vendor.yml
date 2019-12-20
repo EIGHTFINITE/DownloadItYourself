@@ -22,23 +22,23 @@ jobs:
         export npm_config_platform=win32
         export npm_config_arch=ia32
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
-        mkdir -p "bin/windows/x86/electron/electron-v$(cat node_modules/electron/dist/version)-win32-ia32"
-        mv -T node_modules/electron/dist "bin/windows/x86/electron/electron-v$(cat node_modules/electron/dist/version)-win32-ia32"
+        find bin/windows/x86/electron -mindepth 1 -maxdepth 1 -type d -exec rm -r -- '{}' ';'
+        mv -T node_modules/electron/dist "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32"
         
         # Windows x64
         export npm_config_arch=x64
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
-        mkdir -p "bin/windows/x64/electron/electron-v$(cat node_modules/electron/dist/version)-win32-x64"
-        mv -T node_modules/electron/dist "bin/windows/x64/electron/electron-v$(cat node_modules/electron/dist/version)-win32-x64"
+        find bin/windows/x64/electron -mindepth 1 -maxdepth 1 -type d -exec rm -r -- '{}' ';'
+        mv -T node_modules/electron/dist "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
         
         # Linux
         export npm_config_platform=linux
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
-        mkdir -p "bin/linux/x64/electron/electron-v$(cat node_modules/electron/dist/version)-linux-x64"
-        mv -T node_modules/electron/dist "bin/linux/x64/electron/electron-v$(cat node_modules/electron/dist/version)-linux-x64"
+        find bin/linux/x64/electron -mindepth 1 -maxdepth 1 -type d -exec rm -r -- '{}' ';'
+        mv -T node_modules/electron/dist "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64"
         
         # Large Files
-        split -db 104857600 --suffix-length=3 bin/linux/x64/electron/electron-v7.1.7-linux-x64/electron bin/linux/x64/electron/electron-v7.1.7-linux-x64/electron.
+        split -db 104857600 --suffix-length=3 "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/electron" "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/electron."
         echo "bin/linux/x64/electron/electron-v7.1.7-linux-x64/electron" > .git/info/exclude
     - uses: peter-evans/create-pull-request@master
       with:
