@@ -1,0 +1,57 @@
+name: Vendor Electron Artifacts
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Vendor Electron Artifacts
+      shell: bash
+      run: |
+        docs/scripts/configure-git.sh
+        export npm_config_target=`cat node_modules/electron/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']"`
+        echo "::set-env name=npm_config_target::$npm_config_target"
+        
+        # Windows x86
+        export force_no_cache=true
+        export npm_config_platform=win32
+        export npm_config_arch=ia32
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
+        mkdir -p "bin/windows/x86/electron/electron-v$(cat node_modules/electron/dist/version)-win32-ia32"
+        mv -T node_modules/electron/dist "bin/windows/x86/electron/electron-v$(cat node_modules/electron/dist/version)-win32-ia32"
+        
+        # Windows x64
+        export npm_config_arch=x64
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
+        mkdir -p "bin/windows/x64/electron/electron-v$(cat node_modules/electron/dist/version)-win32-x64"
+        mv -T node_modules/electron/dist "bin/windows/x64/electron/electron-v$(cat node_modules/electron/dist/version)-win32-x64"
+        
+        # Linux
+        export npm_config_platform=linux
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
+        mkdir -p "bin/linux/x64/electron/electron-v$(cat node_modules/electron/dist/version)-linux-x64"
+        mv -T node_modules/electron/dist "bin/linux/x64/electron/electron-v$(cat node_modules/electron/dist/version)-linux-x64"
+        
+        # Large Files
+        split -db 104857600 --suffix-length=3 bin/linux/x64/electron/electron-v7.1.7-linux-x64/electron bin/linux/x64/electron/electron-v7.1.7-linux-x64/electron.
+        echo "bin/linux/x64/electron/electron-v7.1.7-linux-x64/electron" > .git/info/exclude
+    - uses: peter-evans/create-pull-request@master
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: Update Electron Artifacts
+        author-name: github-actions[bot]
+        author-email: 41898282+github-actions[bot]@users.noreply.github.com
+        committer-name: GitHub
+        committer-email: noreply@github.com
+        title: Update Electron Artifacts
+        body: |
+          Update Electron release artifacts to version ${{ env.npm_config_target }}
+        labels: dependencies
+        branch: actions/electron-vendor
+        base: master
+        branch-suffix: none
