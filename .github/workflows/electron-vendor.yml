@@ -14,7 +14,7 @@ jobs:
       shell: bash
       run: |
         docs/scripts/configure-git.sh
-        export npm_config_target=`cat node_modules/electron/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']"`
+        export npm_config_target=$(cat node_modules/electron/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']")
         echo "::set-env name=npm_config_target::$npm_config_target"
         
         # Windows x86

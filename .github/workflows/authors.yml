@@ -17,7 +17,7 @@ jobs:
       run: |
         docs/scripts/configure-git.sh
         git log --format='%aN <%aE>%n%cN <%cE>' | sort -u > AUTHORS.txt
-        printf '%s\0' .mailmap AUTHORS.txt | sort -u --files0-from=- -o .mailmap
+        printf '%s\0' .mailmap AUTHORS.txt | sort --files0-from=- -uo .mailmap
     - uses: peter-evans/create-pull-request@master
       with:
         token: ${{ secrets.GITHUB_TOKEN }}

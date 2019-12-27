@@ -20,13 +20,14 @@ jobs:
         rm package-lock.json
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-optional --no-bin-links --ignore-scripts --loglevel=error
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
-        grep -rl '"_where"' node_modules/ | xargs sed -i '/"_where"/d'
-        grep -rl '"man": \[' node_modules/ | xargs sed -i '/"man": \[/,/\],/d'
+        find node_modules/ -type f -name 'package.json' -exec sed -i '/"_where"/d' -- '{}' ';'
+        find node_modules/ -type f -name 'package.json' -exec sed -i '/"man": \[/,/\],/d' -- '{}' ';'
         git update-index --assume-unchanged "node_modules/electron/path.txt"
+        find node_modules/ -mindepth 2 -maxdepth 3 -type f -name 'package.json' -exec bash -c 'path="{}"; git add -- "${path:0:-13}"; git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update ${path:13:-13}"' ';'
     - uses: peter-evans/create-pull-request@master
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        commit-message: Update Node Modules
+        commit-message: Update package-lock.json
         author-name: github-actions[bot]
         author-email: 41898282+github-actions[bot]@users.noreply.github.com
         committer-name: GitHub
