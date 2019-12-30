@@ -1,6 +1,11 @@
-EIGHTFINITE-build is licensed under MIT-0. Please refer to LICENSE-code.txt
+This work is licensed under MIT-0 with an additional patent grant. Please
+refer to MIT-0.txt and PATENTS.txt
 
-This license does not apply to the works found in the `_download`, `bin`, and
-`node_modules` folders. These works remain licensed under their original terms
-and will not be made available under any other terms or licenses. This
-document does not apply to those works.
+The above license, the above patent grant, and this document do not apply to
+the works in the `bin`, `node_modules`, `docs/img/icon`, `docs/img/logo`, and
+`_download` folders. These works remain available solely under their original
+terms and/or licenses and will not be made available under any other terms or
+any other licenses.
+
+All images in the `docs/img/logo` folder are the property of their respective
+owners. Please request permission from their owners before using these images.
