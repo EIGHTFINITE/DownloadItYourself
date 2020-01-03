@@ -28,14 +28,11 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: Update package-lock.json
-        author-name: github-actions[bot]
-        author-email: 41898282+github-actions[bot]@users.noreply.github.com
-        committer-name: GitHub
-        committer-email: noreply@github.com
+        author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+        committer: GitHub <noreply@github.com>
         title: Update Node Modules
         body: |
           Update Vendored Node Modules to the latest versions found in https://github.com/${{ github.repository }}/blob/master/package.json
         labels: dependencies
         branch: actions/node-vendor
         base: master
-        branch-suffix: none
