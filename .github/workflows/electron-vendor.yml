@@ -44,14 +44,11 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: Update Electron Artifacts
-        author-name: github-actions[bot]
-        author-email: 41898282+github-actions[bot]@users.noreply.github.com
-        committer-name: GitHub
-        committer-email: noreply@github.com
+        author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+        committer: GitHub <noreply@github.com>
         title: Update Electron Artifacts
         body: |
           Update Electron release artifacts to version ${{ env.npm_config_target }}
         labels: dependencies
         branch: actions/electron-vendor
         base: master
-        branch-suffix: none
