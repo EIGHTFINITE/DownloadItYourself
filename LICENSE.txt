@@ -2,7 +2,7 @@ This work is licensed under MIT-0 with an additional patent grant. Please
 refer to MIT-0.txt and PATENTS.txt
 
 The above license, the above patent grant, and this document do not apply to
-the works in the `bin`, `node_modules`, `docs/img/clipart`, `docs/img/icon`,
+the works in the `bin`, `node_modules`, `docs/img/icon`, `docs/img/vector`,
 and `_download` folders. These works remain available solely under their
 original terms and/or licenses and will not be made available under any other
 terms or any other licenses.
