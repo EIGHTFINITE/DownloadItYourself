@@ -25,6 +25,7 @@
     "json-stable-stringify": "1.0.1",
     "md5-file": "4.0.0",
     "request": "2.88.0",
+    "spdx-expression-parse": "EIGHTFINITE/spdx-expression-parse#relaxed",
     "wait-until": "0.0.2"
   }
 }
