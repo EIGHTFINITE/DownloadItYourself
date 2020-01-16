@@ -17,15 +17,15 @@
   },
   "dependencies": {
     "@sindresorhus/is": "1.2.0",
-    "cheerio": "cheeriojs/cheerio#v1.0.0",
-    "cloudscraper": "4.5.0",
+    "cheerio": "cheeriojs/cheerio",
+    "cloudscraper": "codemanki/cloudscraper",
     "electron": "7.1.9",
     "fs-extra": "8.1.0",
     "is-iojs": "1.1.0",
     "json-stable-stringify": "1.0.1",
     "md5-file": "4.0.0",
     "request": "2.88.0",
-    "spdx-expression-parse": "EIGHTFINITE/spdx-expression-parse#relaxed",
+    "spdx-expression-parse": "EIGHTFINITE/spdx-expression-parse",
     "wait-until": "0.0.2"
   }
 }
