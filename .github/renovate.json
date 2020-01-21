@@ -1,8 +1,15 @@
 {
   "extends": [
     "config:base",
-	":rebaseStalePrs",
-	":label(dependencies)",
-	":masterIssue"
+    ":rebaseStalePrs",
+    ":label(dependencies)",
+    ":masterIssue"
+  ],
+  "packageRules": [
+    {
+      "packageNames": ["cheerio"],
+      "matchCurrentVersion": "v1.0.0",
+      "enabled": false
+    }
   ]
 }
