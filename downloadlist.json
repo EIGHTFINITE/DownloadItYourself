@@ -1,7 +1,10 @@
 {
     "config": {
         "delayed-log": true,
+        "description-append": "<h2>Vector Attribution</h2><ul><li>“<a href=\"https://web.archive.org/web/20190203231029/https://openclipart.org/detail/1644/apply\"  title=\"“apply” vector\">apply</a>” by <a href=\"https://web.archive.org/web/20190203231103/https://openclipart.org/user-detail/dagobert83\" title=\"dagobert83\">dagobert83</a> is licensed under <a href=\"docs/legal/CC0-1.0.txt\" title=\"“apply” license\">CC0-1.0</a></li><li>“<a href=\"https://web.archive.org/web/20190203231051/https://openclipart.org/detail/1645/cancel\" title=\"“cancel” vector\">cancel</a>” by <a href=\"https://web.archive.org/web/20190203231103/https://openclipart.org/user-detail/dagobert83\" title=\"dagobert83\">dagobert83</a> is licensed under <a href=\"docs/legal/CC0-1.0.txt\" title=\"“cancel” license\">CC0-1.0</a></li><li>“<a href=\"https://thenounproject.com/term/download/32391/\" title=\"“Download” vector\">Download</a>” by <a href=\"https://thenounproject.com/castoretpollux/\" title=\"Castor & Pollux\">Castor & Pollux</a> is licensed under <a href=\"docs/legal/CC-BY-3.0.txt\" title=\"“Download” license\">CC-BY-3.0</a></li><li>“<a href=\"https://web.archive.org/web/20150220051607/https://www.flaticon.com/free-icon/question-mark-circle-interface-faq-symbol_39409\" title=\"“Question mark circle interface faq symbol” vector\">Question mark circle interface faq symbol</a>” by <a href=\"https://web.archive.org/web/20150316103630/https://www.flaticon.com/authors/freepik\" title=\"Freepik\">Freepik</a> is licensed under <a href=\"docs/legal/CC-BY-3.0.txt\" title=\"“Question mark circle interface faq symbol” license\">CC-BY-3.0</a></li><li>“Cogs / Gears Icon”<a href=\"https://stock.adobe.com/images/cogs-gears-icon/230449567\" title=\"“Cogs / Gears Icon” vector\">[1]</a><a href=\"https://www.iconfinder.com/icons/176306/business_cogs_finance_gears_sprockets_thinking_icon\" title=\"“Cogs / Gears Icon” vector\">[2]</a><a href=\"https://www.shutterstock.com/image-vector/cogs-gears-icon-professional-pixel-perfect-336130190\" title=\"“Cogs / Gears Icon” vector\">[3]</a> is Copyright © 2013 <a href=\"https://www.iconfinder.com/13ree.design\" title=\"13ree.design\">13ree.design</a>. Licensed to EIGHTFINITE by <a href=\"https://www.adobe.com/\" title=\"Adobe Inc.\">Adobe Inc.</a>, <a href=\"https://www.iconfinder.com/\" title=\"Iconfinder ApS\">Iconfinder ApS</a>, <a href=\"https://www.shutterstock.com/\" title=\"Shutterstock Inc.\">Shutterstock Inc.</a></li></ul>",
+        "description-prepend": "<p>EIGHTFINITE presents a small Vanilla+ modpack for Minecraft 1.7.10.</p><p>This README is a work in progress. Not all information might be accurate yet. Please report any inaccurate information.</p><p>This pack contains Fastcraft, by Player, enabled by default. Fastcraft enhances Minecraft with increased performance. Bug reports being made directly to Mod Authors should state Fastcraft is enabled.</p>",
         "folder": "minecraft/mods",
+        "max-active-downloads": 20,
         "minecraft-curseforge-version": "1738749986%3A5",
         "minecraft-version": "1.7.10",
         "verbose": false
@@ -9,1467 +12,3610 @@
     "downloads": [
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Turkey",
+                "url": "https://www.curseforge.com/members/turkey2349"
+            },
+            "code": {
+                "title": "Visible Source",
+                "url": "https://github.com/Turkey2349/A-Block-Of-Charcoal/tree/dev_1.7.10"
+            },
+            "description": "Craft charcoal into blocks.",
             "file": "A Block of Charcoal-1.0.jar",
+            "id": "a-block-of-charcoal",
+            "img": "a-block-of-charcoal.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/a-block-of-charcoal",
+                "txt": "All Rights Reserved"
+            },
             "md5": "50dff6375b66c3e882157698ede23c9d",
             "name": "A Block of Charcoal",
-            "url": "https://minecraft.curseforge.com/projects/a-block-of-charcoal"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/a-block-of-charcoal"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "AtomicStryker",
+                "url": "https://www.curseforge.com/members/atomicstrykergrumpy"
+            },
+            "code": {
+                "title": "Open Source",
+                "url": "https://github.com/AtomicStryker/atomicstrykers-minecraft-mods/tree/1.7.10/AdvancedMachinesAS"
+            },
+            "description": "Adds even better IC2 machines.",
+            "distribution": "allowed",
             "file": "AdvancedMachinesAS-1.7.10.jar",
+            "id": "advancedmachines",
+            "img": "advancedmachines.png",
+            "license": {
+                "source": "http://atomicstryker.net/about.php",
+                "txt": "AtomicStryker license"
+            },
             "md5": "43e9d2f702235b1025d52c237b8f6edd",
             "name": "Advanced Machines",
+            "type": "client/server mod",
             "url": "http://atomicstryker.net/advancedmachines.php"
         },
         {
+            "description-url-override": "https://akka.io/",
             "exec": {
-                "args": "-cp ___UNPACKER___ nice.work.forge.LibraryUnpacker --checksums ___FILE___",
-                "cmd": "___JAVA___",
-                "dir": "../server/libraries/com/typesafe/akka/akka-actor_2.11/2.3.3"
+                "args": "-cp ___UNPACKER___ ___FILE___",
+                "cmd": "___JAVA___"
             },
             "file": "akka-actor_2.11-2.3.3.jar.pack.xz",
             "folder-override": "server/libraries/com/typesafe/akka/akka-actor_2.11/2.3.3",
+            "id": "akka",
+            "img": "akka.svg",
             "md5": "469367f3308e571b1bdf2192d7779807",
             "name": "Akka Actor",
+            "type": "library",
             "url": "https://files.minecraftforge.net/maven/com/typesafe/akka/akka-actor_2.11/2.3.3/akka-actor_2.11-2.3.3.jar.pack.xz"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "TheHippoMaster21",
+                "url": "https://www.curseforge.com/members/shcott21"
+            },
+            "code": {
+                "title": "Open Source",
+                "url": "https://www.curseforge.com/minecraft/mc-mods/animationapi/files/2221720"
+            },
+            "description": "An API to create animations more easily. Required by Ars Magica 2.",
+            "distribution": "allowed",
             "file": "AnimationAPI-1.7.10-1.2.4.jar",
+            "id": "curseforge",
+            "img": "curseforge.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/animationapi",
+                "txt": "AGPL-3.0"
+            },
             "md5": "7ec0b391e527461196e86f4e4974f560",
             "name": "AnimationAPI",
-            "url": "https://minecraft.curseforge.com/projects/animationapi"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/animationapi"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "ganymedes01",
+                "url": "https://www.curseforge.com/members/ganymedes01"
+            },
+            "code": {
+                "title": "Visible Source",
+                "url": "https://github.com/ganymedes01/Another-One-Bites-the-Dust"
+            },
             "file": "AOBD-2.9.2.jar",
+            "id": "another-one-bites-the-dust",
+            "img": "another-one-bites-the-dust.svg",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/another-one-bites-the-dust",
+                "txt": "All Rights Reserved"
+            },
             "md5": "0864caf4280229154ca7f158502d4bee",
             "name": "Another One Bites the Dust",
-            "url": "https://minecraft.curseforge.com/projects/another-one-bites-the-dust"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/another-one-bites-the-dust"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Elix_x",
+                "url": "https://www.curseforge.com/members/elix_x"
+            },
             "file": "AntiIdConflict-1.3.5-1.7.10.jar",
+            "id": "anti-id-conflict",
+            "img": "anti-id-conflict.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/anti-id-conflict",
+                "txt": "CC-BY-NC-ND-4.0"
+            },
             "md5": "766f372c9f6d8c68e550f8509a7fdd66",
             "name": "Anti Id Conflict",
-            "url": "https://minecraft.curseforge.com/projects/anti-id-conflict"
-        },
-        {
-            "file": "commons-lang3-3.3.2.jar",
-            "folder-override": "server/libraries/org/apache/commons/commons-lang3/3.3.2",
-            "md5": "3128bf75a2549ebe38663401191bacab",
-            "name": "Apache Commons Lang",
-            "url": "https://libraries.minecraft.net/org/apache/commons/commons-lang3/3.3.2/commons-lang3-3.3.2.jar"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "AppleCore-mc1.7.10-3.1.1.jar",
-            "md5": "169c63b60ec8a8195733b94cb47ae694",
-            "name": "AppleCore",
-            "url": "https://minecraft.curseforge.com/projects/applecore"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "appliedenergistics2-rv3-beta-6.jar",
-            "md5": "0a555df010345a27e0956a3f05517510",
-            "name": "Applied Energistics 2",
-            "url": "https://minecraft.curseforge.com/projects/applied-energistics-2"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "Armor Overlay 2.0.jar",
-            "md5": "a053d9941cc21811e3a1d0fa531edb0a",
-            "name": "Armor Overlay",
-            "url": "https://minecraft.curseforge.com/projects/armor-overlay"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "1.7.10_AM2-1.4.0.009.jar",
-            "md5": "1e4b8c84cda22fd093c5e921374578e9",
-            "name": "Ars Magica 2",
-            "url": "https://minecraft.curseforge.com/projects/ars-magica-2"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "AM2PlantFix-1.0.jar",
-            "md5": "ee429bee3d7344100d45aad826f91dea",
-            "name": "Ars Magica 2 Plant Fix",
-            "url": "https://minecraft.curseforge.com/projects/ars-magica-2-plant-fix"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "AsieLib-1.7.10-0.4.8.jar",
-            "md5": "8764d6b5cdbb0363be74f47a64305245",
-            "name": "AsieLib",
-            "url": "https://files.vexatos.com/?dir=AsieLib"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "AsieTweaks-1.7.10-0.0.2.jar",
-            "md5": "9f47a1cd5d81f77c1d40205fd92c0692",
-            "name": "AsieTweaks",
-            "url": "https://asie.pl/files/mods/AsieTweaks/"
-        },
-        {
-            "file": "asm-all-5.0.3.jar",
-            "folder-override": "server/libraries/org/ow2/asm/asm-all/5.0.3",
-            "md5": "c5cc4613bbdfba3ccf5f0ab85390d0b8",
-            "name": "ASM",
-            "url": "https://libraries.minecraft.net/org/ow2/asm/asm-all/5.0.3/asm-all-5.0.3.jar"
-        },
-        {
-            "exec": {
-                "args": "/c ___7Z___ e ___FILE___ -o../minecraft/mods mods/BattleTowers-1.7.10.jar && ___7Z___ e ___FILE___ -o../server/mods mods/BattleTowers-1.7.10.jar",
-                "cmd": "cmd",
-                "dir": "."
-            },
-            "file": "BattleTowers-1.7.10.zip",
-            "folder-override": "",
-            "md5": "71f31f9fceca891f78cacbd0f9908cac",
-            "name": "AtomicStryker's Battle Towers",
-            "url": "http://atomicstryker.net/battletowers.php"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "Atum-1.7.10-0.6.77.jar",
-            "md5": "2352e9136186274818a3d1773b7c1595",
-            "name": "Atum",
-            "url": "https://minecraft.curseforge.com/projects/atum"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "Baubles-1.7.10-1.0.1.10.jar",
-            "md5": "0e711d6535970f62d4964edaa26f4623",
-            "name": "Baubles",
-            "url": "https://minecraft.curseforge.com/projects/baubles"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "bdlib-1.9.4.109-mc1.7.10.jar",
-            "md5": "e446121e3e94b77d1c610ceed0fd3f68",
-            "name": "BdLib",
-            "url": "https://minecraft.curseforge.com/projects/bdlib"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "BiblioCraft[v1.11.7][MC1.7.10].jar",
-            "md5": "ff5aca99f8e04a8bb6077df853a9c72e",
-            "name": "BiblioCraft",
-            "url": "https://minecraft.curseforge.com/projects/bibliocraft"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "BiblioWoods[BiomesOPlenty][v1.9].jar",
-            "md5": "3abcaaae14fd5e1ddb9b9af0642ce3c0",
-            "name": "BiblioCraft: BiblioWoods Biomes O'Plenty Edition",
-            "url": "https://minecraft.curseforge.com/projects/bibliocraft-bibliowoods-biomes-oplenty-edition"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "BiblioWoods[Forestry][v1.7].jar",
-            "md5": "e96270e5c2fc9cf4e72b39d953eb0652",
-            "name": "BiblioCraft: BiblioWoods Forestry Edition",
-            "url": "https://minecraft.curseforge.com/projects/bibliocraft-bibliowoods-forestry-edition"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "BiblioWoods[Natura][v1.5].jar",
-            "md5": "024d7f63683833acfa7aea93da18036e",
-            "name": "BiblioCraft: BiblioWoods Natura Edition",
-            "url": "https://minecraft.curseforge.com/projects/bibliocraft-bibliowoods-natura-edition"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "BigReactors-0.4.3A.jar",
-            "md5": "b1c71b6a64a84f154af2d83bdc0d33bf",
-            "name": "Big Reactors",
-            "url": "https://minecraft.curseforge.com/projects/big-reactors"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "binnie-mods-1.7.10-2.0.22.7.jar",
-            "md5": "d0e8ad1db21d4d9fa134d1f3e203f3da",
-            "name": "Binnie's Mods",
-            "url": "https://minecraft.curseforge.com/projects/binnies-mods"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "BiomesOPlenty-1.7.10-2.1.0.2308-universal.jar",
-            "md5": "08d7ffbce53615cb516cb4d1916eecb5",
-            "name": "Biomes O' Plenty",
-            "url": "https://minecraft.curseforge.com/projects/biomes-o-plenty"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "BloodMagic-1.7.10-1.3.3-17.jar",
-            "md5": "c4ced843754969a693afd574886a58bd",
-            "name": "Blood Magic",
-            "url": "https://minecraft.curseforge.com/projects/blood-magic"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "Born in a Barn 1.7.x.jar",
-            "md5": "8e952a2bbca5039837d106b7c88e8920",
-            "name": "Born in a Barn",
-            "url": "https://minecraft.curseforge.com/projects/born-in-a-barn"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "Botania r1.8-249.jar",
-            "md5": "757cfb6db285068b617c382fc7a1e9ed",
-            "name": "Botania",
-            "url": "https://minecraft.curseforge.com/projects/botania"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "buildcraft-7.1.23.jar",
-            "md5": "5642e498a79c92f5e4994d10d3de7ac6",
-            "name": "Buildcraft",
-            "url": "https://minecraft.curseforge.com/projects/buildcraft"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "buildcraft-compat-7.1.7.jar",
-            "md5": "1683a1c6908ea22b268f6a8a747e8aa5",
-            "name": "Buildcraft Compat",
-            "url": "https://minecraft.curseforge.com/projects/buildcraft-compat"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "BuildCraftOilTweak-1.7.10-1.0.3.jar",
-            "md5": "c4eb097f8a12d14e70b16851a898a376",
-            "name": "BuildCraft Oil Tweak",
-            "url": "https://files.vexatos.com/?dir=BuildCraftOilTweak"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "Carpenter's Blocks v3.3.8.1 - MC 1.7.10.jar",
-            "md5": "796185b3d2cfd50f74955346ba92614c",
-            "name": "Carpenter's Blocks",
-            "url": "https://minecraft.curseforge.com/projects/carpenters-blocks"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "Chicken Chunk Patcher 1.1.jar",
-            "md5": "598778ab931a7f20831a5c719c60b541",
-            "name": "Chicken Chunk Patcher",
-            "url": "https://minecraft.curseforge.com/projects/chicken-chunk-patcher"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "ChickenChunks-1.7.10-1.3.4.19-universal.jar",
-            "md5": "5592eda79bd2b52adf1d4bdceaa59b73",
-            "name": "ChickenChunks",
-            "url": "https://minecraft.curseforge.com/projects/chickenchunks"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "Chisel-2.9.5.11.jar",
-            "md5": "c76378129307ab7b371bb9b3b8631fce",
-            "name": "Chisel",
-            "url": "https://minecraft.curseforge.com/projects/chisel"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "Chunk Pregenerator V1.7.10-2.0.jar",
-            "md5": "f7d91422b5fd58aeafc875c7e701dda1",
-            "name": "Chunk Pregenerator",
-            "url": "https://minecraft.curseforge.com/projects/chunkpregenerator"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "CleanView-1.7.10-v2.jar",
-            "md5": "92e62db69e6d53bbce5558d91816d5f7",
-            "name": "CleanView",
-            "url": "https://minecraft.curseforge.com/projects/cleanview"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "CodeChickenCore-1.7.10-1.0.7.47-universal.jar",
-            "md5": "07690caf86ecf79739852154f5e44750",
-            "name": "CodeChickenCore",
-            "url": "https://minecraft.curseforge.com/projects/codechickencore"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/anti-id-conflict"
         },
         {
             "additional-folder": "server/mods/1.7.10",
-            "file": "CodeChickenLib-1.7.10-1.1.3.140-universal.jar",
-            "folder-override": "minecraft/mods/1.7.10",
-            "md5": "029aad229073319d260a3d3f390f4fbc",
-            "name": "CodeChickenLib",
-            "preview": true,
-            "url": "https://files.minecraftforge.net/CodeChickenLib/"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "CoFHCore-[1.7.10]3.1.4-329.jar",
-            "md5": "de527c101a1f2c62203f99515f3d0957",
-            "name": "CoFH Core",
-            "url": "https://minecraft.curseforge.com/projects/cofhcore"
-        },
-        {
-            "additional-file-disabled": false,
-            "additional-folder": "server/mods",
-            "file": "CoFHTweaks-[1.7.10]1.1.3B3-94.jar",
-            "file-disabled": true,
-            "md5": "30710ffb1c9bf405592f3bd823ab3ef6",
-            "name": "CoFHTweaks",
-            "url": "https://minecraft.curseforge.com/projects/cofhtweaks"
-        },
-        {
-            "additional-folder": "server/mods",
-            "file": "CollectiveFramework-1.0.0-132.jar",
-            "md5": "2c353850493068eff6da6bd9c20b0064",
-            "name": "Collective Framework",
-            "url": "https://minecraft.curseforge.com/projects/collective-framework"
-        },
-        {
-            "additional-folder": "server/mods/1.7.10",
+            "description-url-override": "https://commons.apache.org/proper/commons-codec/",
             "file": "commons-codec-1.9.jar",
             "folder-override": "minecraft/mods/1.7.10",
+            "id": "apache",
+            "img": "apache.svg",
             "md5": "75615356605c8128013da9e3ac62a249",
-            "name": "Commons Codec",
+            "name": "Apache Commons Codec",
+            "type": "library",
             "url": "https://libraries.minecraft.net/commons-codec/commons-codec/1.9/commons-codec-1.9.jar"
         },
         {
             "additional-folder": "server/mods/1.7.10",
+            "description-url-override": "https://commons.apache.org/proper/commons-compress/",
             "file": "commons-compress-1.8.1.jar",
             "folder-override": "minecraft/mods/1.7.10",
+            "id": "apache",
+            "img": "apache.svg",
             "md5": "d862e30ff6b5d78264677dcd6507abb8",
-            "name": "Commons Compress",
+            "name": "Apache Commons Compress",
+            "type": "library",
             "url": "https://libraries.minecraft.net/org/apache/commons/commons-compress/1.8.1/commons-compress-1.8.1.jar"
         },
         {
             "additional-folder": "server/mods/1.7.10",
+            "description": "Library required by The Aether II.",
+            "description-url-override": "https://hc.apache.org/httpcomponents-client-ga/",
+            "file": "httpclient-4.5.4.jar",
+            "folder-override": "minecraft/mods/1.7.10",
+            "id": "apache",
+            "img": "apache.svg",
+            "md5": "77fe929419328328d91c4acda35ac537",
+            "name": "Apache Commons HttpClient",
+            "type": "library",
+            "url": "https://repo1.maven.org/maven2/org/apache/httpcomponents/httpclient/4.5.4/httpclient-4.5.4.jar"
+        },
+        {
+            "additional-folder": "server/mods/1.7.10",
+            "description": "Library required by The Aether II.",
+            "description-url-override": "https://hc.apache.org/httpcomponents-core-ga/",
+            "file": "httpcore-4.4.8.jar",
+            "folder-override": "minecraft/mods/1.7.10",
+            "id": "apache",
+            "img": "apache.svg",
+            "md5": "60fb93171aa46ffaefde3623c517bd60",
+            "name": "Apache Commons HttpCore",
+            "type": "library",
+            "url": "https://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.4.8/httpcore-4.4.8.jar"
+        },
+        {
+            "description-url-override": "https://commons.apache.org/proper/commons-lang/",
+            "file": "commons-lang3-3.3.2.jar",
+            "folder-override": "server/libraries/org/apache/commons/commons-lang3/3.3.2",
+            "id": "apache",
+            "img": "apache.svg",
+            "md5": "3128bf75a2549ebe38663401191bacab",
+            "name": "Apache Commons Lang",
+            "type": "library",
+            "url": "https://libraries.minecraft.net/org/apache/commons/commons-lang3/3.3.2/commons-lang3-3.3.2.jar"
+        },
+        {
+            "additional-folder": "server/mods/1.7.10",
+            "description": "Library required by The Aether II.",
+            "description-url-override": "https://commons.apache.org/proper/commons-logging/",
             "file": "commons-logging-1.2.jar",
             "folder-override": "minecraft/mods/1.7.10",
+            "id": "apache",
+            "img": "apache.svg",
             "md5": "040b4b4d8eac886f6b4a2a3bd2f31b00",
-            "name": "Commons Logging",
+            "name": "Apache Commons Logging",
+            "type": "library",
             "url": "https://repo1.maven.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2.jar"
         },
         {
             "additional-folder": "server/mods",
-            "file": "CompactSolars-1.7.10-4.4.39.315-universal.jar",
-            "md5": "a119946b82dfa6ee565b83acb080c50e",
-            "name": "Compact Solars",
-            "url": "https://minecraft.curseforge.com/projects/compact-solars"
+            "author": {
+                "name": "squeek502",
+                "url": "https://www.curseforge.com/members/squeek502"
+            },
+            "file": "AppleCore-mc1.7.10-3.1.1.jar",
+            "id": "applecore",
+            "img": "applecore.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/applecore",
+                "txt": "Public Domain"
+            },
+            "md5": "169c63b60ec8a8195733b94cb47ae694",
+            "name": "AppleCore",
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/applecore"
         },
         {
             "additional-folder": "server/mods",
-            "file": "ComputerCraft1.75.jar",
-            "md5": "3d4ab469b955a3def59e260da660927c",
-            "name": "ComputerCraft",
-            "url": "https://minecraft.curseforge.com/projects/computercraft"
+            "author": {
+                "name": "AlgorithmX2",
+                "url": "https://www.curseforge.com/members/algorithmx2"
+            },
+            "file": "appliedenergistics2-rv3-beta-6.jar",
+            "id": "applied-energistics-2",
+            "img": "applied-energistics-2.gif",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/applied-energistics-2",
+                "txt": "GNU Lesser Gene..."
+            },
+            "md5": "0a555df010345a27e0956a3f05517510",
+            "name": "Applied Energistics 2",
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/applied-energistics-2"
         },
         {
             "additional-folder": "server/mods",
-            "file": "ComputerCraftEdu1.74.jar",
-            "md5": "826a389c9c80af6c3805e80311277be1",
-            "name": "ComputerCraftEdu",
-            "url": "https://minecraft.curseforge.com/projects/computercraftedu"
+            "author": {
+                "name": "TheOldOne22",
+                "url": "https://www.curseforge.com/members/theoldone22"
+            },
+            "file": "Armor Overlay 2.0.jar",
+            "id": "armor-overlay",
+            "img": "armor-overlay.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/armor-overlay",
+                "txt": "Public Domain"
+            },
+            "md5": "a053d9941cc21811e3a1d0fa531edb0a",
+            "name": "Armor Overlay",
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/armor-overlay"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "Mithion",
+                "url": "https://www.curseforge.com/members/_ForgeUser9145154"
+            },
+            "file": "1.7.10_AM2-1.4.0.009.jar",
+            "id": "ars-magica-2",
+            "img": "ars-magica-2.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/ars-magica-2",
+                "txt": "Creative Common..."
+            },
+            "md5": "1e4b8c84cda22fd093c5e921374578e9",
+            "name": "Ars Magica 2",
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/ars-magica-2"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "Butchy_The_Bear",
+                "url": "https://www.curseforge.com/members/_ForgeUser19514745"
+            },
+            "file": "AM2PlantFix-1.0.jar",
+            "id": "ars-magica-2-plant-fix",
+            "img": "ars-magica-2-plant-fix.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/ars-magica-2-plant-fix",
+                "txt": "Public Domain"
+            },
+            "md5": "ee429bee3d7344100d45aad826f91dea",
+            "name": "Ars Magica 2 Plant Fix",
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/ars-magica-2-plant-fix"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "asie",
+                "url": "https://github.com/asiekierka"
+            },
+            "description-url-override": "https://wiki.vexatos.com/wiki:asielib",
+            "file": "AsieLib-1.7.10-0.4.9.jar",
+            "id": "asielib",
+            "md5": "3868c709020b518811db929635496e08",
+            "name": "AsieLib",
+            "type": "client/server mod",
+            "url": "https://files.vexatos.com/?dir=AsieLib"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "asie",
+                "url": "https://github.com/asiekierka"
+            },
+            "file": "AsieTweaks-1.7.10-0.0.2.jar",
+            "id": "asietweaks",
+            "md5": "9f47a1cd5d81f77c1d40205fd92c0692",
+            "name": "AsieTweaks",
+            "type": "client/server mod",
+            "url": "https://asie.pl/files/mods/AsieTweaks/"
+        },
+        {
+            "description-url-override": "https://asm.ow2.io/",
+            "file": "asm-all-5.0.3.jar",
+            "folder-override": "server/libraries/org/ow2/asm/asm-all/5.0.3",
+            "id": "asm",
+            "img": "asm.svg",
+            "md5": "c5cc4613bbdfba3ccf5f0ab85390d0b8",
+            "name": "ASM",
+            "type": "library",
+            "url": "https://libraries.minecraft.net/org/ow2/asm/asm-all/5.0.3/asm-all-5.0.3.jar"
+        },
+        {
+            "author": {
+                "name": "AtomicStryker",
+                "url": "https://www.curseforge.com/members/atomicstrykergrumpy"
+            },
+            "code": {
+                "title": "Open Source",
+                "url": "https://github.com/AtomicStryker/atomicstrykers-minecraft-mods/tree/1.7.10/BattleTowers"
+            },
+            "distribution": "allowed",
+            "exec": {
+                "args": "/c ___7Z___ e ___FILE___ -y -o../../minecraft/mods mods/BattleTowers-1.7.10.jar && ___7Z___ e ___FILE___ -y -o../../server/mods mods/BattleTowers-1.7.10.jar",
+                "cmd": "cmd"
+            },
+            "file": "BattleTowers-1.7.10.zip",
+            "folder-override": "",
+            "id": "atomicstrykers-battle-towers",
+            "img": "atomicstrykers-battle-towers.png",
+            "license": {
+                "source": "http://atomicstryker.net/about.php",
+                "txt": "AtomicStryker license"
+            },
+            "md5": "71f31f9fceca891f78cacbd0f9908cac",
+            "name": "AtomicStryker's Battle Towers",
+            "type": "client/server mod",
+            "url": "http://atomicstryker.net/battletowers.php"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "Shadowclaimer",
+                "url": "https://www.curseforge.com/members/shadowclaimer"
+            },
+            "file": "Atum-1.7.10-0.6.77.jar",
+            "id": "atum",
+            "img": "atum.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/atum",
+                "txt": "All Rights Reserved"
+            },
+            "md5": "2352e9136186274818a3d1773b7c1595",
+            "name": "Atum",
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/atum"
+        },
+        {
+            "additional-folder": "server/mods/1.7.10",
+            "author": {
+                "name": "Azanor",
+                "url": "https://www.curseforge.com/members/azanor13"
+            },
+            "code": {
+                "title": "Open Source",
+                "url": "https://github.com/GTNewHorizons/Baubles"
+            },
+            "description": "Adds additional equip slots used by Thaumcraft and other mods.",
+            "description-url-override": "https://github.com/GTNewHorizons/Baubles",
+            "distribution": "allowed",
+            "file": "Baubles-1.7.10-1.0.1.11.jar",
+            "folder-override": "minecraft/mods/1.7.10",
+            "id": "baubles",
+            "img": "baubles.png",
+            "license": {
+                "source": "https://github.com/GTNewHorizons/Baubles",
+                "txt": "CC-BY-NC-SA-3.0"
+            },
+            "md5": "391fde1bc8cd2c2085a655b6ea1a4af5",
+            "name": "Baubles",
+            "type": "client/server mod",
+            "url": "https://archive.org/download/Baubles-1.7.10-1.0.1.11/Baubles-1.7.10-1.0.1.11.jar"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "bdew",
+                "url": "https://www.curseforge.com/members/bdew"
+            },
+            "file": "bdlib-1.9.4.109-mc1.7.10.jar",
+            "id": "curseforge",
+            "img": "curseforge.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/bdlib",
+                "txt": "MMPL-1.0"
+            },
+            "md5": "e446121e3e94b77d1c610ceed0fd3f68",
+            "name": "BdLib",
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/bdlib"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "Nuchaz",
+                "url": "https://www.curseforge.com/members/nuchaz"
+            },
+            "file": "BiblioCraft[v1.11.7][MC1.7.10].jar",
+            "id": "bibliocraft",
+            "img": "bibliocraft.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/bibliocraft",
+                "txt": "All Rights Reserved"
+            },
+            "md5": "ff5aca99f8e04a8bb6077df853a9c72e",
+            "name": "BiblioCraft",
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/bibliocraft"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "Nuchaz",
+                "url": "https://www.curseforge.com/members/nuchaz"
+            },
+            "file": "BiblioWoods[BiomesOPlenty][v1.9].jar",
+            "id": "bibliocraft",
+            "img": "bibliocraft.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/bibliocraft-bibliowoods-biomes-oplenty-edition",
+                "txt": "All Rights Reserved"
+            },
+            "md5": "3abcaaae14fd5e1ddb9b9af0642ce3c0",
+            "name": "BiblioCraft: BiblioWoods Biomes O'Plenty Edition",
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/bibliocraft-bibliowoods-biomes-oplenty-edition"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "Nuchaz",
+                "url": "https://www.curseforge.com/members/nuchaz"
+            },
+            "file": "BiblioWoods[Forestry][v1.7].jar",
+            "id": "bibliocraft",
+            "img": "bibliocraft.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/bibliocraft-bibliowoods-forestry-edition",
+                "txt": "All Rights Reserved"
+            },
+            "md5": "e96270e5c2fc9cf4e72b39d953eb0652",
+            "name": "BiblioCraft: BiblioWoods Forestry Edition",
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/bibliocraft-bibliowoods-forestry-edition"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "Nuchaz",
+                "url": "https://www.curseforge.com/members/nuchaz"
+            },
+            "file": "BiblioWoods[Natura][v1.5].jar",
+            "id": "bibliocraft",
+            "img": "bibliocraft.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/bibliocraft-bibliowoods-natura-edition",
+                "txt": "All Rights Reserved"
+            },
+            "md5": "024d7f63683833acfa7aea93da18036e",
+            "name": "BiblioCraft: BiblioWoods Natura Edition",
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/bibliocraft-bibliowoods-natura-edition"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "ErogenousBeef",
+                "url": "https://www.curseforge.com/members/_ForgeUser23750043"
+            },
+            "file": "BigReactors-0.4.3A.jar",
+            "id": "big-reactors",
+            "img": "big-reactors.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/big-reactors",
+                "txt": "MIT"
+            },
+            "md5": "b1c71b6a64a84f154af2d83bdc0d33bf",
+            "name": "Big Reactors",
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/big-reactors"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "Binnie567",
+                "url": "https://www.curseforge.com/members/_ForgeUser9116757"
+            },
+            "file": "binnie-mods-1.7.10-2.0.22.7.jar",
+            "id": "binnies-mods",
+            "img": "binnies-mods.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/binnies-mods",
+                "txt": "All Rights Reserved"
+            },
+            "md5": "d0e8ad1db21d4d9fa134d1f3e203f3da",
+            "name": "Binnie's Mods",
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/binnies-mods"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "Glitchfiend",
+                "url": "https://www.curseforge.com/members/glitchfiendmods"
+            },
+            "file": "BiomesOPlenty-1.7.10-2.1.0.2308-universal.jar",
+            "id": "biomes-o-plenty",
+            "img": "biomes-o-plenty.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/biomes-o-plenty",
+                "txt": "Custom License"
+            },
+            "md5": "08d7ffbce53615cb516cb4d1916eecb5",
+            "name": "Biomes O' Plenty",
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/biomes-o-plenty"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "WayofTime",
+                "url": "https://www.curseforge.com/members/WayofTime"
+            },
+            "file": "BloodMagic-1.7.10-1.3.3-17.jar",
+            "id": "blood-magic",
+            "img": "blood-magic.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/blood-magic",
+                "txt": "Custom License"
+            },
+            "md5": "c4ced843754969a693afd574886a58bd",
+            "name": "Blood Magic",
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/blood-magic"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "Speiger",
+                "url": "https://www.curseforge.com/members/Speiger"
+            },
+            "file": "Born in a Barn 1.7.x.jar",
+            "id": "born-in-a-barn",
+            "img": "born-in-a-barn.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/born-in-a-barn",
+                "txt": "All Rights Reserved"
+            },
+            "md5": "8e952a2bbca5039837d106b7c88e8920",
+            "name": "Born in a Barn",
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/born-in-a-barn"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "Vazkii",
+                "url": "https://www.curseforge.com/members/Vazkii"
+            },
+            "file": "Botania r1.8-249.jar",
+            "id": "botania",
+            "img": "botania.svg",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/botania",
+                "txt": "Custom License"
+            },
+            "md5": "757cfb6db285068b617c382fc7a1e9ed",
+            "name": "Botania",
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/botania"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "CovertJaguar",
+                "url": "https://www.curseforge.com/members/CovertJaguar"
+            },
+            "file": "buildcraft-7.1.23.jar",
+            "id": "buildcraft",
+            "img": "buildcraft.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/buildcraft",
+                "txt": "Custom License"
+            },
+            "md5": "5642e498a79c92f5e4994d10d3de7ac6",
+            "name": "Buildcraft",
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/buildcraft"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "CovertJaguar",
+                "url": "https://www.curseforge.com/members/CovertJaguar"
+            },
+            "file": "buildcraft-compat-7.1.7.jar",
+            "id": "buildcraft-compat",
+            "img": "buildcraft-compat.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/buildcraft-compat",
+                "txt": "Custom License"
+            },
+            "md5": "1683a1c6908ea22b268f6a8a747e8aa5",
+            "name": "Buildcraft Compat",
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/buildcraft-compat"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "Vexatos",
+                "url": "https://github.com/Vexatos"
+            },
+            "file": "BuildCraftOilTweak-1.7.10-1.0.3.jar",
+            "id": "buildcraft-oil-tweak",
+            "md5": "c4eb097f8a12d14e70b16851a898a376",
+            "name": "BuildCraft Oil Tweak",
+            "type": "client/server mod",
+            "url": "https://files.vexatos.com/?dir=BuildCraftOilTweak"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "Syntaxial",
+                "url": "https://www.curseforge.com/members/Syntaxial"
+            },
+            "code": {
+                "title": "Open Source",
+                "url": "https://github.com/Mineshopper/carpentersblocks"
+            },
+            "description": "Adds slopes and other blocks that can take on the appearance of most other blocks.",
+            "distribution": "allowed",
+            "file": "Carpenter's Blocks v3.3.8.2 - MC 1.7.10.jar",
+            "id": "carpenters-blocks",
+            "img": "carpenters-blocks.svg",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/carpenters-blocks",
+                "txt": "LGPL-2.1"
+            },
+            "md5": "03a331f79857c07e85d19867398f249e",
+            "name": "Carpenter's Blocks",
+            "permission": {
+                "img": "carpenters-blocks-permissions.png",
+                "source": "https://www.carpentersblocks.com/"
+            },
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/carpenters-blocks"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "Chocohead",
+                "url": "https://www.curseforge.com/members/Chocohead"
+            },
+            "code": {
+                "title": "Closed Source"
+            },
+            "description": "Corrects an issue in CodeChickenLib that otherwise breaks Chunk Pregenerator.",
+            "distribution": "allowed",
+            "file": "Chicken Chunk Patcher 1.1.jar",
+            "id": "chicken-chunk-patcher",
+            "img": "chicken-chunk-patcher.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/chicken-chunk-patcher",
+                "txt": "All Rights Reserved"
+            },
+            "md5": "598778ab931a7f20831a5c719c60b541",
+            "name": "Chicken Chunk Patcher",
+            "permission": {
+                "img": "chicken-chunk-patcher-permissions.png",
+                "source": "https://www.curseforge.com/minecraft/mc-mods/chicken-chunk-patcher?comment=4"
+            },
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/chicken-chunk-patcher"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "ChickenBones",
+                "url": "https://www.curseforge.com/members/chicken_bones"
+            },
+            "code": {
+                "title": "Open Source",
+                "url": "https://github.com/Chicken-Bones/ChickenChunks"
+            },
+            "description": "Adds a Chunk Loader.",
+            "distribution": "allowed",
+            "file": "ChickenChunks-1.7.10-1.3.4.19-universal.jar",
+            "id": "chickenbones",
+            "img": "chickenbones.png",
+            "license": {
+                "source": "https://github.com/Chicken-Bones/ChickenChunks",
+                "txt": "MIT"
+            },
+            "md5": "5592eda79bd2b52adf1d4bdceaa59b73",
+            "name": "ChickenChunks",
+            "permission": {
+                "img": "chickenbones-permissions.png",
+                "source": "https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/1279956-chickenbones-mods"
+            },
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/chickenchunks"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "tterrag1098",
+                "url": "https://www.curseforge.com/members/tterrag1098"
+            },
+            "code": {
+                "title": "Open Source",
+                "url": "https://github.com/Chisel-Team/Chisel/tree/1.7/release"
+            },
+            "description": "Craft a huge variety of decorative blocks to build with!",
+            "distribution": "allowed",
+            "file": "Chisel-2.9.5.11.jar",
+            "id": "chisel",
+            "img": "chisel.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/chisel",
+                "txt": "GPL-2.0"
+            },
+            "md5": "c76378129307ab7b371bb9b3b8631fce",
+            "name": "Chisel",
+            "permission": {
+                "img": "chisel-permissions.png",
+                "source": "https://www.curseforge.com/minecraft/mc-mods/chisel"
+            },
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/chisel"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "Speiger",
+                "url": "https://www.curseforge.com/members/Speiger"
+            },
+            "code": {
+                "title": "Closed Source"
+            },
+            "description": "Preview your worlds and generate them before setting a single step.",
+            "distribution": "allowed",
+            "file": "Chunk Pregenerator V1.7.10-2.1.jar",
+            "id": "chunk-pregenerator",
+            "img": "chunk-pregenerator.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/chunkpregenerator",
+                "txt": "All Rights Reserved"
+            },
+            "md5": "4b3308a97b1c0c4c9a80d30532e52501",
+            "name": "Chunk Pregenerator",
+            "permission": {
+                "img": "chunk-pregenerator-permissions.png",
+                "source": "https://www.curseforge.com/minecraft/mc-mods/chunkpregenerator?comment=422"
+            },
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/chunkpregenerator"
         },
         {
             "additional-file-disabled": true,
             "additional-folder": "server/mods",
-            "file": "CustomMainMenu-MC1.7.10-1.9.2.jar",
-            "md5": "7d0a3079e02fc07cd19a9558227e878b",
-            "name": "Custom Main Menu",
-            "url": "https://minecraft.curseforge.com/projects/custom-main-menu"
+            "author": {
+                "name": "ZLainSama",
+                "url": "https://www.curseforge.com/members/ZLainSama"
+            },
+            "code": {
+                "title": "Open Source",
+                "url": "https://github.com/zlainsama/CleanView/tree/1.7"
+            },
+            "description": "Removes potion effects from your view only.",
+            "distribution": "allowed",
+            "file": "CleanView-1.7.10-v2.jar",
+            "id": "cleanview",
+            "img": "cleanview.png",
+            "license": {
+                "source": "https://github.com/zlainsama/CleanView/tree/1.7",
+                "txt": "MMPL-1.0"
+            },
+            "md5": "92e62db69e6d53bbce5558d91816d5f7",
+            "name": "CleanView",
+            "type": "client mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/cleanview"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "ChickenBones",
+                "url": "https://www.curseforge.com/members/chicken_bones"
+            },
+            "code": {
+                "title": "Open Source",
+                "url": "https://github.com/Chicken-Bones/CodeChickenCore/tree/1.7.10"
+            },
+            "description": "Code library for ChickenBones' mods.",
+            "distribution": "allowed",
+            "file": "CodeChickenCore-1.7.10-1.0.7.47-universal.jar",
+            "id": "chickenbones",
+            "img": "chickenbones.png",
+            "license": {
+                "source": "https://github.com/Chicken-Bones/CodeChickenCore/tree/1.7.10",
+                "txt": "MIT"
+            },
+            "md5": "07690caf86ecf79739852154f5e44750",
+            "name": "CodeChickenCore",
+            "permission": {
+                "img": "chickenbones-permissions.png",
+                "source": "https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/1279956-chickenbones-mods"
+            },
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/codechickencore"
+        },
+        {
+            "additional-folder": "server/mods/1.7.10",
+            "author": {
+                "name": "ChickenBones",
+                "url": "https://www.curseforge.com/members/chicken_bones"
+            },
+            "code": {
+                "title": "Open Source",
+                "url": "https://github.com/Chicken-Bones/CodeChickenLib/tree/1.7"
+            },
+            "description": "Code library for ChickenBones' mods.",
+            "distribution": "allowed",
+            "file": "CodeChickenLib-1.7.10-1.1.3.140-universal.jar",
+            "folder-override": "minecraft/mods/1.7.10",
+            "id": "chickenbones",
+            "img": "chickenbones.png",
+            "license": {
+                "source": "https://github.com/Chicken-Bones/CodeChickenLib/tree/1.7",
+                "txt": "LGPL-2.1"
+            },
+            "md5": "029aad229073319d260a3d3f390f4fbc",
+            "name": "CodeChickenLib",
+            "permission": {
+                "img": "chickenbones-permissions.png",
+                "source": "https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/1279956-chickenbones-mods"
+            },
+            "preview": true,
+            "type": "client/server mod",
+            "url": "https://files.minecraftforge.net/CodeChickenLib/"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "Team CoFH",
+                "url": "https://www.curseforge.com/members/TeamCoFH"
+            },
+            "description": "Code library for Team CoFH's mods.",
+            "file": "CoFHCore-[1.7.10]3.1.4-329.jar",
+            "id": "cofh-core",
+            "img": "cofh-core.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/cofh-core",
+                "txt": "All Rights Reserved"
+            },
+            "md5": "de527c101a1f2c62203f99515f3d0957",
+            "name": "CoFH Core",
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/cofh-core"
+        },
+        {
+            "additional-file-disabled": false,
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "skyboy026",
+                "url": "https://www.curseforge.com/members/skyboy026"
+            },
+            "file": "CoFHTweaks-[1.7.10]1.1.3B3-94.jar",
+            "file-disabled": true,
+            "id": "cofhtweaks",
+            "img": "cofhtweaks.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/cofhtweaks",
+                "txt": "All Rights Reserved"
+            },
+            "md5": "30710ffb1c9bf405592f3bd823ab3ef6",
+            "name": "CoFHTweaks",
+            "type": "server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/cofhtweaks"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "austinv11",
+                "url": "https://www.curseforge.com/members/austinv11"
+            },
+            "file": "CollectiveFramework-1.0.0-132.jar",
+            "id": "collective-framework",
+            "img": "collective-framework.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/collective-framework",
+                "txt": "GNU General Pub..."
+            },
+            "md5": "2c353850493068eff6da6bd9c20b0064",
+            "name": "Collective Framework",
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/collective-framework"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "progwml6",
+                "url": "https://www.curseforge.com/members/progwml6"
+            },
+            "file": "CompactSolars-1.7.10-4.4.39.315-universal.jar",
+            "id": "compact-solars",
+            "img": "compact-solars.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/compact-solars",
+                "txt": "GNU General Pub..."
+            },
+            "md5": "a119946b82dfa6ee565b83acb080c50e",
+            "name": "Compact Solars",
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/compact-solars"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "dan200",
+                "url": "https://www.curseforge.com/members/dan200"
+            },
+            "file": "ComputerCraft1.75.jar",
+            "id": "computercraft",
+            "img": "computercraft.svg",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/computercraft",
+                "txt": "Custom License"
+            },
+            "md5": "3d4ab469b955a3def59e260da660927c",
+            "name": "ComputerCraft",
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/computercraft"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "dan200",
+                "url": "https://www.curseforge.com/members/dan200"
+            },
+            "file": "ComputerCraftEdu1.74.jar",
+            "id": "computercraftedu",
+            "img": "computercraftedu.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/computercraftedu",
+                "txt": "All Rights Reserved"
+            },
+            "md5": "826a389c9c80af6c3805e80311277be1",
+            "name": "ComputerCraftEdu",
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/computercraftedu"
+        },
+        {
+            "additional-file-disabled": true,
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "Lumien",
+                "url": "https://www.curseforge.com/members/Lumien"
+            },
+            "file": "CustomMainMenu-MC1.7.10-1.9.2.jar",
+            "id": "custom-main-menu",
+            "img": "custom-main-menu.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/custom-main-menu",
+                "txt": "All Rights Reserved"
+            },
+            "md5": "7d0a3079e02fc07cd19a9558227e878b",
+            "name": "Custom Main Menu",
+            "type": "client mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/custom-main-menu"
+        },
+        {
+            "additional-folder": "server/mods",
+            "description-url-override": "https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/1290701-davidees-gui-library-create-better-guis-updated",
             "file": "GUILib.jar",
+            "id": "davidees-gui-library",
             "md5": "0e592b9643cc4335364fe0f9b2f72998",
             "name": "Davidee's GUI Library",
+            "type": "client/server mod",
             "url": "https://archive.org/download/GUILib/GUILib.jar"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "RWTema",
+                "url": "https://www.curseforge.com/members/RWTema"
+            },
             "file": "denseores-1.6.2.jar",
+            "id": "dense-ores",
+            "img": "dense-ores.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/dense-ores",
+                "txt": "Custom License"
+            },
             "md5": "aab8a8aad4385de5367987d64317562c",
             "name": "Dense Ores",
-            "url": "https://minecraft.curseforge.com/projects/dense-ores"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/dense-ores"
         },
         {
             "additional-folder": "server/mods",
-            "file": "DragonAPI 1.7.10 V22d.jar",
-            "md5": "5da85119c9e237bdb0453b8e1ad4fbf2",
+            "author": {
+                "name": "ReikaKalseki",
+                "url": "https://www.curseforge.com/members/ReikaKalseki"
+            },
+            "file": "DragonAPI 1.7.10 V23b.jar",
+            "id": "dragonapi",
+            "img": "dragonapi.jpg",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/dragonapi",
+                "txt": "Custom License"
+            },
+            "md5": "ace9d338633264a11f8a86b15da7e213",
             "name": "DragonAPI",
-            "url": "https://minecraft.curseforge.com/projects/dragonapi"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/dragonapi"
         },
         {
             "additional-file-disabled": true,
             "additional-folder": "server/mods",
+            "author": {
+                "name": "AtomicStryker",
+                "url": "https://www.curseforge.com/members/atomicstrykergrumpy"
+            },
+            "code": {
+                "title": "Open Source",
+                "url": "https://github.com/AtomicStryker/atomicstrykers-minecraft-mods/tree/1.7.10/DynamicLights"
+            },
+            "distribution": "allowed",
             "file": "Dynamic Lights-1.3.9a-MC1.7.10.jar",
+            "id": "dynamic-lights",
+            "img": "dynamic-lights.png",
+            "license": {
+                "source": "http://atomicstryker.net/about.php",
+                "txt": "AtomicStryker license"
+            },
             "md5": "6917483ad2df091d871d0a68c343eaa1",
             "name": "Dynamic Lights",
-            "url": "https://minecraft.curseforge.com/projects/dynamic-lights"
+            "type": "client mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/dynamic-lights"
         },
         {
             "additional-folder": "server/mods/ic2",
+            "description-url-override": "https://ejml.org/",
             "file": "EJML-core-0.26.jar",
             "folder-override": "minecraft/mods/ic2",
+            "id": "ejml",
+            "img": "ejml.gif",
             "md5": "e440fb5889a2061e59b4e82ee0515691",
-            "name": "EJML Core"
+            "name": "EJML Core",
+            "type": "library"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "CrazyPants",
+                "url": "https://www.curseforge.com/members/CrazyPants"
+            },
             "file": "EnderIO-1.7.10-2.3.0.429_beta.jar",
+            "id": "ender-io",
+            "img": "ender-io.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/ender-io",
+                "txt": "Public Domain"
+            },
             "md5": "37089c0fd0769f27298fbc14665bafad",
             "name": "Ender IO",
-            "url": "https://minecraft.curseforge.com/projects/ender-io"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/ender-io"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "ChickenBones",
+                "url": "https://www.curseforge.com/members/chicken_bones"
+            },
             "file": "EnderStorage-1.7.10-1.4.7.37-universal.jar",
+            "id": "chickenbones",
+            "img": "chickenbones.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/ender-storage",
+                "txt": "All Rights Reserved"
+            },
             "md5": "0d3dcb31d90eb2eb748d5e0a901c20a6",
             "name": "Ender Storage",
-            "url": "https://minecraft.curseforge.com/projects/ender-storage"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/ender-storage"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "CrazyPants",
+                "url": "https://www.curseforge.com/members/CrazyPants"
+            },
             "file": "EnderZoo-1.7.10-1.0.15.32.jar",
+            "id": "ender-zoo",
+            "img": "ender-zoo.svg",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/ender-zoo",
+                "txt": "Public Domain"
+            },
             "md5": "577531417d0dc93fc264631f100f53ba",
             "name": "Ender Zoo",
-            "url": "https://minecraft.curseforge.com/projects/ender-zoo"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/ender-zoo"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "tterrag1098",
+                "url": "https://www.curseforge.com/members/tterrag1098"
+            },
             "file": "EnderCore-1.7.10-0.2.0.39_beta.jar",
+            "id": "endercore",
+            "img": "endercore.jpg",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/endercore",
+                "txt": "Public Domain"
+            },
             "md5": "e6c8b5dc1ae0f01e34673ba608f8ffd9",
             "name": "EnderCore",
-            "url": "https://minecraft.curseforge.com/projects/endercore"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/endercore"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "CarrotCodes",
+                "url": "https://www.curseforge.com/members/CarrotCodes"
+            },
             "file": "EnderTech-1.7.10-0.3.2.405.jar",
+            "id": "endertech",
+            "img": "endertech.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/endertech",
+                "txt": "Custom License"
+            },
             "md5": "521c23024a309189b6ae15902cb61e71",
             "name": "EnderTech",
-            "url": "https://minecraft.curseforge.com/projects/endertech"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/endertech"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Pahimar",
+                "url": "https://www.curseforge.com/members/Pahimar"
+            },
             "file": "EquivalentExchange3-1.7.10-0.3.0.547.jar",
+            "id": "equivalent-exchange-3",
+            "img": "equivalent-exchange-3.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/ee3",
+                "txt": "GNU Lesser Gene..."
+            },
             "md5": "646022e7a0aab8c703ee3b3cecd9137a",
             "name": "Equivalent Exchange 3",
-            "url": "https://minecraft.curseforge.com/projects/ee3"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/ee3"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "ganymedes01",
+                "url": "https://www.curseforge.com/members/ganymedes01"
+            },
             "file": "Et Futurum-1.5.5.jar",
+            "id": "et-futurum",
+            "img": "et-futurum.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/et-futurum",
+                "txt": "Public Domain"
+            },
             "md5": "1094c49073af0c67dd32b4c3257afdd9",
             "name": "Et Futurum",
-            "url": "https://minecraft.curseforge.com/projects/et-futurum"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/et-futurum"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Erasmus_Crowley",
+                "url": "https://www.curseforge.com/members/Erasmus_Crowley"
+            },
             "file": "Ex-Nihilo-1.38-53.jar",
+            "id": "ex-nihilo",
+            "img": "ex-nihilo.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/ex-nihilo",
+                "txt": "GNU General Pub..."
+            },
             "md5": "b3ba015e4bc919a1c5edc3877753333f",
             "name": "Ex Nihilo",
-            "url": "https://minecraft.curseforge.com/projects/ex-nihilo"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/ex-nihilo"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "RWTema",
+                "url": "https://www.curseforge.com/members/RWTema"
+            },
             "file": "extrautilities-1.2.12.jar",
+            "id": "extra-utilities",
+            "img": "extra-utilities.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/extra-utilities",
+                "txt": "All Rights Reserved"
+            },
             "md5": "0b1848ece3f6e1370e6caa8124c1480d",
             "name": "Extra Utilities",
-            "url": "https://minecraft.curseforge.com/projects/extra-utilities"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/extra-utilities"
         },
         {
             "additional-folder": "server/mods",
+            "description-url-override": "https://github.com/purpleposeidon/Factorization/tree/1.7.10-lingering",
             "file": "Factorization-1.7.10-0.8.109.jar",
+            "id": "factorization",
+            "img": "factorization.png",
             "md5": "fdfba4575e0d10c5fb31d24d1cd63941",
             "name": "Factorization",
+            "type": "client/server mod",
             "url": "https://asie.pl/files/mods/Factorization/"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Player",
+                "url": "https://www.curseforge.com/members/Player"
+            },
             "file": "fastcraft-1.25.jar",
+            "id": "fastcraft",
+            "img": "fastcraft.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/fastcraft",
+                "txt": "All Rights Reserved"
+            },
             "md5": "44c7c6828ac38026f443804827955345",
             "name": "FastCraft",
-            "url": "https://minecraft.curseforge.com/projects/fastcraft"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/fastcraft"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Myrathi",
+                "url": "https://www.curseforge.com/members/Myrathi"
+            },
             "file": "FlatSigns-1.7.10-universal-2.1.0.19.jar",
+            "id": "curseforge",
+            "img": "curseforge.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/flatsigns",
+                "txt": "Attribution-Non..."
+            },
             "md5": "836efa16b25141b15b5db3dd157e155b",
             "name": "FlatSigns",
-            "url": "https://minecraft.curseforge.com/projects/flatsigns"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/flatsigns"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "SirSengir",
+                "url": "https://www.curseforge.com/members/SirSengir"
+            },
             "file": "forestry_1.7.10-4.2.16.64.jar",
+            "id": "forestry",
+            "img": "forestry.svg",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/forestry",
+                "txt": "Custom License"
+            },
             "md5": "8213f5ef9944b9ed3261febc0bd21064",
             "name": "Forestry",
-            "url": "https://minecraft.curseforge.com/projects/forestry"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/forestry"
         },
         {
             "additional-folder": "server/mods/1.7.10",
             "file": "ForgeMultipart-1.7.10-1.2.0.347-universal.jar",
             "folder-override": "minecraft/mods/1.7.10",
+            "id": "chickenbones",
+            "img": "chickenbones.png",
             "md5": "ca42e854acfe2334a9cdc0515d3dd1fe",
             "name": "Forge Multi Part",
             "preview": true,
+            "type": "client/server mod",
             "url": "https://files.minecraftforge.net/ForgeMultipart/"
         },
         {
             "additional-folder": "server/mods/1.7.10",
+            "author": {
+                "name": "Mr_TJP",
+                "url": "https://www.curseforge.com/members/Mr_TJP"
+            },
             "file": "ForgeRelocation-0.0.1.4-universal.jar",
             "folder-override": "minecraft/mods/1.7.10",
+            "id": "forge-relocation",
+            "img": "forge-relocation.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/forge-relocation",
+                "txt": "GNU General Pub..."
+            },
             "md5": "2a7143a16683bb0989b15ba8c4ea17ca",
             "name": "Forge Relocation",
-            "url": "https://minecraft.curseforge.com/projects/forge-relocation"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/forge-relocation"
         },
         {
             "additional-folder": "server/mods/1.7.10",
+            "author": {
+                "name": "Mr_TJP",
+                "url": "https://www.curseforge.com/members/Mr_TJP"
+            },
             "file": "ForgeRelocationFMP-0.0.1.2-universal.jar",
             "folder-override": "minecraft/mods/1.7.10",
+            "id": "forge-relocation",
+            "img": "forge-relocation.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/forge-relocation-fmp-plugin",
+                "txt": "GNU General Pub..."
+            },
             "md5": "eb6cb5103252e6870dec10fda67b1285",
             "name": "Forge Relocation - FMP Plugin",
-            "url": "https://minecraft.curseforge.com/projects/forge-relocation-fmp-plugin"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/forge-relocation-fmp-plugin"
         },
         {
+            "author": [
+                {
+                    "name": "LexManos",
+                    "url": "https://www.curseforge.com/members/lexmanos"
+                },
+                {
+                    "name": "cpw",
+                    "url": "https://www.curseforge.com/members/cpw"
+                }
+            ],
+            "code": {
+                "title": "Open Source",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/tree/1.7.10"
+            },
+            "description": "Modding API.",
+            "distribution": "allowed",
             "file": "forge-1.7.10-10.13.4.1614-1.7.10-universal.jar",
             "file-override": "FTBServer-1.7.10-1614.jar",
             "folder-override": "server",
+            "id": "forge",
+            "img": "forge.jpg",
+            "license": {
+                "source": "https://github.com/MinecraftForge/MinecraftForge/tree/1.7.10",
+                "txt": "MinecraftForge license"
+            },
             "md5": "add0fba161c4652a96efb4264ec2d9ec",
             "name": "Forge/FML",
+            "permission": {
+                "img": "forge-permissions.png",
+                "source": "https://web.archive.org/web/20180401095313/http://legacy.feed-the-beast.com/mods/mod/forgefml"
+            },
             "preview": true,
+            "type": "server executable",
             "url": "https://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.7.10.html"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "FTB_ModpackTeam",
+                "url": "https://www.curseforge.com/members/FTB_ModpackTeam"
+            },
             "file": "FTBLib-1.7.10-1.0.18.3.jar",
+            "id": "ftb-library",
+            "img": "ftb-library.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/ftblib",
+                "txt": "MIT"
+            },
             "md5": "1753db050335f5725d1ea9e09b8f102b",
             "name": "FTB Library",
-            "url": "https://minecraft.curseforge.com/projects/ftblib"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/ftblib"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "FTB_ModpackTeam",
+                "url": "https://www.curseforge.com/members/FTB_ModpackTeam"
+            },
             "file": "FTBUtilities-1.7.10-1.0.18.3.jar",
+            "id": "ftb-utilities",
+            "img": "ftb-utilities.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/ftb-utilities",
+                "txt": "MIT"
+            },
             "md5": "d7611c7ea40480c17a6a5fd164dd21a8",
             "name": "FTB Utilities",
-            "url": "https://minecraft.curseforge.com/projects/ftb-utilities"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/ftb-utilities"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "RWTema",
+                "url": "https://www.curseforge.com/members/RWTema"
+            },
             "file": "funky-locomotion-1.7.10-beta-7.jar",
+            "id": "funky-locomotion",
+            "img": "funky-locomotion.svg",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/funky-locomotion",
+                "txt": "All Rights Reserved"
+            },
             "md5": "0c85001cc59db609895559a3177713ce",
             "name": "Funky Locomotion",
-            "url": "https://minecraft.curseforge.com/projects/funky-locomotion"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/funky-locomotion"
         },
         {
             "additional-folder": "server/mods",
+            "description-url-override": "https://wiki.vexatos.com/wiki:fzaddons",
             "file": "FactorizationAddons-1.7.10.jar",
+            "id": "fzaddons",
             "md5": "b40b1495ad5f8e0233b5714706277fb7",
             "name": "FZAddons",
+            "type": "client/server mod",
             "url": "https://asie.pl/files/mods/FactorizationAddons-Fork/"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "bdew",
+                "url": "https://www.curseforge.com/members/bdew"
+            },
             "file": "gendustry-1.6.4.135-mc1.7.10.jar",
+            "id": "gendustry",
+            "img": "gendustry.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/gendustry",
+                "txt": "MMPL-1.0"
+            },
             "md5": "2a3d8a317ade033610413424a7311982",
             "name": "Gendustry",
-            "url": "https://minecraft.curseforge.com/projects/gendustry"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/gendustry"
         },
         {
             "additional-folder": "server/mods",
+            "description-url-override": "https://web.archive.org/web/20180204190820/https://files.jellysquid.me/mirrors/aether/",
             "file": "GildedGamesUtil-1.7.10-1.7.0.jar",
+            "id": "gilded-games-util",
+            "img": "gilded-games-util.png",
             "md5": "b08006f643affbe71c585ea5bf5e3f9d",
             "name": "Gilded Games Util",
-            "url": "https://web.archive.org/web/20180204190820/https://files.jellysquid.me/mirrors/aether/"
+            "type": "client/server mod",
+            "url": "https://archive.org/download/GildedGamesUtil-1.7.10-1.7.0/GildedGamesUtil-1.7.10-1.7.0.jar"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "karyonix",
+                "url": "https://www.minecraftforum.net/members/karyonix"
+            },
+            "code": {
+                "title": "Closed Source"
+            },
+            "description": "<font color=\"red\">Disabled by default.</font><br>Provides barebones shader support if you're experiencing problems with OptiFine.",
+            "distribution": "allowed",
+            "eula": {
+                "source": "https://shadersmod.com/eula/",
+                "txt": "GLSL Shaders Mod EULA"
+            },
             "file": "ShadersModCore-v2.3.31-mc1.7.10-f.jar",
             "file-disabled": true,
+            "id": "glsl-shaders-mod",
+            "img": "glsl-shaders-mod.png",
+            "license": {
+                "txt": "All Rights Reserved"
+            },
             "md5": "f66374aea8dda5f3b7ccb20c230375d7",
             "name": "GLSL Shaders Mod",
-            "url": "http://shadersmod.net/version-1-7-10/"
+            "permission": {
+                "img": "glsl-shaders-mod-permissions.png",
+                "source": "https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/1286604-shaders-mod-updated-by-karyonix"
+            },
+            "type": "client mod",
+            "url": "https://shadersmod.com/version-1-7-10/"
         },
         {
+            "description-url-override": "https://github.com/google/guava",
             "file": "guava-17.0.jar",
             "folder-override": "server/libraries/com/google/guava/guava/17.0",
+            "id": "google",
+            "img": "google.png",
             "md5": "89fef81c2adfa9b50a64ed5cd5d8c155",
-            "name": "Guava",
+            "name": "Google Guava",
+            "type": "library",
             "url": "https://libraries.minecraft.net/com/google/guava/guava/17.0/guava-17.0.jar"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "TehNut",
+                "url": "https://www.curseforge.com/members/TehNut"
+            },
             "file": "Guide-API-1.7.10-1.0.1-29.jar",
+            "id": "guide-api",
+            "img": "guide-api.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/guide-api",
+                "txt": "MIT"
+            },
             "md5": "85b1112cffe2f2316f174aa480e6bfb4",
             "name": "Guide-API",
-            "url": "https://minecraft.curseforge.com/projects/guide-api"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/guide-api"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "iChun",
+                "url": "https://www.curseforge.com/members/iChun"
+            },
             "file": "HatStand-4.0.0.jar",
+            "id": "hat-stand",
+            "img": "hat-stand.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/hat-stand",
+                "txt": "GNU Lesser Gene..."
+            },
             "md5": "6d668669276027a99973b73e0677fc87",
             "name": "Hat Stand",
-            "url": "https://minecraft.curseforge.com/projects/hat-stand"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/hat-stand"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "iChun",
+                "url": "https://www.curseforge.com/members/iChun"
+            },
             "file": "Hats-4.0.1.jar",
+            "id": "hats",
+            "img": "hats.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/hats",
+                "txt": "GNU Lesser Gene..."
+            },
             "md5": "029d5d60ff3c3c1873a4770f9b702a89",
             "name": "Hats",
-            "url": "https://minecraft.curseforge.com/projects/hats"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/hats"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "matthewprenger",
+                "url": "https://www.curseforge.com/members/matthewprenger"
+            },
             "file": "HelpFixer-1.0.7.jar",
+            "id": "helpfixer",
+            "img": "helpfixer.svg",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/helpfixer",
+                "txt": "WTFPL"
+            },
             "md5": "0d6ce4776f981f97a13ab02029b5fb4d",
             "name": "HelpFixer",
-            "url": "https://minecraft.curseforge.com/projects/helpfixer"
-        },
-        {
-            "additional-folder": "server/mods/1.7.10",
-            "file": "httpclient-4.5.4.jar",
-            "folder-override": "minecraft/mods/1.7.10",
-            "md5": "77fe929419328328d91c4acda35ac537",
-            "name": "HttpClient",
-            "url": "https://repo1.maven.org/maven2/org/apache/httpcomponents/httpclient/4.5.4/httpclient-4.5.4.jar"
-        },
-        {
-            "additional-folder": "server/mods/1.7.10",
-            "file": "httpcore-4.4.8.jar",
-            "folder-override": "minecraft/mods/1.7.10",
-            "md5": "60fb93171aa46ffaefde3623c517bd60",
-            "name": "HttpCore",
-            "url": "https://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.4.8/httpcore-4.4.8.jar"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/helpfixer"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "iChun",
+                "url": "https://www.curseforge.com/members/iChun"
+            },
             "file": "iChunUtil-4.2.3.jar",
+            "id": "ichunutil",
+            "img": "ichunutil.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/ichunutil",
+                "txt": "GNU Lesser Gene..."
+            },
             "md5": "9f90848755f2c3002996b86b57dee2f1",
             "name": "iChunUtil",
-            "url": "https://minecraft.curseforge.com/projects/ichunutil"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/ichunutil"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "BluSunrize",
+                "url": "https://www.curseforge.com/members/BluSunrize"
+            },
             "file": "ImmersiveEngineering-0.7.7.jar",
+            "id": "immersive-engineering",
+            "img": "immersive-engineering.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering",
+                "txt": "Custom License"
+            },
             "md5": "24f8212228caf05e2031b1e9221146b5",
             "name": "Immersive Engineering",
-            "url": "https://minecraft.curseforge.com/projects/immersive-engineering"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "MineMaarten",
+                "url": "https://www.curseforge.com/members/MineMaarten"
+            },
             "file": "IGW-Mod-1.7.10-1.1.12-34-universal.jar",
+            "id": "in-game-wiki-mod",
+            "img": "in-game-wiki-mod.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/in-game-wiki-mod",
+                "txt": "GNU General Pub..."
+            },
             "md5": "48cb8aa894d046bbbada670e124cbfaf",
             "name": "In-Game Wiki Mod",
-            "url": "https://minecraft.curseforge.com/projects/in-game-wiki-mod"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/in-game-wiki-mod"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Player",
+                "url": "https://www.curseforge.com/members/Player"
+            },
             "exec": {
-                "args": "/c ___7Z___ e ../minecraft/mods/___FILE___ -o../minecraft/mods/ic2 lib/EJML-core-0.26.jar && ___7Z___ e ../server/mods/___FILE___ -o../server/mods/ic2 lib/EJML-core-0.26.jar",
-                "cmd": "cmd",
-                "dir": "."
+                "args": "/c ___7Z___ e ../../minecraft/mods/___FILE___ -y -o../../minecraft/mods/ic2 lib/EJML-core-0.26.jar && ___7Z___ e ../../server/mods/___FILE___ -y -o../../server/mods/ic2 lib/EJML-core-0.26.jar",
+                "cmd": "cmd"
             },
             "file": "industrialcraft-2-2.2.827-experimental.jar",
+            "id": "industrial-craft",
+            "img": "industrial-craft.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/industrial-craft",
+                "txt": "All Rights Reserved"
+            },
             "md5": "6fd8c3b8b87532c4c8884614fc2eb21d",
             "name": "Industrial Craft",
-            "url": "https://minecraft.curseforge.com/projects/industrial-craft"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/industrial-craft"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "INpureProjects",
+                "url": "https://www.curseforge.com/members/INpureProjects"
+            },
             "file": "INpureCore-[1.7.10]1.0.0B9-62.jar",
+            "id": "curseforge",
+            "img": "curseforge.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/inpurecore",
+                "txt": "IDGAF"
+            },
             "md5": "89c7b3835cd2bdba7d8d054d75c7460c",
             "name": "INpureCore",
-            "url": "https://minecraft.curseforge.com/projects/inpurecore"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/inpurecore"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Kobata",
+                "url": "https://www.curseforge.com/members/Kobata"
+            },
             "file": "InventoryTweaks-1.59-dev-152.jar",
+            "id": "inventory-tweaks",
+            "img": "inventory-tweaks.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/inventory-tweaks",
+                "txt": "MIT"
+            },
             "md5": "83f7ddcd5f5fd8d640aa15dc62acc6bf",
             "name": "Inventory Tweaks",
-            "url": "https://minecraft.curseforge.com/projects/inventory-tweaks"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/inventory-tweaks"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "progwml6",
+                "url": "https://www.curseforge.com/members/progwml6"
+            },
             "file": "ironchest-1.7.10-6.0.62.742-universal.jar",
+            "id": "iron-chests",
+            "img": "iron-chests.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/iron-chests",
+                "txt": "GNU General Pub..."
+            },
             "md5": "48d942594459c437ce8e8648ca42a7b9",
             "name": "Iron Chests",
-            "url": "https://minecraft.curseforge.com/projects/iron-chests"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/iron-chests"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "ProfMobius",
+                "url": "https://www.curseforge.com/members/ProfMobius"
+            },
             "file": "Jabba-1.2.2_1.7.10.jar",
+            "id": "jabba",
+            "img": "jabba.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/jabba",
+                "txt": "Custom License"
+            },
             "md5": "9d35698387f75007c1c4dd0dcfec13e5",
             "name": "Jabba",
-            "url": "https://minecraft.curseforge.com/projects/jabba"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/jabba"
+        },
+        {
+            "author": {
+                "name": "my space",
+                "url": "https://sourceforge.net/u/myspace/profile/"
+            },
+            "code": {
+                "title": "Open Source",
+                "url": "https://archive.org/download/java_lzma_0090/java_lzma_0090.zip/"
+            },
+            "description-url-override": "http://p7zip.sourceforge.net/",
+            "file": "lzma-0.0.1.jar",
+            "folder-override": "server/libraries/lzma/lzma/0.0.1",
+            "id": "java-lzma-sdk",
+            "license": {
+                "source": "https://archive.org/download/java_lzma_0090/java_lzma_0090.zip/java_lzma_0090/LGPL.txt",
+                "txt": "LGPL-2.1"
+            },
+            "md5": "a3e3c3186e41c4a1a3027ba2bb23cdc6",
+            "name": "Java LZMA SDK",
+            "type": "library",
+            "url": "https://libraries.minecraft.net/lzma/lzma/0.0.1/lzma-0.0.1.jar"
+        },
+        {
+            "author": {
+                "name": "Oracle",
+                "url": "https://www.oracle.com/"
+            },
+            "code": {
+                "title": "Closed Source"
+            },
+            "description": "The binaries required to run Java applications.",
+            "description-url-override": "https://www.oracle.com/java/technologies/javase-java-archive-javase8-downloads.html",
+            "distribution": "allowed",
+            "id": "java",
+            "img": "java.svg",
+            "license": {
+                "source": "https://www.oracle.com/java/technologies/javase-java-archive-javase8-downloads.html",
+                "txt": "BCL"
+            },
+            "name": "Java SE Runtime Environment 8",
+            "permission": {
+                "img": "java-permissions.png",
+                "source": "https://web.archive.org/web/20181116092737/https://java.com/en/download/faq/distribution.xml"
+            },
+            "type": "binary"
         },
         {
             "exec": {
-                "args": "/c ___7Z___ e ___FILE___ -o../minecraft/mods JBRobotModel1710-0.6.0.jar JointBlock1710-0.6.2.jar && ___7Z___ e ___FILE___ -o../server/mods JBRobotModel1710-0.6.0.jar JointBlock1710-0.6.2.jar",
-                "cmd": "cmd",
-                "dir": "."
+                "args": "/c ___7Z___ e ___FILE___ -y -o../../minecraft/mods JBRobotModel1710-0.6.0.jar JointBlock1710-0.6.2.jar && ___7Z___ e ___FILE___ -y -o../../server/mods JBRobotModel1710-0.6.0.jar JointBlock1710-0.6.2.jar",
+                "cmd": "cmd"
             },
             "file": "JointBlock1710-0_6_2_please_extract_.zip",
             "folder-override": "",
+            "id": "jointblock",
             "md5": "026526a7aaacf7ab9d5a352cfae6dd94",
             "name": "JointBlock",
-            "url": "https://forum.minecraftuser.jp/viewtopic.php?f=13&t=17975"
+            "type": "client/server mod",
+            "url": "https://web.archive.org/web/20190715173858/https://forum.minecraftuser.jp/viewtopic.php?f=13&t=17975"
         },
         {
+            "description-url-override": "https://jopt-simple.github.io/jopt-simple/",
             "file": "jopt-simple-4.5.jar",
             "folder-override": "server/libraries/net/sf/jopt-simple/jopt-simple/4.5",
+            "id": "jopt-simple",
             "md5": "1372bd4823bb1ef61e7db6724f601150",
             "name": "JOpt Simple",
+            "type": "library",
             "url": "https://libraries.minecraft.net/net/sf/jopt-simple/jopt-simple/4.5/jopt-simple-4.5.jar"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "techbrew",
+                "url": "https://www.curseforge.com/members/techbrew"
+            },
             "file": "journeymap-1.7.10-5.1.4p2-unlimited.jar",
+            "id": "journeymap",
+            "img": "journeymap.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/journeymap",
+                "txt": "All Rights Reserved"
+            },
             "md5": "0c3daa19789a67da328437a8635c2cf3",
             "name": "JourneyMap",
-            "url": "https://minecraft.curseforge.com/projects/journeymap"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/journeymap"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "Ljubomir Simin",
+                "url": "https://github.com/ljsimin"
+            },
+            "code": {
+                "title": "Visible Source",
+                "url": "https://github.com/ljsimin/MinecraftJoypadSplitscreenMod/tree/1.7.10"
+            },
+            "description": "<font color=\"red\">Disabled by default.</font><br>Adds controller support.",
+            "description-url-override": "https://retro-hack.blogspot.com/p/minecraft-joypad-mod.html",
+            "file": "JoypadMod-1.7.10-10.13.4.1614-1.7.10.jar",
+            "file-disabled": true,
+            "id": "joypad-mod",
+            "img": "joypad-mod.png",
+            "license": {
+                "txt": "All Rights Reserved"
+            },
+            "md5": "98ab82966546f0b52876361410873839",
+            "name": "Joypad Mod",
+            "type": "client mod",
+            "url": "https://github.com/ljsimin/MinecraftJoypadSplitscreenMod"
         },
         {
             "file": "KUDA-Shaders v6.5.56.zip",
             "folder-override": "minecraft/shaderpacks",
+            "id": "kuda-shaders",
+            "img": "kuda-shaders.png",
             "md5": "3f1dcea006911fa09bea293ca10f4b1a",
             "name": "KUDA-Shaders",
+            "type": "shader files",
             "url": "https://dedelner.net/kuda-shaders/"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "XCompWiz",
+                "url": "https://www.curseforge.com/members/XCompWiz"
+            },
             "file": "LookingGlass-1.7.10-0.2.0.01.jar",
             "file-disabled": true,
+            "id": "lookingglass",
+            "img": "lookingglass.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/lookingglass",
+                "txt": "GNU General Pub..."
+            },
             "md5": "f6fb78b54f2faf65bb1c5b16880c3f8f",
             "name": "LookingGlass",
-            "url": "https://minecraft.curseforge.com/projects/lookingglass"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/lookingglass"
         },
         {
             "additional-folder": "server/mods",
-            "file": "LootGames-1.7.10-1.0.16.jar",
-            "md5": "091c9cb4378a777b1b8480bbbdf635e0",
+            "description-url-override": "https://bitbucket.org/Namikon/gameoflights",
+            "file": "LootGames-1.7.10-1.0.18.jar",
+            "id": "gt-new-horizons",
+            "img": "gt-new-horizons.png",
+            "md5": "d164b6402ad6f027f1165363125831ad",
             "name": "LootGames",
-            "url": "https://archive.org/download/LootGames-1.7.10-1.0.16/LootGames-1.7.10-1.0.16.jar"
-        },
-        {
-            "file": "lzma-0.0.1.jar",
-            "folder-override": "server/libraries/lzma/lzma/0.0.1",
-            "md5": "a3e3c3186e41c4a1a3027ba2bb23cdc6",
-            "name": "LZMA",
-            "url": "https://libraries.minecraft.net/lzma/lzma/0.0.1/lzma-0.0.1.jar"
+            "type": "client/server mod",
+            "url": "http://downloads.gtnewhorizons.com/Mods_for_Twitch/"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "MysteriousAges",
+                "url": "https://www.curseforge.com/members/MysteriousAges"
+            },
             "file": "magicbees-1.7.10-2.4.4.jar",
+            "id": "magic-bees",
+            "img": "magic-bees.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/magic-bees",
+                "txt": "WTFPL"
+            },
             "md5": "37e76b00092972895c7e7118e82c9588",
             "name": "Magic Bees",
-            "url": "https://minecraft.curseforge.com/projects/magic-bees"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/magic-bees"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "mDiyo",
+                "url": "https://www.curseforge.com/members/mDiyo"
+            },
             "file": "Mantle-1.7.10-0.3.2b.jar",
+            "id": "mantle",
+            "img": "mantle.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/mantle",
+                "txt": "MIT"
+            },
             "md5": "934fe4ef7a9b971f22b5dd53e57fa976",
             "name": "Mantle",
-            "url": "https://minecraft.curseforge.com/projects/mantle"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/mantle"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "McJty",
+                "url": "https://www.curseforge.com/members/McJty"
+            },
             "file": "mcjtylib-1.8.1.jar",
+            "id": "mcjtylib",
+            "img": "mcjtylib.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/mcjtylib",
+                "txt": "MIT"
+            },
             "md5": "2ebbefd7fa32bf96159f6d305f932fcf",
             "name": "McJtyLib",
-            "url": "https://minecraft.curseforge.com/projects/mcjtylib"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/mcjtylib"
         },
         {
             "additional-file-disabled": true,
             "additional-folder": "server/mods",
+            "description-url-override": "https://web.archive.org/web/20150902000038/http://www.minecraftforum.net:80/forums/mapping-and-modding/minecraft-mods/2345701-memory-cleaner-wipe-the-memory-of-your-game",
             "file": "MemoryCleaner-1.4-mc.1.7.10.jar",
+            "id": "memory-cleaner",
+            "img": "memory-cleaner.png",
             "md5": "e841a57a3f1b4d7d2cea1b406a006bd3",
             "name": "Memory Cleaner",
+            "type": "client mod",
             "url": "https://archive.org/download/MemoryCleaner-1.4-mc.1.7.10/MemoryCleaner-1.4-mc.1.7.10.jar"
         },
         {
+            "author": {
+                "name": "Mojang",
+                "url": "https://web.archive.org/web/20140625091621/https://mojang.com/"
+            },
+            "code": {
+                "title": "Visible Source",
+                "url": "https://github.com/Mojang/LegacyLauncher"
+            },
+            "description-url-override": "https://github.com/Mojang/LegacyLauncher",
             "file": "launchwrapper-1.12.jar",
             "folder-override": "server/libraries/net/minecraft/launchwrapper/1.12",
+            "id": "mojang",
+            "img": "mojang.png",
+            "license": {
+                "txt": "All Rights Reserved"
+            },
             "md5": "934b2d91c7c5be4a49577c9e6b40e8da",
             "name": "Minecraft LaunchWrapper",
+            "type": "library",
             "url": "https://libraries.minecraft.net/net/minecraft/launchwrapper/1.12/launchwrapper-1.12.jar"
         },
         {
+            "author": {
+                "name": "Mojang",
+                "url": "https://web.archive.org/web/20140625091621/https://mojang.com/"
+            },
+            "code": {
+                "title": "Closed Source"
+            },
+            "description": "Set up a Minecraft server.",
+            "description-url-override": "https://web.archive.org/web/20140831215145/https://minecraft.net/download",
             "exec": {
                 "args": "/c ___SERVER_SETUP___",
-                "cmd": "cmd",
-                "dir": "../server"
+                "cmd": "cmd"
             },
             "file": "minecraft_server.1.7.10.jar",
             "folder-override": "server",
+            "id": "minecraft",
+            "img": "minecraft.png",
+            "license": {
+                "txt": "All Rights Reserved"
+            },
             "md5": "3e8912b293b52bd54f879919bd6e4e44",
             "name": "Minecraft Server",
+            "type": "server executable",
             "url": "https://s3.amazonaws.com/Minecraft.Download/versions/1.7.10/minecraft_server.1.7.10.jar"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "skyboy026",
+                "url": "https://www.curseforge.com/members/skyboy026"
+            },
             "file": "MineFactoryReloaded-[1.7.10]2.8.2B1-201.jar",
+            "id": "minefactory-reloaded",
+            "img": "minefactory-reloaded.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/minefactory-reloaded",
+                "txt": "All Rights Reserved"
+            },
             "md5": "10604ed3b6c005e96f245b587d2933dd",
             "name": "Minefactory Reloaded",
-            "url": "https://minecraft.curseforge.com/projects/minefactory-reloaded"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/minefactory-reloaded"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "StanH",
+                "url": "https://www.curseforge.com/members/StanH"
+            },
             "file": "MineTweaker3-1.7.10-3.0.10B.jar",
+            "id": "minetweaker3",
+            "img": "minetweaker3.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/minetweaker3",
+                "txt": "All Rights Reserved"
+            },
             "md5": "884933d1b933e0bd2f93293201569f13",
             "name": "MineTweaker3",
-            "url": "https://minecraft.curseforge.com/projects/minetweaker3"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/minetweaker3"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "DrZhark",
+                "url": "https://www.curseforge.com/members/DrZhark"
+            },
             "file": "DrZharks MoCreatures Mod v6.3.1.zip",
+            "id": "mo-creatures",
+            "img": "mo-creatures.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/mo-creatures",
+                "txt": "All Rights Reserved"
+            },
             "md5": "70a039e42bdcf18f58ac694d0ecb65a4",
             "name": "Mo' Creatures",
-            "url": "https://minecraft.curseforge.com/projects/mo-creatures"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/mo-creatures"
         },
         {
             "additional-folder": "server/mods",
+            "description-url-override": "https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/1290704-mob-spawn-controls-2-back-better-than-ever-updated",
             "file": "MSC2.jar",
+            "id": "mob-spawn-controls-2",
             "md5": "b8ecff81d787edc16cf09048c7ff4bc4",
             "name": "Mob Spawn Controls 2",
+            "type": "client/server mod",
             "url": "https://archive.org/download/MSC2_201901/MSC2.jar"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "MachineMuse",
+                "url": "https://www.curseforge.com/members/MachineMuse"
+            },
             "file": "ModularPowersuits-1.7.10-0.11.1.117.jar",
+            "id": "modular-powersuits",
+            "img": "modular-powersuits.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/modular-powersuits",
+                "txt": "BSD-3-Clause"
+            },
             "md5": "79454d01919b8a6867ef77a2b189d0f7",
             "name": "Modular Powersuits",
-            "url": "https://minecraft.curseforge.com/projects/modular-powersuits"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/modular-powersuits"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "iChun",
+                "url": "https://www.curseforge.com/members/iChun"
+            },
             "file": "Morph-Beta-0.9.3.jar",
+            "id": "morph",
+            "img": "morph.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/morph",
+                "txt": "GNU Lesser Gene..."
+            },
             "md5": "134e1cc870742392bb809cb68f82c6b8",
             "name": "Morph",
-            "url": "https://minecraft.curseforge.com/projects/morph"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/morph"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Quetzi",
+                "url": "https://www.curseforge.com/members/Quetzi"
+            },
             "file": "Morpheus-1.7.10-1.6.21.jar",
+            "id": "morpheus",
+            "img": "morpheus.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/morpheus",
+                "txt": "All Rights Reserved"
+            },
             "md5": "5d31a1480db8b091757ea5ccd4e220d9",
             "name": "Morpheus",
-            "url": "https://minecraft.curseforge.com/projects/morpheus"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/morpheus"
         },
         {
             "additional-folder": "server/mods/1.7.10",
+            "author": {
+                "name": "Mr_TJP",
+                "url": "https://www.curseforge.com/members/Mr_TJP"
+            },
             "file": "MrTJPCore-1.1.0.33-universal.jar",
             "folder-override": "minecraft/mods/1.7.10",
+            "id": "curseforge",
+            "img": "curseforge.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/mrtjpcore",
+                "txt": "GNU General Pub..."
+            },
             "md5": "e5c8aabd096cb0cde340bb86689a58cf",
             "name": "MrTJPCore",
-            "url": "https://minecraft.curseforge.com/projects/mrtjpcore"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/mrtjpcore"
         },
         {
-            "exec": {
-                "args": "/c ___7Z___ x ___FILE___ -o.. -y && cmd /c ___MULTIMC_SETUP___",
-                "cmd": "cmd",
-                "dir": "../MultiMC"
+            "author": {
+                "name": "MultiMC contributors",
+                "url": "https://github.com/MultiMC/MultiMC5/graphs/contributors"
             },
-            "file": "mmc-stable-win32.zip",
+            "code": {
+                "title": "Open Source",
+                "url": "https://github.com/MultiMC/MultiMC5"
+            },
+            "description": "Launches Minecraft.<br><font color=\"red\">A paid Minecraft account is required to play Minecraft.</font>",
+            "distribution": "allowed",
+            "exec": {
+                "args": "/c ___7Z___ x ___FILE___ -y -o.. && cmd /c ___MULTIMC_SETUP___",
+                "cmd": "cmd"
+            },
+            "file": "mmc-develop-win32.zip",
             "folder-override": "MultiMC",
-            "md5": "cbbdfc80e3bb8059f567b9798aa818c1",
+            "id": "multimc",
+            "img": "multimc.png",
+            "license": {
+                "source": "https://github.com/MultiMC/MultiMC5",
+                "txt": "Apache-2.0"
+            },
+            "md5": "35727b7330a8ff8943f3aa48f0a9a13f",
             "name": "MultiMC",
-            "preview": false,
+            "preview": true,
+            "type": "client executable",
             "url": "https://multimc.org/"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "XCompWiz",
+                "url": "https://www.curseforge.com/members/XCompWiz"
+            },
             "file": "mystcraft-1.7.10-0.12.3.04.jar",
+            "id": "mystcraft",
+            "img": "mystcraft.svg",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/mystcraft",
+                "txt": "All Rights Reserved"
+            },
             "md5": "17fb799ca48e2d889cdb13b1c239d9ac",
             "name": "Mystcraft",
-            "url": "https://minecraft.curseforge.com/projects/mystcraft"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/mystcraft"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "mDiyo",
+                "url": "https://www.curseforge.com/members/mDiyo"
+            },
             "file": "natura-1.7.10-2.2.1a2.jar",
+            "id": "natura",
+            "img": "natura.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/natura",
+                "txt": "Creative Common..."
+            },
             "md5": "482d41a7e4bab7f6fbd5c31dc9dcb372",
             "name": "Natura",
-            "url": "https://minecraft.curseforge.com/projects/natura"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/natura"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Chaosyr",
+                "url": "https://www.curseforge.com/members/chaosyr"
+            },
+            "file": "NaturesCompass-1.7.10-1.3.1.jar",
+            "id": "natures-compass",
+            "img": "natures-compass.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/natures-compass",
+                "txt": "Custom License"
+            },
+            "md5": "7fcf8da50b32424d2673c4aec59e39e6",
+            "name": "Nature's Compass",
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/natures-compass"
+        },
+        {
+            "additional-folder": "server/mods",
+            "author": {
+                "name": "bdew",
+                "url": "https://www.curseforge.com/members/bdew"
+            },
             "file": "neiaddons-1.12.15.41-mc1.7.10.jar",
+            "id": "nei-addons",
+            "img": "nei-addons.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/nei-addons",
+                "txt": "MMPL-1.0"
+            },
             "md5": "caf83daf3a9a5dbdc6386389ef977a95",
             "name": "NEI Addons",
-            "url": "https://minecraft.curseforge.com/projects/nei-addons"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/nei-addons"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Tonius",
+                "url": "https://www.curseforge.com/members/Tonius"
+            },
             "file": "NEIIntegration-MC1.7.10-1.1.2.jar",
+            "id": "nei-integration",
+            "img": "nei-integration.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/nei-integration",
+                "txt": "MIT"
+            },
             "md5": "54308ef273613b79870e9e46df86e7d9",
             "name": "NEI Integration",
-            "url": "https://minecraft.curseforge.com/projects/nei-integration"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/nei-integration"
+        },
+        {
+            "author": [
+                {
+                    "name": "Node contributors",
+                    "url": [
+                        "https://github.com/nodejs/node/graphs/contributors",
+                        "https://github.com/nodejs/http-parser/graphs/contributors"
+                    ]
+                },
+                {
+                    "name": "Joyent",
+                    "url": "https://github.com/joyent"
+                },
+                {
+                    "name": "Acorn authors",
+                    "url": "https://github.com/acornjs/acorn/blob/6.2.0/AUTHORS"
+                },
+                {
+                    "name": "Adrian Heine",
+                    "url": "https://github.com/adrianheine"
+                },
+                {
+                    "name": "Daniel Stenberg",
+                    "url": "https://github.com/bagder"
+                },
+                {
+                    "name": "c-ares authors",
+                    "url": "https://github.com/nodejs/node/blob/v12.10.0/deps/cares/src/AUTHORS"
+                },
+                {
+                    "name": "MIT",
+                    "url": "https://github.com/nodejs/node/blob/v12.10.0/LICENSE"
+                },
+                {
+                    "name": "Unicode Inc.",
+                    "url": "https://github.com/nodejs/node/blob/v12.10.0/LICENSE"
+                },
+                {
+                    "name": "IBM",
+                    "url": "https://github.com/nodejs/node/blob/v12.10.0/LICENSE"
+                },
+                {
+                    "name": "Google",
+                    "url": "https://github.com/nodejs/node/blob/v12.10.0/LICENSE"
+                },
+                {
+                    "name": "TaBE Project",
+                    "url": "https://github.com/nodejs/node/blob/v12.10.0/LICENSE"
+                },
+                {
+                    "name": "Pai-Hsiang Hsiao",
+                    "url": "https://github.com/nodejs/node/blob/v12.10.0/LICENSE"
+                },
+                {
+                    "name": "Computer Systems and Communication Lab, Institute of Information Science, Academia Sinica",
+                    "url": "https://github.com/nodejs/node/blob/v12.10.0/LICENSE"
+                },
+                {
+                    "name": "Chih-Hao Tsai @ Beckman Institute",
+                    "url": "https://github.com/nodejs/node/blob/v12.10.0/LICENSE"
+                },
+                {
+                    "name": "NAIST",
+                    "url": "https://github.com/nodejs/node/blob/v12.10.0/LICENSE"
+                },
+                {
+                    "name": "Brian Eugene Wilson",
+                    "url": "https://github.com/nodejs/node/blob/v12.10.0/LICENSE"
+                },
+                {
+                    "name": "Robert Martin Campbell",
+                    "url": "https://github.com/nodejs/node/blob/v12.10.0/LICENSE"
+                },
+                {
+                    "name": "LeRoy Benjamin Sharon",
+                    "url": "https://github.com/nodejs/node/blob/v12.10.0/LICENSE"
+                },
+                {
+                    "name": "IANA",
+                    "url": "https://github.com/nodejs/node/blob/v12.10.0/LICENSE"
+                },
+                {
+                    "name": "V8 authors",
+                    "url": "https://github.com/nodejs/node/blob/v12.10.0/deps/v8/AUTHORS"
+                },
+                {
+                    "name": "libuv authors",
+                    "url": "https://github.com/nodejs/node/blob/v12.10.0/deps/uv/AUTHORS"
+                }
+            ],
+            "code": {
+                "title": "Open Source",
+                "url": "https://github.com/nodejs/node/tree/v12.10.0"
+            },
+            "description": "The binaries required to run JavaScript applications.",
+            "description-url-override": "https://nodejs.org/",
+            "distribution": "allowed",
+            "id": "node",
+            "img": "node.png",
+            "license": {
+                "source": "https://github.com/nodejs/node/tree/v12.10.0",
+                "txt": "MIT AND c-ares license AND ICU license AND ISC"
+            },
+            "name": "Node",
+            "type": "binary"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "OpenMods",
+                "url": "https://www.curseforge.com/members/OpenMods"
+            },
             "file": "NotEnoughCodecs-1.7.10-0.4.jar",
+            "id": "openmods",
+            "img": "openmods.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/notenoughcodecs",
+                "txt": "GNU Lesser Gene..."
+            },
             "md5": "930a02ab8fa4b272292e0ee0a265909a",
             "name": "NotEnoughCodecs",
-            "url": "https://minecraft.curseforge.com/projects/notenoughcodecs"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/notenoughcodecs"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "ChickenBones",
+                "url": "https://www.curseforge.com/members/chicken_bones"
+            },
             "file": "NotEnoughItems-1.7.10-1.0.5.120-universal.jar",
+            "id": "chickenbones",
+            "img": "chickenbones.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/notenoughitems",
+                "txt": "All Rights Reserved"
+            },
             "md5": "742e865a9a80071e80976ffedc05700e",
             "name": "NotEnoughItems",
-            "url": "https://minecraft.curseforge.com/projects/notenoughitems"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/notenoughitems"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Xbony2",
+                "url": "https://www.curseforge.com/members/Xbony2"
+            },
             "file": "IC2NuclearControl-2.4.3a.jar",
+            "id": "nuclear-control-2",
+            "img": "nuclear-control-2.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/nuclear-control-2",
+                "txt": "Custom License"
+            },
             "md5": "8699c37cf6233651c8fdc745a395125f",
             "name": "Nuclear Control 2",
-            "url": "https://minecraft.curseforge.com/projects/nuclear-control-2"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/nuclear-control-2"
         },
         {
             "additional-folder": "server/mods",
-            "file": "Numina-0.4.1.105.jar",
-            "md5": "70e1057487b873d7260afc7d7a85290e",
+            "author": {
+                "name": "MachineMuse",
+                "url": "https://www.curseforge.com/members/MachineMuse"
+            },
+            "file": "Numina-0.4.1.106.jar",
+            "id": "numina",
+            "img": "numina.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/numina",
+                "txt": "BSD-3-Clause"
+            },
+            "md5": "244f1e48bdc6d1c37c7572396795b3be",
             "name": "Numina",
-            "url": "https://minecraft.curseforge.com/projects/numina"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/numina"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Myrathi",
+                "url": "https://www.curseforge.com/members/Myrathi"
+            },
             "file": "ObsidiPlates-1.7.10-universal-3.0.0.18.jar",
+            "id": "curseforge",
+            "img": "curseforge.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/obsidiplates",
+                "txt": "Attribution-Non..."
+            },
             "md5": "20fc7e4fde83c7be83358a19bfffc4b1",
             "name": "ObsidiPlates",
-            "url": "https://minecraft.curseforge.com/projects/obsidiplates"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/obsidiplates"
         },
         {
             "additional-folder": "server/mods/1.7.10",
+            "description-url-override": "https://github.com/Gagravarr/VorbisJava",
             "file": "vorbis-java-core-0.8-20150201.161816-1.jar",
             "folder-override": "minecraft/mods/1.7.10",
+            "id": "ogg-and-vorbis-for-java-core",
             "md5": "1a0a194558fdb3f6329c9a785256c7ef",
-            "name": "Ogg and Vorbis For Java, Core",
+            "name": "Ogg and Vorbis for Java, Core",
+            "type": "library",
             "url": "https://archive.org/download/vorbis-java-core-0.8-20150201.161816-1/vorbis-java-core-0.8-20150201.161816-1.jar"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "OpenMods",
+                "url": "https://www.curseforge.com/members/OpenMods"
+            },
             "file": "OpenBlocks-1.7.10-1.6.jar",
+            "id": "openmods",
+            "img": "openmods.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/openblocks",
+                "txt": "MIT"
+            },
             "md5": "26aa01a40b9eeb35a4d291ec9d6dd598",
             "name": "OpenBlocks",
-            "url": "https://minecraft.curseforge.com/projects/openblocks"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/openblocks"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "OpenMods",
+                "url": "https://www.curseforge.com/members/OpenMods"
+            },
             "file": "OpenEye-1.7.10-0.8.jar",
+            "id": "openmods",
+            "img": "openmods.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/openeye",
+                "txt": "MIT"
+            },
             "md5": "37241c2ff3d38546b5cef43c6900fdcd",
             "name": "OpenEye",
-            "url": "https://minecraft.curseforge.com/projects/openeye"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/openeye"
         },
         {
             "additional-folder": "server/mods",
-            "file": "OpenModsLib-1.7.10-0.10.jar",
-            "md5": "7af56161fea4b81d7c8504133b269710",
+            "author": {
+                "name": "OpenMods",
+                "url": "https://www.curseforge.com/members/OpenMods"
+            },
+            "file": "OpenModsLib-1.7.10-0.10.1.jar",
+            "id": "openmods",
+            "img": "openmods.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/openmodslib",
+                "txt": "MIT"
+            },
+            "md5": "d20e2d131aeb026f541add98d3a810d4",
             "name": "OpenModsLib",
-            "url": "https://minecraft.curseforge.com/projects/openmodslib"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/openmodslib"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "OpenMods",
+                "url": "https://www.curseforge.com/members/OpenMods"
+            },
             "file": "OpenPeripheralAddons-1.7.10-0.6.jar",
+            "id": "openmods",
+            "img": "openmods.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/openperipheraladdons",
+                "txt": "MIT"
+            },
             "md5": "73f9ac8a80ebb978d8fd304cb78c77a9",
             "name": "OpenPeripheralAddons",
-            "url": "https://minecraft.curseforge.com/projects/openperipheraladdons"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/openperipheraladdons"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "OpenMods",
+                "url": "https://www.curseforge.com/members/OpenMods"
+            },
             "file": "OpenPeripheralCore-1.7.10-1.4.jar",
+            "id": "openmods",
+            "img": "openmods.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/openperipheralcore",
+                "txt": "MIT"
+            },
             "md5": "40a20aa1af43c8364293d7eeb0e1cbe2",
             "name": "OpenPeripheralCore",
-            "url": "https://minecraft.curseforge.com/projects/openperipheralcore"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/openperipheralcore"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "OpenMods",
+                "url": "https://www.curseforge.com/members/OpenMods"
+            },
             "file": "OpenPeripheralIntegration-1.7.10-0.6.jar",
+            "id": "openmods",
+            "img": "openmods.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/openperipheralintegration",
+                "txt": "MIT"
+            },
             "md5": "9605fa8af0b27adf3417e3d8d9fa99a8",
             "name": "OpenPeripheralIntegration",
-            "url": "https://minecraft.curseforge.com/projects/openperipheralintegration"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/openperipheralintegration"
         },
         {
             "additional-file-disabled": true,
             "additional-folder": "server/mods",
+            "author": {
+                "name": "sp614x",
+                "url": "https://www.minecraftforum.net/members/sp614x"
+            },
+            "code": {
+                "title": "Closed Source"
+            },
+            "description-url-override": "https://optifine.net/home",
             "file": "OptiFine_1.7.10_HD_U_E7.jar",
+            "id": "optifine",
+            "img": "optifine.png",
             "md5": "445062f5aaf982c36c72d90530c26850",
             "name": "OptiFine HD Ultra",
             "preview": true,
+            "type": "client mod",
             "url": "https://optifine.net/downloads"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "austinv11",
+                "url": "https://www.curseforge.com/members/austinv11"
+            },
             "file": "Peripherals++-1.3.6.jar",
+            "id": "peripherals",
+            "img": "peripherals.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/peripherals",
+                "txt": "GNU General Pub..."
+            },
             "md5": "b354e7c7a7b3247c2b1534784bf4165f",
             "name": "Peripherals++",
-            "url": "https://minecraft.curseforge.com/projects/peripherals"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/peripherals"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "MineMaarten",
+                "url": "https://www.curseforge.com/members/MineMaarten"
+            },
             "file": "PneumaticCraft-1.7.10-1.12.7-152-universal.jar",
+            "id": "pneumaticcraft",
+            "img": "pneumaticcraft.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/pneumaticcraft",
+                "txt": "GNU General Pub..."
+            },
             "md5": "7ccea567cb5af8c37e7929bf541d6171",
             "name": "PneumaticCraft",
-            "url": "https://minecraft.curseforge.com/projects/pneumaticcraft"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/pneumaticcraft"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "iChun",
+                "url": "https://www.curseforge.com/members/iChun"
+            },
             "file": "PortalGun-4.0.0-beta-6-fix-1.jar",
+            "id": "portal-gun",
+            "img": "portal-gun.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/portal-gun",
+                "txt": "All Rights Reserved"
+            },
             "md5": "318fb7d5510c6ae47cab5c3534cf7268",
             "name": "Portal Gun",
-            "url": "https://minecraft.curseforge.com/projects/portal-gun"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/portal-gun"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Mr_TJP",
+                "url": "https://www.curseforge.com/members/Mr_TJP"
+            },
             "file": "ProjectRed-1.7.10-4.7.0pre12.95-Base.jar",
+            "id": "project-red",
+            "img": "project-red.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/project-red-base",
+                "txt": "Custom License"
+            },
             "md5": "4ca2c33c19252f4fcec87a7f28a9420c",
             "name": "Project Red - Base",
-            "url": "https://minecraft.curseforge.com/projects/project-red-base"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/project-red-base"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Mr_TJP",
+                "url": "https://www.curseforge.com/members/Mr_TJP"
+            },
             "file": "ProjectRed-1.7.10-4.7.0pre12.95-Compat.jar",
+            "id": "project-red",
+            "img": "project-red.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/project-red-compat",
+                "txt": "Custom License"
+            },
             "md5": "0c16c159b33115e5a317aa51524bc85d",
             "name": "Project Red - Compat",
-            "url": "https://minecraft.curseforge.com/projects/project-red-compat"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/project-red-compat"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Mr_TJP",
+                "url": "https://www.curseforge.com/members/Mr_TJP"
+            },
             "file": "ProjectRed-1.7.10-4.7.0pre12.95-Fabrication.jar",
+            "id": "project-red",
+            "img": "project-red.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/project-red-fabrication",
+                "txt": "Custom License"
+            },
             "md5": "904b9ef0c605b7674340ffc5476ec3e7",
             "name": "Project Red - Fabrication",
-            "url": "https://minecraft.curseforge.com/projects/project-red-fabrication"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/project-red-fabrication"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Mr_TJP",
+                "url": "https://www.curseforge.com/members/Mr_TJP"
+            },
             "file": "ProjectRed-1.7.10-4.7.0pre12.95-Integration.jar",
+            "id": "project-red",
+            "img": "project-red.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/project-red-integration",
+                "txt": "Custom License"
+            },
             "md5": "0a4a94ed01d34d7dcca33c9ca54f674d",
             "name": "Project Red - Integration",
-            "url": "https://minecraft.curseforge.com/projects/project-red-integration"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/project-red-integration"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Mr_TJP",
+                "url": "https://www.curseforge.com/members/Mr_TJP"
+            },
             "file": "ProjectRed-1.7.10-4.7.0pre12.95-Lighting.jar",
+            "id": "project-red",
+            "img": "project-red.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/project-red-lighting",
+                "txt": "Custom License"
+            },
             "md5": "e774c0bfc2f0e364a272cf159e89dc54",
             "name": "Project Red - Lighting",
-            "url": "https://minecraft.curseforge.com/projects/project-red-lighting"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/project-red-lighting"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Mr_TJP",
+                "url": "https://www.curseforge.com/members/Mr_TJP"
+            },
             "file": "ProjectRed-1.7.10-4.7.0pre12.95-Mechanical.jar",
+            "id": "project-red",
+            "img": "project-red.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/project-red-mechanical",
+                "txt": "Custom License"
+            },
             "md5": "6fbaeafce4d24ba7e233f93b51362e51",
             "name": "Project Red - Mechanical",
-            "url": "https://minecraft.curseforge.com/projects/project-red-mechanical"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/project-red-mechanical"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Mr_TJP",
+                "url": "https://www.curseforge.com/members/Mr_TJP"
+            },
             "file": "ProjectRed-1.7.10-4.7.0pre12.95-World.jar",
+            "id": "project-red",
+            "img": "project-red.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/project-red-world",
+                "txt": "All Rights Reserved"
+            },
             "md5": "a823c63d9dbb9d337bf7fcf54b8d42ea",
             "name": "Project Red - World",
-            "url": "https://minecraft.curseforge.com/projects/project-red-world"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/project-red-world"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "CovertJaguar",
+                "url": "https://www.curseforge.com/members/CovertJaguar"
+            },
             "file": "Railcraft_1.7.10-9.12.2.1.jar",
+            "id": "railcraft",
+            "img": "railcraft.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/railcraft",
+                "txt": "Custom License"
+            },
             "md5": "24cdef39ba06a2bb1121c679d80ca93c",
             "name": "Railcraft",
-            "url": "https://minecraft.curseforge.com/projects/railcraft"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/railcraft"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Team CoFH",
+                "url": "https://www.curseforge.com/members/TeamCoFH"
+            },
             "file": "RedstoneArsenal-[1.7.10]1.1.2-92.jar",
+            "id": "redstone-arsenal",
+            "img": "redstone-arsenal.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/redstone-arsenal",
+                "txt": "All Rights Reserved"
+            },
             "md5": "72f8414b856d40b07d6837560f067acc",
             "name": "Redstone Arsenal",
-            "url": "https://minecraft.curseforge.com/projects/redstone-arsenal"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/redstone-arsenal"
         },
         {
             "additional-file-disabled": true,
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Lumien",
+                "url": "https://www.curseforge.com/members/Lumien"
+            },
             "file": "ResourceLoader-MC1.7.10-1.3.jar",
+            "id": "resource-loader",
+            "img": "resource-loader.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/resource-loader",
+                "txt": "All Rights Reserved"
+            },
             "md5": "8139e4169ad21a531110deb371c2e6f3",
             "name": "Resource Loader",
-            "url": "https://minecraft.curseforge.com/projects/resource-loader"
+            "type": "client mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/resource-loader"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "McJty",
+                "url": "https://www.curseforge.com/members/McJty"
+            },
             "file": "rftools-4.23.jar",
+            "id": "rftools",
+            "img": "rftools.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/rftools",
+                "txt": "MIT"
+            },
             "md5": "3f8210b1cfca520753532cc89fc961d8",
             "name": "RFTools",
-            "url": "https://minecraft.curseforge.com/projects/rftools"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/rftools"
         },
         {
             "additional-folder": "server/mods",
-            "file": "RotaryCraft 1.7.10 V22d.jar",
-            "md5": "837ed7bc5a3fd3718f93593e38c77a50",
+            "author": {
+                "name": "ReikaKalseki",
+                "url": "https://www.curseforge.com/members/ReikaKalseki"
+            },
+            "file": "RotaryCraft 1.7.10 V23b.jar",
+            "id": "rotarycraft",
+            "img": "rotarycraft.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/rotarycraft",
+                "txt": "Custom License"
+            },
+            "md5": "76d9341cc5539e95212a53769555ad4a",
             "name": "RotaryCraft",
-            "url": "https://minecraft.curseforge.com/projects/rotarycraft"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/rotarycraft"
         },
         {
+            "description-url-override": "https://scala.github.io/actors-migration/",
             "exec": {
-                "args": "-cp ___UNPACKER___ nice.work.forge.LibraryUnpacker --checksums ___FILE___",
-                "cmd": "___JAVA___",
-                "dir": "../server/libraries/org/scala-lang/scala-actors-migration_2.11/1.1.0"
+                "args": "-cp ___UNPACKER___ ___FILE___",
+                "cmd": "___JAVA___"
             },
             "file": "scala-actors-migration_2.11-1.1.0.jar.pack.xz",
             "folder-override": "server/libraries/org/scala-lang/scala-actors-migration_2.11/1.1.0",
+            "id": "scala",
+            "img": "scala.png",
             "md5": "1db3065628f697adc8b7f4d3bd5b59c2",
             "name": "Scala Actor Migration Kit",
+            "type": "library",
             "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-actors-migration_2.11/1.1.0/scala-actors-migration_2.11-1.1.0.jar.pack.xz"
         },
         {
+            "description-url-override": "https://www.scala-lang.org/",
             "exec": {
-                "args": "-cp ___UNPACKER___ nice.work.forge.LibraryUnpacker --checksums ___FILE___",
-                "cmd": "___JAVA___",
-                "dir": "../server/libraries/org/scala-lang/scala-compiler/2.11.1"
+                "args": "-cp ___UNPACKER___ ___FILE___",
+                "cmd": "___JAVA___"
             },
             "file": "scala-compiler-2.11.1.jar.pack.xz",
             "folder-override": "server/libraries/org/scala-lang/scala-compiler/2.11.1",
+            "id": "scala",
+            "img": "scala.png",
             "md5": "9c88616e35796955e0ff1235b11f1475",
             "name": "Scala Compiler API",
+            "type": "library",
             "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-compiler/2.11.1/scala-compiler-2.11.1.jar.pack.xz"
         },
         {
+            "description-url-override": "https://www.scala-lang.org/",
             "exec": {
-                "args": "-cp ___UNPACKER___ nice.work.forge.LibraryUnpacker --checksums ___FILE___",
-                "cmd": "___JAVA___",
-                "dir": "../server/libraries/org/scala-lang/plugins/scala-continuations-library_2.11/1.0.2"
+                "args": "-cp ___UNPACKER___ ___FILE___",
+                "cmd": "___JAVA___"
             },
             "file": "scala-continuations-library_2.11-1.0.2.jar.pack.xz",
             "folder-override": "server/libraries/org/scala-lang/plugins/scala-continuations-library_2.11/1.0.2",
+            "id": "scala",
+            "img": "scala.png",
             "md5": "f4be606c0d0b92e58ad7414cd72e6680",
             "name": "Scala Continuations Library",
+            "type": "library",
             "url": "https://files.minecraftforge.net/maven/org/scala-lang/plugins/scala-continuations-library_2.11/1.0.2/scala-continuations-library_2.11-1.0.2.jar.pack.xz"
         },
         {
+            "description-url-override": "https://www.scala-lang.org/",
             "exec": {
-                "args": "-cp ___UNPACKER___ nice.work.forge.LibraryUnpacker --checksums ___FILE___",
-                "cmd": "___JAVA___",
-                "dir": "../server/libraries/org/scala-lang/plugins/scala-continuations-plugin_2.11.1/1.0.2"
+                "args": "-cp ___UNPACKER___ ___FILE___",
+                "cmd": "___JAVA___"
             },
             "file": "scala-continuations-plugin_2.11.1-1.0.2.jar.pack.xz",
             "folder-override": "server/libraries/org/scala-lang/plugins/scala-continuations-plugin_2.11.1/1.0.2",
+            "id": "scala",
+            "img": "scala.png",
             "md5": "b81f2ba4690d9d1d3d89ee3a560b4a50",
             "name": "Scala Continuations Plugin",
+            "type": "library",
             "url": "https://files.minecraftforge.net/maven/org/scala-lang/plugins/scala-continuations-plugin_2.11.1/1.0.2/scala-continuations-plugin_2.11.1-1.0.2.jar.pack.xz"
         },
         {
+            "description-url-override": "https://www.scala-lang.org/",
             "exec": {
-                "args": "-cp ___UNPACKER___ nice.work.forge.LibraryUnpacker --checksums ___FILE___",
-                "cmd": "___JAVA___",
-                "dir": "../server/libraries/org/scala-lang/scala-library/2.11.1"
+                "args": "-cp ___UNPACKER___ ___FILE___",
+                "cmd": "___JAVA___"
             },
             "file": "scala-library-2.11.1.jar.pack.xz",
             "folder-override": "server/libraries/org/scala-lang/scala-library/2.11.1",
+            "id": "scala",
+            "img": "scala.png",
             "md5": "f2d0c1ce6ab76531bbd48acbcd3d4ff1",
             "name": "Scala Library API",
+            "type": "library",
             "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-library/2.11.1/scala-library-2.11.1.jar.pack.xz"
         },
         {
+            "description-url-override": "https://www.scala-lang.org/",
             "exec": {
-                "args": "-cp ___UNPACKER___ nice.work.forge.LibraryUnpacker --checksums ___FILE___",
-                "cmd": "___JAVA___",
-                "dir": "../server/libraries/org/scala-lang/scala-reflect/2.11.1"
+                "args": "-cp ___UNPACKER___ ___FILE___",
+                "cmd": "___JAVA___"
             },
             "file": "scala-reflect-2.11.1.jar.pack.xz",
             "folder-override": "server/libraries/org/scala-lang/scala-reflect/2.11.1",
+            "id": "scala",
+            "img": "scala.png",
             "md5": "1d98cc27697573fb205bb5180165f74a",
             "name": "Scala Reflection API",
+            "type": "library",
             "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-reflect/2.11.1/scala-reflect-2.11.1.jar.pack.xz"
         },
         {
+            "description-url-override": "https://www.scala-lang.org/",
             "exec": {
-                "args": "-cp ___UNPACKER___ nice.work.forge.LibraryUnpacker --checksums ___FILE___",
-                "cmd": "___JAVA___",
-                "dir": "../server/libraries/org/scala-lang/scala-parser-combinators_2.11/1.0.1"
+                "args": "-cp ___UNPACKER___ ___FILE___",
+                "cmd": "___JAVA___"
             },
             "file": "scala-parser-combinators_2.11-1.0.1.jar.pack.xz",
             "folder-override": "server/libraries/org/scala-lang/scala-parser-combinators_2.11/1.0.1",
+            "id": "scala",
+            "img": "scala.png",
             "md5": "d45bb1657625464f46da3596c1f941de",
             "name": "Scala Standard Parser Combinator Library",
+            "type": "library",
             "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-parser-combinators_2.11/1.0.1/scala-parser-combinators_2.11-1.0.1.jar.pack.xz"
         },
         {
+            "description-url-override": "https://www.scala-lang.org/",
             "exec": {
-                "args": "-cp ___UNPACKER___ nice.work.forge.LibraryUnpacker --checksums ___FILE___",
-                "cmd": "___JAVA___",
-                "dir": "../server/libraries/org/scala-lang/scala-swing_2.11/1.0.1"
+                "args": "-cp ___UNPACKER___ ___FILE___",
+                "cmd": "___JAVA___"
             },
             "file": "scala-swing_2.11-1.0.1.jar.pack.xz",
             "folder-override": "server/libraries/org/scala-lang/scala-swing_2.11/1.0.1",
+            "id": "scala",
+            "img": "scala.png",
             "md5": "db6a3ef629c32bf9515c8937fe422786",
             "name": "Scala Swing API",
+            "type": "library",
             "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-swing_2.11/1.0.1/scala-swing_2.11-1.0.1.jar.pack.xz"
         },
         {
+            "description-url-override": "https://www.scala-lang.org/",
             "exec": {
-                "args": "-cp ___UNPACKER___ nice.work.forge.LibraryUnpacker --checksums ___FILE___",
-                "cmd": "___JAVA___",
-                "dir": "../server/libraries/org/scala-lang/scala-xml_2.11/1.0.2"
+                "args": "-cp ___UNPACKER___ ___FILE___",
+                "cmd": "___JAVA___"
             },
             "file": "scala-xml_2.11-1.0.2.jar.pack.xz",
             "folder-override": "server/libraries/org/scala-lang/scala-xml_2.11/1.0.2",
+            "id": "scala",
+            "img": "scala.png",
             "md5": "1c5a20efca1474626e0e0123f9cdd8ce",
             "name": "Scala XML API",
+            "type": "library",
             "url": "https://files.minecraftforge.net/maven/org/scala-lang/scala-xml_2.11/1.0.2/scala-xml_2.11-1.0.2.jar.pack.xz"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "JaJo_11",
+                "url": "https://github.com/jajo-11"
+            },
             "file": "shadowworld-1.3.3.jar",
+            "id": "shadow-world",
+            "img": "shadow-world.png",
             "md5": "5e8ce556f03afd79698118d93313f582",
             "name": "Shadow World",
+            "type": "client/server mod",
             "url": "https://web.archive.org/web/20180217153136/https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/wip-mods/1446206-shadow-world-1-3-3-1-3-3b"
         },
         {
             "additional-file-disabled": true,
             "additional-folder": "server/mods",
+            "author": {
+                "name": "JaJo_11",
+                "url": "https://github.com/jajo-11"
+            },
             "file": "shadowworld_DynamicLights_1.0.0.jar",
+            "id": "shadow-world",
+            "img": "shadow-world.png",
             "md5": "961bf61a8a60b3c443a53f3fd9880e9f",
             "name": "Shadow World Dynamic Lights",
+            "type": "client mod",
             "url": "https://web.archive.org/web/20180217153136/https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/wip-mods/1446206-shadow-world-1-3-3-1-3-3b"
         },
         {
             "additional-folder": "server/mods/1.7.10",
+            "description-url-override": "http://slick.ninjacave.com/slick-util/",
             "file": "slick-util-0.0b9db0b2.jar",
             "folder-override": "minecraft/mods/1.7.10",
+            "id": "slick-util",
+            "img": "slick-util.svg",
             "md5": "0b9db0b296b5eb1df8d11eb30dc87b8f",
             "name": "Slick-Util",
+            "type": "library",
             "url": "https://archive.org/download/slick-util-0.0b9db0b2/slick-util-0.0b9db0b2.jar"
         },
         {
             "file": "SEUS-v11.0.zip",
             "folder-override": "minecraft/shaderpacks",
+            "id": "sonicether",
+            "img": "sonicether.svg",
             "md5": "4d919c05be8c20e2baf93e9ad3b0cebc",
             "name": "Sonic Ether's Unbelievable Shaders",
+            "type": "shader files",
             "url": "https://sonicether.com/shaders/download/v11.0/"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "AtomicStryker",
+                "url": "https://www.curseforge.com/members/atomicstrykergrumpy"
+            },
+            "distribution": "allowed",
             "file": "StalkerCreepers-1.7.10.jar",
+            "id": "stalker-creepers",
+            "img": "stalker-creepers.png",
+            "license": {
+                "source": "http://atomicstryker.net/about.php",
+                "txt": "AtomicStryker license"
+            },
             "md5": "58ac6e80c1536eb2658027f9b5c53ec4",
             "name": "Stalker Creepers",
-            "url": "https://minecraft.curseforge.com/projects/stalker-creepers"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/stalker-creepers"
         },
         {
             "exec": {
-                "args": "/c ___7Z___ e ___FILE___ -o../minecraft/mods Starminer1710-0.9.9.jar && ___7Z___ e ___FILE___ -o../server/mods Starminer1710-0.9.9.jar",
-                "cmd": "cmd",
-                "dir": "."
+                "args": "/c ___7Z___ e ___FILE___ -y -o../../minecraft/mods Starminer1710-0.9.9.jar && ___7Z___ e ___FILE___ -y -o../../server/mods Starminer1710-0.9.9.jar",
+                "cmd": "cmd"
             },
             "file": "Starminer1710-0.9.9_please_extract_.zip",
             "folder-override": "",
+            "id": "starminer",
             "md5": "a5305eef71ba977a1a9c887b8660a3f4",
             "name": "StarMiner",
-            "url": "https://forum.minecraftuser.jp/viewtopic.php?f=13&t=17975"
+            "type": "client/server mod",
+            "url": "https://web.archive.org/web/20190715173858/https://forum.minecraftuser.jp/viewtopic.php?f=13&t=17975"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Vswe",
+                "url": "https://www.curseforge.com/members/Vswe"
+            },
             "file": "StevesCarts2.0.0.b18.jar",
+            "id": "steves-carts-2",
+            "img": "steves-carts-2.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/steves-carts-2",
+                "txt": "All Rights Reserved"
+            },
             "md5": "0beb610ca0d65a1419fffabe7feb9dc2",
             "name": "Steve's Carts 2",
-            "url": "https://minecraft.curseforge.com/projects/steves-carts-2"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/steves-carts-2"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Vswe",
+                "url": "https://www.curseforge.com/members/Vswe"
+            },
             "file": "StevesFactoryManagerA93.jar",
+            "id": "steves-factory-manager",
+            "img": "steves-factory-manager.svg",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/steves-factory-manager",
+                "txt": "All Rights Reserved"
+            },
             "md5": "825819de2d82cf7e9118353c0fc821b6",
             "name": "Steve's Factory Manager",
-            "url": "https://minecraft.curseforge.com/projects/steves-factory-manager"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/steves-factory-manager"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "jaquadro",
+                "url": "https://www.curseforge.com/members/jaquadro"
+            },
             "file": "StorageDrawers-1.7.10-1.10.9.jar",
+            "id": "storage-drawers",
+            "img": "storage-drawers.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/storage-drawers",
+                "txt": "MIT"
+            },
             "md5": "6fe615f1a9ff94dfe1b0641f1fc9fd18",
             "name": "Storage Drawers",
-            "url": "https://minecraft.curseforge.com/projects/storage-drawers"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/storage-drawers"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "domi1819",
+                "url": "https://www.curseforge.com/members/domi1819"
+            },
             "file": "sdnf-1.0.jar",
+            "id": "storage-drawers-nei-fix",
+            "img": "storage-drawers-nei-fix.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/storage-drawers-nei-fix",
+                "txt": "MIT"
+            },
             "md5": "e266a5cc114921390d4015968689e181",
             "name": "Storage Drawers NEI Fix",
-            "url": "https://minecraft.curseforge.com/projects/storage-drawers-nei-fix"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/storage-drawers-nei-fix"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "jaquadro",
+                "url": "https://www.curseforge.com/members/jaquadro"
+            },
             "file": "StorageDrawers-BiomesOPlenty-1.7.10-1.1.1.jar",
+            "id": "storage-drawers-biomes-o-plenty-pack",
+            "img": "storage-drawers-biomes-o-plenty-pack.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/storage-drawers-biomes-o-plenty-pack",
+                "txt": "MIT"
+            },
             "md5": "4124dfbc9f5f9e33f5aa78d21e78d243",
             "name": "Storage Drawers: Biomes O' Plenty Pack",
-            "url": "https://minecraft.curseforge.com/projects/storage-drawers-biomes-o-plenty-pack"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/storage-drawers-biomes-o-plenty-pack"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "jaquadro",
+                "url": "https://www.curseforge.com/members/jaquadro"
+            },
             "file": "StorageDrawers-Erebus-1.7.10-1.1.1.jar",
+            "id": "storage-drawers-erebus-pack",
+            "img": "storage-drawers-erebus-pack.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/storage-drawers-erebus-pack",
+                "txt": "MIT"
+            },
             "md5": "f0949e3576be02a18eeb256a61c6ea67",
             "name": "Storage Drawers: Erebus Pack",
-            "url": "https://minecraft.curseforge.com/projects/storage-drawers-erebus-pack"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/storage-drawers-erebus-pack"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "jaquadro",
+                "url": "https://www.curseforge.com/members/jaquadro"
+            },
             "file": "StorageDrawers-Forestry-1.7.10-1.1.2.jar",
+            "id": "storage-drawers-forestry-pack",
+            "img": "storage-drawers-forestry-pack.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/storage-drawers-forestry-pack",
+                "txt": "MIT"
+            },
             "md5": "d37ab233008bb78c3444b9a297b73190",
             "name": "Storage Drawers: Forestry Pack",
-            "url": "https://minecraft.curseforge.com/projects/storage-drawers-forestry-pack"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/storage-drawers-forestry-pack"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "jaquadro",
+                "url": "https://www.curseforge.com/members/jaquadro"
+            },
             "file": "StorageDrawers-Misc-1.7.10-1.1.2.jar",
+            "id": "storage-drawers-misc-pack",
+            "img": "storage-drawers-misc-pack.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/storage-drawers-misc-pack",
+                "txt": "MIT"
+            },
             "md5": "2b867286c78a598b41a4f56b99c9c408",
             "name": "Storage Drawers: Misc Pack",
-            "url": "https://minecraft.curseforge.com/projects/storage-drawers-misc-pack"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/storage-drawers-misc-pack"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "jaquadro",
+                "url": "https://www.curseforge.com/members/jaquadro"
+            },
             "file": "StorageDrawers-Natura-1.7.10-1.1.1.jar",
+            "id": "storage-drawers-natura-pack",
+            "img": "storage-drawers-natura-pack.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/storage-drawers-natura-pack",
+                "txt": "MIT"
+            },
             "md5": "ca17d396f0c6aa6e478ac6666d899cfd",
             "name": "Storage Drawers: Natura Pack",
-            "url": "https://minecraft.curseforge.com/projects/storage-drawers-natura-pack"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/storage-drawers-natura-pack"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Azanor",
+                "url": "https://www.curseforge.com/members/azanor13"
+            },
             "file": "Thaumcraft-1.7.10-4.2.3.5.jar",
+            "id": "thaumcraft",
+            "img": "thaumcraft.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/thaumcraft",
+                "txt": "Custom License"
+            },
             "md5": "17f2e60dabd4961c9a3a2dad3ad6528a",
             "name": "Thaumcraft",
-            "url": "https://minecraft.curseforge.com/projects/thaumcraft"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/thaumcraft"
         },
         {
             "additional-folder": "server/mods",
+            "description-url-override": "https://github.com/GTNewHorizons/Thaumic_Exploration",
             "file": "Thaumic-Exploration-[1.7.10] 1.1.73-0.jar",
+            "id": "thaumic-exploration",
+            "img": "thaumic-exploration.png",
             "md5": "ae544cf66c07a5fb67f8f9a6d497181f",
             "name": "Thaumic Exploration",
+            "type": "client/server mod",
             "url": "https://archive.org/download/Thaumic-Exploration-1.7.101.1.73-0/Thaumic-Exploration-[1.7.10] 1.1.73-0.jar"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "nekosune",
+                "url": "https://www.curseforge.com/members/nekosune"
+            },
             "file": "ThaumicTinkerer-2.5-1.7.10-164.jar",
+            "id": "thaumic-tinkerer",
+            "img": "thaumic-tinkerer.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/thaumic-tinkerer",
+                "txt": "Creative Common..."
+            },
             "md5": "8dc007673d1e79f00c3095317f53d0ce",
             "name": "Thaumic Tinkerer",
-            "url": "https://minecraft.curseforge.com/projects/thaumic-tinkerer"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/thaumic-tinkerer"
         },
         {
             "additional-folder": "server/mods",
+            "description-url-override": "https://web.archive.org/web/20180204190820/https://files.jellysquid.me/mirrors/aether/",
             "file": "AetherII-1.7.10-1.7.0.jar",
+            "id": "the-aether-ii",
+            "img": "the-aether-ii.jpg",
             "md5": "a0ea9bcd3ef8023e3d72d6219b4cf02c",
             "name": "The Aether II",
-            "url": "https://web.archive.org/web/20180204190820/https://files.jellysquid.me/mirrors/aether/"
+            "type": "client/server mod",
+            "url": "https://archive.org/download/AetherII-1.7.10-1.7.0/AetherII-1.7.10-1.7.0.jar"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Vadis365",
+                "url": "https://www.curseforge.com/members/Vadis365"
+            },
             "file": "TheErebus-0.4.7.jar",
+            "id": "the-erebus",
+            "img": "the-erebus.svg",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/the-erebus",
+                "txt": "All Rights Reserved"
+            },
             "md5": "9109c09d3489191c16cee6999c065bc8",
             "name": "The Erebus",
-            "url": "https://minecraft.curseforge.com/projects/the-erebus"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/the-erebus"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Benimatic",
+                "url": "https://www.curseforge.com/members/Benimatic"
+            },
             "file": "twilightforest-1.7.10-2.3.7.jar",
+            "id": "the-twilight-forest",
+            "img": "the-twilight-forest.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/the-twilight-forest",
+                "txt": "GNU Lesser Gene..."
+            },
             "md5": "7602ffcdcd8ee2f012caeed1e4d22655",
             "name": "The Twilight Forest",
-            "url": "https://minecraft.curseforge.com/projects/the-twilight-forest"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/the-twilight-forest"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Team CoFH",
+                "url": "https://www.curseforge.com/members/TeamCoFH"
+            },
             "file": "ThermalDynamics-[1.7.10]1.2.1-172.jar",
+            "id": "thermal-dynamics",
+            "img": "thermal-dynamics.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/thermal-dynamics",
+                "txt": "All Rights Reserved"
+            },
             "md5": "156ea02d8bb4b2ab948f8a5aa6bdb99f",
             "name": "Thermal Dynamics",
-            "url": "https://minecraft.curseforge.com/projects/thermal-dynamics"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/thermal-dynamics"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Team CoFH",
+                "url": "https://www.curseforge.com/members/TeamCoFH"
+            },
             "file": "ThermalExpansion-[1.7.10]4.1.5-248.jar",
+            "id": "thermal-expansion",
+            "img": "thermal-expansion.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/thermal-expansion",
+                "txt": "All Rights Reserved"
+            },
             "md5": "8c0ca9e6cc197a13e6cdbaf53b8d60f5",
             "name": "Thermal Expansion",
-            "url": "https://minecraft.curseforge.com/projects/thermalexpansion"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/thermal-expansion"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Team CoFH",
+                "url": "https://www.curseforge.com/members/TeamCoFH"
+            },
             "file": "ThermalFoundation-[1.7.10]1.2.6-118.jar",
+            "id": "thermal-foundation",
+            "img": "thermal-foundation.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/thermal-foundation",
+                "txt": "All Rights Reserved"
+            },
             "md5": "cc29ba7f9164bb5c78cee67a3a23a81d",
             "name": "Thermal Foundation",
-            "url": "https://minecraft.curseforge.com/projects/thermal-foundation"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/thermal-foundation"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "squeek502",
+                "url": "https://www.curseforge.com/members/squeek502"
+            },
             "file": "TiCTooltips-mc1.7.10-1.2.5.jar",
+            "id": "tic-tooltips",
+            "img": "tic-tooltips.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/tic-tooltips",
+                "txt": "Public Domain"
+            },
             "md5": "d8178b20a554d3a0f3d0f374769acd02",
             "name": "TiC Tooltips",
-            "url": "https://minecraft.curseforge.com/projects/tic-tooltips"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/tic-tooltips"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "mDiyo",
+                "url": "https://www.curseforge.com/members/mDiyo"
+            },
             "file": "TConstruct-1.7.10-1.8.8.build991.jar",
+            "id": "tinkers-construct",
+            "img": "tinkers-construct.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/tinkers-construct",
+                "txt": "MIT"
+            },
             "md5": "b655f2f7994d9bd1112c826898390908",
             "name": "Tinkers Construct",
-            "url": "https://minecraft.curseforge.com/projects/tinkers-construct"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/tinkers-construct"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "mDiyo",
+                "url": "https://www.curseforge.com/members/mDiyo"
+            },
             "file": "TMechworks-1.7.10-0.2.15.106.jar",
+            "id": "tinkers-mechworks",
+            "img": "tinkers-mechworks.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/tinkers-mechworks",
+                "txt": "Creative Common..."
+            },
             "md5": "651aa328689ae7e48b763c17d829a0e3",
             "name": "Tinkers' Mechworks",
-            "url": "https://minecraft.curseforge.com/projects/tinkers-mechworks"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/tinkers-mechworks"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "ChickenBones",
+                "url": "https://www.curseforge.com/members/chicken_bones"
+            },
             "file": "Translocator-1.7.10-1.1.2.16-universal.jar",
+            "id": "chickenbones",
+            "img": "chickenbones.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/translocators",
+                "txt": "All Rights Reserved"
+            },
             "md5": "541e87b5d6f522415f8d9a05811377d8",
             "name": "Translocators",
-            "url": "https://minecraft.curseforge.com/projects/translocators"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/translocators"
         },
         {
+            "description-url-override": "https://lightbend.github.io/config/",
             "exec": {
-                "args": "-cp ___UNPACKER___ nice.work.forge.LibraryUnpacker --checksums ___FILE___",
-                "cmd": "___JAVA___",
-                "dir": "../server/libraries/com/typesafe/config/1.2.1"
+                "args": "-cp ___UNPACKER___ ___FILE___",
+                "cmd": "___JAVA___"
             },
             "file": "config-1.2.1.jar.pack.xz",
             "folder-override": "server/libraries/com/typesafe/config/1.2.1",
+            "id": "typesafe",
+            "img": "typesafe.png",
             "md5": "4f1a9214aed32ba3c4a55d89b0918a02",
             "name": "Typesafe Config",
+            "type": "library",
             "url": "https://files.minecraftforge.net/maven/com/typesafe/config/1.2.1/config-1.2.1.jar.pack.xz"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "WanionCane",
+                "url": "https://www.curseforge.com/members/WanionCane"
+            },
             "file": "UniDict-1.7.10-2.9.2.jar",
+            "id": "unidict",
+            "img": "unidict.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/unidict",
+                "txt": "Mozilla Public ..."
+            },
             "md5": "07261f423e1d5c537c1a087185d9bff0",
             "name": "UniDict",
-            "url": "https://minecraft.curseforge.com/projects/unidict"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/unidict"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "domi1819",
+                "url": "https://www.curseforge.com/members/domi1819"
+            },
             "file": "uniq-1.6.jar",
+            "id": "uniq",
+            "img": "uniq.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/uniq",
+                "txt": "MIT"
+            },
             "md5": "ea734042fa967ce9916193090e40243a",
             "name": "UniQ",
-            "url": "https://minecraft.curseforge.com/projects/uniq"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/uniq"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "ProfMobius",
+                "url": "https://www.curseforge.com/members/ProfMobius"
+            },
             "file": "Waila-1.5.10_1.7.10.jar",
+            "id": "waila",
+            "img": "waila.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/waila",
+                "txt": "Custom License"
+            },
             "md5": "eeb36775188e70faa1c5ecd84f80076c",
             "name": "Waila",
-            "url": "https://minecraft.curseforge.com/projects/waila"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/waila"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "squeek502",
+                "url": "https://www.curseforge.com/members/squeek502"
+            },
             "file": "WailaHarvestability-mc1.7.10-1.1.6.jar",
+            "id": "waila-harvestability",
+            "img": "waila-harvestability.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/waila-harvestability",
+                "txt": "Public Domain"
+            },
             "md5": "e9d81089ddec3da20f0bb144e7beb4da",
             "name": "Waila Harvestability",
-            "url": "https://minecraft.curseforge.com/projects/waila-harvestability"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/waila-harvestability"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "Emoniph",
+                "url": "https://www.curseforge.com/members/Emoniph"
+            },
             "file": "witchery-1.7.10-0.24.1.jar",
+            "id": "witchery",
+            "img": "witchery.svg",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/witchery",
+                "txt": "All Rights Reserved"
+            },
             "md5": "22096b8e462fa5cca3a6c8054116d4fc",
             "name": "Witchery",
-            "url": "https://minecraft.curseforge.com/projects/witchery"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/witchery"
         },
         {
             "additional-folder": "server/mods",
+            "author": {
+                "name": "ChickenBones",
+                "url": "https://www.curseforge.com/members/chicken_bones"
+            },
             "file": "WR-CBE-1.7.10-1.4.1.9-universal.jar",
+            "id": "chickenbones",
+            "img": "chickenbones.png",
+            "license": {
+                "source": "https://www.curseforge.com/minecraft/mc-mods/wr-cbe-universal",
+                "txt": "All Rights Reserved"
+            },
             "md5": "c3477cd84ce90a85cce8ba8bb7b93809",
             "name": "WR-CBE-Universal",
-            "url": "https://minecraft.curseforge.com/projects/wr-cbe-universal"
+            "type": "client/server mod",
+            "url": "https://www.curseforge.com/minecraft/mc-mods/wr-cbe-universal"
         },
         {
             "additional-folder": "server/mods",
+            "description-url-override": "https://github.com/GTNewHorizons/Yamcl",
             "file": "YAMCore-1.7.10-0.5.78.jar",
+            "id": "gt-new-horizons",
+            "img": "gt-new-horizons.png",
             "md5": "4e2f11ce462b8b0e5b9772b1bb03ef7a",
             "name": "YAMCore",
-            "url": "https://archive.org/download/YAMCore-1.7.10-0.5.78/YAMCore-1.7.10-0.5.78.jar"
+            "type": "client/server mod",
+            "url": "http://downloads.gtnewhorizons.com/Mods_for_Twitch/"
         }
     ]
 }
