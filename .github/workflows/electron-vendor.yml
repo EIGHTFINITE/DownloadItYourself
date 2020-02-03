@@ -24,26 +24,28 @@ jobs:
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
         find bin/windows/x86/electron -mindepth 1 -maxdepth 1 -type d -exec rm -r -- '{}' ';'
         mv -T node_modules/electron/dist "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32"
+        git add "bin/windows/x86/electron"
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update Windows x86 Electron Artifacts"
         
         # Windows x64
         export npm_config_arch=x64
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
         find bin/windows/x64/electron -mindepth 1 -maxdepth 1 -type d -exec rm -r -- '{}' ';'
         mv -T node_modules/electron/dist "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
+        git add "bin/windows/x64/electron"
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update Windows x64 Electron Artifacts"
         
         # Linux
         export npm_config_platform=linux
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
         find bin/linux/x64/electron -mindepth 1 -maxdepth 1 -type d -exec rm -r -- '{}' ';'
         mv -T node_modules/electron/dist "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64"
-        
-        # Large Files
         split -b 104857600 --numeric-suffixes=1 --suffix-length=3 "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/electron" "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/electron."
         echo "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/electron" > .git/info/exclude
     - uses: peter-evans/create-pull-request@master
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        commit-message: Update Electron Artifacts
+        commit-message: Update Linux Electron Artifacts
         author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
         committer: GitHub <noreply@github.com>
         title: Update Electron Artifacts
