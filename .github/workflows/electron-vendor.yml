@@ -25,7 +25,7 @@ jobs:
         find bin/windows/x86/electron -mindepth 1 -maxdepth 1 -type d -exec rm -r -- '{}' ';'
         mv -T node_modules/electron/dist "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32"
         git add "bin/windows/x86/electron"
-        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update Windows x86 Electron Artifacts"
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update Windows x86 Electron Artifacts" || true
         
         # Windows x64
         export npm_config_arch=x64
@@ -33,7 +33,7 @@ jobs:
         find bin/windows/x64/electron -mindepth 1 -maxdepth 1 -type d -exec rm -r -- '{}' ';'
         mv -T node_modules/electron/dist "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
         git add "bin/windows/x64/electron"
-        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update Windows x64 Electron Artifacts"
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update Windows x64 Electron Artifacts" || true
         
         # Linux
         export npm_config_platform=linux
