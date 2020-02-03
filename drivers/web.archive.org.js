@@ -14,15 +14,6 @@ if(temp.url.includes("forum.minecraftuser.jp")) {
 	}
 	throw new Error("Unreachable");
 }
-// Hardcoded files.jellysquid.me URLs
-else if(temp.url.includes("files.jellysquid.me")) {
-	elem = $('a[href*="' + current.file + '"]').first();
-	if(!elem.length)
-		throw new Error("Couldn't find download link.");
-	temp.url = response.request.uri.protocol + "//" + response.request.uri.host + response.request.uri.path.replace(/\/([0-9]+)\//, "/$1if_/") + elem.attr("href");
-	temp.file = temp.url.substring(temp.url.lastIndexOf("/") + 1).replace(/\?.*$/, "");
-	updateFile(i, current, temp, callback);
-}
 else {
 	elem = $('a[href*="' + current.file + '"]').first();
 	if(!elem.length)
