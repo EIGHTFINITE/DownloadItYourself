@@ -24,6 +24,9 @@ jobs:
         find node_modules/ -type f -name 'package.json' -exec sed -i '/"man": \[/,/\],/d' -- '{}' ';'
         git update-index --assume-unchanged "node_modules/electron/path.txt"
         find node_modules/ -mindepth 2 -maxdepth 3 -type f -name 'package.json' -exec bash -c 'path="{}"; git add -- "${path:0:-13}"; git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update ${path:13:-13}"' ';'
+        git add -A
+        git reset -- package-lock.json
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Delete unused dependencies" || true
     - uses: peter-evans/create-pull-request@master
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
