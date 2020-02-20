@@ -22,6 +22,14 @@ jobs:
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
         find node_modules/ -type f -name 'package.json' -exec sed -i '/"_where"/d' -- '{}' ';'
         find node_modules/ -type f -name 'package.json' -exec sed -i '/"man": \[/,/\],/d' -- '{}' ';'
+        sed -i 's/require(\x27request\x27)/require(\x27postman-request\x27)/g' -- 'node_modules/cloudscraper/index.d.ts'
+        sed -i '
+        s/require(\x27request\x27)/require(\x27postman-request\x27)/g
+        s/npm install request --save/npm install postman-request --save/g
+        ' -- 'node_modules/request-promise/lib/rp.js'
+        sed -i 's/"request":/"postman-request":/g' -- 'node_modules/cloudscraper/package.json'
+        sed -i 's/"request":/"postman-request":/g' -- 'node_modules/request-promise/package.json'
+        sed -i 's/"request":/"postman-request":/g' -- 'node_modules/request-promise-core/package.json'
         git update-index --assume-unchanged "node_modules/electron/path.txt"
         find node_modules/ -mindepth 2 -maxdepth 3 -type f -name 'package.json' -exec bash -c 'path="{}"; git add -- "${path:0:-13}"; git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update ${path:13:-13}"' ';'
         git add -A
