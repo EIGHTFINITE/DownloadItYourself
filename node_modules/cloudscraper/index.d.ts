@@ -2,7 +2,7 @@ import { URL } from 'url';
 import http = require('http');
 import https = require('https');
 import Promise = require('bluebird');
-import request = require('request');
+import request = require('postman-request');
 import rp = require('request-promise');
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import errors = require('./errors');
