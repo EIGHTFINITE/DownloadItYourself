@@ -8,7 +8,7 @@ try {
 
     // Load Request freshly - so that users can require an unaltered request instance!
     var request = stealthyRequire(require.cache, function () {
-        return require('request');
+        return require('postman-request');
     },
     function () {
         require('tough-cookie');
@@ -18,7 +18,7 @@ try {
     /* istanbul ignore next */
     var EOL = require('os').EOL;
     /* istanbul ignore next */
-    console.error(EOL + '###' + EOL + '### The "request" library is not installed automatically anymore.' + EOL + '### But is a dependency of "request-promise".' + EOL + '### Please install it with:' + EOL + '### npm install request --save' + EOL + '###' + EOL);
+    console.error(EOL + '###' + EOL + '### The "request" library is not installed automatically anymore.' + EOL + '### But is a dependency of "request-promise".' + EOL + '### Please install it with:' + EOL + '### npm install postman-request --save' + EOL + '###' + EOL);
     /* istanbul ignore next */
     throw err;
 }
