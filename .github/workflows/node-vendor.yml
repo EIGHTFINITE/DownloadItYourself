@@ -27,9 +27,10 @@ jobs:
         s/require(\x27request\x27)/require(\x27postman-request\x27)/g
         s/npm install request --save/npm install postman-request --save/g
         ' -- 'node_modules/request-promise/lib/rp.js'
-        sed -i -E 's/"request": ".+?"/"postman-request": "latest"/g' -- 'node_modules/cloudscraper/package.json'
-        sed -i -E 's/"request": ".+?"/"postman-request": "latest"/g' -- 'node_modules/request-promise/package.json'
-        sed -i -E 's/"request": ".+?"/"postman-request": "latest"/g' -- 'node_modules/request-promise-core/package.json'
+        export postman_request_version=$(cat node_modules/postman-request/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']")
+        sed -i -E 's/"request": ".+?"/"postman-request": "^'"$postman_request_version"'"/g' -- 'node_modules/cloudscraper/package.json'
+        sed -i -E 's/"request": ".+?"/"postman-request": "^'"$postman_request_version"'"/g' -- 'node_modules/request-promise/package.json'
+        sed -i -E 's/"request": ".+?"/"postman-request": "^'"$postman_request_version"'"/g' -- 'node_modules/request-promise-core/package.json'
         git update-index --assume-unchanged "node_modules/electron/path.txt"
         find node_modules/ -mindepth 2 -maxdepth 3 -type f -name 'package.json' -exec bash -c 'path="{}"; git add -- "${path:0:-13}"; git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update ${path:13:-13}"' ';'
         git add -A
