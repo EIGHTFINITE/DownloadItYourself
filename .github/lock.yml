@@ -1,4 +1,4 @@
-# Configuration for Lock Threads - https://github.com/dessant/lock-threads
+# Configuration for Lock Threads - https://github.com/dessant/lock-threads-app
 
 # Label to add before locking, such as `outdated`. Set to `false` to disable
 lockLabel: locked

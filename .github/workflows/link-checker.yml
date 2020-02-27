@@ -23,7 +23,7 @@ jobs:
     - name: Output
       shell: bash
       run: |
-        echo 'curseforge.com, npmjs.com, web.archive.org, and minecraftforum.net links have been skipped because they block liche.'
+        # curseforge.com, npmjs.com, web.archive.org, and minecraftforum.net links have been skipped because they block robots.
         if [[ $(cat link-checker-out.txt | grep -P '^(\tERROR|\t\t)' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
