@@ -24,7 +24,7 @@
     "is-iojs": "1.1.0",
     "json-stable-stringify": "1.0.1",
     "md5-file": "4.0.0",
-    "postman-request": "2.88.1-postman.18",
+    "postman-request": "2.88.1-postman.19",
     "spdx-expression-parse": "EIGHTFINITE/spdx-expression-parse#relaxed",
     "wait-until": "0.0.2"
   }
