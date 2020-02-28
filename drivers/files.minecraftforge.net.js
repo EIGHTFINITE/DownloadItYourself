@@ -6,15 +6,16 @@
 var $ = cheerio.load(html);
 var elem;
 if($(".logo-image").length) {
-	// Regular page
-	elem = $(".download-list " + (temp.preview === true ? ".promo-latest" : ".promo-recommended")).parent().parent().find('a.info-link[href$="-' + (temp.name.includes("Installer") ? "installer" : "universal") + '.jar"]').first();
+	// Normal page
+	// Example: https://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.7.10.html
+	elem = $(".download-list " + (temp.preview === true ? ".promo-latest" : ".promo-recommended")).parent().parent().find('a[href$="-' + (temp.name.includes("Installer") ? "installer" : "universal") + '.jar"]:not([href^="https://"])').first();
 	if(!elem.length)
 		throw new Error("Couldn't find download link.");
 	temp.url = response.request.uri.protocol + "//" + response.request.uri.host + elem.attr("href");
-	temp.md5 = $(".download-list " + (temp.preview === true ? ".promo-latest" : ".promo-recommended")).parent().parent().find('a.info-link[href$="-' + (temp.name.includes("Installer") ? "installer" : "universal") + '.jar"]~div').text().trim().substr(4).trim();
-	temp.md5 = temp.md5.substring(0, temp.md5.indexOf('\n'));
+	temp.md5 = $(".download-list " + (temp.preview === true ? ".promo-latest" : ".promo-recommended")).parent().parent().find('a[href$="-' + (temp.name.includes("Installer") ? "installer" : "universal") + '.jar"]~div').text().trim().substr(4).trim().substr(0,32);
 } else {
 	// Basic page
+	// Example: https://files.minecraftforge.net/CodeChickenLib/
 	elem = $('a[href*="' + (temp.preview === true ? global.config["minecraft-version"] : (function(){throw new Error("Unimplemented")}())) + '"]:not([href$="-dev.jar"]):not([href$="-src.jar"])').first();
 	if(!elem.length)
 		throw new Error("Couldn't find download link.");
