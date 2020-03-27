@@ -20,7 +20,7 @@
     "cheerio": "cheeriojs/cheerio#v1.0.0",
     "cloudscraper": "codemanki/cloudscraper#master",
     "electron": "7.1.14",
-    "fs-extra": "8.1.0",
+    "fs-extra": "9.0.0",
     "is-iojs": "1.1.0",
     "json-stable-stringify": "1.0.1",
     "md5-file": "4.0.0",
