@@ -13,7 +13,7 @@ jobs:
     - name: Vendor Electron Artifacts
       shell: bash
       run: |
-        docs/scripts/configure-git.sh
+        docs/tools/git-config.sh
         export npm_config_target=$(cat node_modules/electron/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']")
         echo "::set-env name=npm_config_target::$npm_config_target"
         
