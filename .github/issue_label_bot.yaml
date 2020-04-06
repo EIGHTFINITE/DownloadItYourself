@@ -1,3 +1,4 @@
+# Configuration for Issue Label Bot - https://github.com/machine-learning-apps/Issue-Label-Bot
 label-alias:
   bug: 'bug'
   feature_request: 'enhancement'
