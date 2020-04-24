@@ -10,7 +10,7 @@ if(!elem.length)
 temp.url = elem.attr("href");
 // AdFly URLs have to be hardcoded
 if(temp.url === "http://adf.ly/q37Pu") {
-	console.message(i, "Navigating to '" + shortUrl(temp.url) + "'.");
+	console.log("Navigating to '" + shortUrl(temp.url) + "'.");
 	temp.url = "https://raw.githubusercontent.com/AtomicStryker/github.io/master/files/1.7.10/BattleTowers-1.7.10.zip";
 }
 temp.file = temp.url.substring(temp.url.lastIndexOf("/") + 1).replace(/\?.*$/, "");
