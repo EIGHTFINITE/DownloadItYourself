@@ -21,7 +21,6 @@
     "cloudscraper": "EIGHTFINITE/cloudscraper#master",
     "electron": "7.2.1",
     "fs-extra": "9.0.0",
-    "is-iojs": "1.1.0",
     "json-stable-stringify": "1.0.1",
     "md5-file": "4.0.0",
     "postman-request": "2.88.1-postman.22",
