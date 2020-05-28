@@ -20,15 +20,28 @@ jobs:
       run: |
         echo '{
           "license": "UNLICENSED",
-          "private": true
         }' > package.json
-    - name: npm install (ubuntu-latest)
+    - name: npm (ubuntu-latest)
       if: matrix.os == 'ubuntu-latest'
       shell: bash
       run: |
         EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build --no-optional --no-bin-links --ignore-scripts
-    - name: npm install (windows-latest)
+        EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js ls
+    - name: npm (windows-latest)
       if: matrix.os == 'windows-latest'
       shell: cmd
       run: |
         cmd /c EIGHTFINITE-build\bin\windows\x64\node\node-v12.10.0-win-x64\npm install .\EIGHTFINITE-build --no-optional --no-bin-links --ignore-scripts
+        cmd /c EIGHTFINITE-build\bin\windows\x64\node\node-v12.10.0-win-x64\npm ls
+    - name:
+      if: always()
+      shell: bash
+      run: |
+        echo 'package.json
+        "'
+        cat package.json
+        echo '"
+        package-lock.json
+        "'
+        cat package-lock.json
+        echo '"'
