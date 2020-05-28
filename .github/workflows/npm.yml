@@ -15,6 +15,11 @@ jobs:
     - uses: actions/checkout@master
       with:
         path: EIGHTFINITE-build
+    - name: Create empty package
+      shell: bash
+      run: |
+        echo '"license": "UNLICENSED",
+        "private": true' > package.json
     - name: npm install (ubuntu-latest)
       if: matrix.os == 'ubuntu-latest'
       shell: bash
