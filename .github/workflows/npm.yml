@@ -19,7 +19,7 @@ jobs:
       shell: bash
       run: |
         echo '{
-          "license": "UNLICENSED",
+          "private": "true"
         }' > package.json
     - name: npm (ubuntu-latest)
       if: matrix.os == 'ubuntu-latest'
