@@ -33,15 +33,15 @@ jobs:
       run: |
         cmd /c EIGHTFINITE-build\bin\windows\x64\node\node-v12.10.0-win-x64\npm install .\EIGHTFINITE-build --no-optional --no-bin-links --ignore-scripts
         cmd /c EIGHTFINITE-build\bin\windows\x64\node\node-v12.10.0-win-x64\npm ls
-    - name:
+    - name: Log package
       if: always()
       shell: bash
       run: |
         echo 'package.json
         "'
-        cat package.json
+        cat package.json || true
         echo '"
         package-lock.json
         "'
-        cat package-lock.json
+        cat package-lock.json || true
         echo '"'
