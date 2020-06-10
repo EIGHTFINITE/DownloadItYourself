@@ -4,7 +4,7 @@ on:
   push:
   pull_request:
   schedule:
-    - cron: '0 */4 * * *'
+    - cron: '0 */6 * * *'
 
 env:
   CI: true
@@ -16,14 +16,13 @@ jobs:
     - uses: actions/checkout@master
     - uses: peter-evans/link-checker@master
       with:
-        args: '-c 1 -r -t 300 -x ^https?:\/\/(www\.curseforge\.com|www\.minecraftforum\.net) -v README.html'
+        args: '-c 1 -r -t 300 -v README.html'
       env:
         LINKCHECKER_OUTPUT_DIR: '.'
         LINKCHECKER_OUTPUT_FILENAME: 'link-checker-out.txt'
     - name: Result
       shell: bash
       run: |
-        # curseforge.com and minecraftforum.net links have been skipped because they dislike robots.
         if [[ $(cat link-checker-out.txt | grep -P '^(\tERROR|\t\t)' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
