@@ -29,10 +29,10 @@ jobs:
         EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js ls || true
     - name: npm (windows-latest)
       if: matrix.os == 'windows-latest'
-      shell: cmd
+      shell: bash
       run: |
         cmd /c EIGHTFINITE-build\bin\windows\x64\node\node-v12.10.0-win-x64\npm install .\EIGHTFINITE-build --no-optional --no-bin-links --ignore-scripts
-        cmd /c EIGHTFINITE-build\bin\windows\x64\node\node-v12.10.0-win-x64\npm ls
+        cmd /c EIGHTFINITE-build\bin\windows\x64\node\node-v12.10.0-win-x64\npm ls || true
     - name: Log package
       if: always()
       shell: bash
