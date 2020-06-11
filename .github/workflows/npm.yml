@@ -31,8 +31,8 @@ jobs:
       if: matrix.os == 'windows-latest'
       shell: bash
       run: |
-        cmd /c EIGHTFINITE-build\bin\windows\x64\node\node-v12.10.0-win-x64\npm install .\EIGHTFINITE-build --no-optional --no-bin-links --ignore-scripts
-        cmd /c EIGHTFINITE-build\bin\windows\x64\node\node-v12.10.0-win-x64\npm ls || true
+        EIGHTFINITE-build\bin\windows\x64\node\node-v12.10.0-win-x64\npm.cmd install .\EIGHTFINITE-build --no-optional --no-bin-links --ignore-scripts
+        EIGHTFINITE-build\bin\windows\x64\node\node-v12.10.0-win-x64\npm.cmd ls || true
     - name: Log package
       if: always()
       shell: bash
