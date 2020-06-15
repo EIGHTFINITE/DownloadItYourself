@@ -2303,7 +2303,7 @@
 <td><a href="https://github.com/DefinitelyTyped/DefinitelyTyped" title="“@types/node” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>TypeScript definitions for Node.<br>Required by electron.</td>
-<td align="center"><code>@types/node@12.12.42</code></td>
+<td align="center"><code>@types/node@12.12.47</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/ajv" title="ajv"><img src="docs/img/icon/ajv.png" width="62" alt="ajv" title="ajv"></a></td>
@@ -2589,7 +2589,7 @@
 <td><a href="https://github.com/fb55/css-what" title="“css-what” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A CSS selector parser.<br>Required by css-select.</td>
-<td align="center"><code>css-what@3.2.1</code></td>
+<td align="center"><code>css-what@3.3.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/dashdash" title="dashdash"><img src="docs/img/icon/npmjs.svg" width="62" alt="dashdash" title="dashdash"></a></td>
@@ -2787,7 +2787,7 @@
 <td><a href="https://github.com/fb55/entities" title="“entities” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Encode & decode XML and HTML entities with ease.<br>Required by cheerio, dom-serializer, domutils/dom-serializer, htmlparser2, htmlparser2/dom-serializer.</td>
-<td align="center"><code>entities@2.0.2</code></td>
+<td align="center"><code>entities@2.0.3</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/env-paths" title="env-paths"><img src="docs/img/icon/npmjs.svg" width="62" alt="env-paths" title="env-paths"></a></td>
@@ -2864,7 +2864,7 @@
 <td><a href="https://github.com/epoberezkin/fast-deep-equal" title="“fast-deep-equal” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Fast deep equal.<br>Required by ajv.</td>
-<td align="center"><code>fast-deep-equal@3.1.1</code></td>
+<td align="center"><code>fast-deep-equal@3.1.3</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/fast-json-stable-stringify" title="fast-json-stable-stringify"><img src="docs/img/icon/npmjs.svg" width="62" alt="fast-json-stable-stringify" title="fast-json-stable-stringify"></a></td>
@@ -2918,8 +2918,8 @@
 <td><a href="docs/legal/MIT.txt" title="“fs-extra” license">MIT</a><a href="https://github.com/jprichardson/node-fs-extra" title="“fs-extra” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“fs-extra” license information"></a>
 <td><a href="https://github.com/jprichardson/node-fs-extra" title="“fs-extra” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Fs-extra contains methods that aren't included in the vanilla Node fs package. Such as mkdir -p, cp -r, and rm -rf.</td>
-<td align="center"><code>fs-extra@9.0.0</code></td>
+<td>Fs-extra contains methods that aren't included in the vanilla Node fs package. Such as recursive mkdir, copy, and remove.</td>
+<td align="center"><code>fs-extra@9.0.1</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/jsonfile" title="fs-extra/jsonfile"><img src="docs/img/icon/npmjs.svg" width="62" alt="fs-extra/jsonfile" title="fs-extra/jsonfile"></a></td>
@@ -3447,7 +3447,7 @@
 <td><a href="https://github.com/postmanlabs/postman-request" title="“postman-request” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Simplified HTTP request client.<br>Required by cloudscraper, request-promise, request-promise-core.</td>
-<td align="center"><code>postman-request@2.88.1-postman.22</code></td>
+<td align="center"><code>postman-request@2.88.1-postman.23</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/prepend-http" title="prepend-http"><img src="docs/img/icon/npmjs.svg" width="62" alt="prepend-http" title="prepend-http"></a></td>
