@@ -16,7 +16,8 @@ jobs:
       shell: bash
       run: |
         docs/tools/git-config.sh
-        git log --format='%aN <%aE>%n%cN <%cE>' | sort -u > AUTHORS.txt
+        git fetch --force --all --tags
+        git log --format='%aN <%aE>%n%cN <%cE>' --all | sort -u > AUTHORS.txt
         printf '%s\0' .mailmap AUTHORS.txt | sort --files0-from=- -uo .mailmap
     - uses: peter-evans/create-pull-request@master
       with:
