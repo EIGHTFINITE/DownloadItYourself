@@ -18,6 +18,8 @@ jobs:
       shell: bash
       run: |
         docs/tools/git-config.sh
+        export GIT_AUTHOR_DATE="$(git log -1 --format=%aD)"
+        export GIT_COMMITTER_DATE="$(git log -1 --format=%cD)"
         
         # Windows x86
         export force_no_cache=true
