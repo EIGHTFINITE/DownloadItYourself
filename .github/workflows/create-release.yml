@@ -1,0 +1,53 @@
+name: Create release
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+      with:
+        fetch-depth: 0
+    - name: Create release
+      shell: bash
+      run: |
+        docs/tools/git-config.sh
+        
+        # Windows x86
+        export force_no_cache=true
+        export npm_config_target=$(cat node_modules/electron/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']")
+        export npm_config_platform=win32
+        export npm_config_arch=ia32
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
+        mkdir -p "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32"
+        mv -T node_modules/electron/dist "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32"
+        git add "bin/windows/x86/electron"
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 Electron $npm_config_target release artifacts"
+        
+        # Windows x64
+        export npm_config_arch=x64
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
+        mkdir -p "bin/windows/x64/electron/electron-v$npm_config_target-win32-ia32"
+        mv -T node_modules/electron/dist "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
+        git add "bin/windows/x64/electron"
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 Electron $npm_config_target release artifacts"
+        
+        # Linux
+        export npm_config_platform=linux
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
+        mkdir -p "bin/linux/x64/electron/electron-v$npm_config_target-win32-ia32"
+        mv -T node_modules/electron/dist "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64"
+        split -b 104857600 --numeric-suffixes=1 --suffix-length=3 "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/electron" "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/electron."
+        echo "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/electron" > .git/info/exclude
+        git add "bin/linux/x64/electron"
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux Electron $npm_config_target release artifacts"
+        
+        # Create release
+        git tag -f latest
+        git push -f origin HEAD:refs/tags/latest
