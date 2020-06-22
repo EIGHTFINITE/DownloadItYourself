@@ -21,7 +21,31 @@ jobs:
         export GIT_AUTHOR_DATE="$(git log -1 --format=%aD)"
         export GIT_COMMITTER_DATE="$(git log -1 --format=%cD)"
         
-        # Windows x86
+        # Node Windows x86
+        echo "node-v12.10.0-win-x86.zip" >> .git/info/exclude
+        wget -nv -O "node-v12.10.0-win-x86.zip" https://nodejs.org/dist/v12.10.0/node-v12.10.0-win-x86.zip
+        mkdir -p "bin/windows/x86/node"
+        unzip -q "node-v12.10.0-win-x86.zip" -d "bin/windows/x86/node"
+        git add "bin/windows/x86/node"
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 Node 12.10.0 release artifacts" | sed -n 1p
+        
+        # Node Windows x64
+        echo "node-v12.10.0-win-x64.zip" >> .git/info/exclude
+        wget -nv -O "node-v12.10.0-win-x64.zip" https://nodejs.org/dist/v12.10.0/node-v12.10.0-win-x64.zip
+        mkdir -p "bin/windows/x64/node"
+        unzip -q "node-v12.10.0-win-x64.zip" -d "bin/windows/x64/node"
+        git add "bin/windows/x64/node"
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 Node 12.10.0 release artifacts" | sed -n 1p
+        
+        # Node Linux x64
+        echo "node-v12.10.0-linux-x64.tar.gz" >> .git/info/exclude
+        wget -nv -O "node-v12.10.0-linux-x64.tar.gz" https://nodejs.org/dist/v12.10.0/node-v12.10.0-linux-x64.tar.gz
+        mkdir -p "bin/linux/x64/node"
+        tar -xzf "node-v12.10.0-linux-x64.tar.gz" -C "bin/linux/x64/node"
+        git add "bin/linux/x64/node"
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 Node 12.10.0 release artifacts" | sed -n 1p
+        
+        # Electron Windows x86
         export force_no_cache=true
         export npm_config_target=$(cat node_modules/electron/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']")
         export npm_config_platform=win32
@@ -30,17 +54,17 @@ jobs:
         mkdir -p "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32"
         mv -T node_modules/electron/dist "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32"
         git add "bin/windows/x86/electron"
-        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 Electron $npm_config_target release artifacts"
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 Electron $npm_config_target release artifacts" | sed -n 1p
         
-        # Windows x64
+        # Electron Windows x64
         export npm_config_arch=x64
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
         mkdir -p "bin/windows/x64/electron/electron-v$npm_config_target-win32-ia32"
         mv -T node_modules/electron/dist "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
         git add "bin/windows/x64/electron"
-        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 Electron $npm_config_target release artifacts"
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 Electron $npm_config_target release artifacts" | sed -n 1p
         
-        # Linux
+        # Electron Linux x64
         export npm_config_platform=linux
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
         mkdir -p "bin/linux/x64/electron/electron-v$npm_config_target-win32-ia32"
@@ -48,8 +72,8 @@ jobs:
         split -b 104857600 --numeric-suffixes=1 --suffix-length=3 "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/electron" "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/electron."
         echo "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/electron" > .git/info/exclude
         git add "bin/linux/x64/electron"
-        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux Electron $npm_config_target release artifacts"
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 Electron $npm_config_target release artifacts" | sed -n 1p
         
         # Create release
         git tag -f latest
-        git push -f origin HEAD:refs/tags/latest
+        git push -f origin refs/tags/latest:refs/tags/latest
