@@ -1,11 +1,3 @@
-[submodule "bin/windows/x64/7z"]
-	path = bin/windows/x64/7z
-	url = git@github.com:EIGHTFINITE-Vendor/7z.git
-	branch = 7z1604-x64
-[submodule "bin/windows/x86/7z"]
-	path = bin/windows/x86/7z
-	url = git@github.com:EIGHTFINITE-Vendor/7z.git
-	branch = 7z1604
 [submodule "bin/all/all/library-unpacker"]
 	path = bin/all/all/library-unpacker
 	url = git@github.com:EIGHTFINITE-Vendor/library-unpacker.git
