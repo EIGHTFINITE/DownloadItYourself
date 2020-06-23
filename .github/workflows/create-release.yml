@@ -21,6 +21,14 @@ jobs:
         export GIT_AUTHOR_DATE="$(git log -1 --format=%aD)"
         export GIT_COMMITTER_DATE="$(git log -1 --format=%cD)"
         
+        # JRE Linux x64
+        echo "jre-8u201-linux-x64.tar.gz" >> .git/info/exclude
+        wget -nv -O "jre-8u201-linux-x64.tar.gz" https://archive.org/download/jre-8u201/jre-8u201-linux-x64.tar.gz
+        mkdir -p "bin/linux/x64/jre/jre-8u201-linux-x64"
+        tar -xzf "jre-8u201-linux-x64.tar.gz" -C "bin/linux/x64/jre/jre-8u201-linux-x64"
+        git add "bin/linux/x64/jre/jre-8u201-linux-x64"
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 JRE 8u201 release artifacts" | sed -n 1p
+        
         # 7z Windows x86
         echo "7z1900.exe" >> .git/info/exclude
         wget -nv -O "7z1900.exe" https://www.7-zip.org/a/7z1900.exe
