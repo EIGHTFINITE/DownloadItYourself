@@ -21,11 +21,29 @@ jobs:
         export GIT_AUTHOR_DATE="$(git log -1 --format=%aD)"
         export GIT_COMMITTER_DATE="$(git log -1 --format=%cD)"
         
+        # 7z Windows x86
+        echo "7z1900.exe" >> .git/info/exclude
+        wget -nv -O "7z1900.exe" https://www.7-zip.org/a/7z1900.exe
+        mkdir -p "bin/windows/x86/7z/7z1900"
+        7z x -o"bin/windows/x86/7z/7z1900" "7z1900.exe" | grep "ing archive"
+        rm "bin/windows/x86/7z/7z1900/Uninstall.exe"
+        git add "bin/windows/x86/7z/7z1900"
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 7z 19.00 release artifacts" | sed -n 1p
+        
+        # 7z Windows x64
+        echo "7z1900-x64.exe" >> .git/info/exclude
+        wget -nv -O "7z1900-x64.exe" https://www.7-zip.org/a/7z1900-x64.exe
+        mkdir -p "bin/windows/x64/7z/7z1900-x64"
+        7z x -o"bin/windows/x64/7z/7z1900-x64" "7z1900-x64.exe" | grep "ing archive"
+        rm "bin/windows/x64/7z/7z1900-x64/Uninstall.exe"
+        git add "bin/windows/x64/7z/7z1900-x64"
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 7z 19.00 release artifacts" | sed -n 1p
+        
         # Node Windows x86
         echo "node-v12.10.0-win-x86.zip" >> .git/info/exclude
         wget -nv -O "node-v12.10.0-win-x86.zip" https://nodejs.org/dist/v12.10.0/node-v12.10.0-win-x86.zip
         mkdir -p "bin/windows/x86/node"
-        unzip -q "node-v12.10.0-win-x86.zip" -d "bin/windows/x86/node"
+        7z x -o"bin/windows/x86/node" "node-v12.10.0-win-x86.zip" | grep "ing archive"
         git add "bin/windows/x86/node"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 Node 12.10.0 release artifacts" | sed -n 1p
         
@@ -33,7 +51,7 @@ jobs:
         echo "node-v12.10.0-win-x64.zip" >> .git/info/exclude
         wget -nv -O "node-v12.10.0-win-x64.zip" https://nodejs.org/dist/v12.10.0/node-v12.10.0-win-x64.zip
         mkdir -p "bin/windows/x64/node"
-        unzip -q "node-v12.10.0-win-x64.zip" -d "bin/windows/x64/node"
+        7z x -o"bin/windows/x64/node" "node-v12.10.0-win-x64.zip" | grep "ing archive"
         git add "bin/windows/x64/node"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 Node 12.10.0 release artifacts" | sed -n 1p
         
