@@ -1,4 +1,4 @@
-name: Create release
+name: Release
 
 on:
   push:
@@ -12,14 +12,42 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-      with:
-        fetch-depth: 0
-    - name: Create release
+    - name: Release
       shell: bash
       run: |
         docs/tools/git-config.sh
         export GIT_AUTHOR_DATE="$(git log -1 --format=%aD)"
         export GIT_COMMITTER_DATE="$(git log -1 --format=%cD)"
+        
+        # JRE Windows x86
+        echo "jre-8u201-windows-i586.7z" >> .git/info/exclude
+        wget -nv -O "jre-8u201-windows-i586.7z" https://archive.org/download/jre-8u201/jre-8u201-windows-i586.7z
+        mkdir -p "bin/windows/x86/jre/jre-8u201-windows-i586"
+        7z x -o"bin/windows/x86/jre/jre-8u201-windows-i586" "jre-8u201-windows-i586.7z" | grep "ing archive"
+        rmdir "bin/windows/x86/jre/jre-8u201-windows-i586/jre1.8.0_201/lib/applet"
+        git submodule add https://github.com/EIGHTFINITE/void "bin/windows/x86/jre/jre-8u201-windows-i586/jre1.8.0_201/lib/applet"
+        git add ".gitmodules" "bin/windows/x86/jre/jre-8u201-windows-i586"
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 JRE 8u201 release artifacts" | sed -n 1p
+        
+        # JRE Windows x64
+        echo "jre-8u201-windows-x64.7z" >> .git/info/exclude
+        wget -nv -O "jre-8u201-windows-x64.7z" https://archive.org/download/jre-8u201/jre-8u201-windows-x64.7z
+        mkdir -p "bin/windows/x64/jre/jre-8u201-windows-x64"
+        7z x -o"bin/windows/x64/jre/jre-8u201-windows-x64" "jre-8u201-windows-x64.7z" | grep "ing archive"
+        rmdir "bin/windows/x64/jre/jre-8u201-windows-x64/jre1.8.0_201/lib/applet"
+        git submodule add https://github.com/EIGHTFINITE/void "bin/windows/x64/jre/jre-8u201-windows-x64/jre1.8.0_201/lib/applet"
+        git add ".gitmodules" "bin/windows/x64/jre/jre-8u201-windows-x64"
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 JRE 8u201 release artifacts" | sed -n 1p
+        
+        # JRE Linux x64
+        echo "jre-8u201-linux-x64.tar.gz" >> .git/info/exclude
+        wget -nv -O "jre-8u201-linux-x64.tar.gz" https://archive.org/download/jre-8u201/jre-8u201-linux-x64.tar.gz
+        mkdir -p "bin/linux/x64/jre/jre-8u201-linux-x64"
+        tar -xzf "jre-8u201-linux-x64.tar.gz" -C "bin/linux/x64/jre/jre-8u201-linux-x64"
+        rmdir "bin/linux/x64/jre/jre-8u201-linux-x64/jre1.8.0_201/lib/applet"
+        git submodule add https://github.com/EIGHTFINITE/void "bin/linux/x64/jre/jre-8u201-linux-x64/jre1.8.0_201/lib/applet"
+        git add ".gitmodules" "bin/linux/x64/jre/jre-8u201-linux-x64"
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 JRE 8u201 release artifacts" | sed -n 1p
         
         # 7z Windows x86
         echo "7z1900.exe" >> .git/info/exclude
@@ -56,10 +84,10 @@ jobs:
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 Node 12.10.0 release artifacts" | sed -n 1p
         
         # Node Linux x64
-        echo "node-v12.10.0-linux-x64.tar.gz" >> .git/info/exclude
-        wget -nv -O "node-v12.10.0-linux-x64.tar.gz" https://nodejs.org/dist/v12.10.0/node-v12.10.0-linux-x64.tar.gz
+        echo "node-v12.10.0-linux-x64.tar.xz" >> .git/info/exclude
+        wget -nv -O "node-v12.10.0-linux-x64.tar.xz" https://nodejs.org/dist/v12.10.0/node-v12.10.0-linux-x64.tar.xz
         mkdir -p "bin/linux/x64/node"
-        tar -xzf "node-v12.10.0-linux-x64.tar.gz" -C "bin/linux/x64/node"
+        tar -xJf "node-v12.10.0-linux-x64.tar.xz" -C "bin/linux/x64/node"
         git add "bin/linux/x64/node"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 Node 12.10.0 release artifacts" | sed -n 1p
         
@@ -92,6 +120,6 @@ jobs:
         git add "bin/linux/x64/electron"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 Electron $npm_config_target release artifacts" | sed -n 1p
         
-        # Create release
+        # Release
         git tag -f latest
         git push -f origin refs/tags/latest:refs/tags/latest
