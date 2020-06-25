@@ -20,105 +20,177 @@ jobs:
         export GIT_COMMITTER_DATE="$(git log -1 --format=%cD)"
         
         # JRE Windows x86
-        echo "jre-8u201-windows-i586.7z" >> .git/info/exclude
         wget -nv -O "jre-8u201-windows-i586.7z" https://archive.org/download/jre-8u201/jre-8u201-windows-i586.7z
         mkdir -p "bin/windows/x86/jre/jre-8u201-windows-i586"
         7z x -o"bin/windows/x86/jre/jre-8u201-windows-i586" "jre-8u201-windows-i586.7z" | grep "ing archive"
+        rm "jre-8u201-windows-i586.7z"
         rmdir "bin/windows/x86/jre/jre-8u201-windows-i586/jre1.8.0_201/lib/applet"
         git submodule add https://github.com/EIGHTFINITE/void "bin/windows/x86/jre/jre-8u201-windows-i586/jre1.8.0_201/lib/applet"
         git add ".gitmodules" "bin/windows/x86/jre/jre-8u201-windows-i586"
-        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 JRE 8u201 release artifacts" | sed -n 1p
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 JRE 8u201 release artifacts
+        
+        The fix for JDK-8155635 in 8u202 causes performance issues, so 8u201 becomes the final BCL release." | sed -n 1p
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
         
         # JRE Windows x64
-        echo "jre-8u201-windows-x64.7z" >> .git/info/exclude
         wget -nv -O "jre-8u201-windows-x64.7z" https://archive.org/download/jre-8u201/jre-8u201-windows-x64.7z
         mkdir -p "bin/windows/x64/jre/jre-8u201-windows-x64"
         7z x -o"bin/windows/x64/jre/jre-8u201-windows-x64" "jre-8u201-windows-x64.7z" | grep "ing archive"
+        rm "jre-8u201-windows-x64.7z"
         rmdir "bin/windows/x64/jre/jre-8u201-windows-x64/jre1.8.0_201/lib/applet"
         git submodule add https://github.com/EIGHTFINITE/void "bin/windows/x64/jre/jre-8u201-windows-x64/jre1.8.0_201/lib/applet"
         git add ".gitmodules" "bin/windows/x64/jre/jre-8u201-windows-x64"
-        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 JRE 8u201 release artifacts" | sed -n 1p
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 JRE 8u201 release artifacts
+        
+        The fix for JDK-8155635 in 8u202 causes performance issues, so 8u201 becomes the final BCL release." | sed -n 1p
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
         
         # JRE Linux x64
-        echo "jre-8u201-linux-x64.tar.gz" >> .git/info/exclude
         wget -nv -O "jre-8u201-linux-x64.tar.gz" https://archive.org/download/jre-8u201/jre-8u201-linux-x64.tar.gz
         mkdir -p "bin/linux/x64/jre/jre-8u201-linux-x64"
         tar -xzf "jre-8u201-linux-x64.tar.gz" -C "bin/linux/x64/jre/jre-8u201-linux-x64"
+        rm "jre-8u201-linux-x64.tar.gz"
         rmdir "bin/linux/x64/jre/jre-8u201-linux-x64/jre1.8.0_201/lib/applet"
         git submodule add https://github.com/EIGHTFINITE/void "bin/linux/x64/jre/jre-8u201-linux-x64/jre1.8.0_201/lib/applet"
         git add ".gitmodules" "bin/linux/x64/jre/jre-8u201-linux-x64"
-        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 JRE 8u201 release artifacts" | sed -n 1p
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 JRE 8u201 release artifacts
+        
+        The fix for JDK-8155635 in 8u202 causes performance issues, so 8u201 becomes the final BCL release." | sed -n 1p
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
         
         # 7z Windows x86
-        echo "7z1900.exe" >> .git/info/exclude
         wget -nv -O "7z1900.exe" https://www.7-zip.org/a/7z1900.exe
         mkdir -p "bin/windows/x86/7z/7z1900"
         7z x -o"bin/windows/x86/7z/7z1900" "7z1900.exe" | grep "ing archive"
+        rm "7z1900.exe"
         rm "bin/windows/x86/7z/7z1900/Uninstall.exe"
         git add "bin/windows/x86/7z/7z1900"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 7z 19.00 release artifacts" | sed -n 1p
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
         
         # 7z Windows x64
-        echo "7z1900-x64.exe" >> .git/info/exclude
         wget -nv -O "7z1900-x64.exe" https://www.7-zip.org/a/7z1900-x64.exe
         mkdir -p "bin/windows/x64/7z/7z1900-x64"
         7z x -o"bin/windows/x64/7z/7z1900-x64" "7z1900-x64.exe" | grep "ing archive"
+        rm "7z1900-x64.exe"
         rm "bin/windows/x64/7z/7z1900-x64/Uninstall.exe"
         git add "bin/windows/x64/7z/7z1900-x64"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 7z 19.00 release artifacts" | sed -n 1p
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
         
         # Node Windows x86
-        echo "node-v12.10.0-win-x86.zip" >> .git/info/exclude
         wget -nv -O "node-v12.10.0-win-x86.zip" https://nodejs.org/dist/v12.10.0/node-v12.10.0-win-x86.zip
         mkdir -p "bin/windows/x86/node"
         7z x -o"bin/windows/x86/node" "node-v12.10.0-win-x86.zip" | grep "ing archive"
+        rm "node-v12.10.0-win-x86.zip"
         git add "bin/windows/x86/node"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 Node 12.10.0 release artifacts" | sed -n 1p
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
         
         # Node Windows x64
-        echo "node-v12.10.0-win-x64.zip" >> .git/info/exclude
         wget -nv -O "node-v12.10.0-win-x64.zip" https://nodejs.org/dist/v12.10.0/node-v12.10.0-win-x64.zip
         mkdir -p "bin/windows/x64/node"
         7z x -o"bin/windows/x64/node" "node-v12.10.0-win-x64.zip" | grep "ing archive"
+        rm "node-v12.10.0-win-x64.zip"
         git add "bin/windows/x64/node"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 Node 12.10.0 release artifacts" | sed -n 1p
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
         
         # Node Linux x64
-        echo "node-v12.10.0-linux-x64.tar.xz" >> .git/info/exclude
-        wget -nv -O "node-v12.10.0-linux-x64.tar.xz" https://nodejs.org/dist/v12.10.0/node-v12.10.0-linux-x64.tar.xz
+        wget -nv -O "node-v12.10.0-linux-x64.tar.gz" https://nodejs.org/dist/v12.10.0/node-v12.10.0-linux-x64.tar.gz
         mkdir -p "bin/linux/x64/node"
-        tar -xJf "node-v12.10.0-linux-x64.tar.xz" -C "bin/linux/x64/node"
+        tar -xzf "node-v12.10.0-linux-x64.tar.gz" -C "bin/linux/x64/node"
+        rm "node-v12.10.0-linux-x64.tar.gz"
         git add "bin/linux/x64/node"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 Node 12.10.0 release artifacts" | sed -n 1p
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
         
         # Electron Windows x86
         export force_no_cache=true
-        export npm_config_target=$(cat node_modules/electron/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']")
         export npm_config_platform=win32
         export npm_config_arch=ia32
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['dependencies']['electron']") --no-optional --no-bin-links --ignore-scripts
+        export npm_config_target=$(cat node_modules/electron/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']")
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
         mkdir -p "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32"
         mv -T node_modules/electron/dist "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32"
+        rm -r node_modules/
+        rm package-lock.json
         git add "bin/windows/x86/electron"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 Electron $npm_config_target release artifacts" | sed -n 1p
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
         
         # Electron Windows x64
         export npm_config_arch=x64
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['dependencies']['electron']") --no-optional --no-bin-links --ignore-scripts
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
         mkdir -p "bin/windows/x64/electron/electron-v$npm_config_target-win32-ia32"
         mv -T node_modules/electron/dist "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
+        rm -r node_modules/
+        rm package-lock.json
         git add "bin/windows/x64/electron"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 Electron $npm_config_target release artifacts" | sed -n 1p
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
         
         # Electron Linux x64
         export npm_config_platform=linux
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['dependencies']['electron']") --no-optional --no-bin-links --ignore-scripts
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
         mkdir -p "bin/linux/x64/electron/electron-v$npm_config_target-win32-ia32"
         mv -T node_modules/electron/dist "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64"
+        rm -r node_modules/
+        rm package-lock.json
         split -b 104857600 --numeric-suffixes=1 --suffix-length=3 "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/electron" "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/electron."
         echo "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/electron" > .git/info/exclude
         git add "bin/linux/x64/electron"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 Electron $npm_config_target release artifacts" | sed -n 1p
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
+        
+        # Node modules
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-optional --no-bin-links --ignore-scripts
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
+        find node_modules/ -type f -name 'package.json' -exec sed -i '/"_where"/d' -- '{}' ';'
+        find node_modules/ -type f -name 'package.json' -exec sed -i '/"man": \[/,/\],/d' -- '{}' ';'
+        sed -i 's/require(\x27request\x27)/require(\x27postman-request\x27)/g' -- 'node_modules/cloudscraper/index.d.ts'
+        sed -i '
+        s/require(\x27request\x27)/require(\x27postman-request\x27)/g
+        s/npm install request --save/npm install postman-request --save/g
+        ' -- 'node_modules/request-promise/lib/rp.js'
+        export postman_request_version=$(cat node_modules/postman-request/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']")
+        sed -i -E 's/"request": ".+?"/"postman-request": "^'"$postman_request_version"'"/g' -- 'node_modules/cloudscraper/package.json'
+        sed -i -E 's/"request": ".+?"/"postman-request": "^'"$postman_request_version"'"/g' -- 'node_modules/request-promise/package.json'
+        sed -i -E 's/"request": ".+?"/"postman-request": "^'"$postman_request_version"'"/g' -- 'node_modules/request-promise-core/package.json'
+        printf "electron" > "node_modules/electron/path.txt"
+        find node_modules/ -mindepth 2 -maxdepth 3 -type f -name 'package.json' -exec bash -c 'path="{}"; git add -f -- "${path:0:-13}"; git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add ${path:13:-13} release artifacts" | sed -n 1p' ';'
+        git add -f package-lock.json
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add vendored Node modules
+        
+        Node modules and their dependencies updated to the latest versions found in https://github.com/${{ github.repository }}/blob/master/package.json" | sed -n 1p
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
         
         # Release
         git tag -f latest
