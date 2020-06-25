@@ -146,6 +146,8 @@ jobs:
         mv -T node_modules/electron/dist "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
         rm -r node_modules/
         rm package-lock.json
+        split -b 104857600 --numeric-suffixes=1 --suffix-length=3 "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64/electron.exe" "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64/electron.exe."
+        rm "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64/electron.exe"
         git add "bin/windows/x64/electron"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 Electron $npm_config_target release artifacts" | sed -n 1p
         if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
@@ -161,7 +163,7 @@ jobs:
         rm -r node_modules/
         rm package-lock.json
         split -b 104857600 --numeric-suffixes=1 --suffix-length=3 "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/electron" "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/electron."
-        echo "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/electron" > .git/info/exclude
+        rm "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/electron"
         git add "bin/linux/x64/electron"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 Electron $npm_config_target release artifacts" | sed -n 1p
         if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
