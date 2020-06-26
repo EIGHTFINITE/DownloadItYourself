@@ -8,5 +8,6 @@ original terms and/or licenses and will not be made available under any other
 terms or any other licenses.
 
 All images in the `docs/img/icon` folder are the property of their respective
-owners. You must request permission from their owners before using these
-images. Please refer to README.html for owner information.
+owners.
+
+Please refer to README.html for more information.
