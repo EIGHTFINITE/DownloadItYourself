@@ -1,7 +1,8 @@
 [core]
 	ignorecase = false
-	fscache = true
 	autocrlf = false
+	fscache = true
+	longpaths = true
 [index]
 	threads = 0
 [pack]
