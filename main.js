@@ -26,6 +26,7 @@ global.downloads = void(0);
 global.config = void(0);
 global.delayedLog = [];
 global.threads = [];
+global.args = process.argv.slice(2);
 global.noExecOrUpdateIsFinished = []; // Keep track of the current state of the thread to avoid closing it before we're done
 
 // Load config and get started
@@ -50,23 +51,25 @@ fs.readFile("../downloadlist.json", "utf8", function(err, data) {
 			else throw err;
 		}
 
-		// Tell us how many files we're going to check
-		console.log("Updating " + global.downloads.length + " files.");
+		if(!global.args.includes('--readme_only')) {
+			// Tell us how many files we're going to check
+			console.log("Updating " + global.downloads.length + " files.");
 
-		// Start working
-		for (var i = 0; i < global.downloads.length; i++) {
-			// Make sure we're working in a seperated anonymous space
-			(function(i) {
-				checkFile(i, global.downloads[i], function(current) { // Check integrity
-					updateFile(i, current, void(0), function(current) { // Download updates
-						copyFile(i, current, function(current) { // Copy files
-							execCmd(i, current, function(current) { // Execute commands
-								global.downloads[i] = current;
+			// Start working
+			for (var i = 0; i < global.downloads.length; i++) {
+				// Make sure we're working in a seperated anonymous space
+				(function(i) {
+					checkFile(i, global.downloads[i], function(current) { // Check integrity
+						updateFile(i, current, void(0), function(current) { // Download updates
+							copyFile(i, current, function(current) { // Copy files
+								execCmd(i, current, function(current) { // Execute commands
+									global.downloads[i] = current;
+								});
 							});
 						});
 					});
-				});
-			})(i);
+				})(i);
+			}
 		}
 	});
 });
