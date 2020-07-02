@@ -25,12 +25,14 @@ jobs:
         7z x -o"bin/windows/x86/jre/jre-8u201-windows-i586" "jre-8u201-windows-i586.7z" | grep "ing archive"
         rm "jre-8u201-windows-i586.7z"
         rmdir "bin/windows/x86/jre/jre-8u201-windows-i586/jre1.8.0_201/lib/applet"
+        sed -i '/\/bin\//d' -- '.gitignore'
         git submodule add https://github.com/EIGHTFINITE/void "bin/windows/x86/jre/jre-8u201-windows-i586/jre1.8.0_201/lib/applet"
         git add ".gitmodules" "bin/windows/x86/jre/jre-8u201-windows-i586"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 JRE 8u201 release artifacts
         
         The fix for JDK-8155635 in 8u202 causes performance issues, so 8u201 becomes the final BCL release." | sed -n 1p
-        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        git checkout -- '.gitignore'
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 && $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         
@@ -40,12 +42,14 @@ jobs:
         7z x -o"bin/windows/x64/jre/jre-8u201-windows-x64" "jre-8u201-windows-x64.7z" | grep "ing archive"
         rm "jre-8u201-windows-x64.7z"
         rmdir "bin/windows/x64/jre/jre-8u201-windows-x64/jre1.8.0_201/lib/applet"
+        sed -i '/\/bin\//d' -- '.gitignore'
         git submodule add https://github.com/EIGHTFINITE/void "bin/windows/x64/jre/jre-8u201-windows-x64/jre1.8.0_201/lib/applet"
         git add ".gitmodules" "bin/windows/x64/jre/jre-8u201-windows-x64"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 JRE 8u201 release artifacts
         
         The fix for JDK-8155635 in 8u202 causes performance issues, so 8u201 becomes the final BCL release." | sed -n 1p
-        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        git checkout -- '.gitignore'
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 && $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         
@@ -55,12 +59,14 @@ jobs:
         tar -xzf "jre-8u201-linux-x64.tar.gz" -C "bin/linux/x64/jre/jre-8u201-linux-x64"
         rm "jre-8u201-linux-x64.tar.gz"
         rmdir "bin/linux/x64/jre/jre-8u201-linux-x64/jre1.8.0_201/lib/applet"
+        sed -i '/\/bin\//d' -- '.gitignore'
         git submodule add https://github.com/EIGHTFINITE/void "bin/linux/x64/jre/jre-8u201-linux-x64/jre1.8.0_201/lib/applet"
         git add ".gitmodules" "bin/linux/x64/jre/jre-8u201-linux-x64"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 JRE 8u201 release artifacts
         
         The fix for JDK-8155635 in 8u202 causes performance issues, so 8u201 becomes the final BCL release." | sed -n 1p
-        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        git checkout -- '.gitignore'
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 && $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         
@@ -70,9 +76,11 @@ jobs:
         7z x -o"bin/windows/x86/7z/7z1900" "7z1900.exe" | grep "ing archive"
         rm "7z1900.exe"
         rm "bin/windows/x86/7z/7z1900/Uninstall.exe"
+        sed -i '/\/bin\//d' -- '.gitignore'
         git add "bin/windows/x86/7z/7z1900"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 7z 19.00 release artifacts" | sed -n 1p
-        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        git checkout -- '.gitignore'
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 && $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         
@@ -82,9 +90,11 @@ jobs:
         7z x -o"bin/windows/x64/7z/7z1900-x64" "7z1900-x64.exe" | grep "ing archive"
         rm "7z1900-x64.exe"
         rm "bin/windows/x64/7z/7z1900-x64/Uninstall.exe"
+        sed -i '/\/bin\//d' -- '.gitignore'
         git add "bin/windows/x64/7z/7z1900-x64"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 7z 19.00 release artifacts" | sed -n 1p
-        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        git checkout -- '.gitignore'
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 && $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         
@@ -93,9 +103,11 @@ jobs:
         mkdir -p "bin/windows/x86/node"
         7z x -o"bin/windows/x86/node" "node-v12.10.0-win-x86.zip" | grep "ing archive"
         rm "node-v12.10.0-win-x86.zip"
+        sed -i '/\/bin\//d' -- '.gitignore'
         git add "bin/windows/x86/node"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 Node 12.10.0 release artifacts" | sed -n 1p
-        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        git checkout -- '.gitignore'
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 && $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         
@@ -104,9 +116,11 @@ jobs:
         mkdir -p "bin/windows/x64/node"
         7z x -o"bin/windows/x64/node" "node-v12.10.0-win-x64.zip" | grep "ing archive"
         rm "node-v12.10.0-win-x64.zip"
+        sed -i '/\/bin\//d' -- '.gitignore'
         git add "bin/windows/x64/node"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 Node 12.10.0 release artifacts" | sed -n 1p
-        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        git checkout -- '.gitignore'
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 && $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         
@@ -115,9 +129,11 @@ jobs:
         mkdir -p "bin/linux/x64/node"
         tar -xzf "node-v12.10.0-linux-x64.tar.gz" -C "bin/linux/x64/node"
         rm "node-v12.10.0-linux-x64.tar.gz"
+        sed -i '/\/bin\//d' -- '.gitignore'
         git add "bin/linux/x64/node"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 Node 12.10.0 release artifacts" | sed -n 1p
-        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        git checkout -- '.gitignore'
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 && $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         
@@ -132,9 +148,11 @@ jobs:
         mv -T node_modules/electron/dist "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32"
         rm -r node_modules/
         rm package-lock.json
+        sed -i '/\/bin\//d' -- '.gitignore'
         git add "bin/windows/x86/electron"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 Electron $npm_config_target release artifacts" | sed -n 1p
-        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        git checkout -- '.gitignore'
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 && $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         
@@ -148,9 +166,11 @@ jobs:
         rm package-lock.json
         split -b 104857600 --numeric-suffixes=1 --suffix-length=3 "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64/electron.exe" "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64/electron.exe."
         rm "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64/electron.exe"
+        sed -i '/\/bin\//d' -- '.gitignore'
         git add "bin/windows/x64/electron"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 Electron $npm_config_target release artifacts" | sed -n 1p
-        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        git checkout -- '.gitignore'
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 && $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         
@@ -164,9 +184,11 @@ jobs:
         rm package-lock.json
         split -b 104857600 --numeric-suffixes=1 --suffix-length=3 "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/electron" "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/electron."
         rm "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/electron"
+        sed -i '/\/bin\//d' -- '.gitignore'
         git add "bin/linux/x64/electron"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 Electron $npm_config_target release artifacts" | sed -n 1p
-        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        git checkout -- '.gitignore'
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 && $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         
@@ -185,12 +207,15 @@ jobs:
         sed -i -E 's/"request": ".+?"/"postman-request": "^'"$postman_request_version"'"/g' -- 'node_modules/request-promise/package.json'
         sed -i -E 's/"request": ".+?"/"postman-request": "^'"$postman_request_version"'"/g' -- 'node_modules/request-promise-core/package.json'
         printf "electron" > "node_modules/electron/path.txt"
-        find node_modules/ -mindepth 2 -maxdepth 3 -type f -name 'package.json' -exec bash -c 'path="{}"; git add -f -- "${path:0:-13}"; git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add ${path:13:-13} release artifacts" | sed -n 1p' ';'
-        git add -f package-lock.json
+        sed -i '/\/node_modules\//d' -- '.gitignore'
+        find node_modules/ -mindepth 2 -maxdepth 3 -type f -name 'package.json' -exec bash -c 'path="{}"; git add -- "${path:0:-13}"; git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add ${path:13:-13} release artifacts" | sed -n 1p' ';'
+        sed -i '/\/package-lock.json/d' -- '.gitignore'
+        git add package-lock.json
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add vendored Node modules
         
         Node modules and their dependencies updated to the latest versions found in https://github.com/${{ github.repository }}/blob/master/package.json" | sed -n 1p
-        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        git checkout -- '.gitignore'
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 && $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         
