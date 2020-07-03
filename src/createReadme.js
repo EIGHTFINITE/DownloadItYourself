@@ -233,7 +233,7 @@ module.exports = function(filetype) {
 	}
 
 	// List Node modules from node_modules
-	files = execSync(/^win/.test(process.platform) ? 'dir package.json /A:-D /B /S' : 'find . -type f -name package.json', {cwd: '../node_modules'}).toString().replace(/\r/g,'').split('\n');
+	files = execSync(/^win/.test(process.platform) ? 'dir package.json /A:-D /B /S' : "find \"$(pwd)\" -type f -name package.json | sed -E '\ns/\\/node_modules/\\x1/g\ns/\\/package\\.json$/\\x0/\n' | LC_ALL=C sort | sed -E '\ns/\\x1/\\/node_modules/g\ns/\\x0$/\\\/package\\.json/\n'", {cwd: '../node_modules'}).toString().replace(/\r/g,'').split('\n');
 	files.pop();
 	if(files.length > 0) {
 		// Heading
