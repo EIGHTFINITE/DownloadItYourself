@@ -2281,7 +2281,7 @@
 <td><a href="https://github.com/sindresorhus/is" title="“@sindresorhus/is” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Type check values.</td>
-<td align="center"><code>@sindresorhus/is@2.1.1</code></td>
+<td align="center"><code>@sindresorhus/is@3.0.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/@szmarczak/http-timer" title="@szmarczak/http-timer"><img src="docs/img/icon/npmjs.svg" width="62" alt="@szmarczak/http-timer" title="@szmarczak/http-timer"></a></td>
@@ -2765,7 +2765,7 @@
 <td><a href="https://github.com/electron/electron" title="“electron” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Build cross platform desktop apps with JavaScript, HTML, and CSS.</td>
-<td align="center"><code>electron@7.2.1</code></td>
+<td align="center"><code>electron@9.0.5</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/end-of-stream" title="end-of-stream"><img src="docs/img/icon/npmjs.svg" width="62" alt="end-of-stream" title="end-of-stream"></a></td>
