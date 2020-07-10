@@ -44,5 +44,6 @@ jobs:
         title: Update the README
         body: |
           Update the README.
+        labels: auto-merge
         branch: actions/readme
         base: master

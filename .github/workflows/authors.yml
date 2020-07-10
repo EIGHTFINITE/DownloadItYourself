@@ -31,5 +31,6 @@ jobs:
         title: Credit new contributors
         body: |
           Credit our new contributors :tada:
+        labels: auto-merge
         branch: actions/authors
         base: master
