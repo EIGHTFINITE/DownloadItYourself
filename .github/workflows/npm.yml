@@ -6,52 +6,45 @@ env:
   CI: true
 
 jobs:
-  test:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest]
+  npm_linux:
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
       with:
         ref: latest
-        path: bin
+        path: artifacts
     - uses: actions/checkout@master
       with:
         path: EIGHTFINITE-build
-    - name: Create empty package
+    - name: npm
       shell: bash
       run: |
         echo '{
           "private": "true"
         }' > package.json
-    - name: npm (ubuntu-latest)
-      if: matrix.os == 'ubuntu-latest'
-      shell: bash
-      run: |
         cd EIGHTFINITE-build
-        ../bin/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../bin/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-optional --no-bin-links --ignore-scripts
-        ../bin/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../bin/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
+        ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-optional --no-bin-links --ignore-scripts
+        ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
         cd ..
-        bin/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build --no-optional --no-bin-links --ignore-scripts
-    - name: npm (windows-latest)
-      if: matrix.os == 'windows-latest'
+        artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build --no-optional --no-bin-links --ignore-scripts
+  npm_windows:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@master
+      with:
+        ref: latest
+        path: artifacts
+    - uses: actions/checkout@master
+      with:
+        path: EIGHTFINITE-build
+    - name: npm
       shell: bash
       run: |
+        echo '{
+          "private": "true"
+        }' > package.json
         cd EIGHTFINITE-build
-        ../bin/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install --no-optional --no-bin-links --ignore-scripts
-        ../bin/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd dedupe
+        ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install --no-optional --no-bin-links --ignore-scripts
+        ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd dedupe
         cd ..
-        bin/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install .\\EIGHTFINITE-build --no-optional --no-bin-links --ignore-scripts
-    - name: Log package
-      if: always()
-      shell: bash
-      run: |
-        echo 'package.json
-        "'
-        cat package.json || true
-        echo '"
-        package-lock.json
-        "'
-        cat package-lock.json || true
-        echo '"'
+        artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install .\\EIGHTFINITE-build --no-optional --no-bin-links --ignore-scripts

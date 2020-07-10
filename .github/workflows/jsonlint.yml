@@ -6,7 +6,7 @@ env:
   CI: true
 
 jobs:
-  test:
+  jsonlint:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master

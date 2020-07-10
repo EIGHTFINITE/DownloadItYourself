@@ -1,4 +1,4 @@
-name: Check Links
+name: Hyperlinks
 
 on:
   push:
@@ -10,7 +10,7 @@ env:
   CI: true
 
 jobs:
-  test:
+  links:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
@@ -20,7 +20,7 @@ jobs:
       env:
         LINKCHECKER_OUTPUT_DIR: '.'
         LINKCHECKER_OUTPUT_FILENAME: 'link-checker-out.txt'
-    - name: Result
+    - name: Hyperlinks
       shell: bash
       run: |
         if [[ -f "link-checker-out.txt" && $(cat link-checker-out.txt | grep -P '^(\tERROR|\t\t)' | tee /dev/stderr | sed '$!N;s/\n//' | sed -E '/^\tERROR\thttps:\/\/(www\.curseforge\.com\/.*?\t\tForbidden \(HTTP error 403\)|www\.minecraftforum\.net\/.*?\t\tService Unavailable \(HTTP error 503\)|(github|www\.npmjs)\.com\/.*?\t\tToo Many Requests \(HTTP error 429\)|(archive|(commons|hc)\.apache)\.org\/.*?\t\tDialing to the given TCP address timed out|web\.archive\.org\/.*?\t\t(Service Unavailable \(HTTP error 503\)|Gateway Timeout \(HTTP error 504\)))$/d' | head -c1 | wc -c) -ne 0 ]]

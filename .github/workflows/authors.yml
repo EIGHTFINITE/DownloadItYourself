@@ -1,18 +1,21 @@
-name: Update AUTHORS
+name: AUTHORS
 
 on:
   push:
     branches:
       - master
 
+env:
+  CI: true
+
 jobs:
-  build:
+  authors:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
       with:
         fetch-depth: 0
-    - name: Update AUTHORS
+    - name: AUTHORS
       shell: bash
       run: |
         docs/tools/git-config.sh

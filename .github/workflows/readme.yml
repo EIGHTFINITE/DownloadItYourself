@@ -1,4 +1,4 @@
-name: Update README
+name: README
 
 on:
   push:
@@ -7,8 +7,11 @@ on:
   schedule:
     - cron: '0 0 * * *'
 
+env:
+  CI: true
+
 jobs:
-  build:
+  readme:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
@@ -18,7 +21,7 @@ jobs:
     - uses: actions/checkout@master
       with:
         path: EIGHTFINITE-build
-    - name: Update README
+    - name: README
       shell: bash
       run: |
         mkdir -p "EIGHTFINITE-build/bin"
