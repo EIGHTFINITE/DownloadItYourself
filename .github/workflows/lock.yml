@@ -1,0 +1,17 @@
+name: Lock
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  lock:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: dessant/lock-threads@master
+      with:
+        github-token: ${{ github.token }}
+        issue-lock-labels: 'locked'
+        issue-lock-reason: ''
+        pr-lock-labels: 'locked'
+        pr-lock-reason: ''
