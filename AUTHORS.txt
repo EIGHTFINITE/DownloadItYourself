@@ -2,3 +2,4 @@ Dependabot <support@dependabot.com>
 GitHub <noreply@github.com>
 Kevin van Rijn <kevinvanrijn@users.noreply.github.com>
 Renovate <bot@renovateapp.com>
+dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
