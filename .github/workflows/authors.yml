@@ -1,9 +1,6 @@
 name: AUTHORS
 
-on:
-  push:
-    branches:
-      - master
+on: push
 
 env:
   CI: true
