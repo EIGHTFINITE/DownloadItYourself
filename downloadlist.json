@@ -2166,6 +2166,7 @@
                 "url": "https://github.com/MultiMC/MultiMC5"
             },
             "description": "Launches Minecraft.<br><font color=\"red\">A paid Minecraft account is required to play Minecraft.</font>",
+            "description-url-override": "https://multimc.org/",
             "distribution": "allowed",
             "exec": {
                 "args": "/c ___7Z___ x ___FILE___ -y -o.. && cmd /c ___MULTIMC_SETUP___",
@@ -2183,7 +2184,7 @@
             "name": "MultiMC",
             "preview": true,
             "type": "client executable",
-            "url": "https://multimc.org/"
+            "url": "https://github.com/MultiMC/MultiMC5/releases/latest"
         },
         {
             "additional-folder": "server/mods",
