@@ -2281,7 +2281,7 @@
 <td><a href="https://github.com/sindresorhus/is" title="“@sindresorhus/is” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Type check values.</td>
-<td align="center"><code>@sindresorhus/is@3.1.1</code></td>
+<td align="center"><code>@sindresorhus/is@3.1.2</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/@szmarczak/http-timer" title="@szmarczak/http-timer"><img src="docs/img/icon/npmjs.svg" width="62" alt="@szmarczak/http-timer" title="@szmarczak/http-timer"></a></td>
