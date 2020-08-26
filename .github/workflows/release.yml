@@ -151,6 +151,10 @@ jobs:
         mv -T node_modules/electron/dist "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32"
         rm -r node_modules/
         rm package-lock.json
+        if [[ $(stat -c%s "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32/electron.exe") -gt 104857600 ]]; then
+          split -b 104857600 --numeric-suffixes=1 --suffix-length=3 "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32/electron.exe" "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32/electron.exe."
+          rm "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32/electron.exe"
+        fi
         sed -i '/\/bin\//d' -- '.gitignore'
         git add "bin/windows/x86/electron"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 Electron $npm_config_target release artifacts" | sed -n 1p
