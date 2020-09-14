@@ -2303,7 +2303,7 @@
 <td><a href="https://github.com/DefinitelyTyped/DefinitelyTyped" title="“@types/node” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>TypeScript definitions for Node.<br>Required by electron.</td>
-<td align="center"><code>@types/node@12.12.54</code></td>
+<td align="center"><code>@types/node@12.12.58</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/ajv" title="ajv"><img src="docs/img/icon/ajv.png" width="62" alt="ajv" title="ajv"></a></td>
@@ -2314,7 +2314,7 @@
 <td><a href="https://github.com/ajv-validator/ajv" title="“ajv” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Another JSON Schema Validator.<br>Required by har-validator.</td>
-<td align="center"><code>ajv@6.12.4</code></td>
+<td align="center"><code>ajv@6.12.5</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/asn1" title="asn1"><img src="docs/img/icon/joyent.png" width="62" alt="asn1" title="asn1"></a></td>
@@ -2666,7 +2666,7 @@
 <td><a href="https://github.com/fb55/domelementtype" title="“dom-serializer/domelementtype” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>All the types of nodes in htmlparser2's dom.<br>Required by dom-serializer.</td>
-<td align="center"><code>domelementtype@2.0.1</code></td>
+<td align="center"><code>domelementtype@2.0.2</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/domelementtype" title="domelementtype"><img src="docs/img/icon/npmjs.svg" width="62" alt="domelementtype" title="domelementtype"></a></td>
@@ -2699,7 +2699,7 @@
 <td><a href="https://github.com/fb55/domelementtype" title="“domhandler/domelementtype” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>All the types of nodes in htmlparser2's dom.<br>Required by domhandler.</td>
-<td align="center"><code>domelementtype@2.0.1</code></td>
+<td align="center"><code>domelementtype@2.0.2</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/domutils" title="domutils"><img src="docs/img/icon/npmjs.svg" width="62" alt="domutils" title="domutils"></a></td>
@@ -2732,7 +2732,7 @@
 <td><a href="https://github.com/fb55/domelementtype" title="“domutils/dom-serializer/domelementtype” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>All the types of nodes in htmlparser2's dom.<br>Required by domutils/dom-serializer.</td>
-<td align="center"><code>domelementtype@2.0.1</code></td>
+<td align="center"><code>domelementtype@2.0.2</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/duplexer3" title="duplexer3"><img src="docs/img/icon/npmjs.svg" width="62" alt="duplexer3" title="duplexer3"></a></td>
@@ -3040,7 +3040,7 @@
 <td><a href="https://github.com/fb55/domelementtype" title="“htmlparser2/domelementtype” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>All the types of nodes in htmlparser2's dom.<br>Required by htmlparser2, htmlparser2/domutils.</td>
-<td align="center"><code>domelementtype@2.0.1</code></td>
+<td align="center"><code>domelementtype@2.0.2</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/domutils" title="htmlparser2/domutils"><img src="docs/img/icon/npmjs.svg" width="62" alt="htmlparser2/domutils" title="htmlparser2/domutils"></a></td>
@@ -3051,7 +3051,7 @@
 <td><a href="https://github.com/fb55/domutils" title="“htmlparser2/domutils” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Utilities for working with htmlparser2's dom.<br>Required by htmlparser2.</td>
-<td align="center"><code>domutils@2.2.0</code></td>
+<td align="center"><code>domutils@2.3.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/http-cache-semantics" title="http-cache-semantics"><img src="docs/img/icon/npmjs.svg" width="62" alt="http-cache-semantics" title="http-cache-semantics"></a></td>
