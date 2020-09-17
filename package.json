@@ -23,7 +23,7 @@
     "fs-extra": "9.0.1",
     "json-stable-stringify": "1.0.1",
     "md5-file": "4.0.0",
-    "postman-request": "2.88.1-postman.24",
+    "postman-request": "2.88.1-postman.25",
     "request": "2.88.2",
     "spdx-expression-parse": "EIGHTFINITE/spdx-expression-parse#relaxed",
     "wait-until": "0.0.2"
