@@ -2303,7 +2303,7 @@
 <td><a href="https://github.com/DefinitelyTyped/DefinitelyTyped" title="“@types/node” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>TypeScript definitions for Node.<br>Required by electron.</td>
-<td align="center"><code>@types/node@12.12.61</code></td>
+<td align="center"><code>@types/node@12.12.62</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/ajv" title="ajv"><img src="docs/img/icon/ajv.png" width="62" alt="ajv" title="ajv"></a></td>
@@ -2611,7 +2611,7 @@
 <td><a href="https://github.com/visionmedia/debug" title="“debug” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Small debugging utility.<br>Required by @electron/get, sumchecker.</td>
-<td align="center"><code>debug@4.1.1</code></td>
+<td align="center"><code>debug@4.2.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/decompress-response" title="decompress-response"><img src="docs/img/icon/npmjs.svg" width="62" alt="decompress-response" title="decompress-response"></a></td>
