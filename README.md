@@ -2688,7 +2688,7 @@
 <td><a href="https://github.com/fb55/domhandler" title="“domhandler” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Handler for htmlparser2 that turns pages into a dom.<br>Required by dom-serializer, htmlparser2, htmlparser2/domutils.</td>
-<td align="center"><code>domhandler@3.0.0</code></td>
+<td align="center"><code>domhandler@3.1.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/domelementtype" title="domhandler/domelementtype"><img src="docs/img/icon/npmjs.svg" width="62" alt="domhandler/domelementtype" title="domhandler/domelementtype"></a></td>
@@ -3051,7 +3051,7 @@
 <td><a href="https://github.com/fb55/domutils" title="“htmlparser2/domutils” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Utilities for working with htmlparser2's dom.<br>Required by htmlparser2.</td>
-<td align="center"><code>domutils@2.3.0</code></td>
+<td align="center"><code>domutils@2.4.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/http-cache-semantics" title="http-cache-semantics"><img src="docs/img/icon/npmjs.svg" width="62" alt="http-cache-semantics" title="http-cache-semantics"></a></td>
@@ -3073,7 +3073,7 @@
 <td><a href="https://github.com/joyent/node-http-signature" title="“http-signature” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Reference implementation of Joyent's HTTP Signature scheme.<br>Required by postman-request.</td>
-<td align="center"><code>http-signature@1.3.4</code></td>
+<td align="center"><code>http-signature@1.3.5</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/inherits" title="inherits"><img src="docs/img/icon/npmjs.svg" width="62" alt="inherits" title="inherits"></a></td>
