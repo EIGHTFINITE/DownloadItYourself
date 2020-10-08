@@ -265,9 +265,9 @@
 <td><a href="https://www.curseforge.com/minecraft/mc-mods/bibliocraft" title="BiblioCraft">BiblioCraft</a></td>
 <td>Client/Server Mod</td>
 <td><a href="https://www.curseforge.com/members/nuchaz" title="Nuchaz">Nuchaz</a></td>
-<td><a href="docs/legal/All Rights Reserved.txt" title="“BiblioCraft” is All Rights Reserved">All Rights Reserved</a><a href="https://www.curseforge.com/minecraft/mc-mods/bibliocraft" title="“BiblioCraft” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“BiblioCraft” license information"></a></td>
+<td><a href="docs/legal/BiblioCraft license.txt" title="“BiblioCraft” license">BiblioCraft license</a><a href="https://web.archive.org/web/20180712033014/https://www.bibliocraftmod.com/copyright/" title="“BiblioCraft” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“BiblioCraft” license information"></a>, <a href="docs/img/permissions/bibliocraft-permissions.png" title="“BiblioCraft” granted permissions">Permissions</a><a href="https://web.archive.org/web/20180712033014/https://www.bibliocraftmod.com/copyright/" title="“BiblioCraft” permissions quote"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“BiblioCraft” permissions quote"></a></td>
 <td></td>
-<td align="center"><a href="##" title="No Distribution Allowed"><img src="docs/img/vector/cross.svg" height="24" alt="No" title="No Distribution Allowed"></a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td></td>
 <td align="center"><code>BiblioCraft[v1.11.7][MC1.7.10].jar</code></td>
 </tr>
@@ -276,9 +276,9 @@
 <td><a href="https://www.curseforge.com/minecraft/mc-mods/bibliocraft-bibliowoods-biomes-oplenty-edition" title="BiblioCraft: BiblioWoods Biomes O'Plenty Edition">BiblioCraft: BiblioWoods Biomes O'Plenty Edition</a></td>
 <td>Client/Server Mod</td>
 <td><a href="https://www.curseforge.com/members/nuchaz" title="Nuchaz">Nuchaz</a></td>
-<td><a href="docs/legal/All Rights Reserved.txt" title="“BiblioCraft: BiblioWoods Biomes O'Plenty Edition” is All Rights Reserved">All Rights Reserved</a><a href="https://www.curseforge.com/minecraft/mc-mods/bibliocraft-bibliowoods-biomes-oplenty-edition" title="“BiblioCraft: BiblioWoods Biomes O'Plenty Edition” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“BiblioCraft: BiblioWoods Biomes O'Plenty Edition” license information"></a></td>
+<td><a href="docs/legal/BiblioCraft license.txt" title="“BiblioCraft: BiblioWoods Biomes O'Plenty Edition” license">BiblioCraft license</a><a href="https://web.archive.org/web/20180712033014/https://www.bibliocraftmod.com/copyright/" title="“BiblioCraft: BiblioWoods Biomes O'Plenty Edition” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“BiblioCraft: BiblioWoods Biomes O'Plenty Edition” license information"></a>, <a href="docs/img/permissions/bibliocraft-permissions.png" title="“BiblioCraft: BiblioWoods Biomes O'Plenty Edition” granted permissions">Permissions</a><a href="https://web.archive.org/web/20180712033014/https://www.bibliocraftmod.com/copyright/" title="“BiblioCraft: BiblioWoods Biomes O'Plenty Edition” permissions quote"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“BiblioCraft: BiblioWoods Biomes O'Plenty Edition” permissions quote"></a></td>
 <td></td>
-<td align="center"><a href="##" title="No Distribution Allowed"><img src="docs/img/vector/cross.svg" height="24" alt="No" title="No Distribution Allowed"></a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td></td>
 <td align="center"><code>BiblioWoods[BiomesOPlenty][v1.9].jar</code></td>
 </tr>
@@ -287,9 +287,9 @@
 <td><a href="https://www.curseforge.com/minecraft/mc-mods/bibliocraft-bibliowoods-forestry-edition" title="BiblioCraft: BiblioWoods Forestry Edition">BiblioCraft: BiblioWoods Forestry Edition</a></td>
 <td>Client/Server Mod</td>
 <td><a href="https://www.curseforge.com/members/nuchaz" title="Nuchaz">Nuchaz</a></td>
-<td><a href="docs/legal/All Rights Reserved.txt" title="“BiblioCraft: BiblioWoods Forestry Edition” is All Rights Reserved">All Rights Reserved</a><a href="https://www.curseforge.com/minecraft/mc-mods/bibliocraft-bibliowoods-forestry-edition" title="“BiblioCraft: BiblioWoods Forestry Edition” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“BiblioCraft: BiblioWoods Forestry Edition” license information"></a></td>
+<td><a href="docs/legal/BiblioCraft license.txt" title="“BiblioCraft: BiblioWoods Forestry Edition” license">BiblioCraft license</a><a href="https://web.archive.org/web/20180712033014/https://www.bibliocraftmod.com/copyright/" title="“BiblioCraft: BiblioWoods Forestry Edition” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“BiblioCraft: BiblioWoods Forestry Edition” license information"></a>, <a href="docs/img/permissions/bibliocraft-permissions.png" title="“BiblioCraft: BiblioWoods Forestry Edition” granted permissions">Permissions</a><a href="https://web.archive.org/web/20180712033014/https://www.bibliocraftmod.com/copyright/" title="“BiblioCraft: BiblioWoods Forestry Edition” permissions quote"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“BiblioCraft: BiblioWoods Forestry Edition” permissions quote"></a></td>
 <td></td>
-<td align="center"><a href="##" title="No Distribution Allowed"><img src="docs/img/vector/cross.svg" height="24" alt="No" title="No Distribution Allowed"></a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td></td>
 <td align="center"><code>BiblioWoods[Forestry][v1.7].jar</code></td>
 </tr>
@@ -298,9 +298,9 @@
 <td><a href="https://www.curseforge.com/minecraft/mc-mods/bibliocraft-bibliowoods-natura-edition" title="BiblioCraft: BiblioWoods Natura Edition">BiblioCraft: BiblioWoods Natura Edition</a></td>
 <td>Client/Server Mod</td>
 <td><a href="https://www.curseforge.com/members/nuchaz" title="Nuchaz">Nuchaz</a></td>
-<td><a href="docs/legal/All Rights Reserved.txt" title="“BiblioCraft: BiblioWoods Natura Edition” is All Rights Reserved">All Rights Reserved</a><a href="https://www.curseforge.com/minecraft/mc-mods/bibliocraft-bibliowoods-natura-edition" title="“BiblioCraft: BiblioWoods Natura Edition” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“BiblioCraft: BiblioWoods Natura Edition” license information"></a></td>
+<td><a href="docs/legal/BiblioCraft license.txt" title="“BiblioCraft: BiblioWoods Natura Edition” license">BiblioCraft license</a><a href="https://web.archive.org/web/20180712033014/https://www.bibliocraftmod.com/copyright/" title="“BiblioCraft: BiblioWoods Natura Edition” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“BiblioCraft: BiblioWoods Natura Edition” license information"></a>, <a href="docs/img/permissions/bibliocraft-permissions.png" title="“BiblioCraft: BiblioWoods Natura Edition” granted permissions">Permissions</a><a href="https://web.archive.org/web/20180712033014/https://www.bibliocraftmod.com/copyright/" title="“BiblioCraft: BiblioWoods Natura Edition” permissions quote"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“BiblioCraft: BiblioWoods Natura Edition” permissions quote"></a></td>
 <td></td>
-<td align="center"><a href="##" title="No Distribution Allowed"><img src="docs/img/vector/cross.svg" height="24" alt="No" title="No Distribution Allowed"></a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td></td>
 <td align="center"><code>BiblioWoods[Natura][v1.5].jar</code></td>
 </tr>
