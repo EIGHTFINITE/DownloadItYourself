@@ -434,14 +434,19 @@
                 "url": "https://www.curseforge.com/members/nuchaz"
             },
             "file": "BiblioCraft[v1.11.7][MC1.7.10].jar",
+            "distribution": "allowed",
             "id": "bibliocraft",
             "img": "bibliocraft.png",
             "license": {
-                "source": "https://www.curseforge.com/minecraft/mc-mods/bibliocraft",
-                "txt": "All Rights Reserved"
+                "source": "https://web.archive.org/web/20180712033014/https://www.bibliocraftmod.com/copyright/",
+                "txt": "BiblioCraft license"
             },
             "md5": "ff5aca99f8e04a8bb6077df853a9c72e",
             "name": "BiblioCraft",
+            "permission": {
+                "img": "bibliocraft-permissions.png",
+                "source": "https://web.archive.org/web/20180712033014/https://www.bibliocraftmod.com/copyright/"
+            },
             "type": "client/server mod",
             "url": "https://www.curseforge.com/minecraft/mc-mods/bibliocraft"
         },
@@ -452,14 +457,19 @@
                 "url": "https://www.curseforge.com/members/nuchaz"
             },
             "file": "BiblioWoods[BiomesOPlenty][v1.9].jar",
-            "id": "bibliocraft",
+            "distribution": "allowed",
+            "id": "bibliowoods-biomesoplenty",
             "img": "bibliocraft.png",
             "license": {
-                "source": "https://www.curseforge.com/minecraft/mc-mods/bibliocraft-bibliowoods-biomes-oplenty-edition",
-                "txt": "All Rights Reserved"
+                "source": "https://web.archive.org/web/20180712033014/https://www.bibliocraftmod.com/copyright/",
+                "txt": "BiblioCraft license"
             },
             "md5": "3abcaaae14fd5e1ddb9b9af0642ce3c0",
             "name": "BiblioCraft: BiblioWoods Biomes O'Plenty Edition",
+            "permission": {
+                "img": "bibliocraft-permissions.png",
+                "source": "https://web.archive.org/web/20180712033014/https://www.bibliocraftmod.com/copyright/"
+            },
             "type": "client/server mod",
             "url": "https://www.curseforge.com/minecraft/mc-mods/bibliocraft-bibliowoods-biomes-oplenty-edition"
         },
@@ -470,14 +480,19 @@
                 "url": "https://www.curseforge.com/members/nuchaz"
             },
             "file": "BiblioWoods[Forestry][v1.7].jar",
-            "id": "bibliocraft",
+            "distribution": "allowed",
+            "id": "bibliowoods-forestry",
             "img": "bibliocraft.png",
             "license": {
-                "source": "https://www.curseforge.com/minecraft/mc-mods/bibliocraft-bibliowoods-forestry-edition",
-                "txt": "All Rights Reserved"
+                "source": "https://web.archive.org/web/20180712033014/https://www.bibliocraftmod.com/copyright/",
+                "txt": "BiblioCraft license"
             },
             "md5": "e96270e5c2fc9cf4e72b39d953eb0652",
             "name": "BiblioCraft: BiblioWoods Forestry Edition",
+            "permission": {
+                "img": "bibliocraft-permissions.png",
+                "source": "https://web.archive.org/web/20180712033014/https://www.bibliocraftmod.com/copyright/"
+            },
             "type": "client/server mod",
             "url": "https://www.curseforge.com/minecraft/mc-mods/bibliocraft-bibliowoods-forestry-edition"
         },
@@ -488,14 +503,19 @@
                 "url": "https://www.curseforge.com/members/nuchaz"
             },
             "file": "BiblioWoods[Natura][v1.5].jar",
-            "id": "bibliocraft",
+            "distribution": "allowed",
+            "id": "bibliowoods-natura",
             "img": "bibliocraft.png",
             "license": {
-                "source": "https://www.curseforge.com/minecraft/mc-mods/bibliocraft-bibliowoods-natura-edition",
-                "txt": "All Rights Reserved"
+                "source": "https://web.archive.org/web/20180712033014/https://www.bibliocraftmod.com/copyright/",
+                "txt": "BiblioCraft license"
             },
             "md5": "024d7f63683833acfa7aea93da18036e",
             "name": "BiblioCraft: BiblioWoods Natura Edition",
+            "permission": {
+                "img": "bibliocraft-permissions.png",
+                "source": "https://web.archive.org/web/20180712033014/https://www.bibliocraftmod.com/copyright/"
+            },
             "type": "client/server mod",
             "url": "https://www.curseforge.com/minecraft/mc-mods/bibliocraft-bibliowoods-natura-edition"
         },
