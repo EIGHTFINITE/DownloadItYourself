@@ -198,6 +198,7 @@ jobs:
         sed -i '/\/bin\//d' -- '.gitignore'
         git add "bin/linux/x64/electron"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 Electron $npm_config_target release artifacts" | sed -n 1p
+        export return_commit="$(git log -1 --format=%H)"
         git checkout -- '.gitignore'
         if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 && $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
@@ -221,11 +222,25 @@ jobs:
         sed -i '/\/node_modules\//d' -- '.gitignore'
         find node_modules/ -mindepth 2 -maxdepth 3 -type f -name 'package.json' -exec bash -c 'path="{}"; git add -- "${path:0:-13}"; git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add ${path:13:-13} release artifacts" | sed -n 1p' ';'
         sed -i '/\/package-lock.json/d' -- '.gitignore'
+        export merge_commit="$(git log -1 --format=%H)"
         git add package-lock.json
-        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add vendored Node modules
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"package-lock.json" | sed -n 1p
+        export result_commit="$(git log -1 --format=%H)"
+        git checkout -- '.gitignore'
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 && $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
+        git reset --hard $return_commit
+        git clean -dffx
+        git -c user.name="GitHub" -c user.email="noreply@github.com" merge --no-ff --no-edit $merge_commit | sed -n 1p
+        if [ "$(git log -1 --format=%H)" = "$return_commit" ]; then
+            exit 1
+        fi
+        git checkout $result_commit -- 'package-lock.json'
+        git add package-lock.json
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --amend --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add vendored Node modules
         
         Node modules and their dependencies updated to the latest versions found in https://github.com/${{ github.repository }}/blob/master/package.json" | sed -n 1p
-        git checkout -- '.gitignore'
         if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 && $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
@@ -279,21 +294,12 @@ jobs:
     - uses: actions/checkout@master
       with:
         ref: artifacts
-        path: artifacts
-    - uses: actions/checkout@master
-      with:
-        path: EIGHTFINITE-build
     - name: Release
       shell: bash
       run: |
-        mkdir -p "EIGHTFINITE-build/bin"
-        mv -T artifacts/bin "EIGHTFINITE-build/bin"
-        mkdir -p "EIGHTFINITE-build/node_modules"
-        mv -T artifacts/node_modules "EIGHTFINITE-build/node_modules"
-        mv -T artifacts/package-lock.json "EIGHTFINITE-build/package-lock.json"
-        rm -r artifacts/
-        cd EIGHTFINITE-build
         docs/tools/git-config.sh
+        export GIT_AUTHOR_DATE="$(git log -1 --format=%aD)"
+        export GIT_COMMITTER_DATE="$(git log -1 --format=%cD)"
         
         # Update downloadlist files
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node --use_strict main.js --update_single_file_daily
