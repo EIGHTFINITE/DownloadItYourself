@@ -23,6 +23,13 @@ var NO_CLOSE_THREAD = false;
 module.exports = function(i, current, temp, callback) {
 	var updateFile = module.exports;
 
+	if(current.url && global.args.includes('--update_single_file_daily') && current.distribution !== 'allowed') {
+		if(console.message) {
+			console.message(i, "'" + localizedName(i) + "' is excluded from releases.", MESSAGE_NOT_VERBOSE, CLOSE_THREAD);
+		}
+		return;
+	}
+
 	if(!current.url || current.url.startsWith('https://www.curseforge.com/')) { // TODO: Get CurseForge working again
 		if(console.message) {
 			console.message(i, "'" + localizedName(i) + "' will not be updated automatically.", MESSAGE_NOT_VERBOSE, global.noExecOrUpdateIsFinished[i] === true ? CLOSE_THREAD : NO_CLOSE_THREAD);

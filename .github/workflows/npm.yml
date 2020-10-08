@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
       with:
-        ref: latest
+        ref: artifacts
         path: artifacts
     - uses: actions/checkout@master
       with:
@@ -36,7 +36,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
       with:
-        ref: latest
+        ref: artifacts
         path: artifacts
     - uses: actions/checkout@master
       with:

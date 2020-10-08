@@ -5,6 +5,7 @@ var fs = require("fs-extra");
 var stringify = require("json-stable-stringify");
 
 // Functions
+var closeThread = require("./src/closeThread.js");
 var checkFile = require("./src/checkFile.js");
 var updateFile = require("./src/updateFile.js");
 var execCmd = require("./src/execCmd.js");
@@ -52,21 +53,29 @@ fs.readFile("../downloadlist.json", "utf8", function(err, data) {
 		}
 
 		if(!global.args.includes('--readme_only')) {
-			// Tell us how many files we're going to check
-			console.log("Updating " + global.downloads.length + " files.");
+			var updateSingleFileDaily = !!global.args.includes('--update_single_file_daily');
+			if(!updateSingleFileDaily)
+				console.log("Updating " + (global.downloads.length+1) + " files."); // Tell us how many files we're going to check
+			else {
+				var updateSingleFile = Math.floor(new Date()/864e5)%global.downloads.length; // Pick which file we should update. Value increases by one each day until it loops back around
+				console.log("Updating file " + (updateSingleFile+1) + " out of " + (global.downloads.length+1) + " files total.");
+			}
 
 			// Start working
 			for (var i = 0; i < global.downloads.length; i++) {
-				// Make sure we're working in a seperated anonymous space
-				(function(i) {
+				(function(i) { // Make sure we're working in a seperated anonymous space
 					checkFile(i, global.downloads[i], function(current) { // Check integrity
-						updateFile(i, current, void(0), function(current) { // Download updates
-							copyFile(i, current, function(current) { // Copy files
-								execCmd(i, current, function(current) { // Execute commands
-									global.downloads[i] = current;
+						if(!updateSingleFileDaily || i === updateSingleFile ) {
+							updateFile(i, current, void(0), function(current) { // Download updates
+								copyFile(i, current, function(current) { // Copy files
+									execCmd(i, current, function(current) { // Execute commands
+										global.downloads[i] = current;
+									});
 								});
 							});
-						});
+						} else {
+							closeThread(i);
+						}
 					});
 				})(i);
 			}
