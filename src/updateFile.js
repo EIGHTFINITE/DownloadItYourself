@@ -23,7 +23,7 @@ var NO_CLOSE_THREAD = false;
 module.exports = function(i, current, temp, callback) {
 	var updateFile = module.exports;
 
-	if(current.url && global.args.includes('--update_single_file_daily') && current.distribution !== 'allowed') {
+	if(current.url && global.args && global.args.includes('--update_single_file_daily') && current.distribution !== 'allowed') {
 		if(console.message) {
 			console.message(i, "'" + localizedName(i) + "' is excluded from releases.", MESSAGE_NOT_VERBOSE, CLOSE_THREAD);
 		}

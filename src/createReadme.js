@@ -90,8 +90,8 @@ function multipleLicenses(license, name, source) {
 		// spdxToHTML(expression)
 		if(is.string(expression.license)) {
 			i++;
-			var license = expression.license.replace(/--/g,' ');
-			var exception = (expression.exception ? expression.exception.replace(/--/g,' ') : void(0));
+			var license = expression.license;
+			var exception = (expression.exception ? expression.exception : void(0));
 			return '<a href="docs/legal/' + license + '.txt" title="“' + name + '” ' + licenseDedicationTitle(license) + '">' + license + '</a>' + (source ? (is.array(source) ? '<a href="' + source[i] + '" title="“' + name + '” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“' + name + '” license information"></a>' : '<a href="' + source + '" title="“' + name + '” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“' + name + '” license information"></a>') : '') + (exception ? ' with <a href="docs/legal/' + exception + '.txt" title="“' + name + '” exception">' + exception + '</a>' + (source ? (is.array(source) ? '<a href="' + source[i] + '" title="“' + name + '” exception information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“' + name + '” exception information"></a>' : '<a href="' + source + '" title="“' + name + '” exception information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“' + name + '” exception information"></a>') : '') : '');
 		}
 		else {
@@ -105,7 +105,7 @@ function multipleLicenses(license, name, source) {
 	var i = -1;
 	var parsedLicenses;
 	if(is.nonEmptyString(license)) {
-		parsedLicenses = parse(license.replace(/(?<!AND|OR|WITH) (?!AND|OR|WITH)/g, '--'), {relaxed: true});
+		parsedLicenses = parse(license, true, true);
 	}
 	else {
 		parsedLicenses = {license: license};
