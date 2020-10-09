@@ -167,7 +167,7 @@ jobs:
         export npm_config_arch=x64
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['dependencies']['electron']") --no-optional --no-bin-links --ignore-scripts
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
-        mkdir -p "bin/windows/x64/electron/electron-v$npm_config_target-win32-ia32"
+        mkdir -p "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
         mv -T node_modules/electron/dist "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
         rm -r node_modules/
         rm package-lock.json
@@ -187,7 +187,7 @@ jobs:
         export npm_config_platform=linux
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['dependencies']['electron']") --no-optional --no-bin-links --ignore-scripts
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
-        mkdir -p "bin/linux/x64/electron/electron-v$npm_config_target-win32-ia32"
+        mkdir -p "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64"
         mv -T node_modules/electron/dist "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64"
         rm -r node_modules/
         rm package-lock.json
