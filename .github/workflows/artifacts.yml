@@ -233,8 +233,8 @@ jobs:
         git reset --hard $return_commit
         git clean -dffx
         git -c user.name="GitHub" -c user.email="noreply@github.com" merge --no-ff --no-edit $merge_commit | sed -n 1p
-        if [ "$(git log -1 --format=%H)" = "$return_commit" ]; then
-            exit 1
+        if [[ "$(git log -1 --format=%H)" == "$return_commit" ]]; then
+          exit 1
         fi
         git checkout $result_commit -- 'package-lock.json'
         git add package-lock.json
@@ -272,6 +272,7 @@ jobs:
         cd EIGHTFINITE-build
         docs/tools/git-config.sh
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node --use_strict main.js --readme_only
+        git checkout -- 'downloadlist.json'
         cd ..
     - uses: peter-evans/create-pull-request@master
       with:
@@ -303,6 +304,8 @@ jobs:
         
         # Update downloadlist files
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node --use_strict main.js --update_single_file_daily
+        git checkout -- 'README.html'
+        git checkout -- 'README.md'
         if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
