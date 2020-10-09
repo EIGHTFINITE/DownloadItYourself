@@ -25,7 +25,7 @@
     "md5-file": "4.0.0",
     "postman-request": "2.88.1-postman.26",
     "request": "2.88.2",
-    "spdx-expression-parse": "EIGHTFINITE/spdx-expression-parse#relaxed",
+    "spdx-expression-parse": "EIGHTFINITE/spdx-expression-parse#julienandco",
     "wait-until": "0.0.2"
   }
 }
