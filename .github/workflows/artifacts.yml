@@ -35,7 +35,7 @@ jobs:
         
         The fix for JDK-8155635 in 8u202 causes performance issues, so 8u201 becomes the final BCL release." | sed -n 1p
         git checkout -- '.gitignore'
-        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 && $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         
@@ -52,7 +52,7 @@ jobs:
         
         The fix for JDK-8155635 in 8u202 causes performance issues, so 8u201 becomes the final BCL release." | sed -n 1p
         git checkout -- '.gitignore'
-        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 && $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         
@@ -69,7 +69,7 @@ jobs:
         
         The fix for JDK-8155635 in 8u202 causes performance issues, so 8u201 becomes the final BCL release." | sed -n 1p
         git checkout -- '.gitignore'
-        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 && $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         
@@ -83,7 +83,7 @@ jobs:
         git add "bin/windows/x86/7z/7z1900"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 7z 19.00 release artifacts" | sed -n 1p
         git checkout -- '.gitignore'
-        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 && $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         
@@ -97,7 +97,7 @@ jobs:
         git add "bin/windows/x64/7z/7z1900-x64"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 7z 19.00 release artifacts" | sed -n 1p
         git checkout -- '.gitignore'
-        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 && $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         
@@ -110,7 +110,7 @@ jobs:
         git add "bin/windows/x86/node"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 Node 12.10.0 release artifacts" | sed -n 1p
         git checkout -- '.gitignore'
-        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 && $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         
@@ -123,7 +123,7 @@ jobs:
         git add "bin/windows/x64/node"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 Node 12.10.0 release artifacts" | sed -n 1p
         git checkout -- '.gitignore'
-        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 && $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         
@@ -136,7 +136,7 @@ jobs:
         git add "bin/linux/x64/node"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 Node 12.10.0 release artifacts" | sed -n 1p
         git checkout -- '.gitignore'
-        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 && $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         
@@ -159,7 +159,7 @@ jobs:
         git add "bin/windows/x86/electron"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 Electron $npm_config_target release artifacts" | sed -n 1p
         git checkout -- '.gitignore'
-        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 && $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         
@@ -179,7 +179,7 @@ jobs:
         git add "bin/windows/x64/electron"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 Electron $npm_config_target release artifacts" | sed -n 1p
         git checkout -- '.gitignore'
-        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 && $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         
@@ -200,7 +200,7 @@ jobs:
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 Electron $npm_config_target release artifacts" | sed -n 1p
         export return_commit="$(git log -1 --format=%H)"
         git checkout -- '.gitignore'
-        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 && $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         
@@ -227,7 +227,7 @@ jobs:
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"package-lock.json" | sed -n 1p
         export result_commit="$(git log -1 --format=%H)"
         git checkout -- '.gitignore'
-        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 && $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         git reset --hard $return_commit
@@ -241,7 +241,7 @@ jobs:
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --amend --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add vendored Node modules
         
         Node modules and their dependencies updated to the latest versions found in https://github.com/${{ github.repository }}/blob/master/package.json" | sed -n 1p
-        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 && $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         
@@ -303,7 +303,7 @@ jobs:
         
         # Update downloadlist files
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node --use_strict main.js --update_single_file_daily
-        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 && $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         
