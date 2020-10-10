@@ -2589,7 +2589,7 @@
 <td><a href="https://github.com/fb55/css-what" title="“css-what” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A CSS selector parser.<br>Required by css-select.</td>
-<td align="center"><code>css-what@3.4.1</code></td>
+<td align="center"><code>css-what@3.4.2</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/dashdash" title="dashdash"><img src="docs/img/icon/npmjs.svg" width="62" alt="dashdash" title="dashdash"></a></td>
