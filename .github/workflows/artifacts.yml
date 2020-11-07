@@ -306,6 +306,10 @@ jobs:
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node --use_strict main.js --update_single_file_daily
         git checkout -- 'README.html'
         git checkout -- 'README.md'
+        git clean -ffx MultiMC/
+        git clean -ffx _download/
+        git clean -ffx minecraft/
+        git clean -ffx server/
         if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
