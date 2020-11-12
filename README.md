@@ -2303,7 +2303,7 @@
 <td><a href="https://github.com/DefinitelyTyped/DefinitelyTyped" title="“@types/node” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>TypeScript definitions for Node.<br>Required by cheerio.</td>
-<td align="center"><code>@types/node@14.14.6</code></td>
+<td align="center"><code>@types/node@14.14.7</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/ajv" title="ajv"><img src="docs/img/icon/ajv.png" width="62" alt="ajv" title="ajv"></a></td>
@@ -2391,7 +2391,7 @@
 <td><a href="https://github.com/beatgammit/base64-js" title="“base64-js” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Base64 encoding/decoding in pure JS.<br>Required by brotli.</td>
-<td align="center"><code>base64-js@1.3.1</code></td>
+<td align="center"><code>base64-js@1.5.1</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/bcrypt-pbkdf" title="bcrypt-pbkdf"><img src="docs/img/icon/joyent.png" width="62" alt="bcrypt-pbkdf" title="bcrypt-pbkdf"></a></td>
@@ -2732,7 +2732,7 @@
 <td><a href="https://github.com/DefinitelyTyped/DefinitelyTyped" title="“electron/@types/node” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>TypeScript definitions for Node.<br>Required by electron.</td>
-<td align="center"><code>@types/node@12.19.3</code></td>
+<td align="center"><code>@types/node@12.19.4</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/end-of-stream" title="end-of-stream"><img src="docs/img/icon/npmjs.svg" width="62" alt="end-of-stream" title="end-of-stream"></a></td>
