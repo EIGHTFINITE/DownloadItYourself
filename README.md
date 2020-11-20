@@ -2303,7 +2303,7 @@
 <td><a href="https://github.com/DefinitelyTyped/DefinitelyTyped" title="“@types/node” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>TypeScript definitions for Node.<br>Required by cheerio.</td>
-<td align="center"><code>@types/node@14.14.8</code></td>
+<td align="center"><code>@types/node@14.14.9</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/ajv" title="ajv"><img src="docs/img/icon/ajv.png" width="62" alt="ajv" title="ajv"></a></td>
@@ -2611,7 +2611,7 @@
 <td><a href="https://github.com/visionmedia/debug" title="“debug” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Small debugging utility.<br>Required by @electron/get, sumchecker.</td>
-<td align="center"><code>debug@4.2.0</code></td>
+<td align="center"><code>debug@4.3.1</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/decompress-response" title="decompress-response"><img src="docs/img/icon/npmjs.svg" width="62" alt="decompress-response" title="decompress-response"></a></td>
@@ -2721,7 +2721,7 @@
 <td><a href="https://github.com/electron/electron" title="“electron” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Build cross platform desktop apps with JavaScript, HTML, and CSS.</td>
-<td align="center"><code>electron@11.0.1</code></td>
+<td align="center"><code>electron@11.0.2</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/@types/node" title="electron/@types/node"><img src="docs/img/icon/@types/node.png" width="62" alt="electron/@types/node" title="electron/@types/node"></a></td>
@@ -2732,7 +2732,7 @@
 <td><a href="https://github.com/DefinitelyTyped/DefinitelyTyped" title="“electron/@types/node” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>TypeScript definitions for Node.<br>Required by electron.</td>
-<td align="center"><code>@types/node@12.19.5</code></td>
+<td align="center"><code>@types/node@12.19.6</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/end-of-stream" title="end-of-stream"><img src="docs/img/icon/npmjs.svg" width="62" alt="end-of-stream" title="end-of-stream"></a></td>
