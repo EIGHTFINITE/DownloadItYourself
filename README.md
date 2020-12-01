@@ -2732,7 +2732,7 @@
 <td><a href="https://github.com/DefinitelyTyped/DefinitelyTyped" title="“electron/@types/node” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>TypeScript definitions for Node.<br>Required by electron.</td>
-<td align="center"><code>@types/node@12.19.7</code></td>
+<td align="center"><code>@types/node@12.19.8</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/end-of-stream" title="end-of-stream"><img src="docs/img/icon/npmjs.svg" width="62" alt="end-of-stream" title="end-of-stream"></a></td>
@@ -3601,7 +3601,7 @@
 <td><a href="https://github.com/jslicense/spdx-license-ids" title="“spdx-license-ids” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A list of SPDX license identifiers.<br>Required by spdx-expression-parse.</td>
-<td align="center"><code>spdx-license-ids@3.0.6</code></td>
+<td align="center"><code>spdx-license-ids@3.0.7</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/sshpk" title="sshpk"><img src="docs/img/icon/joyent.png" width="62" alt="sshpk" title="sshpk"></a></td>
