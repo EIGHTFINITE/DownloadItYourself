@@ -2665,7 +2665,7 @@
 <td><a href="docs/legal/BSD-2-Clause.txt" title="“domelementtype” license">BSD-2-Clause</a><a href="https://github.com/fb55/domelementtype" title="“domelementtype” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“domelementtype” license information"></a>
 <td><a href="https://github.com/fb55/domelementtype" title="“domelementtype” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>All the types of nodes in htmlparser2's dom.<br>Required by dom-serializer, domhandler, domutils, htmlparser2.</td>
+<td>All the types of nodes in htmlparser2's dom.<br>Required by dom-serializer, domhandler, domutils, domutils/domhandler, htmlparser2.</td>
 <td align="center"><code>domelementtype@2.1.0</code></td>
 </tr>
 <tr>
@@ -2676,7 +2676,7 @@
 <td><a href="docs/legal/BSD-2-Clause.txt" title="“domhandler” license">BSD-2-Clause</a><a href="https://github.com/fb55/domhandler" title="“domhandler” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“domhandler” license information"></a>
 <td><a href="https://github.com/fb55/domhandler" title="“domhandler” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Handler for htmlparser2 that turns pages into a dom.<br>Required by css-select, dom-serializer, domutils, htmlparser2.</td>
+<td>Handler for htmlparser2 that turns pages into a dom.<br>Required by css-select, dom-serializer, htmlparser2.</td>
 <td align="center"><code>domhandler@3.3.0</code></td>
 </tr>
 <tr>
@@ -2688,7 +2688,18 @@
 <td><a href="https://github.com/fb55/domutils" title="“domutils” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Utilities for working with htmlparser2's dom.<br>Required by css-select, htmlparser2.</td>
-<td align="center"><code>domutils@2.4.2</code></td>
+<td align="center"><code>domutils@2.4.3</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/domhandler" title="domutils/domhandler"><img src="docs/img/icon/npmjs.svg" width="62" alt="domutils/domhandler" title="domutils/domhandler"></a></td>
+<td><a href="https://www.npmjs.com/package/domhandler" title="domutils/domhandler">domutils/domhandler</a></td>
+<td>Package</td>
+<td><a href="https://github.com/fb55" title="Felix Böhm">Felix Böhm</a></td>
+<td><a href="docs/legal/BSD-2-Clause.txt" title="“domutils/domhandler” license">BSD-2-Clause</a><a href="https://github.com/fb55/domhandler" title="“domutils/domhandler” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“domutils/domhandler” license information"></a>
+<td><a href="https://github.com/fb55/domhandler" title="“domutils/domhandler” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Handler for htmlparser2 that turns pages into a dom.<br>Required by domutils.</td>
+<td align="center"><code>domhandler@4.0.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/duplexer3" title="duplexer3"><img src="docs/img/icon/npmjs.svg" width="62" alt="duplexer3" title="duplexer3"></a></td>
