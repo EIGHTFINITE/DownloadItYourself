@@ -2655,7 +2655,18 @@
 <td><a href="https://github.com/cheeriojs/dom-serializer" title="“dom-serializer” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Render dom nodes to string.<br>Required by cheerio, domutils.</td>
-<td align="center"><code>dom-serializer@1.1.0</code></td>
+<td align="center"><code>dom-serializer@1.2.0</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/domhandler" title="dom-serializer/domhandler"><img src="docs/img/icon/npmjs.svg" width="62" alt="dom-serializer/domhandler" title="dom-serializer/domhandler"></a></td>
+<td><a href="https://www.npmjs.com/package/domhandler" title="dom-serializer/domhandler">dom-serializer/domhandler</a></td>
+<td>Package</td>
+<td><a href="https://github.com/fb55" title="Felix Böhm">Felix Böhm</a></td>
+<td><a href="docs/legal/BSD-2-Clause.txt" title="“dom-serializer/domhandler” license">BSD-2-Clause</a><a href="https://github.com/fb55/domhandler" title="“dom-serializer/domhandler” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“dom-serializer/domhandler” license information"></a>
+<td><a href="https://github.com/fb55/domhandler" title="“dom-serializer/domhandler” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Handler for htmlparser2 that turns pages into a dom.<br>Required by dom-serializer.</td>
+<td align="center"><code>domhandler@4.0.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/domelementtype" title="domelementtype"><img src="docs/img/icon/npmjs.svg" width="62" alt="domelementtype" title="domelementtype"></a></td>
@@ -2665,7 +2676,7 @@
 <td><a href="docs/legal/BSD-2-Clause.txt" title="“domelementtype” license">BSD-2-Clause</a><a href="https://github.com/fb55/domelementtype" title="“domelementtype” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“domelementtype” license information"></a>
 <td><a href="https://github.com/fb55/domelementtype" title="“domelementtype” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>All the types of nodes in htmlparser2's dom.<br>Required by dom-serializer, domhandler, domutils, domutils/domhandler, htmlparser2, htmlparser2/domhandler.</td>
+<td>All the types of nodes in htmlparser2's dom.<br>Required by dom-serializer, dom-serializer/domhandler, domhandler, domutils, domutils/domhandler, htmlparser2, htmlparser2/domhandler.</td>
 <td align="center"><code>domelementtype@2.1.0</code></td>
 </tr>
 <tr>
@@ -2676,7 +2687,7 @@
 <td><a href="docs/legal/BSD-2-Clause.txt" title="“domhandler” license">BSD-2-Clause</a><a href="https://github.com/fb55/domhandler" title="“domhandler” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“domhandler” license information"></a>
 <td><a href="https://github.com/fb55/domhandler" title="“domhandler” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Handler for htmlparser2 that turns pages into a dom.<br>Required by css-select, dom-serializer.</td>
+<td>Handler for htmlparser2 that turns pages into a dom.<br>Required by css-select.</td>
 <td align="center"><code>domhandler@3.3.0</code></td>
 </tr>
 <tr>
