@@ -2303,7 +2303,7 @@
 <td><a href="https://github.com/DefinitelyTyped/DefinitelyTyped" title="“@types/node” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>TypeScript definitions for Node.<br>Required by electron.</td>
-<td align="center"><code>@types/node@12.19.9</code></td>
+<td align="center"><code>@types/node@12.19.11</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/ajv" title="ajv"><img src="docs/img/icon/ajv.png" width="62" alt="ajv" title="ajv"></a></td>
@@ -2523,7 +2523,7 @@
 <td><a href="https://github.com/cheeriojs/cheerio-select" title="“cheerio-select-tmp” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>CSS selector engine supporting jQuery selectors.<br>Required by cheerio.</td>
-<td align="center"><code>cheerio-select-tmp@0.1.0</code></td>
+<td align="center"><code>cheerio-select-tmp@0.1.1</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/clone-response" title="clone-response"><img src="docs/img/icon/npmjs.svg" width="62" alt="clone-response" title="clone-response"></a></td>
