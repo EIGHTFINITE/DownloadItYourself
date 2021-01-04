@@ -3392,7 +3392,7 @@
 <td><a href="https://github.com/postmanlabs/postman-request" title="“postman-request” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Simplified HTTP request client.<br>Required by cloudscraper, request-promise, request-promise-core.</td>
-<td align="center"><code>postman-request@2.88.1-postman.27</code></td>
+<td align="center"><code>postman-request@2.88.1-postman.28</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/prepend-http" title="prepend-http"><img src="docs/img/icon/npmjs.svg" width="62" alt="prepend-http" title="prepend-http"></a></td>
