@@ -19,17 +19,15 @@ jobs:
       shell: bash
       run: |
         docs/tools/git-config.sh
+        git fetch origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         export GIT_AUTHOR_DATE="$(git log -1 --format=%aD)"
         export GIT_COMMITTER_DATE="$(git log -1 --format=%cD)"
         
         # JRE Windows x86
-        wget -nv -O "jre-8u201-windows-i586.7z" https://archive.org/download/jre-8u201/jre-8u201-windows-i586.7z
-        mkdir -p "bin/windows/x86/jre/jre-8u201-windows-i586"
-        7z x -o"bin/windows/x86/jre/jre-8u201-windows-i586" "jre-8u201-windows-i586.7z" | grep "ing archive"
-        rm "jre-8u201-windows-i586.7z"
-        rmdir "bin/windows/x86/jre/jre-8u201-windows-i586/jre1.8.0_201/lib/applet"
         sed -i '/\/bin\//d' -- '.gitignore'
-        git submodule add https://github.com/EIGHTFINITE/void "bin/windows/x86/jre/jre-8u201-windows-i586/jre1.8.0_201/lib/applet"
+        git checkout refs/tags/artifacts -- "bin/windows/x86/jre/jre-8u201-windows-i586"
+        rmdir "bin/windows/x86/jre/jre-8u201-windows-i586/jre1.8.0_201/lib/applet"
+        git submodule add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/jre/jre-8u201-windows-i586/jre1.8.0_201/lib/applet"
         git add ".gitmodules" "bin/windows/x86/jre/jre-8u201-windows-i586"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 JRE 8u201 release artifacts
         
@@ -40,13 +38,10 @@ jobs:
         fi
         
         # JRE Windows x64
-        wget -nv -O "jre-8u201-windows-x64.7z" https://archive.org/download/jre-8u201/jre-8u201-windows-x64.7z
-        mkdir -p "bin/windows/x64/jre/jre-8u201-windows-x64"
-        7z x -o"bin/windows/x64/jre/jre-8u201-windows-x64" "jre-8u201-windows-x64.7z" | grep "ing archive"
-        rm "jre-8u201-windows-x64.7z"
-        rmdir "bin/windows/x64/jre/jre-8u201-windows-x64/jre1.8.0_201/lib/applet"
         sed -i '/\/bin\//d' -- '.gitignore'
-        git submodule add https://github.com/EIGHTFINITE/void "bin/windows/x64/jre/jre-8u201-windows-x64/jre1.8.0_201/lib/applet"
+        git checkout refs/tags/artifacts -- "bin/windows/x64/jre/jre-8u201-windows-x64"
+        rmdir "bin/windows/x64/jre/jre-8u201-windows-x64/jre1.8.0_201/lib/applet"
+        git submodule add -f https://github.com/EIGHTFINITE/void "bin/windows/x64/jre/jre-8u201-windows-x64/jre1.8.0_201/lib/applet"
         git add ".gitmodules" "bin/windows/x64/jre/jre-8u201-windows-x64"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 JRE 8u201 release artifacts
         
@@ -57,13 +52,10 @@ jobs:
         fi
         
         # JRE Linux x64
-        wget -nv -O "jre-8u201-linux-x64.tar.gz" https://archive.org/download/jre-8u201/jre-8u201-linux-x64.tar.gz
-        mkdir -p "bin/linux/x64/jre/jre-8u201-linux-x64"
-        tar -xzf "jre-8u201-linux-x64.tar.gz" -C "bin/linux/x64/jre/jre-8u201-linux-x64"
-        rm "jre-8u201-linux-x64.tar.gz"
-        rmdir "bin/linux/x64/jre/jre-8u201-linux-x64/jre1.8.0_201/lib/applet"
         sed -i '/\/bin\//d' -- '.gitignore'
-        git submodule add https://github.com/EIGHTFINITE/void "bin/linux/x64/jre/jre-8u201-linux-x64/jre1.8.0_201/lib/applet"
+        git checkout refs/tags/artifacts -- "bin/linux/x64/jre/jre-8u201-linux-x64"
+        rmdir "bin/linux/x64/jre/jre-8u201-linux-x64/jre1.8.0_201/lib/applet"
+        git submodule add -f https://github.com/EIGHTFINITE/void "bin/linux/x64/jre/jre-8u201-linux-x64/jre1.8.0_201/lib/applet"
         git add ".gitmodules" "bin/linux/x64/jre/jre-8u201-linux-x64"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 JRE 8u201 release artifacts
         
