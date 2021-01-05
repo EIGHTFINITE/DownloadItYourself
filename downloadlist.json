@@ -320,12 +320,13 @@
                 "name": "asie",
                 "url": "https://github.com/asiekierka"
             },
+            "description-url-override": "https://web.archive.org/web/20180706001701/https://asie.pl/files/mods/AsieTweaks/",
             "file": "AsieTweaks-1.7.10-0.0.2.jar",
             "id": "asietweaks",
             "md5": "9f47a1cd5d81f77c1d40205fd92c0692",
             "name": "AsieTweaks",
             "type": "client/server mod",
-            "url": "https://asie.pl/files/mods/AsieTweaks/"
+            "url": "https://asie.pl/files/mods/AsieTweaks/AsieTweaks-1.7.10-0.0.2.jar"
         },
         {
             "description-url-override": "https://asm.ow2.io/",
@@ -1273,14 +1274,18 @@
         },
         {
             "additional-folder": "server/mods",
-            "description-url-override": "https://github.com/purpleposeidon/Factorization/tree/1.7.10-lingering",
+            "code": {
+                "title": "Open Source",
+                "url": "https://github.com/purpleposeidon/Factorization/tree/1.7.10-lingering"
+            },
+            "description-url-override": "https://web.archive.org/web/20200929233519/https://asie.pl/files/mods/Factorization/",
             "file": "Factorization-1.7.10-0.8.109.jar",
             "id": "factorization",
             "img": "factorization.png",
             "md5": "fdfba4575e0d10c5fb31d24d1cd63941",
             "name": "Factorization",
             "type": "client/server mod",
-            "url": "https://asie.pl/files/mods/Factorization/"
+            "url": "https://asie.pl/files/mods/Factorization/Factorization-1.7.10-0.8.109.jar"
         },
         {
             "additional-folder": "server/mods",
@@ -1479,13 +1484,17 @@
         },
         {
             "additional-folder": "server/mods",
-            "description-url-override": "https://wiki.vexatos.com/wiki:fzaddons",
+            "description-url-override": "https://web.archive.org/web/20180804195533/http://asie.pl/files/mods/FactorizationAddons-Fork/",
             "file": "FactorizationAddons-1.7.10.jar",
             "id": "fzaddons",
             "md5": "b40b1495ad5f8e0233b5714706277fb7",
             "name": "FZAddons",
+            "permission": {
+                "img": "fzaddons-permissions.png",
+                "source": "https://wiki.vexatos.com/wiki:fzaddons"
+            },
             "type": "client/server mod",
-            "url": "https://asie.pl/files/mods/FactorizationAddons-Fork/"
+            "url": "https://asie.pl/files/mods/FactorizationAddons-Fork/FactorizationAddons-1.7.10.jar"
         },
         {
             "additional-folder": "server/mods",
