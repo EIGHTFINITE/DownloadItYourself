@@ -28,7 +28,7 @@ jobs:
         git checkout refs/tags/artifacts -- "bin/windows/x86/jre/jre-8u201-windows-i586"
         rmdir "bin/windows/x86/jre/jre-8u201-windows-i586/jre1.8.0_201/lib/applet"
         git submodule add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/jre/jre-8u201-windows-i586/jre1.8.0_201/lib/applet"
-        git add ".gitmodules" "bin/windows/x86/jre/jre-8u201-windows-i586"
+        git add ".gitmodules"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 JRE 8u201 release artifacts
         
         The fix for JDK-8155635 in 8u202 causes performance issues, so 8u201 becomes the final BCL release." | sed -n 1p
@@ -42,7 +42,7 @@ jobs:
         git checkout refs/tags/artifacts -- "bin/windows/x64/jre/jre-8u201-windows-x64"
         rmdir "bin/windows/x64/jre/jre-8u201-windows-x64/jre1.8.0_201/lib/applet"
         git submodule add -f https://github.com/EIGHTFINITE/void "bin/windows/x64/jre/jre-8u201-windows-x64/jre1.8.0_201/lib/applet"
-        git add ".gitmodules" "bin/windows/x64/jre/jre-8u201-windows-x64"
+        git add ".gitmodules"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 JRE 8u201 release artifacts
         
         The fix for JDK-8155635 in 8u202 causes performance issues, so 8u201 becomes the final BCL release." | sed -n 1p
@@ -56,7 +56,7 @@ jobs:
         git checkout refs/tags/artifacts -- "bin/linux/x64/jre/jre-8u201-linux-x64"
         rmdir "bin/linux/x64/jre/jre-8u201-linux-x64/jre1.8.0_201/lib/applet"
         git submodule add -f https://github.com/EIGHTFINITE/void "bin/linux/x64/jre/jre-8u201-linux-x64/jre1.8.0_201/lib/applet"
-        git add ".gitmodules" "bin/linux/x64/jre/jre-8u201-linux-x64"
+        git add ".gitmodules"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 JRE 8u201 release artifacts
         
         The fix for JDK-8155635 in 8u202 causes performance issues, so 8u201 becomes the final BCL release." | sed -n 1p
