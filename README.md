@@ -2537,12 +2537,12 @@
 <td align="center"><code>clone-response@1.0.2</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://github.com/codemanki/cloudscraper" title="cloudscraper"><img src="docs/img/icon/github.png" width="62" alt="cloudscraper" title="cloudscraper"></a></td>
-<td><a href="https://github.com/codemanki/cloudscraper" title="cloudscraper">cloudscraper</a></td>
+<td align="center"><a href="https://github.com/EIGHTFINITE/cloudscraper" title="cloudscraper"><img src="docs/img/icon/github.png" width="62" alt="cloudscraper" title="cloudscraper"></a></td>
+<td><a href="https://github.com/EIGHTFINITE/cloudscraper" title="cloudscraper">cloudscraper</a></td>
 <td>Package</td>
 <td><a href="https://github.com/codemanki" title="Oleksii Sribnyi">Oleksii Sribnyi</a>, <a href="https://github.com/codemanki/cloudscraper/blob/master/LICENSE" title="Anorov">Anorov</a></td>
-<td><a href="docs/legal/MIT.txt" title="“cloudscraper” license">MIT</a><a href="https://github.com/codemanki/cloudscraper" title="“cloudscraper” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“cloudscraper” license information"></a>
-<td><a href="https://github.com/codemanki/cloudscraper" title="“cloudscraper” source code">Open Source</a></td>
+<td><a href="docs/legal/MIT.txt" title="“cloudscraper” license">MIT</a><a href="https://github.com/EIGHTFINITE/cloudscraper" title="“cloudscraper” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“cloudscraper” license information"></a>
+<td><a href="https://github.com/EIGHTFINITE/cloudscraper" title="“cloudscraper” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Bypasses cloudflare's anti-ddos page.</td>
 <td align="center"><code>EIGHTFINITE/cloudscraper#master</code> (based on <code>cloudscraper@4.5.0</code>)</td>
@@ -3582,12 +3582,12 @@
 <td align="center"><code>spdx-exceptions@2.3.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://github.com/jslicense/spdx-expression-parse.js" title="spdx-expression-parse"><img src="docs/img/icon/jslicense.png" width="62" alt="spdx-expression-parse" title="spdx-expression-parse"></a></td>
-<td><a href="https://github.com/jslicense/spdx-expression-parse.js" title="spdx-expression-parse">spdx-expression-parse</a></td>
+<td align="center"><a href="https://github.com/EIGHTFINITE/spdx-expression-parse" title="spdx-expression-parse"><img src="docs/img/icon/jslicense.png" width="62" alt="spdx-expression-parse" title="spdx-expression-parse"></a></td>
+<td><a href="https://github.com/EIGHTFINITE/spdx-expression-parse" title="spdx-expression-parse">spdx-expression-parse</a></td>
 <td>Package</td>
 <td><a href="https://github.com/jslicense" title="Kyle E. Mitchell">Kyle E. Mitchell</a></td>
-<td><a href="docs/legal/MIT.txt" title="“spdx-expression-parse” license">MIT</a><a href="https://github.com/jslicense/spdx-expression-parse.js" title="“spdx-expression-parse” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“spdx-expression-parse” license information"></a>
-<td><a href="https://github.com/jslicense/spdx-expression-parse.js" title="“spdx-expression-parse” source code">Open Source</a></td>
+<td><a href="docs/legal/MIT.txt" title="“spdx-expression-parse” license">MIT</a><a href="https://github.com/EIGHTFINITE/spdx-expression-parse" title="“spdx-expression-parse” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“spdx-expression-parse” license information"></a>
+<td><a href="https://github.com/EIGHTFINITE/spdx-expression-parse" title="“spdx-expression-parse” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Parse SPDX license expressions.</td>
 <td align="center"><code>EIGHTFINITE/spdx-expression-parse#julienandco</code> (based on <code>spdx-expression-parse@3.0.0</code>)</td>
