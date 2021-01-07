@@ -509,7 +509,7 @@ module.exports = function(filetype) {
 			readme += '\r\n<tr>';
 
 			// Icon
-			readme += '\r\n<td align="center"><a href="' + (is.null(packageData._requested.saveSpec) ? packageData.homepage : packageData.repository.url) + '" title="' + packageData._location.substr(1) + '"><img src="docs/img/icon/';
+			readme += '\r\n<td align="center"><a href="' + (is.null(packageData._requested.saveSpec) ? packageData.homepage : 'https://github.com/' + packageData._from.slice(7).split('#')[0]) + '" title="' + packageData._location.substr(1) + '"><img src="docs/img/icon/';
 			if(packageData.repository.url.startsWith('https://github.com/electron/'))
 				readme += 'electron.svg';
 			else if(packageData.repository.url.startsWith('https://github.com/postmanlabs/'))
@@ -539,7 +539,7 @@ module.exports = function(filetype) {
 			readme += '" width="62" alt="' + packageData._location.substr(1) + '" title="' + packageData._location.substr(1) + '"></a></td>';
 
 			// Name
-			readme += '\r\n<td><a href="' + (is.null(packageData._requested.saveSpec) ? packageData.homepage : packageData.repository.url) + '" title="' + packageData._location.substr(1) + '">' + packageData._location.substr(1) + '</a></td>';
+			readme += '\r\n<td><a href="' + (is.null(packageData._requested.saveSpec) ? packageData.homepage : 'https://github.com/' + packageData._from.slice(7).split('#')[0]) + '" title="' + packageData._location.substr(1) + '">' + packageData._location.substr(1) + '</a></td>';
 
 			// Type
 			readme += '\r\n<td>Package</td>';
@@ -548,10 +548,10 @@ module.exports = function(filetype) {
 			readme += '\r\n<td>' + allAuthors(packageData.author) + '</td>';
 
 			// License
-			readme += '\r\n<td>' + multipleLicenses(packageData.license, packageData._location.substr(1), packageData.repository.url);
+			readme += '\r\n<td>' + multipleLicenses(packageData.license, packageData._location.substr(1), (is.null(packageData._requested.saveSpec) ? packageData.repository.url : 'https://github.com/' + packageData._from.slice(7).split('#')[0]));
 
 			// Source Code
-			readme += '\r\n<td><a href="' + packageData.repository.url + '" title="“' + packageData._location.substr(1) + '” source code">Open Source</a></td>';
+			readme += '\r\n<td><a href="' + (is.null(packageData._requested.saveSpec) ? packageData.repository.url : 'https://github.com/' + packageData._from.slice(7).split('#')[0]) + '" title="“' + packageData._location.substr(1) + '” source code">Open Source</a></td>';
 
 			// Distribution
 			if(filetype === "html")
