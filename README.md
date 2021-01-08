@@ -2511,7 +2511,7 @@
 <td><a href="docs/legal/MIT.txt" title="“cheerio” license">MIT</a><a href="https://github.com/cheeriojs/cheerio" title="“cheerio” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“cheerio” license information"></a>
 <td><a href="https://github.com/cheeriojs/cheerio" title="“cheerio” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Tiny, fast, and elegant implementation of core jQuery designed specifically for the server.</td>
+<td>Tiny, fast, and elegant implementation of core jQuery designed specifically for the server.<br>Required by cloudscraper.</td>
 <td align="center"><code>cheerio@1.0.0-rc.5</code></td>
 </tr>
 <tr>
@@ -2545,7 +2545,7 @@
 <td><a href="https://github.com/EIGHTFINITE/cloudscraper" title="“cloudscraper” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Bypasses cloudflare's anti-ddos page.</td>
-<td align="center"><code>EIGHTFINITE/cloudscraper#master</code> (based on <code>cloudscraper@4.5.0</code>)</td>
+<td align="center"><code>EIGHTFINITE/cloudscraper#bestplay9384</code> (based on <code>cloudscraper@4.6.0</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/combined-stream" title="combined-stream"><img src="docs/img/icon/npmjs.svg" width="62" alt="combined-stream" title="combined-stream"></a></td>
