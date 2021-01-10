@@ -18,13 +18,12 @@
   "dependencies": {
     "@sindresorhus/is": "4.0.0",
     "cheerio": "1.0.0-rc.5",
-    "cloudscraper": "EIGHTFINITE/cloudscraper#bestplay9384",
+    "cloudscraper": "EIGHTFINITE/cloudscraper#master",
     "electron": "11.1.1",
     "fs-extra": "9.0.1",
     "json-stable-stringify": "1.0.1",
     "md5-file": "4.0.0",
     "postman-request": "2.88.1-postman.28",
-    "request": "2.88.2",
     "spdx-expression-parse": "EIGHTFINITE/spdx-expression-parse#julienandco",
     "wait-until": "0.0.2"
   }

@@ -201,15 +201,6 @@ jobs:
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
         find node_modules/ -type f -name 'package.json' -exec sed -i '/"_where"/d' -- '{}' ';'
         find node_modules/ -type f -name 'package.json' -exec sed -i '/"man": \[/,/\],/d' -- '{}' ';'
-        sed -i 's/require(\x27request\x27)/require(\x27postman-request\x27)/g' -- 'node_modules/cloudscraper/index.d.ts'
-        sed -i '
-        s/require(\x27request\x27)/require(\x27postman-request\x27)/g
-        s/npm install request --save/npm install postman-request --save/g
-        ' -- 'node_modules/request-promise/lib/rp.js'
-        export postman_request_version=$(cat node_modules/postman-request/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']")
-        sed -i -E 's/"request": ".+?"/"postman-request": "^'"$postman_request_version"'"/g' -- 'node_modules/cloudscraper/package.json'
-        sed -i -E 's/"request": ".+?"/"postman-request": "^'"$postman_request_version"'"/g' -- 'node_modules/request-promise/package.json'
-        sed -i -E 's/"request": ".+?"/"postman-request": "^'"$postman_request_version"'"/g' -- 'node_modules/request-promise-core/package.json'
         printf "electron" > "node_modules/electron/path.txt"
         sed -i '/\/node_modules\//d' -- '.gitignore'
         find node_modules/ -mindepth 2 -maxdepth 3 -type f -name 'package.json' -exec bash -c 'path="{}"; git add -- "${path:0:-13}"; git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add ${path:13:-13} release artifacts" | sed -n 1p' ';'
