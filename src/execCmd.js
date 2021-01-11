@@ -37,7 +37,7 @@ module.exports = function(i, current, callback) {
 
 	if(exec.args.length > 0) {
 		if(exec.args.includes("___7Z___"))
-			exec.args = exec.args.replace(/___7Z___/g, path.resolve(__dirname, '../bin/windows/x64/7z/7z.exe'));
+			exec.args = exec.args.replace(/___7Z___/g, path.resolve(__dirname, '../bin/windows/x64/7z/7z1900-x64/7z.exe'));
 		if(exec.args.includes("___FILE___"))
 			exec.args = exec.args.replace(/___FILE___/g, temp.file);
 		if(exec.args.includes("___SERVER_SETUP___"))
