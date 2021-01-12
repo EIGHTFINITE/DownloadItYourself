@@ -29,6 +29,7 @@ jobs:
         cd EIGHTFINITE-build
         ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-optional --no-bin-links --ignore-scripts
         ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
+        ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js audit
         cd ..
         artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build --no-optional --no-bin-links --ignore-scripts
   npm_windows:
@@ -50,5 +51,6 @@ jobs:
         cd EIGHTFINITE-build
         ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install --no-optional --no-bin-links --ignore-scripts
         ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd dedupe
+        ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd audit
         cd ..
         artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install .\\EIGHTFINITE-build --no-optional --no-bin-links --ignore-scripts
