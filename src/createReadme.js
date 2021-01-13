@@ -341,10 +341,6 @@ module.exports = function(filetype) {
 			else if(packageData.repository.url === 'https://github.com/electron/get') {
 				packageData.author.url = 'https://github.com/MarshallOfSound';
 			}
-			else if(packageData.repository.url === 'https://github.com/DefinitelyTyped/DefinitelyTyped') {
-				packageData.author.name = 'DefinitelyTyped contributors'
-				packageData.author.url = 'https://github.com/DefinitelyTyped/DefinitelyTyped/graphs/contributors';
-			}
 			else if(packageData.repository.url === 'https://github.com/joyent/node-asn1') {
 				packageData.author.name = 'Mark Cavage'
 				packageData.author.url = 'https://github.com/mcavage';
