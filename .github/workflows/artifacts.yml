@@ -140,7 +140,7 @@ jobs:
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['dependencies']['electron']") --no-optional --no-bin-links --ignore-scripts
         export npm_config_target=$(cat node_modules/electron/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']")
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
-        rm -r node_modules/@types
+        rm -r node_modules/@types/
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
         mkdir -p "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32"
@@ -163,7 +163,7 @@ jobs:
         export npm_config_arch=x64
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['dependencies']['electron']") --no-optional --no-bin-links --ignore-scripts
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
-        rm -r node_modules/@types
+        rm -r node_modules/@types/
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
         mkdir -p "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
@@ -186,7 +186,7 @@ jobs:
         export npm_config_platform=linux
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['dependencies']['electron']") --no-optional --no-bin-links --ignore-scripts
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
-        rm -r node_modules/@types
+        rm -r node_modules/@types/
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
         mkdir -p "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64"
@@ -209,8 +209,9 @@ jobs:
         # Node modules
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-optional --no-bin-links --ignore-scripts
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
-        rm -r node_modules/@types
+        rm -r node_modules/@types/
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
+        find node_modules/ -type f \( -name '.eslintrc.yml' -o -name '.gitmodules' -o -name '.npmignore' -o -name '.travis.yml' -o -name 'yarn.lock' \) -delete
         find node_modules/ -type f -name 'package.json' -exec sed -i '/"_where"/d' -- '{}' ';'
         find node_modules/ -type f -name 'package.json' -exec sed -i '/"man": \[/,/\],/d' -- '{}' ';'
         printf "electron" > "node_modules/electron/path.txt"
