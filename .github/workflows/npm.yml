@@ -51,6 +51,14 @@ jobs:
         echo '{
           "private": "true"
         }' > package.json
+        rm -r "C:\\Program Files\\nodejs"
+    - name: npm
+      shell: cmd
+      run: |
+        mklink /d "C:\Program Files\nodejs" "%cd%\artifacts\bin\windows\x64\node\node-v12.10.0-win-x64"
+    - name: npm
+      shell: bash
+      run: |
         cd EIGHTFINITE-build
         ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install --no-optional --no-bin-links --ignore-scripts
         ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd dedupe
