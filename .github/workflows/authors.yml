@@ -2,9 +2,6 @@ name: AUTHORS
 
 on: push
 
-env:
-  CI: true
-
 jobs:
   authors:
     runs-on: ubuntu-latest

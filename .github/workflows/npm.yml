@@ -6,9 +6,6 @@ on:
   schedule:
     - cron: '0 0 * * *'
 
-env:
-  CI: true
-
 jobs:
   npm_linux:
     runs-on: ubuntu-latest
