@@ -4,12 +4,5 @@
     ":rebaseStalePrs",
     ":label(dependencies)",
     ":masterIssue"
-  ],
-  "packageRules": [
-    {
-      "packageNames": ["cheerio"],
-      "matchCurrentVersion": "v1.0.0",
-      "enabled": false
-    }
   ]
 }
