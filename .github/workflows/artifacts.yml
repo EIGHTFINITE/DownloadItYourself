@@ -210,7 +210,7 @@ jobs:
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js ls --loglevel=silent | grep -v ' deduped' || true
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js audit
-        find node_modules/ -type f \( -name '.eslintrc.yml' -o -name '.gitmodules' -o -name '.npmignore' -o -name '.travis.yml' -o -name 'yarn.lock' \) -delete
+        find node_modules/ -type f \( -name '*.d.ts' -o -name '*.d.ts.map' -o -name '.eslintrc.yml' -o -name '.gitmodules' -o -name '.npmignore' -o -name '.travis.yml' -o -name 'yarn.lock' \) -exec bash -c 'rm "$1"; rmdir --ignore-fail-on-non-empty $(dirname "$1")' bash '{}' ';'
         find node_modules/ -type f -name 'package.json' -exec sed -i '/"_where"/d' -- '{}' ';'
         find node_modules/ -type f -name 'package.json' -exec sed -i '/"man": \[/,/\],/d' -- '{}' ';'
         printf "electron" > "node_modules/electron/path.txt"
