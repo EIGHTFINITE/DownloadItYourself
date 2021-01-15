@@ -1,5 +1,9 @@
 (function() {
 
+// Executable check
+if(process.versions.node !== JSON.parse(fs.readFileSync("../package.json", "utf8")).engines.node)
+	throw Error("EIGHTFINITE-build only supports Node " + process.versions.node);
+
 // Libraries
 var fs = require("fs-extra");
 var stringify = require("json-stable-stringify");
@@ -16,10 +20,6 @@ console.message = require("./src/message.js");
 // Ensure correct working directory
 fs.ensureDirSync(__dirname + "/_download");
 process.chdir(__dirname + "/_download");
-
-// Executable check
-if(process.versions.node !== JSON.parse(fs.readFileSync("../package.json", "utf8")).engines.node)
-	throw Error("EIGHTFINITE-build only supports Node " + process.versions.node);
 
 // Globals
 global.list = void(0);
