@@ -1,8 +1,8 @@
 (function() {
 
 // Executable check
-if(process.versions.node !== JSON.parse(fs.readFileSync("../package.json", "utf8")).engines.node)
-	throw Error("EIGHTFINITE-build only supports Node " + process.versions.node);
+if(process.versions.node !== '12.10.0')
+	throw Error('EIGHTFINITE-build only supports Node 12.10.0');
 
 // Libraries
 var fs = require("fs-extra");
