@@ -10,11 +10,11 @@ jobs:
   npm_linux:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2.3.4
       with:
         ref: artifacts
         path: artifacts
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2.3.4
       with:
         path: EIGHTFINITE-build
     - name: npm
@@ -36,11 +36,11 @@ jobs:
   npm_windows:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2.3.4
       with:
         ref: artifacts
         path: artifacts
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2.3.4
       with:
         path: EIGHTFINITE-build
     - name: npm

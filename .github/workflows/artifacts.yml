@@ -11,7 +11,7 @@ jobs:
   artifacts:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2.3.4
     - name: Artifacts
       shell: bash
       run: |
@@ -249,11 +249,11 @@ jobs:
     needs: artifacts
     if: needs.artifacts.result == 'success'
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2.3.4
       with:
         ref: artifacts
         path: artifacts
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2.3.4
       with:
         path: EIGHTFINITE-build
     - name: README
@@ -270,7 +270,7 @@ jobs:
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node --use_strict main.js --readme_only
         git checkout -- 'downloadlist.json'
         cd ..
-    - uses: peter-evans/create-pull-request@master
+    - uses: peter-evans/create-pull-request@v3.6.0
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         path: EIGHTFINITE-build
@@ -288,7 +288,7 @@ jobs:
     needs: artifacts
     if: needs.artifacts.result == 'success'
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2.3.4
       with:
         ref: artifacts
     - name: Release
