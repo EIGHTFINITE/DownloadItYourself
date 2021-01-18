@@ -2240,6 +2240,17 @@
 <td align="center"><code>@electron/get@1.12.2</code></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.npmjs.com/package/fs-extra" title="@electron/get/fs-extra"><img src="docs/img/icon/npmjs.svg" width="62" alt="@electron/get/fs-extra" title="@electron/get/fs-extra"></a></td>
+<td><a href="https://www.npmjs.com/package/fs-extra" title="@electron/get/fs-extra">@electron/get/fs-extra</a></td>
+<td>Package</td>
+<td><a href="https://github.com/jprichardson" title="JP Richardson">JP Richardson</a></td>
+<td><a href="docs/legal/MIT.txt" title="“@electron/get/fs-extra” license">MIT</a><a href="https://github.com/jprichardson/node-fs-extra" title="“@electron/get/fs-extra” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“@electron/get/fs-extra” license information"></a>
+<td><a href="https://github.com/jprichardson/node-fs-extra" title="“@electron/get/fs-extra” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Fs-extra contains methods that aren't included in the vanilla Node fs package. Such as mkdir -p, cp -r, and rm -rf.<br>Required by @electron/get.</td>
+<td align="center"><code>fs-extra@8.1.0</code></td>
+</tr>
+<tr>
 <td align="center"><a href="https://www.npmjs.com/package/@postman/form-data" title="@postman/form-data"><img src="docs/img/icon/postman.svg" width="62" alt="@postman/form-data" title="@postman/form-data"></a></td>
 <td><a href="https://www.npmjs.com/package/@postman/form-data" title="@postman/form-data">@postman/form-data</a></td>
 <td>Package</td>
@@ -2834,15 +2845,48 @@
 <td align="center"><code>forever-agent@0.6.1</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/fs-extra" title="fs-extra"><img src="docs/img/icon/npmjs.svg" width="62" alt="fs-extra" title="fs-extra"></a></td>
-<td><a href="https://www.npmjs.com/package/fs-extra" title="fs-extra">fs-extra</a></td>
+<td align="center"><a href="https://github.com/EIGHTFINITE/fs-extra" title="fs-extra"><img src="docs/img/icon/github.png" width="62" alt="fs-extra" title="fs-extra"></a></td>
+<td><a href="https://github.com/EIGHTFINITE/fs-extra" title="fs-extra">fs-extra</a></td>
 <td>Package</td>
 <td><a href="https://github.com/jprichardson" title="JP Richardson">JP Richardson</a></td>
-<td><a href="docs/legal/MIT.txt" title="“fs-extra” license">MIT</a><a href="https://github.com/jprichardson/node-fs-extra" title="“fs-extra” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“fs-extra” license information"></a>
-<td><a href="https://github.com/jprichardson/node-fs-extra" title="“fs-extra” source code">Open Source</a></td>
+<td><a href="docs/legal/MIT.txt" title="“fs-extra” license">MIT</a><a href="https://github.com/EIGHTFINITE/fs-extra" title="“fs-extra” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“fs-extra” license information"></a>
+<td><a href="https://github.com/EIGHTFINITE/fs-extra" title="“fs-extra” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Fs-extra contains methods that aren't included in the vanilla Node fs package. Such as mkdir -p, cp -r, and rm -rf.<br>Required by @electron/get.</td>
-<td align="center"><code>fs-extra@8.1.0</code></td>
+<td>Fs-extra contains methods that aren't included in the vanilla Node fs package. Such as recursive mkdir, copy, and remove.</td>
+<td align="center"><code>EIGHTFINITE/fs-extra#master</code> (based on <code>fs-extra@9.0.1</code>)</td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/jsonfile" title="fs-extra/jsonfile"><img src="docs/img/icon/npmjs.svg" width="62" alt="fs-extra/jsonfile" title="fs-extra/jsonfile"></a></td>
+<td><a href="https://www.npmjs.com/package/jsonfile" title="fs-extra/jsonfile">fs-extra/jsonfile</a></td>
+<td>Package</td>
+<td><a href="https://github.com/jprichardson" title="JP Richardson">JP Richardson</a></td>
+<td><a href="docs/legal/MIT.txt" title="“fs-extra/jsonfile” license">MIT</a><a href="https://github.com/jprichardson/node-jsonfile" title="“fs-extra/jsonfile” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“fs-extra/jsonfile” license information"></a>
+<td><a href="https://github.com/jprichardson/node-jsonfile" title="“fs-extra/jsonfile” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Easily read/write JSON files.<br>Required by fs-extra.</td>
+<td align="center"><code>jsonfile@6.1.0</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/universalify" title="fs-extra/jsonfile/universalify"><img src="docs/img/icon/npmjs.svg" width="62" alt="fs-extra/jsonfile/universalify" title="fs-extra/jsonfile/universalify"></a></td>
+<td><a href="https://www.npmjs.com/package/universalify" title="fs-extra/jsonfile/universalify">fs-extra/jsonfile/universalify</a></td>
+<td>Package</td>
+<td><a href="https://github.com/RyanZim" title="Ryan Zimmerman">Ryan Zimmerman</a></td>
+<td><a href="docs/legal/MIT.txt" title="“fs-extra/jsonfile/universalify” license">MIT</a><a href="https://github.com/RyanZim/universalify" title="“fs-extra/jsonfile/universalify” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“fs-extra/jsonfile/universalify” license information"></a>
+<td><a href="https://github.com/RyanZim/universalify" title="“fs-extra/jsonfile/universalify” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Make a callback- or promise-based function support both promises and callbacks.<br>Required by fs-extra/jsonfile.</td>
+<td align="center"><code>universalify@2.0.0</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/universalify" title="fs-extra/universalify"><img src="docs/img/icon/npmjs.svg" width="62" alt="fs-extra/universalify" title="fs-extra/universalify"></a></td>
+<td><a href="https://www.npmjs.com/package/universalify" title="fs-extra/universalify">fs-extra/universalify</a></td>
+<td>Package</td>
+<td><a href="https://github.com/RyanZim" title="Ryan Zimmerman">Ryan Zimmerman</a></td>
+<td><a href="docs/legal/MIT.txt" title="“fs-extra/universalify” license">MIT</a><a href="https://github.com/RyanZim/universalify" title="“fs-extra/universalify” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“fs-extra/universalify” license information"></a>
+<td><a href="https://github.com/RyanZim/universalify" title="“fs-extra/universalify” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Make a callback- or promise-based function support both promises and callbacks.<br>Required by fs-extra.</td>
+<td align="center"><code>universalify@1.0.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/get-stream" title="get-stream"><img src="docs/img/icon/npmjs.svg" width="62" alt="get-stream" title="get-stream"></a></td>
@@ -2896,7 +2940,7 @@
 <td><a href="docs/legal/ISC.txt" title="“graceful-fs” license">ISC</a><a href="https://github.com/isaacs/node-graceful-fs" title="“graceful-fs” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“graceful-fs” license information"></a>
 <td><a href="https://github.com/isaacs/node-graceful-fs" title="“graceful-fs” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>A drop-in replacement for fs, making various improvements.<br>Required by fs-extra, jsonfile.</td>
+<td>A drop-in replacement for fs, making various improvements.<br>Required by @electron/get/fs-extra, fs-extra, fs-extra/jsonfile, jsonfile.</td>
 <td align="center"><code>graceful-fs@4.2.4</code></td>
 </tr>
 <tr>
@@ -3072,7 +3116,7 @@
 <td><a href="docs/legal/MIT.txt" title="“jsonfile” license">MIT</a><a href="https://github.com/jprichardson/node-jsonfile" title="“jsonfile” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“jsonfile” license information"></a>
 <td><a href="https://github.com/jprichardson/node-jsonfile" title="“jsonfile” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Easily read/write JSON files.<br>Required by fs-extra.</td>
+<td>Easily read/write JSON files.<br>Required by @electron/get/fs-extra.</td>
 <td align="center"><code>jsonfile@4.0.0</code></td>
 </tr>
 <tr>
@@ -3633,7 +3677,7 @@
 <td><a href="docs/legal/MIT.txt" title="“universalify” license">MIT</a><a href="https://github.com/RyanZim/universalify" title="“universalify” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“universalify” license information"></a>
 <td><a href="https://github.com/RyanZim/universalify" title="“universalify” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Make a callback- or promise-based function support both promises and callbacks.<br>Required by fs-extra.</td>
+<td>Make a callback- or promise-based function support both promises and callbacks.<br>Required by @electron/get/fs-extra.</td>
 <td align="center"><code>universalify@0.1.2</code></td>
 </tr>
 <tr>
