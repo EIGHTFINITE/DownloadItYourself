@@ -2867,17 +2867,6 @@
 <td align="center"><code>jsonfile@6.1.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/universalify" title="fs-extra/jsonfile/universalify"><img src="docs/img/icon/npmjs.svg" width="62" alt="fs-extra/jsonfile/universalify" title="fs-extra/jsonfile/universalify"></a></td>
-<td><a href="https://www.npmjs.com/package/universalify" title="fs-extra/jsonfile/universalify">fs-extra/jsonfile/universalify</a></td>
-<td>Package</td>
-<td><a href="https://github.com/RyanZim" title="Ryan Zimmerman">Ryan Zimmerman</a></td>
-<td><a href="docs/legal/MIT.txt" title="“fs-extra/jsonfile/universalify” license">MIT</a><a href="https://github.com/RyanZim/universalify" title="“fs-extra/jsonfile/universalify” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“fs-extra/jsonfile/universalify” license information"></a>
-<td><a href="https://github.com/RyanZim/universalify" title="“fs-extra/jsonfile/universalify” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Make a callback- or promise-based function support both promises and callbacks.<br>Required by fs-extra/jsonfile.</td>
-<td align="center"><code>universalify@2.0.0</code></td>
-</tr>
-<tr>
 <td align="center"><a href="https://www.npmjs.com/package/universalify" title="fs-extra/universalify"><img src="docs/img/icon/npmjs.svg" width="62" alt="fs-extra/universalify" title="fs-extra/universalify"></a></td>
 <td><a href="https://www.npmjs.com/package/universalify" title="fs-extra/universalify">fs-extra/universalify</a></td>
 <td>Package</td>
@@ -2885,8 +2874,8 @@
 <td><a href="docs/legal/MIT.txt" title="“fs-extra/universalify” license">MIT</a><a href="https://github.com/RyanZim/universalify" title="“fs-extra/universalify” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“fs-extra/universalify” license information"></a>
 <td><a href="https://github.com/RyanZim/universalify" title="“fs-extra/universalify” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Make a callback- or promise-based function support both promises and callbacks.<br>Required by fs-extra.</td>
-<td align="center"><code>universalify@1.0.0</code></td>
+<td>Make a callback- or promise-based function support both promises and callbacks.<br>Required by fs-extra, fs-extra/jsonfile.</td>
+<td align="center"><code>universalify@2.0.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/get-stream" title="get-stream"><img src="docs/img/icon/npmjs.svg" width="62" alt="get-stream" title="get-stream"></a></td>
