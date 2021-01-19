@@ -25,7 +25,7 @@ jobs:
         git checkout refs/tags/artifacts -- "bin/windows/x86/jre/jre-8u201-windows-i586"
         rmdir "bin/windows/x86/jre/jre-8u201-windows-i586/jre1.8.0_201/lib/applet"
         git submodule add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/jre/jre-8u201-windows-i586/jre1.8.0_201/lib/applet"
-        git add ".gitmodules"
+        git add -f ".gitmodules"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 JRE 8u201 release artifacts
         
         The fix for JDK-8155635 in 8u202 causes performance issues, so 8u201 becomes the final BCL release." | sed -n 1p
@@ -39,7 +39,7 @@ jobs:
         git checkout refs/tags/artifacts -- "bin/windows/x64/jre/jre-8u201-windows-x64"
         rmdir "bin/windows/x64/jre/jre-8u201-windows-x64/jre1.8.0_201/lib/applet"
         git submodule add -f https://github.com/EIGHTFINITE/void "bin/windows/x64/jre/jre-8u201-windows-x64/jre1.8.0_201/lib/applet"
-        git add ".gitmodules"
+        git add -f ".gitmodules"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 JRE 8u201 release artifacts
         
         The fix for JDK-8155635 in 8u202 causes performance issues, so 8u201 becomes the final BCL release." | sed -n 1p
@@ -53,7 +53,7 @@ jobs:
         git checkout refs/tags/artifacts -- "bin/linux/x64/jre/jre-8u201-linux-x64"
         rmdir "bin/linux/x64/jre/jre-8u201-linux-x64/jre1.8.0_201/lib/applet"
         git submodule add -f https://github.com/EIGHTFINITE/void "bin/linux/x64/jre/jre-8u201-linux-x64/jre1.8.0_201/lib/applet"
-        git add ".gitmodules"
+        git add -f ".gitmodules"
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 JRE 8u201 release artifacts
         
         The fix for JDK-8155635 in 8u202 causes performance issues, so 8u201 becomes the final BCL release." | sed -n 1p
@@ -217,23 +217,20 @@ jobs:
         printf "electron" > "node_modules/electron/path.txt"
         sed -i '/\/node_modules\//d' -- '.gitignore'
         find node_modules/ -mindepth 2 -maxdepth 3 -type f -name 'package.json' -exec bash -c 'path="{}"; git add -- "${path:0:-13}"; git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add ${path:13:-13} release artifacts" | sed -n 1p' ';'
-        sed -i '/\/package-lock.json/d' -- '.gitignore'
-        export merge_commit="$(git log -1 --format=%H)"
-        git add package-lock.json
+        git add -f package-lock.json
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"package-lock.json" | sed -n 1p
-        export result_commit="$(git log -1 --format=%H)"
+        export merge_commit="$(git log -1 --format=%H)"
         git checkout -- '.gitignore'
         if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         git reset --hard $return_commit
         git clean -dffx
-        git -c user.name="GitHub" -c user.email="noreply@github.com" merge --no-ff --no-edit $merge_commit | sed -n 1p
+        git -c user.name="GitHub" -c user.email="noreply@github.com" merge --no-ff --no-edit $merge_commit~ | sed -n 1p
         if [[ "$(git log -1 --format=%H)" == "$return_commit" ]]; then
           exit 1
         fi
-        git checkout $result_commit -- 'package-lock.json'
-        git add package-lock.json
+        git checkout $merge_commit -- 'package-lock.json'
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --amend --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add vendored Node modules
         
         Node modules and their dependencies updated to the latest versions found in https://github.com/${{ github.repository }}/blob/master/package.json" | sed -n 1p

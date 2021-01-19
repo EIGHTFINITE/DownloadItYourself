@@ -27,7 +27,7 @@ jobs:
         cd EIGHTFINITE-build
         ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-optional --no-bin-links --ignore-scripts
         ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
-        rm -r node_modules/@types
+        rm -r node_modules/@types/
         ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
         ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js ls --loglevel=silent | grep -v ' deduped' || true
         ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js audit
@@ -60,7 +60,7 @@ jobs:
         cd EIGHTFINITE-build
         ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install --no-optional --no-bin-links --ignore-scripts
         ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd dedupe
-        rm -r node_modules/@types
+        rm -r node_modules/@types/
         ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd dedupe
         ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd ls --loglevel=silent | grep -v ' deduped' || true
         ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd audit
