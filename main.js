@@ -6,7 +6,7 @@ if(process.versions.node !== '12.10.0')
 
 // Libraries
 var fs = require("fs-extra");
-var stringify = require("json-stable-stringify");
+var stringify = require('fast-json-stable-stringify');
 
 // Functions
 var closeThread = require("./src/closeThread.js");
@@ -103,7 +103,7 @@ process.on('exit', function() { // Asynchronous functions do not work beyond thi
 		global.downloads.sort((a, b) => a.name.localeCompare(b.name, 'en', {
 			sensitivity: 'base'
 		}));
-		fs.writeFileSync("../downloadlist.json", stringify(global.list, { space: 4 }) + "\n");
+		fs.writeFileSync("../downloadlist.json", stringify(global.list));
 
 		// Save readme
 		fs.writeFileSync("../README.html", createReadme("html"));
