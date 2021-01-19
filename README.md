@@ -3076,17 +3076,6 @@
 <td align="center"><code>json-schema-traverse@0.4.1</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/json-stable-stringify" title="json-stable-stringify"><img src="docs/img/icon/npmjs.svg" width="62" alt="json-stable-stringify" title="json-stable-stringify"></a></td>
-<td><a href="https://www.npmjs.com/package/json-stable-stringify" title="json-stable-stringify">json-stable-stringify</a></td>
-<td>Package</td>
-<td><a href="https://github.com/substack" title="James Halliday">James Halliday</a></td>
-<td><a href="docs/legal/MIT.txt" title="“json-stable-stringify” license">MIT</a><a href="https://github.com/substack/json-stable-stringify" title="“json-stable-stringify” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“json-stable-stringify” license information"></a>
-<td><a href="https://github.com/substack/json-stable-stringify" title="“json-stable-stringify” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Deterministic JSON.stringify() with custom sorting to get deterministic hashes from stringified results.</td>
-<td align="center"><code>json-stable-stringify@1.0.1</code></td>
-</tr>
-<tr>
 <td align="center"><a href="https://www.npmjs.com/package/json-stringify-safe" title="json-stringify-safe"><img src="docs/img/icon/npmjs.svg" width="62" alt="json-stringify-safe" title="json-stringify-safe"></a></td>
 <td><a href="https://www.npmjs.com/package/json-stringify-safe" title="json-stringify-safe">json-stringify-safe</a></td>
 <td>Package</td>
@@ -3107,17 +3096,6 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Easily read/write JSON files.<br>Required by @electron/get/fs-extra.</td>
 <td align="center"><code>jsonfile@4.0.0</code></td>
-</tr>
-<tr>
-<td align="center"><a href="https://www.npmjs.com/package/jsonify" title="jsonify"><img src="docs/img/icon/npmjs.svg" width="62" alt="jsonify" title="jsonify"></a></td>
-<td><a href="https://www.npmjs.com/package/jsonify" title="jsonify">jsonify</a></td>
-<td>Package</td>
-<td><a href="https://github.com/substack" title="Douglas Crockford">Douglas Crockford</a></td>
-<td><a href="docs/legal/Public Domain.txt" title="“jsonify” is dedicated to the Public Domain">Public Domain</a><a href="https://github.com/substack/jsonify" title="“jsonify” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“jsonify” license information"></a>
-<td><a href="https://github.com/substack/jsonify" title="“jsonify” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>JSON without touching any globals.<br>Required by json-stable-stringify.</td>
-<td align="center"><code>jsonify@0.0.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/jsprim" title="jsprim"><img src="docs/img/icon/joyent.png" width="62" alt="jsprim" title="jsprim"></a></td>
