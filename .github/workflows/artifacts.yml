@@ -278,7 +278,7 @@ jobs:
         labels: auto-merge
         branch: actions/readme
         base: master
-  npm_linux:
+  artifacts_npm_linux:
     runs-on: ubuntu-latest
     needs: artifacts
     if: needs.artifacts.result == 'success'
@@ -298,7 +298,7 @@ jobs:
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
         cd ..
         EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build --no-optional --no-bin-links --ignore-scripts
-  npm_windows:
+  artifacts_npm_windows:
     runs-on: windows-latest
     needs: artifacts
     if: needs.artifacts.result == 'success'
@@ -325,10 +325,10 @@ jobs:
         bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
         cd ..
         EIGHTFINITE-build/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install .\\EIGHTFINITE-build --no-optional --no-bin-links --ignore-scripts
-  audit_linux:
+  artifacts_audit_linux:
     runs-on: ubuntu-latest
-    needs: npm_linux
-    if: needs.npm_linux.result == 'success'
+    needs: artifacts_npm_linux
+    if: needs.artifacts_npm_linux.result == 'success'
     steps:
     - uses: actions/checkout@v2.3.4
       with:
@@ -337,10 +337,10 @@ jobs:
       shell: bash
       run: |
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js audit
-  audit_windows:
+  artifacts_audit_windows:
     runs-on: windows-latest
-    needs: npm_windows
-    if: needs.npm_windows.result == 'success'
+    needs: artifacts_npm_windows
+    if: needs.artifacts_npm_windows.result == 'success'
     steps:
     - uses: actions/checkout@v2.3.4
       with:
@@ -387,3 +387,82 @@ jobs:
         # Release
         git tag -f latest
         git push -f origin refs/tags/latest:refs/tags/latest
+  release_npm_linux:
+    runs-on: ubuntu-latest
+    needs: release
+    if: needs.release.result == 'success'
+    steps:
+    - uses: actions/checkout@v2.3.4
+      with:
+        ref: latest
+        path: EIGHTFINITE-build
+    - name: npm
+      shell: bash
+      run: |
+        echo '{
+          "private": "true"
+        }' > package.json
+        sudo ln -sf "$(pwd)/EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
+        cd EIGHTFINITE-build
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
+        cd ..
+        EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build --no-optional --no-bin-links --ignore-scripts
+  release_npm_windows:
+    runs-on: windows-latest
+    needs: release
+    if: needs.release.result == 'success'
+    steps:
+    - uses: actions/checkout@v2.3.4
+      with:
+        ref: latest
+        path: EIGHTFINITE-build
+    - name: npm
+      shell: bash
+      run: |
+        echo '{
+          "private": "true"
+        }' > package.json
+        rm -r "C:\\Program Files\\nodejs"
+    - name: npm
+      shell: cmd
+      run: |
+        mklink /d "C:\Program Files\nodejs" "%cd%\EIGHTFINITE-build\bin\windows\x64\node\node-v12.10.0-win-x64"
+    - name: npm
+      shell: bash
+      run: |
+        cd EIGHTFINITE-build
+        bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
+        cd ..
+        EIGHTFINITE-build/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install .\\EIGHTFINITE-build --no-optional --no-bin-links --ignore-scripts
+  release_audit_linux:
+    runs-on: ubuntu-latest
+    needs: release_npm_linux
+    if: needs.release_npm_linux.result == 'success'
+    steps:
+    - uses: actions/checkout@v2.3.4
+      with:
+        ref: latest
+    - name: audit
+      shell: bash
+      run: |
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js audit
+  release_audit_windows:
+    runs-on: windows-latest
+    needs: release_npm_windows
+    if: needs.release_npm_windows.result == 'success'
+    steps:
+    - uses: actions/checkout@v2.3.4
+      with:
+        ref: latest
+    - name: audit
+      shell: bash
+      run: |
+        rm -r "C:\\Program Files\\nodejs"
+    - name: audit
+      shell: cmd
+      run: |
+        mklink /d "C:\Program Files\nodejs" "%cd%\bin\windows\x64\node\node-v12.10.0-win-x64"
+    - name: audit
+      shell: bash
+      run: |
+        bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd audit
