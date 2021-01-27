@@ -208,7 +208,6 @@ jobs:
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
         rm -r node_modules/@types/
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
         find node_modules/ -type d -name '.github' | xargs rm -r
         find node_modules/ -type f \( -name '*.d.ts' -o -name '*.d.ts.map' -o -name '*.js.map' -o -name '.eslintrc.yml' -o -name '.gitmodules' -o -name '.npmignore' -o -name '.travis.yml' -o -name 'yarn.lock' \) -exec bash -c 'rm "$1"; rmdir --ignore-fail-on-non-empty $(dirname "$1")' bash '{}' ';'
         find node_modules/ -type f -name 'package.json' -exec sed -i '/"_where"/d' -- '{}' ';'
@@ -279,10 +278,57 @@ jobs:
         labels: auto-merge
         branch: actions/readme
         base: master
-  audit_linux:
+  npm_linux:
     runs-on: ubuntu-latest
     needs: artifacts
     if: needs.artifacts.result == 'success'
+    steps:
+    - uses: actions/checkout@v2.3.4
+      with:
+        ref: artifacts
+        path: EIGHTFINITE-build
+    - name: npm
+      shell: bash
+      run: |
+        echo '{
+          "private": "true"
+        }' > package.json
+        sudo ln -sf "$(pwd)/EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
+        cd EIGHTFINITE-build
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
+        cd ..
+        EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build --no-optional --no-bin-links --ignore-scripts
+  npm_windows:
+    runs-on: windows-latest
+    needs: artifacts
+    if: needs.artifacts.result == 'success'
+    steps:
+    - uses: actions/checkout@v2.3.4
+      with:
+        ref: artifacts
+        path: EIGHTFINITE-build
+    - name: npm
+      shell: bash
+      run: |
+        echo '{
+          "private": "true"
+        }' > package.json
+        rm -r "C:\\Program Files\\nodejs"
+    - name: npm
+      shell: cmd
+      run: |
+        mklink /d "C:\Program Files\nodejs" "%cd%\EIGHTFINITE-build\bin\windows\x64\node\node-v12.10.0-win-x64"
+    - name: npm
+      shell: bash
+      run: |
+        cd EIGHTFINITE-build
+        bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
+        cd ..
+        EIGHTFINITE-build/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install .\\EIGHTFINITE-build --no-optional --no-bin-links --ignore-scripts
+  audit_linux:
+    runs-on: ubuntu-latest
+    needs: npm_linux
+    if: needs.npm_linux.result == 'success'
     steps:
     - uses: actions/checkout@v2.3.4
       with:
@@ -293,12 +339,20 @@ jobs:
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js audit
   audit_windows:
     runs-on: windows-latest
-    needs: artifacts
-    if: needs.artifacts.result == 'success'
+    needs: npm_windows
+    if: needs.npm_windows.result == 'success'
     steps:
     - uses: actions/checkout@v2.3.4
       with:
         ref: artifacts
+    - name: audit
+      shell: bash
+      run: |
+        rm -r "C:\\Program Files\\nodejs"
+    - name: audit
+      shell: cmd
+      run: |
+        mklink /d "C:\Program Files\nodejs" "%cd%\bin\windows\x64\node\node-v12.10.0-win-x64"
     - name: audit
       shell: bash
       run: |

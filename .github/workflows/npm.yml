@@ -76,12 +76,9 @@ jobs:
     - uses: actions/checkout@v2.3.4
       with:
         path: EIGHTFINITE-build
-    - name: npm
+    - name: audit
       shell: bash
       run: |
-        echo '{
-          "private": "true"
-        }' > package.json
         sudo ln -sf "$(pwd)/artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
         cd EIGHTFINITE-build
         ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-optional --no-bin-links --ignore-scripts
@@ -102,18 +99,15 @@ jobs:
     - uses: actions/checkout@v2.3.4
       with:
         path: EIGHTFINITE-build
-    - name: npm
+    - name: audit
       shell: bash
       run: |
-        echo '{
-          "private": "true"
-        }' > package.json
         rm -r "C:\\Program Files\\nodejs"
-    - name: npm
+    - name: audit
       shell: cmd
       run: |
         mklink /d "C:\Program Files\nodejs" "%cd%\artifacts\bin\windows\x64\node\node-v12.10.0-win-x64"
-    - name: npm
+    - name: audit
       shell: bash
       run: |
         cd EIGHTFINITE-build
