@@ -209,7 +209,6 @@ jobs:
         rm -r node_modules/@types/
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js ls --loglevel=silent | grep -v ' deduped' || true
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js audit
         find node_modules/ -type d -name '.github' | xargs rm -r
         find node_modules/ -type f \( -name '*.d.ts' -o -name '*.d.ts.map' -o -name '*.js.map' -o -name '.eslintrc.yml' -o -name '.gitmodules' -o -name '.npmignore' -o -name '.travis.yml' -o -name 'yarn.lock' \) -exec bash -c 'rm "$1"; rmdir --ignore-fail-on-non-empty $(dirname "$1")' bash '{}' ';'
         find node_modules/ -type f -name 'package.json' -exec sed -i '/"_where"/d' -- '{}' ';'
@@ -280,6 +279,30 @@ jobs:
         labels: auto-merge
         branch: actions/readme
         base: master
+  audit_linux:
+    runs-on: ubuntu-latest
+    needs: artifacts
+    if: needs.artifacts.result == 'success'
+    steps:
+    - uses: actions/checkout@v2.3.4
+      with:
+        ref: artifacts
+    - name: audit
+      shell: bash
+      run: |
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js audit
+  audit_windows:
+    runs-on: windows-latest
+    needs: artifacts
+    if: needs.artifacts.result == 'success'
+    steps:
+    - uses: actions/checkout@v2.3.4
+      with:
+        ref: artifacts
+    - name: audit
+      shell: bash
+      run: |
+        bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd audit
   release:
     runs-on: ubuntu-latest
     needs: artifacts
