@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@sindresorhus/is": "4.0.0",
-    "cheerio": "1.0.0-rc.5",
+    "cheerio": "cheeriojs/cheerio#main",
     "cloudscraper": "EIGHTFINITE/cloudscraper#master",
     "electron": "11.2.1",
     "fast-json-stable-stringify": "2.1.0",
