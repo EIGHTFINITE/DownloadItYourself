@@ -2,7 +2,6 @@
   "extends": [
     "config:base",
     ":rebaseStalePrs",
-    ":label(dependencies)",
-    ":masterIssue"
+    ":label(dependencies)"
   ]
 }
