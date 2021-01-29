@@ -268,6 +268,11 @@ module.exports = function(filetype) {
 			packageData = JSON.parse(fs.readFileSync(file, "utf8"));
 
 			// Correct repository urls
+			if(!packageData.repository) {
+				packageData.repository = {};
+				packageData.repository.type = 'git';
+				packageData.repository.url = (is.undefined(packageData.homepage) ? "https://github.com/npm/cli" : (packageData.homepage.endsWith('#readme') ? packageData.homepage.slice(0,-7) : packageData.homepage));
+			}
 			if(packageData.repository.url.startsWith('git+'))
 				packageData.repository.url = packageData.repository.url.slice(4);
 			if(packageData.repository.url.startsWith('git://'))
@@ -505,7 +510,7 @@ module.exports = function(filetype) {
 			readme += '\r\n<tr>';
 
 			// Icon
-			readme += '\r\n<td align="center"><a href="' + (is.null(packageData._requested.saveSpec) ? packageData.homepage : 'https://github.com/' + packageData._from.slice(7).split('#')[0]) + '" title="' + packageData._location.substr(1) + '"><img src="docs/img/icon/';
+			readme += '\r\n<td align="center"><a href="' + (is.undefined(packageData._requested) || is.null(packageData._requested.saveSpec) ? packageData.homepage : 'https://github.com/' + packageData._from.slice(7).split('#')[0]) + '" title="' + packageData._location.substr(1) + '"><img src="docs/img/icon/';
 			if(packageData.repository.url.startsWith('https://github.com/electron/'))
 				readme += 'electron.svg';
 			else if(packageData.repository.url.startsWith('https://github.com/postmanlabs/'))
@@ -528,14 +533,14 @@ module.exports = function(filetype) {
 				readme += packageData.name + '.svg';
 			else if(fs.existsSync('../docs/img/icon/' + packageData.name + '.png'))
 				readme += packageData.name + '.png';
-			else if(is.null(packageData._requested.saveSpec))
+			else if(is.undefined(packageData._requested) || is.null(packageData._requested.saveSpec))
 				readme += 'npmjs.svg';
 			else
 				readme += 'github.png';
 			readme += '" width="62" alt="' + packageData._location.substr(1) + '" title="' + packageData._location.substr(1) + '"></a></td>';
 
 			// Name
-			readme += '\r\n<td><a href="' + (is.null(packageData._requested.saveSpec) ? packageData.homepage : 'https://github.com/' + packageData._from.slice(7).split('#')[0]) + '" title="' + packageData._location.substr(1) + '">' + packageData._location.substr(1) + '</a></td>';
+			readme += '\r\n<td><a href="' + (is.undefined(packageData._requested) || is.null(packageData._requested.saveSpec) ? packageData.homepage : 'https://github.com/' + packageData._from.slice(7).split('#')[0]) + '" title="' + packageData._location.substr(1) + '">' + packageData._location.substr(1) + '</a></td>';
 
 			// Type
 			readme += '\r\n<td>Package</td>';
@@ -544,10 +549,10 @@ module.exports = function(filetype) {
 			readme += '\r\n<td>' + allAuthors(packageData.author) + '</td>';
 
 			// License
-			readme += '\r\n<td>' + multipleLicenses(packageData.license, packageData._location.substr(1), (is.null(packageData._requested.saveSpec) ? packageData.repository.url : 'https://github.com/' + packageData._from.slice(7).split('#')[0]));
+			readme += '\r\n<td>' + multipleLicenses(packageData.license, packageData._location.substr(1), (is.undefined(packageData._requested) || is.null(packageData._requested.saveSpec) ? packageData.repository.url : 'https://github.com/' + packageData._from.slice(7).split('#')[0]));
 
 			// Source Code
-			readme += '\r\n<td><a href="' + (is.null(packageData._requested.saveSpec) ? packageData.repository.url : 'https://github.com/' + packageData._from.slice(7).split('#')[0]) + '" title="“' + packageData._location.substr(1) + '” source code">Open Source</a></td>';
+			readme += '\r\n<td><a href="' + (is.undefined(packageData._requested) || is.null(packageData._requested.saveSpec) ? packageData.repository.url : 'https://github.com/' + packageData._from.slice(7).split('#')[0]) + '" title="“' + packageData._location.substr(1) + '” source code">Open Source</a></td>';
 
 			// Distribution
 			if(filetype === "html")
@@ -559,7 +564,7 @@ module.exports = function(filetype) {
 			readme += '\r\n<td>' + packageData.description + '</td>';
 
 			// File
-			readme += '\r\n<td align="center"><code>' + (packageData._from.startsWith('github:') ? packageData._from.slice(7) + '</code>, <code>' + packageData._resolved.slice(7) + '</code> (based on <code>' + packageData._id + '</code>)' : packageData._id + '</code>') + '</td>';
+			readme += '\r\n<td align="center"><code>' + (!is.undefined(packageData._from) && packageData._from.startsWith('github:') ? packageData._from.slice(7) + '</code>, <code>' + packageData._resolved.slice(7) + '</code> (based on <code>' + packageData._id + '</code>)' : packageData._id + '</code>') + '</td>';
 
 			// Row end
 			readme += '\r\n</tr>';
