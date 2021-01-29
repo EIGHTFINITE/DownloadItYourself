@@ -245,30 +245,22 @@ jobs:
     if: needs.artifacts.result == 'success'
     steps:
     - uses: actions/checkout@v2.3.4
-      with:
-        ref: artifacts
-        path: artifacts
-    - uses: actions/checkout@v2.3.4
-      with:
-        path: EIGHTFINITE-build
     - name: README
       shell: bash
       run: |
-        mkdir -p "EIGHTFINITE-build/bin"
-        mv -T artifacts/bin "EIGHTFINITE-build/bin"
-        mkdir -p "EIGHTFINITE-build/node_modules"
-        mv -T artifacts/node_modules "EIGHTFINITE-build/node_modules"
-        mv -T artifacts/package-lock.json "EIGHTFINITE-build/package-lock.json"
-        rm -r artifacts/
-        cd EIGHTFINITE-build
         docs/tools/git-config.sh
+        git fetch origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
+        git checkout artifacts -- bin/
+        git reset
+        git checkout artifacts -- node_modules/
+        git reset
+        git checkout artifacts -- package-lock.json
+        git reset
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node --use_strict main.js --readme_only
         git checkout -- 'downloadlist.json'
-        cd ..
     - uses: peter-evans/create-pull-request@v3.7.0
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        path: EIGHTFINITE-build
         commit-message: Update README
         author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
         committer: GitHub <noreply@github.com>
