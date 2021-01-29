@@ -4491,7 +4491,7 @@
 <td><a href="docs/legal/MIT.txt" title="“npm/ip” license">MIT</a><a href="https://github.com/indutny/node-ip" title="“npm/ip” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“npm/ip” license information"></a>
 <td><a href="https://github.com/indutny/node-ip" title="“npm/ip” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>[!](https://badge.fury.io/js/ip.svg).<br>Required by npm/socks.</td>
+<td>IP address utilities for Node.<br>Required by npm/socks.</td>
 <td align="center"><code>ip@1.1.5</code></td>
 </tr>
 <tr>
