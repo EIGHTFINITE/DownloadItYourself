@@ -16,7 +16,7 @@ jobs:
       shell: bash
       run: |
         docs/tools/git-config.sh
-        git fetch origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
+        git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         export GIT_AUTHOR_DATE="$(git log -1 --format=%aD)"
         export GIT_COMMITTER_DATE="$(git log -1 --format=%cD)"
         
@@ -249,7 +249,7 @@ jobs:
       shell: bash
       run: |
         docs/tools/git-config.sh
-        git fetch origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
+        git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git checkout artifacts -- bin/
         git reset
         git checkout artifacts -- node_modules/
@@ -280,7 +280,7 @@ jobs:
       shell: bash
       run: |
         docs/tools/git-config.sh
-        git fetch origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
+        git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git checkout artifacts -- bin/
         git reset
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install npm --no-optional --no-bin-links --ignore-scripts
