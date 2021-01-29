@@ -315,6 +315,13 @@ jobs:
         cp EIGHTFINITE-build/.npmrc .npmrc
         sudo ln -sf "$(pwd)/EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
         cd EIGHTFINITE-build
+        rm -r node_modules/
+        rm package-lock.json
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --prefer-online=false --offline=false
+        rm -r node_modules/
+        rm package-lock.json
+        git checkout -- node_modules/
+        git checkout -- package-lock.json
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
         cd ..
         EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build
@@ -343,6 +350,13 @@ jobs:
       shell: bash
       run: |
         cd EIGHTFINITE-build
+        rm -r node_modules/
+        rm package-lock.json
+        bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install --prefer-online=false --offline=false
+        rm -r node_modules/
+        rm package-lock.json
+        git checkout -- node_modules/
+        git checkout -- package-lock.json
         bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
         cd ..
         EIGHTFINITE-build/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install .\\EIGHTFINITE-build
@@ -426,6 +440,13 @@ jobs:
         cp EIGHTFINITE-build/.npmrc .npmrc
         sudo ln -sf "$(pwd)/EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
         cd EIGHTFINITE-build
+        rm -r node_modules/
+        rm package-lock.json
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --prefer-online=false --offline=false
+        rm -r node_modules/
+        rm package-lock.json
+        git checkout -- node_modules/
+        git checkout -- package-lock.json
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
         cd ..
         EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build
@@ -454,6 +475,13 @@ jobs:
       shell: bash
       run: |
         cd EIGHTFINITE-build
+        rm -r node_modules/
+        rm package-lock.json
+        bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install --prefer-online=false --offline=false
+        rm -r node_modules/
+        rm package-lock.json
+        git checkout -- node_modules/
+        git checkout -- package-lock.json
         bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
         cd ..
         EIGHTFINITE-build/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install .\\EIGHTFINITE-build
