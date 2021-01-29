@@ -23,6 +23,7 @@ jobs:
         echo '{
           "private": "true"
         }' > package.json
+        cp EIGHTFINITE-build/.npmrc .npmrc
         sudo ln -sf "$(pwd)/artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
         cd EIGHTFINITE-build
         ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --prefer-online=false --offline=false
@@ -48,6 +49,7 @@ jobs:
         echo '{
           "private": "true"
         }' > package.json
+        cp EIGHTFINITE-build/.npmrc .npmrc
         rm -r "C:\\Program Files\\nodejs"
     - name: npm
       shell: cmd

@@ -312,6 +312,7 @@ jobs:
         echo '{
           "private": "true"
         }' > package.json
+        cp EIGHTFINITE-build/.npmrc .npmrc
         sudo ln -sf "$(pwd)/EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
         cd EIGHTFINITE-build
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
@@ -332,6 +333,7 @@ jobs:
         echo '{
           "private": "true"
         }' > package.json
+        cp EIGHTFINITE-build/.npmrc .npmrc
         rm -r "C:\\Program Files\\nodejs"
     - name: npm
       shell: cmd
@@ -421,6 +423,7 @@ jobs:
         echo '{
           "private": "true"
         }' > package.json
+        cp EIGHTFINITE-build/.npmrc .npmrc
         sudo ln -sf "$(pwd)/EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
         cd EIGHTFINITE-build
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
@@ -441,6 +444,7 @@ jobs:
         echo '{
           "private": "true"
         }' > package.json
+        cp EIGHTFINITE-build/.npmrc .npmrc
         rm -r "C:\\Program Files\\nodejs"
     - name: npm
       shell: cmd
