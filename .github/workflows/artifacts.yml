@@ -284,7 +284,7 @@ jobs:
         git checkout artifacts -- bin/
         git reset
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install npm --no-optional --no-bin-links --ignore-scripts
-        sed -i "s/\"npm\": \".*\"/\"npm\": \"$(cat bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']") || $(cat node_modules/npm/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']")\"/" package.json
+        sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']") || $(cat node_modules/npm/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']")\"/" package.json
     - uses: peter-evans/create-pull-request@v3.7.0
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
@@ -293,7 +293,7 @@ jobs:
         committer: GitHub <noreply@github.com>
         title: Update engines
         body: |
-          Update the required engines field.
+          Update the engines field.
         labels: auto-merge
         branch: actions/engines
         base: master
