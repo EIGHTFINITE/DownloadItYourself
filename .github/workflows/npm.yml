@@ -25,13 +25,13 @@ jobs:
         }' > package.json
         sudo ln -sf "$(pwd)/artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
         cd EIGHTFINITE-build
-        ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-optional --no-bin-links --ignore-scripts
+        ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --prefer-online=false --offline=false
         ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
         rm -r node_modules/@types/
         ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
         ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
         cd ..
-        artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build --no-optional --no-bin-links --ignore-scripts
+        artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build
   npm_windows:
     runs-on: windows-latest
     steps:
@@ -57,13 +57,13 @@ jobs:
       shell: bash
       run: |
         cd EIGHTFINITE-build
-        ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install --no-optional --no-bin-links --ignore-scripts
+        ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install --prefer-online=false --offline=false
         ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd dedupe
         rm -r node_modules/@types/
         ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd dedupe
         ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
         cd ..
-        artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install .\\EIGHTFINITE-build --no-optional --no-bin-links --ignore-scripts
+        artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install .\\EIGHTFINITE-build
   audit_linux:
     runs-on: ubuntu-latest
     needs: npm_linux
@@ -81,7 +81,7 @@ jobs:
       run: |
         sudo ln -sf "$(pwd)/artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
         cd EIGHTFINITE-build
-        ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-optional --no-bin-links --ignore-scripts
+        ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --prefer-online=false --offline=false
         ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
         rm -r node_modules/@types/
         ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
@@ -111,7 +111,7 @@ jobs:
       shell: bash
       run: |
         cd EIGHTFINITE-build
-        ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install --no-optional --no-bin-links --ignore-scripts
+        ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install --prefer-online=false --offline=false
         ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd dedupe
         rm -r node_modules/@types/
         ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd dedupe
