@@ -85,7 +85,7 @@ jobs:
         ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
         rm -r node_modules/@types/
         ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
-        ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js audit
+        ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/node_modules/npm/bin/npm-cli.js audit
         cd ..
   audit_windows:
     runs-on: windows-latest
@@ -115,5 +115,5 @@ jobs:
         ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd dedupe
         rm -r node_modules/@types/
         ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd dedupe
-        ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd audit
+        ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/node.exe ../artifacts/node_modules/npm/bin/npm-cli.js audit
         cd ..

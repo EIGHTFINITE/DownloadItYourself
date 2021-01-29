@@ -336,7 +336,7 @@ jobs:
     - name: audit
       shell: bash
       run: |
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js audit
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm/bin/npm-cli.js audit
   artifacts_audit_windows:
     runs-on: windows-latest
     needs: artifacts_npm_windows
@@ -356,7 +356,7 @@ jobs:
     - name: audit
       shell: bash
       run: |
-        bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd audit
+        bin/windows/x64/node/node-v12.10.0-win-x64/node.exe node_modules/npm/bin/npm-cli.js audit
   release:
     runs-on: ubuntu-latest
     needs: [artifacts_npm_linux, artifacts_npm_windows]
@@ -445,7 +445,7 @@ jobs:
     - name: audit
       shell: bash
       run: |
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js audit
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm/bin/npm-cli.js audit
   release_audit_windows:
     runs-on: windows-latest
     needs: release_npm_windows
@@ -465,4 +465,4 @@ jobs:
     - name: audit
       shell: bash
       run: |
-        bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd audit
+        bin/windows/x64/node/node-v12.10.0-win-x64/node.exe node_modules/npm/bin/npm-cli.js audit
