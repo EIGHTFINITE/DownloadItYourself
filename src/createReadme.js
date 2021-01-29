@@ -485,6 +485,10 @@ module.exports = function(filetype) {
 			else if(packageData.repository.url === 'https://github.com/kriszyp/json-schema' && !packageData.license)
 				packageData.license = 'AFL-2.1 OR BSD-3-Clause';
 
+			// Description corrections
+			if(packageData.repository.url === 'https://github.com/indutny/node-ip')
+				packageData.description = 'IP address utilities for node.js';
+
 			// Description
 			if(packageData.description.substring(packageData.description.length-1) !== '.')
 				packageData.description += '.';
