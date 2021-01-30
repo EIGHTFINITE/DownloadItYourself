@@ -488,6 +488,8 @@ module.exports = function(filetype) {
 			// Description corrections
 			if(packageData.repository.url === 'https://github.com/indutny/node-ip')
 				packageData.description = 'IP address utilities for node.js';
+			else if(packageData.repository.url === 'https://github.com/sindresorhus/is')
+				packageData.description = 'Type check values';
 
 			// Description
 			if(packageData.description.substring(packageData.description.length-1) !== '.')
