@@ -2951,7 +2951,7 @@
 <td><a href="docs/legal/MIT.txt" title="“got/@sindresorhus/is” license">MIT</a><a href="https://github.com/sindresorhus/is" title="“got/@sindresorhus/is” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“got/@sindresorhus/is” license information"></a>
 <td><a href="https://github.com/sindresorhus/is" title="“got/@sindresorhus/is” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Type check values: `is.string('🦄') //=> true`.<br>Required by got.</td>
+<td>Type check values.<br>Required by got.</td>
 <td align="center"><code>@sindresorhus/is@0.14.0</code></td>
 </tr>
 <tr>
