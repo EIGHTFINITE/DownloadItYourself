@@ -13,9 +13,10 @@ jobs:
       shell: bash
       run: |
         docs/tools/git-config.sh
-        git fetch --force --all --tags
+        git fetch origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
+        git fetch origin +refs/tags/latest:refs/tags/latest --no-tags
         git log --format='%aN <%aE>%n%cN <%cE>' --all | sort -u > AUTHORS.txt
-        printf '%s\0' .mailmap AUTHORS.txt | sort --files0-from=- -uo .mailmap
+        sort -muo .mailmap -- .mailmap AUTHORS.txt
     - uses: peter-evans/create-pull-request@v3.7.0
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
