@@ -321,7 +321,28 @@ jobs:
       shell: bash
       run: |
         cd EIGHTFINITE-build
-        if [[ $(find . -type f -path ./.git -prune -o -name '*.json' -exec jsonlint -s --forbid any-type-at-start,bom,duplicate-keys,non-portable,non-bmp,zero-byte -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        # Do not allow anything
+        if [[ $(find . -type f -path ./.git -prune -o -path ./bin/windows/x64/node/node-v12.10.0-win-x64/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -path ./bin/windows/x86/node/node-v12.10.0-win-x86/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -path ./bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -path ./node_modules/entities/lib/maps -prune -o -path ./node_modules/got/node_modules/@sindresorhus/is -prune -o -name '*.json' -exec jsonlint -s --forbid any-type-at-start,bom,duplicate-keys,non-portable,non-bmp,zero-byte -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
+        # Allow non-bmp, zero-byte
+        if [[ $(find ./bin/windows/x64/node/node-v12.10.0-win-x64/node_modules/npm/node_modules/iconv-lite/encodings/tables -name '*.json' -exec jsonlint -s --allow non-bmp,zero-byte --forbid any-type-at-start,bom,duplicate-keys,non-portable -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
+        # Allow non-bmp, zero-byte
+        if [[ $(find ./bin/windows/x86/node/node-v12.10.0-win-x86/node_modules/npm/node_modules/iconv-lite/encodings/tables -name '*.json' -exec jsonlint -s --allow non-bmp,zero-byte --forbid any-type-at-start,bom,duplicate-keys,non-portable -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
+        # Allow non-bmp, zero-byte
+        if [[ $(find ./bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/node_modules/iconv-lite/encodings/tables -name '*.json' -exec jsonlint -s --allow non-bmp,zero-byte --forbid any-type-at-start,bom,duplicate-keys,non-portable -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
+        # Allow non-bmp
+        if [[ $(find ./node_modules/entities/lib/maps -name '*.json' -exec jsonlint -s --allow non-bmp --forbid any-type-at-start,bom,duplicate-keys,non-portable,zero-byte -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
+        # Allow non-bmp
+        if [[ $(find ./node_modules/got/node_modules/@sindresorhus/is -name '*.json' -exec jsonlint -s --allow non-bmp --forbid any-type-at-start,bom,duplicate-keys,non-portable,zero-byte -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         cd ..
@@ -474,7 +495,28 @@ jobs:
       shell: bash
       run: |
         cd EIGHTFINITE-build
-        if [[ $(find . -type f -path ./.git -prune -o -name '*.json' -exec jsonlint -s --forbid any-type-at-start,bom,duplicate-keys,non-portable,non-bmp,zero-byte -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        # Do not allow anything
+        if [[ $(find . -type f -path ./.git -prune -o -path ./bin/windows/x64/node/node-v12.10.0-win-x64/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -path ./bin/windows/x86/node/node-v12.10.0-win-x86/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -path ./bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -path ./node_modules/entities/lib/maps -prune -o -path ./node_modules/got/node_modules/@sindresorhus/is -prune -o -name '*.json' -exec jsonlint -s --forbid any-type-at-start,bom,duplicate-keys,non-portable,non-bmp,zero-byte -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
+        # Allow non-bmp, zero-byte
+        if [[ $(find ./bin/windows/x64/node/node-v12.10.0-win-x64/node_modules/npm/node_modules/iconv-lite/encodings/tables -name '*.json' -exec jsonlint -s --allow non-bmp,zero-byte --forbid any-type-at-start,bom,duplicate-keys,non-portable -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
+        # Allow non-bmp, zero-byte
+        if [[ $(find ./bin/windows/x86/node/node-v12.10.0-win-x86/node_modules/npm/node_modules/iconv-lite/encodings/tables -name '*.json' -exec jsonlint -s --allow non-bmp,zero-byte --forbid any-type-at-start,bom,duplicate-keys,non-portable -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
+        # Allow non-bmp, zero-byte
+        if [[ $(find ./bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/node_modules/iconv-lite/encodings/tables -name '*.json' -exec jsonlint -s --allow non-bmp,zero-byte --forbid any-type-at-start,bom,duplicate-keys,non-portable -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
+        # Allow non-bmp
+        if [[ $(find ./node_modules/entities/lib/maps -name '*.json' -exec jsonlint -s --allow non-bmp --forbid any-type-at-start,bom,duplicate-keys,non-portable,zero-byte -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
+        # Allow non-bmp
+        if [[ $(find ./node_modules/got/node_modules/@sindresorhus/is -name '*.json' -exec jsonlint -s --allow non-bmp --forbid any-type-at-start,bom,duplicate-keys,non-portable,zero-byte -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         cd ..
