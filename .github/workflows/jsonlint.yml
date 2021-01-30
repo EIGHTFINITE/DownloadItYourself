@@ -11,7 +11,7 @@ jobs:
         repository: EIGHTFINITE/demjson
         ref: master
         path: demjson
-    - name: Install demjson
+    - name: Build demjson
       shell: bash
       run: |
         cd demjson

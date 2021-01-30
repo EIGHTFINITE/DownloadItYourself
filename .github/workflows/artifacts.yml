@@ -297,6 +297,34 @@ jobs:
         labels: auto-merge
         branch: actions/engines
         base: master
+  artifacts_jsonlint:
+    runs-on: ubuntu-latest
+    needs: artifacts
+    if: needs.artifacts.result == 'success'
+    steps:
+    - uses: actions/checkout@v2.3.4
+      with:
+        repository: EIGHTFINITE/demjson
+        ref: master
+        path: demjson
+    - name: Build demjson
+      shell: bash
+      run: |
+        cd demjson
+        sudo python setup.py install
+        cd ..
+    - uses: actions/checkout@v2.3.4
+      with:
+        ref: artifacts
+        path: EIGHTFINITE-build
+    - name: jsonlint
+      shell: bash
+      run: |
+        cd EIGHTFINITE-build
+        if [[ $(find . -type f -path ./.git -prune -o -name '*.json' -exec jsonlint -s --forbid any-type-at-start,bom,duplicate-keys,non-portable,non-bmp,zero-byte -e utf8 -- '{}' ';' | grep -v ': ok' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
+        cd ..
   artifacts_npm_linux:
     runs-on: ubuntu-latest
     needs: artifacts
@@ -422,6 +450,34 @@ jobs:
         # Release
         git tag -f latest
         git push -f origin refs/tags/latest:refs/tags/latest
+  release_jsonlint:
+    runs-on: ubuntu-latest
+    needs: release
+    if: needs.release.result == 'success'
+    steps:
+    - uses: actions/checkout@v2.3.4
+      with:
+        repository: EIGHTFINITE/demjson
+        ref: master
+        path: demjson
+    - name: Build demjson
+      shell: bash
+      run: |
+        cd demjson
+        sudo python setup.py install
+        cd ..
+    - uses: actions/checkout@v2.3.4
+      with:
+        ref: latest
+        path: EIGHTFINITE-build
+    - name: jsonlint
+      shell: bash
+      run: |
+        cd EIGHTFINITE-build
+        if [[ $(find . -type f -path ./.git -prune -o -name '*.json' -exec jsonlint -s --forbid any-type-at-start,bom,duplicate-keys,non-portable,non-bmp,zero-byte -e utf8 -- '{}' ';' | grep -v ': ok' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
+        cd ..
   release_npm_linux:
     runs-on: ubuntu-latest
     needs: release
