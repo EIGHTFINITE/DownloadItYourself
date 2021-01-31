@@ -12,40 +12,52 @@ jobs:
     steps:
     - uses: actions/checkout@v2.3.4
       with:
-        ref: artifacts
-        path: artifacts
-    - uses: actions/checkout@v2.3.4
-      with:
         path: EIGHTFINITE-build
     - name: npm
       shell: bash
       run: |
+        cd EIGHTFINITE-build
+        docs/tools/git-config.sh
+        git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
+        git checkout artifacts -- bin/
+        git reset
+        git checkout artifacts -- node_modules/
+        git reset
+        git checkout artifacts -- package-lock.json
+        git reset
+        cd ..
         echo '{
           "private": "true"
         }' > package.json
         cp EIGHTFINITE-build/.npmrc .npmrc
-        sudo ln -sf "$(pwd)/artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
+        sudo ln -sf "$(pwd)/EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
         cd EIGHTFINITE-build
-        ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --prefer-online=false --offline=false
-        ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --prefer-online=false --offline=false
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
         rm -r node_modules/@types/
-        ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
-        ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
         cd ..
-        artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build
+        EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build
   npm_windows:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2.3.4
       with:
-        ref: artifacts
-        path: artifacts
-    - uses: actions/checkout@v2.3.4
-      with:
         path: EIGHTFINITE-build
     - name: npm
       shell: bash
       run: |
+        cd EIGHTFINITE-build
+        docs/tools/git-config.bat
+        git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
+        git checkout artifacts -- bin/
+        git reset
+        git checkout artifacts -- node_modules/
+        git reset
+        git checkout artifacts -- package-lock.json
+        git reset
+        cd ..
         echo '{
           "private": "true"
         }' > package.json
@@ -54,18 +66,18 @@ jobs:
     - name: npm
       shell: cmd
       run: |
-        mklink /d "C:\Program Files\nodejs" "%cd%\artifacts\bin\windows\x64\node\node-v12.10.0-win-x64"
+        mklink /d "C:\Program Files\nodejs" "%cd%\EIGHTFINITE-build\bin\windows\x64\node\node-v12.10.0-win-x64"
     - name: npm
       shell: bash
       run: |
         cd EIGHTFINITE-build
-        ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install --prefer-online=false --offline=false
-        ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd dedupe
+        bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install --prefer-online=false --offline=false
+        bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd dedupe
         rm -r node_modules/@types/
-        ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd dedupe
-        ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
+        bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd dedupe
+        bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
         cd ..
-        artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install .\\EIGHTFINITE-build
+        EIGHTFINITE-build/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install .\\EIGHTFINITE-build
   audit_linux:
     runs-on: ubuntu-latest
     needs: npm_linux
@@ -73,21 +85,27 @@ jobs:
     steps:
     - uses: actions/checkout@v2.3.4
       with:
-        ref: artifacts
-        path: artifacts
-    - uses: actions/checkout@v2.3.4
-      with:
         path: EIGHTFINITE-build
     - name: audit
       shell: bash
       run: |
-        sudo ln -sf "$(pwd)/artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
         cd EIGHTFINITE-build
-        ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --prefer-online=false --offline=false
-        ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
+        docs/tools/git-config.sh
+        git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
+        git checkout artifacts -- bin/
+        git reset
+        git checkout artifacts -- node_modules/
+        git reset
+        git checkout artifacts -- package-lock.json
+        git reset
+        cd ..
+        sudo ln -sf "$(pwd)/EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
+        cd EIGHTFINITE-build
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --prefer-online=false --offline=false
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
         rm -r node_modules/@types/
-        ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
-        ../artifacts/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node ../artifacts/node_modules/npm/bin/npm-cli.js audit
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm/bin/npm-cli.js audit
         cd ..
   audit_windows:
     runs-on: windows-latest
@@ -96,26 +114,32 @@ jobs:
     steps:
     - uses: actions/checkout@v2.3.4
       with:
-        ref: artifacts
-        path: artifacts
-    - uses: actions/checkout@v2.3.4
-      with:
         path: EIGHTFINITE-build
     - name: audit
       shell: bash
       run: |
+        cd EIGHTFINITE-build
+        docs/tools/git-config.bat
+        git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
+        git checkout artifacts -- bin/
+        git reset
+        git checkout artifacts -- node_modules/
+        git reset
+        git checkout artifacts -- package-lock.json
+        git reset
+        cd ..
         rm -r "C:\\Program Files\\nodejs"
     - name: audit
       shell: cmd
       run: |
-        mklink /d "C:\Program Files\nodejs" "%cd%\artifacts\bin\windows\x64\node\node-v12.10.0-win-x64"
+        mklink /d "C:\Program Files\nodejs" "%cd%\EIGHTFINITE-build\bin\windows\x64\node\node-v12.10.0-win-x64"
     - name: audit
       shell: bash
       run: |
         cd EIGHTFINITE-build
-        ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install --prefer-online=false --offline=false
-        ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd dedupe
+        bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install --prefer-online=false --offline=false
+        bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd dedupe
         rm -r node_modules/@types/
-        ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd dedupe
-        ../artifacts/bin/windows/x64/node/node-v12.10.0-win-x64/node.exe ../artifacts/node_modules/npm/bin/npm-cli.js audit
+        bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd dedupe
+        bin/windows/x64/node/node-v12.10.0-win-x64/node.exe node_modules/npm/bin/npm-cli.js audit
         cd ..
