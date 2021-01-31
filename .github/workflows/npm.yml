@@ -21,10 +21,6 @@ jobs:
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git checkout artifacts -- bin/
         git reset
-        git checkout artifacts -- node_modules/
-        git reset
-        git checkout artifacts -- package-lock.json
-        git reset
         cd ..
         echo '{
           "private": "true"
@@ -52,10 +48,6 @@ jobs:
         docs/tools/git-config.bat
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git checkout artifacts -- bin/
-        git reset
-        git checkout artifacts -- node_modules/
-        git reset
-        git checkout artifacts -- package-lock.json
         git reset
         cd ..
         echo '{
@@ -94,10 +86,6 @@ jobs:
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git checkout artifacts -- bin/
         git reset
-        git checkout artifacts -- node_modules/
-        git reset
-        git checkout artifacts -- package-lock.json
-        git reset
         cd ..
         sudo ln -sf "$(pwd)/EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
         cd EIGHTFINITE-build
@@ -122,10 +110,6 @@ jobs:
         docs/tools/git-config.bat
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git checkout artifacts -- bin/
-        git reset
-        git checkout artifacts -- node_modules/
-        git reset
-        git checkout artifacts -- package-lock.json
         git reset
         cd ..
         rm -r "C:\\Program Files\\nodejs"
