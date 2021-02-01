@@ -19,8 +19,7 @@ jobs:
         cd EIGHTFINITE-build
         docs/tools/git-config.sh
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
-        git checkout artifacts -- bin/
-        git reset
+        git restore --source=artifacts -- bin/
         cd ..
         echo '{
           "private": "true"
@@ -47,8 +46,7 @@ jobs:
         cd EIGHTFINITE-build
         docs/tools/git-config.bat
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
-        git checkout artifacts -- bin/
-        git reset
+        git restore --source=artifacts -- bin/
         cd ..
         echo '{
           "private": "true"
@@ -84,8 +82,7 @@ jobs:
         cd EIGHTFINITE-build
         docs/tools/git-config.sh
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
-        git checkout artifacts -- bin/
-        git reset
+        git restore --source=artifacts -- bin/
         cd ..
         sudo ln -sf "$(pwd)/EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
         cd EIGHTFINITE-build
@@ -109,8 +106,7 @@ jobs:
         cd EIGHTFINITE-build
         docs/tools/git-config.bat
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
-        git checkout artifacts -- bin/
-        git reset
+        git restore --source=artifacts -- bin/
         cd ..
         rm -r "C:\\Program Files\\nodejs"
     - name: audit
