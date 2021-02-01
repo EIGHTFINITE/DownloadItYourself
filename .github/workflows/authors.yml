@@ -17,7 +17,7 @@ jobs:
         git fetch origin +refs/tags/latest:refs/tags/latest --no-tags
         git log --format='%aN <%aE>%n%cN <%cE>' --all | sort -u > AUTHORS.txt
         sort -muo .mailmap -- .mailmap AUTHORS.txt
-    - uses: peter-evans/create-pull-request@v3.7.0
+    - uses: peter-evans/create-pull-request@v3.8.0
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: Update AUTHORS
