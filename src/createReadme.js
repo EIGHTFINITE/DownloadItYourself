@@ -267,313 +267,317 @@ module.exports = function(filetype) {
 		files.forEach(function(file) {
 			packageData = JSON.parse(fs.readFileSync(file, "utf8"));
 
-			// Correct repository urls
-			if(!packageData.repository) {
-				packageData.repository = {};
-				packageData.repository.type = 'git';
-				packageData.repository.url = (is.undefined(packageData.homepage) ? "https://github.com/npm/cli" : (packageData.homepage.endsWith('#readme') ? packageData.homepage.slice(0,-7) : packageData.homepage));
-			}
-			if(packageData.repository.url.startsWith('git+'))
-				packageData.repository.url = packageData.repository.url.slice(4);
-			if(packageData.repository.url.startsWith('git://'))
-				packageData.repository.url = 'https://' + packageData.repository.url.slice(6);
-			else if(packageData.repository.url.startsWith('ssh://git@'))
-				packageData.repository.url = 'https://' + packageData.repository.url.slice(10);
-			if(packageData.repository.url.endsWith('.git'))
-				packageData.repository.url = packageData.repository.url.slice(0,-4);
+			 // Skip bundled dependencies
+			if(packageData._inBundle !== true) {
 
-			// Substitute author with GitHub profile
-			if(!packageData.author)
-				packageData.author = {};
-			if(!packageData.author.name)
-				packageData.author.name = packageData.repository.url.substring(packageData.repository.url.lastIndexOf('/'), nthIndex(packageData.repository.url, '/', (packageData.repository.url.match(/\//g)||[]).length-1)+1);
+				// Correct repository urls
+				if(!packageData.repository) {
+					packageData.repository = {};
+					packageData.repository.type = 'git';
+					packageData.repository.url = (is.undefined(packageData.homepage) ? "https://github.com/npm/cli" : (packageData.homepage.endsWith('#readme') ? packageData.homepage.slice(0,-7) : packageData.homepage));
+				}
+				if(packageData.repository.url.startsWith('git+'))
+					packageData.repository.url = packageData.repository.url.slice(4);
+				if(packageData.repository.url.startsWith('git://'))
+					packageData.repository.url = 'https://' + packageData.repository.url.slice(6);
+				else if(packageData.repository.url.startsWith('ssh://git@'))
+					packageData.repository.url = 'https://' + packageData.repository.url.slice(10);
+				if(packageData.repository.url.endsWith('.git'))
+					packageData.repository.url = packageData.repository.url.slice(0,-4);
 
-			// Author URL
-			if(!packageData.author.url || !packageData.author.url.startsWith('https://github.com/'))
-				packageData.author.url = packageData.repository.url.slice(0,-(packageData.repository.url.substring(packageData.repository.url.lastIndexOf('/')).length));
-			
-			// Repository URL corrections
-			if(packageData.repository.url === 'https://github.com/cheeriojs/dom-renderer')
-				packageData.repository.url = 'https://github.com/cheeriojs/dom-serializer';
-			else if(packageData.repository.url === 'https://github.com/fb55/DomHandler')
-				packageData.repository.url = 'https://github.com/fb55/domhandler';
-			else if(packageData.repository.url === 'https://github.com/FB55/domutils')
-				packageData.repository.url = 'https://github.com/fb55/domutils';
-			else if(packageData.repository.url === 'https://github.com/mcavage/node-assert-plus')
-				packageData.repository.url = 'https://github.com/joyent/node-assert-plus';
-			else if(packageData.repository.url === 'https://github.com/mikeal/aws-sign')
-				packageData.repository.url = 'https://github.com/request/aws-sign';
-			else if(packageData.repository.url === 'https://github.com/mikeal/caseless')
-				packageData.repository.url = 'https://github.com/request/caseless';
-			else if(packageData.repository.url === 'https://github.com/quartzjer/ecc-jsbn')
-				packageData.repository.url = 'https://github.com/aduh95/ecc-jsbn';
-			else if(packageData.repository.url === 'https://github.com/davepacheco/node-extsprintf')
-				packageData.repository.url = 'https://github.com/joyent/node-extsprintf';
-			else if(packageData.repository.url === 'https://github.com/braveg1rl/performance-now')
-				packageData.repository.url = 'https://github.com/myrne/performance-now';
-			else if(packageData.repository.url === 'https://github.com/kemitchell/spdx-exceptions.json')
-				packageData.repository.url = 'https://github.com/jslicense/spdx-exceptions.json';
-			else if(packageData.repository.url === 'https://github.com/mikeal/forever-agent')
-				packageData.repository.url = 'https://github.com/request/forever-agent';
-			else if(packageData.repository.url === 'https://github.com/isaacs/json-stringify-safe')
-				packageData.repository.url = 'https://github.com/moll/json-stringify-safe';
-			else if(packageData.repository.url === 'https://github.com/roryrjb/md5-file')
-				packageData.repository.url = 'https://github.com/kodie/md5-file';
-			else if(packageData.repository.url === 'https://github.com/mikeal/oauth-sign')
-				packageData.repository.url = 'https://github.com/request/oauth-sign';
-			else if(packageData.repository.url === 'https://github.com/mikeal/tunnel-agent')
-				packageData.repository.url = 'https://github.com/request/tunnel-agent';
-			else if(packageData.repository.url === 'https://github.com/kelektiv/node-uuid')
-				packageData.repository.url = 'https://github.com/uuidjs/node-uuid';
-			else if(packageData.repository.url === 'https://github.com/davepacheco/node-verror')
-				packageData.repository.url = 'https://github.com/joyent/node-verror';
+				// Substitute author with GitHub profile
+				if(!packageData.author)
+					packageData.author = {};
+				if(!packageData.author.name)
+					packageData.author.name = packageData.repository.url.substring(packageData.repository.url.lastIndexOf('/'), nthIndex(packageData.repository.url, '/', (packageData.repository.url.match(/\//g)||[]).length-1)+1);
 
-			// Author URL corrections
-			if(packageData.author.url === 'https://github.com/FB55')
-				packageData.author.url = 'https://github.com/fb55';
+				// Author URL
+				if(!packageData.author.url || !packageData.author.url.startsWith('https://github.com/'))
+					packageData.author.url = packageData.repository.url.slice(0,-(packageData.repository.url.substring(packageData.repository.url.lastIndexOf('/')).length));
+				
+				// Repository URL corrections
+				if(packageData.repository.url === 'https://github.com/cheeriojs/dom-renderer')
+					packageData.repository.url = 'https://github.com/cheeriojs/dom-serializer';
+				else if(packageData.repository.url === 'https://github.com/fb55/DomHandler')
+					packageData.repository.url = 'https://github.com/fb55/domhandler';
+				else if(packageData.repository.url === 'https://github.com/FB55/domutils')
+					packageData.repository.url = 'https://github.com/fb55/domutils';
+				else if(packageData.repository.url === 'https://github.com/mcavage/node-assert-plus')
+					packageData.repository.url = 'https://github.com/joyent/node-assert-plus';
+				else if(packageData.repository.url === 'https://github.com/mikeal/aws-sign')
+					packageData.repository.url = 'https://github.com/request/aws-sign';
+				else if(packageData.repository.url === 'https://github.com/mikeal/caseless')
+					packageData.repository.url = 'https://github.com/request/caseless';
+				else if(packageData.repository.url === 'https://github.com/quartzjer/ecc-jsbn')
+					packageData.repository.url = 'https://github.com/aduh95/ecc-jsbn';
+				else if(packageData.repository.url === 'https://github.com/davepacheco/node-extsprintf')
+					packageData.repository.url = 'https://github.com/joyent/node-extsprintf';
+				else if(packageData.repository.url === 'https://github.com/braveg1rl/performance-now')
+					packageData.repository.url = 'https://github.com/myrne/performance-now';
+				else if(packageData.repository.url === 'https://github.com/kemitchell/spdx-exceptions.json')
+					packageData.repository.url = 'https://github.com/jslicense/spdx-exceptions.json';
+				else if(packageData.repository.url === 'https://github.com/mikeal/forever-agent')
+					packageData.repository.url = 'https://github.com/request/forever-agent';
+				else if(packageData.repository.url === 'https://github.com/isaacs/json-stringify-safe')
+					packageData.repository.url = 'https://github.com/moll/json-stringify-safe';
+				else if(packageData.repository.url === 'https://github.com/roryrjb/md5-file')
+					packageData.repository.url = 'https://github.com/kodie/md5-file';
+				else if(packageData.repository.url === 'https://github.com/mikeal/oauth-sign')
+					packageData.repository.url = 'https://github.com/request/oauth-sign';
+				else if(packageData.repository.url === 'https://github.com/mikeal/tunnel-agent')
+					packageData.repository.url = 'https://github.com/request/tunnel-agent';
+				else if(packageData.repository.url === 'https://github.com/kelektiv/node-uuid')
+					packageData.repository.url = 'https://github.com/uuidjs/node-uuid';
+				else if(packageData.repository.url === 'https://github.com/davepacheco/node-verror')
+					packageData.repository.url = 'https://github.com/joyent/node-verror';
 
-			// Author name corrections
-			if(packageData.author.url === 'https://github.com/fb55')
-				packageData.author.name = 'Felix Böhm';
-			else if(packageData.author.url === 'https://github.com/LinusU')
-				packageData.author.name = 'Linus Unnebäck';
-			else if(packageData.author.url === 'https://github.com/sindresorhus')
-				packageData.author.name = 'Sindre Sorhus';
-			else if(packageData.author.url === 'https://github.com/zeit')
-				packageData.author.name = 'ZEIT';
+				// Author URL corrections
+				if(packageData.author.url === 'https://github.com/FB55')
+					packageData.author.url = 'https://github.com/fb55';
 
-			// Full corrections
-			else if(packageData.repository.url === 'https://github.com/electron/get') {
-				packageData.author.url = 'https://github.com/MarshallOfSound';
-			}
-			else if(packageData.repository.url === 'https://github.com/joyent/node-asn1') {
-				packageData.author.name = 'Mark Cavage'
-				packageData.author.url = 'https://github.com/mcavage';
-			}
-			else if(packageData.repository.url === 'https://github.com/joyent/node-assert-plus') {
-				packageData.author = [{
-					name: 'Joyent',
-					url: 'https://github.com/joyent'
-				},{
-					name: 'assert-plus authors',
-					url: 'https://github.com/joyent/node-assert-plus/blob/master/AUTHORS'
-				}];
-			}
-			else if(packageData.repository.url === 'https://github.com/joyent/node-bcrypt-pbkdf') {
-				packageData.author = [{
-					name: 'Joyent',
-					url: 'https://github.com/joyent'
-				},{
-					name: 'Niels Provos',
-					url: 'https://github.com/joyent/node-bcrypt-pbkdf/blob/master/LICENSE'
-				},{
-					name: 'Ted Unangst',
-					url: 'https://github.com/joyent/node-bcrypt-pbkdf/blob/master/LICENSE'
-				}];
-			}
-			else if(packageData.repository.url === 'https://github.com/cheeriojs/cheerio') {
-				packageData.author.name = 'Matthew Mueller';
-				packageData.author.url = 'https://github.com/matthewmueller';
-			}
-			else if(packageData.repository.url === 'https://github.com/codemanki/cloudscraper') {
-				packageData.author = [{
-					name: 'Oleksii Sribnyi',
-					url: 'https://github.com/codemanki'
-				},{
-					name: 'Anorov',
-					url: 'https://github.com/codemanki/cloudscraper/blob/master/LICENSE'
-				}];
-			}
-			else if(packageData.repository.url === 'https://github.com/nodejs/readable-stream') {
-				packageData.author = [{
-					name: 'Node contributors',
-					url: 'https://github.com/nodejs/readable-stream/graphs/contributors'
-				},{
-					name: 'Joyent',
-					url: 'https://github.com/joyent'
-				}];
-			}
-			else if(packageData.repository.url === 'https://github.com/nodejs/string_decoder') {
-				packageData.author = [{
-					name: 'Node contributors',
-					url: 'https://github.com/nodejs/string_decoder/graphs/contributors'
-				},{
-					name: 'Joyent',
-					url: 'https://github.com/joyent'
-				}];
-			}
-			else if(packageData.repository.url === 'https://github.com/isaacs/core-util-is') {
-				packageData.author.name = 'Node contributors';
-				packageData.author.url = 'https://github.com/isaacs/core-util-is/graphs/contributors';
-			}
-			else if(packageData.repository.url === 'https://github.com/trentm/node-dashdash') {
-				packageData.author = [{
-					name: 'Trent Mick',
-					url: 'https://github.com/trentm'
-				},{
-					name: 'Joyent',
-					url: 'https://github.com/joyent'
-				}];
-			}
-			else if(packageData.repository.url === 'https://github.com/visionmedia/debug') {
-				packageData.author.url = 'https://github.com/tj';
-			}
-			else if(packageData.repository.url === 'https://github.com/cheeriojs/dom-serializer') {
-				packageData.author.name = 'cheerio contributors';
-				packageData.author.url = 'https://github.com/cheeriojs/dom-serializer/graphs/contributors';
-			}
-			else if(packageData.repository.url === 'https://github.com/floatdrop/duplexer3') {
-				packageData.author.url = 'https://github.com/deoxxa';
-			}
-			else if(packageData.repository.url === 'https://github.com/electron/electron') {
-				packageData.author.name = 'GitHub';
-				packageData.author.url = 'https://github.com/github';
-			}
-			else if(packageData.repository.url === 'https://github.com/maxogden/extract-zip') {
-				packageData.author = [{
-					name: 'Max Ogden',
-					url: 'https://github.com/maxogden'
-				},{
-					name: 'extract-zip contributors',
-					url: 'https://github.com/maxogden/extract-zip/graphs/contributors'
-				}];
-			}
-			else if(packageData.repository.url === 'https://github.com/joyent/node-extsprintf' || packageData.repository.url === 'https://github.com/joyent/node-verror') {
-				packageData.author.name = 'Joyent';
-				packageData.author.url = 'https://github.com/joyent';
-			}
-			else if(packageData.repository.url === 'https://github.com/epoberezkin/fast-json-stable-stringify') {
-				packageData.author = [{
-					name: 'Evgeny Poberezkin',
-					url: 'https://github.com/epoberezkin'
-				},{
-					name: 'James Halliday',
-					url: 'https://github.com/substack'
-				}];
-			}
-			else if(packageData.repository.url === 'https://github.com/arekinath/node-getpass') {
-				packageData.author.name = 'Joyent',
-				packageData.author.url = 'https://github.com/joyent'
-			}
-			else if(packageData.repository.url === 'https://github.com/isaacs/node-graceful-fs') {
-				packageData.author = [{
-					name: 'Isaac Z. Schlueter',
-					url: 'https://github.com/isaacs'
-				},{
-					name: 'Ben Noordhuis',
-					url: 'https://github.com/isaacs/node-graceful-fs/blob/master/LICENSE'
-				},{
-					name: 'graceful-fs contributors',
-					url: 'https://github.com/isaacs/node-graceful-fs/graphs/contributors'
-				}];
-			}
-			else if(packageData.repository.url === 'https://github.com/myrne/performance-now') {
-				packageData.author.name = 'Myrne Stol';
-				packageData.author.url = 'https://github.com/myrne';
-			}
-			else if(packageData.repository.url === 'https://github.com/dchest/tweetnacl-js') {
-				packageData.author.name = 'tweetnacl contributors';
-				packageData.author.url = 'https://github.com/dchest/tweetnacl-js/blob/master/AUTHORS.md';
-			}
+				// Author name corrections
+				if(packageData.author.url === 'https://github.com/fb55')
+					packageData.author.name = 'Felix Böhm';
+				else if(packageData.author.url === 'https://github.com/LinusU')
+					packageData.author.name = 'Linus Unnebäck';
+				else if(packageData.author.url === 'https://github.com/sindresorhus')
+					packageData.author.name = 'Sindre Sorhus';
+				else if(packageData.author.url === 'https://github.com/zeit')
+					packageData.author.name = 'ZEIT';
 
-			// Homepage corrections
-			packageData.homepage = 'https://www.npmjs.com/package/' + packageData.name;
+				// Full corrections
+				else if(packageData.repository.url === 'https://github.com/electron/get') {
+					packageData.author.url = 'https://github.com/MarshallOfSound';
+				}
+				else if(packageData.repository.url === 'https://github.com/joyent/node-asn1') {
+					packageData.author.name = 'Mark Cavage'
+					packageData.author.url = 'https://github.com/mcavage';
+				}
+				else if(packageData.repository.url === 'https://github.com/joyent/node-assert-plus') {
+					packageData.author = [{
+						name: 'Joyent',
+						url: 'https://github.com/joyent'
+					},{
+						name: 'assert-plus authors',
+						url: 'https://github.com/joyent/node-assert-plus/blob/master/AUTHORS'
+					}];
+				}
+				else if(packageData.repository.url === 'https://github.com/joyent/node-bcrypt-pbkdf') {
+					packageData.author = [{
+						name: 'Joyent',
+						url: 'https://github.com/joyent'
+					},{
+						name: 'Niels Provos',
+						url: 'https://github.com/joyent/node-bcrypt-pbkdf/blob/master/LICENSE'
+					},{
+						name: 'Ted Unangst',
+						url: 'https://github.com/joyent/node-bcrypt-pbkdf/blob/master/LICENSE'
+					}];
+				}
+				else if(packageData.repository.url === 'https://github.com/cheeriojs/cheerio') {
+					packageData.author.name = 'Matthew Mueller';
+					packageData.author.url = 'https://github.com/matthewmueller';
+				}
+				else if(packageData.repository.url === 'https://github.com/codemanki/cloudscraper') {
+					packageData.author = [{
+						name: 'Oleksii Sribnyi',
+						url: 'https://github.com/codemanki'
+					},{
+						name: 'Anorov',
+						url: 'https://github.com/codemanki/cloudscraper/blob/master/LICENSE'
+					}];
+				}
+				else if(packageData.repository.url === 'https://github.com/nodejs/readable-stream') {
+					packageData.author = [{
+						name: 'Node contributors',
+						url: 'https://github.com/nodejs/readable-stream/graphs/contributors'
+					},{
+						name: 'Joyent',
+						url: 'https://github.com/joyent'
+					}];
+				}
+				else if(packageData.repository.url === 'https://github.com/nodejs/string_decoder') {
+					packageData.author = [{
+						name: 'Node contributors',
+						url: 'https://github.com/nodejs/string_decoder/graphs/contributors'
+					},{
+						name: 'Joyent',
+						url: 'https://github.com/joyent'
+					}];
+				}
+				else if(packageData.repository.url === 'https://github.com/isaacs/core-util-is') {
+					packageData.author.name = 'Node contributors';
+					packageData.author.url = 'https://github.com/isaacs/core-util-is/graphs/contributors';
+				}
+				else if(packageData.repository.url === 'https://github.com/trentm/node-dashdash') {
+					packageData.author = [{
+						name: 'Trent Mick',
+						url: 'https://github.com/trentm'
+					},{
+						name: 'Joyent',
+						url: 'https://github.com/joyent'
+					}];
+				}
+				else if(packageData.repository.url === 'https://github.com/visionmedia/debug') {
+					packageData.author.url = 'https://github.com/tj';
+				}
+				else if(packageData.repository.url === 'https://github.com/cheeriojs/dom-serializer') {
+					packageData.author.name = 'cheerio contributors';
+					packageData.author.url = 'https://github.com/cheeriojs/dom-serializer/graphs/contributors';
+				}
+				else if(packageData.repository.url === 'https://github.com/floatdrop/duplexer3') {
+					packageData.author.url = 'https://github.com/deoxxa';
+				}
+				else if(packageData.repository.url === 'https://github.com/electron/electron') {
+					packageData.author.name = 'GitHub';
+					packageData.author.url = 'https://github.com/github';
+				}
+				else if(packageData.repository.url === 'https://github.com/maxogden/extract-zip') {
+					packageData.author = [{
+						name: 'Max Ogden',
+						url: 'https://github.com/maxogden'
+					},{
+						name: 'extract-zip contributors',
+						url: 'https://github.com/maxogden/extract-zip/graphs/contributors'
+					}];
+				}
+				else if(packageData.repository.url === 'https://github.com/joyent/node-extsprintf' || packageData.repository.url === 'https://github.com/joyent/node-verror') {
+					packageData.author.name = 'Joyent';
+					packageData.author.url = 'https://github.com/joyent';
+				}
+				else if(packageData.repository.url === 'https://github.com/epoberezkin/fast-json-stable-stringify') {
+					packageData.author = [{
+						name: 'Evgeny Poberezkin',
+						url: 'https://github.com/epoberezkin'
+					},{
+						name: 'James Halliday',
+						url: 'https://github.com/substack'
+					}];
+				}
+				else if(packageData.repository.url === 'https://github.com/arekinath/node-getpass') {
+					packageData.author.name = 'Joyent',
+					packageData.author.url = 'https://github.com/joyent'
+				}
+				else if(packageData.repository.url === 'https://github.com/isaacs/node-graceful-fs') {
+					packageData.author = [{
+						name: 'Isaac Z. Schlueter',
+						url: 'https://github.com/isaacs'
+					},{
+						name: 'Ben Noordhuis',
+						url: 'https://github.com/isaacs/node-graceful-fs/blob/master/LICENSE'
+					},{
+						name: 'graceful-fs contributors',
+						url: 'https://github.com/isaacs/node-graceful-fs/graphs/contributors'
+					}];
+				}
+				else if(packageData.repository.url === 'https://github.com/myrne/performance-now') {
+					packageData.author.name = 'Myrne Stol';
+					packageData.author.url = 'https://github.com/myrne';
+				}
+				else if(packageData.repository.url === 'https://github.com/dchest/tweetnacl-js') {
+					packageData.author.name = 'tweetnacl contributors';
+					packageData.author.url = 'https://github.com/dchest/tweetnacl-js/blob/master/AUTHORS.md';
+				}
 
-			// License corrections
-			if(packageData.repository.url === 'https://github.com/joyent/node-bcrypt-pbkdf')
-				packageData.license = 'BSD-3-Clause AND MIT';
-			else if(packageData.repository.url === 'https://github.com/kriszyp/json-schema' && !packageData.license)
-				packageData.license = 'AFL-2.1 OR BSD-3-Clause';
+				// Homepage corrections
+				packageData.homepage = 'https://www.npmjs.com/package/' + packageData.name;
 
-			// Description corrections
-			if(packageData.repository.url === 'https://github.com/indutny/node-ip')
-				packageData.description = 'IP address utilities for node.js';
-			else if(packageData.repository.url === 'https://github.com/sindresorhus/is')
-				packageData.description = 'Type check values';
+				// License corrections
+				if(packageData.repository.url === 'https://github.com/joyent/node-bcrypt-pbkdf')
+					packageData.license = 'BSD-3-Clause AND MIT';
+				else if(packageData.repository.url === 'https://github.com/kriszyp/json-schema' && !packageData.license)
+					packageData.license = 'AFL-2.1 OR BSD-3-Clause';
 
-			// Description
-			if(packageData.description.substring(packageData.description.length-1) !== '.')
-				packageData.description += '.';
-			packageData.description = packageData.description[0].toUpperCase() + packageData.description.slice(1).replace(/\[([ -~]+)\]\([ -~]+\)/g,'$1').replace(/[Nn]ode\.js|[Nn]ode(?!s)/g,'Node');
-			if(packageData.name === 'postman-request') {
-				packageData._requiredBy.push('/cloudscraper');
-				packageData._requiredBy.push('/request-promise');
-				packageData._requiredBy.push('/request-promise-core');
-			}
-			for (var i = 0; i < packageData._requiredBy.length; i++) {
-				if(packageData._requiredBy[i] === '/')
-					continue;
-				if(i === 0 || packageData._requiredBy[i-1] === '/')
-					packageData.description += '<br>Required by ';
-				else
-					packageData.description += ', ';
-				packageData.description += packageData._requiredBy[i].slice(1);
-				if(i === packageData._requiredBy.length-1)
+				// Description corrections
+				if(packageData.repository.url === 'https://github.com/indutny/node-ip')
+					packageData.description = 'IP address utilities for node.js';
+				else if(packageData.repository.url === 'https://github.com/sindresorhus/is')
+					packageData.description = 'Type check values';
+
+				// Description
+				if(packageData.description.substring(packageData.description.length-1) !== '.')
 					packageData.description += '.';
+				packageData.description = packageData.description[0].toUpperCase() + packageData.description.slice(1).replace(/\[([ -~]+)\]\([ -~]+\)/g,'$1').replace(/[Nn]ode\.js|[Nn]ode(?!s)/g,'Node');
+				if(packageData.name === 'postman-request') {
+					packageData._requiredBy.push('/cloudscraper');
+					packageData._requiredBy.push('/request-promise');
+					packageData._requiredBy.push('/request-promise-core');
+				}
+				for (var i = 0; i < packageData._requiredBy.length; i++) {
+					if(packageData._requiredBy[i] === '/')
+						continue;
+					if(i === 0 || packageData._requiredBy[i-1] === '/')
+						packageData.description += '<br>Required by ';
+					else
+						packageData.description += ', ';
+					packageData.description += packageData._requiredBy[i].slice(1);
+					if(i === packageData._requiredBy.length-1)
+						packageData.description += '.';
+				}
+
+				// Row start
+				readme += '\r\n<tr>';
+
+				// Icon
+				readme += '\r\n<td align="center"><a href="' + (is.undefined(packageData._requested) || is.null(packageData._requested.saveSpec) ? packageData.homepage : 'https://github.com/' + packageData._from.slice(7).split('#')[0]) + '" title="' + packageData._location.substr(1) + '"><img src="docs/img/icon/';
+				if(packageData.repository.url.startsWith('https://github.com/electron/'))
+					readme += 'electron.svg';
+				else if(packageData.repository.url.startsWith('https://github.com/postmanlabs/'))
+					readme += 'postman.svg';
+				else if(packageData.repository.url.startsWith('https://github.com/joyent/'))
+					readme += 'joyent.png';
+				else if(packageData.repository.url.startsWith('https://github.com/request/'))
+					readme += 'request.png';
+				else if(packageData.repository.url.startsWith('https://github.com/cheeriojs/'))
+					readme += 'cheerio.png';
+				else if(packageData.repository.url.startsWith('https://github.com/nodejs/'))
+					readme += 'node.png';
+				else if(packageData.repository.url.startsWith('https://github.com/zeit/'))
+					readme += 'zeit.png';
+				else if(packageData.repository.url.startsWith('https://github.com/jslicense/'))
+					readme += 'jslicense.png';
+				else if(packageData.repository.url.startsWith('https://github.com/npm/'))
+					readme += 'npm.svg';
+				else if(fs.existsSync('../docs/img/icon/' + packageData.name + '.svg'))
+					readme += packageData.name + '.svg';
+				else if(fs.existsSync('../docs/img/icon/' + packageData.name + '.png'))
+					readme += packageData.name + '.png';
+				else if(is.undefined(packageData._requested) || is.null(packageData._requested.saveSpec))
+					readme += 'npmjs.svg';
+				else
+					readme += 'github.png';
+				readme += '" width="62" alt="' + packageData._location.substr(1) + '" title="' + packageData._location.substr(1) + '"></a></td>';
+
+				// Name
+				readme += '\r\n<td><a href="' + (is.undefined(packageData._requested) || is.null(packageData._requested.saveSpec) ? packageData.homepage : 'https://github.com/' + packageData._from.slice(7).split('#')[0]) + '" title="' + packageData._location.substr(1) + '">' + packageData._location.substr(1) + '</a></td>';
+
+				// Type
+				readme += '\r\n<td>Package</td>';
+
+				// Author
+				readme += '\r\n<td>' + allAuthors(packageData.author) + '</td>';
+
+				// License
+				readme += '\r\n<td>' + multipleLicenses(packageData.license, packageData._location.substr(1), (is.undefined(packageData._requested) || is.null(packageData._requested.saveSpec) ? packageData.repository.url : 'https://github.com/' + packageData._from.slice(7).split('#')[0]));
+
+				// Source Code
+				readme += '\r\n<td><a href="' + (is.undefined(packageData._requested) || is.null(packageData._requested.saveSpec) ? packageData.repository.url : 'https://github.com/' + packageData._from.slice(7).split('#')[0]) + '" title="“' + packageData._location.substr(1) + '” source code">Open Source</a></td>';
+
+				// Distribution
+				if(filetype === "html")
+					readme += '\r\n<td align="center"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></td>';
+				else
+					readme += '\r\n<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>';
+
+				// Description
+				readme += '\r\n<td>' + packageData.description + '</td>';
+
+				// File
+				readme += '\r\n<td align="center"><code>' + (!is.undefined(packageData._from) && packageData._from.startsWith('github:') ? packageData._from.slice(7) + '</code>, <code>' + packageData._resolved.slice(7) + '</code> (based on <code>' + packageData._id + '</code>)' : packageData._id + '</code>') + '</td>';
+
+				// Row end
+				readme += '\r\n</tr>';
 			}
-
-			// Row start
-			readme += '\r\n<tr>';
-
-			// Icon
-			readme += '\r\n<td align="center"><a href="' + (is.undefined(packageData._requested) || is.null(packageData._requested.saveSpec) ? packageData.homepage : 'https://github.com/' + packageData._from.slice(7).split('#')[0]) + '" title="' + packageData._location.substr(1) + '"><img src="docs/img/icon/';
-			if(packageData.repository.url.startsWith('https://github.com/electron/'))
-				readme += 'electron.svg';
-			else if(packageData.repository.url.startsWith('https://github.com/postmanlabs/'))
-				readme += 'postman.svg';
-			else if(packageData.repository.url.startsWith('https://github.com/joyent/'))
-				readme += 'joyent.png';
-			else if(packageData.repository.url.startsWith('https://github.com/request/'))
-				readme += 'request.png';
-			else if(packageData.repository.url.startsWith('https://github.com/cheeriojs/'))
-				readme += 'cheerio.png';
-			else if(packageData.repository.url.startsWith('https://github.com/nodejs/'))
-				readme += 'node.png';
-			else if(packageData.repository.url.startsWith('https://github.com/zeit/'))
-				readme += 'zeit.png';
-			else if(packageData.repository.url.startsWith('https://github.com/jslicense/'))
-				readme += 'jslicense.png';
-			else if(packageData.repository.url.startsWith('https://github.com/npm/'))
-				readme += 'npm.svg';
-			else if(fs.existsSync('../docs/img/icon/' + packageData.name + '.svg'))
-				readme += packageData.name + '.svg';
-			else if(fs.existsSync('../docs/img/icon/' + packageData.name + '.png'))
-				readme += packageData.name + '.png';
-			else if(is.undefined(packageData._requested) || is.null(packageData._requested.saveSpec))
-				readme += 'npmjs.svg';
-			else
-				readme += 'github.png';
-			readme += '" width="62" alt="' + packageData._location.substr(1) + '" title="' + packageData._location.substr(1) + '"></a></td>';
-
-			// Name
-			readme += '\r\n<td><a href="' + (is.undefined(packageData._requested) || is.null(packageData._requested.saveSpec) ? packageData.homepage : 'https://github.com/' + packageData._from.slice(7).split('#')[0]) + '" title="' + packageData._location.substr(1) + '">' + packageData._location.substr(1) + '</a></td>';
-
-			// Type
-			readme += '\r\n<td>Package</td>';
-
-			// Author
-			readme += '\r\n<td>' + allAuthors(packageData.author) + '</td>';
-
-			// License
-			readme += '\r\n<td>' + multipleLicenses(packageData.license, packageData._location.substr(1), (is.undefined(packageData._requested) || is.null(packageData._requested.saveSpec) ? packageData.repository.url : 'https://github.com/' + packageData._from.slice(7).split('#')[0]));
-
-			// Source Code
-			readme += '\r\n<td><a href="' + (is.undefined(packageData._requested) || is.null(packageData._requested.saveSpec) ? packageData.repository.url : 'https://github.com/' + packageData._from.slice(7).split('#')[0]) + '" title="“' + packageData._location.substr(1) + '” source code">Open Source</a></td>';
-
-			// Distribution
-			if(filetype === "html")
-				readme += '\r\n<td align="center"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></td>';
-			else
-				readme += '\r\n<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>';
-
-			// Description
-			readme += '\r\n<td>' + packageData.description + '</td>';
-
-			// File
-			readme += '\r\n<td align="center"><code>' + (!is.undefined(packageData._from) && packageData._from.startsWith('github:') ? packageData._from.slice(7) + '</code>, <code>' + packageData._resolved.slice(7) + '</code> (based on <code>' + packageData._id + '</code>)' : packageData._id + '</code>') + '</td>';
-
-			// Row end
-			readme += '\r\n</tr>';
 		});
 
 		// Table body end
