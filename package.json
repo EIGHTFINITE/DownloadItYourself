@@ -5,7 +5,7 @@
   "engineStrict": true,
   "engines": {
     "node": "12.10.0",
-    "npm": "6.10.3 || 7.5.1"
+    "npm": "6.10.3 || 7.5.1 || 7.5"
   },
   "main": "main.js",
   "author": "EIGHTFINITE",
@@ -23,7 +23,7 @@
     "fast-json-stable-stringify": "2.1.0",
     "fs-extra": "EIGHTFINITE/fs-extra#master",
     "md5-file": "4.0.0",
-    "npm": "7.5.1",
+    "npm": "7.5.2",
     "postman-request": "2.88.1-postman.28",
     "spdx-expression-parse": "EIGHTFINITE/spdx-expression-parse#julienandco",
     "wait-until": "0.0.2"
