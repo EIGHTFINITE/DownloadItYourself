@@ -3271,7 +3271,7 @@
 <td><a href="https://github.com/npm/cli" title="“npm” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A package manager for JavaScript.</td>
-<td align="center"><code>npm@7.5.0</code></td>
+<td align="center"><code>npm@7.5.1</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/@npmcli/arborist" title="npm/@npmcli/arborist"><img src="docs/img/icon/npm.svg" width="62" alt="npm/@npmcli/arborist" title="npm/@npmcli/arborist"></a></td>
@@ -3282,7 +3282,7 @@
 <td><a href="https://github.com/npm/arborist" title="“npm/@npmcli/arborist” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Manage Node_modules trees.<br>Required by npm, npm/libnpmfund.</td>
-<td align="center"><code>@npmcli/arborist@2.1.0</code></td>
+<td align="center"><code>@npmcli/arborist@2.1.1</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/@npmcli/ci-detect" title="npm/@npmcli/ci-detect"><img src="docs/img/icon/npm.svg" width="62" alt="npm/@npmcli/ci-detect" title="npm/@npmcli/ci-detect"></a></td>
@@ -3534,7 +3534,7 @@
 <td><a href="docs/legal/ISC.txt" title="“npm/aproba” license">ISC</a><a href="https://github.com/iarna/aproba" title="“npm/aproba” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“npm/aproba” license information"></a>
 <td><a href="https://github.com/iarna/aproba" title="“npm/aproba” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>A ridiculously light-weight argument validator (now browser friendly).<br>Required by npm, npm/libnpmaccess, npm/libnpmhook, npm/libnpmorg, npm/libnpmteam.</td>
+<td>A ridiculously light-weight argument validator (now browser friendly).<br>Required by npm/libnpmaccess, npm/libnpmhook, npm/libnpmorg, npm/libnpmteam.</td>
 <td align="center"><code>aproba@2.0.0</code></td>
 </tr>
 <tr>
@@ -5251,7 +5251,7 @@
 <td><a href="https://github.com/npm/pacote" title="“npm/pacote” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>JavaScript package downloader.<br>Required by npm, npm/@npmcli/arborist, npm/@npmcli/metavuln-calculator, npm/libnpmdiff, npm/libnpmpack.</td>
-<td align="center"><code>pacote@11.2.3</code></td>
+<td align="center"><code>pacote@11.2.4</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/parse-conflict-json" title="npm/parse-conflict-json"><img src="docs/img/icon/npm.svg" width="62" alt="npm/parse-conflict-json" title="npm/parse-conflict-json"></a></td>
