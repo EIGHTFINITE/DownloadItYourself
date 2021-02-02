@@ -2490,7 +2490,7 @@
 <td><a href="https://github.com/cheeriojs/cheerio" title="“cheerio” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Tiny, fast, and elegant implementation of core jQuery designed specifically for the server.<br>Required by cloudscraper.</td>
-<td align="center"><code>cheeriojs/cheerio#main</code>, <code>cheeriojs/cheerio#8fef5aa3e3ca5fec8a69c86f3d7dc2a0eb7c8e31</code> (based on <code>cheerio@1.0.0-rc.5</code>)</td>
+<td align="center"><code>cheeriojs/cheerio#main</code>, <code>cheeriojs/cheerio#456fbe541b2517ea09f5a90324ffe4110c0cd90e</code> (based on <code>cheerio@1.0.0-rc.5</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/cheerio-select" title="cheerio-select"><img src="docs/img/icon/cheerio.png" width="62" alt="cheerio-select" title="cheerio-select"></a></td>
@@ -3271,7 +3271,7 @@
 <td><a href="https://github.com/npm/cli" title="“npm” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A package manager for JavaScript.</td>
-<td align="center"><code>npm@7.5.1</code></td>
+<td align="center"><code>npm@7.5.2</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/nth-check" title="nth-check"><img src="docs/img/icon/npmjs.svg" width="62" alt="nth-check" title="nth-check"></a></td>
