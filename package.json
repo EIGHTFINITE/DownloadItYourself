@@ -19,7 +19,7 @@
     "@sindresorhus/is": "4.0.0",
     "cheerio": "cheeriojs/cheerio#main",
     "cloudscraper": "EIGHTFINITE/cloudscraper#master",
-    "electron": "11.2.1",
+    "electron": "11.2.2",
     "fast-json-stable-stringify": "2.1.0",
     "fs-extra": "EIGHTFINITE/fs-extra#master",
     "md5-file": "4.0.0",
