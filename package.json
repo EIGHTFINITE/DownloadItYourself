@@ -27,5 +27,18 @@
     "postman-request": "2.88.1-postman.28",
     "spdx-expression-parse": "EIGHTFINITE/spdx-expression-parse#julienandco",
     "wait-until": "0.0.2"
-  }
+  },
+  "bundleDependencies": [
+    "@sindresorhus/is",
+    "cheerio",
+    "cloudscraper",
+    "electron",
+    "fast-json-stable-stringify",
+    "fs-extra",
+    "md5-file",
+    "npm",
+    "postman-request",
+    "spdx-expression-parse",
+    "wait-until"
+  ]
 }
