@@ -134,7 +134,7 @@ jobs:
         export force_no_cache=true
         export npm_config_platform=win32
         export npm_config_arch=ia32
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['dependencies']['electron']") --prefer-online=false --offline=false
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['dependencies']['electron']") --offline=false
         export npm_config_target=$(cat node_modules/electron/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']")
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
         rm -r node_modules/@types/
@@ -158,7 +158,7 @@ jobs:
         
         # Electron Windows x64
         export npm_config_arch=x64
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['dependencies']['electron']") --prefer-online=false --offline=false
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['dependencies']['electron']") --offline=false
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
         rm -r node_modules/@types/
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
@@ -181,7 +181,7 @@ jobs:
         
         # Electron Linux x64
         export npm_config_platform=linux
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['dependencies']['electron']") --prefer-online=false --offline=false
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['dependencies']['electron']") --offline=false
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
         rm -r node_modules/@types/
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
@@ -204,7 +204,7 @@ jobs:
         fi
         
         # Node modules
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --prefer-online=false --offline=false
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --offline=false
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
         rm -r node_modules/@types/
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
@@ -279,7 +279,7 @@ jobs:
         docs/tools/git-config.sh
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git restore --source=artifacts -- bin/
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install npm --prefer-online=false --offline=false
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install npm --offline=false
         sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']") || $(cat node_modules/npm/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']")\"/" package.json
     - uses: peter-evans/create-pull-request@v3.8.0
       with:
@@ -362,7 +362,7 @@ jobs:
         cd EIGHTFINITE-build
         rm -r node_modules/
         rm package-lock.json
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --prefer-online=false --offline=false
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --offline=false
         rm -r node_modules/
         rm package-lock.json
         git checkout -- node_modules/
@@ -397,7 +397,7 @@ jobs:
         cd EIGHTFINITE-build
         rm -r node_modules/
         rm package-lock.json
-        bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install --prefer-online=false --offline=false
+        bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install --offline=false
         rm -r node_modules/
         rm package-lock.json
         git checkout -- node_modules/
@@ -536,7 +536,7 @@ jobs:
         cd EIGHTFINITE-build
         rm -r node_modules/
         rm package-lock.json
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --prefer-online=false --offline=false
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --offline=false
         rm -r node_modules/
         rm package-lock.json
         git checkout -- node_modules/
@@ -571,7 +571,7 @@ jobs:
         cd EIGHTFINITE-build
         rm -r node_modules/
         rm package-lock.json
-        bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install --prefer-online=false --offline=false
+        bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install --offline=false
         rm -r node_modules/
         rm package-lock.json
         git checkout -- node_modules/
