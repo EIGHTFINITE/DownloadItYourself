@@ -9,9 +9,7 @@
 /docs/archive/ export-ignore
 /docs/scripts/ export-ignore
 /README.md export-ignore
-/.dependabot/ export-ignore
 /.github/ export-ignore
-/.dependabot/* linguist-vendored
 /.github/* linguist-vendored
 /bin/* linguist-vendored
 /node_modules/* linguist-vendored
