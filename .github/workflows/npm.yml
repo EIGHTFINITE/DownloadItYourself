@@ -34,6 +34,7 @@ jobs:
         rm -r node_modules/@types/
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
         rm -rf .npm/
+        sed -i '/"@types\/node": "/d' -- 'node_modules/electron/package.json'
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
         rm -rf .npm/
         cd ..
@@ -73,6 +74,7 @@ jobs:
         rm -r node_modules/@types/
         bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd dedupe
         rm -rf .npm/
+        sed -i '/"@types\/node": "/d' -- 'node_modules/electron/package.json'
         bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
         rm -rf .npm/
         cd ..
