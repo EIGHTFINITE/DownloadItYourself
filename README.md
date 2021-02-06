@@ -2237,7 +2237,7 @@
 <td><a href="https://github.com/electron/get" title="“@electron/get” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Utility for downloading artifacts from different versions of Electron.<br>Required by electron.</td>
-<td align="center"><code>@electron/get@1.12.3</code></td>
+<td align="center"><code>@electron/get@1.12.4</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/fs-extra" title="@electron/get/fs-extra"><img src="docs/img/icon/npmjs.svg" width="62" alt="@electron/get/fs-extra" title="@electron/get/fs-extra"></a></td>
@@ -2710,7 +2710,7 @@
 <td><a href="https://github.com/electron/electron" title="“electron” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Build cross platform desktop apps with JavaScript, HTML, and CSS.</td>
-<td align="center"><code>electron@11.2.2</code></td>
+<td align="center"><code>electron@11.2.3</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/end-of-stream" title="end-of-stream"><img src="docs/img/icon/npmjs.svg" width="62" alt="end-of-stream" title="end-of-stream"></a></td>
@@ -2744,17 +2744,6 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Get paths for storing things like data, config, cache, etc.<br>Required by @electron/get.</td>
 <td align="center"><code>env-paths@2.2.0</code></td>
-</tr>
-<tr>
-<td align="center"><a href="https://www.npmjs.com/package/escape-string-regexp" title="escape-string-regexp"><img src="docs/img/icon/npmjs.svg" width="62" alt="escape-string-regexp" title="escape-string-regexp"></a></td>
-<td><a href="https://www.npmjs.com/package/escape-string-regexp" title="escape-string-regexp">escape-string-regexp</a></td>
-<td>Package</td>
-<td><a href="https://github.com/sindresorhus" title="Sindre Sorhus">Sindre Sorhus</a></td>
-<td><a href="docs/legal/MIT.txt" title="“escape-string-regexp” license">MIT</a><a href="https://github.com/sindresorhus/escape-string-regexp" title="“escape-string-regexp” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“escape-string-regexp” license information"></a>
-<td><a href="https://github.com/sindresorhus/escape-string-regexp" title="“escape-string-regexp” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Escape RegExp special characters.<br>Required by strip-outer, trim-repeated.</td>
-<td align="center"><code>escape-string-regexp@1.0.5</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/extend" title="extend"><img src="docs/img/icon/npmjs.svg" width="62" alt="extend" title="extend"></a></td>
@@ -2843,28 +2832,6 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Safely create multiple ReadStream or WriteStream objects from the same file descriptor.<br>Required by yauzl.</td>
 <td align="center"><code>fd-slicer@1.1.0</code></td>
-</tr>
-<tr>
-<td align="center"><a href="https://www.npmjs.com/package/filename-reserved-regex" title="filename-reserved-regex"><img src="docs/img/icon/npmjs.svg" width="62" alt="filename-reserved-regex" title="filename-reserved-regex"></a></td>
-<td><a href="https://www.npmjs.com/package/filename-reserved-regex" title="filename-reserved-regex">filename-reserved-regex</a></td>
-<td>Package</td>
-<td><a href="https://github.com/sindresorhus" title="Sindre Sorhus">Sindre Sorhus</a></td>
-<td><a href="docs/legal/MIT.txt" title="“filename-reserved-regex” license">MIT</a><a href="https://github.com/sindresorhus/filename-reserved-regex" title="“filename-reserved-regex” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“filename-reserved-regex” license information"></a>
-<td><a href="https://github.com/sindresorhus/filename-reserved-regex" title="“filename-reserved-regex” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Regular expression for matching reserved filename characters.<br>Required by filenamify.</td>
-<td align="center"><code>filename-reserved-regex@2.0.0</code></td>
-</tr>
-<tr>
-<td align="center"><a href="https://www.npmjs.com/package/filenamify" title="filenamify"><img src="docs/img/icon/npmjs.svg" width="62" alt="filenamify" title="filenamify"></a></td>
-<td><a href="https://www.npmjs.com/package/filenamify" title="filenamify">filenamify</a></td>
-<td>Package</td>
-<td><a href="https://github.com/sindresorhus" title="Sindre Sorhus">Sindre Sorhus</a></td>
-<td><a href="docs/legal/MIT.txt" title="“filenamify” license">MIT</a><a href="https://github.com/sindresorhus/filenamify" title="“filenamify” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“filenamify” license information"></a>
-<td><a href="https://github.com/sindresorhus/filenamify" title="“filenamify” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Convert a string to a valid safe filename.<br>Required by @electron/get.</td>
-<td align="center"><code>filenamify@4.2.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/forever-agent" title="forever-agent"><img src="docs/img/icon/request.png" width="62" alt="forever-agent" title="forever-agent"></a></td>
@@ -2963,7 +2930,7 @@
 <td><a href="https://github.com/isaacs/node-graceful-fs" title="“graceful-fs” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A drop-in replacement for fs, making various improvements.<br>Required by @electron/get/fs-extra, fs-extra, fs-extra/jsonfile, jsonfile.</td>
-<td align="center"><code>graceful-fs@4.2.4</code></td>
+<td align="center"><code>graceful-fs@4.2.5</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/har-schema" title="har-schema"><img src="docs/img/icon/npmjs.svg" width="62" alt="har-schema" title="har-schema"></a></td>
@@ -3615,17 +3582,6 @@
 <td align="center"><code>string_decoder@1.1.1</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/strip-outer" title="strip-outer"><img src="docs/img/icon/npmjs.svg" width="62" alt="strip-outer" title="strip-outer"></a></td>
-<td><a href="https://www.npmjs.com/package/strip-outer" title="strip-outer">strip-outer</a></td>
-<td>Package</td>
-<td><a href="https://github.com/sindresorhus" title="Sindre Sorhus">Sindre Sorhus</a></td>
-<td><a href="docs/legal/MIT.txt" title="“strip-outer” license">MIT</a><a href="https://github.com/sindresorhus/strip-outer" title="“strip-outer” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“strip-outer” license information"></a>
-<td><a href="https://github.com/sindresorhus/strip-outer" title="“strip-outer” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Strip a substring from the start/end of a string.<br>Required by filenamify.</td>
-<td align="center"><code>strip-outer@1.0.1</code></td>
-</tr>
-<tr>
 <td align="center"><a href="https://www.npmjs.com/package/sumchecker" title="sumchecker"><img src="docs/img/icon/npmjs.svg" width="62" alt="sumchecker" title="sumchecker"></a></td>
 <td><a href="https://www.npmjs.com/package/sumchecker" title="sumchecker">sumchecker</a></td>
 <td>Package</td>
@@ -3657,17 +3613,6 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>RFC6265 Cookies and Cookie Jar for Node.<br>Required by postman-request, request-promise.</td>
 <td align="center"><code>tough-cookie@2.5.0</code></td>
-</tr>
-<tr>
-<td align="center"><a href="https://www.npmjs.com/package/trim-repeated" title="trim-repeated"><img src="docs/img/icon/npmjs.svg" width="62" alt="trim-repeated" title="trim-repeated"></a></td>
-<td><a href="https://www.npmjs.com/package/trim-repeated" title="trim-repeated">trim-repeated</a></td>
-<td>Package</td>
-<td><a href="https://github.com/sindresorhus" title="Sindre Sorhus">Sindre Sorhus</a></td>
-<td><a href="docs/legal/MIT.txt" title="“trim-repeated” license">MIT</a><a href="https://github.com/sindresorhus/trim-repeated" title="“trim-repeated” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“trim-repeated” license information"></a>
-<td><a href="https://github.com/sindresorhus/trim-repeated" title="“trim-repeated” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Trim a consecutively repeated substring: foo--bar---baz → foo-bar-baz.<br>Required by filenamify.</td>
-<td align="center"><code>trim-repeated@1.0.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/tweetnacl" title="tweetnacl"><img src="docs/img/icon/npmjs.svg" width="62" alt="tweetnacl" title="tweetnacl"></a></td>
