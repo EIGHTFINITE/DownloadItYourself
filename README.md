@@ -2490,7 +2490,7 @@
 <td><a href="https://github.com/cheeriojs/cheerio" title="“cheerio” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Tiny, fast, and elegant implementation of core jQuery designed specifically for the server.<br>Required by cloudscraper.</td>
-<td align="center"><code>cheeriojs/cheerio#main</code>, <code>cheeriojs/cheerio#f1127d4dcbe6e8b6cc67dfe61eaaa8ee33f33a45</code> (based on <code>cheerio@1.0.0-rc.5</code>)</td>
+<td align="center"><code>cheeriojs/cheerio#main</code>, <code>cheeriojs/cheerio#182372c5cbe6d4dac4cf2f25162ac54605406e5e</code> (based on <code>cheerio@1.0.0-rc.5</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/cheerio-select" title="cheerio-select"><img src="docs/img/icon/cheerio.png" width="62" alt="cheerio-select" title="cheerio-select"></a></td>
@@ -2501,7 +2501,7 @@
 <td><a href="https://github.com/cheeriojs/cheerio-select" title="“cheerio-select” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>CSS selector engine supporting jQuery selectors.<br>Required by cheerio.</td>
-<td align="center"><code>cheerio-select@1.1.0</code></td>
+<td align="center"><code>cheerio-select@1.2.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/clone-response" title="clone-response"><img src="docs/img/icon/npmjs.svg" width="62" alt="clone-response" title="clone-response"></a></td>
