@@ -2490,7 +2490,7 @@
 <td><a href="https://github.com/cheeriojs/cheerio" title="“cheerio” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Tiny, fast, and elegant implementation of core jQuery designed specifically for the server.<br>Required by cloudscraper.</td>
-<td align="center"><code>cheeriojs/cheerio#main</code>, <code>cheeriojs/cheerio#1a86118d291a57a10052dd82c96bfc7e6b0e9935</code> (based on <code>cheerio@1.0.0-rc.5</code>)</td>
+<td align="center"><code>cheeriojs/cheerio</code>, <code>cheeriojs/cheerio#1a86118d291a57a10052dd82c96bfc7e6b0e9935</code> (based on <code>cheerio@1.0.0-rc.5</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/cheerio-select" title="cheerio-select"><img src="docs/img/icon/cheerio.png" width="62" alt="cheerio-select" title="cheerio-select"></a></td>
@@ -2523,7 +2523,7 @@
 <td><a href="https://github.com/EIGHTFINITE/cloudscraper" title="“cloudscraper” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Bypasses cloudflare's anti-ddos page.</td>
-<td align="center"><code>EIGHTFINITE/cloudscraper#master</code>, <code>EIGHTFINITE/cloudscraper#33fd0b1269920097e8722529eee1abf1bfb2b371</code> (based on <code>cloudscraper@4.6.0</code>)</td>
+<td align="center"><code>EIGHTFINITE/cloudscraper</code>, <code>EIGHTFINITE/cloudscraper#33fd0b1269920097e8722529eee1abf1bfb2b371</code> (based on <code>cloudscraper@4.6.0</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/combined-stream" title="combined-stream"><img src="docs/img/icon/npmjs.svg" width="62" alt="combined-stream" title="combined-stream"></a></td>
@@ -2853,7 +2853,7 @@
 <td><a href="https://github.com/EIGHTFINITE/fs-extra" title="“fs-extra” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Fs-extra contains methods that aren't included in the vanilla Node fs package. Such as recursive mkdir, copy, and remove.</td>
-<td align="center"><code>EIGHTFINITE/fs-extra#master</code>, <code>EIGHTFINITE/fs-extra#dd8c62cea6e1d969a49566e9ffad13630362cb16</code> (based on <code>fs-extra@9.1.0</code>)</td>
+<td align="center"><code>EIGHTFINITE/fs-extra</code>, <code>EIGHTFINITE/fs-extra#dd8c62cea6e1d969a49566e9ffad13630362cb16</code> (based on <code>fs-extra@9.1.0</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/jsonfile" title="fs-extra/jsonfile"><img src="docs/img/icon/npmjs.svg" width="62" alt="fs-extra/jsonfile" title="fs-extra/jsonfile"></a></td>
@@ -3241,6 +3241,28 @@
 <td align="center"><code>npm@7.5.4</code></td>
 </tr>
 <tr>
+<td align="center"><a href="https://github.com/EIGHTFINITE/npm-6" title="npm-6"><img src="docs/img/icon/github.png" width="62" alt="npm-6" title="npm-6"></a></td>
+<td><a href="https://github.com/EIGHTFINITE/npm-6" title="npm-6">npm-6</a></td>
+<td>Package</td>
+<td><a href="https://github.com/EIGHTFINITE" title="EIGHTFINITE">EIGHTFINITE</a></td>
+<td><a href="docs/legal/MIT-0.txt" title="“npm-6” license">MIT-0</a><a href="https://github.com/EIGHTFINITE/npm-6" title="“npm-6” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“npm-6” license information"></a>
+<td><a href="https://github.com/EIGHTFINITE/npm-6" title="“npm-6” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Depends on npm 6 to add it to the pool of dependencies even if your project already depends on another version of npm.</td>
+<td align="center"><code>EIGHTFINITE/npm-6</code>, <code>EIGHTFINITE/npm-6#8d0afa503490607430d560e65c895cf21a08fef6</code> (based on <code>npm-6@0.0.0-latest-6</code>)</td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/npm" title="npm-6/npm"><img src="docs/img/icon/npm.svg" width="62" alt="npm-6/npm" title="npm-6/npm"></a></td>
+<td><a href="https://www.npmjs.com/package/npm" title="npm-6/npm">npm-6/npm</a></td>
+<td>Package</td>
+<td><a href="https://github.com/npm" title="Isaac Z. Schlueter">Isaac Z. Schlueter</a></td>
+<td><a href="docs/legal/Artistic-2.0.txt" title="“npm-6/npm” license">Artistic-2.0</a><a href="https://github.com/npm/cli" title="“npm-6/npm” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“npm-6/npm” license information"></a>
+<td><a href="https://github.com/npm/cli" title="“npm-6/npm” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>A package manager for JavaScript.<br>Required by npm-6.</td>
+<td align="center"><code>npm@6.14.11</code></td>
+</tr>
+<tr>
 <td align="center"><a href="https://www.npmjs.com/package/nth-check" title="nth-check"><img src="docs/img/icon/npmjs.svg" width="62" alt="nth-check" title="nth-check"></a></td>
 <td><a href="https://www.npmjs.com/package/nth-check" title="nth-check">nth-check</a></td>
 <td>Package</td>
@@ -3513,7 +3535,7 @@
 <td><a href="https://github.com/EIGHTFINITE/spdx-expression-parse" title="“spdx-expression-parse” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Parse SPDX license expressions.</td>
-<td align="center"><code>EIGHTFINITE/spdx-expression-parse#julienandco</code>, <code>EIGHTFINITE/spdx-expression-parse#7411cea7a6ae79d63b8669a8b3252b3986f287c9</code> (based on <code>spdx-expression-parse@3.0.0</code>)</td>
+<td align="center"><code>EIGHTFINITE/spdx-expression-parse</code>, <code>EIGHTFINITE/spdx-expression-parse#7411cea7a6ae79d63b8669a8b3252b3986f287c9</code> (based on <code>spdx-expression-parse@3.0.0</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/spdx-license-ids" title="spdx-license-ids"><img src="docs/img/icon/jslicense.png" width="62" alt="spdx-license-ids" title="spdx-license-ids"></a></td>
