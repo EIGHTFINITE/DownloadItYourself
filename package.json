@@ -17,15 +17,16 @@
   },
   "dependencies": {
     "@sindresorhus/is": "4.0.0",
-    "cheerio": "cheeriojs/cheerio#main",
-    "cloudscraper": "EIGHTFINITE/cloudscraper#master",
+    "cheerio": "cheeriojs/cheerio",
+    "cloudscraper": "EIGHTFINITE/cloudscraper",
     "electron": "11.2.3",
     "fast-json-stable-stringify": "2.1.0",
-    "fs-extra": "EIGHTFINITE/fs-extra#master",
+    "fs-extra": "EIGHTFINITE/fs-extra",
     "md5-file": "4.0.0",
-    "npm": "7.5.4",
+    "npm-6": "EIGHTFINITE/npm-6",
+    "npm-latest": "EIGHTFINITE/npm-latest",
     "postman-request": "2.88.1-postman.28",
-    "spdx-expression-parse": "EIGHTFINITE/spdx-expression-parse#julienandco",
+    "spdx-expression-parse": "EIGHTFINITE/spdx-expression-parse",
     "wait-until": "0.0.2"
   },
   "bundleDependencies": [
@@ -36,7 +37,8 @@
     "fast-json-stable-stringify",
     "fs-extra",
     "md5-file",
-    "npm",
+    "npm-6",
+    "npm-latest",
     "postman-request",
     "spdx-expression-parse",
     "wait-until"
