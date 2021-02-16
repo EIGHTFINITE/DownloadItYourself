@@ -26,7 +26,7 @@
     "npm": "7.5.4",
     "npm-6": "EIGHTFINITE/npm-6",
     "postman-request": "2.88.1-postman.28",
-    "spdx-expression-parse": "EIGHTFINITE/spdx-expression-parse",
+    "spdx-expression-parse": "^3.0.1",
     "wait-until": "0.0.2"
   },
   "bundleDependencies": [
