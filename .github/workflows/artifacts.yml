@@ -323,6 +323,7 @@ jobs:
         docs/tools/git-config.sh
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git restore --source=artifacts -- bin/
+        git restore --source=artifacts -- node_modules/npm-6/
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js install npm --offline=false
         rm -rf .npm/
         sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat node_modules/npm-6/node_modules/npm/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']") || $(cat node_modules/npm/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']")\"/" package.json
