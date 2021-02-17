@@ -242,6 +242,7 @@ jobs:
         mkdir -p "node_modules/npm-6/node_modules/npm"
         tar -xzf "npm.tar.gz" --strip-components=1 -C "node_modules/npm-6/node_modules/npm"
         rm "npm.tar.gz"
+        sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat node_modules/npm-6/node_modules/npm/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']") || $(cat node_modules/npm/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']")\"/" package.json
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js install --offline=false
         rm -rf .npm/
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js dedupe
@@ -261,6 +262,7 @@ jobs:
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"package-lock.json" | sed -n 1p
         export merge_commit="$(git log -1 --format=%H)"
         git checkout -- '.gitignore'
+        git checkout -- 'package.json'
         if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
