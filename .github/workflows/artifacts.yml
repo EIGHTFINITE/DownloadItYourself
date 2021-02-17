@@ -147,13 +147,16 @@ jobs:
         export force_no_cache=true
         export npm_config_platform=win32
         export npm_config_arch=ia32
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['dependencies']['electron']") --offline=false
+        wget -nv -O "npm.tar.gz" "https://registry.npmjs.org/npm/-/npm-$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print json.load(sys.stdin)['dist-tags']['latest-6']").tgz"
+        mkdir -p "node_modules/npm-6/node_modules/npm"
+        tar -xzf "npm.tar.gz" --strip-components=1 -C "node_modules/npm-6/node_modules/npm"
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['dependencies']['electron']") --offline=false
         rm -rf .npm/
         export npm_config_target=$(cat node_modules/electron/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']")
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js dedupe
         rm -rf .npm/
         rm -r node_modules/@types/
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js dedupe
         rm -rf .npm/
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
         mkdir -p "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32"
@@ -174,12 +177,15 @@ jobs:
         
         # Electron Windows x64
         export npm_config_arch=x64
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['dependencies']['electron']") --offline=false
+        wget -nv -O "npm.tar.gz" "https://registry.npmjs.org/npm/-/npm-$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print json.load(sys.stdin)['dist-tags']['latest-6']").tgz"
+        mkdir -p "node_modules/npm-6/node_modules/npm"
+        tar -xzf "npm.tar.gz" --strip-components=1 -C "node_modules/npm-6/node_modules/npm"
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['dependencies']['electron']") --offline=false
         rm -rf .npm/
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js dedupe
         rm -rf .npm/
         rm -r node_modules/@types/
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js dedupe
         rm -rf .npm/
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
         mkdir -p "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
@@ -200,12 +206,15 @@ jobs:
         
         # Electron Linux x64
         export npm_config_platform=linux
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['dependencies']['electron']") --offline=false
+        wget -nv -O "npm.tar.gz" "https://registry.npmjs.org/npm/-/npm-$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print json.load(sys.stdin)['dist-tags']['latest-6']").tgz"
+        mkdir -p "node_modules/npm-6/node_modules/npm"
+        tar -xzf "npm.tar.gz" --strip-components=1 -C "node_modules/npm-6/node_modules/npm"
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['dependencies']['electron']") --offline=false
         rm -rf .npm/
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js dedupe
         rm -rf .npm/
         rm -r node_modules/@types/
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js dedupe
         rm -rf .npm/
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
         mkdir -p "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64"
@@ -226,12 +235,15 @@ jobs:
         fi
         
         # Node modules
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --offline=false
+        wget -nv -O "npm.tar.gz" "https://registry.npmjs.org/npm/-/npm-$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print json.load(sys.stdin)['dist-tags']['latest-6']").tgz"
+        mkdir -p "node_modules/npm-6/node_modules/npm"
+        tar -xzf "npm.tar.gz" --strip-components=1 -C "node_modules/npm-6/node_modules/npm"
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js install --offline=false
         rm -rf .npm/
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js dedupe
         rm -rf .npm/
         rm -r node_modules/@types/
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js dedupe
         rm -rf .npm/
         find node_modules/ -mindepth 2 -type d \( -name '.github' -o -name 'docs' -o -name 'example' -o -name 'test' \) | xargs rm -r
         find node_modules/ -mindepth 2 -type f \( -name '*.d.ts' -o -name '*.d.ts.map' -o -name '*.js.map' -o -name '.eslintrc.yml' -o -name '.gitmodules' -o -name '.npmignore' -o -name '.travis.yml' -o -name 'yarn.lock' \) -exec bash -c 'rm "$1"; rmdir --ignore-fail-on-non-empty $(dirname "$1")' bash '{}' ';'
@@ -305,7 +317,7 @@ jobs:
         docs/tools/git-config.sh
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git restore --source=artifacts -- bin/
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install npm --offline=false
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js install npm --offline=false
         rm -rf .npm/
         sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat node_modules/npm-6/node_modules/npm/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']") || $(cat node_modules/npm/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']")\"/" package.json
     - uses: peter-evans/create-pull-request@v3.8.2
@@ -391,10 +403,10 @@ jobs:
         cp EIGHTFINITE-build/.npmrc .npmrc
         sudo ln -sf "$(pwd)/EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
         cd EIGHTFINITE-build
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
         rm -rf .npm/
         cd ..
-        EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build
+        EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node EIGHTFINITE-build/node_modules/npm-6/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build
         rm -rf .npm/
   artifacts_npm_windows:
     runs-on: windows-latest
@@ -562,10 +574,10 @@ jobs:
         cp EIGHTFINITE-build/.npmrc .npmrc
         sudo ln -sf "$(pwd)/EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
         cd EIGHTFINITE-build
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
         rm -rf .npm/
         cd ..
-        EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build
+        EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node EIGHTFINITE-build/node_modules/npm-6/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build
         rm -rf .npm/
   release_npm_windows:
     runs-on: windows-latest
