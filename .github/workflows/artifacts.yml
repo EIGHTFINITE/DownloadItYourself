@@ -150,6 +150,7 @@ jobs:
         wget -nv -O "npm.tar.gz" "https://registry.npmjs.org/npm/-/npm-$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print json.load(sys.stdin)['dist-tags']['latest-6']").tgz"
         mkdir -p "node_modules/npm-6/node_modules/npm"
         tar -xzf "npm.tar.gz" --strip-components=1 -C "node_modules/npm-6/node_modules/npm"
+        rm "npm.tar.gz"
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['dependencies']['electron']") EIGHTFINITE/npm-6 --offline=false
         rm -rf .npm/
         export npm_config_target=$(cat node_modules/electron/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']")
@@ -180,6 +181,7 @@ jobs:
         wget -nv -O "npm.tar.gz" "https://registry.npmjs.org/npm/-/npm-$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print json.load(sys.stdin)['dist-tags']['latest-6']").tgz"
         mkdir -p "node_modules/npm-6/node_modules/npm"
         tar -xzf "npm.tar.gz" --strip-components=1 -C "node_modules/npm-6/node_modules/npm"
+        rm "npm.tar.gz"
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['dependencies']['electron']") EIGHTFINITE/npm-6 --offline=false
         rm -rf .npm/
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js dedupe
@@ -209,6 +211,7 @@ jobs:
         wget -nv -O "npm.tar.gz" "https://registry.npmjs.org/npm/-/npm-$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print json.load(sys.stdin)['dist-tags']['latest-6']").tgz"
         mkdir -p "node_modules/npm-6/node_modules/npm"
         tar -xzf "npm.tar.gz" --strip-components=1 -C "node_modules/npm-6/node_modules/npm"
+        rm "npm.tar.gz"
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['dependencies']['electron']") EIGHTFINITE/npm-6 --offline=false
         rm -rf .npm/
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js dedupe
@@ -238,6 +241,7 @@ jobs:
         wget -nv -O "npm.tar.gz" "https://registry.npmjs.org/npm/-/npm-$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print json.load(sys.stdin)['dist-tags']['latest-6']").tgz"
         mkdir -p "node_modules/npm-6/node_modules/npm"
         tar -xzf "npm.tar.gz" --strip-components=1 -C "node_modules/npm-6/node_modules/npm"
+        rm "npm.tar.gz"
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js install --offline=false
         rm -rf .npm/
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js dedupe
