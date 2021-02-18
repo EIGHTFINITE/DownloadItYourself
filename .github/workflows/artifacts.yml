@@ -163,6 +163,7 @@ jobs:
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
         mkdir -p "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32"
         mv -T node_modules/electron/dist "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32"
+        rm -r bin/all/
         rm -r node_modules/
         rm package-lock.json
         if [[ $(stat -c%s "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32/electron.exe") -gt 104857600 ]]; then
@@ -193,6 +194,7 @@ jobs:
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
         mkdir -p "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
         mv -T node_modules/electron/dist "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
+        rm -r bin/all/
         rm -r node_modules/
         rm package-lock.json
         if [[ $(stat -c%s "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64/electron.exe") -gt 104857600 ]]; then
@@ -223,6 +225,7 @@ jobs:
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
         mkdir -p "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64"
         mv -T node_modules/electron/dist "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64"
+        rm -r bin/all/
         rm -r node_modules/
         rm package-lock.json
         if [[ $(stat -c%s "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/electron") -gt 104857600 ]]; then
@@ -250,6 +253,7 @@ jobs:
         rm -r node_modules/@types/
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
         rm -rf .npm/
+        rm -r bin/all/
         find node_modules/ -mindepth 2 -type d \( -name '.github' -o -name 'docs' -o -name 'example' -o -name 'test' \) | xargs rm -r
         find node_modules/ -mindepth 2 -type f \( -name '*.d.ts' -o -name '*.d.ts.map' -o -name '*.js.map' -o -name '.eslintrc.yml' -o -name '.gitmodules' -o -name '.npmignore' -o -name '.travis.yml' -o -name 'yarn.lock' \) -exec bash -c 'rm "$1"; rmdir --ignore-fail-on-non-empty $(dirname "$1")' bash '{}' ';'
         find node_modules/ -mindepth 2 -type f -name 'package.json' -exec sed -i '/"_where": "/d' -- '{}' ';'
