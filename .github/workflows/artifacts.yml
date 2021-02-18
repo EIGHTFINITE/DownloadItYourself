@@ -443,10 +443,10 @@ jobs:
       shell: bash
       run: |
         cd EIGHTFINITE-build
-        bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
+        bin/windows/x64/node/node-v12.10.0-win-x64/node.exe node_modules/npm-6/node_modules/npm/bin/npm-cli.js ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
         rm -rf .npm/
         cd ..
-        EIGHTFINITE-build/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install .\\EIGHTFINITE-build
+        EIGHTFINITE-build/bin/windows/x64/node/node-v12.10.0-win-x64/node.exe EIGHTFINITE-build/node_modules/npm-6/node_modules/npm/bin/npm-cli.js install .\\EIGHTFINITE-build
         rm -rf .npm/
   artifacts_audit_linux:
     runs-on: ubuntu-latest
@@ -614,10 +614,10 @@ jobs:
       shell: bash
       run: |
         cd EIGHTFINITE-build
-        bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
+        bin/windows/x64/node/node-v12.10.0-win-x64/node.exe node_modules/npm-6/node_modules/npm/bin/npm-cli.js ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
         rm -rf .npm/
         cd ..
-        EIGHTFINITE-build/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install .\\EIGHTFINITE-build
+        EIGHTFINITE-build/bin/windows/x64/node/node-v12.10.0-win-x64/node.exe EIGHTFINITE-build/node_modules/npm-6/node_modules/npm/bin/npm-cli.js install .\\EIGHTFINITE-build
         rm -rf .npm/
   release_audit_linux:
     runs-on: ubuntu-latest
