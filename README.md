@@ -2490,7 +2490,7 @@
 <td><a href="https://github.com/cheeriojs/cheerio" title="“cheerio” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Tiny, fast, and elegant implementation of core jQuery designed specifically for the server.<br>Required by cloudscraper.</td>
-<td align="center"><code>cheeriojs/cheerio</code>, <code>cheeriojs/cheerio#1a86118d291a57a10052dd82c96bfc7e6b0e9935</code> (based on <code>cheerio@1.0.0-rc.5</code>)</td>
+<td align="center"><code>cheeriojs/cheerio</code>, <code>cheeriojs/cheerio#638c62a0938e78d7b1664114690a53f9799917d1</code> (based on <code>cheerio@1.0.0-rc.5</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/cheerio-select" title="cheerio-select"><img src="docs/img/icon/cheerio.png" width="62" alt="cheerio-select" title="cheerio-select"></a></td>
@@ -3161,7 +3161,7 @@
 <td><a href="https://github.com/jshttp/mime-db" title="“mime-db” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Media Type Database.<br>Required by mime-types.</td>
-<td align="center"><code>mime-db@1.45.0</code></td>
+<td align="center"><code>mime-db@1.46.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/mime-types" title="mime-types"><img src="docs/img/icon/npmjs.svg" width="62" alt="mime-types" title="mime-types"></a></td>
@@ -3172,7 +3172,7 @@
 <td><a href="https://github.com/jshttp/mime-types" title="“mime-types” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>The ultimate javascript content-type utility.<br>Required by @postman/form-data, postman-request.</td>
-<td align="center"><code>mime-types@2.1.28</code></td>
+<td align="center"><code>mime-types@2.1.29</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/mimic-response" title="mimic-response"><img src="docs/img/icon/npmjs.svg" width="62" alt="mimic-response" title="mimic-response"></a></td>
