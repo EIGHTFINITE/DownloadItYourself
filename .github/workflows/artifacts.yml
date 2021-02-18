@@ -151,7 +151,7 @@ jobs:
         mkdir -p "node_modules/npm-6/node_modules/npm"
         tar -xzf "npm.tar.gz" --strip-components=1 -C "node_modules/npm-6/node_modules/npm"
         rm "npm.tar.gz"
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['dependencies']['electron']") EIGHTFINITE/npm-6 --force --offline=false
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['dependencies']['electron']") EIGHTFINITE/npm-6 --offline=false
         rm -rf .npm/
         export npm_config_target=$(cat node_modules/electron/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']")
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js dedupe
@@ -182,7 +182,7 @@ jobs:
         mkdir -p "node_modules/npm-6/node_modules/npm"
         tar -xzf "npm.tar.gz" --strip-components=1 -C "node_modules/npm-6/node_modules/npm"
         rm "npm.tar.gz"
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['dependencies']['electron']") EIGHTFINITE/npm-6 --force --offline=false
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['dependencies']['electron']") EIGHTFINITE/npm-6 --offline=false
         rm -rf .npm/
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js dedupe
         rm -rf .npm/
@@ -212,7 +212,7 @@ jobs:
         mkdir -p "node_modules/npm-6/node_modules/npm"
         tar -xzf "npm.tar.gz" --strip-components=1 -C "node_modules/npm-6/node_modules/npm"
         rm "npm.tar.gz"
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['dependencies']['electron']") EIGHTFINITE/npm-6 --force --offline=false
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['dependencies']['electron']") EIGHTFINITE/npm-6 --offline=false
         rm -rf .npm/
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js dedupe
         rm -rf .npm/
@@ -242,7 +242,7 @@ jobs:
         mkdir -p "node_modules/npm-6/node_modules/npm"
         tar -xzf "npm.tar.gz" --strip-components=1 -C "node_modules/npm-6/node_modules/npm"
         rm "npm.tar.gz"
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js install --force --offline=false
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js install --offline=false
         rm -rf .npm/
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js dedupe
         rm -rf .npm/
@@ -322,7 +322,7 @@ jobs:
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git restore --source=artifacts -- bin/
         git restore --source=artifacts -- node_modules/npm-6/
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js install npm EIGHTFINITE/npm-6 --force --offline=false
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js install npm --offline=false
         rm -rf .npm/
         sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat node_modules/npm-6/node_modules/npm/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']") || $(cat node_modules/npm/package.json | python -c "import sys, json; print json.load(sys.stdin)['version']")\"/" package.json
     - uses: peter-evans/create-pull-request@v3.8.2
