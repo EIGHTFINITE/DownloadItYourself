@@ -27,18 +27,23 @@ jobs:
         cp EIGHTFINITE-build/.npmrc .npmrc
         sudo ln -sf "$(pwd)/EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
         cd EIGHTFINITE-build
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --offline=false
+        export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print json.load(sys.stdin)['dist-tags']['latest-6']")
+        wget -nv -O "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
+        mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
+        tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
+        rm "npm-$npm_version.tgz"
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --offline=false
         rm -rf .npm/
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
         rm -rf .npm/
         rm -r node_modules/@types/
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
         rm -rf .npm/
         sed -i '/"@types\/node": "/d' -- 'node_modules/electron/package.json'
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
         rm -rf .npm/
         cd ..
-        EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build
+        EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node EIGHTFINITE-build/bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install ./EIGHTFINITE-build
         rm -rf .npm/
   npm_windows:
     runs-on: windows-latest
@@ -67,18 +72,36 @@ jobs:
       shell: bash
       run: |
         cd EIGHTFINITE-build
-        bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install --offline=false
+        export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
+        echo -n "$npm_version" > npm_version.txt
+        echo -n "C:\\msys64\\usr\\bin\\wget.exe -nv -O \"EIGHTFINITE-build\npm-$npm_version.tgz\" \"https://registry.npmjs.org/npm/-/npm-$npm_version.tgz\"" > wget_npm.bat
+        cd ..
+    - name: npm
+      shell: cmd
+      run: |
+        EIGHTFINITE-build\wget_npm.bat
+    - name: npm
+      shell: bash
+      run: |
+        cd EIGHTFINITE-build
+        rm wget_npm.bat
+        export npm_version=$(cat npm_version.txt)
+        rm npm_version.txt
+        mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
+        tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
+        rm "npm-$npm_version.tgz"
+        bin/windows/x64/node/node-v12.10.0-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --offline=false
         rm -rf .npm/
-        bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd dedupe
+        bin/windows/x64/node/node-v12.10.0-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
         rm -rf .npm/
         rm -r node_modules/@types/
-        bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd dedupe
+        bin/windows/x64/node/node-v12.10.0-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
         rm -rf .npm/
         sed -i '/"@types\/node": "/d' -- 'node_modules/electron/package.json'
-        bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
+        bin/windows/x64/node/node-v12.10.0-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js ls --unicode=false --loglevel=silent | grep -v ' deduped' || true
         rm -rf .npm/
         cd ..
-        EIGHTFINITE-build/bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install .\\EIGHTFINITE-build
+        EIGHTFINITE-build/bin/windows/x64/node/node-v12.10.0-win-x64/node.exe EIGHTFINITE-build/bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install .\\EIGHTFINITE-build
         rm -rf .npm/
   audit_linux:
     runs-on: ubuntu-latest
@@ -95,15 +118,18 @@ jobs:
         docs/tools/git-config.sh
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git restore --source=artifacts -- bin/
-        cd ..
-        sudo ln -sf "$(pwd)/EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
-        cd EIGHTFINITE-build
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --offline=false
+        sudo ln -sf "$(pwd)/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
+        export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print json.load(sys.stdin)['dist-tags']['latest-6']")
+        wget -nv -O "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
+        mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
+        tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
+        rm "npm-$npm_version.tgz"
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --offline=false
         rm -rf .npm/
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
         rm -rf .npm/
         rm -r node_modules/@types/
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/linux/x64/node/node-v12.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
         rm -rf .npm/
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm/bin/npm-cli.js audit
         rm -rf .npm/
@@ -133,12 +159,30 @@ jobs:
       shell: bash
       run: |
         cd EIGHTFINITE-build
-        bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd install --offline=false
+        export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
+        echo -n "$npm_version" > npm_version.txt
+        echo -n "C:\\msys64\\usr\\bin\\wget.exe -nv -O \"EIGHTFINITE-build\npm-$npm_version.tgz\" \"https://registry.npmjs.org/npm/-/npm-$npm_version.tgz\"" > wget_npm.bat
+        cd ..
+    - name: npm
+      shell: cmd
+      run: |
+        EIGHTFINITE-build\wget_npm.bat
+    - name: npm
+      shell: bash
+      run: |
+        cd EIGHTFINITE-build
+        rm wget_npm.bat
+        export npm_version=$(cat npm_version.txt)
+        rm npm_version.txt
+        mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
+        tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
+        rm "npm-$npm_version.tgz"
+        bin/windows/x64/node/node-v12.10.0-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --offline=false
         rm -rf .npm/
-        bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd dedupe
+        bin/windows/x64/node/node-v12.10.0-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
         rm -rf .npm/
         rm -r node_modules/@types/
-        bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd dedupe
+        bin/windows/x64/node/node-v12.10.0-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
         rm -rf .npm/
         bin/windows/x64/node/node-v12.10.0-win-x64/node.exe node_modules/npm/bin/npm-cli.js audit
         rm -rf .npm/
