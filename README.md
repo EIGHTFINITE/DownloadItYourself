@@ -3128,7 +3128,7 @@
 <td><a href="https://github.com/lodash/lodash" title="“lodash” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Lodash modular utilities.<br>Required by global-tunnel-ng, request-promise-core.</td>
-<td align="center"><code>lodash@4.17.20</code></td>
+<td align="center"><code>lodash@4.17.21</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/lowercase-keys" title="lowercase-keys"><img src="docs/img/icon/npmjs.svg" width="62" alt="lowercase-keys" title="lowercase-keys"></a></td>
