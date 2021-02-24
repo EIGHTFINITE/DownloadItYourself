@@ -251,6 +251,22 @@ jobs:
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
         rm -rf .npm/
         rm -r node_modules/@types/
+        rm -r node_modules/buffer-crc32/
+        rm -r node_modules/buffer-from/
+        rm -r node_modules/concat-stream/
+        rm -r node_modules/extract-zip/
+        rm -r node_modules/fd-slicer/
+        rm -r node_modules/inherits/
+        rm -r node_modules/isarray/
+        rm -r node_modules/minimist/
+        rm -r node_modules/mkdirp/
+        rm -r node_modules/pend/
+        rm -r node_modules/process-nextick-args/
+        rm -r node_modules/readable-stream/
+        rm -r node_modules/string_decoder/
+        rm -r node_modules/typedarray/
+        rm -r node_modules/util-deprecate/
+        rm -r node_modules/yauzl/
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
         rm -rf .npm/
         rm -r bin/all/
