@@ -2416,28 +2416,6 @@
 <td align="center"><code>brotli@1.3.2</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/buffer-crc32" title="buffer-crc32"><img src="docs/img/icon/npmjs.svg" width="62" alt="buffer-crc32" title="buffer-crc32"></a></td>
-<td><a href="https://www.npmjs.com/package/buffer-crc32" title="buffer-crc32">buffer-crc32</a></td>
-<td>Package</td>
-<td><a href="https://github.com/brianloveswords" title="Brian J. Brennan">Brian J. Brennan</a></td>
-<td><a href="docs/legal/MIT.txt" title="“buffer-crc32” license">MIT</a><a href="https://github.com/brianloveswords/buffer-crc32" title="“buffer-crc32” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“buffer-crc32” license information"></a>
-<td><a href="https://github.com/brianloveswords/buffer-crc32" title="“buffer-crc32” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>A pure javascript CRC32 algorithm that plays nice with binary data.<br>Required by yauzl.</td>
-<td align="center"><code>buffer-crc32@0.2.13</code></td>
-</tr>
-<tr>
-<td align="center"><a href="https://www.npmjs.com/package/buffer-from" title="buffer-from"><img src="docs/img/icon/npmjs.svg" width="62" alt="buffer-from" title="buffer-from"></a></td>
-<td><a href="https://www.npmjs.com/package/buffer-from" title="buffer-from">buffer-from</a></td>
-<td>Package</td>
-<td><a href="https://github.com/LinusU" title="Linus Unnebäck">Linus Unnebäck</a></td>
-<td><a href="docs/legal/MIT.txt" title="“buffer-from” license">MIT</a><a href="https://github.com/LinusU/buffer-from" title="“buffer-from” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“buffer-from” license information"></a>
-<td><a href="https://github.com/LinusU/buffer-from" title="“buffer-from” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>A ponyfill for `Buffer.from`, uses native implementation if available.<br>Required by concat-stream.</td>
-<td align="center"><code>buffer-from@1.1.1</code></td>
-</tr>
-<tr>
 <td align="center"><a href="https://www.npmjs.com/package/cacheable-request" title="cacheable-request"><img src="docs/img/icon/npmjs.svg" width="62" alt="cacheable-request" title="cacheable-request"></a></td>
 <td><a href="https://www.npmjs.com/package/cacheable-request" title="cacheable-request">cacheable-request</a></td>
 <td>Package</td>
@@ -2490,7 +2468,7 @@
 <td><a href="https://github.com/cheeriojs/cheerio" title="“cheerio” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Tiny, fast, and elegant implementation of core jQuery designed specifically for the server.<br>Required by cloudscraper.</td>
-<td align="center"><code>cheeriojs/cheerio</code>, <code>cheeriojs/cheerio#732d539ef242282b80dd2ecde644b1f2122c18cf</code> (based on <code>cheerio@1.0.0-rc.5</code>)</td>
+<td align="center"><code>cheeriojs/cheerio</code>, <code>cheeriojs/cheerio#253cfe5dc6e77753f0d97d6b7067af8cf5bcc4cb</code> (based on <code>cheerio@1.0.0-rc.5</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/cheerio-select" title="cheerio-select"><img src="docs/img/icon/cheerio.png" width="62" alt="cheerio-select" title="cheerio-select"></a></td>
@@ -2535,17 +2513,6 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A stream that emits multiple other streams one after another.<br>Required by @postman/form-data, postman-request.</td>
 <td align="center"><code>combined-stream@1.0.8</code></td>
-</tr>
-<tr>
-<td align="center"><a href="https://www.npmjs.com/package/concat-stream" title="concat-stream"><img src="docs/img/icon/npmjs.svg" width="62" alt="concat-stream" title="concat-stream"></a></td>
-<td><a href="https://www.npmjs.com/package/concat-stream" title="concat-stream">concat-stream</a></td>
-<td>Package</td>
-<td><a href="https://github.com/maxogden" title="Max Ogden">Max Ogden</a></td>
-<td><a href="docs/legal/MIT.txt" title="“concat-stream” license">MIT</a><a href="https://github.com/maxogden/concat-stream" title="“concat-stream” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“concat-stream” license information"></a>
-<td><a href="https://github.com/maxogden/concat-stream" title="“concat-stream” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Writable stream that concatenates strings or binary data and calls a callback with the result.<br>Required by extract-zip.</td>
-<td align="center"><code>concat-stream@1.6.2</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/core-util-is" title="core-util-is"><img src="docs/img/icon/npmjs.svg" width="62" alt="core-util-is" title="core-util-is"></a></td>
@@ -2757,39 +2724,6 @@
 <td align="center"><code>extend@3.0.2</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/extract-zip" title="extract-zip"><img src="docs/img/icon/npmjs.svg" width="62" alt="extract-zip" title="extract-zip"></a></td>
-<td><a href="https://www.npmjs.com/package/extract-zip" title="extract-zip">extract-zip</a></td>
-<td>Package</td>
-<td><a href="https://github.com/maxogden" title="Max Ogden">Max Ogden</a>, <a href="https://github.com/maxogden/extract-zip/graphs/contributors" title="extract-zip contributors">extract-zip contributors</a></td>
-<td><a href="docs/legal/BSD-2-Clause.txt" title="“extract-zip” license">BSD-2-Clause</a><a href="https://github.com/maxogden/extract-zip" title="“extract-zip” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“extract-zip” license information"></a>
-<td><a href="https://github.com/maxogden/extract-zip" title="“extract-zip” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Unzip a zip file into a directory using 100% javascript.<br>Required by electron.</td>
-<td align="center"><code>extract-zip@1.7.0</code></td>
-</tr>
-<tr>
-<td align="center"><a href="https://www.npmjs.com/package/debug" title="extract-zip/debug"><img src="docs/img/icon/npmjs.svg" width="62" alt="extract-zip/debug" title="extract-zip/debug"></a></td>
-<td><a href="https://www.npmjs.com/package/debug" title="extract-zip/debug">extract-zip/debug</a></td>
-<td>Package</td>
-<td><a href="https://github.com/tj" title="TJ Holowaychuk">TJ Holowaychuk</a></td>
-<td><a href="docs/legal/MIT.txt" title="“extract-zip/debug” license">MIT</a><a href="https://github.com/visionmedia/debug" title="“extract-zip/debug” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“extract-zip/debug” license information"></a>
-<td><a href="https://github.com/visionmedia/debug" title="“extract-zip/debug” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Small debugging utility.<br>Required by extract-zip.</td>
-<td align="center"><code>debug@2.6.9</code></td>
-</tr>
-<tr>
-<td align="center"><a href="https://www.npmjs.com/package/ms" title="extract-zip/ms"><img src="docs/img/icon/zeit.png" width="62" alt="extract-zip/ms" title="extract-zip/ms"></a></td>
-<td><a href="https://www.npmjs.com/package/ms" title="extract-zip/ms">extract-zip/ms</a></td>
-<td>Package</td>
-<td><a href="https://github.com/zeit" title="ZEIT">ZEIT</a></td>
-<td><a href="docs/legal/MIT.txt" title="“extract-zip/ms” license">MIT</a><a href="https://github.com/zeit/ms" title="“extract-zip/ms” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“extract-zip/ms” license information"></a>
-<td><a href="https://github.com/zeit/ms" title="“extract-zip/ms” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Tiny milisecond conversion utility.<br>Required by extract-zip/debug.</td>
-<td align="center"><code>ms@2.0.0</code></td>
-</tr>
-<tr>
 <td align="center"><a href="https://www.npmjs.com/package/extsprintf" title="extsprintf"><img src="docs/img/icon/joyent.png" width="62" alt="extsprintf" title="extsprintf"></a></td>
 <td><a href="https://www.npmjs.com/package/extsprintf" title="extsprintf">extsprintf</a></td>
 <td>Package</td>
@@ -2821,17 +2755,6 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Deterministic `JSON.stringify()` - a faster version of substack's json-stable-strigify without jsonify.<br>Required by ajv.</td>
 <td align="center"><code>fast-json-stable-stringify@2.1.0</code></td>
-</tr>
-<tr>
-<td align="center"><a href="https://www.npmjs.com/package/fd-slicer" title="fd-slicer"><img src="docs/img/icon/npmjs.svg" width="62" alt="fd-slicer" title="fd-slicer"></a></td>
-<td><a href="https://www.npmjs.com/package/fd-slicer" title="fd-slicer">fd-slicer</a></td>
-<td>Package</td>
-<td><a href="https://github.com/andrewrk" title="Andrew Kelley">Andrew Kelley</a></td>
-<td><a href="docs/legal/MIT.txt" title="“fd-slicer” license">MIT</a><a href="https://github.com/andrewrk/node-fd-slicer" title="“fd-slicer” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“fd-slicer” license information"></a>
-<td><a href="https://github.com/andrewrk/node-fd-slicer" title="“fd-slicer” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Safely create multiple ReadStream or WriteStream objects from the same file descriptor.<br>Required by yauzl.</td>
-<td align="center"><code>fd-slicer@1.1.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/forever-agent" title="forever-agent"><img src="docs/img/icon/request.png" width="62" alt="forever-agent" title="forever-agent"></a></td>
@@ -2988,17 +2911,6 @@
 <td align="center"><code>http-signature@1.3.5</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/inherits" title="inherits"><img src="docs/img/icon/npmjs.svg" width="62" alt="inherits" title="inherits"></a></td>
-<td><a href="https://www.npmjs.com/package/inherits" title="inherits">inherits</a></td>
-<td>Package</td>
-<td><a href="https://github.com/isaacs" title="isaacs">isaacs</a></td>
-<td><a href="docs/legal/ISC.txt" title="“inherits” license">ISC</a><a href="https://github.com/isaacs/inherits" title="“inherits” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“inherits” license information"></a>
-<td><a href="https://github.com/isaacs/inherits" title="“inherits” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Browser-friendly inheritance fully compatible with standard Node inherits().<br>Required by concat-stream, readable-stream.</td>
-<td align="center"><code>inherits@2.0.4</code></td>
-</tr>
-<tr>
 <td align="center"><a href="https://www.npmjs.com/package/is-typedarray" title="is-typedarray"><img src="docs/img/icon/npmjs.svg" width="62" alt="is-typedarray" title="is-typedarray"></a></td>
 <td><a href="https://www.npmjs.com/package/is-typedarray" title="is-typedarray">is-typedarray</a></td>
 <td>Package</td>
@@ -3008,17 +2920,6 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Detect whether or not an object is a Typed Array.<br>Required by postman-request.</td>
 <td align="center"><code>is-typedarray@1.0.0</code></td>
-</tr>
-<tr>
-<td align="center"><a href="https://www.npmjs.com/package/isarray" title="isarray"><img src="docs/img/icon/npmjs.svg" width="62" alt="isarray" title="isarray"></a></td>
-<td><a href="https://www.npmjs.com/package/isarray" title="isarray">isarray</a></td>
-<td>Package</td>
-<td><a href="https://github.com/juliangruber" title="Julian Gruber">Julian Gruber</a></td>
-<td><a href="docs/legal/MIT.txt" title="“isarray” license">MIT</a><a href="https://github.com/juliangruber/isarray" title="“isarray” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“isarray” license information"></a>
-<td><a href="https://github.com/juliangruber/isarray" title="“isarray” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Array#isArray for older browsers.<br>Required by readable-stream.</td>
-<td align="center"><code>isarray@1.0.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/isstream" title="isstream"><img src="docs/img/icon/npmjs.svg" width="62" alt="isstream" title="isstream"></a></td>
@@ -3186,28 +3087,6 @@
 <td align="center"><code>mimic-response@1.0.1</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/minimist" title="minimist"><img src="docs/img/icon/npmjs.svg" width="62" alt="minimist" title="minimist"></a></td>
-<td><a href="https://www.npmjs.com/package/minimist" title="minimist">minimist</a></td>
-<td>Package</td>
-<td><a href="https://github.com/substack" title="James Halliday">James Halliday</a></td>
-<td><a href="docs/legal/MIT.txt" title="“minimist” license">MIT</a><a href="https://github.com/substack/minimist" title="“minimist” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“minimist” license information"></a>
-<td><a href="https://github.com/substack/minimist" title="“minimist” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Parse argument options.<br>Required by mkdirp.</td>
-<td align="center"><code>minimist@1.2.5</code></td>
-</tr>
-<tr>
-<td align="center"><a href="https://www.npmjs.com/package/mkdirp" title="mkdirp"><img src="docs/img/icon/npmjs.svg" width="62" alt="mkdirp" title="mkdirp"></a></td>
-<td><a href="https://www.npmjs.com/package/mkdirp" title="mkdirp">mkdirp</a></td>
-<td>Package</td>
-<td><a href="https://github.com/substack" title="James Halliday">James Halliday</a></td>
-<td><a href="docs/legal/MIT.txt" title="“mkdirp” license">MIT</a><a href="https://github.com/substack/node-mkdirp" title="“mkdirp” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“mkdirp” license information"></a>
-<td><a href="https://github.com/substack/node-mkdirp" title="“mkdirp” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Recursively mkdir, like `mkdir -p`.<br>Required by extract-zip.</td>
-<td align="center"><code>mkdirp@0.5.5</code></td>
-</tr>
-<tr>
 <td align="center"><a href="https://www.npmjs.com/package/ms" title="ms"><img src="docs/img/icon/zeit.png" width="62" alt="ms" title="ms"></a></td>
 <td><a href="https://www.npmjs.com/package/ms" title="ms">ms</a></td>
 <td>Package</td>
@@ -3329,17 +3208,6 @@
 <td align="center"><code>parse5-htmlparser2-tree-adapter@6.0.1</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/pend" title="pend"><img src="docs/img/icon/npmjs.svg" width="62" alt="pend" title="pend"></a></td>
-<td><a href="https://www.npmjs.com/package/pend" title="pend">pend</a></td>
-<td>Package</td>
-<td><a href="https://github.com/andrewrk" title="Andrew Kelley">Andrew Kelley</a></td>
-<td><a href="docs/legal/MIT.txt" title="“pend” license">MIT</a><a href="https://github.com/andrewrk/node-pend" title="“pend” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“pend” license information"></a>
-<td><a href="https://github.com/andrewrk/node-pend" title="“pend” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Dead-simple optimistic async helper.<br>Required by fd-slicer.</td>
-<td align="center"><code>pend@1.2.0</code></td>
-</tr>
-<tr>
 <td align="center"><a href="https://www.npmjs.com/package/performance-now" title="performance-now"><img src="docs/img/icon/npmjs.svg" width="62" alt="performance-now" title="performance-now"></a></td>
 <td><a href="https://www.npmjs.com/package/performance-now" title="performance-now">performance-now</a></td>
 <td>Package</td>
@@ -3371,17 +3239,6 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Prepend `http://` to humanized URLs like todomvc.com and localhost.<br>Required by url-parse-lax.</td>
 <td align="center"><code>prepend-http@2.0.0</code></td>
-</tr>
-<tr>
-<td align="center"><a href="https://www.npmjs.com/package/process-nextick-args" title="process-nextick-args"><img src="docs/img/icon/npmjs.svg" width="62" alt="process-nextick-args" title="process-nextick-args"></a></td>
-<td><a href="https://www.npmjs.com/package/process-nextick-args" title="process-nextick-args">process-nextick-args</a></td>
-<td>Package</td>
-<td><a href="https://github.com/calvinmetcalf" title="calvinmetcalf">calvinmetcalf</a></td>
-<td><a href="docs/legal/MIT.txt" title="“process-nextick-args” license">MIT</a><a href="https://github.com/calvinmetcalf/process-nextick-args" title="“process-nextick-args” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“process-nextick-args” license information"></a>
-<td><a href="https://github.com/calvinmetcalf/process-nextick-args" title="“process-nextick-args” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Process.nextTick but always with args.<br>Required by readable-stream.</td>
-<td align="center"><code>process-nextick-args@2.0.1</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/progress" title="progress"><img src="docs/img/icon/npmjs.svg" width="62" alt="progress" title="progress"></a></td>
@@ -3437,17 +3294,6 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A querystring parser that supports nesting and arrays, with a depth limit.<br>Required by postman-request.</td>
 <td align="center"><code>qs@6.5.2</code></td>
-</tr>
-<tr>
-<td align="center"><a href="https://www.npmjs.com/package/readable-stream" title="readable-stream"><img src="docs/img/icon/node.png" width="62" alt="readable-stream" title="readable-stream"></a></td>
-<td><a href="https://www.npmjs.com/package/readable-stream" title="readable-stream">readable-stream</a></td>
-<td>Package</td>
-<td><a href="https://github.com/nodejs/readable-stream/graphs/contributors" title="Node contributors">Node contributors</a>, <a href="https://github.com/joyent" title="Joyent">Joyent</a></td>
-<td><a href="docs/legal/MIT.txt" title="“readable-stream” license">MIT</a><a href="https://github.com/nodejs/readable-stream" title="“readable-stream” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“readable-stream” license information"></a>
-<td><a href="https://github.com/nodejs/readable-stream" title="“readable-stream” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Streams3, a user-land copy of the stream library from Node.<br>Required by concat-stream.</td>
-<td align="center"><code>readable-stream@2.3.7</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://github.com/EIGHTFINITE/request-promise" title="request-promise"><img src="docs/img/icon/request.png" width="62" alt="request-promise" title="request-promise"></a></td>
@@ -3593,17 +3439,6 @@
 <td align="center"><code>bluebird@2.11.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/string_decoder" title="string_decoder"><img src="docs/img/icon/node.png" width="62" alt="string_decoder" title="string_decoder"></a></td>
-<td><a href="https://www.npmjs.com/package/string_decoder" title="string_decoder">string_decoder</a></td>
-<td>Package</td>
-<td><a href="https://github.com/nodejs/string_decoder/graphs/contributors" title="Node contributors">Node contributors</a>, <a href="https://github.com/joyent" title="Joyent">Joyent</a></td>
-<td><a href="docs/legal/MIT.txt" title="“string_decoder” license">MIT</a><a href="https://github.com/nodejs/string_decoder" title="“string_decoder” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“string_decoder” license information"></a>
-<td><a href="https://github.com/nodejs/string_decoder" title="“string_decoder” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>The string_decoder module from Node core.<br>Required by readable-stream.</td>
-<td align="center"><code>string_decoder@1.1.1</code></td>
-</tr>
-<tr>
 <td align="center"><a href="https://www.npmjs.com/package/sumchecker" title="sumchecker"><img src="docs/img/icon/npmjs.svg" width="62" alt="sumchecker" title="sumchecker"></a></td>
 <td><a href="https://www.npmjs.com/package/sumchecker" title="sumchecker">sumchecker</a></td>
 <td>Package</td>
@@ -3648,17 +3483,6 @@
 <td align="center"><code>tweetnacl@0.14.5</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/typedarray" title="typedarray"><img src="docs/img/icon/npmjs.svg" width="62" alt="typedarray" title="typedarray"></a></td>
-<td><a href="https://www.npmjs.com/package/typedarray" title="typedarray">typedarray</a></td>
-<td>Package</td>
-<td><a href="https://github.com/substack" title="James Halliday">James Halliday</a></td>
-<td><a href="docs/legal/MIT.txt" title="“typedarray” license">MIT</a><a href="https://github.com/substack/typedarray" title="“typedarray” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“typedarray” license information"></a>
-<td><a href="https://github.com/substack/typedarray" title="“typedarray” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>TypedArray polyfill for old browsers.<br>Required by concat-stream.</td>
-<td align="center"><code>typedarray@0.0.6</code></td>
-</tr>
-<tr>
 <td align="center"><a href="https://www.npmjs.com/package/universalify" title="universalify"><img src="docs/img/icon/npmjs.svg" width="62" alt="universalify" title="universalify"></a></td>
 <td><a href="https://www.npmjs.com/package/universalify" title="universalify">universalify</a></td>
 <td>Package</td>
@@ -3690,17 +3514,6 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Lax url.parse() with support for protocol-less URLs & IPs.<br>Required by got.</td>
 <td align="center"><code>url-parse-lax@3.0.0</code></td>
-</tr>
-<tr>
-<td align="center"><a href="https://www.npmjs.com/package/util-deprecate" title="util-deprecate"><img src="docs/img/icon/npmjs.svg" width="62" alt="util-deprecate" title="util-deprecate"></a></td>
-<td><a href="https://www.npmjs.com/package/util-deprecate" title="util-deprecate">util-deprecate</a></td>
-<td>Package</td>
-<td><a href="https://github.com/TooTallNate" title="Nathan Rajlich">Nathan Rajlich</a></td>
-<td><a href="docs/legal/MIT.txt" title="“util-deprecate” license">MIT</a><a href="https://github.com/TooTallNate/util-deprecate" title="“util-deprecate” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“util-deprecate” license information"></a>
-<td><a href="https://github.com/TooTallNate/util-deprecate" title="“util-deprecate” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>The Node `util.deprecate()` function with browser support.<br>Required by readable-stream.</td>
-<td align="center"><code>util-deprecate@1.0.2</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/uuid" title="uuid"><img src="docs/img/icon/npmjs.svg" width="62" alt="uuid" title="uuid"></a></td>
@@ -3745,17 +3558,6 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Callback wrapping utility.<br>Required by once.</td>
 <td align="center"><code>wrappy@1.0.2</code></td>
-</tr>
-<tr>
-<td align="center"><a href="https://www.npmjs.com/package/yauzl" title="yauzl"><img src="docs/img/icon/npmjs.svg" width="62" alt="yauzl" title="yauzl"></a></td>
-<td><a href="https://www.npmjs.com/package/yauzl" title="yauzl">yauzl</a></td>
-<td>Package</td>
-<td><a href="https://github.com/thejoshwolfe" title="Josh Wolfe">Josh Wolfe</a></td>
-<td><a href="docs/legal/MIT.txt" title="“yauzl” license">MIT</a><a href="https://github.com/thejoshwolfe/yauzl" title="“yauzl” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“yauzl” license information"></a>
-<td><a href="https://github.com/thejoshwolfe/yauzl" title="“yauzl” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Yet another unzip library for Node.<br>Required by extract-zip.</td>
-<td align="center"><code>yauzl@2.10.0</code></td>
 </tr>
 </tbody>
 </table>
