@@ -299,6 +299,7 @@ jobs:
         rm -r node_modules/util-deprecate/
         rm -r node_modules/wrappy/
         rm -r node_modules/yauzl/
+        rm node_modules/electron/install.js
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
         rm -rf .npm/
         rm -r bin/all/
@@ -306,7 +307,7 @@ jobs:
         find node_modules/ -mindepth 2 -type f \( -name '*.d.ts' -o -name '*.d.ts.map' -o -name '*.js.map' -o -name '.eslintrc.yml' -o -name '.gitmodules' -o -name '.npmignore' -o -name '.travis.yml' -o -name 'yarn.lock' \) -exec bash -c 'rm "$1"; rmdir --ignore-fail-on-non-empty $(dirname "$1")' bash '{}' ';'
         find node_modules/ -mindepth 2 -type f -name 'package.json' -exec sed -i '/"_where": "/d' -- '{}' ';'
         find node_modules/ -mindepth 2 -type f -name 'package.json' -exec sed -i '/"man": \[/,/\],/d' -- '{}' ';'
-        sed -i '/"@types\/node": "/d' -- 'node_modules/electron/package.json'
+        sed -i '/"dependencies": {/,/},/d' -- 'node_modules/electron/package.json'
         printf "electron" > "node_modules/electron/path.txt"
         sed -i '/\/node_modules\//d' -- '.gitignore'
         find node_modules/ -mindepth 2 -maxdepth 3 -type f -name 'package.json' -exec bash -c 'path="{}"; git add -- "${path:0:-13}"; git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add ${path:13:-13} release artifacts" | sed -n 1p' ';'
