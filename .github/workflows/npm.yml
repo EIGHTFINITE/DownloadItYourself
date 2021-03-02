@@ -27,7 +27,7 @@ jobs:
         cp EIGHTFINITE-build/.npmrc .npmrc
         sudo ln -sf "$(pwd)/EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
         cd EIGHTFINITE-build
-        export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print json.load(sys.stdin)['dist-tags']['latest-6']")
+        export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
         wget -nv -O "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
         mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
         tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
@@ -119,7 +119,7 @@ jobs:
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git restore --source=artifacts -- bin/
         sudo ln -sf "$(pwd)/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
-        export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print json.load(sys.stdin)['dist-tags']['latest-6']")
+        export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
         wget -nv -O "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
         mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
         tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
@@ -163,11 +163,11 @@ jobs:
         echo -n "$npm_version" > npm_version.txt
         echo -n "C:\\msys64\\usr\\bin\\wget.exe -nv -O \"EIGHTFINITE-build\npm-$npm_version.tgz\" \"https://registry.npmjs.org/npm/-/npm-$npm_version.tgz\"" > wget_npm.bat
         cd ..
-    - name: npm
+    - name: audit
       shell: cmd
       run: |
         EIGHTFINITE-build\wget_npm.bat
-    - name: npm
+    - name: audit
       shell: bash
       run: |
         cd EIGHTFINITE-build
