@@ -23,7 +23,7 @@
     "fast-json-stable-stringify": "2.1.0",
     "fs-extra": "github:EIGHTFINITE/fs-extra",
     "md5-file": "4.0.0",
-    "npm": "7.6.0",
+    "npm": "7.6.1",
     "npm-6": "github:EIGHTFINITE/npm-6",
     "postman-request": "2.88.1-postman.28",
     "spdx-expression-parse": "github:EIGHTFINITE/spdx-expression-parse",
