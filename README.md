@@ -2402,7 +2402,7 @@
 <td><a href="https://github.com/cheeriojs/cheerio" title="“cheerio” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Tiny, fast, and elegant implementation of core jQuery designed specifically for the server.<br>Required by cloudscraper.</td>
-<td align="center"><code>cheeriojs/cheerio</code>, <code>cheeriojs/cheerio#44eaa71476cb6136fd2ed08ba1d132da29a506ba</code> (based on <code>cheerio@1.0.0-rc.5</code>)</td>
+<td align="center"><code>cheeriojs/cheerio</code>, <code>cheeriojs/cheerio#e4774d8ccefa56cb071874f479e7f734e3ef8786</code> (based on <code>cheerio@1.0.0-rc.5</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/cheerio-select" title="cheerio-select"><img src="docs/img/icon/cheerio.png" width="62" alt="cheerio-select" title="cheerio-select"></a></td>
@@ -2688,7 +2688,7 @@
 <td><a href="https://github.com/fb55/htmlparser2" title="“htmlparser2” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Fast & forgiving HTML/XML parser.<br>Required by cheerio.</td>
-<td align="center"><code>htmlparser2@6.0.0</code></td>
+<td align="center"><code>htmlparser2@6.0.1</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/http-signature" title="http-signature"><img src="docs/img/icon/joyent.png" width="62" alt="http-signature" title="http-signature"></a></td>
