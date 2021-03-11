@@ -2534,7 +2534,7 @@
 <td><a href="https://github.com/fb55/domutils" title="“domutils” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Utilities for working with htmlparser2's dom.<br>Required by cheerio-select, css-select, htmlparser2.</td>
-<td align="center"><code>domutils@2.4.4</code></td>
+<td align="center"><code>domutils@2.5.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/ecc-jsbn" title="ecc-jsbn"><img src="docs/img/icon/npmjs.svg" width="62" alt="ecc-jsbn" title="ecc-jsbn"></a></td>
@@ -2556,7 +2556,7 @@
 <td><a href="https://github.com/electron/electron" title="“electron” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Build cross platform desktop apps with JavaScript, HTML, and CSS.</td>
-<td align="center"><code>electron@12.0.0</code></td>
+<td align="center"><code>electron@12.0.1</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/entities" title="entities"><img src="docs/img/icon/npmjs.svg" width="62" alt="entities" title="entities"></a></td>
