@@ -416,11 +416,15 @@ jobs:
       run: |
         cd EIGHTFINITE-build
         # Do not allow anything
-        if [[ $(find . -type f -path ./.git -prune -o -path ./node_modules/npm-6/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -path ./node_modules/entities/lib/maps -prune -o -path ./node_modules/got/node_modules/@sindresorhus/is -prune -o -name '*.json' -exec jsonlint -s --forbid any-type-at-start,bom,duplicate-keys,non-portable,non-bmp,zero-byte -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        if [[ $(find . -type f -path ./.git -prune -o -path ./node_modules/npm-6/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -path ./node_modules/npm-next-6/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -path ./node_modules/entities/lib/maps -prune -o -path ./node_modules/got/node_modules/@sindresorhus/is -prune -o -name '*.json' -exec jsonlint -s --forbid any-type-at-start,bom,duplicate-keys,non-portable,non-bmp,zero-byte -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         # Allow non-bmp, zero-byte
         if [[ $(find ./node_modules/npm-6/node_modules/npm/node_modules/iconv-lite/encodings/tables -name '*.json' -exec jsonlint -s --allow non-bmp,zero-byte --forbid any-type-at-start,bom,duplicate-keys,non-portable -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
+        # Allow non-bmp, zero-byte
+        if [[ $(find ./node_modules/npm-next-6/node_modules/npm/node_modules/iconv-lite/encodings/tables -name '*.json' -exec jsonlint -s --allow non-bmp,zero-byte --forbid any-type-at-start,bom,duplicate-keys,non-portable -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         # Allow non-bmp
@@ -575,11 +579,15 @@ jobs:
       run: |
         cd EIGHTFINITE-build
         # Do not allow anything
-        if [[ $(find . -type f -path ./.git -prune -o -path ./node_modules/npm-6/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -path ./node_modules/entities/lib/maps -prune -o -path ./node_modules/got/node_modules/@sindresorhus/is -prune -o -name '*.json' -exec jsonlint -s --forbid any-type-at-start,bom,duplicate-keys,non-portable,non-bmp,zero-byte -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        if [[ $(find . -type f -path ./.git -prune -o -path ./node_modules/npm-6/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -path ./node_modules/npm-next-6/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -path ./node_modules/entities/lib/maps -prune -o -path ./node_modules/got/node_modules/@sindresorhus/is -prune -o -name '*.json' -exec jsonlint -s --forbid any-type-at-start,bom,duplicate-keys,non-portable,non-bmp,zero-byte -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         # Allow non-bmp, zero-byte
         if [[ $(find ./node_modules/npm-6/node_modules/npm/node_modules/iconv-lite/encodings/tables -name '*.json' -exec jsonlint -s --allow non-bmp,zero-byte --forbid any-type-at-start,bom,duplicate-keys,non-portable -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
+        # Allow non-bmp, zero-byte
+        if [[ $(find ./node_modules/npm-next-6/node_modules/npm/node_modules/iconv-lite/encodings/tables -name '*.json' -exec jsonlint -s --allow non-bmp,zero-byte --forbid any-type-at-start,bom,duplicate-keys,non-portable -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         # Allow non-bmp
