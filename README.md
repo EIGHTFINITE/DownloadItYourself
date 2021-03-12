@@ -2842,7 +2842,7 @@
 <td><a href="https://github.com/npm/cli" title="“npm” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A package manager for JavaScript.</td>
-<td align="center"><code>npm@7.6.2</code></td>
+<td align="center"><code>npm@7.6.3</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://github.com/EIGHTFINITE/npm-6" title="npm-6"><img src="docs/img/icon/github.png" width="62" alt="npm-6" title="npm-6"></a></td>
@@ -2886,7 +2886,7 @@
 <td><a href="https://github.com/npm/cli" title="“npm-next/npm” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A package manager for JavaScript.<br>Required by npm-next.</td>
-<td align="center"><code>npm@7.6.2</code></td>
+<td align="center"><code>npm@7.6.3</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://github.com/EIGHTFINITE/npm-next-6" title="npm-next-6"><img src="docs/img/icon/github.png" width="62" alt="npm-next-6" title="npm-next-6"></a></td>
