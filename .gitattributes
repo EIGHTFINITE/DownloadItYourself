@@ -6,9 +6,11 @@
 /.mailmap export-ignore
 /.npmignore export-ignore
 /.npmrc export-ignore
+/README.md export-ignore
 /docs/archive/ export-ignore
 /docs/scripts/ export-ignore
-/README.md export-ignore
+/node_modules/npm-next/ export-ignore
+/node_modules/npm-next-6/ export-ignore
 /.github/ export-ignore
 /.github/* linguist-vendored
 /bin/* linguist-vendored
