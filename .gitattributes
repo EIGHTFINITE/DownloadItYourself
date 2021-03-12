@@ -12,7 +12,10 @@
 /node_modules/npm-next/ export-ignore
 /node_modules/npm-next-6/ export-ignore
 /.github/ export-ignore
+/.github/ linguist-vendored
 /.github/* linguist-vendored
-/bin/* linguist-vendored
+/bin/ linguist-generated
+/bin/* linguist-generated
+/node_modules/ linguist-vendored
 /node_modules/* linguist-vendored
-/package-lock.json linguist-vendored
+/package-lock.json linguist-generated
