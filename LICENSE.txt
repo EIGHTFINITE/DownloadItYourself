@@ -3,9 +3,8 @@ refer to MIT-0.txt and PATENTS.txt
 
 The above license, the above patent grant, and this document do not apply to
 the works located in the `_download`, `bin`, `node_modules`, `docs/img/icon`,
-and `docs/img/vector` folders. These works remain available solely under their
-original terms and/or licenses and will not be made available under any other
-terms and will not be made available under any other licenses.
+and `docs/img/vector` folders. These works are covered by their respective
+licenses.
 
 All images in the `docs/img/icon` folder are the property of their respective
 owners.
