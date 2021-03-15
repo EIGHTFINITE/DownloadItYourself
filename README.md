@@ -2402,7 +2402,7 @@
 <td><a href="https://github.com/cheeriojs/cheerio" title="“cheerio” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Tiny, fast, and elegant implementation of core jQuery designed specifically for the server.<br>Required by cloudscraper.</td>
-<td align="center"><code>cheeriojs/cheerio#22f94c06f4384d2fd669a6e66bb6a0065c08ab0f</code>, <code>cheeriojs/cheerio#22f94c06f4384d2fd669a6e66bb6a0065c08ab0f</code> (based on <code>cheerio@1.0.0-rc.5</code>)</td>
+<td align="center"><code>cheeriojs/cheerio#22f94c06f4384d2fd669a6e66bb6a0065c08ab0f</code><br>(based on <code>cheerio@1.0.0-rc.5</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/cheerio-select" title="cheerio-select"><img src="docs/img/icon/cheerio.png" width="62" alt="cheerio-select" title="cheerio-select"></a></td>
@@ -2424,7 +2424,7 @@
 <td><a href="https://github.com/EIGHTFINITE/cloudscraper" title="“cloudscraper” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Bypasses cloudflare's anti-ddos page.</td>
-<td align="center"><code>EIGHTFINITE/cloudscraper</code>, <code>EIGHTFINITE/cloudscraper#33fd0b1269920097e8722529eee1abf1bfb2b371</code> (based on <code>cloudscraper@4.6.0</code>)</td>
+<td align="center"><code>EIGHTFINITE/cloudscraper#33fd0b1269920097e8722529eee1abf1bfb2b371</code><br>(based on <code>cloudscraper@4.6.0</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/combined-stream" title="combined-stream"><img src="docs/img/icon/npmjs.svg" width="62" alt="combined-stream" title="combined-stream"></a></td>
@@ -2633,7 +2633,7 @@
 <td><a href="https://github.com/EIGHTFINITE/fs-extra" title="“fs-extra” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Fs-extra contains methods that aren't included in the vanilla Node fs package. Such as recursive mkdir, copy, and remove.</td>
-<td align="center"><code>EIGHTFINITE/fs-extra</code>, <code>EIGHTFINITE/fs-extra#dd8c62cea6e1d969a49566e9ffad13630362cb16</code> (based on <code>fs-extra@9.1.0</code>)</td>
+<td align="center"><code>EIGHTFINITE/fs-extra#dd8c62cea6e1d969a49566e9ffad13630362cb16</code><br>(based on <code>fs-extra@9.1.0</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/getpass" title="getpass"><img src="docs/img/icon/npmjs.svg" width="62" alt="getpass" title="getpass"></a></td>
@@ -2853,7 +2853,7 @@
 <td><a href="https://github.com/EIGHTFINITE/npm-6" title="“npm-6” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Depends on npm 6 to add it to the pool of dependencies even if your project already depends on another version of npm.</td>
-<td align="center"><code>EIGHTFINITE/npm-6</code>, <code>EIGHTFINITE/npm-6#8d0afa503490607430d560e65c895cf21a08fef6</code> (based on <code>npm-6@0.0.0-latest-6</code>)</td>
+<td align="center"><code>EIGHTFINITE/npm-6#8d0afa503490607430d560e65c895cf21a08fef6</code><br>(based on <code>npm-6@0.0.0-latest-6</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/npm" title="npm-6/npm"><img src="docs/img/icon/npm.svg" width="62" alt="npm-6/npm" title="npm-6/npm"></a></td>
@@ -2875,7 +2875,7 @@
 <td><a href="https://github.com/EIGHTFINITE/npm-next" title="“npm-next” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Depends on the next version of npm to add it to the pool of dependencies even if your project already depends on another version of npm.</td>
-<td align="center"><code>EIGHTFINITE/npm-next</code>, <code>EIGHTFINITE/npm-next#e78e753311ba3e404277f2f0a11ba94b5b54619d</code> (based on <code>npm-next@0.0.0-next</code>)</td>
+<td align="center"><code>EIGHTFINITE/npm-next#e78e753311ba3e404277f2f0a11ba94b5b54619d</code><br>(based on <code>npm-next@0.0.0-next</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/npm" title="npm-next/npm"><img src="docs/img/icon/npm.svg" width="62" alt="npm-next/npm" title="npm-next/npm"></a></td>
@@ -2897,7 +2897,7 @@
 <td><a href="https://github.com/EIGHTFINITE/npm-next-6" title="“npm-next-6” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Depends on the next version of npm 6 to add it to the pool of dependencies even if your project already depends on another version of npm.</td>
-<td align="center"><code>EIGHTFINITE/npm-next-6</code>, <code>EIGHTFINITE/npm-next-6#62996dbd07fd624d6795a8e47e27509681f89ebd</code> (based on <code>npm-next-6@0.0.0-next-6</code>)</td>
+<td align="center"><code>EIGHTFINITE/npm-next-6#62996dbd07fd624d6795a8e47e27509681f89ebd</code><br>(based on <code>npm-next-6@0.0.0-next-6</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/npm" title="npm-next-6/npm"><img src="docs/img/icon/npm.svg" width="62" alt="npm-next-6/npm" title="npm-next-6/npm"></a></td>
@@ -3018,7 +3018,7 @@
 <td><a href="https://github.com/EIGHTFINITE/request-promise" title="“request-promise” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>The simplified HTTP request client 'request' with Promise support. Powered by Bluebird.<br>Required by cloudscraper.</td>
-<td align="center"><code>EIGHTFINITE/request-promise#master</code>, <code>EIGHTFINITE/request-promise#413c6aad0ef5de8296d212136f5b85a473f57219</code> (based on <code>request-promise@4.2.6</code>)</td>
+<td align="center"><code>EIGHTFINITE/request-promise#413c6aad0ef5de8296d212136f5b85a473f57219</code><br>(based on <code>request-promise@4.2.6</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://github.com/EIGHTFINITE/promise-core" title="request-promise-core"><img src="docs/img/icon/request.png" width="62" alt="request-promise-core" title="request-promise-core"></a></td>
@@ -3029,7 +3029,7 @@
 <td><a href="https://github.com/EIGHTFINITE/promise-core" title="“request-promise-core” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Core Promise support implementation for the simplified HTTP request client 'request'.<br>Required by request-promise.</td>
-<td align="center"><code>EIGHTFINITE/promise-core#master</code>, <code>EIGHTFINITE/promise-core#debc71b187e7d49abfb69c89c35c18f6b16246e8</code> (based on <code>request-promise-core@1.1.4</code>)</td>
+<td align="center"><code>EIGHTFINITE/promise-core#debc71b187e7d49abfb69c89c35c18f6b16246e8</code><br>(based on <code>request-promise-core@1.1.4</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/safe-buffer" title="safe-buffer"><img src="docs/img/icon/npmjs.svg" width="62" alt="safe-buffer" title="safe-buffer"></a></td>
@@ -3073,7 +3073,7 @@
 <td><a href="https://github.com/EIGHTFINITE/spdx-expression-parse" title="“spdx-expression-parse” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Parse SPDX license expressions.</td>
-<td align="center"><code>EIGHTFINITE/spdx-expression-parse</code>, <code>EIGHTFINITE/spdx-expression-parse#09351b9e89061f88223cfbdb54f319ac68912b5f</code> (based on <code>spdx-expression-parse@3.0.1</code>)</td>
+<td align="center"><code>EIGHTFINITE/spdx-expression-parse#09351b9e89061f88223cfbdb54f319ac68912b5f</code><br>(based on <code>spdx-expression-parse@3.0.1</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/spdx-license-ids" title="spdx-license-ids"><img src="docs/img/icon/jslicense.png" width="62" alt="spdx-license-ids" title="spdx-license-ids"></a></td>
