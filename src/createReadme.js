@@ -573,7 +573,7 @@ module.exports = function(filetype) {
 				readme += '\r\n<td>' + packageData.description + '</td>';
 
 				// File
-				readme += '\r\n<td align="center"><code>' + (!is.undefined(packageData._from) && packageData._from.startsWith('github:') ? packageData._from.slice(7) + '</code>, <code>' + packageData._resolved.slice(7) + '</code> (based on <code>' + packageData._id + '</code>)' : packageData._id + '</code>') + '</td>';
+				readme += '\r\n<td align="center"><code>' + (!is.undefined(packageData._from) && packageData._from.startsWith('github:') ? packageData._resolved.slice(7) + '</code><br>(based on <code>' + packageData._id + '</code>)' : packageData._id + '</code>') + '</td>';
 
 				// Row end
 				readme += '\r\n</tr>';
