@@ -2512,7 +2512,7 @@
 <td><a href="https://github.com/fb55/domelementtype" title="“domelementtype” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>All the types of nodes in htmlparser2's dom.<br>Required by cheerio-select, dom-serializer, domhandler, domutils, htmlparser2.</td>
-<td align="center"><code>domelementtype@2.1.0</code></td>
+<td align="center"><code>domelementtype@2.2.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/domhandler" title="domhandler"><img src="docs/img/icon/npmjs.svg" width="62" alt="domhandler" title="domhandler"></a></td>
@@ -2523,7 +2523,7 @@
 <td><a href="https://github.com/fb55/domhandler" title="“domhandler” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Handler for htmlparser2 that turns pages into a dom.<br>Required by cheerio, cheerio-select, css-select, dom-serializer, domutils, htmlparser2.</td>
-<td align="center"><code>domhandler@4.0.0</code></td>
+<td align="center"><code>domhandler@4.1.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/domutils" title="domutils"><img src="docs/img/icon/npmjs.svg" width="62" alt="domutils" title="domutils"></a></td>
@@ -2534,7 +2534,7 @@
 <td><a href="https://github.com/fb55/domutils" title="“domutils” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Utilities for working with htmlparser2's dom.<br>Required by cheerio-select, css-select, htmlparser2.</td>
-<td align="center"><code>domutils@2.5.0</code></td>
+<td align="center"><code>domutils@2.5.1</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/ecc-jsbn" title="ecc-jsbn"><img src="docs/img/icon/npmjs.svg" width="62" alt="ecc-jsbn" title="ecc-jsbn"></a></td>
@@ -2633,7 +2633,7 @@
 <td><a href="https://github.com/EIGHTFINITE/fs-extra" title="“fs-extra” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Fs-extra contains methods that aren't included in the vanilla Node fs package. Such as recursive mkdir, copy, and remove.</td>
-<td align="center"><code>EIGHTFINITE/fs-extra#dd8c62cea6e1d969a49566e9ffad13630362cb16</code><br>(based on <code>fs-extra@9.1.0</code>)</td>
+<td align="center"><code>EIGHTFINITE/fs-extra#33c0495624f626c1f9eeb2e8af89b9239507b3a7</code><br>(based on <code>fs-extra@9.1.0</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/getpass" title="getpass"><img src="docs/img/icon/npmjs.svg" width="62" alt="getpass" title="getpass"></a></td>
@@ -2820,7 +2820,7 @@
 <td><a href="https://github.com/jshttp/mime-db" title="“mime-db” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Media Type Database.<br>Required by mime-types.</td>
-<td align="center"><code>mime-db@1.46.0</code></td>
+<td align="center"><code>mime-db@1.47.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/mime-types" title="mime-types"><img src="docs/img/icon/npmjs.svg" width="62" alt="mime-types" title="mime-types"></a></td>
@@ -2831,7 +2831,7 @@
 <td><a href="https://github.com/jshttp/mime-types" title="“mime-types” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>The ultimate javascript content-type utility.<br>Required by @postman/form-data, postman-request.</td>
-<td align="center"><code>mime-types@2.1.29</code></td>
+<td align="center"><code>mime-types@2.1.30</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/npm" title="npm"><img src="docs/img/icon/npm.svg" width="62" alt="npm" title="npm"></a></td>
@@ -2842,7 +2842,7 @@
 <td><a href="https://github.com/npm/cli" title="“npm” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A package manager for JavaScript.</td>
-<td align="center"><code>npm@7.7.6</code></td>
+<td align="center"><code>npm@7.8.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://github.com/EIGHTFINITE/npm-6" title="npm-6"><img src="docs/img/icon/github.png" width="62" alt="npm-6" title="npm-6"></a></td>
@@ -2886,7 +2886,7 @@
 <td><a href="https://github.com/npm/cli" title="“npm-next/npm” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A package manager for JavaScript.<br>Required by npm-next.</td>
-<td align="center"><code>npm@7.7.6</code></td>
+<td align="center"><code>npm@7.8.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://github.com/EIGHTFINITE/npm-next-6" title="npm-next-6"><img src="docs/img/icon/github.png" width="62" alt="npm-next-6" title="npm-next-6"></a></td>
