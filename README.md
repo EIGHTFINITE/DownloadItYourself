@@ -2864,7 +2864,7 @@
 <td><a href="https://github.com/npm/cli" title="“npm-6/npm” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A package manager for JavaScript.<br>Required by npm-6.</td>
-<td align="center"><code>npm@6.14.12</code></td>
+<td align="center"><code>npm@6.14.13</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://github.com/EIGHTFINITE/npm-next" title="npm-next"><img src="docs/img/icon/github.png" width="62" alt="npm-next" title="npm-next"></a></td>
@@ -2908,7 +2908,7 @@
 <td><a href="https://github.com/npm/cli" title="“npm-next-6/npm” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A package manager for JavaScript.<br>Required by npm-next-6.</td>
-<td align="center"><code>npm@6.14.12</code></td>
+<td align="center"><code>npm@6.14.13</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/nth-check" title="nth-check"><img src="docs/img/icon/npmjs.svg" width="62" alt="nth-check" title="nth-check"></a></td>
