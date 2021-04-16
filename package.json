@@ -23,7 +23,7 @@
     "fast-json-stable-stringify": "2.1.0",
     "fs-extra": "github:EIGHTFINITE/fs-extra",
     "md5-file": "4.0.0",
-    "npm": "7.9.0",
+    "npm": "7.10.0",
     "npm-6": "github:EIGHTFINITE/npm-6",
     "npm-next": "github:EIGHTFINITE/npm-next",
     "npm-next-6": "github:EIGHTFINITE/npm-next-6",
