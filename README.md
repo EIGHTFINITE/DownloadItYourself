@@ -2413,7 +2413,7 @@
 <td><a href="https://github.com/cheeriojs/cheerio-select" title="“cheerio-select” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>CSS selector engine supporting jQuery selectors.<br>Required by cheerio.</td>
-<td align="center"><code>cheerio-select@1.3.0</code></td>
+<td align="center"><code>cheerio-select@1.4.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://github.com/EIGHTFINITE/cloudscraper" title="cloudscraper"><img src="docs/img/icon/github.png" width="62" alt="cloudscraper" title="cloudscraper"></a></td>
@@ -2457,7 +2457,7 @@
 <td><a href="https://github.com/fb55/css-select" title="“css-select” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A CSS selector compiler/engine.<br>Required by cheerio-select.</td>
-<td align="center"><code>css-select@4.0.0</code></td>
+<td align="center"><code>css-select@4.1.2</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/css-what" title="css-what"><img src="docs/img/icon/npmjs.svg" width="62" alt="css-what" title="css-what"></a></td>
@@ -2523,7 +2523,7 @@
 <td><a href="https://github.com/fb55/domhandler" title="“domhandler” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Handler for htmlparser2 that turns pages into a dom.<br>Required by cheerio, cheerio-select, css-select, dom-serializer, domutils, htmlparser2.</td>
-<td align="center"><code>domhandler@4.1.0</code></td>
+<td align="center"><code>domhandler@4.2.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/domutils" title="domutils"><img src="docs/img/icon/npmjs.svg" width="62" alt="domutils" title="domutils"></a></td>
@@ -2534,7 +2534,7 @@
 <td><a href="https://github.com/fb55/domutils" title="“domutils” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Utilities for working with htmlparser2's dom.<br>Required by cheerio-select, css-select, htmlparser2.</td>
-<td align="center"><code>domutils@2.5.2</code></td>
+<td align="center"><code>domutils@2.6.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/ecc-jsbn" title="ecc-jsbn"><img src="docs/img/icon/npmjs.svg" width="62" alt="ecc-jsbn" title="ecc-jsbn"></a></td>
