@@ -2394,15 +2394,15 @@
 <td align="center"><code>caseless@0.12.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/cheerio" title="cheerio"><img src="docs/img/icon/cheerio.png" width="62" alt="cheerio" title="cheerio"></a></td>
-<td><a href="https://www.npmjs.com/package/cheerio" title="cheerio">cheerio</a></td>
+<td align="center"><a href="https://github.com/EIGHTFINITE/cheerio" title="cheerio"><img src="docs/img/icon/cheerio.png" width="62" alt="cheerio" title="cheerio"></a></td>
+<td><a href="https://github.com/EIGHTFINITE/cheerio" title="cheerio">cheerio</a></td>
 <td>Package</td>
 <td><a href="https://github.com/matthewmueller" title="Matthew Mueller">Matthew Mueller</a></td>
-<td><a href="docs/legal/MIT.txt" title="“cheerio” license">MIT</a><a href="https://github.com/cheeriojs/cheerio" title="“cheerio” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“cheerio” license information"></a>
-<td><a href="https://github.com/cheeriojs/cheerio" title="“cheerio” source code">Open Source</a></td>
+<td><a href="docs/legal/MIT.txt" title="“cheerio” license">MIT</a><a href="https://github.com/EIGHTFINITE/cheerio" title="“cheerio” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“cheerio” license information"></a>
+<td><a href="https://github.com/EIGHTFINITE/cheerio" title="“cheerio” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Tiny, fast, and elegant implementation of core jQuery designed specifically for the server.<br>Required by cloudscraper.</td>
-<td align="center"><code>cheerio@1.0.0-rc.6</code></td>
+<td align="center"><code>EIGHTFINITE/cheerio#eb12477268d4a05a6aa0a68d5913e91de395b101</code><br>(based on <code>cheerio@1.0.0-rc.6</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/cheerio-select" title="cheerio-select"><img src="docs/img/icon/cheerio.png" width="62" alt="cheerio-select" title="cheerio-select"></a></td>
