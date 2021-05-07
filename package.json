@@ -5,7 +5,7 @@
   "engineStrict": true,
   "engines": {
     "node": "12.10.0",
-    "npm": "6.14.13 || 7.11.2"
+    "npm": "6.14.13 || 7.12.0"
   },
   "main": "main.js",
   "author": "EIGHTFINITE",
