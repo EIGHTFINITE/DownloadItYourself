@@ -2889,17 +2889,6 @@
 <td align="center"><code>EIGHTFINITE/npm-next#e78e753311ba3e404277f2f0a11ba94b5b54619d</code><br>(based on <code>npm-next@0.0.0-next</code>)</td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/npm" title="npm-next/npm"><img src="docs/img/icon/npm.svg" width="62" alt="npm-next/npm" title="npm-next/npm"></a></td>
-<td><a href="https://www.npmjs.com/package/npm" title="npm-next/npm">npm-next/npm</a></td>
-<td>Package</td>
-<td><a href="https://github.com/npm" title="Isaac Z. Schlueter">Isaac Z. Schlueter</a></td>
-<td><a href="docs/legal/Artistic-2.0.txt" title="“npm-next/npm” license">Artistic-2.0</a><a href="https://github.com/npm/cli" title="“npm-next/npm” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“npm-next/npm” license information"></a>
-<td><a href="https://github.com/npm/cli" title="“npm-next/npm” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>A package manager for JavaScript.<br>Required by npm-next.</td>
-<td align="center"><code>npm@7.12.0</code></td>
-</tr>
-<tr>
 <td align="center"><a href="https://github.com/EIGHTFINITE/npm-next-6" title="npm-next-6"><img src="docs/img/icon/github.png" width="62" alt="npm-next-6" title="npm-next-6"></a></td>
 <td><a href="https://github.com/EIGHTFINITE/npm-next-6" title="npm-next-6">npm-next-6</a></td>
 <td>Package</td>
@@ -2909,17 +2898,6 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Depends on the next version of npm 6 to add it to the pool of dependencies even if your project already depends on another version of npm.</td>
 <td align="center"><code>EIGHTFINITE/npm-next-6#62996dbd07fd624d6795a8e47e27509681f89ebd</code><br>(based on <code>npm-next-6@0.0.0-next-6</code>)</td>
-</tr>
-<tr>
-<td align="center"><a href="https://www.npmjs.com/package/npm" title="npm-next-6/npm"><img src="docs/img/icon/npm.svg" width="62" alt="npm-next-6/npm" title="npm-next-6/npm"></a></td>
-<td><a href="https://www.npmjs.com/package/npm" title="npm-next-6/npm">npm-next-6/npm</a></td>
-<td>Package</td>
-<td><a href="https://github.com/npm" title="Isaac Z. Schlueter">Isaac Z. Schlueter</a></td>
-<td><a href="docs/legal/Artistic-2.0.txt" title="“npm-next-6/npm” license">Artistic-2.0</a><a href="https://github.com/npm/cli" title="“npm-next-6/npm” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“npm-next-6/npm” license information"></a>
-<td><a href="https://github.com/npm/cli" title="“npm-next-6/npm” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>A package manager for JavaScript.<br>Required by npm-next-6.</td>
-<td align="center"><code>npm@6.14.13</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/nth-check" title="nth-check"><img src="docs/img/icon/npmjs.svg" width="62" alt="nth-check" title="nth-check"></a></td>
