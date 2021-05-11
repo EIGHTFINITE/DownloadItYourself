@@ -2842,7 +2842,7 @@
 <td><a href="https://github.com/npm/cli" title="“npm” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A package manager for JavaScript.</td>
-<td align="center"><code>npm@7.12.0</code></td>
+<td align="center"><code>npm@7.12.1</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/@npmcli/arborist" title="npm/@npmcli/arborist"><img src="docs/img/icon/npm.svg" width="62" alt="npm/@npmcli/arborist" title="npm/@npmcli/arborist"></a></td>
@@ -2853,7 +2853,7 @@
 <td><a href="https://github.com/npm/arborist" title="“npm/@npmcli/arborist” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Manage Node_modules trees.<br>Required by npm, npm/libnpmexec, npm/libnpmfund.</td>
-<td align="center"><code>@npmcli/arborist@2.4.2</code></td>
+<td align="center"><code>@npmcli/arborist@2.4.4</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/@npmcli/ci-detect" title="npm/@npmcli/ci-detect"><img src="docs/img/icon/npm.svg" width="62" alt="npm/@npmcli/ci-detect" title="npm/@npmcli/ci-detect"></a></td>
@@ -3843,7 +3843,7 @@
 <td><a href="https://github.com/isaacs/node-glob" title="“npm/glob” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A little globber.<br>Required by npm, npm/@npmcli/map-workspaces, npm/cacache, npm/init-package-json, npm/node-gyp, npm/npm-packlist, npm/read-package-json, npm/rimraf.</td>
-<td align="center"><code>glob@7.1.6</code></td>
+<td align="center"><code>glob@7.1.7</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/graceful-fs" title="npm/graceful-fs"><img src="docs/img/icon/npmjs.svg" width="62" alt="npm/graceful-fs" title="npm/graceful-fs"></a></td>
@@ -3986,7 +3986,7 @@
 <td><a href="https://github.com/isaacs/ignore-walk" title="“npm/ignore-walk” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Nested/recursive `.gitignore`/`.npmignore` parsing and filtering.<br>Required by npm/npm-packlist.</td>
-<td align="center"><code>ignore-walk@3.0.3</code></td>
+<td align="center"><code>ignore-walk@3.0.4</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/imurmurhash" title="npm/imurmurhash"><img src="docs/img/icon/npmjs.svg" width="62" alt="npm/imurmurhash" title="npm/imurmurhash"></a></td>
@@ -4228,7 +4228,7 @@
 <td><a href="https://github.com/isaacs/json-stringify-nice" title="“npm/json-stringify-nice” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Stringify an object sorting scalars before objects, and defaulting to 2-space indent.<br>Required by npm/@npmcli/arborist.</td>
-<td align="center"><code>json-stringify-nice@1.1.3</code></td>
+<td align="center"><code>json-stringify-nice@1.1.4</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/json-stringify-safe" title="npm/json-stringify-safe"><img src="docs/img/icon/npmjs.svg" width="62" alt="npm/json-stringify-safe" title="npm/json-stringify-safe"></a></td>
@@ -4327,7 +4327,7 @@
 <td><a href="https://github.com/npm/libnpmexec" title="“npm/libnpmexec” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Npm exec (npx) programmatic API.<br>Required by npm.</td>
-<td align="center"><code>libnpmexec@1.1.0</code></td>
+<td align="center"><code>libnpmexec@1.1.1</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/libnpmfund" title="npm/libnpmfund"><img src="docs/img/icon/npm.svg" width="62" alt="npm/libnpmfund" title="npm/libnpmfund"></a></td>
@@ -4701,7 +4701,7 @@
 <td><a href="https://github.com/npm/npm-packlist" title="“npm/npm-packlist” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Get a list of the files to add from a folder into an npm package.<br>Required by npm/pacote.</td>
-<td align="center"><code>npm-packlist@2.2.0</code></td>
+<td align="center"><code>npm-packlist@2.2.2</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/npm-pick-manifest" title="npm/npm-pick-manifest"><img src="docs/img/icon/npm.svg" width="62" alt="npm/npm-pick-manifest" title="npm/npm-pick-manifest"></a></td>
