@@ -69,10 +69,10 @@ function allAuthors(author) {
 
 function multiplePermissionSources(sources, current) {
 	if(is.string(sources))
-		return '<a href="' + sources + '" title="“' + current.name + '” permissions quote"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“' + current.name + '” permissions quote"></a>';
+		return '<a href="' + sources + '" title="“' + current.name + '” permissions quote"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“' + current.name + '” permissions quote"></a>';
 	var permissionString = '';
 	for (var i = 0; i < sources.length; i++) {
-		permissionString += '<a href="' + sources[i] + '" title="“' + current.name + '” permissions quote"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“' + current.name + '” permissions quote"></a>';
+		permissionString += '<a href="' + sources[i] + '" title="“' + current.name + '” permissions quote"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“' + current.name + '” permissions quote"></a>';
 	}
 	return permissionString;
 }
@@ -92,7 +92,7 @@ function multipleLicenses(license, name, source) {
 			i++;
 			var license = expression.license;
 			var exception = (expression.exception ? expression.exception : void(0));
-			return '<a href="docs/legal/' + license + '.txt" title="“' + name + '” ' + licenseDedicationTitle(license) + '">' + license + '</a>' + (source ? (is.array(source) ? '<a href="' + source[i] + '" title="“' + name + '” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“' + name + '” license information"></a>' : '<a href="' + source + '" title="“' + name + '” license information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“' + name + '” license information"></a>') : '') + (exception ? ' with <a href="docs/legal/' + exception + '.txt" title="“' + name + '” exception">' + exception + '</a>' + (source ? (is.array(source) ? '<a href="' + source[i] + '" title="“' + name + '” exception information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“' + name + '” exception information"></a>' : '<a href="' + source + '" title="“' + name + '” exception information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“' + name + '” exception information"></a>') : '') : '');
+			return '<a href="docs/legal/' + license + '.txt" title="“' + name + '” ' + licenseDedicationTitle(license) + '">' + license + '</a>' + (source ? (is.array(source) ? '<a href="' + source[i] + '" title="“' + name + '” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“' + name + '” license information"></a>' : '<a href="' + source + '" title="“' + name + '” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“' + name + '” license information"></a>') : '') + (exception ? ' with <a href="docs/legal/' + exception + '.txt" title="“' + name + '” exception">' + exception + '</a>' + (source ? (is.array(source) ? '<a href="' + source[i] + '" title="“' + name + '” exception information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“' + name + '” exception information"></a>' : '<a href="' + source + '" title="“' + name + '” exception information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“' + name + '” exception information"></a>') : '') : '');
 		}
 		else {
 			return spdxToHTML(expression.left) + ' ' + expression.conjunction + ' ' + spdxToHTML(expression.right);
@@ -190,7 +190,7 @@ module.exports = function(filetype) {
 				readme += '\r\n<td align="center"><a href="' + (current["description-url-override"] ? current["description-url-override"] : current.url) + '" title="' + current.name + '"><img src="docs/img/icon/' + (current.img ? current.img : 'default.svg') + '" width="62" alt="' + current.name + '" title="' + current.name + '"></a></td>';
 
 				// Name
-				readme += '\r\n<td><a href="' + (current["description-url-override"] ? current["description-url-override"] : current.url) + '" title="' + current.name + '">' + current.name + '</a>' + (current["description-url-override"] && current.url ? ' <a href="' + current.url + '" title="“' + current.name + '” download"><img src="docs/img/vector/download.svg" height="24" alt="(download)" title="“' + current.name + '” download"></a>' : '') + '</td>';
+				readme += '\r\n<td><a href="' + (current["description-url-override"] ? current["description-url-override"] : current.url) + '" title="' + current.name + '">' + current.name + '</a>' + (current["description-url-override"] && current.url ? ' <a href="' + current.url + '" title="“' + current.name + '” download"><img src="docs/img/svg/download.svg" height="24" alt="(download)" title="“' + current.name + '” download"></a>' : '') + '</td>';
 
 				// Type
 				readme += '\r\n<td>' + current.type.replace(/\w*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1)}) + '</td>';
@@ -202,7 +202,7 @@ module.exports = function(filetype) {
 				readme += '\r\n<td>' + multipleLicenses((current.license ? current.license.txt : ''), current.name, (current.license ? current.license.source : void(0)));
 
 				// EULA
-				readme += (current.eula ? ', <a href="docs/legal/' + current.eula.txt + '.txt" title="“' + current.name + '” EULA">' + current.eula.txt + '</a>' + (current.eula.source ? '<a href="' + current.eula.source + '" title="“' + current.name + '” EULA information"><img src="docs/img/vector/source.svg" height="24" alt="(info)" title="“' + current.name + '” EULA information"></a>' : '') : '')
+				readme += (current.eula ? ', <a href="docs/legal/' + current.eula.txt + '.txt" title="“' + current.name + '” EULA">' + current.eula.txt + '</a>' + (current.eula.source ? '<a href="' + current.eula.source + '" title="“' + current.name + '” EULA information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“' + current.name + '” EULA information"></a>' : '') : '')
 
 				// Permission
 				readme += (current.permission ? ', <a href="docs/img/permissions/' + current.permission.img + '" title="“' + current.name + '” granted permissions">Permissions</a>' + multiplePermissionSources(current.permission.source, current) : '') + '</td>';
@@ -212,9 +212,9 @@ module.exports = function(filetype) {
 
 				// Distribution
 				if(filetype === "html")
-					readme += '\r\n<td align="center">' + (current.distribution === "allowed" ? '<img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed">' : '<img src="docs/img/vector/cross.svg" height="24" alt="No" title="No Distribution Allowed">') + '</td>';
+					readme += '\r\n<td align="center">' + (current.distribution === "allowed" ? '<img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed">' : '<img src="docs/img/svg/cross.svg" height="24" alt="No" title="No Distribution Allowed">') + '</td>';
 				else
-					readme += '\r\n<td align="center">' + (current.distribution === "allowed" ? '<a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a>' : '<a href="##" title="No Distribution Allowed"><img src="docs/img/vector/cross.svg" height="24" alt="No" title="No Distribution Allowed"></a>') + '</td>';
+					readme += '\r\n<td align="center">' + (current.distribution === "allowed" ? '<a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a>' : '<a href="##" title="No Distribution Allowed"><img src="docs/img/svg/cross.svg" height="24" alt="No" title="No Distribution Allowed"></a>') + '</td>';
 
 				// Description
 				readme += '\r\n<td>' + (current.description ? colorText(filetype, current.description) : '') + '</td>';
@@ -565,9 +565,9 @@ module.exports = function(filetype) {
 
 				// Distribution
 				if(filetype === "html")
-					readme += '\r\n<td align="center"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></td>';
+					readme += '\r\n<td align="center"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></td>';
 				else
-					readme += '\r\n<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/vector/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>';
+					readme += '\r\n<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>';
 
 				// Description
 				readme += '\r\n<td>' + packageData.description + '</td>';

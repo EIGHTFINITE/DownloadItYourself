@@ -4,7 +4,7 @@ refer to MIT-0.txt and PATENTS.txt
 The above license, the above patent grant, and this document do not apply to
 the following works:
 
-Contents of the _download, bin, node_modules, and docs/img/vector directories
+Contents of the _download, bin, node_modules, and docs/img/svg directories
 Copyright (c) their respective copyright owners
 Licensed on their respective license terms
 
