@@ -187,7 +187,7 @@ module.exports = function(filetype) {
 				readme += '\r\n<tr>';
 
 				// Icon
-				readme += '\r\n<td align="center"><a href="' + (current["description-url-override"] ? current["description-url-override"] : current.url) + '" title="' + current.name + '"><img src="' + (current.img ? (current.img.startsWith('https://') ? current.img : 'docs/img/icon/' + current.img) : 'default.svg') + '" width="62" alt="' + current.name + '" title="' + current.name + '"></a></td>';
+				readme += '\r\n<td align="center"><a href="' + (current["description-url-override"] ? current["description-url-override"] : current.url) + '" title="' + current.name + '"><img src="' + (current.img ? (current.img.startsWith('https://') ? current.img : 'docs/img/icon/' + current.img) : 'docs/img/icon/default.svg') + '" width="62" alt="' + current.name + '" title="' + current.name + '"></a></td>';
 
 				// Name
 				readme += '\r\n<td><a href="' + (current["description-url-override"] ? current["description-url-override"] : current.url) + '" title="' + current.name + '">' + current.name + '</a>' + (current["description-url-override"] && current.url ? ' <a href="' + current.url + '" title="“' + current.name + '” download"><img src="docs/img/svg/download.svg" height="24" alt="(download)" title="“' + current.name + '” download"></a>' : '') + '</td>';
