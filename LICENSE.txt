@@ -2,11 +2,10 @@ This work is licensed under MIT-0 with an additional patent grant. Please
 refer to MIT-0.txt and PATENTS.txt
 
 The above license, the above patent grant, and this document do not apply to
-the works located in the `_download`, `bin`, `node_modules`, `docs/img/icon`,
-and `docs/img/vector` folders. These works are covered by their respective
-licenses.
+the following works:
 
-All images in the `docs/img/icon` folder are the property of their respective
-owners.
+Contents of the _download, bin, node_modules, and docs/img/vector directories
+Copyright (c) their respective copyright owners
+Licensed on their respective license terms
 
-Please refer to README.html for more information.
+For full licensing information, see README.html
