@@ -6,7 +6,7 @@ if(process.versions.node !== '12.10.0')
 
 // Libraries
 var fs = require("fs-extra");
-var stringify = require('fast-json-stable-stringify');
+var stringify = require('./node_modules/npm/node_modules/json-stringify-nice');
 
 // Functions
 var closeThread = require("./src/closeThread.js");
