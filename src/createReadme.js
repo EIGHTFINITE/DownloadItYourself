@@ -69,10 +69,10 @@ function allAuthors(author) {
 
 function multiplePermissionSources(sources, current) {
 	if(is.string(sources))
-		return '<a href="' + sources + '" title="“' + current.name + '” permissions quote"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“' + current.name + '” permissions quote"></a>';
+		return '<a href="' + sources + '" title="“' + current.name + '” permission quote"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“' + current.name + '” permission quote"></a>';
 	var permissionString = '';
 	for (var i = 0; i < sources.length; i++) {
-		permissionString += '<a href="' + sources[i] + '" title="“' + current.name + '” permissions quote"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“' + current.name + '” permissions quote"></a>';
+		permissionString += '<a href="' + sources[i] + '" title="“' + current.name + '” permission quote"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“' + current.name + '” permission quote"></a>';
 	}
 	return permissionString;
 }
@@ -205,7 +205,7 @@ module.exports = function(filetype) {
 				readme += (current.eula ? ', <a href="docs/legal/' + current.eula.txt + '.txt" title="“' + current.name + '” EULA">' + current.eula.txt + '</a>' + (current.eula.source ? '<a href="' + current.eula.source + '" title="“' + current.name + '” EULA information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“' + current.name + '” EULA information"></a>' : '') : '')
 
 				// Permission
-				readme += (current.permission ? ', <a href="docs/img/permissions/' + current.permission.img + '" title="“' + current.name + '” granted permissions">Permissions</a>' + multiplePermissionSources(current.permission.source, current) : '') + '</td>';
+				readme += (current.permission ? ', <a href="docs/legal/' + current.permission.img + '" title="“' + current.name + '” granted permission">Permission</a>' + multiplePermissionSources(current.permission.source, current) : '') + '</td>';
 
 				// Source Code
 				readme += '\r\n<td>' + (current.code ? (current.code.url ? '<a href="' + current.code.url + '" title="“' + current.name + '” source code">' + current.code.title + '</a>' : current.code.title) : '') + '</td>';

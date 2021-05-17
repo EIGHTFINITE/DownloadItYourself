@@ -437,7 +437,7 @@
         "txt": "BiblioCraft license"
       },
       "permission": {
-        "img": "bibliocraft-permissions.png",
+        "img": "bibliocraft-permission.png",
         "source": "https://web.archive.org/web/20180712033014/https://www.bibliocraftmod.com/copyright/"
       }
     },
@@ -460,7 +460,7 @@
         "txt": "BiblioCraft license"
       },
       "permission": {
-        "img": "bibliocraft-permissions.png",
+        "img": "bibliocraft-permission.png",
         "source": "https://web.archive.org/web/20180712033014/https://www.bibliocraftmod.com/copyright/"
       }
     },
@@ -483,7 +483,7 @@
         "txt": "BiblioCraft license"
       },
       "permission": {
-        "img": "bibliocraft-permissions.png",
+        "img": "bibliocraft-permission.png",
         "source": "https://web.archive.org/web/20180712033014/https://www.bibliocraftmod.com/copyright/"
       }
     },
@@ -506,7 +506,7 @@
         "txt": "BiblioCraft license"
       },
       "permission": {
-        "img": "bibliocraft-permissions.png",
+        "img": "bibliocraft-permission.png",
         "source": "https://web.archive.org/web/20180712033014/https://www.bibliocraftmod.com/copyright/"
       }
     },
@@ -691,7 +691,7 @@
         "txt": "LGPL-2.1"
       },
       "permission": {
-        "img": "carpenters-blocks-permissions.png",
+        "img": "carpenters-blocks-permission.png",
         "source": "https://www.carpentersblocks.com/"
       }
     },
@@ -718,7 +718,7 @@
         "txt": "All Rights Reserved"
       },
       "permission": {
-        "img": "chicken-chunk-patcher-permissions.png",
+        "img": "chicken-chunk-patcher-permission.png",
         "source": "https://www.curseforge.com/minecraft/mc-mods/chicken-chunk-patcher?comment=4"
       }
     },
@@ -746,7 +746,7 @@
         "txt": "MIT"
       },
       "permission": {
-        "img": "chickenbones-permissions.png",
+        "img": "chickenbones-permission.png",
         "source": "https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/1279956-chickenbones-mods"
       }
     },
@@ -774,7 +774,7 @@
         "txt": "GPL-2.0"
       },
       "permission": {
-        "img": "chisel-permissions.png",
+        "img": "chisel-permission.png",
         "source": "https://www.curseforge.com/minecraft/mc-mods/chisel"
       }
     },
@@ -801,7 +801,7 @@
         "txt": "All Rights Reserved"
       },
       "permission": {
-        "img": "chunk-pregenerator-permissions.png",
+        "img": "chunk-pregenerator-permission.png",
         "source": "https://www.curseforge.com/minecraft/mc-mods/chunkpregenerator?comment=422"
       }
     },
@@ -854,7 +854,7 @@
         "txt": "MIT"
       },
       "permission": {
-        "img": "chickenbones-permissions.png",
+        "img": "chickenbones-permission.png",
         "source": "https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/1279956-chickenbones-mods"
       }
     },
@@ -885,7 +885,7 @@
         "txt": "LGPL-2.1"
       },
       "permission": {
-        "img": "chickenbones-permissions.png",
+        "img": "chickenbones-permission.png",
         "source": "https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/1279956-chickenbones-mods"
       }
     },
@@ -1414,7 +1414,7 @@
         "txt": "MinecraftForge license"
       },
       "permission": {
-        "img": "forge-permissions.png",
+        "img": "forge-permission.png",
         "source": "https://web.archive.org/web/20180401095313/http://legacy.feed-the-beast.com/mods/mod/forgefml"
       }
     },
@@ -1482,7 +1482,7 @@
       "type": "client/server mod",
       "url": "https://asie.pl/files/mods/FactorizationAddons-Fork/FactorizationAddons-1.7.10.jar",
       "permission": {
-        "img": "fzaddons-permissions.png",
+        "img": "fzaddons-permission.png",
         "source": "https://wiki.vexatos.com/wiki:fzaddons"
       }
     },
@@ -1538,7 +1538,7 @@
         "txt": "All Rights Reserved"
       },
       "permission": {
-        "img": "glsl-shaders-mod-permissions.png",
+        "img": "glsl-shaders-mod-permission.png",
         "source": "https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/1286604-shaders-mod-updated-by-karyonix"
       }
     },
@@ -1815,7 +1815,7 @@
         "txt": "BCL"
       },
       "permission": {
-        "img": "java-permissions.png",
+        "img": "java-permission.png",
         "source": "https://web.archive.org/web/20181116092737/https://java.com/en/download/faq/distribution.xml"
       }
     },
