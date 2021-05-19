@@ -47,7 +47,7 @@
 <td align="center"><code>minecraft_server.1.7.10.jar</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://multimc.org/" title="MultiMC"><img src="docs/img/icon/multimc.png" width="62" alt="MultiMC" title="MultiMC"></a></td>
+<td align="center"><a href="https://multimc.org/" title="MultiMC"><img src="https://avatars.githubusercontent.com/u/5411890" width="62" alt="MultiMC" title="MultiMC"></a></td>
 <td><a href="https://multimc.org/" title="MultiMC">MultiMC</a> <a href="https://github.com/MultiMC/MultiMC5/releases/latest" title="“MultiMC” download"><img src="docs/img/svg/download.svg" height="24" alt="(download)" title="“MultiMC” download"></a></td>
 <td>Client Executable</td>
 <td><a href="https://github.com/MultiMC/MultiMC5/graphs/contributors" title="MultiMC contributors">MultiMC contributors</a></td>
@@ -58,7 +58,7 @@
 <td align="center"><code>mmc-develop-win32.zip</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://nodejs.org/" title="Node"><img src="docs/img/icon/node.png" width="62" alt="Node" title="Node"></a></td>
+<td align="center"><a href="https://nodejs.org/" title="Node"><img src="https://nodejs.org/static/images/favicons/android-chrome-512x512.png" width="62" alt="Node" title="Node"></a></td>
 <td><a href="https://nodejs.org/" title="Node">Node</a></td>
 <td>Binary</td>
 <td><a href="https://github.com/nodejs/node/blob/v12.10.0/AUTHORS" title="Node contributors">Node contributors</a>, <a href="https://github.com/joyent" title="Joyent">Joyent</a>, <a href="https://github.com/nodejs/node/blob/v12.10.0/LICENSE" title="others">others</a></td>
