@@ -2314,7 +2314,7 @@
 			"description-url-override": "https://nodejs.org/",
 			"distribution": "allowed",
 			"id": "node",
-			"img": "node.png",
+			"img": "https://nodejs.org/static/images/favicons/android-chrome-512x512.png",
 			"name": "Node",
 			"type": "binary",
 			"code": {
