@@ -2182,7 +2182,7 @@
 			"file": "mmc-develop-win32.zip",
 			"folder-override": "MultiMC",
 			"id": "multimc",
-			"img": "multimc.png",
+			"img": "https://avatars.githubusercontent.com/u/5411890",
 			"md5": "891f07915ba014a5c33982e92a22f54f",
 			"name": "MultiMC",
 			"preview": true,
