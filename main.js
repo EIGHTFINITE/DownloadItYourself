@@ -103,7 +103,7 @@ process.on('exit', function() { // Asynchronous functions do not work beyond thi
 		global.downloads.sort((a, b) => a.name.localeCompare(b.name, 'en', {
 			sensitivity: 'base'
 		}));
-		fs.writeFileSync("../downloadlist.json", stringify(global.list));
+		fs.writeFileSync("../downloadlist.json", stringify(global.list, null, '\t'));
 
 		// Save readme
 		fs.writeFileSync("../README.html", createReadme("html"));
