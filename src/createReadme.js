@@ -519,33 +519,33 @@ module.exports = function(filetype) {
 				readme += '\r\n<tr>';
 
 				// Icon
-				readme += '\r\n<td align="center"><a href="' + (is.undefined(packageData._requested) || is.null(packageData._requested.saveSpec) ? packageData.homepage : 'https://github.com/' + packageData._from.slice(7).split('#')[0]) + '" title="' + packageData._location.substr(1) + '"><img src="docs/img/icon/';
+				readme += '\r\n<td align="center"><a href="' + (is.undefined(packageData._requested) || is.null(packageData._requested.saveSpec) ? packageData.homepage : 'https://github.com/' + packageData._from.slice(7).split('#')[0]) + '" title="' + packageData._location.substr(1) + '"><img src="';
 				if(packageData.repository.url.startsWith('https://github.com/electron/'))
-					readme += 'electron.svg';
+					readme += 'docs/img/icon/electron.svg';
 				else if(packageData.repository.url.startsWith('https://github.com/postmanlabs/'))
-					readme += 'postman.svg';
+					readme += 'docs/img/icon/postman.svg';
 				else if(packageData.repository.url.startsWith('https://github.com/joyent/'))
-					readme += 'joyent.png';
+					readme += 'docs/img/icon/joyent.png';
 				else if(packageData.repository.url.startsWith('https://github.com/request/'))
-					readme += 'request.png';
+					readme += 'docs/img/icon/request.png';
 				else if(packageData.repository.url.startsWith('https://github.com/cheeriojs/'))
-					readme += 'cheerio.png';
+					readme += 'docs/img/icon/cheerio.png';
 				else if(packageData.repository.url.startsWith('https://github.com/nodejs/'))
-					readme += 'node.png';
+					readme += 'docs/img/icon/node.png';
 				else if(packageData.repository.url.startsWith('https://github.com/zeit/'))
-					readme += 'zeit.png';
+					readme += 'docs/img/icon/zeit.png';
 				else if(packageData.repository.url.startsWith('https://github.com/jslicense/'))
-					readme += 'jslicense.png';
+					readme += 'docs/img/icon/jslicense.png';
 				else if(packageData.repository.url.startsWith('https://github.com/npm/'))
-					readme += 'npm.svg';
+					readme += 'https://raw.githubusercontent.com/npm/logos/master/npm%20square/n.svg';
 				else if(fs.existsSync('../docs/img/icon/' + packageData.name + '.svg'))
-					readme += packageData.name + '.svg';
+					readme += 'docs/img/icon/' + packageData.name + '.svg';
 				else if(fs.existsSync('../docs/img/icon/' + packageData.name + '.png'))
-					readme += packageData.name + '.png';
+					readme += 'docs/img/icon/' + packageData.name + '.png';
 				else if(is.undefined(packageData._requested) || is.null(packageData._requested.saveSpec))
-					readme += 'npmjs.svg';
+					readme += 'https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg';
 				else
-					readme += 'github.png';
+					readme += 'docs/img/icon/github.png';
 				readme += '" width="62" alt="' + packageData._location.substr(1) + '" title="' + packageData._location.substr(1) + '"></a></td>';
 
 				// Name
