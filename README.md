@@ -2251,7 +2251,7 @@
 <td align="center"><code>@postman/tunnel-agent@0.6.3</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/@sindresorhus/is" title="@sindresorhus/is"><img src="docs/img/icon/npmjs.svg" width="62" alt="@sindresorhus/is" title="@sindresorhus/is"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/@sindresorhus/is" title="@sindresorhus/is"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="@sindresorhus/is" title="@sindresorhus/is"></a></td>
 <td><a href="https://www.npmjs.com/package/@sindresorhus/is" title="@sindresorhus/is">@sindresorhus/is</a></td>
 <td>Package</td>
 <td><a href="https://github.com/sindresorhus" title="Sindre Sorhus">Sindre Sorhus</a></td>
@@ -2295,7 +2295,7 @@
 <td align="center"><code>assert-plus@1.0.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/asynckit" title="asynckit"><img src="docs/img/icon/npmjs.svg" width="62" alt="asynckit" title="asynckit"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/asynckit" title="asynckit"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="asynckit" title="asynckit"></a></td>
 <td><a href="https://www.npmjs.com/package/asynckit" title="asynckit">asynckit</a></td>
 <td>Package</td>
 <td><a href="https://github.com/alexindigo" title="Alex Indigo">Alex Indigo</a></td>
@@ -2317,7 +2317,7 @@
 <td align="center"><code>aws-sign2@0.7.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/aws4" title="aws4"><img src="docs/img/icon/npmjs.svg" width="62" alt="aws4" title="aws4"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/aws4" title="aws4"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="aws4" title="aws4"></a></td>
 <td><a href="https://www.npmjs.com/package/aws4" title="aws4">aws4</a></td>
 <td>Package</td>
 <td><a href="https://github.com/mhart" title="Michael Hart">Michael Hart</a></td>
@@ -2328,7 +2328,7 @@
 <td align="center"><code>aws4@1.11.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/base64-js" title="base64-js"><img src="docs/img/icon/npmjs.svg" width="62" alt="base64-js" title="base64-js"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/base64-js" title="base64-js"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="base64-js" title="base64-js"></a></td>
 <td><a href="https://www.npmjs.com/package/base64-js" title="base64-js">base64-js</a></td>
 <td>Package</td>
 <td><a href="https://github.com/beatgammit" title="T. Jameson Little">T. Jameson Little</a></td>
@@ -2350,7 +2350,7 @@
 <td align="center"><code>bcrypt-pbkdf@1.0.2</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/bluebird" title="bluebird"><img src="docs/img/icon/npmjs.svg" width="62" alt="bluebird" title="bluebird"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/bluebird" title="bluebird"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="bluebird" title="bluebird"></a></td>
 <td><a href="https://www.npmjs.com/package/bluebird" title="bluebird">bluebird</a></td>
 <td>Package</td>
 <td><a href="https://github.com/petkaantonov" title="Petka Antonov">Petka Antonov</a></td>
@@ -2361,7 +2361,7 @@
 <td align="center"><code>bluebird@3.7.2</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/boolbase" title="boolbase"><img src="docs/img/icon/npmjs.svg" width="62" alt="boolbase" title="boolbase"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/boolbase" title="boolbase"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="boolbase" title="boolbase"></a></td>
 <td><a href="https://www.npmjs.com/package/boolbase" title="boolbase">boolbase</a></td>
 <td>Package</td>
 <td><a href="https://github.com/fb55" title="Felix Böhm">Felix Böhm</a></td>
@@ -2372,7 +2372,7 @@
 <td align="center"><code>boolbase@1.0.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/brotli" title="brotli"><img src="docs/img/icon/npmjs.svg" width="62" alt="brotli" title="brotli"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/brotli" title="brotli"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="brotli" title="brotli"></a></td>
 <td><a href="https://www.npmjs.com/package/brotli" title="brotli">brotli</a></td>
 <td>Package</td>
 <td><a href="https://github.com/devongovett" title="Devon Govett">Devon Govett</a></td>
@@ -2427,7 +2427,7 @@
 <td align="center"><code>EIGHTFINITE/cloudscraper#1d4903235ff6daa379e2ca2615c2896adba2a5f8</code><br>(based on <code>cloudscraper@4.6.0</code>)</td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/combined-stream" title="combined-stream"><img src="docs/img/icon/npmjs.svg" width="62" alt="combined-stream" title="combined-stream"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/combined-stream" title="combined-stream"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="combined-stream" title="combined-stream"></a></td>
 <td><a href="https://www.npmjs.com/package/combined-stream" title="combined-stream">combined-stream</a></td>
 <td>Package</td>
 <td><a href="https://github.com/felixge" title="Felix Geisendörfer">Felix Geisendörfer</a></td>
@@ -2438,7 +2438,7 @@
 <td align="center"><code>combined-stream@1.0.8</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/core-util-is" title="core-util-is"><img src="docs/img/icon/npmjs.svg" width="62" alt="core-util-is" title="core-util-is"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/core-util-is" title="core-util-is"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="core-util-is" title="core-util-is"></a></td>
 <td><a href="https://www.npmjs.com/package/core-util-is" title="core-util-is">core-util-is</a></td>
 <td>Package</td>
 <td><a href="https://github.com/isaacs/core-util-is/graphs/contributors" title="Node contributors">Node contributors</a></td>
@@ -2449,7 +2449,7 @@
 <td align="center"><code>core-util-is@1.0.2</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/css-select" title="css-select"><img src="docs/img/icon/npmjs.svg" width="62" alt="css-select" title="css-select"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/css-select" title="css-select"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="css-select" title="css-select"></a></td>
 <td><a href="https://www.npmjs.com/package/css-select" title="css-select">css-select</a></td>
 <td>Package</td>
 <td><a href="https://github.com/fb55" title="Felix Böhm">Felix Böhm</a></td>
@@ -2460,7 +2460,7 @@
 <td align="center"><code>css-select@4.1.2</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/css-what" title="css-what"><img src="docs/img/icon/npmjs.svg" width="62" alt="css-what" title="css-what"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/css-what" title="css-what"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="css-what" title="css-what"></a></td>
 <td><a href="https://www.npmjs.com/package/css-what" title="css-what">css-what</a></td>
 <td>Package</td>
 <td><a href="https://github.com/fb55" title="Felix Böhm">Felix Böhm</a></td>
@@ -2471,7 +2471,7 @@
 <td align="center"><code>css-what@5.0.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/dashdash" title="dashdash"><img src="docs/img/icon/npmjs.svg" width="62" alt="dashdash" title="dashdash"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/dashdash" title="dashdash"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="dashdash" title="dashdash"></a></td>
 <td><a href="https://www.npmjs.com/package/dashdash" title="dashdash">dashdash</a></td>
 <td>Package</td>
 <td><a href="https://github.com/trentm" title="Trent Mick">Trent Mick</a>, <a href="https://github.com/joyent" title="Joyent">Joyent</a></td>
@@ -2482,7 +2482,7 @@
 <td align="center"><code>dashdash@1.14.1</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/delayed-stream" title="delayed-stream"><img src="docs/img/icon/npmjs.svg" width="62" alt="delayed-stream" title="delayed-stream"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/delayed-stream" title="delayed-stream"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="delayed-stream" title="delayed-stream"></a></td>
 <td><a href="https://www.npmjs.com/package/delayed-stream" title="delayed-stream">delayed-stream</a></td>
 <td>Package</td>
 <td><a href="https://github.com/felixge" title="Felix Geisendörfer">Felix Geisendörfer</a></td>
@@ -2504,7 +2504,7 @@
 <td align="center"><code>dom-serializer@1.3.2</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/domelementtype" title="domelementtype"><img src="docs/img/icon/npmjs.svg" width="62" alt="domelementtype" title="domelementtype"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/domelementtype" title="domelementtype"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="domelementtype" title="domelementtype"></a></td>
 <td><a href="https://www.npmjs.com/package/domelementtype" title="domelementtype">domelementtype</a></td>
 <td>Package</td>
 <td><a href="https://github.com/fb55" title="Felix Böhm">Felix Böhm</a></td>
@@ -2515,7 +2515,7 @@
 <td align="center"><code>domelementtype@2.2.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/domhandler" title="domhandler"><img src="docs/img/icon/npmjs.svg" width="62" alt="domhandler" title="domhandler"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/domhandler" title="domhandler"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="domhandler" title="domhandler"></a></td>
 <td><a href="https://www.npmjs.com/package/domhandler" title="domhandler">domhandler</a></td>
 <td>Package</td>
 <td><a href="https://github.com/fb55" title="Felix Böhm">Felix Böhm</a></td>
@@ -2526,7 +2526,7 @@
 <td align="center"><code>domhandler@4.2.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/domutils" title="domutils"><img src="docs/img/icon/npmjs.svg" width="62" alt="domutils" title="domutils"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/domutils" title="domutils"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="domutils" title="domutils"></a></td>
 <td><a href="https://www.npmjs.com/package/domutils" title="domutils">domutils</a></td>
 <td>Package</td>
 <td><a href="https://github.com/fb55" title="Felix Böhm">Felix Böhm</a></td>
@@ -2537,7 +2537,7 @@
 <td align="center"><code>domutils@2.6.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/ecc-jsbn" title="ecc-jsbn"><img src="docs/img/icon/npmjs.svg" width="62" alt="ecc-jsbn" title="ecc-jsbn"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/ecc-jsbn" title="ecc-jsbn"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="ecc-jsbn" title="ecc-jsbn"></a></td>
 <td><a href="https://www.npmjs.com/package/ecc-jsbn" title="ecc-jsbn">ecc-jsbn</a></td>
 <td>Package</td>
 <td><a href="https://github.com/quartzjer" title="Jeremie Miller">Jeremie Miller</a></td>
@@ -2559,7 +2559,7 @@
 <td align="center"><code>electron@12.0.9</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/entities" title="entities"><img src="docs/img/icon/npmjs.svg" width="62" alt="entities" title="entities"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/entities" title="entities"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="entities" title="entities"></a></td>
 <td><a href="https://www.npmjs.com/package/entities" title="entities">entities</a></td>
 <td>Package</td>
 <td><a href="https://github.com/fb55" title="Felix Böhm">Felix Böhm</a></td>
@@ -2570,7 +2570,7 @@
 <td align="center"><code>entities@2.2.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/extend" title="extend"><img src="docs/img/icon/npmjs.svg" width="62" alt="extend" title="extend"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/extend" title="extend"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="extend" title="extend"></a></td>
 <td><a href="https://www.npmjs.com/package/extend" title="extend">extend</a></td>
 <td>Package</td>
 <td><a href="https://github.com/justmoon" title="Stefan Thomas">Stefan Thomas</a></td>
@@ -2592,7 +2592,7 @@
 <td align="center"><code>extsprintf@1.3.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/fast-deep-equal" title="fast-deep-equal"><img src="docs/img/icon/npmjs.svg" width="62" alt="fast-deep-equal" title="fast-deep-equal"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/fast-deep-equal" title="fast-deep-equal"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="fast-deep-equal" title="fast-deep-equal"></a></td>
 <td><a href="https://www.npmjs.com/package/fast-deep-equal" title="fast-deep-equal">fast-deep-equal</a></td>
 <td>Package</td>
 <td><a href="https://github.com/epoberezkin" title="Evgeny Poberezkin">Evgeny Poberezkin</a></td>
@@ -2603,7 +2603,7 @@
 <td align="center"><code>fast-deep-equal@3.1.3</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/fast-json-stable-stringify" title="fast-json-stable-stringify"><img src="docs/img/icon/npmjs.svg" width="62" alt="fast-json-stable-stringify" title="fast-json-stable-stringify"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/fast-json-stable-stringify" title="fast-json-stable-stringify"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="fast-json-stable-stringify" title="fast-json-stable-stringify"></a></td>
 <td><a href="https://www.npmjs.com/package/fast-json-stable-stringify" title="fast-json-stable-stringify">fast-json-stable-stringify</a></td>
 <td>Package</td>
 <td><a href="https://github.com/epoberezkin" title="Evgeny Poberezkin">Evgeny Poberezkin</a>, <a href="https://github.com/substack" title="James Halliday">James Halliday</a></td>
@@ -2636,7 +2636,7 @@
 <td align="center"><code>EIGHTFINITE/fs-extra#33c0495624f626c1f9eeb2e8af89b9239507b3a7</code><br>(based on <code>fs-extra@9.1.0</code>)</td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/getpass" title="getpass"><img src="docs/img/icon/npmjs.svg" width="62" alt="getpass" title="getpass"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/getpass" title="getpass"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="getpass" title="getpass"></a></td>
 <td><a href="https://www.npmjs.com/package/getpass" title="getpass">getpass</a></td>
 <td>Package</td>
 <td><a href="https://github.com/joyent" title="Joyent">Joyent</a></td>
@@ -2647,7 +2647,7 @@
 <td align="center"><code>getpass@0.1.7</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/graceful-fs" title="graceful-fs"><img src="docs/img/icon/npmjs.svg" width="62" alt="graceful-fs" title="graceful-fs"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/graceful-fs" title="graceful-fs"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="graceful-fs" title="graceful-fs"></a></td>
 <td><a href="https://www.npmjs.com/package/graceful-fs" title="graceful-fs">graceful-fs</a></td>
 <td>Package</td>
 <td><a href="https://github.com/isaacs" title="Isaac Z. Schlueter">Isaac Z. Schlueter</a>, <a href="https://github.com/isaacs/node-graceful-fs/blob/master/LICENSE" title="Ben Noordhuis">Ben Noordhuis</a>, <a href="https://github.com/isaacs/node-graceful-fs/graphs/contributors" title="graceful-fs contributors">graceful-fs contributors</a></td>
@@ -2658,7 +2658,7 @@
 <td align="center"><code>graceful-fs@4.2.6</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/har-schema" title="har-schema"><img src="docs/img/icon/npmjs.svg" width="62" alt="har-schema" title="har-schema"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/har-schema" title="har-schema"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="har-schema" title="har-schema"></a></td>
 <td><a href="https://www.npmjs.com/package/har-schema" title="har-schema">har-schema</a></td>
 <td>Package</td>
 <td><a href="https://github.com/ahmadnassri" title="Ahmad Nassri">Ahmad Nassri</a></td>
@@ -2669,7 +2669,7 @@
 <td align="center"><code>har-schema@2.0.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/har-validator" title="har-validator"><img src="docs/img/icon/npmjs.svg" width="62" alt="har-validator" title="har-validator"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/har-validator" title="har-validator"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="har-validator" title="har-validator"></a></td>
 <td><a href="https://www.npmjs.com/package/har-validator" title="har-validator">har-validator</a></td>
 <td>Package</td>
 <td><a href="https://github.com/ahmadnassri" title="Ahmad Nassri">Ahmad Nassri</a></td>
@@ -2680,7 +2680,7 @@
 <td align="center"><code>har-validator@5.1.5</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/htmlparser2" title="htmlparser2"><img src="docs/img/icon/npmjs.svg" width="62" alt="htmlparser2" title="htmlparser2"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/htmlparser2" title="htmlparser2"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="htmlparser2" title="htmlparser2"></a></td>
 <td><a href="https://www.npmjs.com/package/htmlparser2" title="htmlparser2">htmlparser2</a></td>
 <td>Package</td>
 <td><a href="https://github.com/fb55" title="Felix Böhm">Felix Böhm</a></td>
@@ -2702,7 +2702,7 @@
 <td align="center"><code>http-signature@1.3.5</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/is-typedarray" title="is-typedarray"><img src="docs/img/icon/npmjs.svg" width="62" alt="is-typedarray" title="is-typedarray"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/is-typedarray" title="is-typedarray"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="is-typedarray" title="is-typedarray"></a></td>
 <td><a href="https://www.npmjs.com/package/is-typedarray" title="is-typedarray">is-typedarray</a></td>
 <td>Package</td>
 <td><a href="https://github.com/hughsk" title="Hugh Kennedy">Hugh Kennedy</a></td>
@@ -2713,7 +2713,7 @@
 <td align="center"><code>is-typedarray@1.0.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/isstream" title="isstream"><img src="docs/img/icon/npmjs.svg" width="62" alt="isstream" title="isstream"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/isstream" title="isstream"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="isstream" title="isstream"></a></td>
 <td><a href="https://www.npmjs.com/package/isstream" title="isstream">isstream</a></td>
 <td>Package</td>
 <td><a href="https://github.com/rvagg" title="Rod Vagg">Rod Vagg</a></td>
@@ -2724,7 +2724,7 @@
 <td align="center"><code>isstream@0.1.2</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/jsbn" title="jsbn"><img src="docs/img/icon/npmjs.svg" width="62" alt="jsbn" title="jsbn"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/jsbn" title="jsbn"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="jsbn" title="jsbn"></a></td>
 <td><a href="https://www.npmjs.com/package/jsbn" title="jsbn">jsbn</a></td>
 <td>Package</td>
 <td><a href="https://github.com/andyperlitch" title="Tom Wu">Tom Wu</a></td>
@@ -2735,7 +2735,7 @@
 <td align="center"><code>jsbn@0.1.1</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/json-schema" title="json-schema"><img src="docs/img/icon/npmjs.svg" width="62" alt="json-schema" title="json-schema"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/json-schema" title="json-schema"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="json-schema" title="json-schema"></a></td>
 <td><a href="https://www.npmjs.com/package/json-schema" title="json-schema">json-schema</a></td>
 <td>Package</td>
 <td><a href="https://github.com/kriszyp" title="Kris Zyp">Kris Zyp</a></td>
@@ -2746,7 +2746,7 @@
 <td align="center"><code>json-schema@0.2.3</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/json-schema-traverse" title="json-schema-traverse"><img src="docs/img/icon/npmjs.svg" width="62" alt="json-schema-traverse" title="json-schema-traverse"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/json-schema-traverse" title="json-schema-traverse"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="json-schema-traverse" title="json-schema-traverse"></a></td>
 <td><a href="https://www.npmjs.com/package/json-schema-traverse" title="json-schema-traverse">json-schema-traverse</a></td>
 <td>Package</td>
 <td><a href="https://github.com/epoberezkin" title="Evgeny Poberezkin">Evgeny Poberezkin</a></td>
@@ -2757,7 +2757,7 @@
 <td align="center"><code>json-schema-traverse@0.4.1</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/json-stringify-safe" title="json-stringify-safe"><img src="docs/img/icon/npmjs.svg" width="62" alt="json-stringify-safe" title="json-stringify-safe"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/json-stringify-safe" title="json-stringify-safe"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="json-stringify-safe" title="json-stringify-safe"></a></td>
 <td><a href="https://www.npmjs.com/package/json-stringify-safe" title="json-stringify-safe">json-stringify-safe</a></td>
 <td>Package</td>
 <td><a href="https://github.com/isaacs" title="Isaac Z. Schlueter">Isaac Z. Schlueter</a></td>
@@ -2768,7 +2768,7 @@
 <td align="center"><code>json-stringify-safe@5.0.1</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/jsonfile" title="jsonfile"><img src="docs/img/icon/npmjs.svg" width="62" alt="jsonfile" title="jsonfile"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/jsonfile" title="jsonfile"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="jsonfile" title="jsonfile"></a></td>
 <td><a href="https://www.npmjs.com/package/jsonfile" title="jsonfile">jsonfile</a></td>
 <td>Package</td>
 <td><a href="https://github.com/jprichardson" title="JP Richardson">JP Richardson</a></td>
@@ -2790,7 +2790,7 @@
 <td align="center"><code>jsprim@1.4.1</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/lodash" title="lodash"><img src="docs/img/icon/npmjs.svg" width="62" alt="lodash" title="lodash"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/lodash" title="lodash"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="lodash" title="lodash"></a></td>
 <td><a href="https://www.npmjs.com/package/lodash" title="lodash">lodash</a></td>
 <td>Package</td>
 <td><a href="https://github.com/lodash" title="John-David Dalton">John-David Dalton</a></td>
@@ -2801,7 +2801,7 @@
 <td align="center"><code>lodash@4.17.21</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/md5-file" title="md5-file"><img src="docs/img/icon/npmjs.svg" width="62" alt="md5-file" title="md5-file"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/md5-file" title="md5-file"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="md5-file" title="md5-file"></a></td>
 <td><a href="https://www.npmjs.com/package/md5-file" title="md5-file">md5-file</a></td>
 <td>Package</td>
 <td><a href="https://github.com/roryrjb" title="Rory Bradford">Rory Bradford</a></td>
@@ -2812,7 +2812,7 @@
 <td align="center"><code>md5-file@4.0.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/mime-db" title="mime-db"><img src="docs/img/icon/npmjs.svg" width="62" alt="mime-db" title="mime-db"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/mime-db" title="mime-db"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="mime-db" title="mime-db"></a></td>
 <td><a href="https://www.npmjs.com/package/mime-db" title="mime-db">mime-db</a></td>
 <td>Package</td>
 <td><a href="https://github.com/jshttp" title="jshttp">jshttp</a></td>
@@ -2823,7 +2823,7 @@
 <td align="center"><code>mime-db@1.47.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/mime-types" title="mime-types"><img src="docs/img/icon/npmjs.svg" width="62" alt="mime-types" title="mime-types"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/mime-types" title="mime-types"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="mime-types" title="mime-types"></a></td>
 <td><a href="https://www.npmjs.com/package/mime-types" title="mime-types">mime-types</a></td>
 <td>Package</td>
 <td><a href="https://github.com/jshttp" title="jshttp">jshttp</a></td>
@@ -2834,7 +2834,7 @@
 <td align="center"><code>mime-types@2.1.30</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/npm" title="npm"><img src="docs/img/icon/npm.svg" width="62" alt="npm" title="npm"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/npm" title="npm"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20square/n.svg" width="62" alt="npm" title="npm"></a></td>
 <td><a href="https://www.npmjs.com/package/npm" title="npm">npm</a></td>
 <td>Package</td>
 <td><a href="https://github.com/npm" title="Isaac Z. Schlueter">Isaac Z. Schlueter</a></td>
@@ -2856,7 +2856,7 @@
 <td align="center"><code>EIGHTFINITE/npm-6#8d0afa503490607430d560e65c895cf21a08fef6</code><br>(based on <code>npm-6@0.0.0-latest-6</code>)</td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/npm" title="npm-6/npm"><img src="docs/img/icon/npm.svg" width="62" alt="npm-6/npm" title="npm-6/npm"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/npm" title="npm-6/npm"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20square/n.svg" width="62" alt="npm-6/npm" title="npm-6/npm"></a></td>
 <td><a href="https://www.npmjs.com/package/npm" title="npm-6/npm">npm-6/npm</a></td>
 <td>Package</td>
 <td><a href="https://github.com/npm" title="Isaac Z. Schlueter">Isaac Z. Schlueter</a></td>
@@ -2889,7 +2889,7 @@
 <td align="center"><code>EIGHTFINITE/npm-next-6#62996dbd07fd624d6795a8e47e27509681f89ebd</code><br>(based on <code>npm-next-6@0.0.0-next-6</code>)</td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/nth-check" title="nth-check"><img src="docs/img/icon/npmjs.svg" width="62" alt="nth-check" title="nth-check"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/nth-check" title="nth-check"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="nth-check" title="nth-check"></a></td>
 <td><a href="https://www.npmjs.com/package/nth-check" title="nth-check">nth-check</a></td>
 <td>Package</td>
 <td><a href="https://github.com/fb55" title="Felix Böhm">Felix Böhm</a></td>
@@ -2911,7 +2911,7 @@
 <td align="center"><code>oauth-sign@0.9.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/parse5" title="parse5"><img src="docs/img/icon/npmjs.svg" width="62" alt="parse5" title="parse5"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/parse5" title="parse5"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="parse5" title="parse5"></a></td>
 <td><a href="https://www.npmjs.com/package/parse5" title="parse5">parse5</a></td>
 <td>Package</td>
 <td><a href="https://github.com/inikulin" title="Ivan Nikulin">Ivan Nikulin</a></td>
@@ -2922,7 +2922,7 @@
 <td align="center"><code>parse5@6.0.1</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/parse5-htmlparser2-tree-adapter" title="parse5-htmlparser2-tree-adapter"><img src="docs/img/icon/npmjs.svg" width="62" alt="parse5-htmlparser2-tree-adapter" title="parse5-htmlparser2-tree-adapter"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/parse5-htmlparser2-tree-adapter" title="parse5-htmlparser2-tree-adapter"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="parse5-htmlparser2-tree-adapter" title="parse5-htmlparser2-tree-adapter"></a></td>
 <td><a href="https://www.npmjs.com/package/parse5-htmlparser2-tree-adapter" title="parse5-htmlparser2-tree-adapter">parse5-htmlparser2-tree-adapter</a></td>
 <td>Package</td>
 <td><a href="https://github.com/inikulin" title="Ivan Nikulin">Ivan Nikulin</a></td>
@@ -2933,7 +2933,7 @@
 <td align="center"><code>parse5-htmlparser2-tree-adapter@6.0.1</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/performance-now" title="performance-now"><img src="docs/img/icon/npmjs.svg" width="62" alt="performance-now" title="performance-now"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/performance-now" title="performance-now"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="performance-now" title="performance-now"></a></td>
 <td><a href="https://www.npmjs.com/package/performance-now" title="performance-now">performance-now</a></td>
 <td>Package</td>
 <td><a href="https://github.com/myrne" title="Myrne Stol">Myrne Stol</a></td>
@@ -2955,7 +2955,7 @@
 <td align="center"><code>postman-request@2.88.1-postman.30</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/psl" title="psl"><img src="docs/img/icon/npmjs.svg" width="62" alt="psl" title="psl"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/psl" title="psl"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="psl" title="psl"></a></td>
 <td><a href="https://www.npmjs.com/package/psl" title="psl">psl</a></td>
 <td>Package</td>
 <td><a href="https://github.com/lupomontero" title="Lupo Montero">Lupo Montero</a></td>
@@ -2966,7 +2966,7 @@
 <td align="center"><code>psl@1.8.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/punycode" title="punycode"><img src="docs/img/icon/npmjs.svg" width="62" alt="punycode" title="punycode"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/punycode" title="punycode"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="punycode" title="punycode"></a></td>
 <td><a href="https://www.npmjs.com/package/punycode" title="punycode">punycode</a></td>
 <td>Package</td>
 <td><a href="https://github.com/bestiejs" title="Mathias Bynens">Mathias Bynens</a></td>
@@ -2977,7 +2977,7 @@
 <td align="center"><code>punycode@2.1.1</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/qs" title="qs"><img src="docs/img/icon/npmjs.svg" width="62" alt="qs" title="qs"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/qs" title="qs"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="qs" title="qs"></a></td>
 <td><a href="https://www.npmjs.com/package/qs" title="qs">qs</a></td>
 <td>Package</td>
 <td><a href="https://github.com/ljharb" title="ljharb">ljharb</a></td>
@@ -3010,7 +3010,7 @@
 <td align="center"><code>EIGHTFINITE/promise-core#debc71b187e7d49abfb69c89c35c18f6b16246e8</code><br>(based on <code>request-promise-core@1.1.4</code>)</td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/safe-buffer" title="safe-buffer"><img src="docs/img/icon/npmjs.svg" width="62" alt="safe-buffer" title="safe-buffer"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/safe-buffer" title="safe-buffer"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="safe-buffer" title="safe-buffer"></a></td>
 <td><a href="https://www.npmjs.com/package/safe-buffer" title="safe-buffer">safe-buffer</a></td>
 <td>Package</td>
 <td><a href="https://github.com/feross" title="Feross Aboukhadijeh">Feross Aboukhadijeh</a></td>
@@ -3021,7 +3021,7 @@
 <td align="center"><code>safe-buffer@5.1.2</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/safer-buffer" title="safer-buffer"><img src="docs/img/icon/npmjs.svg" width="62" alt="safer-buffer" title="safer-buffer"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/safer-buffer" title="safer-buffer"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="safer-buffer" title="safer-buffer"></a></td>
 <td><a href="https://www.npmjs.com/package/safer-buffer" title="safer-buffer">safer-buffer</a></td>
 <td>Package</td>
 <td><a href="https://github.com/ChALkeR" title="Nikita Skovoroda">Nikita Skovoroda</a></td>
@@ -3076,7 +3076,7 @@
 <td align="center"><code>sshpk@1.16.1</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/stealthy-require" title="stealthy-require"><img src="docs/img/icon/npmjs.svg" width="62" alt="stealthy-require" title="stealthy-require"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/stealthy-require" title="stealthy-require"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="stealthy-require" title="stealthy-require"></a></td>
 <td><a href="https://www.npmjs.com/package/stealthy-require" title="stealthy-require">stealthy-require</a></td>
 <td>Package</td>
 <td><a href="https://github.com/analog-nico" title="Nicolai Kamenzky">Nicolai Kamenzky</a></td>
@@ -3087,7 +3087,7 @@
 <td align="center"><code>stealthy-require@1.1.1</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/stream-length" title="stream-length"><img src="docs/img/icon/npmjs.svg" width="62" alt="stream-length" title="stream-length"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/stream-length" title="stream-length"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="stream-length" title="stream-length"></a></td>
 <td><a href="https://www.npmjs.com/package/stream-length" title="stream-length">stream-length</a></td>
 <td>Package</td>
 <td><a href="https://github.com/joepie91" title="Sven Slootweg">Sven Slootweg</a></td>
@@ -3098,7 +3098,7 @@
 <td align="center"><code>stream-length@1.0.2</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/bluebird" title="stream-length/bluebird"><img src="docs/img/icon/npmjs.svg" width="62" alt="stream-length/bluebird" title="stream-length/bluebird"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/bluebird" title="stream-length/bluebird"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="stream-length/bluebird" title="stream-length/bluebird"></a></td>
 <td><a href="https://www.npmjs.com/package/bluebird" title="stream-length/bluebird">stream-length/bluebird</a></td>
 <td>Package</td>
 <td><a href="https://github.com/petkaantonov" title="Petka Antonov">Petka Antonov</a></td>
@@ -3109,7 +3109,7 @@
 <td align="center"><code>bluebird@2.11.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/tough-cookie" title="tough-cookie"><img src="docs/img/icon/npmjs.svg" width="62" alt="tough-cookie" title="tough-cookie"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/tough-cookie" title="tough-cookie"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="tough-cookie" title="tough-cookie"></a></td>
 <td><a href="https://www.npmjs.com/package/tough-cookie" title="tough-cookie">tough-cookie</a></td>
 <td>Package</td>
 <td><a href="https://github.com/salesforce" title="Jeremy Stashewsky">Jeremy Stashewsky</a></td>
@@ -3120,7 +3120,7 @@
 <td align="center"><code>tough-cookie@2.5.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/tweetnacl" title="tweetnacl"><img src="docs/img/icon/npmjs.svg" width="62" alt="tweetnacl" title="tweetnacl"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/tweetnacl" title="tweetnacl"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="tweetnacl" title="tweetnacl"></a></td>
 <td><a href="https://www.npmjs.com/package/tweetnacl" title="tweetnacl">tweetnacl</a></td>
 <td>Package</td>
 <td><a href="https://github.com/dchest/tweetnacl-js/blob/master/AUTHORS.md" title="tweetnacl contributors">tweetnacl contributors</a></td>
@@ -3131,7 +3131,7 @@
 <td align="center"><code>tweetnacl@0.14.5</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/universalify" title="universalify"><img src="docs/img/icon/npmjs.svg" width="62" alt="universalify" title="universalify"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/universalify" title="universalify"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="universalify" title="universalify"></a></td>
 <td><a href="https://www.npmjs.com/package/universalify" title="universalify">universalify</a></td>
 <td>Package</td>
 <td><a href="https://github.com/RyanZim" title="Ryan Zimmerman">Ryan Zimmerman</a></td>
@@ -3142,7 +3142,7 @@
 <td align="center"><code>universalify@2.0.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/uri-js" title="uri-js"><img src="docs/img/icon/npmjs.svg" width="62" alt="uri-js" title="uri-js"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/uri-js" title="uri-js"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="uri-js" title="uri-js"></a></td>
 <td><a href="https://www.npmjs.com/package/uri-js" title="uri-js">uri-js</a></td>
 <td>Package</td>
 <td><a href="https://github.com/garycourt" title="Gary Court">Gary Court</a></td>
@@ -3153,7 +3153,7 @@
 <td align="center"><code>uri-js@4.4.1</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/uuid" title="uuid"><img src="docs/img/icon/npmjs.svg" width="62" alt="uuid" title="uuid"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/uuid" title="uuid"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="uuid" title="uuid"></a></td>
 <td><a href="https://www.npmjs.com/package/uuid" title="uuid">uuid</a></td>
 <td>Package</td>
 <td><a href="https://github.com/uuidjs" title="uuidjs">uuidjs</a></td>
@@ -3175,7 +3175,7 @@
 <td align="center"><code>verror@1.10.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/wait-until" title="wait-until"><img src="docs/img/icon/npmjs.svg" width="62" alt="wait-until" title="wait-until"></a></td>
+<td align="center"><a href="https://www.npmjs.com/package/wait-until" title="wait-until"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="wait-until" title="wait-until"></a></td>
 <td><a href="https://www.npmjs.com/package/wait-until" title="wait-until">wait-until</a></td>
 <td>Package</td>
 <td><a href="https://github.com/nylen" title="James Nylen">James Nylen</a></td>
