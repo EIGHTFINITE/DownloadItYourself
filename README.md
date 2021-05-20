@@ -2556,7 +2556,7 @@
 <td><a href="https://github.com/electron/electron" title="“electron” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Build cross platform desktop apps with JavaScript, HTML, and CSS.</td>
-<td align="center"><code>electron@12.0.8</code></td>
+<td align="center"><code>electron@12.0.9</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/entities" title="entities"><img src="docs/img/icon/npmjs.svg" width="62" alt="entities" title="entities"></a></td>
