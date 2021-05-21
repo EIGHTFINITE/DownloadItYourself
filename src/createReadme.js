@@ -527,7 +527,7 @@ module.exports = function(filetype) {
 				else if(packageData.repository.url.startsWith('https://github.com/joyent/'))
 					readme += 'docs/img/icon/joyent.png';
 				else if(packageData.repository.url.startsWith('https://github.com/request/'))
-					readme += 'docs/img/icon/request.png';
+					readme += 'https://avatars.githubusercontent.com/u/730467?s=200';
 				else if(packageData.repository.url.startsWith('https://github.com/cheeriojs/'))
 					readme += 'https://avatars.githubusercontent.com/u/7230330?s=200';
 				else if(packageData.repository.url.startsWith('https://github.com/jslicense/'))
