@@ -535,7 +535,7 @@ module.exports = function(filetype) {
 				else if(packageData.repository.url.startsWith('https://github.com/zeit/'))
 					readme += 'docs/img/icon/zeit.png';
 				else if(packageData.repository.url.startsWith('https://github.com/jslicense/'))
-					readme += 'docs/img/icon/jslicense.png';
+					readme += 'https://jslicense.org/logo.png';
 				else if(packageData.repository.url.startsWith('https://github.com/npm/'))
 					readme += 'https://raw.githubusercontent.com/npm/logos/master/npm%20square/n.svg';
 				else if(fs.existsSync('../docs/img/icon/' + packageData.name + '.svg'))
