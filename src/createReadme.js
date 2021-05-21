@@ -531,7 +531,7 @@ module.exports = function(filetype) {
 				else if(packageData.repository.url.startsWith('https://github.com/cheeriojs/'))
 					readme += 'https://avatars.githubusercontent.com/u/7230330?s=200';
 				else if(packageData.repository.url.startsWith('https://github.com/jslicense/'))
-					readme += 'https://jslicense.org/logo.png';
+					readme += 'https://raw.githubusercontent.com/jslicense/jslicense.github.io/master/logo.png'; // https://jslicense.org/logo.png
 				else if(packageData.repository.url.startsWith('https://github.com/npm/'))
 					readme += 'https://raw.githubusercontent.com/npm/logos/master/npm%20square/n.svg';
 				else if(fs.existsSync('../docs/img/icon/' + packageData.name + '.svg'))
