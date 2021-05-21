@@ -529,9 +529,7 @@ module.exports = function(filetype) {
 				else if(packageData.repository.url.startsWith('https://github.com/request/'))
 					readme += 'docs/img/icon/request.png';
 				else if(packageData.repository.url.startsWith('https://github.com/cheeriojs/'))
-					readme += 'docs/img/icon/cheerio.png';
-				else if(packageData.repository.url.startsWith('https://github.com/nodejs/'))
-					readme += 'docs/img/icon/node.png';
+					readme += 'https://avatars.githubusercontent.com/u/7230330?s=200';
 				else if(packageData.repository.url.startsWith('https://github.com/jslicense/'))
 					readme += 'https://jslicense.org/logo.png';
 				else if(packageData.repository.url.startsWith('https://github.com/npm/'))
