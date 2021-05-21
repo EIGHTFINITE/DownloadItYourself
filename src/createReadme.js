@@ -523,7 +523,7 @@ module.exports = function(filetype) {
 				if(packageData.repository.url.startsWith('https://github.com/electron/'))
 					readme += 'docs/img/icon/electron.svg';
 				else if(packageData.repository.url.startsWith('https://github.com/postmanlabs/'))
-					readme += 'docs/img/icon/postman.svg';
+					readme += 'https://avatars.githubusercontent.com/u/10251060';
 				else if(packageData.repository.url.startsWith('https://github.com/joyent/'))
 					readme += 'https://avatars.githubusercontent.com/u/10161?s=200';
 				else if(packageData.repository.url.startsWith('https://github.com/request/'))
