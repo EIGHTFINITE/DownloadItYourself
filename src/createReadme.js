@@ -532,8 +532,6 @@ module.exports = function(filetype) {
 					readme += 'docs/img/icon/cheerio.png';
 				else if(packageData.repository.url.startsWith('https://github.com/nodejs/'))
 					readme += 'docs/img/icon/node.png';
-				else if(packageData.repository.url.startsWith('https://github.com/zeit/'))
-					readme += 'docs/img/icon/zeit.png';
 				else if(packageData.repository.url.startsWith('https://github.com/jslicense/'))
 					readme += 'https://jslicense.org/logo.png';
 				else if(packageData.repository.url.startsWith('https://github.com/npm/'))
