@@ -521,7 +521,7 @@ module.exports = function(filetype) {
 				// Icon
 				readme += '\r\n<td align="center"><a href="' + (is.undefined(packageData._requested) || is.null(packageData._requested.saveSpec) ? packageData.homepage : 'https://github.com/' + packageData._from.slice(7).split('#')[0]) + '" title="' + packageData._location.substr(1) + '"><img src="';
 				if(packageData.repository.url.startsWith('https://github.com/electron/'))
-					readme += 'docs/img/icon/electron.svg';
+					readme += 'https://avatars.githubusercontent.com/u/13409222';
 				else if(packageData.repository.url.startsWith('https://github.com/postmanlabs/'))
 					readme += 'https://avatars.githubusercontent.com/u/10251060';
 				else if(packageData.repository.url.startsWith('https://github.com/joyent/'))
