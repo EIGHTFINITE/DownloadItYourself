@@ -3062,7 +3062,7 @@
 <td><a href="https://github.com/jslicense/spdx-license-ids" title="“spdx-license-ids” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A list of SPDX license identifiers.<br>Required by spdx-expression-parse.</td>
-<td align="center"><code>spdx-license-ids@3.0.8</code></td>
+<td align="center"><code>spdx-license-ids@3.0.9</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/sshpk" title="sshpk"><img src="https://avatars.githubusercontent.com/u/10161?s=200" width="62" alt="sshpk" title="sshpk"></a></td>
