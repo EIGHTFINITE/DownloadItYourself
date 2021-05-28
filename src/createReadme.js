@@ -520,24 +520,22 @@ module.exports = function(filetype) {
 
 				// Icon
 				readme += '\r\n<td align="center"><a href="' + (is.undefined(packageData._requested) || is.null(packageData._requested.saveSpec) ? packageData.homepage : 'https://github.com/' + packageData._from.slice(7).split('#')[0]) + '" title="' + packageData._location.substr(1) + '"><img src="';
-				if(packageData.repository.url.startsWith('https://github.com/electron/'))
-					readme += 'https://avatars.githubusercontent.com/u/13409222';
-				else if(packageData.repository.url.startsWith('https://github.com/postmanlabs/'))
-					readme += 'https://avatars.githubusercontent.com/u/10251060';
-				else if(packageData.repository.url.startsWith('https://github.com/joyent/'))
-					readme += 'https://avatars.githubusercontent.com/u/10161?s=200';
-				else if(packageData.repository.url.startsWith('https://github.com/request/'))
-					readme += 'https://avatars.githubusercontent.com/u/730467?s=200';
+				if(packageData.repository.url.startsWith('https://github.com/ajv-validator/'))
+					readme += 'https://ajv.js.org/img/ajv.png';
 				else if(packageData.repository.url.startsWith('https://github.com/cheeriojs/'))
 					readme += 'https://avatars.githubusercontent.com/u/7230330?s=200';
+				else if(packageData.repository.url.startsWith('https://github.com/electron/'))
+					readme += 'https://avatars.githubusercontent.com/u/13409222';
+				else if(packageData.repository.url.startsWith('https://github.com/joyent/'))
+					readme += 'https://avatars.githubusercontent.com/u/10161?s=200';
 				else if(packageData.repository.url.startsWith('https://github.com/jslicense/'))
 					readme += 'https://raw.githubusercontent.com/jslicense/jslicense.github.io/master/logo.png'; // https://jslicense.org/logo.png
+				else if(packageData.repository.url.startsWith('https://github.com/postmanlabs/'))
+					readme += 'https://avatars.githubusercontent.com/u/10251060';
+				else if(packageData.repository.url.startsWith('https://github.com/request/'))
+					readme += 'https://avatars.githubusercontent.com/u/730467?s=200';
 				else if(packageData.repository.url.startsWith('https://github.com/npm/'))
 					readme += 'https://raw.githubusercontent.com/npm/logos/master/npm%20square/n.svg';
-				else if(fs.existsSync('../docs/img/icon/' + packageData.name + '.svg'))
-					readme += 'docs/img/icon/' + packageData.name + '.svg';
-				else if(fs.existsSync('../docs/img/icon/' + packageData.name + '.png'))
-					readme += 'docs/img/icon/' + packageData.name + '.png';
 				else if(is.undefined(packageData._requested) || is.null(packageData._requested.saveSpec))
 					readme += 'https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg';
 				else
