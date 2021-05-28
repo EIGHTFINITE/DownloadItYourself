@@ -2416,7 +2416,7 @@
 <td align="center"><code>cheerio-select@1.4.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://github.com/EIGHTFINITE/cloudscraper" title="cloudscraper"><img src="docs/img/icon/github.png" width="62" alt="cloudscraper" title="cloudscraper"></a></td>
+<td align="center"><a href="https://github.com/EIGHTFINITE/cloudscraper" title="cloudscraper"><img src="https://avatars.githubusercontent.com/u/9919" width="62" alt="cloudscraper" title="cloudscraper"></a></td>
 <td><a href="https://github.com/EIGHTFINITE/cloudscraper" title="cloudscraper">cloudscraper</a></td>
 <td>Package</td>
 <td><a href="https://github.com/codemanki" title="Oleksii Sribnyi">Oleksii Sribnyi</a>, <a href="https://github.com/codemanki/cloudscraper/blob/master/LICENSE" title="Anorov">Anorov</a></td>
@@ -2625,7 +2625,7 @@
 <td align="center"><code>forever-agent@0.6.1</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://github.com/EIGHTFINITE/fs-extra" title="fs-extra"><img src="docs/img/icon/github.png" width="62" alt="fs-extra" title="fs-extra"></a></td>
+<td align="center"><a href="https://github.com/EIGHTFINITE/fs-extra" title="fs-extra"><img src="https://avatars.githubusercontent.com/u/9919" width="62" alt="fs-extra" title="fs-extra"></a></td>
 <td><a href="https://github.com/EIGHTFINITE/fs-extra" title="fs-extra">fs-extra</a></td>
 <td>Package</td>
 <td><a href="https://github.com/jprichardson" title="JP Richardson">JP Richardson</a></td>
@@ -2845,7 +2845,7 @@
 <td align="center"><code>npm@7.15.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://github.com/EIGHTFINITE/npm-6" title="npm-6"><img src="docs/img/icon/github.png" width="62" alt="npm-6" title="npm-6"></a></td>
+<td align="center"><a href="https://github.com/EIGHTFINITE/npm-6" title="npm-6"><img src="https://avatars.githubusercontent.com/u/9919" width="62" alt="npm-6" title="npm-6"></a></td>
 <td><a href="https://github.com/EIGHTFINITE/npm-6" title="npm-6">npm-6</a></td>
 <td>Package</td>
 <td><a href="https://github.com/EIGHTFINITE" title="EIGHTFINITE">EIGHTFINITE</a></td>
@@ -2867,7 +2867,7 @@
 <td align="center"><code>npm@6.14.13</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://github.com/EIGHTFINITE/npm-next" title="npm-next"><img src="docs/img/icon/github.png" width="62" alt="npm-next" title="npm-next"></a></td>
+<td align="center"><a href="https://github.com/EIGHTFINITE/npm-next" title="npm-next"><img src="https://avatars.githubusercontent.com/u/9919" width="62" alt="npm-next" title="npm-next"></a></td>
 <td><a href="https://github.com/EIGHTFINITE/npm-next" title="npm-next">npm-next</a></td>
 <td>Package</td>
 <td><a href="https://github.com/EIGHTFINITE" title="EIGHTFINITE">EIGHTFINITE</a></td>
@@ -2878,7 +2878,7 @@
 <td align="center"><code>EIGHTFINITE/npm-next#e78e753311ba3e404277f2f0a11ba94b5b54619d</code><br>(based on <code>npm-next@0.0.0-next</code>)</td>
 </tr>
 <tr>
-<td align="center"><a href="https://github.com/EIGHTFINITE/npm-next-6" title="npm-next-6"><img src="docs/img/icon/github.png" width="62" alt="npm-next-6" title="npm-next-6"></a></td>
+<td align="center"><a href="https://github.com/EIGHTFINITE/npm-next-6" title="npm-next-6"><img src="https://avatars.githubusercontent.com/u/9919" width="62" alt="npm-next-6" title="npm-next-6"></a></td>
 <td><a href="https://github.com/EIGHTFINITE/npm-next-6" title="npm-next-6">npm-next-6</a></td>
 <td>Package</td>
 <td><a href="https://github.com/EIGHTFINITE" title="EIGHTFINITE">EIGHTFINITE</a></td>
