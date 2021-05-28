@@ -541,7 +541,7 @@ module.exports = function(filetype) {
 				else if(is.undefined(packageData._requested) || is.null(packageData._requested.saveSpec))
 					readme += 'https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg';
 				else
-					readme += 'docs/img/icon/github.png';
+					readme += 'https://avatars.githubusercontent.com/u/9919';
 				readme += '" width="62" alt="' + packageData._location.substr(1) + '" title="' + packageData._location.substr(1) + '"></a></td>';
 
 				// Name
