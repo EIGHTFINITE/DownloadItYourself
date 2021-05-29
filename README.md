@@ -2468,7 +2468,7 @@
 <td><a href="https://github.com/fb55/css-what" title="“css-what” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A CSS selector parser.<br>Required by cheerio-select, css-select.</td>
-<td align="center"><code>css-what@5.0.0</code></td>
+<td align="center"><code>css-what@5.0.1</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/dashdash" title="dashdash"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="dashdash" title="dashdash"></a></td>
