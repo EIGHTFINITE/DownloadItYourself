@@ -2820,7 +2820,7 @@
 <td><a href="https://github.com/jshttp/mime-db" title="“mime-db” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Media Type Database.<br>Required by mime-types.</td>
-<td align="center"><code>mime-db@1.47.0</code></td>
+<td align="center"><code>mime-db@1.48.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/mime-types" title="mime-types"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="mime-types" title="mime-types"></a></td>
@@ -2831,7 +2831,7 @@
 <td><a href="https://github.com/jshttp/mime-types" title="“mime-types” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>The ultimate javascript content-type utility.<br>Required by @postman/form-data, postman-request.</td>
-<td align="center"><code>mime-types@2.1.30</code></td>
+<td align="center"><code>mime-types@2.1.31</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/npm" title="npm"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20square/n.svg" width="62" alt="npm" title="npm"></a></td>
