@@ -2457,7 +2457,7 @@
 <td><a href="https://github.com/fb55/css-select" title="“css-select” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A CSS selector compiler/engine.<br>Required by cheerio-select.</td>
-<td align="center"><code>css-select@4.1.2</code></td>
+<td align="center"><code>css-select@4.1.3</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/css-what" title="css-what"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="css-what" title="css-what"></a></td>
@@ -2534,7 +2534,7 @@
 <td><a href="https://github.com/fb55/domutils" title="“domutils” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Utilities for working with htmlparser2's dom.<br>Required by cheerio-select, css-select, htmlparser2.</td>
-<td align="center"><code>domutils@2.6.0</code></td>
+<td align="center"><code>domutils@2.7.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/ecc-jsbn" title="ecc-jsbn"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="ecc-jsbn" title="ecc-jsbn"></a></td>
@@ -2556,7 +2556,7 @@
 <td><a href="https://github.com/electron/electron" title="“electron” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Build cross platform desktop apps with JavaScript, HTML, and CSS.</td>
-<td align="center"><code>electron@13.1.0</code></td>
+<td align="center"><code>electron@13.1.1</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/entities" title="entities"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="entities" title="entities"></a></td>
