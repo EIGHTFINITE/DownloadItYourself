@@ -22,7 +22,7 @@
     "electron": "13.1.4",
     "fs-extra": "github:EIGHTFINITE/fs-extra#master",
     "md5-file": "4.0.0",
-    "npm": "7.18.1",
+    "npm": "7.19.0",
     "npm-6": "github:EIGHTFINITE/npm-6#master",
     "npm-next": "github:EIGHTFINITE/npm-next#master",
     "npm-next-6": "github:EIGHTFINITE/npm-next-6#master",
