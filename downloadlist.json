@@ -2018,7 +2018,7 @@
 			"file": "minecraft_server.1.7.10.jar",
 			"folder-override": "server",
 			"id": "minecraft",
-			"img": "https://www.minecraft.net/etc.clientlibs/minecraft/clientlibs/main/resources/android-icon-192x192.png",
+			"img": "https://web.archive.org/web/20190221144232if_/https://www.minecraft.net/etc.clientlibs/minecraft/clientlibs/main/resources/android-icon-192x192.png",
 			"md5": "3e8912b293b52bd54f879919bd6e4e44",
 			"name": "Minecraft Server",
 			"type": "server executable",
