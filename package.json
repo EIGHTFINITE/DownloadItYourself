@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@sindresorhus/is": "4.0.1",
-    "cheerio": "github:EIGHTFINITE/cheerio#master",
+    "cheerio": "1.0.0-rc.10",
     "cloudscraper": "github:EIGHTFINITE/cloudscraper#master",
     "electron": "13.2.1",
     "fs-extra": "github:EIGHTFINITE/fs-extra#master",
