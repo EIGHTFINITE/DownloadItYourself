@@ -2,6 +2,7 @@
   "extends": [
     "config:base",
     ":rebaseStalePrs",
-    ":label(dependencies)"
+    ":label(dependencies)",
+    ":disableDependencyDashboard"
   ]
 }
