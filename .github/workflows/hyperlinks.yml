@@ -11,6 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2.4.0
-    - uses: lycheeverse/lychee-action@v1.0.9
+    - uses: lycheeverse/lychee-action@v1.1.0
       with:
         args: '-v -m 20 -t 300 --max-concurrency 1 --accept "403,429,503" --exclude "^[/-9@-Za-z_.-]+@[0-9a-z.-]+$" --user-agent "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko" --github-token "${{ secrets.GITHUB_TOKEN }}" -- README.html'
