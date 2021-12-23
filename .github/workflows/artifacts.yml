@@ -256,6 +256,8 @@ jobs:
         rm node_modules/electron/install.js
         cp -a node_modules/postman-request/node_modules/http-signature/node_modules/jsprim/node_modules/json-schema/ node_modules/npm/node_modules/json-schema/
         cp -a node_modules/postman-request/node_modules/http-signature/node_modules/jsprim/node_modules/json-schema/ node_modules/npm-6/node_modules/npm/node_modules/json-schema/
+        sed -i "0,/\"json-schema\": \".*\"/s//\"json-schema\": \"$(cat node_modules/postman-request/node_modules/http-signature/node_modules/jsprim/node_modules/json-schema/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" node_modules/npm/node_modules/jsprim/package.json
+        sed -i "0,/\"json-schema\": \".*\"/s//\"json-schema\": \"$(cat node_modules/postman-request/node_modules/http-signature/node_modules/jsprim/node_modules/json-schema/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" node_modules/npm-6/node_modules/npm/node_modules/jsprim/package.json
         sed -i '/"dependencies": {/,/},/d' -- 'node_modules/electron/package.json'
         echo -n "electron" > "node_modules/electron/path.txt"
         #bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
