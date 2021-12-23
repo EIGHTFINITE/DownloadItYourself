@@ -307,6 +307,7 @@ jobs:
         rm -r node_modules/wrappy/
         rm -r node_modules/yauzl/
         rm node_modules/electron/install.js
+        rm node_modules/tslib/modules/package.json
         sed -i '/"dependencies": {/,/},/d' -- 'node_modules/electron/package.json'
         echo -n "electron" > "node_modules/electron/path.txt"
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
