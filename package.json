@@ -20,7 +20,7 @@
     "cheerio": "1.0.0-rc.10",
     "cloudscraper": "github:EIGHTFINITE/cloudscraper#master",
     "electron": "16.0.5",
-    "fs-extra": "github:EIGHTFINITE/fs-extra#master",
+    "fs-extra": "10.0.0",
     "md5-file": "4.0.0",
     "npm": "7.24.2",
     "npm-6": "github:EIGHTFINITE/npm-6#master",
