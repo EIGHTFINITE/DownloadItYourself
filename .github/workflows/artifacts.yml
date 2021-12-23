@@ -156,11 +156,9 @@ jobs:
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['dependencies']['electron'])") --no-offline
         rm -rf .npm/
         export npm_config_target=$(cat node_modules/electron/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
-        rm -rf .npm/
-        rm -r node_modules/@types/
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
-        rm -rf .npm/
+        #rm -r node_modules/@types/
+        #bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
+        #rm -rf .npm/
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
         mkdir -p "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32"
         mv -T node_modules/electron/dist "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32"
@@ -189,11 +187,9 @@ jobs:
         sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat bin/all/all/npm/npm-$npm_version/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['dependencies']['electron'])") --no-offline
         rm -rf .npm/
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
-        rm -rf .npm/
-        rm -r node_modules/@types/
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
-        rm -rf .npm/
+        #rm -r node_modules/@types/
+        #bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
+        #rm -rf .npm/
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
         mkdir -p "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
         mv -T node_modules/electron/dist "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
@@ -222,11 +218,9 @@ jobs:
         sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat bin/all/all/npm/npm-$npm_version/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['dependencies']['electron'])") --no-offline
         rm -rf .npm/
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
-        rm -rf .npm/
-        rm -r node_modules/@types/
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
-        rm -rf .npm/
+        #rm -r node_modules/@types/
+        #bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
+        #rm -rf .npm/
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
         mkdir -p "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64"
         mv -T node_modules/electron/dist "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64"
@@ -255,63 +249,61 @@ jobs:
         sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat bin/all/all/npm/npm-$npm_version/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline
         rm -rf .npm/
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
-        rm -rf .npm/
-        rm -r node_modules/@electron/
-        rm -r node_modules/@szmarczak/
-        rm -r node_modules/@types/
-        rm -r node_modules/buffer-crc32/
-        rm -r node_modules/buffer-from/
-        rm -r node_modules/cacheable-request/
-        rm -r node_modules/clone-response/
-        rm -r node_modules/concat-stream/
-        rm -r node_modules/debug/
-        rm -r node_modules/decompress-response/
-        rm -r node_modules/defer-to-connect/
-        rm -r node_modules/duplexer3/
-        rm -r node_modules/end-of-stream/
-        rm -r node_modules/env-paths/
-        rm -r node_modules/extract-zip/
-        rm -r node_modules/fd-slicer/
-        rm -r node_modules/get-stream/
-        rm -r node_modules/got/
-        rm -r node_modules/http-cache-semantics/
-        rm -r node_modules/inherits/
-        rm -r node_modules/isarray/
-        rm -r node_modules/json-buffer/
-        rm -r node_modules/jsonfile/
-        rm -r node_modules/keyv/
-        rm -r node_modules/lowercase-keys/
-        rm -r node_modules/mimic-response/
-        rm -r node_modules/minimist/
-        rm -r node_modules/mkdirp/
-        rm -r node_modules/ms/
-        rm -r node_modules/normalize-url/
-        rm -r node_modules/once/
-        rm -r node_modules/p-cancelable/
-        rm -r node_modules/pend/
-        rm -r node_modules/prepend-http/
-        rm -r node_modules/process-nextick-args/
-        rm -r node_modules/progress/
-        rm -r node_modules/pump/
-        rm -r node_modules/readable-stream/
-        rm -r node_modules/responselike/
-        rm -r node_modules/semver/
-        rm -r node_modules/string_decoder/
-        rm -r node_modules/sumchecker/
-        rm -r node_modules/to-readable-stream/
-        rm -r node_modules/typedarray/
-        rm -r node_modules/universalify/
-        rm -r node_modules/url-parse-lax/
-        rm -r node_modules/util-deprecate/
-        rm -r node_modules/wrappy/
-        rm -r node_modules/yauzl/
+        #rm -r node_modules/@electron/
+        #rm -r node_modules/@szmarczak/
+        #rm -r node_modules/@types/
+        #rm -r node_modules/buffer-crc32/
+        #rm -r node_modules/buffer-from/
+        #rm -r node_modules/cacheable-request/
+        #rm -r node_modules/clone-response/
+        #rm -r node_modules/concat-stream/
+        #rm -r node_modules/debug/
+        #rm -r node_modules/decompress-response/
+        #rm -r node_modules/defer-to-connect/
+        #rm -r node_modules/duplexer3/
+        #rm -r node_modules/end-of-stream/
+        #rm -r node_modules/env-paths/
+        #rm -r node_modules/extract-zip/
+        #rm -r node_modules/fd-slicer/
+        #rm -r node_modules/get-stream/
+        #rm -r node_modules/got/
+        #rm -r node_modules/http-cache-semantics/
+        #rm -r node_modules/inherits/
+        #rm -r node_modules/isarray/
+        #rm -r node_modules/json-buffer/
+        #rm -r node_modules/jsonfile/
+        #rm -r node_modules/keyv/
+        #rm -r node_modules/lowercase-keys/
+        #rm -r node_modules/mimic-response/
+        #rm -r node_modules/minimist/
+        #rm -r node_modules/mkdirp/
+        #rm -r node_modules/ms/
+        #rm -r node_modules/normalize-url/
+        #rm -r node_modules/once/
+        #rm -r node_modules/p-cancelable/
+        #rm -r node_modules/pend/
+        #rm -r node_modules/prepend-http/
+        #rm -r node_modules/process-nextick-args/
+        #rm -r node_modules/progress/
+        #rm -r node_modules/pump/
+        #rm -r node_modules/readable-stream/
+        #rm -r node_modules/responselike/
+        #rm -r node_modules/semver/
+        #rm -r node_modules/string_decoder/
+        #rm -r node_modules/sumchecker/
+        #rm -r node_modules/to-readable-stream/
+        #rm -r node_modules/typedarray/
+        #rm -r node_modules/universalify/
+        #rm -r node_modules/url-parse-lax/
+        #rm -r node_modules/util-deprecate/
+        #rm -r node_modules/wrappy/
+        #rm -r node_modules/yauzl/
+        #rm node_modules/tslib/modules/package.json
         rm node_modules/electron/install.js
-        rm node_modules/tslib/modules/package.json
         sed -i '/"dependencies": {/,/},/d' -- 'node_modules/electron/package.json'
         echo -n "electron" > "node_modules/electron/path.txt"
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
-        rm -rf .npm/
+        #bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
+        #rm -rf .npm/
         rm -r bin/all/
         git checkout -- 'package.json'
         find node_modules/ -mindepth 2 -type d \( -name '.github' -o -name 'docs' -o -name 'example' -o -name 'tap-snapshots' -o -name 'test' -o -name 'typings' \) | xargs rm -rf
