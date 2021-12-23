@@ -34,7 +34,7 @@ jobs:
         rm "npm-$npm_version.tgz"
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline
         rm -rf .npm/
-        #rm -r node_modules/@types/
+        rm -r node_modules/electron/node_modules/@types/
         #bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
         #rm -rf .npm/
         sed -i '/"@types\/node": "/d' -- 'node_modules/electron/package.json'
@@ -90,7 +90,7 @@ jobs:
         rm "npm-$npm_version.tgz"
         bin/windows/x64/node/node-v12.10.0-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline
         rm -rf .npm/
-        #rm -r node_modules/@types/
+        rm -r node_modules/electron/node_modules/@types/
         #bin/windows/x64/node/node-v12.10.0-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
         #rm -rf .npm/
         sed -i '/"@types\/node": "/d' -- 'node_modules/electron/package.json'
@@ -122,7 +122,7 @@ jobs:
         rm "npm-$npm_version.tgz"
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline
         rm -rf .npm/
-        #rm -r node_modules/@types/
+        rm -r node_modules/electron/node_modules/@types/
         #bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
         #rm -rf .npm/
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm/bin/npm-cli.js audit
@@ -173,7 +173,7 @@ jobs:
         rm "npm-$npm_version.tgz"
         bin/windows/x64/node/node-v12.10.0-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline
         rm -rf .npm/
-        #rm -r node_modules/@types/
+        rm -r node_modules/electron/node_modules/@types/
         #bin/windows/x64/node/node-v12.10.0-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
         #rm -rf .npm/
         bin/windows/x64/node/node-v12.10.0-win-x64/node.exe node_modules/npm/bin/npm-cli.js audit
