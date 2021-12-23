@@ -309,14 +309,6 @@ jobs:
         rm node_modules/electron/install.js
         sed -i '/"dependencies": {/,/},/d' -- 'node_modules/electron/package.json'
         echo -n "electron" > "node_modules/electron/path.txt"
-        if [[ "$(cat node_modules/npm-next/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")" == "$(cat node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")" ]]; then
-          rm -r node_modules/npm-next/node_modules/
-          sed -i '/"dependencies": {/,/},/d' -- 'node_modules/npm-next/package.json'
-        fi
-        if [[ "$(cat node_modules/npm-next-6/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")" == "$(cat node_modules/npm-6/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")" ]]; then
-          rm -r node_modules/npm-next-6/node_modules/
-          sed -i '/"dependencies": {/,/},/d' -- 'node_modules/npm-next-6/package.json'
-        fi
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
         rm -rf .npm/
         rm -r bin/all/
@@ -432,15 +424,11 @@ jobs:
       run: |
         cd EIGHTFINITE-build
         # Do not allow anything
-        if [[ $(find . -type f -path ./.git -prune -o -path ./node_modules/npm-6/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -path ./node_modules/npm-next-6/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -path ./node_modules/entities/lib/maps -prune -o -name '*.json' -exec jsonlint -s --forbid any-type-at-start,bom,duplicate-keys,non-portable,non-bmp,zero-byte -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        if [[ $(find . -type f -path ./.git -prune -o -path ./node_modules/npm-6/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -path ./node_modules/entities/lib/maps -prune -o -name '*.json' -exec jsonlint -s --forbid any-type-at-start,bom,duplicate-keys,non-portable,non-bmp,zero-byte -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         # Allow non-bmp, zero-byte
         if [[ $(find ./node_modules/npm-6/node_modules/npm/node_modules/iconv-lite/encodings/tables -name '*.json' -exec jsonlint -s --allow non-bmp,zero-byte --forbid any-type-at-start,bom,duplicate-keys,non-portable -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
-          then exit 1
-        fi
-        # Allow non-bmp, zero-byte
-        if [[ $(find ./node_modules/npm-next-6/node_modules/npm/node_modules/iconv-lite/encodings/tables -name '*.json' -exec jsonlint -s --allow non-bmp,zero-byte --forbid any-type-at-start,bom,duplicate-keys,non-portable -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         # Allow non-bmp
@@ -591,15 +579,11 @@ jobs:
       run: |
         cd EIGHTFINITE-build
         # Do not allow anything
-        if [[ $(find . -type f -path ./.git -prune -o -path ./node_modules/npm-6/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -path ./node_modules/npm-next-6/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -path ./node_modules/entities/lib/maps -prune -o -name '*.json' -exec jsonlint -s --forbid any-type-at-start,bom,duplicate-keys,non-portable,non-bmp,zero-byte -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        if [[ $(find . -type f -path ./.git -prune -o -path ./node_modules/npm-6/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -path ./node_modules/entities/lib/maps -prune -o -name '*.json' -exec jsonlint -s --forbid any-type-at-start,bom,duplicate-keys,non-portable,non-bmp,zero-byte -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         # Allow non-bmp, zero-byte
         if [[ $(find ./node_modules/npm-6/node_modules/npm/node_modules/iconv-lite/encodings/tables -name '*.json' -exec jsonlint -s --allow non-bmp,zero-byte --forbid any-type-at-start,bom,duplicate-keys,non-portable -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
-          then exit 1
-        fi
-        # Allow non-bmp, zero-byte
-        if [[ $(find ./node_modules/npm-next-6/node_modules/npm/node_modules/iconv-lite/encodings/tables -name '*.json' -exec jsonlint -s --allow non-bmp,zero-byte --forbid any-type-at-start,bom,duplicate-keys,non-portable -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         # Allow non-bmp

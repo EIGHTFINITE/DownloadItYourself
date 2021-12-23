@@ -9,8 +9,6 @@
 /README.md export-ignore
 /docs/archive/ export-ignore
 /docs/scripts/ export-ignore
-/node_modules/npm-next/ export-ignore
-/node_modules/npm-next-6/ export-ignore
 /.github/ export-ignore
 /.github/ linguist-vendored
 /.github/* linguist-vendored
