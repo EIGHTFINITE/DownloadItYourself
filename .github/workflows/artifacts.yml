@@ -296,7 +296,7 @@ jobs:
         #rm -r node_modules/util-deprecate/
         #rm -r node_modules/wrappy/
         #rm -r node_modules/yauzl/
-        #rm node_modules/tslib/modules/package.json
+        rm node_modules/cheerio/node_modules/tslib/modules/package.json
         rm node_modules/electron/install.js
         sed -i '/"dependencies": {/,/},/d' -- 'node_modules/electron/package.json'
         echo -n "electron" > "node_modules/electron/path.txt"
