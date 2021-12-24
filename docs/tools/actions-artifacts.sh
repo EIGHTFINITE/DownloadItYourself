@@ -140,8 +140,8 @@ bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_ver
 rm -rf .npm/
 export npm_config_target=$(cat node_modules/electron/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")
 rm -r node_modules/electron/node_modules/@types/
-#bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
-#rm -rf .npm/
+bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
+rm -rf .npm/
 bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
 mkdir -p "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32"
 mv -T node_modules/electron/dist "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32"
@@ -171,8 +171,8 @@ sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat bin/all/all/npm/npm-$npm_version/
 bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['dependencies']['electron'])") --no-offline
 rm -rf .npm/
 rm -r node_modules/electron/node_modules/@types/
-#bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
-#rm -rf .npm/
+bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
+rm -rf .npm/
 bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
 mkdir -p "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
 mv -T node_modules/electron/dist "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
@@ -202,8 +202,8 @@ sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat bin/all/all/npm/npm-$npm_version/
 bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['dependencies']['electron'])") --no-offline
 rm -rf .npm/
 rm -r node_modules/electron/node_modules/@types/
-#bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
-#rm -rf .npm/
+bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
+rm -rf .npm/
 bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
 mkdir -p "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64"
 mv -T node_modules/electron/dist "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64"
@@ -271,8 +271,8 @@ sed -i "0,/\"json-schema\": \".*\"/s//\"json-schema\": \"$(cat node_modules/post
 sed -i "0,/\"json-schema\": \".*\"/s//\"json-schema\": \"$(cat node_modules/postman-request/node_modules/http-signature/node_modules/jsprim/node_modules/json-schema/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" node_modules/npm-6/node_modules/npm/node_modules/jsprim/package.json
 sed -i '/"dependencies": {/,/},/d' -- 'node_modules/electron/package.json'
 echo -n "electron" > "node_modules/electron/path.txt"
-#bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
-#rm -rf .npm/
+bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
+rm -rf .npm/
 rm -r bin/all/
 git checkout -- 'package.json'
 find node_modules/ -mindepth 2 -type d \( -name '.github' -o -name 'docs' -o -name 'example' -o -name 'tap-snapshots' -o -name 'test' -o -name 'typings' \) | xargs rm -rf
