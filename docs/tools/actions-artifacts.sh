@@ -1,6 +1,5 @@
 #!/bin/bash
-docs/tools/git-config.sh
-git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
+# Execution starts in .github/workflows/artifacts.yml
 export GIT_AUTHOR_DATE="$(git log -1 --format=%aD)"
 export GIT_COMMITTER_DATE="$(git log -1 --format=%cD)"
 
@@ -290,13 +289,4 @@ if [[ "$(git log -1 --format=%H)" == "$return_commit" ]]; then
   exit 1
 fi
 git checkout $merge_commit -- 'package-lock.json'
-git -c user.name="GitHub" -c user.email="noreply@github.com" commit --amend --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add vendored Node modules
-
-Node modules and their dependencies updated to the latest versions found in https://github.com/${{ github.repository }}/blob/master/package.json" | sed -n 1p
-if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
-  then exit 1
-fi
-
-# Artifacts
-git tag -f artifacts
-git push -f origin refs/tags/artifacts:refs/tags/artifacts
+# Execution continues in .github/workflows/artifacts.yml ...
