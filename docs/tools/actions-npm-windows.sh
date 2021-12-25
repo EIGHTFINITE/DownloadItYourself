@@ -2,6 +2,7 @@
 # Execution starts in .github/workflows/npm.yml
 export npm_version=$(cat npm_version.txt)
 rm npm_version.txt
+echo "$OSTYPE"
 bin/windows/x64/node/node-v12.10.0-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install ansi-regex@5.0.1 --no-offline
 rm -rf .npm/
 rm package-lock.json
