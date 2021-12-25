@@ -79,17 +79,10 @@ jobs:
         cd EIGHTFINITE-build
         rm wget_npm.bat
         export npm_version=$(cat npm_version.txt)
-        rm npm_version.txt
         mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
         tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
         rm "npm-$npm_version.tgz"
-        bin/windows/x64/node/node-v12.10.0-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline
-        rm -rf .npm/
-        bin/windows/x64/node/node-v12.10.0-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
-        rm -rf .npm/
-        rm -r node_modules/@types/
-        bin/windows/x64/node/node-v12.10.0-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
-        rm -rf .npm/
+        docs/tools/actions-npm-windows.sh
         sed -i '/"@types\/node": "/d' -- 'node_modules/electron/package.json'
         bin/windows/x64/node/node-v12.10.0-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent | grep -v ' deduped' || true
         rm -rf .npm/
@@ -160,17 +153,10 @@ jobs:
         cd EIGHTFINITE-build
         rm wget_npm.bat
         export npm_version=$(cat npm_version.txt)
-        rm npm_version.txt
         mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
         tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
         rm "npm-$npm_version.tgz"
-        bin/windows/x64/node/node-v12.10.0-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline
-        rm -rf .npm/
-        bin/windows/x64/node/node-v12.10.0-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
-        rm -rf .npm/
-        rm -r node_modules/@types/
-        bin/windows/x64/node/node-v12.10.0-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
-        rm -rf .npm/
+        docs/tools/actions-npm-windows.sh
         bin/windows/x64/node/node-v12.10.0-win-x64/node.exe node_modules/npm/bin/npm-cli.js audit
         rm -rf .npm/
         cd ..
