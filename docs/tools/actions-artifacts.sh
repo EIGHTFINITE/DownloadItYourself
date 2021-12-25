@@ -305,8 +305,8 @@ cp -a node_modules/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/
 cp -a node_modules/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/
 cp -a node_modules/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/wrap-ansi/node_modules/ansi-regex/
 cp -a node_modules/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/yargs/node_modules/ansi-regex/
-cp -a node_modules/postman-request/node_modules/http-signature/node_modules/jsprim/node_modules/json-schema/ node_modules/npm/node_modules/json-schema/
-cp -a node_modules/postman-request/node_modules/http-signature/node_modules/jsprim/node_modules/json-schema/ node_modules/npm-6/node_modules/npm/node_modules/json-schema/
+cp -a node_modules/json-schema/ node_modules/npm/node_modules/json-schema/
+cp -a node_modules/json-schema/ node_modules/npm-6/node_modules/npm/node_modules/json-schema/
 sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/package.json
 sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm\/cli-table3\"\n  \]/" node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/package.json
 sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm\/cli-table3\/ansi-regex\"/" node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/package.json
