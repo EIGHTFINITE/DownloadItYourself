@@ -2,16 +2,28 @@
 # Execution starts in .github/workflows/npm.yml or docs/tools/actions-artifacts.sh
 export npm_version=$(cat npm_version.txt)
 rm npm_version.txt
-bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install ansi-regex@5.0.1 --no-offline
+if [[ "$OSTYPE" == "msys" ]]; then
+  bin/windows/x64/node/node-v12.10.0-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install ansi-regex@5.0.1 --no-offline
+else
+  bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install ansi-regex@5.0.1 --no-offline
+fi
 rm -rf .npm/
 rm package-lock.json
 git checkout -- 'package.json'
 mkdir -p bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex
 mv -T node_modules/ansi-regex bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex
 rm -r node_modules/
-bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline
+if [[ "$OSTYPE" == "msys" ]]; then
+  bin/windows/x64/node/node-v12.10.0-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline
+else
+  bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline
+fi
 rm -rf .npm/
-bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
+if [[ "$OSTYPE" == "msys" ]]; then
+  bin/windows/x64/node/node-v12.10.0-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
+else
+  bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
+fi
 rm -rf .npm/
 rm -r node_modules/@electron/
 rm -r node_modules/@szmarczak/
@@ -120,7 +132,11 @@ sed -i "0,/\"ansi-regex\": \".*\"/s//\"ansi-regex\": \"$(cat node_modules/npm/no
 sed -i "0,/\"json-schema\": \".*\"/s//\"json-schema\": \"$(cat node_modules/json-schema/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" node_modules/npm/node_modules/jsprim/package.json
 sed -i "0,/\"json-schema\": \".*\"/s//\"json-schema\": \"$(cat node_modules/json-schema/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" node_modules/npm-6/node_modules/npm/node_modules/jsprim/package.json
 sed -i '/"dependencies": {/,/},/d' -- 'node_modules/electron/package.json'
-bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
+if [[ "$OSTYPE" == "msys" ]]; then
+  bin/windows/x64/node/node-v12.10.0-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
+else
+  bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
+fi
 rm -rf .npm/
 rm -r bin/all/
 git checkout -- 'package.json'
