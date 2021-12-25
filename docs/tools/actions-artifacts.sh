@@ -236,6 +236,13 @@ mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
 tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
 rm "npm-$npm_version.tgz"
 sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat bin/all/all/npm/npm-$npm_version/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
+bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install ansi-regex@5.0.1 --no-offline
+rm -rf .npm/
+mkdir -p bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex/ansi-regex-5.0.1/ansi-regex
+mv -T node_modules/ansi-regex bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex/ansi-regex-5.0.1/ansi-regex
+rm -r node_modules/
+rm package-lock.json
+git checkout -- 'package.json'
 bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline
 rm -rf .npm/
 bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
@@ -299,12 +306,13 @@ rm -r node_modules/npm/node_modules/json-schema/
 rm -r node_modules/npm-6/node_modules/npm/node_modules/json-schema/
 rm node_modules/tslib/modules/package.json
 rm node_modules/electron/install.js
-cp -a node_modules/ansi-regex/ node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/
-cp -a node_modules/ansi-regex/ node_modules/npm/node_modules/string-width/node_modules/ansi-regex/
-cp -a node_modules/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/cliui/node_modules/ansi-regex/
-cp -a node_modules/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/
-cp -a node_modules/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/wrap-ansi/node_modules/ansi-regex/
-cp -a node_modules/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/yargs/node_modules/ansi-regex/
+cp -a bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex/ node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/
+cp -a bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex/ node_modules/npm/node_modules/string-width/node_modules/ansi-regex/
+cp -a bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/cliui/node_modules/ansi-regex/
+cp -a bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/
+cp -a bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/wrap-ansi/node_modules/ansi-regex/
+cp -a bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/yargs/node_modules/ansi-regex/
+rm -r bin/all/all/ansi-regex/
 cp -a node_modules/json-schema/ node_modules/npm/node_modules/json-schema/
 cp -a node_modules/json-schema/ node_modules/npm-6/node_modules/npm/node_modules/json-schema/
 sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/package.json
