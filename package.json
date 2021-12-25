@@ -17,7 +17,6 @@
   },
   "dependencies": {
     "@sindresorhus/is": "4.2.0",
-    "ansi-regex": "5.0.1",
     "cheerio": "1.0.0-rc.10",
     "cloudscraper": "github:EIGHTFINITE/cloudscraper#master",
     "electron": "16.0.5",
