@@ -97,12 +97,18 @@ cp -a bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex/ node_modules/npm-6/nod
 rm -r bin/all/all/ansi-regex/
 cp -a node_modules/json-schema/ node_modules/npm/node_modules/json-schema/
 cp -a node_modules/json-schema/ node_modules/npm-6/node_modules/npm/node_modules/json-schema/
+sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm/node_modules/ansi-regex/package.json
+sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm\/strip-ansi\"\n  \]/" node_modules/npm/node_modules/ansi-regex/package.json
+sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm\/cli-table3\/ansi-regex\"/" node_modules/npm/node_modules/ansi-regex/package.json
 sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/package.json
 sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm\/cli-table3\"\n  \]/" node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/package.json
 sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm\/cli-table3\/ansi-regex\"/" node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/package.json
 sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm/node_modules/string-width/node_modules/ansi-regex/package.json
 sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm\/string-width\"\n  \]/" node_modules/npm/node_modules/string-width/node_modules/ansi-regex/package.json
 sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm\/string-width\/ansi-regex\"/" node_modules/npm/node_modules/string-width/node_modules/ansi-regex/package.json
+sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-6/node_modules/npm/node_modules/ansi-regex/package.json
+sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-6\/npm\/strip-ansi\"\n  \]/" node_modules/npm-6/node_modules/npm/node_modules/ansi-regex/package.json
+sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-6\/npm\/cliui\/ansi-regex\"/" node_modules/npm-6/node_modules/npm/node_modules/ansi-regex/package.json
 sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-6/node_modules/npm/node_modules/cliui/node_modules/ansi-regex/package.json
 sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-6\/npm\/cliui\"\n  \]/" node_modules/npm-6/node_modules/npm/node_modules/cliui/node_modules/ansi-regex/package.json
 sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-6\/npm\/cliui\/ansi-regex\"/" node_modules/npm-6/node_modules/npm/node_modules/cliui/node_modules/ansi-regex/package.json
