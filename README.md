@@ -2842,7 +2842,7 @@
 <td><a href="https://github.com/npm/cli" title="“npm” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A package manager for JavaScript.</td>
-<td align="center"><code>npm@7.24.2</code></td>
+<td align="center"><code>npm@8.3.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://github.com/EIGHTFINITE/npm-6" title="npm-6"><img src="https://avatars.githubusercontent.com/u/9919" width="62" alt="npm-6" title="npm-6"></a></td>
@@ -2865,6 +2865,28 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A package manager for JavaScript.<br>Required by npm-6.</td>
 <td align="center"><code>npm@6.14.15</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://github.com/EIGHTFINITE/npm-7" title="npm-7"><img src="https://avatars.githubusercontent.com/u/9919" width="62" alt="npm-7" title="npm-7"></a></td>
+<td><a href="https://github.com/EIGHTFINITE/npm-7" title="npm-7">npm-7</a></td>
+<td>Package</td>
+<td><a href="https://github.com/EIGHTFINITE" title="EIGHTFINITE">EIGHTFINITE</a></td>
+<td><a href="docs/legal/MIT-0.txt" title="“npm-7” license">MIT-0</a><a href="https://github.com/EIGHTFINITE/npm-7" title="“npm-7” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“npm-7” license information"></a>
+<td><a href="https://github.com/EIGHTFINITE/npm-7" title="“npm-7” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Depends on npm 7 to add it to the pool of dependencies even if your project already depends on another version of npm.</td>
+<td align="center"><code>EIGHTFINITE/npm-7#b407876db7d126ba449eda3ae9c9dc8a26fd8a8e</code><br>(based on <code>npm-7@0.0.0-latest-7</code>)</td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/npm" title="npm-7/npm"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20square/n.svg" width="62" alt="npm-7/npm" title="npm-7/npm"></a></td>
+<td><a href="https://www.npmjs.com/package/npm" title="npm-7/npm">npm-7/npm</a></td>
+<td>Package</td>
+<td><a href="https://github.com/npm" title="Isaac Z. Schlueter">Isaac Z. Schlueter</a></td>
+<td><a href="docs/legal/Artistic-2.0.txt" title="“npm-7/npm” license">Artistic-2.0</a><a href="https://github.com/npm/cli" title="“npm-7/npm” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“npm-7/npm” license information"></a>
+<td><a href="https://github.com/npm/cli" title="“npm-7/npm” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>A package manager for JavaScript.<br>Required by npm-7.</td>
+<td align="center"><code>npm@7.24.2</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/nth-check" title="nth-check"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="nth-check" title="nth-check"></a></td>
