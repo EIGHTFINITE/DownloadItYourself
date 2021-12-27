@@ -113,7 +113,7 @@ jobs:
         rm "npm-$npm_version.tgz"
         echo -n "$npm_version" > npm_version.txt
         docs/tools/actions-npm.sh
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm/bin/npm-cli.js audit
+        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-7/node_modules/npm/bin/npm-cli.js audit
         rm -rf .npm/
         cd ..
   audit_windows:
@@ -159,6 +159,6 @@ jobs:
         tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
         rm "npm-$npm_version.tgz"
         docs/tools/actions-npm.sh
-        bin/windows/x64/node/node-v12.10.0-win-x64/node.exe node_modules/npm/bin/npm-cli.js audit
+        bin/windows/x64/node/node-v12.10.0-win-x64/node.exe node_modules/npm-7/node_modules/npm/bin/npm-cli.js audit
         rm -rf .npm/
         cd ..
