@@ -237,7 +237,7 @@ tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$np
 rm "npm-$npm_version.tgz"
 sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat bin/all/all/npm/npm-$npm_version/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
 echo -n "$npm_version" > npm_version.txt
-docs/tools/actions-npm.sh
+bash --noprofile --norc -e -o pipefail docs/tools/actions-npm.sh
 echo -n "electron" > "node_modules/electron/path.txt"
 find node_modules/ -mindepth 2 -type d \( -name '.github' -o -name 'docs' -o -name 'example' -o -name 'tap-snapshots' -o -name 'test' -o -name 'typings' \) | xargs rm -rf
 find node_modules/ -mindepth 2 -type f \( -name '*.d.ts' -o -name '*.d.ts.map' -o -name '*.js.map' -o -name '.eslintrc.yml' -o -name '.gitmodules' -o -name '.npmignore' -o -name '.travis.yml' -o -name 'yarn.lock' \) -exec bash -c 'rm "$1"; rmdir --ignore-fail-on-non-empty $(dirname "$1")' bash '{}' ';'

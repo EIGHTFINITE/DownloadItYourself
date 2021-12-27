@@ -15,9 +15,9 @@ jobs:
     - name: Artifacts
       shell: bash
       run: |
-        docs/tools/git-config.sh
+        bash --noprofile --norc -e -o pipefail docs/tools/git-config.sh
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
-        docs/tools/actions-artifacts.sh
+        bash --noprofile --norc -e -o pipefail docs/tools/actions-artifacts.sh
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --amend --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add vendored Node modules
         
         Node modules and their dependencies updated to the latest versions found in https://github.com/${{ github.repository }}/blob/master/package.json" | sed -n 1p
@@ -37,7 +37,7 @@ jobs:
     - name: README
       shell: bash
       run: |
-        docs/tools/git-config.sh
+        bash --noprofile --norc -e -o pipefail docs/tools/git-config.sh
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git restore --source=artifacts -- bin/
         git restore --source=artifacts -- node_modules/
@@ -65,7 +65,7 @@ jobs:
     - name: Engines
       shell: bash
       run: |
-        docs/tools/git-config.sh
+        bash --noprofile --norc -e -o pipefail docs/tools/git-config.sh
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git restore --source=artifacts -- bin/
         git restore --source=artifacts -- node_modules/npm-6/
@@ -220,7 +220,7 @@ jobs:
     - name: Release
       shell: bash
       run: |
-        docs/tools/git-config.sh
+        bash --noprofile --norc -e -o pipefail docs/tools/git-config.sh
         export GIT_AUTHOR_DATE="$(git log -1 --format=%aD)"
         export GIT_COMMITTER_DATE="$(git log -1 --format=%cD)"
         

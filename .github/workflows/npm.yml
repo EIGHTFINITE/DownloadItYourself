@@ -17,7 +17,7 @@ jobs:
       shell: bash
       run: |
         cd EIGHTFINITE-build
-        docs/tools/git-config.sh
+        bash --noprofile --norc -e -o pipefail docs/tools/git-config.sh
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git restore --source=artifacts -- bin/
         cd ..
@@ -33,7 +33,7 @@ jobs:
         tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
         rm "npm-$npm_version.tgz"
         echo -n "$npm_version" > npm_version.txt
-        docs/tools/actions-npm.sh
+        bash --noprofile --norc -e -o pipefail docs/tools/actions-npm.sh
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent | grep -v ' deduped' || true
         rm -rf .npm/
         cd ..
@@ -83,7 +83,7 @@ jobs:
         mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
         tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
         rm "npm-$npm_version.tgz"
-        docs/tools/actions-npm.sh
+        bash --noprofile --norc -e -o pipefail docs/tools/actions-npm.sh
         sed -i '/"@types\/node": "/d' -- 'node_modules/electron/package.json'
         bin/windows/x64/node/node-v12.10.0-win-x64/node.exe node_modules/npm-6/node_modules/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent | grep -v ' deduped' || true
         rm -rf .npm/
@@ -102,7 +102,7 @@ jobs:
       shell: bash
       run: |
         cd EIGHTFINITE-build
-        docs/tools/git-config.sh
+        bash --noprofile --norc -e -o pipefail docs/tools/git-config.sh
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git restore --source=artifacts -- bin/
         sudo ln -sf "$(pwd)/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
@@ -112,7 +112,7 @@ jobs:
         tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
         rm "npm-$npm_version.tgz"
         echo -n "$npm_version" > npm_version.txt
-        docs/tools/actions-npm.sh
+        bash --noprofile --norc -e -o pipefail docs/tools/actions-npm.sh
         bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-7/node_modules/npm/bin/npm-cli.js audit
         rm -rf .npm/
         cd ..
@@ -158,7 +158,7 @@ jobs:
         mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
         tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
         rm "npm-$npm_version.tgz"
-        docs/tools/actions-npm.sh
+        bash --noprofile --norc -e -o pipefail docs/tools/actions-npm.sh
         bin/windows/x64/node/node-v12.10.0-win-x64/node.exe node_modules/npm-7/node_modules/npm/bin/npm-cli.js audit
         rm -rf .npm/
         cd ..

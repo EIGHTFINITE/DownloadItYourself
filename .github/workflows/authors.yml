@@ -12,7 +12,7 @@ jobs:
     - name: AUTHORS
       shell: bash
       run: |
-        docs/tools/git-config.sh
+        bash --noprofile --norc -e -o pipefail docs/tools/git-config.sh
         git fetch origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git fetch origin +refs/tags/latest:refs/tags/latest --no-tags
         git log --format='%aN <%aE>%n%cN <%cE>' --all | sort -u > AUTHORS.txt
