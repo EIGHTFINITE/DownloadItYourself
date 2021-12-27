@@ -78,10 +78,6 @@ wget -nv -O "node-v12.10.0-win-x86.zip" https://nodejs.org/dist/v12.10.0/node-v1
 mkdir -p "bin/windows/x86/node"
 7z x -o"bin/windows/x86/node" "node-v12.10.0-win-x86.zip" | grep "ing archive"
 rm -r 'bin/windows/x86/node/node-v12.10.0-win-x86/node_modules'
-rm 'bin/windows/x86/node/node-v12.10.0-win-x86/npm'
-rm 'bin/windows/x86/node/node-v12.10.0-win-x86/npm.cmd'
-rm 'bin/windows/x86/node/node-v12.10.0-win-x86/npx'
-rm 'bin/windows/x86/node/node-v12.10.0-win-x86/npx.cmd'
 rm "node-v12.10.0-win-x86.zip"
 sed -i '/\/bin\//d' -- '.gitignore'
 git add "bin/windows/x86/node"
@@ -96,10 +92,6 @@ wget -nv -O "node-v12.10.0-win-x64.zip" https://nodejs.org/dist/v12.10.0/node-v1
 mkdir -p "bin/windows/x64/node"
 7z x -o"bin/windows/x64/node" "node-v12.10.0-win-x64.zip" | grep "ing archive"
 rm -r 'bin/windows/x64/node/node-v12.10.0-win-x64/node_modules'
-rm 'bin/windows/x64/node/node-v12.10.0-win-x64/npm'
-rm 'bin/windows/x64/node/node-v12.10.0-win-x64/npm.cmd'
-rm 'bin/windows/x64/node/node-v12.10.0-win-x64/npx'
-rm 'bin/windows/x64/node/node-v12.10.0-win-x64/npx.cmd'
 rm "node-v12.10.0-win-x64.zip"
 sed -i '/\/bin\//d' -- '.gitignore'
 git add "bin/windows/x64/node"
@@ -114,8 +106,6 @@ wget -nv -O "node-v12.10.0-linux-x64.tar.gz" https://nodejs.org/dist/v12.10.0/no
 mkdir -p "bin/linux/x64/node"
 tar -xzf "node-v12.10.0-linux-x64.tar.gz" -C "bin/linux/x64/node"
 rm -r 'bin/linux/x64/node/node-v12.10.0-linux-x64/lib'
-rm 'bin/linux/x64/node/node-v12.10.0-linux-x64/bin/npm'
-rm 'bin/linux/x64/node/node-v12.10.0-linux-x64/bin/npx'
 rm "node-v12.10.0-linux-x64.tar.gz"
 sed -i '/\/bin\//d' -- '.gitignore'
 git add "bin/linux/x64/node"
