@@ -98,14 +98,14 @@ rm -r bin/all/all/ansi-regex/
 cp -a node_modules/json-schema/ node_modules/npm-7/node_modules/npm/node_modules/json-schema/
 cp -a node_modules/json-schema/ node_modules/npm-6/node_modules/npm/node_modules/json-schema/
 sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/package.json
-sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm\/strip-ansi\"\n  \]/" node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/package.json
-sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm\/cli-table3\/ansi-regex\"/" node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/package.json
+sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-7\/npm\/strip-ansi\"\n  \]/" node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/package.json
+sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-7\/npm\/cli-table3\/ansi-regex\"/" node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/package.json
 sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-7/node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/package.json
-sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm\/cli-table3\"\n  \]/" node_modules/npm-7/node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/package.json
-sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm\/cli-table3\/ansi-regex\"/" node_modules/npm-7/node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/package.json
+sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-7\/npm\/cli-table3\"\n  \]/" node_modules/npm-7/node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/package.json
+sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-7\/npm\/cli-table3\/ansi-regex\"/" node_modules/npm-7/node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/package.json
 sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-7/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/package.json
-sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm\/string-width\"\n  \]/" node_modules/npm-7/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/package.json
-sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm\/string-width\/ansi-regex\"/" node_modules/npm-7/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/package.json
+sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-7\/npm\/string-width\"\n  \]/" node_modules/npm-7/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/package.json
+sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-7\/npm\/string-width\/ansi-regex\"/" node_modules/npm-7/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/package.json
 sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-6/node_modules/npm/node_modules/ansi-regex/package.json
 sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-6\/npm\/strip-ansi\"\n  \]/" node_modules/npm-6/node_modules/npm/node_modules/ansi-regex/package.json
 sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-6\/npm\/cliui\/ansi-regex\"/" node_modules/npm-6/node_modules/npm/node_modules/ansi-regex/package.json
@@ -122,8 +122,8 @@ sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-6/node
 sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-6\/npm\/yargs\"\n  \]/" node_modules/npm-6/node_modules/npm/node_modules/yargs/node_modules/ansi-regex/package.json
 sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-6\/npm\/yargs\/ansi-regex\"/" node_modules/npm-6/node_modules/npm/node_modules/yargs/node_modules/ansi-regex/package.json
 sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-7/node_modules/npm/node_modules/json-schema/package.json
-sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm\"\n  \]/" node_modules/npm-7/node_modules/npm/node_modules/json-schema/package.json
-sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm\/json-schema\"/" node_modules/npm-7/node_modules/npm/node_modules/json-schema/package.json
+sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-7\/npm\"\n  \]/" node_modules/npm-7/node_modules/npm/node_modules/json-schema/package.json
+sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-7\/npm\/json-schema\"/" node_modules/npm-7/node_modules/npm/node_modules/json-schema/package.json
 sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-6/node_modules/npm/node_modules/json-schema/package.json
 sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-6\/npm\"\n  \]/" node_modules/npm-6/node_modules/npm/node_modules/json-schema/package.json
 sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-6\/npm\/json-schema\"/" node_modules/npm-6/node_modules/npm/node_modules/json-schema/package.json
