@@ -22,8 +22,8 @@
     "electron": "16.0.5",
     "fs-extra": "10.0.0",
     "md5-file": "4.0.0",
-    "npm": "7.24.2",
     "npm-6": "github:EIGHTFINITE/npm-6#master",
+    "npm-7": "github:EIGHTFINITE/npm-7#master",
     "postman-request": "2.88.1-postman.30",
     "spdx-expression-parse": "github:EIGHTFINITE/spdx-expression-parse#master",
     "wait-until": "0.0.2"
@@ -35,8 +35,8 @@
     "electron",
     "fs-extra",
     "md5-file",
-    "npm",
     "npm-6",
+    "npm-7",
     "postman-request",
     "spdx-expression-parse",
     "wait-until"
