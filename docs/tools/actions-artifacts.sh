@@ -74,11 +74,11 @@ if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(
 fi
 
 # Node Windows x86
-wget -nv -O "node-v12.10.0-win-x86.zip" https://nodejs.org/dist/v12.10.0/node-v12.10.0-win-x86.zip
+wget -nv -O "node-v12.10.0-win-x86.7z" https://nodejs.org/dist/v12.10.0/node-v12.10.0-win-x86.7z
 mkdir -p "bin/windows/x86/node"
-7z x -o"bin/windows/x86/node" "node-v12.10.0-win-x86.zip" | grep "ing archive"
+7z x -o"bin/windows/x86/node" "node-v12.10.0-win-x86.7z" | grep "ing archive"
 rm -r 'bin/windows/x86/node/node-v12.10.0-win-x86/node_modules'
-rm "node-v12.10.0-win-x86.zip"
+rm "node-v12.10.0-win-x86.7z"
 sed -i '/\/bin\//d' -- '.gitignore'
 git add "bin/windows/x86/node"
 git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 Node 12.10.0 release artifacts" | sed -n 1p
@@ -88,11 +88,11 @@ if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(
 fi
 
 # Node Windows x64
-wget -nv -O "node-v12.10.0-win-x64.zip" https://nodejs.org/dist/v12.10.0/node-v12.10.0-win-x64.zip
+wget -nv -O "node-v12.10.0-win-x64.7z" https://nodejs.org/dist/v12.10.0/node-v12.10.0-win-x64.7z
 mkdir -p "bin/windows/x64/node"
-7z x -o"bin/windows/x64/node" "node-v12.10.0-win-x64.zip" | grep "ing archive"
+7z x -o"bin/windows/x64/node" "node-v12.10.0-win-x64.7z" | grep "ing archive"
 rm -r 'bin/windows/x64/node/node-v12.10.0-win-x64/node_modules'
-rm "node-v12.10.0-win-x64.zip"
+rm "node-v12.10.0-win-x64.7z"
 sed -i '/\/bin\//d' -- '.gitignore'
 git add "bin/windows/x64/node"
 git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 Node 12.10.0 release artifacts" | sed -n 1p
@@ -102,11 +102,11 @@ if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(
 fi
 
 # Node Linux x64
-wget -nv -O "node-v12.10.0-linux-x64.tar.gz" https://nodejs.org/dist/v12.10.0/node-v12.10.0-linux-x64.tar.gz
+wget -nv -O "node-v12.10.0-linux-x64.tar.xz" https://nodejs.org/dist/v12.10.0/node-v12.10.0-linux-x64.tar.xz
 mkdir -p "bin/linux/x64/node"
-tar -xzf "node-v12.10.0-linux-x64.tar.gz" -C "bin/linux/x64/node"
+tar -xJf "node-v12.10.0-linux-x64.tar.xz" -C "bin/linux/x64/node"
 rm -r 'bin/linux/x64/node/node-v12.10.0-linux-x64/lib'
-rm "node-v12.10.0-linux-x64.tar.gz"
+rm "node-v12.10.0-linux-x64.tar.xz"
 sed -i '/\/bin\//d' -- '.gitignore'
 git add "bin/linux/x64/node"
 git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 Node 12.10.0 release artifacts" | sed -n 1p
