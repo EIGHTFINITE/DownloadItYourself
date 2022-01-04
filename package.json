@@ -19,7 +19,7 @@
     "@sindresorhus/is": "4.2.0",
     "cheerio": "1.0.0-rc.10",
     "cloudscraper": "github:EIGHTFINITE/cloudscraper#master",
-    "electron": "16.0.5",
+    "electron": "16.0.6",
     "fs-extra": "10.0.0",
     "md5-file": "4.0.0",
     "npm": "8.3.0",
