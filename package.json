@@ -25,7 +25,7 @@
     "npm": "8.3.0",
     "npm-6": "github:EIGHTFINITE/npm-6#master",
     "npm-7": "github:EIGHTFINITE/npm-7#master",
-    "postman-request": "2.88.1-postman.30",
+    "postman-request": "2.88.1-postman.31",
     "spdx-expression-parse": "github:EIGHTFINITE/spdx-expression-parse#master",
     "wait-until": "0.0.2"
   },
