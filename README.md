@@ -2655,7 +2655,7 @@
 <td><a href="https://github.com/isaacs/node-graceful-fs" title="“graceful-fs” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A drop-in replacement for fs, making various improvements.<br>Required by @electron/get/fs-extra, fs-extra, fs-extra/jsonfile, jsonfile.</td>
-<td align="center"><code>graceful-fs@4.2.8</code></td>
+<td align="center"><code>graceful-fs@4.2.9</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/har-schema" title="har-schema"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="har-schema" title="har-schema"></a></td>
@@ -2952,7 +2952,7 @@
 <td><a href="https://github.com/postmanlabs/postman-request" title="“postman-request” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Simplified HTTP request client.<br>Required by cloudscraper, request-promise, request-promise-core.</td>
-<td align="center"><code>postman-request@2.88.1-postman.30</code></td>
+<td align="center"><code>postman-request@2.88.1-postman.31</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/psl" title="psl"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="psl" title="psl"></a></td>
