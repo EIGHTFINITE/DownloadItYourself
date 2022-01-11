@@ -18,7 +18,7 @@
   "dependencies": {
     "@sindresorhus/is": "4.2.1",
     "cloudscraper": "github:EIGHTFINITE/cloudscraper#master",
-    "electron": "16.0.6",
+    "electron": "16.0.7",
     "fs-extra": "10.0.0",
     "md5-file": "4.0.0",
     "npm": "8.3.0",
