@@ -10,8 +10,7 @@ jobs:
     steps:
     - uses: dessant/lock-threads@v3
       with:
-        github-token: ${{ github.token }}
-        issue-lock-labels: 'locked'
+        add-issue-labels: 'locked'
         issue-lock-reason: ''
-        pr-lock-labels: 'locked'
+        add-pr-labels: 'locked'
         pr-lock-reason: ''
