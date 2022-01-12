@@ -52,7 +52,7 @@ jobs:
         committer: GitHub <noreply@github.com>
         title: Update README
         body: |
-          Update the README.
+          Update the README to reflect the latest changes.
         labels: auto-merge
         branch: actions/readme
         base: master
