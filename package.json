@@ -16,7 +16,7 @@
     "url": "https://github.com/ModdingMinecraft/EIGHTFINITE-build.git"
   },
   "dependencies": {
-    "@sindresorhus/is": "4.2.1",
+    "@sindresorhus/is": "4.3.0",
     "cloudscraper": "github:EIGHTFINITE/cloudscraper#master",
     "electron": "16.0.7",
     "fs-extra": "10.0.0",
