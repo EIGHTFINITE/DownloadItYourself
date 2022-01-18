@@ -1,9 +1,8 @@
-name: Artifacts
+name: "Artifacts"
 
 on:
   push:
-    branches:
-      - master
+    branches: [ master ]
   schedule:
     - cron: '0 0 * * *'
 

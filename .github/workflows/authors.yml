@@ -1,6 +1,8 @@
-name: AUTHORS
+name: "AUTHORS"
 
-on: push
+on:
+  push:
+    branches: [ master ]
 
 jobs:
   authors:
