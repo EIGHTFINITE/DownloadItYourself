@@ -211,6 +211,10 @@ if [[ $(stat -c%s "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64
   split -b 104857600 --numeric-suffixes=1 --suffix-length=3 "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/electron" "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/electron."
   rm "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/electron"
 fi
+if [[ $(stat -c%s "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/libvk_swiftshader.so") -gt 104857600 ]]; then
+  split -b 104857600 --numeric-suffixes=1 --suffix-length=3 "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/libvk_swiftshader.so" "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/libvk_swiftshader.so."
+  rm "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/libvk_swiftshader.so"
+fi
 sed -i '/\/bin\//d' -- '.gitignore'
 git add "bin/linux/x64/electron"
 git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 Electron $npm_config_target release artifacts" | sed -n 1p
