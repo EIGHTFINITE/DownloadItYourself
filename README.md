@@ -2523,7 +2523,7 @@
 <td><a href="https://github.com/fb55/domhandler" title="“domhandler” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Handler for htmlparser2 that turns pages into a dom.<br>Required by cheerio, cheerio-select, css-select, dom-serializer, domutils, htmlparser2.</td>
-<td align="center"><code>domhandler@4.3.0</code></td>
+<td align="center"><code>domhandler@4.3.1</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/domutils" title="domutils"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="domutils" title="domutils"></a></td>
@@ -2842,7 +2842,7 @@
 <td><a href="https://github.com/npm/cli" title="“npm” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A package manager for JavaScript.</td>
-<td align="center"><code>npm@8.5.4</code></td>
+<td align="center"><code>npm@8.5.5</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://github.com/EIGHTFINITE/npm-6" title="npm-6"><img src="https://avatars.githubusercontent.com/u/9919" width="62" alt="npm-6" title="npm-6"></a></td>
