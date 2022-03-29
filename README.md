@@ -2413,7 +2413,7 @@
 <td><a href="https://github.com/cheeriojs/cheerio-select" title="“cheerio-select” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>CSS selector engine supporting jQuery selectors.<br>Required by cheerio.</td>
-<td align="center"><code>cheerio-select@1.5.0</code></td>
+<td align="center"><code>cheerio-select@1.6.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://github.com/EIGHTFINITE/cloudscraper" title="cloudscraper"><img src="https://avatars.githubusercontent.com/u/9919" width="62" alt="cloudscraper" title="cloudscraper"></a></td>
@@ -2457,7 +2457,7 @@
 <td><a href="https://github.com/fb55/css-select" title="“css-select” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A CSS selector compiler/engine.<br>Required by cheerio-select.</td>
-<td align="center"><code>css-select@4.2.1</code></td>
+<td align="center"><code>css-select@4.3.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/css-what" title="css-what"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="css-what" title="css-what"></a></td>
@@ -2468,7 +2468,7 @@
 <td><a href="https://github.com/fb55/css-what" title="“css-what” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A CSS selector parser.<br>Required by cheerio-select, css-select.</td>
-<td align="center"><code>css-what@5.1.0</code></td>
+<td align="center"><code>css-what@6.0.1</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/dashdash" title="dashdash"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="dashdash" title="dashdash"></a></td>
@@ -2556,7 +2556,7 @@
 <td><a href="https://github.com/electron/electron" title="“electron” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Build cross platform desktop apps with JavaScript, HTML, and CSS.</td>
-<td align="center"><code>electron@17.2.0</code></td>
+<td align="center"><code>electron@17.3.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/entities" title="entities"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="entities" title="entities"></a></td>
