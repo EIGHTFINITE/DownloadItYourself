@@ -83,6 +83,8 @@ rm -r node_modules/npm-6/node_modules/npm/node_modules/string-width/node_modules
 rm -r node_modules/npm-6/node_modules/npm/node_modules/wrap-ansi/node_modules/ansi-regex/
 rm -r node_modules/npm-6/node_modules/npm/node_modules/yargs/node_modules/ansi-regex/
 rm -r node_modules/npm-7/node_modules/npm/node_modules/json-schema/
+rm node_modules/dom-serializer/lib/esm/package.json
+rm node_modules/domelementtype/lib/esm/package.json
 rm node_modules/tslib/modules/package.json
 rm node_modules/electron/install.js
 cp -a bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex/ node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/
