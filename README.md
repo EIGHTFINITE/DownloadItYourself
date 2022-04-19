@@ -2633,7 +2633,7 @@
 <td><a href="https://github.com/jprichardson/node-fs-extra" title="“fs-extra” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Fs-extra contains methods that aren't included in the vanilla Node fs package. Such as recursive mkdir, copy, and remove.</td>
-<td align="center"><code>fs-extra@10.0.1</code></td>
+<td align="center"><code>fs-extra@10.1.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/getpass" title="getpass"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="getpass" title="getpass"></a></td>
