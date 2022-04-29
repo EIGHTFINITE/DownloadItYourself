@@ -4,5 +4,11 @@
     ":rebaseStalePrs",
     ":label(dependencies)",
     ":disableDependencyDashboard"
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["md5-file"],
+      "enabled": false
+    }
   ]
 }
