@@ -151,6 +151,8 @@ sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-6\/npm\/yargs\/ansi-r
 sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-7\/npm\/cli-table3\/ansi-regex\"/" node_modules/npm-7/node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/package.json
 sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-7\/npm\/string-width\/ansi-regex\"/" node_modules/npm-7/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/package.json
 sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-7\/npm\/json-schema\"/" node_modules/npm-7/node_modules/npm/node_modules/json-schema/package.json
+# Update version
+sed -i "0,/\"json-schema\": \".*\"/s//\"json-schema\": \"0.4.0\"/" node_modules/npm-7/node_modules/npm/node_modules/jsprim/package.json
 # Update package-lock.json
 if [[ "$OSTYPE" == "msys" ]]; then
   bin/windows/x64/node/node-v12.10.0-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
