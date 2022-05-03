@@ -239,12 +239,8 @@ find node_modules/ -mindepth 2 -type f -name 'package.json' -exec sed -i '/"_whe
 find node_modules/ -mindepth 2 -type f -name 'package.json' -exec sed -i '/"man": \[/,/\],/d' -- '{}' ';'
 sed -i '/\/node_modules\//d' -- '.gitignore'
 find node_modules/ -mindepth 2 -maxdepth 3 -type f -name 'package.json' -exec bash -c 'path="{}"; git add -- "${path:0:-13}"; git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add ${path:13:-13} release artifacts" | sed -n 1p' ';'
-cp package-lock.json npm-shrinkwrap.json
 git add -f package-lock.json
-git add -f npm-shrinkwrap.json
-git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"package-lock.json
-
-npm-shrinkwrap.json" | sed -n 1p
+git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"package-lock.json" | sed -n 1p
 export merge_commit="$(git log -1 --format=%H)"
 git checkout -- '.gitignore'
 if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
@@ -257,5 +253,4 @@ if [[ "$(git log -1 --format=%H)" == "$return_commit" ]]; then
   exit 1
 fi
 git checkout $merge_commit -- 'package-lock.json'
-git checkout $merge_commit -- 'npm-shrinkwrap.json'
 # Execution continues in .github/workflows/artifacts.yml ...

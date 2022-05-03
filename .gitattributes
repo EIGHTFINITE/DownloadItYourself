@@ -17,4 +17,3 @@
 /node_modules/ linguist-vendored
 /node_modules/* linguist-vendored
 /package-lock.json linguist-generated
-/npm-shrinkwrap.json linguist-generated
