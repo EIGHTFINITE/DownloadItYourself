@@ -7,9 +7,9 @@ rm npm_version.txt
 #else
 #  bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install ansi-regex@5.0.1 --no-offline
 #fi
-rm -rf .npm/
-rm package-lock.json
-git checkout -- 'package.json'
+#rm -rf .npm/
+#rm package-lock.json
+#git checkout -- 'package.json'
 #mkdir -p bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex
 #mv -T node_modules/ansi-regex bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex
 #rm -r node_modules/
