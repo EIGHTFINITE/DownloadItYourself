@@ -2,17 +2,17 @@
 # Execution starts in .github/workflows/npm.yml or docs/tools/actions-artifacts.sh
 export npm_version=$(cat npm_version.txt)
 rm npm_version.txt
-if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v12.10.0-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install ansi-regex@5.0.1 --no-offline
-else
-  bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install ansi-regex@5.0.1 --no-offline
-fi
+#if [[ "$OSTYPE" == "msys" ]]; then
+#  bin/windows/x64/node/node-v12.10.0-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install ansi-regex@5.0.1 --no-offline
+#else
+#  bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install ansi-regex@5.0.1 --no-offline
+#fi
 rm -rf .npm/
 rm package-lock.json
 git checkout -- 'package.json'
-mkdir -p bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex
-mv -T node_modules/ansi-regex bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex
-rm -r node_modules/
+#mkdir -p bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex
+#mv -T node_modules/ansi-regex bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex
+#rm -r node_modules/
 if [[ "$OSTYPE" == "msys" ]]; then
   bin/windows/x64/node/node-v12.10.0-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline --no-engine-strict
 else
@@ -25,6 +25,7 @@ else
   bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
 fi
 rm -rf .npm/
+# Remove unused dependencies
 rm -r node_modules/@electron/
 rm -r node_modules/@szmarczak/
 rm -r node_modules/@types/
@@ -74,66 +75,70 @@ rm -r node_modules/url-parse-lax/
 rm -r node_modules/util-deprecate/
 rm -r node_modules/wrappy/
 rm -r node_modules/yauzl/
-rm -r node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/
-rm -r node_modules/npm-7/node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/
-rm -r node_modules/npm-7/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/
-rm -r node_modules/npm-6/node_modules/npm/node_modules/ansi-regex/
-rm -r node_modules/npm-6/node_modules/npm/node_modules/cliui/node_modules/ansi-regex/
-rm -r node_modules/npm-6/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/
-rm -r node_modules/npm-6/node_modules/npm/node_modules/wrap-ansi/node_modules/ansi-regex/
-rm -r node_modules/npm-6/node_modules/npm/node_modules/yargs/node_modules/ansi-regex/
-rm -r node_modules/npm-7/node_modules/npm/node_modules/json-schema/
+#rm -r node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/
+#rm -r node_modules/npm-7/node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/
+#rm -r node_modules/npm-7/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/
+#rm -r node_modules/npm-6/node_modules/npm/node_modules/ansi-regex/
+#rm -r node_modules/npm-6/node_modules/npm/node_modules/cliui/node_modules/ansi-regex/
+#rm -r node_modules/npm-6/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/
+#rm -r node_modules/npm-6/node_modules/npm/node_modules/wrap-ansi/node_modules/ansi-regex/
+#rm -r node_modules/npm-6/node_modules/npm/node_modules/yargs/node_modules/ansi-regex/
+#rm -r node_modules/npm-7/node_modules/npm/node_modules/json-schema/
+# Delete malformed packages
 rm node_modules/dom-serializer/lib/esm/package.json
 rm node_modules/domelementtype/lib/esm/package.json
 rm node_modules/tslib/modules/package.json
+# Remove electron install script
 rm node_modules/electron/install.js
-cp -a bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex/ node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/
-cp -a bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex/ node_modules/npm-7/node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/
-cp -a bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex/ node_modules/npm-7/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/
-cp -a bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/ansi-regex/
-cp -a bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/cliui/node_modules/ansi-regex/
-cp -a bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/
-cp -a bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/wrap-ansi/node_modules/ansi-regex/
-cp -a bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/yargs/node_modules/ansi-regex/
-rm -r bin/all/all/ansi-regex/
-cp -a node_modules/json-schema/ node_modules/npm-7/node_modules/npm/node_modules/json-schema/
-sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/package.json
-sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-7\/npm\/strip-ansi\"\n  \]/" node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/package.json
-sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-7\/npm\/ansi-regex\"/" node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/package.json
-sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-7/node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/package.json
-sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-7\/npm\/cli-table3\"\n  \]/" node_modules/npm-7/node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/package.json
-sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-7\/npm\/cli-table3\/ansi-regex\"/" node_modules/npm-7/node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/package.json
-sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-7/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/package.json
-sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-7\/npm\/string-width\"\n  \]/" node_modules/npm-7/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/package.json
-sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-7\/npm\/string-width\/ansi-regex\"/" node_modules/npm-7/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/package.json
-sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-6/node_modules/npm/node_modules/ansi-regex/package.json
-sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-6\/npm\/strip-ansi\"\n  \]/" node_modules/npm-6/node_modules/npm/node_modules/ansi-regex/package.json
-sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-6\/npm\/ansi-regex\"/" node_modules/npm-6/node_modules/npm/node_modules/ansi-regex/package.json
-sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-6/node_modules/npm/node_modules/cliui/node_modules/ansi-regex/package.json
-sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-6\/npm\/cliui\"\n  \]/" node_modules/npm-6/node_modules/npm/node_modules/cliui/node_modules/ansi-regex/package.json
-sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-6\/npm\/cliui\/ansi-regex\"/" node_modules/npm-6/node_modules/npm/node_modules/cliui/node_modules/ansi-regex/package.json
-sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-6/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/package.json
-sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-6\/npm\/string-width\"\n  \]/" node_modules/npm-6/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/package.json
-sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-6\/npm\/string-width\/ansi-regex\"/" node_modules/npm-6/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/package.json
-sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-6/node_modules/npm/node_modules/wrap-ansi/node_modules/ansi-regex/package.json
-sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-6\/npm\/wrap-ansi\"\n  \]/" node_modules/npm-6/node_modules/npm/node_modules/wrap-ansi/node_modules/ansi-regex/package.json
-sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-6\/npm\/wrap-ansi\/ansi-regex\"/" node_modules/npm-6/node_modules/npm/node_modules/wrap-ansi/node_modules/ansi-regex/package.json
-sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-6/node_modules/npm/node_modules/yargs/node_modules/ansi-regex/package.json
-sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-6\/npm\/yargs\"\n  \]/" node_modules/npm-6/node_modules/npm/node_modules/yargs/node_modules/ansi-regex/package.json
-sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-6\/npm\/yargs\/ansi-regex\"/" node_modules/npm-6/node_modules/npm/node_modules/yargs/node_modules/ansi-regex/package.json
-sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-7/node_modules/npm/node_modules/json-schema/package.json
-sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-7\/npm\"\n  \]/" node_modules/npm-7/node_modules/npm/node_modules/json-schema/package.json
-sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-7\/npm\/json-schema\"/" node_modules/npm-7/node_modules/npm/node_modules/json-schema/package.json
-sed -i "0,/\"ansi-regex\": \".*\"/s//\"ansi-regex\": \"$(cat node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" node_modules/npm-7/node_modules/npm/node_modules/cli-table3/node_modules/strip-ansi/package.json
-sed -i "0,/\"ansi-regex\": \".*\"/s//\"ansi-regex\": \"$(cat node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" node_modules/npm-7/node_modules/npm/node_modules/string-width/node_modules/strip-ansi/package.json
-sed -i "0,/\"ansi-regex\": \".*\"/s//\"ansi-regex\": \"$(cat node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" node_modules/npm-7/node_modules/npm/node_modules/strip-ansi/package.json
-sed -i "0,/\"ansi-regex\": \".*\"/s//\"ansi-regex\": \"$(cat node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" node_modules/npm-6/node_modules/npm/node_modules/cliui/node_modules/strip-ansi/package.json
-sed -i "0,/\"ansi-regex\": \".*\"/s//\"ansi-regex\": \"$(cat node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" node_modules/npm-6/node_modules/npm/node_modules/string-width/node_modules/strip-ansi/package.json
-sed -i "0,/\"ansi-regex\": \".*\"/s//\"ansi-regex\": \"$(cat node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" node_modules/npm-6/node_modules/npm/node_modules/strip-ansi/package.json
-sed -i "0,/\"ansi-regex\": \".*\"/s//\"ansi-regex\": \"$(cat node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" node_modules/npm-6/node_modules/npm/node_modules/wrap-ansi/node_modules/strip-ansi/package.json
-sed -i "0,/\"ansi-regex\": \".*\"/s//\"ansi-regex\": \"$(cat node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" node_modules/npm-6/node_modules/npm/node_modules/yargs/node_modules/strip-ansi/package.json
-sed -i "0,/\"json-schema\": \".*\"/s//\"json-schema\": \"$(cat node_modules/json-schema/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" node_modules/npm-7/node_modules/npm/node_modules/jsprim/package.json
+#cp -a bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex/ node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/
+#cp -a bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex/ node_modules/npm-7/node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/
+#cp -a bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex/ node_modules/npm-7/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/
+#cp -a bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/ansi-regex/
+#cp -a bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/cliui/node_modules/ansi-regex/
+#cp -a bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/
+#cp -a bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/wrap-ansi/node_modules/ansi-regex/
+#cp -a bin/all/all/ansi-regex/ansi-regex-5.0.1/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/yargs/node_modules/ansi-regex/
+#rm -r bin/all/all/ansi-regex/
+#cp -a node_modules/json-schema/ node_modules/npm-7/node_modules/npm/node_modules/json-schema/
+#sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/package.json
+#sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-7\/npm\/strip-ansi\"\n  \]/" node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/package.json
+#sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-7\/npm\/ansi-regex\"/" node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/package.json
+#sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-7/node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/package.json
+#sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-7\/npm\/cli-table3\"\n  \]/" node_modules/npm-7/node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/package.json
+#sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-7\/npm\/cli-table3\/ansi-regex\"/" node_modules/npm-7/node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/package.json
+#sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-7/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/package.json
+#sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-7\/npm\/string-width\"\n  \]/" node_modules/npm-7/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/package.json
+#sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-7\/npm\/string-width\/ansi-regex\"/" node_modules/npm-7/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/package.json
+#sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-6/node_modules/npm/node_modules/ansi-regex/package.json
+#sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-6\/npm\/strip-ansi\"\n  \]/" node_modules/npm-6/node_modules/npm/node_modules/ansi-regex/package.json
+#sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-6\/npm\/ansi-regex\"/" node_modules/npm-6/node_modules/npm/node_modules/ansi-regex/package.json
+#sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-6/node_modules/npm/node_modules/cliui/node_modules/ansi-regex/package.json
+#sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-6\/npm\/cliui\"\n  \]/" node_modules/npm-6/node_modules/npm/node_modules/cliui/node_modules/ansi-regex/package.json
+#sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-6\/npm\/cliui\/ansi-regex\"/" node_modules/npm-6/node_modules/npm/node_modules/cliui/node_modules/ansi-regex/package.json
+#sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-6/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/package.json
+#sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-6\/npm\/string-width\"\n  \]/" node_modules/npm-6/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/package.json
+#sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-6\/npm\/string-width\/ansi-regex\"/" node_modules/npm-6/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/package.json
+#sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-6/node_modules/npm/node_modules/wrap-ansi/node_modules/ansi-regex/package.json
+#sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-6\/npm\/wrap-ansi\"\n  \]/" node_modules/npm-6/node_modules/npm/node_modules/wrap-ansi/node_modules/ansi-regex/package.json
+#sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-6\/npm\/wrap-ansi\/ansi-regex\"/" node_modules/npm-6/node_modules/npm/node_modules/wrap-ansi/node_modules/ansi-regex/package.json
+#sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-6/node_modules/npm/node_modules/yargs/node_modules/ansi-regex/package.json
+#sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-6\/npm\/yargs\"\n  \]/" node_modules/npm-6/node_modules/npm/node_modules/yargs/node_modules/ansi-regex/package.json
+#sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-6\/npm\/yargs\/ansi-regex\"/" node_modules/npm-6/node_modules/npm/node_modules/yargs/node_modules/ansi-regex/package.json
+#sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-7/node_modules/npm/node_modules/json-schema/package.json
+#sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-7\/npm\"\n  \]/" node_modules/npm-7/node_modules/npm/node_modules/json-schema/package.json
+#sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-7\/npm\/json-schema\"/" node_modules/npm-7/node_modules/npm/node_modules/json-schema/package.json
+#sed -i "0,/\"ansi-regex\": \".*\"/s//\"ansi-regex\": \"$(cat node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" node_modules/npm-7/node_modules/npm/node_modules/cli-table3/node_modules/strip-ansi/package.json
+#sed -i "0,/\"ansi-regex\": \".*\"/s//\"ansi-regex\": \"$(cat node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" node_modules/npm-7/node_modules/npm/node_modules/string-width/node_modules/strip-ansi/package.json
+#sed -i "0,/\"ansi-regex\": \".*\"/s//\"ansi-regex\": \"$(cat node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" node_modules/npm-7/node_modules/npm/node_modules/strip-ansi/package.json
+#sed -i "0,/\"ansi-regex\": \".*\"/s//\"ansi-regex\": \"$(cat node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" node_modules/npm-6/node_modules/npm/node_modules/cliui/node_modules/strip-ansi/package.json
+#sed -i "0,/\"ansi-regex\": \".*\"/s//\"ansi-regex\": \"$(cat node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" node_modules/npm-6/node_modules/npm/node_modules/string-width/node_modules/strip-ansi/package.json
+#sed -i "0,/\"ansi-regex\": \".*\"/s//\"ansi-regex\": \"$(cat node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" node_modules/npm-6/node_modules/npm/node_modules/strip-ansi/package.json
+#sed -i "0,/\"ansi-regex\": \".*\"/s//\"ansi-regex\": \"$(cat node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" node_modules/npm-6/node_modules/npm/node_modules/wrap-ansi/node_modules/strip-ansi/package.json
+#sed -i "0,/\"ansi-regex\": \".*\"/s//\"ansi-regex\": \"$(cat node_modules/npm-7/node_modules/npm/node_modules/ansi-regex/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" node_modules/npm-6/node_modules/npm/node_modules/yargs/node_modules/strip-ansi/package.json
+#sed -i "0,/\"json-schema\": \".*\"/s//\"json-schema\": \"$(cat node_modules/json-schema/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" node_modules/npm-7/node_modules/npm/node_modules/jsprim/package.json
+# Remove electron dependencies
 sed -i '/"dependencies": {/,/},/d' -- 'node_modules/electron/package.json'
+# Update package-lock.json
 if [[ "$OSTYPE" == "msys" ]]; then
   bin/windows/x64/node/node-v12.10.0-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
 else
