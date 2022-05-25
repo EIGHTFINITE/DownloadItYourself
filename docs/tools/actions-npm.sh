@@ -120,8 +120,18 @@ rm -r node_modules/npm-7/node_modules/npm/node_modules/cli-table3/node_modules/a
 rm -r node_modules/npm-7/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/
 rm -r node_modules/npm-7/node_modules/npm/node_modules/json-schema/
 # Delete malformed packages
+rm node_modules/cheerio/lib/esm/package.json
+rm node_modules/cheerio-select/lib/esm/package.json
+rm node_modules/css-select/lib/esm/package.json
 rm node_modules/dom-serializer/lib/esm/package.json
 rm node_modules/domelementtype/lib/esm/package.json
+rm node_modules/domhandler/lib/esm/package.json
+rm node_modules/domutils/lib/esm/package.json
+rm node_modules/entities/lib/esm/package.json
+rm node_modules/htmlparser2/lib/esm/package.json
+rm node_modules/nth-check/lib/esm/package.json
+rm node_modules/parse5/dist/cjs/package.json
+rm node_modules/parse5-htmlparser2-tree-adapter/dist/cjs/package.json
 rm node_modules/tslib/modules/package.json
 # Remove electron install script
 rm node_modules/electron/install.js
