@@ -2368,7 +2368,7 @@
 <td><a href="docs/legal/ISC.txt" title="“boolbase” license">ISC</a><a href="https://github.com/fb55/boolbase" title="“boolbase” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“boolbase” license information"></a>
 <td><a href="https://github.com/fb55/boolbase" title="“boolbase” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Two functions: One that returns true, one that returns false.<br>Required by css-select, nth-check.</td>
+<td>Two functions: One that returns true, one that returns false.<br>Required by cheerio-select, css-select, nth-check.</td>
 <td align="center"><code>boolbase@1.0.0</code></td>
 </tr>
 <tr>
@@ -2402,7 +2402,7 @@
 <td><a href="https://github.com/cheeriojs/cheerio" title="“cheerio” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Tiny, fast, and elegant implementation of core jQuery designed specifically for the server.<br>Required by cloudscraper.</td>
-<td align="center"><code>cheerio@1.0.0-rc.10</code></td>
+<td align="center"><code>cheerio@1.0.0-rc.11</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/cheerio-select" title="cheerio-select"><img src="https://avatars.githubusercontent.com/u/7230330?s=200" width="62" alt="cheerio-select" title="cheerio-select"></a></td>
@@ -2413,7 +2413,7 @@
 <td><a href="https://github.com/cheeriojs/cheerio-select" title="“cheerio-select” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>CSS selector engine supporting jQuery selectors.<br>Required by cheerio.</td>
-<td align="center"><code>cheerio-select@1.6.0</code></td>
+<td align="center"><code>cheerio-select@2.1.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://github.com/EIGHTFINITE/cloudscraper" title="cloudscraper"><img src="https://avatars.githubusercontent.com/u/9919" width="62" alt="cloudscraper" title="cloudscraper"></a></td>
@@ -2457,7 +2457,7 @@
 <td><a href="https://github.com/fb55/css-select" title="“css-select” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A CSS selector compiler/engine.<br>Required by cheerio-select.</td>
-<td align="center"><code>css-select@4.3.0</code></td>
+<td align="center"><code>css-select@5.1.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/css-what" title="css-what"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="css-what" title="css-what"></a></td>
@@ -2501,7 +2501,7 @@
 <td><a href="https://github.com/cheeriojs/dom-serializer" title="“dom-serializer” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Render domhandler DOM nodes to a string.<br>Required by cheerio, domutils.</td>
-<td align="center"><code>dom-serializer@1.4.1</code></td>
+<td align="center"><code>dom-serializer@2.0.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/domelementtype" title="domelementtype"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="domelementtype" title="domelementtype"></a></td>
@@ -2522,8 +2522,8 @@
 <td><a href="docs/legal/BSD-2-Clause.txt" title="“domhandler” license">BSD-2-Clause</a><a href="https://github.com/fb55/domhandler" title="“domhandler” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“domhandler” license information"></a>
 <td><a href="https://github.com/fb55/domhandler" title="“domhandler” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Handler for htmlparser2 that turns pages into a dom.<br>Required by cheerio, cheerio-select, css-select, dom-serializer, domutils, htmlparser2.</td>
-<td align="center"><code>domhandler@4.3.1</code></td>
+<td>Handler for htmlparser2 that turns pages into a dom.<br>Required by cheerio, cheerio-select, css-select, dom-serializer, domutils, htmlparser2, parse5-htmlparser2-tree-adapter.</td>
+<td align="center"><code>domhandler@5.0.3</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/domutils" title="domutils"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="domutils" title="domutils"></a></td>
@@ -2533,8 +2533,8 @@
 <td><a href="docs/legal/BSD-2-Clause.txt" title="“domutils” license">BSD-2-Clause</a><a href="https://github.com/fb55/domutils" title="“domutils” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“domutils” license information"></a>
 <td><a href="https://github.com/fb55/domutils" title="“domutils” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Utilities for working with htmlparser2's dom.<br>Required by cheerio-select, css-select, htmlparser2.</td>
-<td align="center"><code>domutils@2.8.0</code></td>
+<td>Utilities for working with htmlparser2's dom.<br>Required by cheerio, cheerio-select, css-select, htmlparser2.</td>
+<td align="center"><code>domutils@3.0.1</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/ecc-jsbn" title="ecc-jsbn"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="ecc-jsbn" title="ecc-jsbn"></a></td>
@@ -2556,7 +2556,7 @@
 <td><a href="https://github.com/electron/electron" title="“electron” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Build cross platform desktop apps with JavaScript, HTML, and CSS.</td>
-<td align="center"><code>electron@18.2.4</code></td>
+<td align="center"><code>electron@19.0.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/entities" title="entities"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="entities" title="entities"></a></td>
@@ -2566,8 +2566,8 @@
 <td><a href="docs/legal/BSD-2-Clause.txt" title="“entities” license">BSD-2-Clause</a><a href="https://github.com/fb55/entities" title="“entities” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“entities” license information"></a>
 <td><a href="https://github.com/fb55/entities" title="“entities” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Encode & decode XML and HTML entities with ease.<br>Required by dom-serializer, htmlparser2.</td>
-<td align="center"><code>entities@2.2.0</code></td>
+<td>Encode & decode XML and HTML entities with ease & speed.<br>Required by dom-serializer, htmlparser2, parse5.</td>
+<td align="center"><code>entities@4.3.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/extend" title="extend"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="extend" title="extend"></a></td>
@@ -2688,7 +2688,7 @@
 <td><a href="https://github.com/fb55/htmlparser2" title="“htmlparser2” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Fast & forgiving HTML/XML parser.<br>Required by cheerio.</td>
-<td align="center"><code>htmlparser2@6.1.0</code></td>
+<td align="center"><code>htmlparser2@8.0.1</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/http-signature" title="http-signature"><img src="https://avatars.githubusercontent.com/u/10161?s=200" width="62" alt="http-signature" title="http-signature"></a></td>
@@ -2897,7 +2897,7 @@
 <td><a href="https://github.com/fb55/nth-check" title="“nth-check” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Parses and compiles CSS nth-checks to highly optimized functions.<br>Required by css-select.</td>
-<td align="center"><code>nth-check@2.0.1</code></td>
+<td align="center"><code>nth-check@2.1.1</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/oauth-sign" title="oauth-sign"><img src="https://avatars.githubusercontent.com/u/730467?s=200" width="62" alt="oauth-sign" title="oauth-sign"></a></td>
@@ -2919,7 +2919,7 @@
 <td><a href="https://github.com/inikulin/parse5" title="“parse5” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>HTML parser and serializer.<br>Required by cheerio, parse5-htmlparser2-tree-adapter.</td>
-<td align="center"><code>parse5@6.0.1</code></td>
+<td align="center"><code>parse5@7.0.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/parse5-htmlparser2-tree-adapter" title="parse5-htmlparser2-tree-adapter"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="parse5-htmlparser2-tree-adapter" title="parse5-htmlparser2-tree-adapter"></a></td>
@@ -2930,7 +2930,7 @@
 <td><a href="https://github.com/inikulin/parse5" title="“parse5-htmlparser2-tree-adapter” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Htmlparser2 tree adapter for parse5.<br>Required by cheerio.</td>
-<td align="center"><code>parse5-htmlparser2-tree-adapter@6.0.1</code></td>
+<td align="center"><code>parse5-htmlparser2-tree-adapter@7.0.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/performance-now" title="performance-now"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="performance-now" title="performance-now"></a></td>
