@@ -74,44 +74,44 @@ if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(
 fi
 
 # Node Windows x86
-wget -nv -O "node-v12.10.0-win-x86.7z" https://nodejs.org/dist/v12.10.0/node-v12.10.0-win-x86.7z
+wget -nv -O "node-v12.22.12-win-x86.7z" https://nodejs.org/dist/v12.22.12/node-v12.22.12-win-x86.7z
 mkdir -p "bin/windows/x86/node"
-7z x -o"bin/windows/x86/node" "node-v12.10.0-win-x86.7z" | grep "ing archive"
-rm -r 'bin/windows/x86/node/node-v12.10.0-win-x86/node_modules'
-rm "node-v12.10.0-win-x86.7z"
+7z x -o"bin/windows/x86/node" "node-v12.22.12-win-x86.7z" | grep "ing archive"
+rm -r 'bin/windows/x86/node/node-v12.22.12-win-x86/node_modules'
+rm "node-v12.22.12-win-x86.7z"
 sed -i '/\/bin\//d' -- '.gitignore'
 git add "bin/windows/x86/node"
-git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 Node 12.10.0 release artifacts" | sed -n 1p
+git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 Node 12.22.12 release artifacts" | sed -n 1p
 git checkout -- '.gitignore'
 if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
   then exit 1
 fi
 
 # Node Windows x64
-wget -nv -O "node-v12.10.0-win-x64.7z" https://nodejs.org/dist/v12.10.0/node-v12.10.0-win-x64.7z
+wget -nv -O "node-v12.22.12-win-x64.7z" https://nodejs.org/dist/v12.22.12/node-v12.22.12-win-x64.7z
 mkdir -p "bin/windows/x64/node"
-7z x -o"bin/windows/x64/node" "node-v12.10.0-win-x64.7z" | grep "ing archive"
-rm -r 'bin/windows/x64/node/node-v12.10.0-win-x64/node_modules'
-rm "node-v12.10.0-win-x64.7z"
+7z x -o"bin/windows/x64/node" "node-v12.22.12-win-x64.7z" | grep "ing archive"
+rm -r 'bin/windows/x64/node/node-v12.22.12-win-x64/node_modules'
+rm "node-v12.22.12-win-x64.7z"
 sed -i '/\/bin\//d' -- '.gitignore'
 git add "bin/windows/x64/node"
-git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 Node 12.10.0 release artifacts" | sed -n 1p
+git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 Node 12.22.12 release artifacts" | sed -n 1p
 git checkout -- '.gitignore'
 if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
   then exit 1
 fi
 
 # Node Linux x64
-wget -nv -O "node-v12.10.0-linux-x64.tar.xz" https://nodejs.org/dist/v12.10.0/node-v12.10.0-linux-x64.tar.xz
+wget -nv -O "node-v12.22.12-linux-x64.tar.xz" https://nodejs.org/dist/v12.22.12/node-v12.22.12-linux-x64.tar.xz
 mkdir -p "bin/linux/x64/node"
-tar -xJf "node-v12.10.0-linux-x64.tar.xz" -C "bin/linux/x64/node"
-rm -r 'bin/linux/x64/node/node-v12.10.0-linux-x64/lib'
-rm "node-v12.10.0-linux-x64.tar.xz"
+tar -xJf "node-v12.22.12-linux-x64.tar.xz" -C "bin/linux/x64/node"
+rm -r 'bin/linux/x64/node/node-v12.22.12-linux-x64/lib'
+rm "node-v12.22.12-linux-x64.tar.xz"
 sed -i '/\/bin\//d' -- '.gitignore'
 git add "bin/linux/x64/node"
-git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 Node 12.10.0 release artifacts" | sed -n 1p
+git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 Node 12.22.12 release artifacts" | sed -n 1p
 git checkout -- '.gitignore'
-sudo ln -sf "$(pwd)/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
+sudo ln -sf "$(pwd)/bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node" /usr/local/bin/node
 if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
   then exit 1
 fi
@@ -126,15 +126,15 @@ mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
 tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
 rm "npm-$npm_version.tgz"
 sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat bin/all/all/npm/npm-$npm_version/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
-bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['dependencies']['electron'])") --no-offline
+bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['dependencies']['electron'])") --no-offline
 rm -rf .npm/
 export npm_config_target=$(cat node_modules/electron/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")
-bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
+bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
 rm -rf .npm/
 rm -r node_modules/@types/
-bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
+bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
 rm -rf .npm/
-bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
+bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node node_modules/electron/install.js
 mkdir -p "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32"
 mv -T node_modules/electron/dist "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32"
 rm -r bin/all/
@@ -160,14 +160,14 @@ mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
 tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
 rm "npm-$npm_version.tgz"
 sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat bin/all/all/npm/npm-$npm_version/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
-bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['dependencies']['electron'])") --no-offline
+bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['dependencies']['electron'])") --no-offline
 rm -rf .npm/
-bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
+bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
 rm -rf .npm/
 rm -r node_modules/@types/
-bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
+bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
 rm -rf .npm/
-bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
+bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node node_modules/electron/install.js
 mkdir -p "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
 mv -T node_modules/electron/dist "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
 rm -r bin/all/
@@ -193,14 +193,14 @@ mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
 tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
 rm "npm-$npm_version.tgz"
 sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat bin/all/all/npm/npm-$npm_version/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
-bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['dependencies']['electron'])") --no-offline
+bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['dependencies']['electron'])") --no-offline
 rm -rf .npm/
-bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
+bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
 rm -rf .npm/
 rm -r node_modules/@types/
-bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
+bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
 rm -rf .npm/
-bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/electron/install.js
+bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node node_modules/electron/install.js
 mkdir -p "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64"
 mv -T node_modules/electron/dist "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64"
 rm -r bin/all/

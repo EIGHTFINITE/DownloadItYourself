@@ -27,7 +27,7 @@ jobs:
           "private": "true"
         }' > package.json
         cp EIGHTFINITE-build/.npmrc .npmrc
-        sudo ln -sf "$(pwd)/EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
+        sudo ln -sf "$(pwd)/EIGHTFINITE-build/bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node" /usr/local/bin/node
         cd EIGHTFINITE-build
         export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
         wget -nv -O "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
@@ -36,10 +36,10 @@ jobs:
         rm "npm-$npm_version.tgz"
         echo -n "$npm_version" > npm_version.txt
         bash --noprofile --norc -e -o pipefail docs/tools/actions-npm.sh
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent | grep -v ' deduped' || true
+        bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent | grep -v ' deduped' || true
         rm -rf .npm/
         cd ..
-        EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node EIGHTFINITE-build/node_modules/npm-6/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build
+        EIGHTFINITE-build/bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node EIGHTFINITE-build/node_modules/npm-6/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build
         rm -rf .npm/
   npm_windows:
     runs-on: windows-latest
@@ -63,7 +63,7 @@ jobs:
     - name: npm
       shell: cmd
       run: |
-        mklink /d "C:\Program Files\nodejs" "%cd%\EIGHTFINITE-build\bin\windows\x64\node\node-v12.10.0-win-x64"
+        mklink /d "C:\Program Files\nodejs" "%cd%\EIGHTFINITE-build\bin\windows\x64\node\node-v12.22.12-win-x64"
     - name: npm
       shell: bash
       run: |
@@ -87,10 +87,10 @@ jobs:
         rm "npm-$npm_version.tgz"
         bash --noprofile --norc -e -o pipefail docs/tools/actions-npm.sh
         sed -i '/"@types\/node": "/d' -- 'node_modules/electron/package.json'
-        bin/windows/x64/node/node-v12.10.0-win-x64/node.exe node_modules/npm-6/node_modules/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent | grep -v ' deduped' || true
+        bin/windows/x64/node/node-v12.22.12-win-x64/node.exe node_modules/npm-6/node_modules/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent | grep -v ' deduped' || true
         rm -rf .npm/
         cd ..
-        EIGHTFINITE-build/bin/windows/x64/node/node-v12.10.0-win-x64/node.exe EIGHTFINITE-build/node_modules/npm-6/node_modules/npm/bin/npm-cli.js install .\\EIGHTFINITE-build
+        EIGHTFINITE-build/bin/windows/x64/node/node-v12.22.12-win-x64/node.exe EIGHTFINITE-build/node_modules/npm-6/node_modules/npm/bin/npm-cli.js install .\\EIGHTFINITE-build
         rm -rf .npm/
   audit_linux:
     runs-on: ubuntu-latest
@@ -107,7 +107,7 @@ jobs:
         bash --noprofile --norc -e -o pipefail docs/tools/git-config.sh
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git restore --source=artifacts -- bin/
-        sudo ln -sf "$(pwd)/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
+        sudo ln -sf "$(pwd)/bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node" /usr/local/bin/node
         export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
         wget -nv -O "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
         mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
@@ -115,7 +115,7 @@ jobs:
         rm "npm-$npm_version.tgz"
         echo -n "$npm_version" > npm_version.txt
         bash --noprofile --norc -e -o pipefail docs/tools/actions-npm.sh
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-7/node_modules/npm/bin/npm-cli.js audit
+        bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node node_modules/npm-7/node_modules/npm/bin/npm-cli.js audit
         rm -rf .npm/
         cd ..
   audit_windows:
@@ -138,7 +138,7 @@ jobs:
     - name: audit
       shell: cmd
       run: |
-        mklink /d "C:\Program Files\nodejs" "%cd%\EIGHTFINITE-build\bin\windows\x64\node\node-v12.10.0-win-x64"
+        mklink /d "C:\Program Files\nodejs" "%cd%\EIGHTFINITE-build\bin\windows\x64\node\node-v12.22.12-win-x64"
     - name: audit
       shell: bash
       run: |
@@ -161,6 +161,6 @@ jobs:
         tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
         rm "npm-$npm_version.tgz"
         bash --noprofile --norc -e -o pipefail docs/tools/actions-npm.sh
-        bin/windows/x64/node/node-v12.10.0-win-x64/node.exe node_modules/npm-7/node_modules/npm/bin/npm-cli.js audit
+        bin/windows/x64/node/node-v12.22.12-win-x64/node.exe node_modules/npm-7/node_modules/npm/bin/npm-cli.js audit
         rm -rf .npm/
         cd ..

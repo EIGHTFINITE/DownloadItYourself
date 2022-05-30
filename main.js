@@ -1,8 +1,8 @@
 (function() {
 
 // Executable check
-if(process.versions.node !== '12.10.0')
-	throw Error('EIGHTFINITE-build only supports Node 12.10.0');
+if(process.versions.node !== '12.22.12')
+	throw Error('EIGHTFINITE-build only supports Node 12.22.12');
 
 // Libraries
 var fs = require("fs-extra");

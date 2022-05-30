@@ -41,7 +41,7 @@ jobs:
         git restore --source=artifacts -- bin/
         git restore --source=artifacts -- node_modules/
         git restore --source=artifacts -- package-lock.json
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node --use_strict main.js --readme_only
+        bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node --use_strict main.js --readme_only
         git checkout -- 'downloadlist.json'
     - uses: peter-evans/create-pull-request@v4
       with:
@@ -135,12 +135,12 @@ jobs:
           "private": "true"
         }' > package.json
         cp EIGHTFINITE-build/.npmrc .npmrc
-        sudo ln -sf "$(pwd)/EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
+        sudo ln -sf "$(pwd)/EIGHTFINITE-build/bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node" /usr/local/bin/node
         cd EIGHTFINITE-build
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent | grep -v ' deduped' || true
+        bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent | grep -v ' deduped' || true
         rm -rf .npm/
         cd ..
-        EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node EIGHTFINITE-build/node_modules/npm-6/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build
+        EIGHTFINITE-build/bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node EIGHTFINITE-build/node_modules/npm-6/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build
         rm -rf .npm/
   artifacts_npm_windows:
     runs-on: windows-latest
@@ -162,15 +162,15 @@ jobs:
     - name: npm
       shell: cmd
       run: |
-        mklink /d "C:\Program Files\nodejs" "%cd%\EIGHTFINITE-build\bin\windows\x64\node\node-v12.10.0-win-x64"
+        mklink /d "C:\Program Files\nodejs" "%cd%\EIGHTFINITE-build\bin\windows\x64\node\node-v12.22.12-win-x64"
     - name: npm
       shell: bash
       run: |
         cd EIGHTFINITE-build
-        bin/windows/x64/node/node-v12.10.0-win-x64/node.exe node_modules/npm-6/node_modules/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent | grep -v ' deduped' || true
+        bin/windows/x64/node/node-v12.22.12-win-x64/node.exe node_modules/npm-6/node_modules/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent | grep -v ' deduped' || true
         rm -rf .npm/
         cd ..
-        EIGHTFINITE-build/bin/windows/x64/node/node-v12.10.0-win-x64/node.exe EIGHTFINITE-build/node_modules/npm-6/node_modules/npm/bin/npm-cli.js install .\\EIGHTFINITE-build
+        EIGHTFINITE-build/bin/windows/x64/node/node-v12.22.12-win-x64/node.exe EIGHTFINITE-build/node_modules/npm-6/node_modules/npm/bin/npm-cli.js install .\\EIGHTFINITE-build
         rm -rf .npm/
   artifacts_audit_linux:
     runs-on: ubuntu-latest
@@ -183,8 +183,8 @@ jobs:
     - name: audit
       shell: bash
       run: |
-        sudo ln -sf "$(pwd)/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-7/node_modules/npm/bin/npm-cli.js audit
+        sudo ln -sf "$(pwd)/bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node" /usr/local/bin/node
+        bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node node_modules/npm-7/node_modules/npm/bin/npm-cli.js audit
         rm -rf .npm/
   artifacts_audit_windows:
     runs-on: windows-latest
@@ -201,11 +201,11 @@ jobs:
     - name: audit
       shell: cmd
       run: |
-        mklink /d "C:\Program Files\nodejs" "%cd%\bin\windows\x64\node\node-v12.10.0-win-x64"
+        mklink /d "C:\Program Files\nodejs" "%cd%\bin\windows\x64\node\node-v12.22.12-win-x64"
     - name: audit
       shell: bash
       run: |
-        bin/windows/x64/node/node-v12.10.0-win-x64/node.exe node_modules/npm-7/node_modules/npm/bin/npm-cli.js audit
+        bin/windows/x64/node/node-v12.22.12-win-x64/node.exe node_modules/npm-7/node_modules/npm/bin/npm-cli.js audit
         rm -rf .npm/
   release:
     runs-on: ubuntu-latest
@@ -223,7 +223,7 @@ jobs:
         export GIT_COMMITTER_DATE="$(git log -1 --format=%cD)"
         
         # Update downloadlist files
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node --use_strict main.js --update_single_file_daily
+        bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node --use_strict main.js --update_single_file_daily
         git checkout -- 'README.html'
         git checkout -- 'README.md'
         git clean -ffx MultiMC/
@@ -290,12 +290,12 @@ jobs:
           "private": "true"
         }' > package.json
         cp EIGHTFINITE-build/.npmrc .npmrc
-        sudo ln -sf "$(pwd)/EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
+        sudo ln -sf "$(pwd)/EIGHTFINITE-build/bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node" /usr/local/bin/node
         cd EIGHTFINITE-build
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent | grep -v ' deduped' || true
+        bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent | grep -v ' deduped' || true
         rm -rf .npm/
         cd ..
-        EIGHTFINITE-build/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node EIGHTFINITE-build/node_modules/npm-6/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build
+        EIGHTFINITE-build/bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node EIGHTFINITE-build/node_modules/npm-6/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build
         rm -rf .npm/
   release_npm_windows:
     runs-on: windows-latest
@@ -317,15 +317,15 @@ jobs:
     - name: npm
       shell: cmd
       run: |
-        mklink /d "C:\Program Files\nodejs" "%cd%\EIGHTFINITE-build\bin\windows\x64\node\node-v12.10.0-win-x64"
+        mklink /d "C:\Program Files\nodejs" "%cd%\EIGHTFINITE-build\bin\windows\x64\node\node-v12.22.12-win-x64"
     - name: npm
       shell: bash
       run: |
         cd EIGHTFINITE-build
-        bin/windows/x64/node/node-v12.10.0-win-x64/node.exe node_modules/npm-6/node_modules/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent | grep -v ' deduped' || true
+        bin/windows/x64/node/node-v12.22.12-win-x64/node.exe node_modules/npm-6/node_modules/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent | grep -v ' deduped' || true
         rm -rf .npm/
         cd ..
-        EIGHTFINITE-build/bin/windows/x64/node/node-v12.10.0-win-x64/node.exe EIGHTFINITE-build/node_modules/npm-6/node_modules/npm/bin/npm-cli.js install .\\EIGHTFINITE-build
+        EIGHTFINITE-build/bin/windows/x64/node/node-v12.22.12-win-x64/node.exe EIGHTFINITE-build/node_modules/npm-6/node_modules/npm/bin/npm-cli.js install .\\EIGHTFINITE-build
         rm -rf .npm/
   release_audit_linux:
     runs-on: ubuntu-latest
@@ -338,8 +338,8 @@ jobs:
     - name: audit
       shell: bash
       run: |
-        sudo ln -sf "$(pwd)/bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node" /usr/local/bin/node
-        bin/linux/x64/node/node-v12.10.0-linux-x64/bin/node node_modules/npm-7/node_modules/npm/bin/npm-cli.js audit
+        sudo ln -sf "$(pwd)/bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node" /usr/local/bin/node
+        bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node node_modules/npm-7/node_modules/npm/bin/npm-cli.js audit
         rm -rf .npm/
   release_audit_windows:
     runs-on: windows-latest
@@ -356,9 +356,9 @@ jobs:
     - name: audit
       shell: cmd
       run: |
-        mklink /d "C:\Program Files\nodejs" "%cd%\bin\windows\x64\node\node-v12.10.0-win-x64"
+        mklink /d "C:\Program Files\nodejs" "%cd%\bin\windows\x64\node\node-v12.22.12-win-x64"
     - name: audit
       shell: bash
       run: |
-        bin/windows/x64/node/node-v12.10.0-win-x64/node.exe node_modules/npm-7/node_modules/npm/bin/npm-cli.js audit
+        bin/windows/x64/node/node-v12.22.12-win-x64/node.exe node_modules/npm-7/node_modules/npm/bin/npm-cli.js audit
         rm -rf .npm/
