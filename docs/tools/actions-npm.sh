@@ -52,9 +52,9 @@ mv -T node_modules/json-schema bin/all/all/node_modules/json-schema@0.4.0/json-s
 rm -r node_modules/
 # Install
 if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v12.22.12-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline --no-engine-strict
+  bin/windows/x64/node/node-v12.22.12-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline
 else
-  bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline --no-engine-strict
+  bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline
 fi
 rm -rf .npm/
 if [[ "$OSTYPE" == "msys" ]]; then
