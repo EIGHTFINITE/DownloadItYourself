@@ -99,11 +99,30 @@ process.on('exit', function() { // Asynchronous functions do not work beyond thi
 	}
 	
 	// Update Node in the download list
-	var current;
 	for (var i = 0; i < global.downloads.length; i++) {
-		current = global.downloads[i];
-		if(current.id === 'node') {
-			// todo
+		if(global.downloads[i].id === 'node') {
+			global.downloads[i].author = [
+				{
+					"name": "Node contributors",
+					"url": "https://github.com/nodejs/node/blob/v" + global.nodeVersion + "/AUTHORS"
+				},
+				{
+					"name": "Joyent",
+					"url": "https://github.com/joyent"
+				},
+				{
+					"name": "others",
+					"url": "https://github.com/nodejs/node/blob/v" + global.nodeVersion + "/LICENSE"
+				}
+			];
+			global.downloads[i].code = {
+				"title": "Open Source",
+				"url": "https://github.com/nodejs/node/tree/v" + global.nodeVersion
+			},
+			global.downloads[i].license = {
+				"source": "https://github.com/nodejs/node/tree/v" + global.nodeVersion,
+				"txt": "Node license"
+			}
 			break;
 		}
 	}
