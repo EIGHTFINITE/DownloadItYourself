@@ -43,7 +43,7 @@ jobs:
         git restore --source=artifacts -- bin/
         git restore --source=artifacts -- node_modules/
         git restore --source=artifacts -- package-lock.json
-        export node_version="12.22.12"
+        export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         bin/linux/x64/node/node-v$node_version-linux-x64/bin/node --use_strict main.js --readme_only
         git checkout -- 'downloadlist.json'
     - uses: peter-evans/create-pull-request@v4
@@ -138,7 +138,7 @@ jobs:
           "private": "true"
         }' > package.json
         cp EIGHTFINITE-build/.npmrc .npmrc
-        export node_version="12.22.12"
+        export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         sudo ln -sf "$(pwd)/EIGHTFINITE-build/bin/linux/x64/node/node-v$node_version-linux-x64/bin/node" /usr/local/bin/node
         cd EIGHTFINITE-build
         bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent | grep -v ' deduped' || true
@@ -163,7 +163,7 @@ jobs:
         }' > package.json
         cp EIGHTFINITE-build/.npmrc .npmrc
         rm -r "C:\\Program Files\\nodejs"
-        export node_version="12.22.12"
+        export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         echo -n "$node_version" > node_version.txt
     - name: npm
       shell: cmd
@@ -193,7 +193,7 @@ jobs:
     - name: audit
       shell: bash
       run: |
-        export node_version="12.22.12"
+        export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         sudo ln -sf "$(pwd)/bin/linux/x64/node/node-v$node_version-linux-x64/bin/node" /usr/local/bin/node
         bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/npm-7/node_modules/npm/bin/npm-cli.js audit
         rm -rf .npm/
@@ -209,7 +209,7 @@ jobs:
       shell: bash
       run: |
         rm -r "C:\\Program Files\\nodejs"
-        export node_version="12.22.12"
+        export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         echo -n "$node_version" > node_version.txt
     - name: audit
       shell: cmd
@@ -239,7 +239,7 @@ jobs:
         export GIT_COMMITTER_DATE="$(git log -1 --format=%cD)"
         
         # Update downloadlist files
-        export node_version="12.22.12"
+        export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         bin/linux/x64/node/node-v$node_version-linux-x64/bin/node --use_strict main.js --update_single_file_daily
         git checkout -- 'README.html'
         git checkout -- 'README.md'
@@ -307,7 +307,7 @@ jobs:
           "private": "true"
         }' > package.json
         cp EIGHTFINITE-build/.npmrc .npmrc
-        export node_version="12.22.12"
+        export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         sudo ln -sf "$(pwd)/EIGHTFINITE-build/bin/linux/x64/node/node-v$node_version-linux-x64/bin/node" /usr/local/bin/node
         cd EIGHTFINITE-build
         bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent | grep -v ' deduped' || true
@@ -332,7 +332,7 @@ jobs:
         }' > package.json
         cp EIGHTFINITE-build/.npmrc .npmrc
         rm -r "C:\\Program Files\\nodejs"
-        export node_version="12.22.12"
+        export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         echo -n "$node_version" > node_version.txt
     - name: npm
       shell: cmd
@@ -362,7 +362,7 @@ jobs:
     - name: audit
       shell: bash
       run: |
-        export node_version="12.22.12"
+        export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         sudo ln -sf "$(pwd)/bin/linux/x64/node/node-v$node_version-linux-x64/bin/node" /usr/local/bin/node
         bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/npm-7/node_modules/npm/bin/npm-cli.js audit
         rm -rf .npm/
@@ -378,7 +378,7 @@ jobs:
       shell: bash
       run: |
         rm -r "C:\\Program Files\\nodejs"
-        export node_version="12.22.12"
+        export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         echo -n "$node_version" > node_version.txt
     - name: audit
       shell: cmd

@@ -74,7 +74,7 @@ if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(
 fi
 
 # Node Windows x86
-export node_version="12.22.12"
+export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
 wget -nv -O "node-v$node_version-win-x86.7z" https://nodejs.org/dist/v$node_version/node-v$node_version-win-x86.7z
 mkdir -p "bin/windows/x86/node"
 7z x -o"bin/windows/x86/node" "node-v$node_version-win-x86.7z" | grep "ing archive"
