@@ -168,6 +168,7 @@ jobs:
       run: |
         cd EIGHTFINITE-build
         rm wget_npm.bat
+        mv ../node_version.txt .
         export node_version=$(cat node_version.txt)
         export npm_version=$(cat npm_version.txt)
         mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
