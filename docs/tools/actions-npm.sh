@@ -1,12 +1,14 @@
 #!/bin/bash
 # Execution starts in .github/workflows/npm.yml or docs/tools/actions-artifacts.sh
+export node_version=$(cat node_version.txt)
+rm node_version.txt
 export npm_version=$(cat npm_version.txt)
 rm npm_version.txt
 # Create a local copy of ansi-regex@5.0.1
 if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v12.22.12-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install ansi-regex@5.0.1 --no-offline
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install ansi-regex@5.0.1 --no-offline
 else
-  bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install ansi-regex@5.0.1 --no-offline
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install ansi-regex@5.0.1 --no-offline
 fi
 rm -rf .npm/
 rm package-lock.json
@@ -16,9 +18,9 @@ mv -T node_modules/ansi-regex bin/all/all/node_modules/ansi-regex@5.0.1/ansi-reg
 rm -r node_modules/
 # Create a local copy of ansi-regex@4.1.1
 if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v12.22.12-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install ansi-regex@4.1.1 --no-offline
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install ansi-regex@4.1.1 --no-offline
 else
-  bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install ansi-regex@4.1.1 --no-offline
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install ansi-regex@4.1.1 --no-offline
 fi
 rm -rf .npm/
 rm package-lock.json
@@ -28,9 +30,9 @@ mv -T node_modules/ansi-regex bin/all/all/node_modules/ansi-regex@4.1.1/ansi-reg
 rm -r node_modules/
 # Create a local copy of ansi-regex@3.0.1
 if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v12.22.12-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install ansi-regex@3.0.1 --no-offline
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install ansi-regex@3.0.1 --no-offline
 else
-  bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install ansi-regex@3.0.1 --no-offline
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install ansi-regex@3.0.1 --no-offline
 fi
 rm -rf .npm/
 rm package-lock.json
@@ -40,9 +42,9 @@ mv -T node_modules/ansi-regex bin/all/all/node_modules/ansi-regex@3.0.1/ansi-reg
 rm -r node_modules/
 # Create a local copy of json-schema@0.4.0
 if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v12.22.12-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install json-schema@0.4.0 --no-offline
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install json-schema@0.4.0 --no-offline
 else
-  bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install json-schema@0.4.0 --no-offline
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install json-schema@0.4.0 --no-offline
 fi
 rm -rf .npm/
 rm package-lock.json
@@ -52,15 +54,15 @@ mv -T node_modules/json-schema bin/all/all/node_modules/json-schema@0.4.0/json-s
 rm -r node_modules/
 # Install
 if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v12.22.12-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline
 else
-  bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline
 fi
 rm -rf .npm/
 if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v12.22.12-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
 else
-  bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
 fi
 rm -rf .npm/
 # Remove unused dependencies
@@ -167,9 +169,9 @@ sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-7\/npm\/json-schema\"
 sed -i "0,/\"json-schema\": \".*\"/s//\"json-schema\": \"0.4.0\"/" node_modules/npm-7/node_modules/npm/node_modules/jsprim/package.json
 # Update package-lock.json
 if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v12.22.12-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
 else
-  bin/linux/x64/node/node-v12.22.12-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
 fi
 rm -rf .npm/
 rm -r bin/all/
