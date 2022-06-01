@@ -78,7 +78,7 @@ export node_version="12.22.12"
 wget -nv -O "node-v$node_version-win-x86.7z" https://nodejs.org/dist/v$node_version/node-v$node_version-win-x86.7z
 mkdir -p "bin/windows/x86/node"
 7z x -o"bin/windows/x86/node" "node-v$node_version-win-x86.7z" | grep "ing archive"
-rm -r 'bin/windows/x86/node/node-v$node_version-win-x86/node_modules'
+rm -r "bin/windows/x86/node/node-v$node_version-win-x86/node_modules"
 rm "node-v$node_version-win-x86.7z"
 sed -i '/\/bin\//d' -- '.gitignore'
 git add "bin/windows/x86/node"
@@ -92,7 +92,7 @@ fi
 wget -nv -O "node-v$node_version-win-x64.7z" https://nodejs.org/dist/v$node_version/node-v$node_version-win-x64.7z
 mkdir -p "bin/windows/x64/node"
 7z x -o"bin/windows/x64/node" "node-v$node_version-win-x64.7z" | grep "ing archive"
-rm -r 'bin/windows/x64/node/node-v$node_version-win-x64/node_modules'
+rm -r "bin/windows/x64/node/node-v$node_version-win-x64/node_modules"
 rm "node-v$node_version-win-x64.7z"
 sed -i '/\/bin\//d' -- '.gitignore'
 git add "bin/windows/x64/node"
@@ -106,7 +106,7 @@ fi
 wget -nv -O "node-v$node_version-linux-x64.tar.xz" https://nodejs.org/dist/v$node_version/node-v$node_version-linux-x64.tar.xz
 mkdir -p "bin/linux/x64/node"
 tar -xJf "node-v$node_version-linux-x64.tar.xz" -C "bin/linux/x64/node"
-rm -r 'bin/linux/x64/node/node-v$node_version-linux-x64/lib'
+rm -r "bin/linux/x64/node/node-v$node_version-linux-x64/lib"
 rm "node-v$node_version-linux-x64.tar.xz"
 sed -i '/\/bin\//d' -- '.gitignore'
 git add "bin/linux/x64/node"
