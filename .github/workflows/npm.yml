@@ -114,7 +114,7 @@ jobs:
         bash --noprofile --norc -e -o pipefail docs/tools/git-config.sh
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git restore --source=artifacts -- bin/
-        export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
+        export node_version=$(cat EIGHTFINITE-build/package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         sudo ln -sf "$(pwd)/bin/linux/x64/node/node-v$node_version-linux-x64/bin/node" /usr/local/bin/node
         export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
         wget -nv -O "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
@@ -144,7 +144,7 @@ jobs:
         git restore --source=artifacts -- bin/
         cd ..
         rm -r "C:\\Program Files\\nodejs"
-        export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
+        export node_version=$(cat EIGHTFINITE-build/package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         echo -n "$node_version" > node_version.txt
     - name: audit
       shell: cmd
