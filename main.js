@@ -1,9 +1,5 @@
 (function() {
 
-// Executable check
-if(process.versions.node !== '12.22.12')
-	throw Error('EIGHTFINITE-build only supports Node 12.22.12');
-
 // Libraries
 var fs = require("fs-extra");
 var stringify = require('./node_modules/npm/node_modules/json-stringify-nice');
@@ -28,7 +24,12 @@ global.config = void(0);
 global.delayedLog = [];
 global.threads = [];
 global.args = process.argv.slice(2);
+global.nodeVersion = JSON.parse(fs.readFileSync("../package.json",{encoding:'utf8',flag:'r'})).engines.node;
 global.noExecOrUpdateIsFinished = []; // Keep track of the current state of the thread to avoid closing it before we're done
+
+// Executable check
+if(process.versions.node !== global.nodeVersion)
+	throw Error('EIGHTFINITE-build only supports Node ' + global.nodeVersion);
 
 // Load config and get started
 fs.readFile("../downloadlist.json", "utf8", function(err, data) {
@@ -63,7 +64,7 @@ fs.readFile("../downloadlist.json", "utf8", function(err, data) {
 
 			// Start working
 			for (var i = 0; i < global.downloads.length; i++) {
-				(function(i) { // Make sure we're working in a seperated anonymous space
+				(function(i) { // Make sure we're working in a separated anonymous space
 					checkFile(i, global.downloads[i], function(current) { // Check integrity
 						if(!updateSingleFileDaily || i === updateSingleFile ) {
 							updateFile(i, current, void(0), function(current) { // Download updates
@@ -95,6 +96,16 @@ process.on('exit', function() { // Asynchronous functions do not work beyond thi
 	// Process leftover messages
 	if (global.config["delayed-log"] && global.delayedLog.length) {
 		console.message();
+	}
+	
+	// Update Node in the download list
+	var current;
+	for (var i = 0; i < global.downloads.length; i++) {
+		current = global.downloads[i];
+		if(current.id === 'node') {
+			// todo
+			break;
+		}
 	}
 
 	// As long as we didn't leave the download list in an unrecoverable state

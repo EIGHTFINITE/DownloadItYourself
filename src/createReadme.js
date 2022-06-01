@@ -116,8 +116,9 @@ function multipleLicenses(license, name, source) {
 function latestFile(current) {
 	if(current.name === 'Java SE Runtime Environment 8')
 		return '<code>jre-8u201-linux-x64.tar.gz</code>, <code>jre-8u201-windows-i586.exe</code>, <code>jre-8u201-windows-x64.exe</code>';
-	if(current.name === 'Node')
-		return '<code>node-v12.22.12-linux-arm64.tar.gz</code>, <code>node-v12.22.12-win-x64.7z</code>, <code>node-v12.22.12-win-x86.7z</code>';
+	if(current.name === 'Node') {
+		return '<code>node-v' + global.nodeVersion + '-linux-arm64.tar.gz</code>, <code>node-v' + global.nodeVersion + '-win-x64.7z</code>, <code>node-v' + global.nodeVersion + '-win-x86.7z</code>';
+	}
 	if(is.undefined(current.file))
 		return '';
 	if(current.file.endsWith(".pack.xz"))
