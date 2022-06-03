@@ -60,11 +60,11 @@ module.exports = function(i, current, temp, callback) {
 		for(var j = i - 1; j >= 0; j--) {
 			if(global.threads[j] !== false) { // If the thread hasn't been closed
 				if(current.url.startsWith('https://www.curseforge.com/') && global.downloads[j].url.startsWith('https://www.curseforge.com/')) { // Never have more than one opened CurseForge thread
-					//
+					break;
 				}
 				counter++; // Then increase the counter
 				if(counter >= global.config["max-active-downloads"]) { // If too many threads are still open
-					// Then keep waiting
+					break; // Then keep waiting
 				}
 			}
 		}
