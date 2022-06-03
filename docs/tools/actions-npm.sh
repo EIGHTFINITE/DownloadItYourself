@@ -137,10 +137,6 @@ rm node_modules/parse5-htmlparser2-tree-adapter/dist/cjs/package.json
 rm node_modules/tslib/modules/package.json
 sed -i '/"type": "module"/d' -- 'node_modules/parse5/package.json'
 sed -i '/"type": "module"/d' -- 'node_modules/parse5-htmlparser2-tree-adapter/package.json'
-# Remove electron install script
-rm node_modules/electron/install.js
-# Remove electron dependencies
-sed -i '/"dependencies": {/,/},/d' -- 'node_modules/electron/package.json'
 # Patch vulnerable dependencies
 cp -a bin/all/all/node_modules/ansi-regex@3.0.1/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/
 cp -a bin/all/all/node_modules/ansi-regex@4.1.1/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/yargs/node_modules/ansi-regex/
@@ -167,6 +163,18 @@ sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-7\/npm\/string-width\
 sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-7\/npm\/json-schema\"/" node_modules/npm-7/node_modules/npm/node_modules/json-schema/package.json
 # Update version
 sed -i "0,/\"json-schema\": \".*\"/s//\"json-schema\": \"0.4.0\"/" node_modules/npm-7/node_modules/npm/node_modules/jsprim/package.json
+# Remove electron install script
+rm node_modules/electron/install.js
+# Remove electron dependencies
+sed -i '/"dependencies": {/,/},/d' -- 'node_modules/electron/package.json'
+# Set electron path
+echo -n "electron" > "node_modules/electron/path.txt"
+# Remove unnecessary files
+find node_modules/ -mindepth 2 -type d \( -name '.github' -o -name 'docs' -o -name 'example' -o -name 'tap-snapshots' -o -name 'test' -o -name 'typings' \) | xargs rm -rf
+find node_modules/ -mindepth 2 -type f \( -name '*.d.ts' -o -name '*.d.ts.map' -o -name '*.js.map' -o -name '.eslintrc.yml' -o -name '.gitmodules' -o -name '.npmignore' -o -name '.travis.yml' -o -name 'yarn.lock' \) -exec bash -c 'rm "$1"; rmdir --ignore-fail-on-non-empty $(dirname "$1")' bash '{}' ';'
+# Remove non-deterministic information
+find node_modules/ -mindepth 2 -type f -name 'package.json' -exec sed -i '/"_where": "/d' -- '{}' ';'
+find node_modules/ -mindepth 2 -type f -name 'package.json' -exec sed -i '/"man": \[/,/\],/d' -- '{}' ';'
 # Update package-lock.json
 if [[ "$OSTYPE" == "msys" ]]; then
   bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
