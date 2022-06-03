@@ -6,7 +6,6 @@ var fs = require("fs-extra");
 var url = require("url");
 var cheerio = require("cheerio");
 var md5File = require("md5-file");
-var waitUntil = require("wait-until");
 var spawn = require("child_process").spawn;
 
 // Functions
@@ -57,29 +56,27 @@ module.exports = function(i, current, temp, callback) {
 	// If we're not already a child process
 	if(global.threads) {
 		// Wait until the previous files have been updated
-		waitUntil(1000, Infinity, function() {
-			var counter = 0;
-			for(var j = i - 1; j >= 0; j--) {
-				if(global.threads[j] !== false) { // If the thread hasn't been closed
-					if(current.url.startsWith('https://www.curseforge.com/') && global.downloads[j].url.startsWith('https://www.curseforge.com/')) // Never have more than one opened CurseForge thread
-						return false;
-					counter++; // Then increase the counter
-					if(counter >= global.config["max-active-downloads"]) // If too many threads are still open
-						return false; // Then keep waiting
+		var counter = 0;
+		for(var j = i - 1; j >= 0; j--) {
+			if(global.threads[j] !== false) { // If the thread hasn't been closed
+				if(current.url.startsWith('https://www.curseforge.com/') && global.downloads[j].url.startsWith('https://www.curseforge.com/')) { // Never have more than one opened CurseForge thread
+					//
+				}
+				counter++; // Then increase the counter
+				if(counter >= global.config["max-active-downloads"]) { // If too many threads are still open
+					// Then keep waiting
 				}
 			}
-			return true;
-		}, function() {
-			// Slow down CurseForge requests
-			if(current.url.startsWith('https://www.curseforge.com/')) {
-				setTimeout(function () {
-					spawnChild();
-				}, 5000);
-			}
-			else {
+		}
+		// Slow down CurseForge requests
+		if(current.url.startsWith('https://www.curseforge.com/')) {
+			setTimeout(function () {
 				spawnChild();
-			}
-		});
+			}, 5000);
+		}
+		else {
+			spawnChild();
+		}
 	}
 	else {
 		// Slow down CurseForge requests
