@@ -24,6 +24,7 @@
     "npm": "8.12.1",
     "npm-6": "github:EIGHTFINITE/npm-6#master",
     "npm-7": "github:EIGHTFINITE/npm-7#master",
+    "postman-request": "2.88.1-postman.31",
     "spdx-expression-parse": "github:EIGHTFINITE/spdx-expression-parse#master"
   },
   "bundleDependencies": [
@@ -35,6 +36,7 @@
     "npm",
     "npm-6",
     "npm-7",
+    "postman-request",
     "spdx-expression-parse"
   ]
 }
