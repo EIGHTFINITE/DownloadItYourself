@@ -13,8 +13,8 @@ fi
 rm -rf .npm/
 rm package-lock.json
 git checkout -- 'package.json'
-mkdir -p bin/all/all/node_modules/ansi-regex@5.0.1/ansi-regex
-mv -T node_modules/ansi-regex bin/all/all/node_modules/ansi-regex@5.0.1/ansi-regex
+mkdir -p bin/all/all/ansi-regex/ansi-regex@5.0.1/node_modules/ansi-regex
+mv -T node_modules/ansi-regex bin/all/all/ansi-regex/ansi-regex@5.0.1/node_modules/ansi-regex
 rm -r node_modules/
 # Create a local copy of ansi-regex@4.1.1
 if [[ "$OSTYPE" == "msys" ]]; then
@@ -25,8 +25,8 @@ fi
 rm -rf .npm/
 rm package-lock.json
 git checkout -- 'package.json'
-mkdir -p bin/all/all/node_modules/ansi-regex@4.1.1/ansi-regex
-mv -T node_modules/ansi-regex bin/all/all/node_modules/ansi-regex@4.1.1/ansi-regex
+mkdir -p bin/all/all/ansi-regex/ansi-regex@4.1.1/node_modules/ansi-regex
+mv -T node_modules/ansi-regex bin/all/all/ansi-regex/ansi-regex@4.1.1/node_modules/ansi-regex
 rm -r node_modules/
 # Create a local copy of ansi-regex@3.0.1
 if [[ "$OSTYPE" == "msys" ]]; then
@@ -37,8 +37,8 @@ fi
 rm -rf .npm/
 rm package-lock.json
 git checkout -- 'package.json'
-mkdir -p bin/all/all/node_modules/ansi-regex@3.0.1/ansi-regex
-mv -T node_modules/ansi-regex bin/all/all/node_modules/ansi-regex@3.0.1/ansi-regex
+mkdir -p bin/all/all/ansi-regex/ansi-regex@3.0.1/node_modules/ansi-regex
+mv -T node_modules/ansi-regex bin/all/all/ansi-regex/ansi-regex@3.0.1/node_modules/ansi-regex
 rm -r node_modules/
 # Create a local copy of json-schema@0.4.0
 if [[ "$OSTYPE" == "msys" ]]; then
@@ -49,8 +49,8 @@ fi
 rm -rf .npm/
 rm package-lock.json
 git checkout -- 'package.json'
-mkdir -p bin/all/all/node_modules/json-schema@0.4.0/json-schema
-mv -T node_modules/json-schema bin/all/all/node_modules/json-schema@0.4.0/json-schema
+mkdir -p bin/all/all/json-schema/json-schema@0.4.0/node_modules/json-schema
+mv -T node_modules/json-schema bin/all/all/json-schema/json-schema@0.4.0/node_modules/json-schema
 rm -r node_modules/
 # Install
 if [[ "$OSTYPE" == "msys" ]]; then
@@ -138,11 +138,11 @@ rm node_modules/tslib/modules/package.json
 sed -i '/"type": "module"/d' -- 'node_modules/parse5/package.json'
 sed -i '/"type": "module"/d' -- 'node_modules/parse5-htmlparser2-tree-adapter/package.json'
 # Patch vulnerable dependencies
-cp -a bin/all/all/node_modules/ansi-regex@3.0.1/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/
-cp -a bin/all/all/node_modules/ansi-regex@4.1.1/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/yargs/node_modules/ansi-regex/
-cp -a bin/all/all/node_modules/ansi-regex@5.0.1/ansi-regex/ node_modules/npm-7/node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/
-cp -a bin/all/all/node_modules/ansi-regex@3.0.1/ansi-regex/ node_modules/npm-7/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/
-cp -a bin/all/all/node_modules/json-schema@0.4.0/json-schema/ node_modules/npm-7/node_modules/npm/node_modules/json-schema/
+cp -a bin/all/all/ansi-regex/ansi-regex@3.0.1/node_modules/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/
+cp -a bin/all/all/ansi-regex/ansi-regex@4.1.1/node_modules/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/yargs/node_modules/ansi-regex/
+cp -a bin/all/all/ansi-regex/ansi-regex@5.0.1/node_modules/ansi-regex/ node_modules/npm-7/node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/
+cp -a bin/all/all/ansi-regex/ansi-regex@3.0.1/node_modules/ansi-regex/ node_modules/npm-7/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/
+cp -a bin/all/all/json-schema/json-schema@0.4.0/node_modules/json-schema/ node_modules/npm-7/node_modules/npm/node_modules/json-schema/
 # Set bundled status
 sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-6/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/package.json
 sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-6/node_modules/npm/node_modules/yargs/node_modules/ansi-regex/package.json
