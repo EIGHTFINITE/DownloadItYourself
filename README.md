@@ -2996,18 +2996,18 @@
 <td><a href="https://github.com/EIGHTFINITE/request-promise" title="“request-promise” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>The simplified HTTP request client 'request' with Promise support. Powered by Bluebird.<br>Required by cloudscraper.</td>
-<td align="center"><code>EIGHTFINITE/request-promise#413c6aad0ef5de8296d212136f5b85a473f57219</code><br>(based on <code>request-promise@4.2.6</code>)</td>
+<td align="center"><code>EIGHTFINITE/request-promise#5c8d2bb175c4bba9c3abe5961e24f64a0ccee046</code><br>(based on <code>request-promise@4.2.6</code>)</td>
 </tr>
 <tr>
-<td align="center"><a href="https://github.com/EIGHTFINITE/promise-core" title="request-promise-core"><img src="https://avatars.githubusercontent.com/u/730467?s=200" width="62" alt="request-promise-core" title="request-promise-core"></a></td>
-<td><a href="https://github.com/EIGHTFINITE/promise-core" title="request-promise-core">request-promise-core</a></td>
+<td align="center"><a href="https://github.com/EIGHTFINITE/request-promise-core" title="request-promise-core"><img src="https://avatars.githubusercontent.com/u/730467?s=200" width="62" alt="request-promise-core" title="request-promise-core"></a></td>
+<td><a href="https://github.com/EIGHTFINITE/request-promise-core" title="request-promise-core">request-promise-core</a></td>
 <td>Package</td>
 <td><a href="https://github.com/analog-nico" title="Nicolai Kamenzky">Nicolai Kamenzky</a></td>
-<td><a href="docs/legal/ISC.txt" title="“request-promise-core” license">ISC</a><a href="https://github.com/EIGHTFINITE/promise-core" title="“request-promise-core” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“request-promise-core” license information"></a>
-<td><a href="https://github.com/EIGHTFINITE/promise-core" title="“request-promise-core” source code">Open Source</a></td>
+<td><a href="docs/legal/ISC.txt" title="“request-promise-core” license">ISC</a><a href="https://github.com/EIGHTFINITE/request-promise-core" title="“request-promise-core” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“request-promise-core” license information"></a>
+<td><a href="https://github.com/EIGHTFINITE/request-promise-core" title="“request-promise-core” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Core Promise support implementation for the simplified HTTP request client 'request'.<br>Required by request-promise.</td>
-<td align="center"><code>EIGHTFINITE/promise-core#debc71b187e7d49abfb69c89c35c18f6b16246e8</code><br>(based on <code>request-promise-core@1.1.4</code>)</td>
+<td align="center"><code>EIGHTFINITE/request-promise-core#debc71b187e7d49abfb69c89c35c18f6b16246e8</code><br>(based on <code>request-promise-core@1.1.4</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/safe-buffer" title="safe-buffer"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="safe-buffer" title="safe-buffer"></a></td>
@@ -3051,7 +3051,7 @@
 <td><a href="https://github.com/EIGHTFINITE/spdx-expression-parse" title="“spdx-expression-parse” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Parse SPDX license expressions.</td>
-<td align="center"><code>EIGHTFINITE/spdx-expression-parse#09351b9e89061f88223cfbdb54f319ac68912b5f</code><br>(based on <code>spdx-expression-parse@3.0.1</code>)</td>
+<td align="center"><code>EIGHTFINITE/spdx-expression-parse#cd36b8da4bad8b6415035400a9cba757e36046f6</code><br>(based on <code>spdx-expression-parse@3.0.1</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/spdx-license-ids" title="spdx-license-ids"><img src="https://raw.githubusercontent.com/jslicense/jslicense.github.io/master/logo.png" width="62" alt="spdx-license-ids" title="spdx-license-ids"></a></td>
