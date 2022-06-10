@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@sindresorhus/is": "4.6.0",
+    "better-npm-audit": "3.7.3",
     "cloudscraper": "github:EIGHTFINITE/cloudscraper#master",
     "electron": "19.0.4",
     "fs-extra": "10.1.0",
@@ -29,6 +30,7 @@
   },
   "bundleDependencies": [
     "@sindresorhus/is",
+    "better-npm-audit",
     "cloudscraper",
     "electron",
     "fs-extra",
