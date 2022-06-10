@@ -2269,8 +2269,30 @@
 <td><a href="docs/legal/MIT.txt" title="“ajv” license">MIT</a><a href="https://github.com/ajv-validator/ajv" title="“ajv” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“ajv” license information"></a>
 <td><a href="https://github.com/ajv-validator/ajv" title="“ajv” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Another JSON Schema Validator.<br>Required by har-validator.</td>
-<td align="center"><code>ajv@6.12.6</code></td>
+<td>Another JSON Schema Validator.<br>Required by table.</td>
+<td align="center"><code>ajv@8.11.0</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/ansi-regex" title="ansi-regex"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="ansi-regex" title="ansi-regex"></a></td>
+<td><a href="https://www.npmjs.com/package/ansi-regex" title="ansi-regex">ansi-regex</a></td>
+<td>Package</td>
+<td><a href="https://github.com/chalk" title="Sindre Sorhus">Sindre Sorhus</a></td>
+<td><a href="docs/legal/MIT.txt" title="“ansi-regex” license">MIT</a><a href="https://github.com/chalk/ansi-regex" title="“ansi-regex” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“ansi-regex” license information"></a>
+<td><a href="https://github.com/chalk/ansi-regex" title="“ansi-regex” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Regular expression for matching ANSI escape codes.<br>Required by strip-ansi.</td>
+<td align="center"><code>ansi-regex@5.0.1</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/ansi-styles" title="ansi-styles"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="ansi-styles" title="ansi-styles"></a></td>
+<td><a href="https://www.npmjs.com/package/ansi-styles" title="ansi-styles">ansi-styles</a></td>
+<td>Package</td>
+<td><a href="https://github.com/chalk" title="Sindre Sorhus">Sindre Sorhus</a></td>
+<td><a href="docs/legal/MIT.txt" title="“ansi-styles” license">MIT</a><a href="https://github.com/chalk/ansi-styles" title="“ansi-styles” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“ansi-styles” license information"></a>
+<td><a href="https://github.com/chalk/ansi-styles" title="“ansi-styles” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>ANSI escape codes for styling strings in the terminal.<br>Required by slice-ansi.</td>
+<td align="center"><code>ansi-styles@4.3.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/asn1" title="asn1"><img src="https://avatars.githubusercontent.com/u/10161?s=200" width="62" alt="asn1" title="asn1"></a></td>
@@ -2293,6 +2315,17 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Extra assertions on top of Node's assert module.<br>Required by dashdash, getpass, http-signature, jsprim, sshpk, verror.</td>
 <td align="center"><code>assert-plus@1.0.0</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/astral-regex" title="astral-regex"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="astral-regex" title="astral-regex"></a></td>
+<td><a href="https://www.npmjs.com/package/astral-regex" title="astral-regex">astral-regex</a></td>
+<td>Package</td>
+<td><a href="https://github.com/kevva" title="Kevin Mårtensson">Kevin Mårtensson</a></td>
+<td><a href="docs/legal/MIT.txt" title="“astral-regex” license">MIT</a><a href="https://github.com/kevva/astral-regex" title="“astral-regex” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“astral-regex” license information"></a>
+<td><a href="https://github.com/kevva/astral-regex" title="“astral-regex” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Regular expression for matching astral symbols.<br>Required by slice-ansi.</td>
+<td align="center"><code>astral-regex@2.0.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/asynckit" title="asynckit"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="asynckit" title="asynckit"></a></td>
@@ -2348,6 +2381,17 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Port of the OpenBSD bcrypt_pbkdf function to pure JS.<br>Required by sshpk.</td>
 <td align="center"><code>bcrypt-pbkdf@1.0.2</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/better-npm-audit" title="better-npm-audit"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="better-npm-audit" title="better-npm-audit"></a></td>
+<td><a href="https://www.npmjs.com/package/better-npm-audit" title="better-npm-audit">better-npm-audit</a></td>
+<td>Package</td>
+<td><a href="https://github.com/jeemok" title="Jee Mok">Jee Mok</a></td>
+<td><a href="docs/legal/MIT.txt" title="“better-npm-audit” license">MIT</a><a href="https://github.com/jeemok/better-npm-audit" title="“better-npm-audit” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“better-npm-audit” license information"></a>
+<td><a href="https://github.com/jeemok/better-npm-audit" title="“better-npm-audit” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Reshape into a better npm audit for the community and encourage more people to include security audit into their process.</td>
+<td align="center"><code>better-npm-audit@3.7.3</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/bluebird" title="bluebird"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="bluebird" title="bluebird"></a></td>
@@ -2427,6 +2471,28 @@
 <td align="center"><code>EIGHTFINITE/cloudscraper#ae3ceb0df3adfd4fe39860b90182446ca9f0a291</code><br>(based on <code>cloudscraper@4.6.0</code>)</td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.npmjs.com/package/color-convert" title="color-convert"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="color-convert" title="color-convert"></a></td>
+<td><a href="https://www.npmjs.com/package/color-convert" title="color-convert">color-convert</a></td>
+<td>Package</td>
+<td><a href="https://github.com/Qix-" title="Heather Arthur">Heather Arthur</a></td>
+<td><a href="docs/legal/MIT.txt" title="“color-convert” license">MIT</a><a href="https://github.com/Qix-/color-convert" title="“color-convert” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“color-convert” license information"></a>
+<td><a href="https://github.com/Qix-/color-convert" title="“color-convert” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Plain color conversion functions.<br>Required by ansi-styles.</td>
+<td align="center"><code>color-convert@2.0.1</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/color-name" title="color-name"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="color-name" title="color-name"></a></td>
+<td><a href="https://www.npmjs.com/package/color-name" title="color-name">color-name</a></td>
+<td>Package</td>
+<td><a href="https://github.com/colorjs" title="DY">DY</a></td>
+<td><a href="docs/legal/MIT.txt" title="“color-name” license">MIT</a><a href="https://github.com/colorjs/color-name" title="“color-name” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“color-name” license information"></a>
+<td><a href="https://github.com/colorjs/color-name" title="“color-name” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>A list of color names and its values.<br>Required by color-convert.</td>
+<td align="center"><code>color-name@1.1.4</code></td>
+</tr>
+<tr>
 <td align="center"><a href="https://www.npmjs.com/package/combined-stream" title="combined-stream"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="combined-stream" title="combined-stream"></a></td>
 <td><a href="https://www.npmjs.com/package/combined-stream" title="combined-stream">combined-stream</a></td>
 <td>Package</td>
@@ -2436,6 +2502,17 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A stream that emits multiple other streams one after another.<br>Required by @postman/form-data, postman-request.</td>
 <td align="center"><code>combined-stream@1.0.8</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/commander" title="commander"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="commander" title="commander"></a></td>
+<td><a href="https://www.npmjs.com/package/commander" title="commander">commander</a></td>
+<td>Package</td>
+<td><a href="https://github.com/tj" title="TJ Holowaychuk">TJ Holowaychuk</a></td>
+<td><a href="docs/legal/MIT.txt" title="“commander” license">MIT</a><a href="https://github.com/tj/commander.js" title="“commander” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“commander” license information"></a>
+<td><a href="https://github.com/tj/commander.js" title="“commander” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>The complete solution for Node command-line programs.<br>Required by better-npm-audit.</td>
+<td align="center"><code>commander@8.3.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/core-util-is" title="core-util-is"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="core-util-is" title="core-util-is"></a></td>
@@ -2480,6 +2557,17 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A light, featureful and explicit option parsing library.<br>Required by sshpk.</td>
 <td align="center"><code>dashdash@1.14.1</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/dayjs" title="dayjs"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="dayjs" title="dayjs"></a></td>
+<td><a href="https://www.npmjs.com/package/dayjs" title="dayjs">dayjs</a></td>
+<td>Package</td>
+<td><a href="https://github.com/iamkun" title="iamkun">iamkun</a></td>
+<td><a href="docs/legal/MIT.txt" title="“dayjs” license">MIT</a><a href="https://github.com/iamkun/dayjs" title="“dayjs” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“dayjs” license information"></a>
+<td><a href="https://github.com/iamkun/dayjs" title="“dayjs” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>2KB immutable date time library alternative to Moment.js with the same modern API .<br>Required by better-npm-audit.</td>
+<td align="center"><code>dayjs@1.11.3</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/delayed-stream" title="delayed-stream"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="delayed-stream" title="delayed-stream"></a></td>
@@ -2559,6 +2647,17 @@
 <td align="center"><code>electron@19.0.4</code></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.npmjs.com/package/emoji-regex" title="emoji-regex"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="emoji-regex" title="emoji-regex"></a></td>
+<td><a href="https://www.npmjs.com/package/emoji-regex" title="emoji-regex">emoji-regex</a></td>
+<td>Package</td>
+<td><a href="https://github.com/mathiasbynens" title="Mathias Bynens">Mathias Bynens</a></td>
+<td><a href="docs/legal/MIT.txt" title="“emoji-regex” license">MIT</a><a href="https://github.com/mathiasbynens/emoji-regex" title="“emoji-regex” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“emoji-regex” license information"></a>
+<td><a href="https://github.com/mathiasbynens/emoji-regex" title="“emoji-regex” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>A regular expression to match all Emoji-only symbols as per the Unicode Standard.<br>Required by string-width.</td>
+<td align="center"><code>emoji-regex@8.0.0</code></td>
+</tr>
+<tr>
 <td align="center"><a href="https://www.npmjs.com/package/entities" title="entities"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="entities" title="entities"></a></td>
 <td><a href="https://www.npmjs.com/package/entities" title="entities">entities</a></td>
 <td>Package</td>
@@ -2599,7 +2698,7 @@
 <td><a href="docs/legal/MIT.txt" title="“fast-deep-equal” license">MIT</a><a href="https://github.com/epoberezkin/fast-deep-equal" title="“fast-deep-equal” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“fast-deep-equal” license information"></a>
 <td><a href="https://github.com/epoberezkin/fast-deep-equal" title="“fast-deep-equal” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Fast deep equal.<br>Required by ajv.</td>
+<td>Fast deep equal.<br>Required by ajv, har-validator/ajv.</td>
 <td align="center"><code>fast-deep-equal@3.1.3</code></td>
 </tr>
 <tr>
@@ -2610,7 +2709,7 @@
 <td><a href="docs/legal/MIT.txt" title="“fast-json-stable-stringify” license">MIT</a><a href="https://github.com/epoberezkin/fast-json-stable-stringify" title="“fast-json-stable-stringify” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“fast-json-stable-stringify” license information"></a>
 <td><a href="https://github.com/epoberezkin/fast-json-stable-stringify" title="“fast-json-stable-stringify” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Deterministic `JSON.stringify()` - a faster version of substack's json-stable-strigify without jsonify.<br>Required by ajv.</td>
+<td>Deterministic `JSON.stringify()` - a faster version of substack's json-stable-strigify without jsonify.<br>Required by har-validator/ajv.</td>
 <td align="center"><code>fast-json-stable-stringify@2.1.0</code></td>
 </tr>
 <tr>
@@ -2680,6 +2779,28 @@
 <td align="center"><code>har-validator@5.1.5</code></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.npmjs.com/package/ajv" title="har-validator/ajv"><img src="https://web.archive.org/web/20210223065550if_/https://ajv.js.org/images/ajv_logo.png" width="62" alt="har-validator/ajv" title="har-validator/ajv"></a></td>
+<td><a href="https://www.npmjs.com/package/ajv" title="har-validator/ajv">har-validator/ajv</a></td>
+<td>Package</td>
+<td><a href="https://github.com/ajv-validator" title="Evgeny Poberezkin">Evgeny Poberezkin</a></td>
+<td><a href="docs/legal/MIT.txt" title="“har-validator/ajv” license">MIT</a><a href="https://github.com/ajv-validator/ajv" title="“har-validator/ajv” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“har-validator/ajv” license information"></a>
+<td><a href="https://github.com/ajv-validator/ajv" title="“har-validator/ajv” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Another JSON Schema Validator.<br>Required by har-validator.</td>
+<td align="center"><code>ajv@6.12.6</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/json-schema-traverse" title="har-validator/json-schema-traverse"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="har-validator/json-schema-traverse" title="har-validator/json-schema-traverse"></a></td>
+<td><a href="https://www.npmjs.com/package/json-schema-traverse" title="har-validator/json-schema-traverse">har-validator/json-schema-traverse</a></td>
+<td>Package</td>
+<td><a href="https://github.com/epoberezkin" title="Evgeny Poberezkin">Evgeny Poberezkin</a></td>
+<td><a href="docs/legal/MIT.txt" title="“har-validator/json-schema-traverse” license">MIT</a><a href="https://github.com/epoberezkin/json-schema-traverse" title="“har-validator/json-schema-traverse” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“har-validator/json-schema-traverse” license information"></a>
+<td><a href="https://github.com/epoberezkin/json-schema-traverse" title="“har-validator/json-schema-traverse” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Traverse JSON Schema passing each schema object to callback.<br>Required by har-validator/ajv.</td>
+<td align="center"><code>json-schema-traverse@0.4.1</code></td>
+</tr>
+<tr>
 <td align="center"><a href="https://www.npmjs.com/package/htmlparser2" title="htmlparser2"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="htmlparser2" title="htmlparser2"></a></td>
 <td><a href="https://www.npmjs.com/package/htmlparser2" title="htmlparser2">htmlparser2</a></td>
 <td>Package</td>
@@ -2700,6 +2821,17 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Reference implementation of Joyent's HTTP Signature scheme.<br>Required by postman-request.</td>
 <td align="center"><code>http-signature@1.3.6</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/is-fullwidth-code-point" title="is-fullwidth-code-point"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="is-fullwidth-code-point" title="is-fullwidth-code-point"></a></td>
+<td><a href="https://www.npmjs.com/package/is-fullwidth-code-point" title="is-fullwidth-code-point">is-fullwidth-code-point</a></td>
+<td>Package</td>
+<td><a href="https://github.com/sindresorhus" title="Sindre Sorhus">Sindre Sorhus</a></td>
+<td><a href="docs/legal/MIT.txt" title="“is-fullwidth-code-point” license">MIT</a><a href="https://github.com/sindresorhus/is-fullwidth-code-point" title="“is-fullwidth-code-point” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“is-fullwidth-code-point” license information"></a>
+<td><a href="https://github.com/sindresorhus/is-fullwidth-code-point" title="“is-fullwidth-code-point” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Check if the character represented by a given Unicode code point is fullwidth.<br>Required by slice-ansi, string-width.</td>
+<td align="center"><code>is-fullwidth-code-point@3.0.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/is-typedarray" title="is-typedarray"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="is-typedarray" title="is-typedarray"></a></td>
@@ -2754,7 +2886,7 @@
 <td><a href="https://github.com/epoberezkin/json-schema-traverse" title="“json-schema-traverse” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Traverse JSON Schema passing each schema object to callback.<br>Required by ajv.</td>
-<td align="center"><code>json-schema-traverse@0.4.1</code></td>
+<td align="center"><code>json-schema-traverse@1.0.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/json-stringify-safe" title="json-stringify-safe"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="json-stringify-safe" title="json-stringify-safe"></a></td>
@@ -2799,6 +2931,28 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Lodash modular utilities.<br>Required by global-tunnel-ng, request-promise-core.</td>
 <td align="center"><code>lodash@4.17.21</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/lodash.get" title="lodash.get"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="lodash.get" title="lodash.get"></a></td>
+<td><a href="https://www.npmjs.com/package/lodash.get" title="lodash.get">lodash.get</a></td>
+<td>Package</td>
+<td><a href="https://github.com/lodash" title="John-David Dalton">John-David Dalton</a></td>
+<td><a href="docs/legal/MIT.txt" title="“lodash.get” license">MIT</a><a href="https://github.com/lodash/lodash" title="“lodash.get” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“lodash.get” license information"></a>
+<td><a href="https://github.com/lodash/lodash" title="“lodash.get” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>The lodash method `_.get` exported as a module.<br>Required by better-npm-audit.</td>
+<td align="center"><code>lodash.get@4.4.2</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/lodash.truncate" title="lodash.truncate"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="lodash.truncate" title="lodash.truncate"></a></td>
+<td><a href="https://www.npmjs.com/package/lodash.truncate" title="lodash.truncate">lodash.truncate</a></td>
+<td>Package</td>
+<td><a href="https://github.com/lodash" title="John-David Dalton">John-David Dalton</a></td>
+<td><a href="docs/legal/MIT.txt" title="“lodash.truncate” license">MIT</a><a href="https://github.com/lodash/lodash" title="“lodash.truncate” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“lodash.truncate” license information"></a>
+<td><a href="https://github.com/lodash/lodash" title="“lodash.truncate” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>The lodash method `_.truncate` exported as a module.<br>Required by table.</td>
+<td align="center"><code>lodash.truncate@4.4.2</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/md5-file" title="md5-file"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="md5-file" title="md5-file"></a></td>
@@ -3010,6 +3164,17 @@
 <td align="center"><code>EIGHTFINITE/request-promise-core#debc71b187e7d49abfb69c89c35c18f6b16246e8</code><br>(based on <code>request-promise-core@1.1.4</code>)</td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.npmjs.com/package/require-from-string" title="require-from-string"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="require-from-string" title="require-from-string"></a></td>
+<td><a href="https://www.npmjs.com/package/require-from-string" title="require-from-string">require-from-string</a></td>
+<td>Package</td>
+<td><a href="https://github.com/floatdrop" title="Vsevolod Strukchinsky">Vsevolod Strukchinsky</a></td>
+<td><a href="docs/legal/MIT.txt" title="“require-from-string” license">MIT</a><a href="https://github.com/floatdrop/require-from-string" title="“require-from-string” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“require-from-string” license information"></a>
+<td><a href="https://github.com/floatdrop/require-from-string" title="“require-from-string” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Require module from string.<br>Required by ajv.</td>
+<td align="center"><code>require-from-string@2.0.2</code></td>
+</tr>
+<tr>
 <td align="center"><a href="https://www.npmjs.com/package/safe-buffer" title="safe-buffer"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="safe-buffer" title="safe-buffer"></a></td>
 <td><a href="https://www.npmjs.com/package/safe-buffer" title="safe-buffer">safe-buffer</a></td>
 <td>Package</td>
@@ -3030,6 +3195,17 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Modern Buffer API polyfill without footguns.<br>Required by asn1, ecc-jsbn, sshpk.</td>
 <td align="center"><code>safer-buffer@2.1.2</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/slice-ansi" title="slice-ansi"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="slice-ansi" title="slice-ansi"></a></td>
+<td><a href="https://www.npmjs.com/package/slice-ansi" title="slice-ansi">slice-ansi</a></td>
+<td>Package</td>
+<td><a href="https://github.com/chalk" title="chalk">chalk</a></td>
+<td><a href="docs/legal/MIT.txt" title="“slice-ansi” license">MIT</a><a href="https://github.com/chalk/slice-ansi" title="“slice-ansi” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“slice-ansi” license information"></a>
+<td><a href="https://github.com/chalk/slice-ansi" title="“slice-ansi” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Slice a string with ANSI escape codes.<br>Required by table.</td>
+<td align="center"><code>slice-ansi@4.0.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/spdx-exceptions" title="spdx-exceptions"><img src="https://raw.githubusercontent.com/jslicense/jslicense.github.io/master/logo.png" width="62" alt="spdx-exceptions" title="spdx-exceptions"></a></td>
@@ -3109,6 +3285,39 @@
 <td align="center"><code>bluebird@2.11.0</code></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.npmjs.com/package/string-width" title="string-width"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="string-width" title="string-width"></a></td>
+<td><a href="https://www.npmjs.com/package/string-width" title="string-width">string-width</a></td>
+<td>Package</td>
+<td><a href="https://github.com/sindresorhus" title="Sindre Sorhus">Sindre Sorhus</a></td>
+<td><a href="docs/legal/MIT.txt" title="“string-width” license">MIT</a><a href="https://github.com/sindresorhus/string-width" title="“string-width” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“string-width” license information"></a>
+<td><a href="https://github.com/sindresorhus/string-width" title="“string-width” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Get the visual width of a string - the number of columns required to display it.<br>Required by table.</td>
+<td align="center"><code>string-width@4.2.3</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/strip-ansi" title="strip-ansi"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="strip-ansi" title="strip-ansi"></a></td>
+<td><a href="https://www.npmjs.com/package/strip-ansi" title="strip-ansi">strip-ansi</a></td>
+<td>Package</td>
+<td><a href="https://github.com/chalk" title="Sindre Sorhus">Sindre Sorhus</a></td>
+<td><a href="docs/legal/MIT.txt" title="“strip-ansi” license">MIT</a><a href="https://github.com/chalk/strip-ansi" title="“strip-ansi” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“strip-ansi” license information"></a>
+<td><a href="https://github.com/chalk/strip-ansi" title="“strip-ansi” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Strip ANSI escape codes from a string.<br>Required by string-width, table.</td>
+<td align="center"><code>strip-ansi@6.0.1</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/table" title="table"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="table" title="table"></a></td>
+<td><a href="https://www.npmjs.com/package/table" title="table">table</a></td>
+<td>Package</td>
+<td><a href="https://github.com/gajus" title="Gajus Kuizinas">Gajus Kuizinas</a></td>
+<td><a href="docs/legal/BSD-3-Clause.txt" title="“table” license">BSD-3-Clause</a><a href="https://github.com/gajus/table" title="“table” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“table” license information"></a>
+<td><a href="https://github.com/gajus/table" title="“table” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Formats data into a string table.<br>Required by better-npm-audit.</td>
+<td align="center"><code>table@6.8.0</code></td>
+</tr>
+<tr>
 <td align="center"><a href="https://www.npmjs.com/package/tough-cookie" title="tough-cookie"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="tough-cookie" title="tough-cookie"></a></td>
 <td><a href="https://www.npmjs.com/package/tough-cookie" title="tough-cookie">tough-cookie</a></td>
 <td>Package</td>
@@ -3160,7 +3369,7 @@
 <td><a href="docs/legal/BSD-2-Clause.txt" title="“uri-js” license">BSD-2-Clause</a><a href="https://github.com/garycourt/uri-js" title="“uri-js” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“uri-js” license information"></a>
 <td><a href="https://github.com/garycourt/uri-js" title="“uri-js” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>An RFC 3986/3987 compliant, scheme extendable URI/IRI parsing/validating/resolving library for JavaScript.<br>Required by ajv.</td>
+<td>An RFC 3986/3987 compliant, scheme extendable URI/IRI parsing/validating/resolving library for JavaScript.<br>Required by ajv, har-validator/ajv.</td>
 <td align="center"><code>uri-js@4.4.1</code></td>
 </tr>
 <tr>
