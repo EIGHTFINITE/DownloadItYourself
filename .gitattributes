@@ -6,6 +6,7 @@
 /.mailmap export-ignore
 /.npmignore export-ignore
 /.npmrc export-ignore
+/.nsprc export-ignore
 /README.md export-ignore
 /docs/archive/ export-ignore
 /docs/scripts/ export-ignore

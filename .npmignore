@@ -5,6 +5,7 @@
 /.mailmap
 /.npmignore
 /.npmrc
+/.nsprc
 /.git/
 /.github/
 /.npm/
