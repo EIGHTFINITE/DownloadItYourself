@@ -220,8 +220,11 @@ jobs:
         export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         sudo ln -sf "$(pwd)/bin/linux/x64/node/node-v$node_version-linux-x64/bin/node" /usr/local/bin/node
         mkdir "bin/linux/x64/node/node-v$node_version-linux-x64/lib"
-        cp -R "node_modules/npm-7/node_modules" "bin/linux/x64/node/node-v$node_version-linux-x64/lib"
+        cp -r "node_modules/npm-7/node_modules" "bin/linux/x64/node/node-v$node_version-linux-x64/lib"
+        export old_PATH="$PATH"
+        export PATH="$(pwd)/bin/linux/x64/node/node-v$node_version-linux-x64/bin:$PATH"
         bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/npm-7/node_modules/npm/bin/npm-cli.js audit
+        export PATH="$old_PATH"
         rm -rf .npm/
         rm -r "bin/linux/x64/node/node-v$node_version-linux-x64/lib"
   artifacts_audit_windows:
@@ -248,8 +251,11 @@ jobs:
       run: |
         export node_version=$(cat node_version.txt)
         rm node_version.txt
-        cp -R "node_modules/npm-7/node_modules" "bin/windows/x64/node/node-v$node_version-win-x64"
+        cp -r "node_modules/npm-7/node_modules" "bin/windows/x64/node/node-v$node_version-win-x64"
+        export old_PATH="$PATH"
+        export PATH="$(pwd)/bin/windows/x64/node/node-v$node_version-win-x64:$PATH"
         bin/windows/x64/node/node-v$node_version-win-x64/node.exe node_modules/npm-7/node_modules/npm/bin/npm-cli.js audit
+        export PATH="$old_PATH"
         rm -rf .npm/
         rm -r "bin/windows/x64/node/node-v$node_version-win-x64"
   release:
@@ -394,8 +400,11 @@ jobs:
         export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         sudo ln -sf "$(pwd)/bin/linux/x64/node/node-v$node_version-linux-x64/bin/node" /usr/local/bin/node
         mkdir "bin/linux/x64/node/node-v$node_version-linux-x64/lib"
-        cp -R "node_modules/npm-7/node_modules" "bin/linux/x64/node/node-v$node_version-linux-x64/lib"
+        cp -r "node_modules/npm-7/node_modules" "bin/linux/x64/node/node-v$node_version-linux-x64/lib"
+        export old_PATH="$PATH"
+        export PATH="$(pwd)/bin/linux/x64/node/node-v$node_version-linux-x64/bin:$PATH"
         bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/npm-7/node_modules/npm/bin/npm-cli.js audit
+        export PATH="$old_PATH"
         rm -rf .npm/
         rm -r "bin/linux/x64/node/node-v$node_version-linux-x64/lib"
   release_audit_windows:
@@ -422,7 +431,10 @@ jobs:
       run: |
         export node_version=$(cat node_version.txt)
         rm node_version.txt
-        cp -R "node_modules/npm-7/node_modules" "bin/windows/x64/node/node-v$node_version-win-x64"
+        cp -r "node_modules/npm-7/node_modules" "bin/windows/x64/node/node-v$node_version-win-x64"
+        export old_PATH="$PATH"
+        export PATH="$(pwd)/bin/windows/x64/node/node-v$node_version-win-x64:$PATH"
         bin/windows/x64/node/node-v$node_version-win-x64/node.exe node_modules/npm-7/node_modules/npm/bin/npm-cli.js audit
+        export PATH="$old_PATH"
         rm -rf .npm/
         rm -r "bin/windows/x64/node/node-v$node_version-win-x64"
