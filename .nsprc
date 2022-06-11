@@ -1,4 +1,14 @@
 {
+  "GHSA-93q8-gq69-wqmw": {
+    "active": false,
+    "notes": "Patched in `npm-6>npm>string-width>ansi-regex`, `npm-6>npm>yargs>ansi-regex`, `npm-7>npm>cli-table3>ansi-regex`, and `npm-7>npm>string-width>ansi-regex`",
+    "expiry": "2022-09-20T20:20:09Z"
+  },
+  "GHSA-896r-f27r-55mw": {
+    "active": false,
+    "notes": "Patched in `npm-7>npm>json-schema`",
+    "expiry": "2022-11-19T20:16:17Z"
+  },
   "GHSA-hj9c-8jmm-8c52": {
     "active": true,
     "notes": "Ignored since we don't use workspaces",
