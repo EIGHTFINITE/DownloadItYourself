@@ -2416,6 +2416,17 @@
 <td align="center"><code>boolbase@1.0.0</code></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.npmjs.com/package/braces" title="braces"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="braces" title="braces"></a></td>
+<td><a href="https://www.npmjs.com/package/braces" title="braces">braces</a></td>
+<td>Package</td>
+<td><a href="https://github.com/jonschlinkert" title="Jon Schlinkert">Jon Schlinkert</a></td>
+<td><a href="docs/legal/MIT.txt" title="“braces” license">MIT</a><a href="https://github.com/micromatch/braces" title="“braces” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“braces” license information"></a>
+<td><a href="https://github.com/micromatch/braces" title="“braces” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Bash-like brace expansion, implemented in JavaScript. Safer than other brace expansion libs, with complete support for the Bash 4.3 braces specification, without sacrificing speed.</td>
+<td align="center"><code>braces@3.0.2</code></td>
+</tr>
+<tr>
 <td align="center"><a href="https://www.npmjs.com/package/brotli" title="brotli"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="brotli" title="brotli"></a></td>
 <td><a href="https://www.npmjs.com/package/brotli" title="brotli">brotli</a></td>
 <td>Package</td>
@@ -2713,6 +2724,17 @@
 <td align="center"><code>fast-json-stable-stringify@2.1.0</code></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.npmjs.com/package/fill-range" title="fill-range"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="fill-range" title="fill-range"></a></td>
+<td><a href="https://www.npmjs.com/package/fill-range" title="fill-range">fill-range</a></td>
+<td>Package</td>
+<td><a href="https://github.com/jonschlinkert" title="Jon Schlinkert">Jon Schlinkert</a></td>
+<td><a href="docs/legal/MIT.txt" title="“fill-range” license">MIT</a><a href="https://github.com/jonschlinkert/fill-range" title="“fill-range” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“fill-range” license information"></a>
+<td><a href="https://github.com/jonschlinkert/fill-range" title="“fill-range” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Fill in a range of numbers or letters, optionally passing an increment or `step` to use, or create a regex-compatible range with `options.toRegex`.<br>Required by braces.</td>
+<td align="center"><code>fill-range@7.0.1</code></td>
+</tr>
+<tr>
 <td align="center"><a href="https://www.npmjs.com/package/forever-agent" title="forever-agent"><img src="https://avatars.githubusercontent.com/u/730467?s=200" width="62" alt="forever-agent" title="forever-agent"></a></td>
 <td><a href="https://www.npmjs.com/package/forever-agent" title="forever-agent">forever-agent</a></td>
 <td>Package</td>
@@ -2832,6 +2854,17 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Check if the character represented by a given Unicode code point is fullwidth.<br>Required by slice-ansi, string-width.</td>
 <td align="center"><code>is-fullwidth-code-point@3.0.0</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/is-number" title="is-number"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="is-number" title="is-number"></a></td>
+<td><a href="https://www.npmjs.com/package/is-number" title="is-number">is-number</a></td>
+<td>Package</td>
+<td><a href="https://github.com/jonschlinkert" title="Jon Schlinkert">Jon Schlinkert</a></td>
+<td><a href="docs/legal/MIT.txt" title="“is-number” license">MIT</a><a href="https://github.com/jonschlinkert/is-number" title="“is-number” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“is-number” license information"></a>
+<td><a href="https://github.com/jonschlinkert/is-number" title="“is-number” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Returns true if a number or string value is a finite number. Useful for regex matches, parsing, user input, etc.<br>Required by to-regex-range.</td>
+<td align="center"><code>is-number@7.0.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/is-typedarray" title="is-typedarray"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="is-typedarray" title="is-typedarray"></a></td>
@@ -3316,6 +3349,17 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Formats data into a string table.<br>Required by better-npm-audit.</td>
 <td align="center"><code>table@6.8.0</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/to-regex-range" title="to-regex-range"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="to-regex-range" title="to-regex-range"></a></td>
+<td><a href="https://www.npmjs.com/package/to-regex-range" title="to-regex-range">to-regex-range</a></td>
+<td>Package</td>
+<td><a href="https://github.com/jonschlinkert" title="Jon Schlinkert">Jon Schlinkert</a></td>
+<td><a href="docs/legal/MIT.txt" title="“to-regex-range” license">MIT</a><a href="https://github.com/micromatch/to-regex-range" title="“to-regex-range” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“to-regex-range” license information"></a>
+<td><a href="https://github.com/micromatch/to-regex-range" title="“to-regex-range” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Pass two numbers, get a regex-compatible source string for matching ranges. Validated against more than 2.78 million test assertions.<br>Required by fill-range.</td>
+<td align="center"><code>to-regex-range@5.0.1</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/tough-cookie" title="tough-cookie"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="tough-cookie" title="tough-cookie"></a></td>
