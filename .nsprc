@@ -1,3 +1,7 @@
 {
-  "GHSA-hj9c-8jmm-8c52": "Ignored since we don't use workspaces"
+  "GHSA-hj9c-8jmm-8c52": {
+    "active": true,
+    "notes": "Ignored since we don't use workspaces",
+    "expiry": "2023-06-02T15:37:27Z"
+  }
 }
