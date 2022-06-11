@@ -10,7 +10,7 @@ jobs:
   artifacts:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2.4.0
     - name: Artifacts
       shell: bash
       run: |
@@ -34,7 +34,7 @@ jobs:
     needs: artifacts
     if: needs.artifacts.result == 'success'
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2.4.0
     - name: README
       shell: bash
       run: |
@@ -61,7 +61,7 @@ jobs:
     needs: artifacts
     if: needs.artifacts.result == 'success'
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2.4.0
     - name: Downloadlist
       shell: bash
       run: |
@@ -88,7 +88,7 @@ jobs:
     needs: artifacts
     if: needs.artifacts.result == 'success'
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2.4.0
     - name: Engines
       shell: bash
       run: |
@@ -114,7 +114,7 @@ jobs:
     needs: artifacts
     if: needs.artifacts.result == 'success'
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2.4.0
       with:
         repository: EIGHTFINITE/demjson
         ref: master
@@ -125,7 +125,7 @@ jobs:
         cd demjson
         sudo python setup.py install
         cd ..
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2.4.0
       with:
         ref: artifacts
         path: EIGHTFINITE-build
@@ -151,7 +151,7 @@ jobs:
     needs: artifacts
     if: needs.artifacts.result == 'success'
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2.4.0
       with:
         ref: artifacts
         path: EIGHTFINITE-build
@@ -175,7 +175,7 @@ jobs:
     needs: artifacts
     if: needs.artifacts.result == 'success'
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2.4.0
       with:
         ref: artifacts
         path: EIGHTFINITE-build
@@ -211,7 +211,7 @@ jobs:
     needs: artifacts_npm_linux
     if: needs.artifacts_npm_linux.result == 'success'
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2.4.0
       with:
         ref: artifacts
     - name: audit
@@ -232,7 +232,7 @@ jobs:
     needs: artifacts_npm_windows
     if: needs.artifacts_npm_windows.result == 'success'
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2.4.0
       with:
         ref: artifacts
     - name: audit
@@ -263,7 +263,7 @@ jobs:
     needs: [artifacts_jsonlint, artifacts_npm_linux, artifacts_npm_windows]
     if: ${{ needs.artifacts_jsonlint.result == 'success' && needs.artifacts_npm_linux.result == 'success' && needs.artifacts_npm_windows.result == 'success' }}
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2.4.0
       with:
         ref: artifacts
     - name: Release
@@ -294,7 +294,7 @@ jobs:
     needs: release
     if: needs.release.result == 'success'
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2.4.0
       with:
         repository: EIGHTFINITE/demjson
         ref: master
@@ -305,7 +305,7 @@ jobs:
         cd demjson
         sudo python setup.py install
         cd ..
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2.4.0
       with:
         ref: latest
         path: EIGHTFINITE-build
@@ -331,7 +331,7 @@ jobs:
     needs: release
     if: needs.release.result == 'success'
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2.4.0
       with:
         ref: latest
         path: EIGHTFINITE-build
@@ -355,7 +355,7 @@ jobs:
     needs: release
     if: needs.release.result == 'success'
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2.4.0
       with:
         ref: latest
         path: EIGHTFINITE-build
@@ -391,7 +391,7 @@ jobs:
     needs: release_npm_linux
     if: needs.release_npm_linux.result == 'success'
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2.4.0
       with:
         ref: latest
     - name: audit
@@ -412,7 +412,7 @@ jobs:
     needs: release_npm_windows
     if: needs.release_npm_windows.result == 'success'
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2.4.0
       with:
         ref: latest
     - name: audit
