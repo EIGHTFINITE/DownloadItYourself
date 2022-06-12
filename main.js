@@ -1,5 +1,12 @@
 (function() {
 
+// Version
+var nodeVersion = require('./package.json').engines.node;
+
+// Executable check
+if(process.versions.node !== nodeVersion)
+	throw Error('EIGHTFINITE-build only supports Node ' + nodeVersion);
+
 // Libraries
 var fs = require("fs-extra");
 var stringify = require('./node_modules/npm/node_modules/json-stringify-nice');
@@ -23,12 +30,7 @@ global.config = void(0);
 global.delayedLog = [];
 global.threads = [];
 global.args = process.argv.slice(2);
-global.nodeVersion = JSON.parse(fs.readFileSync("../package.json",{encoding:'utf8',flag:'r'})).engines.node;
 global.noExecOrUpdateIsFinished = []; // Keep track of the current state of the thread to avoid closing it before we're done
-
-// Executable check
-if(process.versions.node !== global.nodeVersion)
-	throw Error('EIGHTFINITE-build only supports Node ' + global.nodeVersion);
 
 // Load config and get started
 fs.readFile("../downloadlist.json", "utf8", function(err, data) {
@@ -101,7 +103,7 @@ process.on('exit', function() { // Asynchronous functions do not work beyond thi
 			global.downloads[i].author = [
 				{
 					"name": "Node contributors",
-					"url": "https://github.com/nodejs/node/blob/v" + global.nodeVersion + "/AUTHORS"
+					"url": "https://github.com/nodejs/node/blob/v" + process.versions.node + "/AUTHORS"
 				},
 				{
 					"name": "Joyent",
@@ -109,15 +111,15 @@ process.on('exit', function() { // Asynchronous functions do not work beyond thi
 				},
 				{
 					"name": "others",
-					"url": "https://github.com/nodejs/node/blob/v" + global.nodeVersion + "/LICENSE"
+					"url": "https://github.com/nodejs/node/blob/v" + process.versions.node + "/LICENSE"
 				}
 			];
 			global.downloads[i].code = {
 				"title": "Open Source",
-				"url": "https://github.com/nodejs/node/tree/v" + global.nodeVersion
+				"url": "https://github.com/nodejs/node/tree/v" + process.versions.node
 			},
 			global.downloads[i].license = {
-				"source": "https://github.com/nodejs/node/tree/v" + global.nodeVersion,
+				"source": "https://github.com/nodejs/node/tree/v" + process.versions.node,
 				"txt": "Node license"
 			}
 			break;
