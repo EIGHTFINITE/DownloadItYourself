@@ -5,7 +5,6 @@ var is = require('@sindresorhus/is');
 var fs = require("fs-extra");
 var url = require("url");
 var cheerio = require("cheerio");
-var md5File = require("md5-file");
 var spawn = require("child_process").spawn;
 
 // Functions

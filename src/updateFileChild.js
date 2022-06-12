@@ -5,7 +5,6 @@ var fs = require("fs-extra");
 var url = require("url");
 var cheerio = require("cheerio");
 var cloudscraper = require("cloudscraper");
-var md5File = require("md5-file");
 
 // Functions
 var updateFile = require("../src/updateFile.js");
