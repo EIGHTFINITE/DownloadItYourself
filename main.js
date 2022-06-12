@@ -74,7 +74,7 @@ fs.readFile("../downloadlist.json", "utf8", function(err, data) {
 						});
 					} else {
 						closeThread(i);
-					});
+					};
 				})(i);
 			}
 		}
