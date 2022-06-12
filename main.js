@@ -54,9 +54,8 @@ fs.readFile("../downloadlist.json", "utf8", function(err, data) {
 			else throw err;
 		}
 
-		if(!global.args.includes('--readme_only')) {
-			var updateSingleFileDaily = !!global.args.includes('--update_single_file_daily');
-			if(!updateSingleFileDaily)
+		if(!global.args.includes('--readme_only') || !global.args.includes('--update_single_file_daily')) {
+			if(!global.args.includes('--update_single_file_daily'))
 				console.log("Updating " + (global.downloads.length+1) + " files."); // Tell us how many files we're going to check
 			else {
 				var updateSingleFile = Math.floor(new Date()/864e5)%global.downloads.length; // Pick which file we should update. Value increases by one each day until it loops back around
@@ -66,7 +65,7 @@ fs.readFile("../downloadlist.json", "utf8", function(err, data) {
 			// Start working
 			for (var i = 0; i < global.downloads.length; i++) {
 				(function(i) { // Make sure we're working in a separated anonymous space
-					if(!updateSingleFileDaily || i === updateSingleFile ) {
+					if(!global.args.includes('--update_single_file_daily') || i === updateSingleFile ) {
 						updateFile(i, current, void(0), function(current) { // Download updates
 							copyFile(i, current, function(current) { // Copy files
 								execCmd(i, current, function(current) { // Execute commands
