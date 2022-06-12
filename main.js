@@ -6,7 +6,6 @@ var stringify = require('./node_modules/npm/node_modules/json-stringify-nice');
 
 // Functions
 var closeThread = require("./src/closeThread.js");
-var checkFile = require("./src/checkFile.js");
 var updateFile = require("./src/updateFile.js");
 var execCmd = require("./src/execCmd.js");
 var copyFile = require("./src/copyFile.js");
@@ -65,18 +64,16 @@ fs.readFile("../downloadlist.json", "utf8", function(err, data) {
 			// Start working
 			for (var i = 0; i < global.downloads.length; i++) {
 				(function(i) { // Make sure we're working in a separated anonymous space
-					checkFile(i, global.downloads[i], function(current) { // Check integrity
-						if(!updateSingleFileDaily || i === updateSingleFile ) {
-							updateFile(i, current, void(0), function(current) { // Download updates
-								copyFile(i, current, function(current) { // Copy files
-									execCmd(i, current, function(current) { // Execute commands
-										global.downloads[i] = current;
-									});
+					if(!updateSingleFileDaily || i === updateSingleFile ) {
+						updateFile(i, current, void(0), function(current) { // Download updates
+							copyFile(i, current, function(current) { // Copy files
+								execCmd(i, current, function(current) { // Execute commands
+									global.downloads[i] = current;
 								});
 							});
-						} else {
-							closeThread(i);
-						}
+						});
+					} else {
+						closeThread(i);
 					});
 				})(i);
 			}
