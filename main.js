@@ -54,7 +54,7 @@ fs.readFile("../downloadlist.json", "utf8", function(err, data) {
 			else throw err;
 		}
 
-		if(!global.args.includes('--readme_only') || !global.args.includes('--update_single_file_daily')) {
+		if(!global.args.includes('--readme_only') && !global.args.includes('--update_single_file_daily')) {
 			if(!global.args.includes('--update_single_file_daily'))
 				console.log("Updating " + (global.downloads.length+1) + " files."); // Tell us how many files we're going to check
 			else {
