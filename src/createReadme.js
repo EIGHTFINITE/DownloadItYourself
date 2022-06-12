@@ -1,7 +1,6 @@
 (function() {
 
 // Libraries
-var is = require('@sindresorhus/is');
 var fs = require('fs-extra');
 var parse = require('spdx-expression-parse');
 var execSync = require('child_process').execSync;
@@ -37,8 +36,8 @@ function abbrText(filetype, txt) {
 }
 
 function allAuthors(author) {
-	if(is.string(author.name) && is.string(author.url)) {
-		if(is.nonEmptyArray(author.url)) {
+	if((typeof author.name === 'string') && (typeof author.url === 'string')) {
+		if(Array.isArray(author.url) && author.url.length > 0) {
 			var authorString = author.name;
 			for (var j = 0; j < author.url.length; j++) {
 				authorString += '<a href="' + author.url[j] + '" title="' + author.name + '">[' + (j+1) + ']</a>';
@@ -49,10 +48,10 @@ function allAuthors(author) {
 			return '<a href="' + author.url + '" title="' + author.name + '">' + author.name + '</a>';
 		}
 	}
-	else if(is.nonEmptyArray(author)) {
+	else if(Array.isArray(author) && author.length > 0) {
 		var authorString = '';
 		for (var i = 0; i < author.length; i++) {
-			if(is.nonEmptyArray(author[i].url)) {
+			if(Array.isArray(author[i].url) && author[i].url.length > 0) {
 				authorString += ', ' + author[i].name;
 				for (var j = 0; j < author[i].url.length; j++) {
 					authorString += '<a href="' + author[i].url[j] + '" title="' + author[i].name + '">[' + (j+1) + ']</a>';
@@ -68,7 +67,7 @@ function allAuthors(author) {
 }
 
 function multiplePermissionSources(sources, current) {
-	if(is.string(sources))
+	if(typeof sources === 'string')
 		return '<a href="' + sources + '" title="“' + current.name + '” permission quote"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“' + current.name + '” permission quote"></a>';
 	var permissionString = '';
 	for (var i = 0; i < sources.length; i++) {
@@ -88,11 +87,11 @@ function multipleLicenses(license, name, source) {
 		}
 
 		// spdxToHTML(expression)
-		if(is.string(expression.license)) {
+		if(typeof expression.license === 'string') {
 			i++;
 			var license = expression.license;
 			var exception = (expression.exception ? expression.exception : void(0));
-			return '<a href="docs/legal/' + license + '.txt" title="“' + name + '” ' + licenseDedicationTitle(license) + '">' + license + '</a>' + (source ? (is.array(source) ? '<a href="' + source[i] + '" title="“' + name + '” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“' + name + '” license information"></a>' : '<a href="' + source + '" title="“' + name + '” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“' + name + '” license information"></a>') : '') + (exception ? ' with <a href="docs/legal/' + exception + '.txt" title="“' + name + '” exception">' + exception + '</a>' + (source ? (is.array(source) ? '<a href="' + source[i] + '" title="“' + name + '” exception information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“' + name + '” exception information"></a>' : '<a href="' + source + '" title="“' + name + '” exception information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“' + name + '” exception information"></a>') : '') : '');
+			return '<a href="docs/legal/' + license + '.txt" title="“' + name + '” ' + licenseDedicationTitle(license) + '">' + license + '</a>' + (source ? (Array.isArray(source) ? '<a href="' + source[i] + '" title="“' + name + '” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“' + name + '” license information"></a>' : '<a href="' + source + '" title="“' + name + '” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“' + name + '” license information"></a>') : '') + (exception ? ' with <a href="docs/legal/' + exception + '.txt" title="“' + name + '” exception">' + exception + '</a>' + (source ? (Array.isArray(source) ? '<a href="' + source[i] + '" title="“' + name + '” exception information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“' + name + '” exception information"></a>' : '<a href="' + source + '" title="“' + name + '” exception information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“' + name + '” exception information"></a>') : '') : '');
 		}
 		else {
 			return spdxToHTML(expression.left) + ' ' + expression.conjunction + ' ' + spdxToHTML(expression.right);
@@ -104,7 +103,7 @@ function multipleLicenses(license, name, source) {
 		return '';
 	var i = -1;
 	var parsedLicenses;
-	if(is.nonEmptyString(license)) {
+	if(typeof license === 'string' && license.length > 0) {
 		parsedLicenses = parse(license, true, true);
 	}
 	else {
@@ -119,7 +118,7 @@ function latestFile(current) {
 	if(current.name === 'Node') {
 		return '<code>node-v' + process.versions.node + '-linux-arm64.tar.gz</code>, <code>node-v' + process.versions.node + '-win-x64.7z</code>, <code>node-v' + process.versions.node + '-win-x86.7z</code>';
 	}
-	if(is.undefined(current.file))
+	if(typeof current.file === 'undefined')
 		return '';
 	if(current.file.endsWith(".pack.xz"))
 		return '<code>' + current.file.slice(0,-8) + '</code>';
@@ -275,7 +274,7 @@ module.exports = function(filetype) {
 				if(!packageData.repository) {
 					packageData.repository = {};
 					packageData.repository.type = 'git';
-					packageData.repository.url = (is.undefined(packageData.homepage) ? "https://github.com/npm/cli" : (packageData.homepage.endsWith('#readme') ? packageData.homepage.slice(0,-7) : packageData.homepage));
+					packageData.repository.url = ((typeof packageData.homepage === 'undefined') ? "https://github.com/npm/cli" : (packageData.homepage.endsWith('#readme') ? packageData.homepage.slice(0,-7) : packageData.homepage));
 				}
 				if(packageData.repository.url.startsWith('git+'))
 					packageData.repository.url = packageData.repository.url.slice(4);
@@ -520,7 +519,7 @@ module.exports = function(filetype) {
 				readme += '\r\n<tr>';
 
 				// Icon
-				readme += '\r\n<td align="center"><a href="' + (is.undefined(packageData._requested) || is.null(packageData._requested.saveSpec) ? packageData.homepage : 'https://github.com/' + packageData._from.slice(7).split('#')[0]) + '" title="' + packageData._location.substr(1) + '"><img src="';
+				readme += '\r\n<td align="center"><a href="' + ((typeof packageData._requested === 'undefined') || packageData._requested.saveSpec === null ? packageData.homepage : 'https://github.com/' + packageData._from.slice(7).split('#')[0]) + '" title="' + packageData._location.substr(1) + '"><img src="';
 				if(packageData.repository.url.startsWith('https://github.com/ajv-validator/'))
 					readme += 'https://web.archive.org/web/20210223065550if_/https://ajv.js.org/images/ajv_logo.png';
 				else if(packageData.repository.url.startsWith('https://github.com/cheeriojs/'))
@@ -537,14 +536,14 @@ module.exports = function(filetype) {
 					readme += 'https://avatars.githubusercontent.com/u/730467?s=200';
 				else if(packageData.repository.url.startsWith('https://github.com/npm/'))
 					readme += 'https://raw.githubusercontent.com/npm/logos/master/npm%20square/n.svg';
-				else if(is.undefined(packageData._requested) || is.null(packageData._requested.saveSpec))
+				else if((typeof packageData._requested === 'undefined') || packageData._requested.saveSpec === null)
 					readme += 'https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg';
 				else
 					readme += 'https://avatars.githubusercontent.com/u/9919';
 				readme += '" width="62" alt="' + packageData._location.substr(1) + '" title="' + packageData._location.substr(1) + '"></a></td>';
 
 				// Name
-				readme += '\r\n<td><a href="' + (is.undefined(packageData._requested) || is.null(packageData._requested.saveSpec) ? packageData.homepage : 'https://github.com/' + packageData._from.slice(7).split('#')[0]) + '" title="' + packageData._location.substr(1) + '">' + packageData._location.substr(1) + '</a></td>';
+				readme += '\r\n<td><a href="' + ((typeof packageData._requested === 'undefined') || (packageData._requested.saveSpec === null) ? packageData.homepage : 'https://github.com/' + packageData._from.slice(7).split('#')[0]) + '" title="' + packageData._location.substr(1) + '">' + packageData._location.substr(1) + '</a></td>';
 
 				// Type
 				readme += '\r\n<td>Package</td>';
@@ -553,10 +552,10 @@ module.exports = function(filetype) {
 				readme += '\r\n<td>' + allAuthors(packageData.author) + '</td>';
 
 				// License
-				readme += '\r\n<td>' + multipleLicenses(packageData.license, packageData._location.substr(1), (is.undefined(packageData._requested) || is.null(packageData._requested.saveSpec) ? packageData.repository.url : 'https://github.com/' + packageData._from.slice(7).split('#')[0]));
+				readme += '\r\n<td>' + multipleLicenses(packageData.license, packageData._location.substr(1), ((typeof packageData._requested === 'undefined') || (packageData._requested.saveSpec === null) ? packageData.repository.url : 'https://github.com/' + packageData._from.slice(7).split('#')[0]));
 
 				// Source Code
-				readme += '\r\n<td><a href="' + (is.undefined(packageData._requested) || is.null(packageData._requested.saveSpec) ? packageData.repository.url : 'https://github.com/' + packageData._from.slice(7).split('#')[0]) + '" title="“' + packageData._location.substr(1) + '” source code">Open Source</a></td>';
+				readme += '\r\n<td><a href="' + ((typeof packageData._requested === 'undefined') || (packageData._requested.saveSpec === null) ? packageData.repository.url : 'https://github.com/' + packageData._from.slice(7).split('#')[0]) + '" title="“' + packageData._location.substr(1) + '” source code">Open Source</a></td>';
 
 				// Distribution
 				if(filetype === "html")
@@ -568,7 +567,7 @@ module.exports = function(filetype) {
 				readme += '\r\n<td>' + packageData.description + '</td>';
 
 				// File
-				readme += '\r\n<td align="center"><code>' + (!is.undefined(packageData._from) && packageData._from.startsWith('github:') ? packageData._resolved.slice(7) + '</code><br>(based on <code>' + packageData._id + '</code>)' : packageData._id + '</code>') + '</td>';
+				readme += '\r\n<td align="center"><code>' + (!(typeof packageData._from === 'undefined') && packageData._from.startsWith('github:') ? packageData._resolved.slice(7) + '</code><br>(based on <code>' + packageData._id + '</code>)' : packageData._id + '</code>') + '</td>';
 
 				// Row end
 				readme += '\r\n</tr>';

@@ -1,8 +1,5 @@
 (function() {
 
-// Libraries
-var is = require('@sindresorhus/is');
-
 // Functions
 var nthIndex = require("../src/nthIndex.js");
 
@@ -21,7 +18,7 @@ module.exports = function(url, file) {
 	if(url.includes("/mapping-and-modding-java-edition/minecraft-mods/wip-mods/"))
 		url = url.replace("/mapping-and-modding-java-edition/minecraft-mods/wip-mods/", "/…/");
 
-	if(is.nonEmptyString(file)) {
+	if(typeof file === 'string' && file.length > 0) {
 		// OptiFine URL shortening
 		if(url.substring(nthIndex(url, '/', 2) + 1, nthIndex(url, '/', 3)) === "optifine.net")
 			url = url.replace(/&x=[0-9a-f]{32}/, "");

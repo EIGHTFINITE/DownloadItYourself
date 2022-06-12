@@ -1,8 +1,5 @@
 (function() {
 
-// Libraries
-var is = require('@sindresorhus/is');
-
 // Functions
 var registerThread = require("../src/registerThread.js");
 var closeThread = require("../src/closeThread.js");
@@ -51,7 +48,7 @@ module.exports = function(i, msg, verbose, close) {
 		return;
 	}
 	// Register thread when sending to an unopened one
-	if (is.undefined(global.threads[i])) {
+	if (typeof global.threads[i] === 'undefined') {
 		registerThread(i);
 	}
 	numberLength = global.downloads.length.toString().length;

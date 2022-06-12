@@ -1,7 +1,6 @@
 (function() {
 
 // Libraries
-var is = require('@sindresorhus/is');
 var fs = require("fs-extra");
 
 // Functions
@@ -26,7 +25,7 @@ module.exports = function(i, current, callback) {
 	}
 	// Copy this file to any additional folders
 	if (current["additional-folder"]) {
-		fs.copySync("../_download/"  + current.id +  "/" + current.file, "../" + current["additional-folder"] + "/" + (current["file-override"] ? current["file-override"] : current.file) + (!is.undefined(current["additional-file-disabled"]) ? (current["additional-file-disabled"] ? ".disabled" : "") : (current["file-disabled"] ? ".disabled" : "")));
+		fs.copySync("../_download/"  + current.id +  "/" + current.file, "../" + current["additional-folder"] + "/" + (current["file-override"] ? current["file-override"] : current.file) + (!(typeof current["additional-file-disabled"] === 'undefined') ? (current["additional-file-disabled"] ? ".disabled" : "") : (current["file-disabled"] ? ".disabled" : "")));
 		console.message(i, "Copied '" + localizedName(i) + "' to '" + current["additional-folder"] + "/'", MESSAGE_VERBOSE);
 	}
 

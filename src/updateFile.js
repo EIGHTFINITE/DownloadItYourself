@@ -1,7 +1,6 @@
 (function() {
 
 // Libraries
-var is = require('@sindresorhus/is');
 var fs = require("fs-extra");
 var url = require("url");
 var cheerio = require("cheerio");
@@ -42,7 +41,7 @@ module.exports = function(i, current, temp, callback) {
 		throw new Error("Unknown protocol.");
 
 	// Copy current into temp
-	if (is.undefined(temp)) {
+	if (typeof temp === 'undefined') {
 		temp = Object.assign({}, current);
 		delete temp.file;
 		delete temp.md5;
