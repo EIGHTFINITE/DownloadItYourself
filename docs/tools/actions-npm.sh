@@ -67,6 +67,7 @@ fi
 rm -rf .npm/
 # Remove unused dependencies
 rm -r node_modules/@electron/
+rm -r node_modules/@sindresorhus/
 rm -r node_modules/@szmarczak/
 rm -r node_modules/@types/
 rm -r node_modules/buffer-crc32/
