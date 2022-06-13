@@ -83,6 +83,7 @@ rm -r node_modules/end-of-stream/
 rm -r node_modules/env-paths/
 rm -r node_modules/extract-zip/
 rm -r node_modules/fd-slicer/
+rm -r node_modules/fs-extra/
 rm -r node_modules/get-stream/
 rm -r node_modules/got/
 rm -r node_modules/http-cache-semantics/
