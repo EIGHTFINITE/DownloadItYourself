@@ -86,6 +86,7 @@ rm -r node_modules/fd-slicer/
 rm -r node_modules/fs-extra/
 rm -r node_modules/get-stream/
 rm -r node_modules/got/
+rm -r node_modules/graceful-fs/
 rm -r node_modules/http-cache-semantics/
 rm -r node_modules/inherits/
 rm -r node_modules/isarray/
