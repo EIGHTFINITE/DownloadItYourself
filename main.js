@@ -19,9 +19,14 @@ var copyFile = require("./src/copyFile.js");
 var createReadme = require("./src/createReadme.js");
 console.message = require("./src/message.js");
 
-// Ensure correct working directory
-fs.ensureDirSync(__dirname + "/_download");
+// Create directories and move working directory
+if (!fs.existsSync(__dirname + "/_download")) {
+	fs.mkdirSync(__dirname + "/_download");
+}
 process.chdir(__dirname + "/_download");
+if (!fs.existsSync("../_download/_temp/")) {
+	fs.mkdirSync("../_download/_temp/");
+}
 
 // Globals
 global.list = void(0);

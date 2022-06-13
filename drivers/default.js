@@ -7,10 +7,15 @@ var filetype = temp.file.substring(temp.file.lastIndexOf("."));
 if((filetype !== ".jar") && (filetype !== ".zip") && (filetype !== ".xz") && (filetype !== ".7z") && (filetype !== ".rar"))
 	throw new Error("Unknown file type '" + filetype + "'.");
 
-fs.ensureDirSync("../_download/_temp/" + current.id + "/");
+// Create directory
+if (!fs.existsSync("../_download/_temp/" + current.id + "/")) {
+	fs.mkdirSync("../_download/_temp/" + current.id + "/");
+}
 remote.pipe(fs.createWriteStream("../_download/_temp/" + current.id + "/" + temp.file)).on("finish", function() {
 	// Check if downloaded file matches expected MD5
-	fs.ensureDirSync("../_download/" + current.id + "/");
+	if (!fs.existsSync("../_download/" + current.id + "/")) {
+		fs.mkdirSync("../_download/" + current.id + "/");
+	}
 	// If our downloaded file matches our previously downloaded file
 	if(current.file === temp.file && fs.existsSync("../_download/" + current.id + "/" + current.file)) {
 		console.log("'" + localizedName(i) + "' has already been updated to the latest version.");
