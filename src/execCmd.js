@@ -1,7 +1,7 @@
 (function() {
 
 // Libraries
-var fs = require("fs-extra");
+var fs = require('fs');
 var run = require('child_process').exec;
 var path = require('path');
 

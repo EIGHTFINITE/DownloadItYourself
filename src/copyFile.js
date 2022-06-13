@@ -1,7 +1,7 @@
 (function() {
 
 // Libraries
-var fs = require("fs-extra");
+var fs = require('fs');
 
 // Functions
 var localizedName = require("../src/localizedName.js");

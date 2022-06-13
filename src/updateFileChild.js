@@ -1,7 +1,7 @@
 (function() {
 
 // Libraries
-var fs = require("fs-extra");
+var fs = require('fs');
 var url = require("url");
 var cheerio = require("cheerio");
 var cloudscraper = require("cloudscraper");

@@ -1,7 +1,7 @@
 (function() {
 
 // Libraries
-var fs = require('fs-extra');
+var fs = require('fs');
 var parse = require('spdx-expression-parse');
 var execSync = require('child_process').execSync;
 
