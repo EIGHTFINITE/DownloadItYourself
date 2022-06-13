@@ -2742,8 +2742,8 @@
 <td><a href="docs/legal/MIT.txt" title="“fs-extra” license">MIT</a><a href="https://github.com/jprichardson/node-fs-extra" title="“fs-extra” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“fs-extra” license information"></a>
 <td><a href="https://github.com/jprichardson/node-fs-extra" title="“fs-extra” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Fs-extra contains methods that aren't included in the vanilla Node fs package. Such as recursive mkdir, copy, and remove.</td>
-<td align="center"><code>fs-extra@10.1.0</code></td>
+<td>Fs-extra contains methods that aren't included in the vanilla Node fs package. Such as mkdir -p, cp -r, and rm -rf.<br>Required by @electron/get.</td>
+<td align="center"><code>fs-extra@8.1.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/getpass" title="getpass"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="getpass" title="getpass"></a></td>
@@ -2764,7 +2764,7 @@
 <td><a href="docs/legal/ISC.txt" title="“graceful-fs” license">ISC</a><a href="https://github.com/isaacs/node-graceful-fs" title="“graceful-fs” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“graceful-fs” license information"></a>
 <td><a href="https://github.com/isaacs/node-graceful-fs" title="“graceful-fs” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>A drop-in replacement for fs, making various improvements.<br>Required by @electron/get/fs-extra, fs-extra, fs-extra/jsonfile, jsonfile.</td>
+<td>A drop-in replacement for fs, making various improvements.<br>Required by fs-extra, jsonfile.</td>
 <td align="center"><code>graceful-fs@4.2.10</code></td>
 </tr>
 <tr>
@@ -2920,17 +2920,6 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Like JSON.stringify, but doesn't blow up on circular refs.<br>Required by postman-request, roarr.</td>
 <td align="center"><code>json-stringify-safe@5.0.1</code></td>
-</tr>
-<tr>
-<td align="center"><a href="https://www.npmjs.com/package/jsonfile" title="jsonfile"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="jsonfile" title="jsonfile"></a></td>
-<td><a href="https://www.npmjs.com/package/jsonfile" title="jsonfile">jsonfile</a></td>
-<td>Package</td>
-<td><a href="https://github.com/jprichardson" title="JP Richardson">JP Richardson</a></td>
-<td><a href="docs/legal/MIT.txt" title="“jsonfile” license">MIT</a><a href="https://github.com/jprichardson/node-jsonfile" title="“jsonfile” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“jsonfile” license information"></a>
-<td><a href="https://github.com/jprichardson/node-jsonfile" title="“jsonfile” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Easily read/write JSON files.<br>Required by fs-extra.</td>
-<td align="center"><code>jsonfile@6.1.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/jsprim" title="jsprim"><img src="https://avatars.githubusercontent.com/u/10161?s=200" width="62" alt="jsprim" title="jsprim"></a></td>
@@ -3371,17 +3360,6 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Port of TweetNaCl cryptographic library to JavaScript.<br>Required by bcrypt-pbkdf, sshpk.</td>
 <td align="center"><code>tweetnacl@0.14.5</code></td>
-</tr>
-<tr>
-<td align="center"><a href="https://www.npmjs.com/package/universalify" title="universalify"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="universalify" title="universalify"></a></td>
-<td><a href="https://www.npmjs.com/package/universalify" title="universalify">universalify</a></td>
-<td>Package</td>
-<td><a href="https://github.com/RyanZim" title="Ryan Zimmerman">Ryan Zimmerman</a></td>
-<td><a href="docs/legal/MIT.txt" title="“universalify” license">MIT</a><a href="https://github.com/RyanZim/universalify" title="“universalify” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“universalify” license information"></a>
-<td><a href="https://github.com/RyanZim/universalify" title="“universalify” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Make a callback- or promise-based function support both promises and callbacks.<br>Required by fs-extra, jsonfile.</td>
-<td align="center"><code>universalify@2.0.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/uri-js" title="uri-js"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="uri-js" title="uri-js"></a></td>
