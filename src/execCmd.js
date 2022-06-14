@@ -2,10 +2,10 @@
 
 // Libraries
 var fs = require('fs');
-var run = require('child_process').exec;
 var path = require('path');
 
 // Functions
+var run = require('child_process').exec;
 var localizedName = require("../src/localizedName.js");
 
 // Variables

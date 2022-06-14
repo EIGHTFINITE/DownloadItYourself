@@ -8,7 +8,7 @@ if(process.versions.node !== nodeVersion)
 	throw Error('EIGHTFINITE-build only supports Node ' + nodeVersion);
 
 // Libraries
-var fs = require('fs');
+var fs = require('./node_modules/npm/node_modules/graceful-fs').gracefulify(require('fs'));
 var stringify = require('./node_modules/npm/node_modules/json-stringify-nice');
 
 // Functions
