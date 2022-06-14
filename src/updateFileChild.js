@@ -2,9 +2,9 @@
 
 // Libraries
 var fs = require('fs');
-var url = require("url");
-var cheerio = require("cheerio");
-var cloudscraper = require("cloudscraper");
+var url = require('url');
+var cheerio = require('./node_modules/cheerio');
+var cloudscraper = require('cloudscraper');
 
 // Functions
 var updateFile = require("../src/updateFile.js");
