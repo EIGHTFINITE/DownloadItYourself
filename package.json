@@ -5,7 +5,7 @@
   "engineStrict": true,
   "engines": {
     "node": "16.15.1",
-    "npm": "6.14.17 || 7.24.2 || 8.12.1"
+    "npm": "6.14.17 || 7.24.2 || 8.12.1 || 8.12"
   },
   "main": "main.js",
   "author": "EIGHTFINITE",
@@ -20,7 +20,7 @@
     "braces": "3.0.2",
     "cloudscraper": "github:EIGHTFINITE/cloudscraper#master",
     "electron": "19.0.4",
-    "npm": "8.12.1",
+    "npm": "8.12.2",
     "npm-6": "github:EIGHTFINITE/npm-6#master",
     "npm-7": "github:EIGHTFINITE/npm-7#master",
     "postman-request": "2.88.1-postman.31",
