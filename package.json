@@ -17,7 +17,6 @@
   },
   "dependencies": {
     "better-npm-audit": "3.7.3",
-    "braces": "3.0.2",
     "cloudscraper": "github:EIGHTFINITE/cloudscraper#master",
     "electron": "19.0.4",
     "npm": "8.12.2",
@@ -28,7 +27,6 @@
   },
   "bundleDependencies": [
     "better-npm-audit",
-    "braces",
     "cloudscraper",
     "electron",
     "npm",
