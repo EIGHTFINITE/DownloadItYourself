@@ -168,10 +168,7 @@ sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-7\/npm\/json-schema\"
 sed -i "0,/\"json-schema\": \".*\"/s//\"json-schema\": \"0.4.0\"/" node_modules/npm-7/node_modules/npm/node_modules/jsprim/package.json
 # better-npm-audit changes
 sed -i "/  All good!');/d" -- node_modules/better-npm-audit/src/handlers/handleFinish.js
-sed -i '/var table_1 = require("table");/d' -- node_modules/better-npm-audit/src/utils/print.js
-sed -i '/var configs = {/,/};/d' -- node_modules/better-npm-audit/src/utils/print.js
-sed -i 's/table_1\.table(//g' -- node_modules/better-npm-audit/src/utils/print.js
-sed -i 's/, configs));/);/g' -- node_modules/better-npm-audit/src/utils/print.js
+sed -i '/header: {/,/},/d' -- node_modules/better-npm-audit/src/utils/print.js
 # Remove electron install script
 rm node_modules/electron/install.js
 # Remove electron dependencies
