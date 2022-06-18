@@ -167,7 +167,7 @@ sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-7\/npm\/json-schema\"
 # Update version
 sed -i "0,/\"json-schema\": \".*\"/s//\"json-schema\": \"0.4.0\"/" node_modules/npm-7/node_modules/npm/node_modules/jsprim/package.json
 # better-npm-audit changes
-sed -i "/console\.info('..  All good!');/d" -- node_modules/better-npm-audit/src/handlers/handleFinish.js
+sed -i "/console\.info('.  All good!');/d" -- node_modules/better-npm-audit/src/handlers/handleFinish.js
 sed -i '/header: {/,/},/d' -- node_modules/better-npm-audit/src/utils/print.js
 # Remove electron install script
 rm node_modules/electron/install.js
