@@ -75,17 +75,7 @@ jobs:
         cd EIGHTFINITE-build
         export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
         echo -n "$npm_version" > npm_version.txt
-        echo -n "C:\\msys64\\usr\\bin\\wget.exe -nv -O \"EIGHTFINITE-build\npm-$npm_version.tgz\" \"https://registry.npmjs.org/npm/-/npm-$npm_version.tgz\"" > wget_npm.bat
-        cd ..
-    - name: npm
-      shell: cmd
-      run: |
-        EIGHTFINITE-build\wget_npm.bat
-    - name: npm
-      shell: bash
-      run: |
-        cd EIGHTFINITE-build
-        rm wget_npm.bat
+        bin/windows/x64/msys2/msys2-base-x86_64-20220603/msys64/usr/bin/wget.exe -nv -O "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
         mv ../node_version.txt .
         export node_version=$(cat node_version.txt)
         export npm_version=$(cat npm_version.txt)
@@ -163,17 +153,7 @@ jobs:
         cd EIGHTFINITE-build
         export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
         echo -n "$npm_version" > npm_version.txt
-        echo -n "C:\\msys64\\usr\\bin\\wget.exe -nv -O \"EIGHTFINITE-build\npm-$npm_version.tgz\" \"https://registry.npmjs.org/npm/-/npm-$npm_version.tgz\"" > wget_npm.bat
-        cd ..
-    - name: audit
-      shell: cmd
-      run: |
-        EIGHTFINITE-build\wget_npm.bat
-    - name: audit
-      shell: bash
-      run: |
-        cd EIGHTFINITE-build
-        rm wget_npm.bat
+        bin/windows/x64/msys2/msys2-base-x86_64-20220603/msys64/usr/bin/wget.exe -nv -O "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
         mv ../node_version.txt .
         export node_version=$(cat node_version.txt)
         export npm_version=$(cat npm_version.txt)
