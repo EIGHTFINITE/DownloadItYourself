@@ -46,13 +46,13 @@ if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(
 fi
 
 # 7z Windows x86
-wget -nv -O "7z1900.exe" https://www.7-zip.org/a/7z2200.exe
-mkdir -p "bin/windows/x86/7z/7z1900"
-7z x -o"bin/windows/x86/7z/7z1900" "7z1900.exe" | grep "ing archive"
-rm "7z1900.exe"
-rm "bin/windows/x86/7z/7z1900/Uninstall.exe"
+wget -nv -O "7z2200.exe" https://www.7-zip.org/a/7z2200.exe
+mkdir -p "bin/windows/x86/7z/7z2200"
+7z x -o"bin/windows/x86/7z/7z2200" "7z2200.exe" | grep "ing archive"
+rm "7z2200.exe"
+rm "bin/windows/x86/7z/7z2200/Uninstall.exe"
 sed -i '/\/bin\//d' -- '.gitignore'
-git add "bin/windows/x86/7z/7z1900"
+git add "bin/windows/x86/7z/7z2200"
 git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 7z 19.00 release artifacts" | sed -n 1p
 git checkout -- '.gitignore'
 if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
@@ -60,13 +60,13 @@ if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(
 fi
 
 # 7z Windows x64
-wget -nv -O "7z1900-x64.exe" https://www.7-zip.org/a/7z2200-x64.exe
-mkdir -p "bin/windows/x64/7z/7z1900-x64"
-7z x -o"bin/windows/x64/7z/7z1900-x64" "7z1900-x64.exe" | grep "ing archive"
-rm "7z1900-x64.exe"
-rm "bin/windows/x64/7z/7z1900-x64/Uninstall.exe"
+wget -nv -O "7z2200-x64.exe" https://www.7-zip.org/a/7z2200-x64.exe
+mkdir -p "bin/windows/x64/7z/7z2200-x64"
+7z x -o"bin/windows/x64/7z/7z2200-x64" "7z2200-x64.exe" | grep "ing archive"
+rm "7z2200-x64.exe"
+rm "bin/windows/x64/7z/7z2200-x64/Uninstall.exe"
 sed -i '/\/bin\//d' -- '.gitignore'
-git add "bin/windows/x64/7z/7z1900-x64"
+git add "bin/windows/x64/7z/7z2200-x64"
 git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 7z 19.00 release artifacts" | sed -n 1p
 git checkout -- '.gitignore'
 if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
