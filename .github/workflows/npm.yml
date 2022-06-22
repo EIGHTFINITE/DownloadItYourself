@@ -72,9 +72,7 @@ jobs:
     - name: npm
       shell: bash
       run: |
-        cd EIGHTFINITE-build
         export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
-        cd ..
         echo -n "$npm_version" > npm_version.txt
     - name: npm
       shell: cmd
@@ -160,9 +158,7 @@ jobs:
     - name: audit
       shell: bash
       run: |
-        cd EIGHTFINITE-build
         export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
-        cd ..
         echo -n "$npm_version" > npm_version.txt
     - name: audit
       shell: cmd
