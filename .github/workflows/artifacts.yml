@@ -133,7 +133,7 @@ jobs:
       shell: bash
       run: |
         cd EIGHTFINITE-build
-        # Do not allow anything
+        # Forbid all
         if [[ $(find . -type f -path ./.git -prune -o -path ./node_modules/npm-6/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -path ./node_modules/entities/lib/maps -prune -o -name '*.json' -exec jsonlint -s --forbid any-type-at-start,bom,duplicate-keys,non-portable,non-bmp,zero-byte -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
@@ -158,16 +158,16 @@ jobs:
     - name: npm
       shell: bash
       run: |
+        cd EIGHTFINITE-build
+        export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
+        sudo ln -sf "$(pwd)/bin/linux/x64/node/node-v$node_version-linux-x64/bin/node" /usr/local/bin/node
+        bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent | grep -v ' deduped' || true
+        rm -rf .npm/
+        cd ..
         echo '{
           "private": "true"
         }' > package.json
         cp EIGHTFINITE-build/.npmrc .npmrc
-        export node_version=$(cat EIGHTFINITE-build/package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
-        sudo ln -sf "$(pwd)/EIGHTFINITE-build/bin/linux/x64/node/node-v$node_version-linux-x64/bin/node" /usr/local/bin/node
-        cd EIGHTFINITE-build
-        bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent | grep -v ' deduped' || true
-        rm -rf .npm/
-        cd ..
         EIGHTFINITE-build/bin/linux/x64/node/node-v$node_version-linux-x64/bin/node EIGHTFINITE-build/node_modules/npm-6/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build
         rm -rf .npm/
   artifacts_npm_windows:
@@ -182,28 +182,31 @@ jobs:
     - name: npm
       shell: bash
       run: |
-        echo '{
-          "private": "true"
-        }' > package.json
-        cp EIGHTFINITE-build/.npmrc .npmrc
+        cd EIGHTFINITE-build
         rm -r "C:\\Program Files\\nodejs"
-        export node_version=$(cat EIGHTFINITE-build/package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
+        export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         echo -n "$node_version" > node_version.txt
+        cd ..
     - name: npm
       shell: cmd
       run: |
+        cd EIGHTFINITE-build
         set /p node_version=<node_version.txt
         mklink /d "C:\Program Files\nodejs" "%cd%\EIGHTFINITE-build\bin\windows\x64\node\node-v%node_version%-win-x64"
+        cd ..
     - name: npm
       shell: bash
       run: |
         cd EIGHTFINITE-build
-        mv ../node_version.txt .
         export node_version=$(cat node_version.txt)
         rm node_version.txt
         bin/windows/x64/node/node-v$node_version-win-x64/node.exe node_modules/npm-6/node_modules/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent | grep -v ' deduped' || true
         rm -rf .npm/
         cd ..
+        echo '{
+          "private": "true"
+        }' > package.json
+        cp EIGHTFINITE-build/.npmrc .npmrc
         EIGHTFINITE-build/bin/windows/x64/node/node-v$node_version-win-x64/node.exe EIGHTFINITE-build/node_modules/npm-6/node_modules/npm/bin/npm-cli.js install .\\EIGHTFINITE-build
         rm -rf .npm/
   artifacts_audit_linux:
@@ -313,7 +316,7 @@ jobs:
       shell: bash
       run: |
         cd EIGHTFINITE-build
-        # Do not allow anything
+        # Forbid all
         if [[ $(find . -type f -path ./.git -prune -o -path ./node_modules/npm-6/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -path ./node_modules/entities/lib/maps -prune -o -name '*.json' -exec jsonlint -s --forbid any-type-at-start,bom,duplicate-keys,non-portable,non-bmp,zero-byte -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
