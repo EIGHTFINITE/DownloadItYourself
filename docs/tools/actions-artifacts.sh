@@ -73,6 +73,32 @@ if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(
   then exit 1
 fi
 
+# MSYS2 Windows x86
+wget -nv -O "msys2-base-i686-20210705.tar.xz" https://repo.msys2.org/distrib/i686/msys2-base-i686-20210705.tar.xz
+mkdir -p "bin/windows/x86/msys2/msys2-base-i686-20210705"
+tar -xJf "msys2-base-i686-20210705.tar.xz" -C "bin/windows/x86/msys2/msys2-base-i686-20210705"
+rm "msys2-base-i686-20210705.tar.xz"
+sed -i '/\/bin\//d' -- '.gitignore'
+git add "bin/windows/x86/msys2/msys2-base-i686-20210705"
+git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 MSYS2 20210705 release artifacts" | sed -n 1p
+git checkout -- '.gitignore'
+if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+  then exit 1
+fi
+
+# MSYS2 Windows x64
+wget -nv -O "msys2-base-x86_64-20220603.tar.xz" https://repo.msys2.org/distrib/x86_64/msys2-base-x86_64-20220603.tar.xz
+mkdir -p "bin/windows/x64/msys2/msys2-base-x86_64-20220603"
+tar -xJf "msys2-base-x86_64-20220603.tar.xz" -C "bin/windows/x64/msys2/msys2-base-x86_64-20220603"
+rm "msys2-base-x86_64-20220603.tar.xz"
+sed -i '/\/bin\//d' -- '.gitignore'
+git add "bin/windows/x64/msys2/msys2-base-x86_64-20220603"
+git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 MSYS2 20220603 release artifacts" | sed -n 1p
+git checkout -- '.gitignore'
+if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+  then exit 1
+fi
+
 # Node Windows x86
 export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
 wget -nv -O "node-v$node_version-win-x86.7z" https://nodejs.org/dist/v$node_version/node-v$node_version-win-x86.7z
