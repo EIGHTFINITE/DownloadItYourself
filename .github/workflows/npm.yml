@@ -55,22 +55,26 @@ jobs:
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git restore --source=artifacts -- bin/
         rm -r "C:\\Program Files\\nodejs"
-        export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
-        cd ..
+        export node_version=$(cat EIGHTFINITE-build/package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         echo -n "$node_version" > node_version.txt
+        export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
+        echo -n "$npm_version" > npm_version.txt
+        cd ..
     - name: npm
       shell: cmd
       run: |
+        cd EIGHTFINITE-build
         set /p node_version=<node_version.txt
+        set /p npm_version=<npm_version.txt
         mklink /d "C:\Program Files\nodejs" "%cd%\bin\windows\x64\node\node-v%node_version%-win-x64"
+        bin\windows\x64\msys2\msys2-base-x86_64-20220603\msys64\usr\bin\wget.exe -nv -O "npm-%npm_version%.tgz" "https://registry.npmjs.org/npm/-/npm-%npm_version%.tgz"
+        cd ..
     - name: npm
       shell: bash
       run: |
         cd EIGHTFINITE-build
-        mv ../node_version.txt .
         export node_version=$(cat node_version.txt)
-        export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
-        bin/windows/x64/msys2/msys2-base-x86_64-20220603/msys64/usr/bin/wget.exe -nv -O "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
+        export npm_version=$(cat npm_version.txt)
         mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
         tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
         rm "npm-$npm_version.tgz"
@@ -130,17 +134,20 @@ jobs:
         rm -r "C:\\Program Files\\nodejs"
         export node_version=$(cat EIGHTFINITE-build/package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         echo -n "$node_version" > node_version.txt
+        export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
+        echo -n "$npm_version" > npm_version.txt
     - name: audit
       shell: cmd
       run: |
         set /p node_version=<node_version.txt
+        set /p npm_version=<npm_version.txt
         mklink /d "C:\Program Files\nodejs" "%cd%\bin\windows\x64\node\node-v%node_version%-win-x64"
+        bin\windows\x64\msys2\msys2-base-x86_64-20220603\msys64\usr\bin\wget.exe -nv -O "npm-%npm_version%.tgz" "https://registry.npmjs.org/npm/-/npm-%npm_version%.tgz"
     - name: audit
       shell: bash
       run: |
         export node_version=$(cat node_version.txt)
-        export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
-        bin/windows/x64/msys2/msys2-base-x86_64-20220603/msys64/usr/bin/wget.exe -nv -O "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
+        export npm_version=$(cat npm_version.txt)
         mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
         tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
         rm "npm-$npm_version.tgz"
