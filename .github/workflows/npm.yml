@@ -74,9 +74,19 @@ jobs:
       run: |
         cd EIGHTFINITE-build
         export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
+        cd ..
         echo -n "$npm_version" > npm_version.txt
-        bin/windows/x64/msys2/msys2-base-x86_64-20220603/msys64/usr/bin/wget.exe -nv -O "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
+    - name: npm
+      shell: cmd
+      run: |
+        set /p npm_version=<npm_version.txt
+        bin\windows\x64\msys2\msys2-base-x86_64-20220603\msys64\usr\bin\wget.exe -nv -O "npm-%npm_version%.tgz" "https://registry.npmjs.org/npm/-/npm-%npm_version%.tgz"
+    - name: npm
+      shell: bash
+      run: |
+        cd EIGHTFINITE-build
         mv ../node_version.txt .
+        mv ../npm_version.txt .
         export node_version=$(cat node_version.txt)
         export npm_version=$(cat npm_version.txt)
         mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
@@ -152,9 +162,19 @@ jobs:
       run: |
         cd EIGHTFINITE-build
         export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
+        cd ..
         echo -n "$npm_version" > npm_version.txt
-        bin/windows/x64/msys2/msys2-base-x86_64-20220603/msys64/usr/bin/wget.exe -nv -O "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
+    - name: audit
+      shell: cmd
+      run: |
+        set /p npm_version=<npm_version.txt
+        bin\windows\x64\msys2\msys2-base-x86_64-20220603\msys64\usr\bin\wget.exe -nv -O "npm-%npm_version%.tgz" "https://registry.npmjs.org/npm/-/npm-%npm_version%.tgz"
+    - name: audit
+      shell: bash
+      run: |
+        cd EIGHTFINITE-build
         mv ../node_version.txt .
+        mv ../npm_version.txt .
         export node_version=$(cat node_version.txt)
         export npm_version=$(cat npm_version.txt)
         mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
