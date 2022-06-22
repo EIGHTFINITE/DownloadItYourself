@@ -18,7 +18,7 @@
   "dependencies": {
     "better-npm-audit": "3.7.3",
     "cloudscraper": "github:EIGHTFINITE/cloudscraper#master",
-    "electron": "19.0.5",
+    "electron": "19.0.6",
     "npm": "8.12.2",
     "npm-6": "github:EIGHTFINITE/npm-6#master",
     "npm-7": "github:EIGHTFINITE/npm-7#master",
