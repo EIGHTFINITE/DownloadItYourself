@@ -55,7 +55,7 @@ jobs:
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git restore --source=artifacts -- bin/
         rm -r "C:\\Program Files\\nodejs"
-        export node_version=$(cat EIGHTFINITE-build/package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
+        export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         echo -n "$node_version" > node_version.txt
         export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
         echo -n "$npm_version" > npm_version.txt
