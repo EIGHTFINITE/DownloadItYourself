@@ -9,6 +9,11 @@
     "notes": "Patched in `npm-7>npm>json-schema`",
     "expiry": "2022-11-19T20:16:17Z"
   },
+  "GHSA-pfrx-2q88-qq97": {
+    "active": true,
+    "notes": "No sites connected to by got are able to produce UNIX redirects",
+    "expiry": "2023-06-19T00:00:21Z"
+  },
   "GHSA-hj9c-8jmm-8c52": {
     "active": true,
     "notes": "Ignored since we don't use workspaces",
