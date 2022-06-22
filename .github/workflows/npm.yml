@@ -64,20 +64,14 @@ jobs:
         rm -r "C:\\Program Files\\nodejs"
         export node_version=$(cat EIGHTFINITE-build/package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         echo -n "$node_version" > node_version.txt
-    - name: npm
-      shell: cmd
-      run: |
-        set /p node_version=<node_version.txt
-        mklink /d "C:\Program Files\nodejs" "%cd%\EIGHTFINITE-build\bin\windows\x64\node\node-v%node_version%-win-x64"
-    - name: npm
-      shell: bash
-      run: |
         export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
         echo -n "$npm_version" > npm_version.txt
     - name: npm
       shell: cmd
       run: |
+        set /p node_version=<node_version.txt
         set /p npm_version=<npm_version.txt
+        mklink /d "C:\Program Files\nodejs" "%cd%\EIGHTFINITE-build\bin\windows\x64\node\node-v%node_version%-win-x64"
         bin\windows\x64\msys2\msys2-base-x86_64-20220603\msys64\usr\bin\wget.exe -nv -O "npm-%npm_version%.tgz" "https://registry.npmjs.org/npm/-/npm-%npm_version%.tgz"
     - name: npm
       shell: bash
@@ -150,20 +144,14 @@ jobs:
         rm -r "C:\\Program Files\\nodejs"
         export node_version=$(cat EIGHTFINITE-build/package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         echo -n "$node_version" > node_version.txt
-    - name: audit
-      shell: cmd
-      run: |
-        set /p node_version=<node_version.txt
-        mklink /d "C:\Program Files\nodejs" "%cd%\EIGHTFINITE-build\bin\windows\x64\node\node-v%node_version%-win-x64"
-    - name: audit
-      shell: bash
-      run: |
         export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
         echo -n "$npm_version" > npm_version.txt
     - name: audit
       shell: cmd
       run: |
+        set /p node_version=<node_version.txt
         set /p npm_version=<npm_version.txt
+        mklink /d "C:\Program Files\nodejs" "%cd%\EIGHTFINITE-build\bin\windows\x64\node\node-v%node_version%-win-x64"
         bin\windows\x64\msys2\msys2-base-x86_64-20220603\msys64\usr\bin\wget.exe -nv -O "npm-%npm_version%.tgz" "https://registry.npmjs.org/npm/-/npm-%npm_version%.tgz"
     - name: audit
       shell: bash
