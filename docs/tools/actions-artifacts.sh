@@ -46,7 +46,7 @@ if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(
 fi
 
 # 7z Windows x86
-wget -nv -O "7z1900.exe" https://www.7-zip.org/a/7z1900.exe
+wget -nv -O "7z1900.exe" https://www.7-zip.org/a/7z2200.exe
 mkdir -p "bin/windows/x86/7z/7z1900"
 7z x -o"bin/windows/x86/7z/7z1900" "7z1900.exe" | grep "ing archive"
 rm "7z1900.exe"
@@ -60,7 +60,7 @@ if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(
 fi
 
 # 7z Windows x64
-wget -nv -O "7z1900-x64.exe" https://www.7-zip.org/a/7z1900-x64.exe
+wget -nv -O "7z1900-x64.exe" https://www.7-zip.org/a/7z2200-x64.exe
 mkdir -p "bin/windows/x64/7z/7z1900-x64"
 7z x -o"bin/windows/x64/7z/7z1900-x64" "7z1900-x64.exe" | grep "ing archive"
 rm "7z1900-x64.exe"
