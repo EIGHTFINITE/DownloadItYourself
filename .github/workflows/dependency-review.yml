@@ -19,4 +19,4 @@ jobs:
       - name: 'Dependency Review'
         uses: actions/dependency-review-action@v2.0.2
         with:
-          allow-licenses: MIT
+          allow-licenses: MIT, Artistic-2.0
