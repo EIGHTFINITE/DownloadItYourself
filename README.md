@@ -2457,7 +2457,7 @@
 <td><a href="https://github.com/EIGHTFINITE/cloudscraper" title="“cloudscraper” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Bypasses cloudflare's anti-ddos page.</td>
-<td align="center"><code>EIGHTFINITE/cloudscraper#ae3ceb0df3adfd4fe39860b90182446ca9f0a291</code><br>(based on <code>cloudscraper@4.6.0</code>)</td>
+<td align="center"><code>EIGHTFINITE/cloudscraper#09d4bcb37299ed5c9ef12e2b95b77076a00b6da9</code><br>(based on <code>cloudscraper@4.6.0</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/color-convert" title="color-convert"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="color-convert" title="color-convert"></a></td>
@@ -3040,7 +3040,7 @@
 <td><a href="https://github.com/EIGHTFINITE/postman-request" title="“postman-request” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Simplified HTTP request client.<br>Required by cloudscraper, request-promise, request-promise-core.</td>
-<td align="center"><code>EIGHTFINITE/postman-request#21df34ac14bdd8a03fdef4902ebc41906c8c69ff</code><br>(based on <code>postman-request@2.88.1-postman.31</code>)</td>
+<td align="center"><code>EIGHTFINITE/postman-request#717fdc5b85c37c3496edf4296ed8fee43e318f67</code><br>(based on <code>postman-request@2.88.1-postman.31</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/psl" title="psl"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="psl" title="psl"></a></td>
