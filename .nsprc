@@ -1,22 +1,22 @@
 {
   "GHSA-93q8-gq69-wqmw": {
     "active": false,
-    "notes": "Patched in `npm-{6>npm>{string-width,yargs},7>npm>{cli-table3,string-width}}>ansi-regex`",
+    "notes": "Patched via update in `npm-{6>npm>{string-width,yargs},7>npm>{cli-table3,string-width}}>ansi-regex`",
     "expiry": "2022-09-20T20:20:09Z"
   },
   "GHSA-896r-f27r-55mw": {
     "active": false,
-    "notes": "Patched in `npm-7>npm>json-schema`",
+    "notes": "Patched via update in `npm-7>npm>json-schema`",
     "expiry": "2022-11-19T20:16:17Z"
   },
   "GHSA-pfrx-2q88-qq97": {
     "active": true,
-    "notes": "No sites connected to by got are able to produce UNIX redirects",
+    "notes": "Only connects to the npm registry with got and cannot produce UNIX redirects",
     "expiry": "2023-06-19T00:00:21Z"
   },
   "GHSA-hj9c-8jmm-8c52": {
     "active": true,
-    "notes": "Ignored since we don't use workspaces",
+    "notes": "The affected npm commands and workspaces aren't used",
     "expiry": "2023-06-02T15:37:27Z"
   }
 }
