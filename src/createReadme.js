@@ -294,7 +294,7 @@ module.exports = function(filetype) {
 				// Author URL
 				if(!packageData.author.url || !packageData.author.url.startsWith('https://github.com/'))
 					packageData.author.url = packageData.repository.url.slice(0,-(packageData.repository.url.substring(packageData.repository.url.lastIndexOf('/')).length));
-				
+
 				// Repository URL corrections
 				if(packageData.repository.url === 'https://github.com/cheeriojs/dom-renderer')
 					packageData.repository.url = 'https://github.com/cheeriojs/dom-serializer';
@@ -338,17 +338,10 @@ module.exports = function(filetype) {
 				// Author name corrections
 				if(packageData.author.url === 'https://github.com/fb55')
 					packageData.author.name = 'Felix Böhm';
-				else if(packageData.author.url === 'https://github.com/LinusU')
-					packageData.author.name = 'Linus Unnebäck';
 				else if(packageData.author.url === 'https://github.com/sindresorhus')
 					packageData.author.name = 'Sindre Sorhus';
-				else if(packageData.author.url === 'https://github.com/zeit')
-					packageData.author.name = 'ZEIT';
 
 				// Full corrections
-				else if(packageData.repository.url === 'https://github.com/electron/get') {
-					packageData.author.url = 'https://github.com/MarshallOfSound';
-				}
 				else if(packageData.repository.url === 'https://github.com/joyent/node-asn1') {
 					packageData.author.name = 'Mark Cavage'
 					packageData.author.url = 'https://github.com/mcavage';
@@ -384,22 +377,13 @@ module.exports = function(filetype) {
 						url: 'https://github.com/codemanki'
 					},{
 						name: 'Anorov',
-						url: 'https://github.com/codemanki/cloudscraper/blob/master/LICENSE'
+						url: 'https://github.com/EIGHTFINITE/cloudscraper/blob/master/LICENSE'
 					}];
 				}
 				else if(packageData.repository.url === 'https://github.com/nodejs/readable-stream') {
 					packageData.author = [{
 						name: 'Node contributors',
 						url: 'https://github.com/nodejs/readable-stream/graphs/contributors'
-					},{
-						name: 'Joyent',
-						url: 'https://github.com/joyent'
-					}];
-				}
-				else if(packageData.repository.url === 'https://github.com/nodejs/string_decoder') {
-					packageData.author = [{
-						name: 'Node contributors',
-						url: 'https://github.com/nodejs/string_decoder/graphs/contributors'
 					},{
 						name: 'Joyent',
 						url: 'https://github.com/joyent'
@@ -418,28 +402,13 @@ module.exports = function(filetype) {
 						url: 'https://github.com/joyent'
 					}];
 				}
-				else if(packageData.repository.url === 'https://github.com/visionmedia/debug') {
-					packageData.author.url = 'https://github.com/tj';
-				}
 				else if(packageData.repository.url === 'https://github.com/cheeriojs/dom-serializer') {
 					packageData.author.name = 'cheerio contributors';
 					packageData.author.url = 'https://github.com/cheeriojs/dom-serializer/graphs/contributors';
 				}
-				else if(packageData.repository.url === 'https://github.com/floatdrop/duplexer3') {
-					packageData.author.url = 'https://github.com/deoxxa';
-				}
 				else if(packageData.repository.url === 'https://github.com/electron/electron') {
 					packageData.author.name = 'GitHub';
 					packageData.author.url = 'https://github.com/github';
-				}
-				else if(packageData.repository.url === 'https://github.com/maxogden/extract-zip') {
-					packageData.author = [{
-						name: 'Max Ogden',
-						url: 'https://github.com/maxogden'
-					},{
-						name: 'extract-zip contributors',
-						url: 'https://github.com/maxogden/extract-zip/graphs/contributors'
-					}];
 				}
 				else if(packageData.repository.url === 'https://github.com/joyent/node-extsprintf' || packageData.repository.url === 'https://github.com/joyent/node-verror') {
 					packageData.author.name = 'Joyent';
@@ -458,25 +427,22 @@ module.exports = function(filetype) {
 					packageData.author.name = 'Joyent',
 					packageData.author.url = 'https://github.com/joyent'
 				}
-				else if(packageData.repository.url === 'https://github.com/isaacs/node-graceful-fs') {
-					packageData.author = [{
-						name: 'Isaac Z. Schlueter',
-						url: 'https://github.com/isaacs'
-					},{
-						name: 'Ben Noordhuis',
-						url: 'https://github.com/isaacs/node-graceful-fs/blob/master/LICENSE'
-					},{
-						name: 'graceful-fs contributors',
-						url: 'https://github.com/isaacs/node-graceful-fs/graphs/contributors'
-					}];
-				}
-				else if(packageData.repository.url === 'https://github.com/myrne/performance-now') {
-					packageData.author.name = 'Myrne Stol';
-					packageData.author.url = 'https://github.com/myrne';
-				}
 				else if(packageData.repository.url === 'https://github.com/dchest/tweetnacl-js') {
 					packageData.author.name = 'tweetnacl contributors';
 					packageData.author.url = 'https://github.com/dchest/tweetnacl-js/blob/master/AUTHORS.md';
+				}
+				else if(packageData.repository.url === 'https://github.com/jslicense/spdx-expression-parse.js') {
+					packageData.author = [{
+						name: 'Kyle E. Mitchell',
+						url: 'https://github.com/kemitchell'
+					},{
+						name: 'spdx-expression-parse authors',
+						url: 'https://github.com/EIGHTFINITE/spdx-expression-parse/blob/master/AUTHORS'
+					}];
+				}
+				else if(packageData.repository.url === 'https://github.com/postmanlabs/postman-request') {
+					packageData.author.name = 'Mikeal Rogers',
+					packageData.author.url = 'https://github.com/mikeal'
 				}
 
 				// Homepage corrections
