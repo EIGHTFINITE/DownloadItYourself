@@ -109,6 +109,33 @@ jobs:
         labels: auto-merge
         branch: actions/engines
         base: master
+  bundled:
+    runs-on: ubuntu-latest
+    needs: artifacts
+    if: needs.artifacts.result == 'success'
+    steps:
+    - uses: actions/checkout@v3.0.2
+    - name: Bundled
+      shell: bash
+      run: |
+        bash --noprofile --norc -e -o pipefail docs/tools/git-config.sh
+        git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
+        git restore --source=artifacts -- node_modules/
+        modules=$(find node_modules/ -mindepth 2 -maxdepth 3 -type f -name 'package.json' -printf '    \\"%h\\",\\n')
+        sed -i -z "0,/  \"bundleDependencies\": \[\n    \".*\"\n  \]/s//  \"bundleDependencies\": \[\n${modules:0:-3}\n  \]/" package.json
+        rm -r node_modules/
+    - uses: peter-evans/create-pull-request@v4.0.4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: Update bundleDependencies
+        author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+        committer: GitHub <noreply@github.com>
+        title: Update bundleDependencies
+        body: |
+          Update the bundleDependencies field.
+        labels: auto-merge
+        branch: actions/bundled
+        base: master
   artifacts_jsonlint:
     runs-on: ubuntu-latest
     needs: artifacts
