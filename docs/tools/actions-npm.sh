@@ -139,7 +139,6 @@ rm node_modules/htmlparser2/lib/esm/package.json
 rm node_modules/nth-check/lib/esm/package.json
 rm node_modules/parse5/dist/cjs/package.json
 rm node_modules/parse5-htmlparser2-tree-adapter/dist/cjs/package.json
-rm node_modules/tslib/modules/package.json
 sed -i '/"type": "module"/d' -- 'node_modules/parse5/package.json'
 sed -i '/"type": "module"/d' -- 'node_modules/parse5-htmlparser2-tree-adapter/package.json'
 # Patch vulnerable dependencies
