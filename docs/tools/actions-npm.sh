@@ -119,11 +119,11 @@ rm -r node_modules/util-deprecate/
 rm -r node_modules/wrappy/
 rm -r node_modules/yauzl/
 # Remove vulnerable dependencies
-rm -r node_modules/npm-6/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/
-rm -r node_modules/npm-6/node_modules/npm/node_modules/yargs/node_modules/ansi-regex/
-rm -r node_modules/npm-7/node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/
-rm -r node_modules/npm-7/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/
-rm -r node_modules/npm-7/node_modules/npm/node_modules/json-schema/
+rm -r node_modules/npm-6/node_modules/string-width/node_modules/ansi-regex/
+rm -r node_modules/npm-6/node_modules/yargs/node_modules/ansi-regex/
+rm -r node_modules/npm-7/node_modules/cli-table3/node_modules/ansi-regex/
+rm -r node_modules/npm-7/node_modules/string-width/node_modules/ansi-regex/
+rm -r node_modules/npm-7/node_modules/json-schema/
 # Remove module typing
 rm node_modules/cheerio/lib/esm/package.json
 rm node_modules/cheerio-select/lib/esm/package.json
@@ -141,31 +141,31 @@ rm node_modules/tslib/modules/package.json
 sed -i '/"type": "module"/d' -- 'node_modules/parse5/package.json'
 sed -i '/"type": "module"/d' -- 'node_modules/parse5-htmlparser2-tree-adapter/package.json'
 # Patch vulnerable dependencies
-cp -a bin/all/all/ansi-regex/ansi-regex@3.0.1/node_modules/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/
-cp -a bin/all/all/ansi-regex/ansi-regex@4.1.1/node_modules/ansi-regex/ node_modules/npm-6/node_modules/npm/node_modules/yargs/node_modules/ansi-regex/
-cp -a bin/all/all/ansi-regex/ansi-regex@5.0.1/node_modules/ansi-regex/ node_modules/npm-7/node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/
-cp -a bin/all/all/ansi-regex/ansi-regex@3.0.1/node_modules/ansi-regex/ node_modules/npm-7/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/
-cp -a bin/all/all/json-schema/json-schema@0.4.0/node_modules/json-schema/ node_modules/npm-7/node_modules/npm/node_modules/json-schema/
+cp -a bin/all/all/ansi-regex/ansi-regex@3.0.1/node_modules/ansi-regex/ node_modules/npm-6/node_modules/string-width/node_modules/ansi-regex/
+cp -a bin/all/all/ansi-regex/ansi-regex@4.1.1/node_modules/ansi-regex/ node_modules/npm-6/node_modules/yargs/node_modules/ansi-regex/
+cp -a bin/all/all/ansi-regex/ansi-regex@5.0.1/node_modules/ansi-regex/ node_modules/npm-7/node_modules/cli-table3/node_modules/ansi-regex/
+cp -a bin/all/all/ansi-regex/ansi-regex@3.0.1/node_modules/ansi-regex/ node_modules/npm-7/node_modules/string-width/node_modules/ansi-regex/
+cp -a bin/all/all/json-schema/json-schema@0.4.0/node_modules/json-schema/ node_modules/npm-7/node_modules/json-schema/
 # Set bundled status
-sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-6/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/package.json
-sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-6/node_modules/npm/node_modules/yargs/node_modules/ansi-regex/package.json
-sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-7/node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/package.json
-sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-7/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/package.json
-sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-7/node_modules/npm/node_modules/json-schema/package.json
+sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-6/node_modules/string-width/node_modules/ansi-regex/package.json
+sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-6/node_modules/yargs/node_modules/ansi-regex/package.json
+sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-7/node_modules/cli-table3/node_modules/ansi-regex/package.json
+sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-7/node_modules/string-width/node_modules/ansi-regex/package.json
+sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-7/node_modules/json-schema/package.json
 # Set parent dependency
-sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-6\/npm\/string-width\"\n  \]/" node_modules/npm-6/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/package.json
-sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-6\/npm\/yargs\"\n  \]/" node_modules/npm-6/node_modules/npm/node_modules/yargs/node_modules/ansi-regex/package.json
-sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-7\/npm\/cli-table3\"\n  \]/" node_modules/npm-7/node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/package.json
-sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-7\/npm\/string-width\"\n  \]/" node_modules/npm-7/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/package.json
-sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-7\/npm\"\n  \]/" node_modules/npm-7/node_modules/npm/node_modules/json-schema/package.json
+sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-6\/string-width\"\n  \]/" node_modules/npm-6/node_modules/string-width/node_modules/ansi-regex/package.json
+sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-6\/yargs\"\n  \]/" node_modules/npm-6/node_modules/yargs/node_modules/ansi-regex/package.json
+sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-7\/cli-table3\"\n  \]/" node_modules/npm-7/node_modules/cli-table3/node_modules/ansi-regex/package.json
+sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-7\/string-width\"\n  \]/" node_modules/npm-7/node_modules/string-width/node_modules/ansi-regex/package.json
+sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-7\"\n  \]/" node_modules/npm-7/node_modules/json-schema/package.json
 # Set current location
-sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-6\/npm\/string-width\/ansi-regex\"/" node_modules/npm-6/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/package.json
-sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-6\/npm\/yargs\/ansi-regex\"/" node_modules/npm-6/node_modules/npm/node_modules/yargs/node_modules/ansi-regex/package.json
-sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-7\/npm\/cli-table3\/ansi-regex\"/" node_modules/npm-7/node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex/package.json
-sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-7\/npm\/string-width\/ansi-regex\"/" node_modules/npm-7/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/package.json
-sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-7\/npm\/json-schema\"/" node_modules/npm-7/node_modules/npm/node_modules/json-schema/package.json
+sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-6\/string-width\/ansi-regex\"/" node_modules/npm-6/node_modules/string-width/node_modules/ansi-regex/package.json
+sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-6\/yargs\/ansi-regex\"/" node_modules/npm-6/node_modules/yargs/node_modules/ansi-regex/package.json
+sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-7\/cli-table3\/ansi-regex\"/" node_modules/npm-7/node_modules/cli-table3/node_modules/ansi-regex/package.json
+sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-7\/string-width\/ansi-regex\"/" node_modules/npm-7/node_modules/string-width/node_modules/ansi-regex/package.json
+sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-7\/json-schema\"/" node_modules/npm-7/node_modules/json-schema/package.json
 # Update version
-sed -i "0,/\"json-schema\": \".*\"/s//\"json-schema\": \"0.4.0\"/" node_modules/npm-7/node_modules/npm/node_modules/jsprim/package.json
+sed -i "0,/\"json-schema\": \".*\"/s//\"json-schema\": \"0.4.0\"/" node_modules/npm-7/node_modules/jsprim/package.json
 # better-npm-audit changes
 sed -i "/  All good!');/d" -- node_modules/better-npm-audit/src/handlers/handleFinish.js
 sed -i '/header: {/,/},/d' -- node_modules/better-npm-audit/src/utils/print.js

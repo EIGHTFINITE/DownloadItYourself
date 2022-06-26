@@ -32,14 +32,14 @@ jobs:
         echo -n "$node_version" > node_version.txt
         echo -n "$npm_version" > npm_version.txt
         bash --noprofile --norc -e -o pipefail docs/tools/actions-npm.sh
-        bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/npm-6/node_modules/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent | grep -v ' deduped' || true
+        bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/npm-6/bin/npm-cli.js ls --no-unicode --loglevel=silent | grep -v ' deduped' || true
         rm -rf .npm/
         cd ..
         echo '{
           "private": "true"
         }' > package.json
         cp EIGHTFINITE-build/.npmrc .npmrc
-        EIGHTFINITE-build/bin/linux/x64/node/node-v$node_version-linux-x64/bin/node EIGHTFINITE-build/node_modules/npm-6/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build
+        EIGHTFINITE-build/bin/linux/x64/node/node-v$node_version-linux-x64/bin/node EIGHTFINITE-build/node_modules/npm-6/bin/npm-cli.js install ./EIGHTFINITE-build
         rm -rf .npm/
   npm_windows:
     runs-on: windows-latest
@@ -80,14 +80,14 @@ jobs:
         rm "npm-$npm_version.tgz"
         bash --noprofile --norc -e -o pipefail docs/tools/actions-npm.sh
         sed -i '/"@types\/node": "/d' -- 'node_modules/electron/package.json'
-        bin/windows/x64/node/node-v$node_version-win-x64/node.exe node_modules/npm-6/node_modules/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent | grep -v ' deduped' || true
+        bin/windows/x64/node/node-v$node_version-win-x64/node.exe node_modules/npm-6/bin/npm-cli.js ls --no-unicode --loglevel=silent | grep -v ' deduped' || true
         rm -rf .npm/
         cd ..
         echo '{
           "private": "true"
         }' > package.json
         cp EIGHTFINITE-build/.npmrc .npmrc
-        EIGHTFINITE-build/bin/windows/x64/node/node-v$node_version-win-x64/node.exe EIGHTFINITE-build/node_modules/npm-6/node_modules/npm/bin/npm-cli.js install .\\EIGHTFINITE-build
+        EIGHTFINITE-build/bin/windows/x64/node/node-v$node_version-win-x64/node.exe EIGHTFINITE-build/node_modules/npm-6/bin/npm-cli.js install .\\EIGHTFINITE-build
         rm -rf .npm/
   audit_linux:
     runs-on: ubuntu-latest
