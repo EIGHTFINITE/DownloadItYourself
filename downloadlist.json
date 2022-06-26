@@ -306,7 +306,7 @@
 		},
 		{
 			"additional-folder": "server/mods",
-			"description-url-override": "https://web.archive.org/web/20180706001701/https://asie.pl/files/mods/AsieTweaks/",
+			"description-url-override": "https://asie.pl/files/mods/AsieTweaks/",
 			"file": "AsieTweaks-1.7.10-0.0.2.jar",
 			"id": "asietweaks",
 			"md5": "9f47a1cd5d81f77c1d40205fd92c0692",
@@ -1264,7 +1264,7 @@
 		},
 		{
 			"additional-folder": "server/mods",
-			"description-url-override": "https://web.archive.org/web/20200929233519/https://asie.pl/files/mods/Factorization/",
+			"description-url-override": "https://asie.pl/files/mods/Factorization/",
 			"file": "Factorization-1.7.10-0.8.109.jar",
 			"id": "factorization",
 			"img": "factorization.png",
@@ -1474,7 +1474,7 @@
 		},
 		{
 			"additional-folder": "server/mods",
-			"description-url-override": "https://web.archive.org/web/20180804195533/http://asie.pl/files/mods/FactorizationAddons-Fork/",
+			"description-url-override": "https://asie.pl/files/mods/FactorizationAddons-Fork/",
 			"file": "FactorizationAddons-1.7.10.jar",
 			"id": "fzaddons",
 			"md5": "b40b1495ad5f8e0233b5714706277fb7",
