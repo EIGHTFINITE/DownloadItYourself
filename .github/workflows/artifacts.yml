@@ -121,7 +121,7 @@ jobs:
         bash --noprofile --norc -e -o pipefail docs/tools/git-config.sh
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git restore --source=artifacts -- node_modules/
-        modules=$(printf '    "%s",\\n' $(find node_modules/ -mindepth 2 -maxdepth 3 -type f -name 'package.json' -exec bash -c 'path={}; echo "${path:13:-13}"' ';' | sort) | sed '$ s/...$//')
+        modules=$(find node_modules/ -mindepth 2 -maxdepth 3 -type f -name 'package.json' -exec bash -c 'path={}; echo "${path:13:-13}"' ';' | sort | xargs printf '    "%s",\\n' | sed '$ s/...$//')
         echo $modules
         sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\n'"$modules"'\n  \]|' -- 'package.json'
         rm -r node_modules/
