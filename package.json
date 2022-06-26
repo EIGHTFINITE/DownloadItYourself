@@ -115,7 +115,6 @@
     "strip-ansi",
     "table",
     "tough-cookie",
-    "tslib",
     "tweetnacl",
     "uri-js",
     "uuid",
