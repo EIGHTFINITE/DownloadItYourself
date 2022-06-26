@@ -52,8 +52,13 @@ git checkout -- 'package.json'
 mkdir -p bin/all/all/json-schema/json-schema@0.4.0/node_modules/json-schema
 mv -T node_modules/json-schema bin/all/all/json-schema/json-schema@0.4.0/node_modules/json-schema
 rm -r node_modules/
-# Install
+# Ignore devDependencies
+sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
+# Ignore peerDependencies
+sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
+# Ignore bundleDependencies
 sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
+# Install
 if [[ "$OSTYPE" == "msys" ]]; then
   bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline
 else
@@ -173,7 +178,7 @@ sed -i '/header: {/,/},/d' -- node_modules/better-npm-audit/src/utils/print.js
 # Remove electron install script
 rm node_modules/electron/install.js
 # Remove electron dependencies
-sed -i '/"dependencies": {/,/},/d' -- 'node_modules/electron/package.json'
+sed -i '/"dependencies": {/,/}/d' -- 'node_modules/electron/package.json'
 # Set electron path
 echo -n "electron" > "node_modules/electron/path.txt"
 # Remove unnecessary files
