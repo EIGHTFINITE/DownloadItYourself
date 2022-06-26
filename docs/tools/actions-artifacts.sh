@@ -3,20 +3,6 @@
 export GIT_AUTHOR_DATE="$(git log -1 --format=%aD)"
 export GIT_COMMITTER_DATE="$(git log -1 --format=%cD)"
 
-# JRE Windows x86
-sed -i '/\/bin\//d' -- '.gitignore'
-git checkout refs/tags/artifacts -- "bin/windows/x86/jre/jre-8u201-windows-i586"
-rmdir "bin/windows/x86/jre/jre-8u201-windows-i586/jre1.8.0_201/lib/applet"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/jre/jre-8u201-windows-i586/jre1.8.0_201/lib/applet"
-git add -f ".gitmodules"
-git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 JRE 8u201 release artifacts
-
-The fix for JDK-8155635 in 8u202 causes performance issues, so 8u201 becomes the final BCL release." | sed -n 1p
-git checkout -- '.gitignore'
-if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
-  then exit 1
-fi
-
 # JRE Windows x64
 sed -i '/\/bin\//d' -- '.gitignore'
 git checkout refs/tags/artifacts -- "bin/windows/x64/jre/jre-8u201-windows-x64"
@@ -45,20 +31,6 @@ if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(
   then exit 1
 fi
 
-# 7z Windows x86
-wget -nv -O "7z2200.exe" https://www.7-zip.org/a/7z2200.exe
-mkdir -p "bin/windows/x86/7z/7z2200"
-7z x -o"bin/windows/x86/7z/7z2200" "7z2200.exe" | grep "ing archive"
-rm "7z2200.exe"
-rm "bin/windows/x86/7z/7z2200/Uninstall.exe"
-sed -i '/\/bin\//d' -- '.gitignore'
-git add "bin/windows/x86/7z/7z2200"
-git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 7z 19.00 release artifacts" | sed -n 1p
-git checkout -- '.gitignore'
-if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
-  then exit 1
-fi
-
 # 7z Windows x64
 wget -nv -O "7z2200-x64.exe" https://www.7-zip.org/a/7z2200-x64.exe
 mkdir -p "bin/windows/x64/7z/7z2200-x64"
@@ -68,134 +40,6 @@ rm "bin/windows/x64/7z/7z2200-x64/Uninstall.exe"
 sed -i '/\/bin\//d' -- '.gitignore'
 git add "bin/windows/x64/7z/7z2200-x64"
 git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 7z 19.00 release artifacts" | sed -n 1p
-git checkout -- '.gitignore'
-if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
-  then exit 1
-fi
-
-# MSYS2 Windows x86
-wget -nv -O "msys2-base-i686-20210705.tar.xz" https://repo.msys2.org/distrib/i686/msys2-base-i686-20210705.tar.xz
-mkdir -p "bin/windows/x86/msys2/msys2-base-i686-20210705"
-tar -xJf "msys2-base-i686-20210705.tar.xz" -C "bin/windows/x86/msys2/msys2-base-i686-20210705"
-rm "msys2-base-i686-20210705.tar.xz"
-sed -i '/\/bin\//d' -- '.gitignore'
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clang32/bin"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clang32/bin"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clang32/etc"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clang32/etc"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clang32/include"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clang32/include"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clang32/lib"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clang32/lib"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clang32/share"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clang32/share"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clang64/bin"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clang64/bin"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clang64/etc"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clang64/etc"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clang64/include"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clang64/include"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clang64/lib"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clang64/lib"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clang64/share"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clang64/share"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clangarm64/bin"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clangarm64/bin"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clangarm64/etc"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clangarm64/etc"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clangarm64/include"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clangarm64/include"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clangarm64/lib"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clangarm64/lib"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clangarm64/share"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/clangarm64/share"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/dev"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/dev"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/etc/fstab.d"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/etc/fstab.d"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/etc/pki/ca-trust/source/anchors"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/etc/pki/ca-trust/source/anchors"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/etc/pki/ca-trust/source/blacklist"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/etc/pki/ca-trust/source/blacklist"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/home"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/home"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/mingw32/bin"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/mingw32/bin"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/mingw32/etc"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/mingw32/etc"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/mingw32/include"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/mingw32/include"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/mingw32/lib"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/mingw32/lib"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/mingw32/share"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/mingw32/share"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/mingw64/bin"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/mingw64/bin"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/mingw64/etc"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/mingw64/etc"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/mingw64/include"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/mingw64/include"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/mingw64/lib"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/mingw64/lib"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/mingw64/share"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/mingw64/share"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/opt"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/opt"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/tmp"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/tmp"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/ucrt64/bin"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/ucrt64/bin"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/ucrt64/etc"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/ucrt64/etc"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/ucrt64/include"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/ucrt64/include"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/ucrt64/lib"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/ucrt64/lib"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/ucrt64/share"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/ucrt64/share"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/usr/bin/site_perl"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/usr/bin/site_perl"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/usr/bin/vendor_perl"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/usr/bin/vendor_perl"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/usr/lib/perl5/site_perl"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/usr/lib/perl5/site_perl"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/usr/share/man/man2"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/usr/share/man/man2"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/usr/share/man/man4"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/usr/share/man/man4"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/usr/share/man/man6"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/usr/share/man/man6"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/usr/share/perl5/core_perl/CPAN/API"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/usr/share/perl5/core_perl/CPAN/API"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/usr/share/perl5/core_perl/CPAN/Meta/History"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/usr/share/perl5/core_perl/CPAN/Meta/History"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/usr/share/perl5/site_perl"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/usr/share/perl5/site_perl"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/usr/src"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/usr/src"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/usr/ssl/private"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/usr/ssl/private"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/usr/var"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/usr/var"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/var/cache/man"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/var/cache/man"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/var/cache/pacman/pkg"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/var/cache/pacman/pkg"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/var/empty"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/var/empty"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/var/lib/misc"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/var/lib/misc"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/var/local"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/var/local"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/var/log/old"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/var/log/old"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/var/opt"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/var/opt"
-rmdir "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/var/tmp"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x86/msys2/msys2-base-i686-20210705/msys32/var/tmp"
-git add -f ".gitmodules"
-git add "bin/windows/x86/msys2/msys2-base-i686-20210705"
-git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 MSYS2 20210705 release artifacts" | sed -n 1p
 git checkout -- '.gitignore'
 if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
   then exit 1
@@ -329,22 +173,8 @@ if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(
   then exit 1
 fi
 
-# Node Windows x86
-export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
-wget -nv -O "node-v$node_version-win-x86.7z" https://nodejs.org/dist/v$node_version/node-v$node_version-win-x86.7z
-mkdir -p "bin/windows/x86/node"
-7z x -o"bin/windows/x86/node" "node-v$node_version-win-x86.7z" | grep "ing archive"
-rm -r "bin/windows/x86/node/node-v$node_version-win-x86/node_modules"
-rm "node-v$node_version-win-x86.7z"
-sed -i '/\/bin\//d' -- '.gitignore'
-git add "bin/windows/x86/node"
-git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 Node $node_version release artifacts" | sed -n 1p
-git checkout -- '.gitignore'
-if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
-  then exit 1
-fi
-
 # Node Windows x64
+export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
 wget -nv -O "node-v$node_version-win-x64.7z" https://nodejs.org/dist/v$node_version/node-v$node_version-win-x64.7z
 mkdir -p "bin/windows/x64/node"
 7z x -o"bin/windows/x64/node" "node-v$node_version-win-x64.7z" | grep "ing archive"
@@ -373,45 +203,11 @@ if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(
   then exit 1
 fi
 
-# Electron Windows x86
+# Electron Windows x64
 export force_no_cache=true
 export npm_config_platform=win32
-export npm_config_arch=ia32
-export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
-wget -nv -O "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
-mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
-tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
-rm "npm-$npm_version.tgz"
-sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat bin/all/all/npm/npm-$npm_version/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
-bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install electron@$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['dependencies']['electron'])") --no-offline
-rm -rf .npm/
-export npm_config_target=$(cat node_modules/electron/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")
-bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
-rm -rf .npm/
-rm -r node_modules/@types/
-bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
-rm -rf .npm/
-bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/electron/install.js
-mkdir -p "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32"
-mv -T node_modules/electron/dist "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32"
-rm -r bin/all/
-rm -r node_modules/
-rm package-lock.json
-git checkout -- 'package.json'
-if [[ $(stat -c%s "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32/electron.exe") -gt 104857600 ]]; then
-  split -b 104857600 --numeric-suffixes=1 --suffix-length=3 "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32/electron.exe" "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32/electron.exe."
-  rm "bin/windows/x86/electron/electron-v$npm_config_target-win32-ia32/electron.exe"
-fi
-sed -i '/\/bin\//d' -- '.gitignore'
-git add "bin/windows/x86/electron"
-git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x86 Electron $npm_config_target release artifacts" | sed -n 1p
-git checkout -- '.gitignore'
-if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
-  then exit 1
-fi
-
-# Electron Windows x64
 export npm_config_arch=x64
+export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
 wget -nv -O "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
 mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
 tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"

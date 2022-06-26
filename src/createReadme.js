@@ -116,7 +116,7 @@ function latestFile(current) {
 	if(current.name === 'Java SE Runtime Environment 8')
 		return '<code>jre-8u201-linux-x64.tar.gz</code>, <code>jre-8u201-windows-i586.exe</code>, <code>jre-8u201-windows-x64.exe</code>';
 	if(current.name === 'Node') {
-		return '<code>node-v' + process.versions.node + '-linux-arm64.tar.gz</code>, <code>node-v' + process.versions.node + '-win-x64.7z</code>, <code>node-v' + process.versions.node + '-win-x86.7z</code>';
+		return '<code>node-v' + process.versions.node + '-linux-arm64.tar.gz</code>, <code>node-v' + process.versions.node + '-win-x64.7z</code>';
 	}
 	if(typeof current.file === 'undefined')
 		return '';
