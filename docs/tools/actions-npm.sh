@@ -53,12 +53,14 @@ mkdir -p bin/all/all/json-schema/json-schema@0.4.0/node_modules/json-schema
 mv -T node_modules/json-schema bin/all/all/json-schema/json-schema@0.4.0/node_modules/json-schema
 rm -r node_modules/
 # Install
+sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
 if [[ "$OSTYPE" == "msys" ]]; then
   bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline
 else
   bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline
 fi
 rm -rf .npm/
+git checkout -- 'package.json'
 if [[ "$OSTYPE" == "msys" ]]; then
   bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
 else
