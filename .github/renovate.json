@@ -4,6 +4,6 @@
     ":rebaseStalePrs",
     ":disableDependencyDashboard"
   ],
-  "labels": ["dependencies"],
+  "labels": ["dependencies", "do-not-merge"],
   "ignoreDeps": ["npm-6", "npm-7"]
 }
