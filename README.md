@@ -2655,7 +2655,7 @@
 <td><a href="https://github.com/fb55/entities" title="“entities” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Encode & decode XML and HTML entities with ease & speed.<br>Required by dom-serializer, htmlparser2, parse5.</td>
-<td align="center"><code>entities@4.3.0</code></td>
+<td align="center"><code>entities@4.3.1</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/extend" title="extend"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="extend" title="extend"></a></td>
