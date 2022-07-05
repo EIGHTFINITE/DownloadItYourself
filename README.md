@@ -3029,7 +3029,7 @@
 <td><a href="https://github.com/lupomontero/psl" title="“psl” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Domain name parser based on the Public Suffix List.<br>Required by tough-cookie.</td>
-<td align="center"><code>psl@1.8.0</code></td>
+<td align="center"><code>psl@1.9.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/punycode" title="punycode"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="punycode" title="punycode"></a></td>
