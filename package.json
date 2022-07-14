@@ -19,7 +19,7 @@
     "better-npm-audit": "3.7.3",
     "cloudscraper": "github:EIGHTFINITE/cloudscraper#master",
     "electron": "19.0.8",
-    "npm": "8.13.2",
+    "npm": "8.14.0",
     "npm-6": "npm:npm@6.14.17",
     "npm-7": "npm:npm@7.24.2",
     "postman-request": "github:EIGHTFINITE/postman-request#master",
