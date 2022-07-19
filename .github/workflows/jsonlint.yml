@@ -11,6 +11,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3.0.2
+    - name: jsonlint
+      shell: bash
+      run: |
+        git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
+        git restore --source=artifacts -- bin/ node_modules/ package-lock.json
+        export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
+        if [[ $(find . -type f -path ./.git -prune -o -name '*.json' -exec "bin/linux/x64/node/node-v$node_version-linux-x64/bin/node" "node_modules/jsonlint/lib/cli.js" --quiet '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
+  demjson:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3.0.2
       with:
         repository: EIGHTFINITE/demjson
         ref: master
