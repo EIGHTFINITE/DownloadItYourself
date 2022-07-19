@@ -246,7 +246,10 @@ jobs:
         sudo ln -sf "$(pwd)/bin/linux/x64/node/node-v$node_version-linux-x64/bin/node" /usr/local/bin/node
         mkdir -p "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules"
         cp -r "node_modules/npm-7" "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm"
+        export old_PATH="$PATH"
+        export PATH="$(pwd)/bin/linux/x64/node/node-v$node_version-linux-x64/bin:$PATH"
         bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/better-npm-audit/index.js audit
+        export PATH="$old_PATH"
         rm -rf .npm/
         rm -r "bin/linux/x64/node/node-v$node_version-linux-x64/lib"
   artifacts_audit_windows:
@@ -264,7 +267,10 @@ jobs:
         export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         mkdir -p "bin/windows/x64/node/node-v$node_version-win-x64/node_modules"
         cp -r "node_modules/npm-7" "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm"
+        export old_PATH="$PATH"
+        export PATH="$(pwd)/bin/windows/x64/node/node-v$node_version-win-x64:$PATH"
         bin/windows/x64/node/node-v$node_version-win-x64/node.exe node_modules/better-npm-audit/index.js audit
+        export PATH="$old_PATH"
         rm -rf .npm/
         rm -r "bin/windows/x64/node/node-v$node_version-win-x64"
   release:
