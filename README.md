@@ -2277,7 +2277,7 @@
 <td><a href="https://www.npmjs.com/package/JSV" title="JSV">JSV</a></td>
 <td>Package</td>
 <td><a href="https://github.com/garycourt" title="Gary Court">Gary Court</a></td>
-<td>
+<td><a href="docs/legal/BSD-2-Clause-Views.txt" title="“JSV” license">BSD-2-Clause-Views</a><a href="https://github.com/garycourt/JSV" title="“JSV” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“JSV” license information"></a>
 <td><a href="https://github.com/garycourt/JSV" title="“JSV” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A JavaScript implementation of a extendable, fully compliant JSON Schema validator.<br>Required by jsonlint.</td>
@@ -2705,8 +2705,8 @@
 <td align="center"><a href="https://www.npmjs.com/package/exit" title="exit"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="exit" title="exit"></a></td>
 <td><a href="https://www.npmjs.com/package/exit" title="exit">exit</a></td>
 <td>Package</td>
-<td><a href="https://github.com/cowboy" title=""Cowboy" Ben Alman">"Cowboy" Ben Alman</a></td>
-<td>
+<td><a href="https://github.com/cowboy" title="Ben Alman">Ben Alman</a></td>
+<td><a href="docs/legal/MIT.txt" title="“exit” license">MIT</a><a href="https://github.com/cowboy/node-exit" title="“exit” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“exit” license information"></a>
 <td><a href="https://github.com/cowboy/node-exit" title="“exit” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A replacement for process.exit that ensures stdio are fully drained before exiting.<br>Required by @gerhobbelt/nomnom.</td>
