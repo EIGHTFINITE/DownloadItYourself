@@ -342,8 +342,12 @@ module.exports = function(filetype) {
 					packageData.author.name = 'Sindre Sorhus';
 
 				// Full corrections
+				if(packageData.repository.url === 'https://github.com/cowboy/node-exit') {
+					packageData.author.name = 'Ben Alman';
+					packageData.license = 'MIT';
+				}
 				else if(packageData.repository.url === 'https://github.com/joyent/node-asn1') {
-					packageData.author.name = 'Mark Cavage'
+					packageData.author.name = 'Mark Cavage';
 					packageData.author.url = 'https://github.com/mcavage';
 				}
 				else if(packageData.repository.url === 'https://github.com/joyent/node-assert-plus') {
@@ -449,7 +453,10 @@ module.exports = function(filetype) {
 				packageData.homepage = 'https://www.npmjs.com/package/' + packageData.name;
 
 				// License corrections
-				if(packageData.repository.url === 'https://github.com/joyent/node-bcrypt-pbkdf')
+				if(packageData.repository.url === 'https://github.com/garycourt/JSV') {
+					packageData.license = 'BSD-2-Clause-Views';
+				}
+				else if(packageData.repository.url === 'https://github.com/joyent/node-bcrypt-pbkdf')
 					packageData.license = 'BSD-3-Clause AND MIT';
 				else if(packageData.repository.url === 'https://github.com/kriszyp/json-schema' && !packageData.license)
 					packageData.license = 'AFL-2.1 OR BSD-3-Clause';
