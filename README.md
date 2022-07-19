@@ -2229,6 +2229,28 @@
 </tr></thead>
 <tbody>
 <tr>
+<td align="center"><a href="https://www.npmjs.com/package/@gerhobbelt/linewrap" title="@gerhobbelt/linewrap"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="@gerhobbelt/linewrap" title="@gerhobbelt/linewrap"></a></td>
+<td><a href="https://www.npmjs.com/package/@gerhobbelt/linewrap" title="@gerhobbelt/linewrap">@gerhobbelt/linewrap</a></td>
+<td>Package</td>
+<td><a href="https://github.com/GerHobbelt" title="Feng Qiu">Feng Qiu</a></td>
+<td><a href="docs/legal/MIT.txt" title="“@gerhobbelt/linewrap” license">MIT</a><a href="https://github.com/GerHobbelt/linewrap" title="“@gerhobbelt/linewrap” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“@gerhobbelt/linewrap” license information"></a>
+<td><a href="https://github.com/GerHobbelt/linewrap" title="“@gerhobbelt/linewrap” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Word wrapping with HTML, ANSI color code, indentation and paragraphing support.<br>Required by @gerhobbelt/nomnom.</td>
+<td align="center"><code>@gerhobbelt/linewrap@0.2.2-3</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/@gerhobbelt/nomnom" title="@gerhobbelt/nomnom"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="@gerhobbelt/nomnom" title="@gerhobbelt/nomnom"></a></td>
+<td><a href="https://www.npmjs.com/package/@gerhobbelt/nomnom" title="@gerhobbelt/nomnom">@gerhobbelt/nomnom</a></td>
+<td>Package</td>
+<td><a href="https://github.com/GerHobbelt" title="Heather Arthur">Heather Arthur</a></td>
+<td><a href="docs/legal/MIT.txt" title="“@gerhobbelt/nomnom” license">MIT</a><a href="https://github.com/GerHobbelt/nomnom" title="“@gerhobbelt/nomnom” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“@gerhobbelt/nomnom” license information"></a>
+<td><a href="https://github.com/GerHobbelt/nomnom" title="“@gerhobbelt/nomnom” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Option parser with generated usage and commands.<br>Required by jsonlint.</td>
+<td align="center"><code>@gerhobbelt/nomnom@1.8.4-31</code></td>
+</tr>
+<tr>
 <td align="center"><a href="https://www.npmjs.com/package/@postman/form-data" title="@postman/form-data"><img src="https://avatars.githubusercontent.com/u/10251060" width="62" alt="@postman/form-data" title="@postman/form-data"></a></td>
 <td><a href="https://www.npmjs.com/package/@postman/form-data" title="@postman/form-data">@postman/form-data</a></td>
 <td>Package</td>
@@ -2249,6 +2271,17 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>HTTP proxy tunneling agent.<br>Required by postman-request.</td>
 <td align="center"><code>@postman/tunnel-agent@0.6.3</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/JSV" title="JSV"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="JSV" title="JSV"></a></td>
+<td><a href="https://www.npmjs.com/package/JSV" title="JSV">JSV</a></td>
+<td>Package</td>
+<td><a href="https://github.com/garycourt" title="Gary Court">Gary Court</a></td>
+<td>
+<td><a href="https://github.com/garycourt/JSV" title="“JSV” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>A JavaScript implementation of a extendable, fully compliant JSON Schema validator.<br>Required by jsonlint.</td>
+<td align="center"><code>JSV@4.0.2</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/ajv" title="ajv"><img src="https://web.archive.org/web/20210223065550if_/https://ajv.js.org/images/ajv_logo.png" width="62" alt="ajv" title="ajv"></a></td>
@@ -2280,7 +2313,7 @@
 <td><a href="docs/legal/MIT.txt" title="“ansi-styles” license">MIT</a><a href="https://github.com/chalk/ansi-styles" title="“ansi-styles” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“ansi-styles” license information"></a>
 <td><a href="https://github.com/chalk/ansi-styles" title="“ansi-styles” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>ANSI escape codes for styling strings in the terminal.<br>Required by slice-ansi.</td>
+<td>ANSI escape codes for styling strings in the terminal.<br>Required by chalk, slice-ansi.</td>
 <td align="center"><code>ansi-styles@4.3.0</code></td>
 </tr>
 <tr>
@@ -2425,6 +2458,17 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Caseless object set/get/has, very useful when working with HTTP headers.<br>Required by postman-request.</td>
 <td align="center"><code>caseless@0.12.0</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/chalk" title="chalk"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="chalk" title="chalk"></a></td>
+<td><a href="https://www.npmjs.com/package/chalk" title="chalk">chalk</a></td>
+<td>Package</td>
+<td><a href="https://github.com/chalk" title="chalk">chalk</a></td>
+<td><a href="docs/legal/MIT.txt" title="“chalk” license">MIT</a><a href="https://github.com/chalk/chalk" title="“chalk” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“chalk” license information"></a>
+<td><a href="https://github.com/chalk/chalk" title="“chalk” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Terminal string styling done right.<br>Required by @gerhobbelt/nomnom.</td>
+<td align="center"><code>chalk@4.1.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/cheerio" title="cheerio"><img src="https://avatars.githubusercontent.com/u/7230330?s=200" width="62" alt="cheerio" title="cheerio"></a></td>
@@ -2658,6 +2702,17 @@
 <td align="center"><code>entities@4.3.1</code></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.npmjs.com/package/exit" title="exit"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="exit" title="exit"></a></td>
+<td><a href="https://www.npmjs.com/package/exit" title="exit">exit</a></td>
+<td>Package</td>
+<td><a href="https://github.com/cowboy" title=""Cowboy" Ben Alman">"Cowboy" Ben Alman</a></td>
+<td>
+<td><a href="https://github.com/cowboy/node-exit" title="“exit” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>A replacement for process.exit that ensures stdio are fully drained before exiting.<br>Required by @gerhobbelt/nomnom.</td>
+<td align="center"><code>exit@0.1.2</code></td>
+</tr>
+<tr>
 <td align="center"><a href="https://www.npmjs.com/package/extend" title="extend"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="extend" title="extend"></a></td>
 <td><a href="https://www.npmjs.com/package/extend" title="extend">extend</a></td>
 <td>Package</td>
@@ -2768,6 +2823,17 @@
 <td align="center"><code>json-schema-traverse@0.4.1</code></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.npmjs.com/package/has-flag" title="has-flag"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="has-flag" title="has-flag"></a></td>
+<td><a href="https://www.npmjs.com/package/has-flag" title="has-flag">has-flag</a></td>
+<td>Package</td>
+<td><a href="https://github.com/sindresorhus" title="Sindre Sorhus">Sindre Sorhus</a></td>
+<td><a href="docs/legal/MIT.txt" title="“has-flag” license">MIT</a><a href="https://github.com/sindresorhus/has-flag" title="“has-flag” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“has-flag” license information"></a>
+<td><a href="https://github.com/sindresorhus/has-flag" title="“has-flag” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Check if argv has a specific flag.<br>Required by supports-color.</td>
+<td align="center"><code>has-flag@4.0.0</code></td>
+</tr>
+<tr>
 <td align="center"><a href="https://www.npmjs.com/package/htmlparser2" title="htmlparser2"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="htmlparser2" title="htmlparser2"></a></td>
 <td><a href="https://www.npmjs.com/package/htmlparser2" title="htmlparser2">htmlparser2</a></td>
 <td>Package</td>
@@ -2865,6 +2931,17 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Like JSON.stringify, but doesn't blow up on circular refs.<br>Required by postman-request, roarr.</td>
 <td align="center"><code>json-stringify-safe@5.0.1</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://github.com/EIGHTFINITE/jsonlint" title="jsonlint"><img src="https://avatars.githubusercontent.com/u/9919" width="62" alt="jsonlint" title="jsonlint"></a></td>
+<td><a href="https://github.com/EIGHTFINITE/jsonlint" title="jsonlint">jsonlint</a></td>
+<td>Package</td>
+<td><a href="https://github.com/zaach" title="Zach Carter">Zach Carter</a></td>
+<td><a href="docs/legal/MIT.txt" title="“jsonlint” license">MIT</a><a href="https://github.com/EIGHTFINITE/jsonlint" title="“jsonlint” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“jsonlint” license information"></a>
+<td><a href="https://github.com/EIGHTFINITE/jsonlint" title="“jsonlint” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Validate JSON.</td>
+<td align="center"><code>EIGHTFINITE/jsonlint#f6624322e6ba7c2c6e7848729f7309873329e7cb</code><br>(based on <code>jsonlint@1.6.3</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/jsprim" title="jsprim"><img src="https://avatars.githubusercontent.com/u/10161?s=200" width="62" alt="jsprim" title="jsprim"></a></td>
@@ -3217,6 +3294,17 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Strip ANSI escape codes from a string.<br>Required by string-width, table.</td>
 <td align="center"><code>strip-ansi@6.0.1</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/supports-color" title="supports-color"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="supports-color" title="supports-color"></a></td>
+<td><a href="https://www.npmjs.com/package/supports-color" title="supports-color">supports-color</a></td>
+<td>Package</td>
+<td><a href="https://github.com/chalk" title="Sindre Sorhus">Sindre Sorhus</a></td>
+<td><a href="docs/legal/MIT.txt" title="“supports-color” license">MIT</a><a href="https://github.com/chalk/supports-color" title="“supports-color” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“supports-color” license information"></a>
+<td><a href="https://github.com/chalk/supports-color" title="“supports-color” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Detect whether a terminal supports color.<br>Required by chalk.</td>
+<td align="center"><code>supports-color@7.2.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/table" title="table"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="62" alt="table" title="table"></a></td>
