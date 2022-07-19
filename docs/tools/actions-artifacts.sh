@@ -198,7 +198,6 @@ sed -i '/\/bin\//d' -- '.gitignore'
 git add "bin/linux/x64/node"
 git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 Node $node_version release artifacts" | sed -n 1p
 git checkout -- '.gitignore'
-sudo ln -sf "$(pwd)/bin/linux/x64/node/node-v$node_version-linux-x64/bin/node" /usr/local/bin/node
 if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
   then exit 1
 fi

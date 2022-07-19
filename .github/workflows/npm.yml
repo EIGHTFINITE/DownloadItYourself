@@ -23,7 +23,6 @@ jobs:
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git restore --source=artifacts -- bin/
         export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
-        sudo ln -sf "$(pwd)/bin/linux/x64/node/node-v$node_version-linux-x64/bin/node" /usr/local/bin/node
         export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
         wget -nv -O "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
         mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
@@ -100,7 +99,6 @@ jobs:
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git restore --source=artifacts -- bin/
         export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
-        sudo ln -sf "$(pwd)/bin/linux/x64/node/node-v$node_version-linux-x64/bin/node" /usr/local/bin/node
         export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
         wget -nv -O "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
         mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
