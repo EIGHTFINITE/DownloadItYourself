@@ -66,7 +66,6 @@ jobs:
         cd EIGHTFINITE-build
         set /p node_version=<node_version.txt
         set /p npm_version=<npm_version.txt
-        mklink /d "C:\Program Files\nodejs" "%cd%\bin\windows\x64\node\node-v%node_version%-win-x64"
         bin\windows\x64\msys2\msys2-base-x86_64-20220603\msys64\usr\bin\wget.exe -nv -O "npm-%npm_version%.tgz" "https://registry.npmjs.org/npm/-/npm-%npm_version%.tgz"
         cd ..
     - name: npm
@@ -138,7 +137,6 @@ jobs:
       run: |
         set /p node_version=<node_version.txt
         set /p npm_version=<npm_version.txt
-        mklink /d "C:\Program Files\nodejs" "%cd%\bin\windows\x64\node\node-v%node_version%-win-x64"
         bin\windows\x64\msys2\msys2-base-x86_64-20220603\msys64\usr\bin\wget.exe -nv -O "npm-%npm_version%.tgz" "https://registry.npmjs.org/npm/-/npm-%npm_version%.tgz"
     - name: audit
       shell: bash
