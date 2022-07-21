@@ -23,7 +23,7 @@
     "npm": "8.15.0",
     "npm-6": "npm:npm@6.14.17",
     "npm-7": "npm:npm@7.24.2",
-    "postman-request": "github:EIGHTFINITE/postman-request#717fdc5b85c37c3496edf4296ed8fee43e318f67",
+    "postman-request": "github:EIGHTFINITE/postman-request#4be079ecdb0802ef6f6e6f4b821ed699a344668d",
     "spdx-expression-parse": "github:EIGHTFINITE/spdx-expression-parse#cd36b8da4bad8b6415035400a9cba757e36046f6"
   },
   "bundleDependencies": [
