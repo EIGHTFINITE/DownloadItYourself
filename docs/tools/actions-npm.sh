@@ -115,7 +115,6 @@ rm -r node_modules/progress/
 rm -r node_modules/pump/
 rm -r node_modules/readable-stream/
 rm -r node_modules/responselike/
-rm -r node_modules/semver/
 rm -r node_modules/string_decoder/
 rm -r node_modules/sumchecker/
 rm -r node_modules/to-readable-stream/
