@@ -106,7 +106,6 @@ rm -r node_modules/minimist/
 rm -r node_modules/mkdirp/
 rm -r node_modules/ms/
 rm -r node_modules/normalize-url/
-rm -r node_modules/once/
 rm -r node_modules/p-cancelable/
 rm -r node_modules/pend/
 rm -r node_modules/prepend-http/
