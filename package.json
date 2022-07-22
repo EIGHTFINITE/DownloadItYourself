@@ -17,14 +17,14 @@
   },
   "dependencies": {
     "better-npm-audit": "3.7.3",
-    "cloudscraper": "github:EIGHTFINITE/cloudscraper#09d4bcb37299ed5c9ef12e2b95b77076a00b6da9",
+    "cloudscraper": "github:EIGHTFINITE/cloudscraper#master",
     "electron": "19.0.9",
-    "jsonlint": "github:EIGHTFINITE/jsonlint#f6624322e6ba7c2c6e7848729f7309873329e7cb",
+    "jsonlint": "github:EIGHTFINITE/jsonlint#master",
     "npm": "8.15.0",
     "npm-6": "npm:npm@6.14.17",
     "npm-7": "npm:npm@7.24.2",
-    "postman-request": "github:EIGHTFINITE/postman-request#4be079ecdb0802ef6f6e6f4b821ed699a344668d",
-    "spdx-expression-parse": "github:EIGHTFINITE/spdx-expression-parse#cd36b8da4bad8b6415035400a9cba757e36046f6"
+    "postman-request": "github:EIGHTFINITE/postman-request#master",
+    "spdx-expression-parse": "github:EIGHTFINITE/spdx-expression-parse#master"
   },
   "bundleDependencies": [
     "@gerhobbelt/linewrap",
