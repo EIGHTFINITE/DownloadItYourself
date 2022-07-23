@@ -122,12 +122,6 @@ sed -i "0,/\"json-schema\": \".*\"/s//\"json-schema\": \"0.4.0\"/" node_modules/
 # better-npm-audit changes
 sed -i "/  All good!');/d" -- node_modules/better-npm-audit/src/handlers/handleFinish.js
 sed -i '/header: {/,/},/d' -- node_modules/better-npm-audit/src/utils/print.js
-# Remove electron install script
-rm node_modules/electron/install.js
-# Remove electron dependencies
-sed -i '/"dependencies": {/,/}/d' -- 'node_modules/electron/package.json'
-# Set electron path
-echo -n "electron" > "node_modules/electron/path.txt"
 # Remove unnecessary files
 find node_modules/ -mindepth 2 -type d \( -name '.github' -o -name 'docs' -o -name 'example' -o -name 'tap-snapshots' -o -name 'test' -o -name 'typings' \) | xargs rm -rf
 find node_modules/ -mindepth 2 -type f \( -name '*.d.ts' -o -name '*.d.ts.map' -o -name '*.js.map' -o -name '.eslintrc.yml' -o -name '.gitmodules' -o -name '.npmignore' -o -name '.travis.yml' -o -name 'yarn.lock' \) -exec bash -c 'rm "$1"; rmdir --ignore-fail-on-non-empty $(dirname "$1")' bash '{}' ';'
