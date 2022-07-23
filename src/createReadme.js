@@ -187,7 +187,7 @@ module.exports = function(filetype) {
 				readme += '\r\n<tr>';
 
 				// Icon
-				readme += '\r\n<td align="center"><a href="' + (current["description-url-override"] ? current["description-url-override"] : current.url) + '" title="' + current.name + '"><img src="' + (current.img ? (current.img.startsWith('https://') ? current.img : 'docs/img/icon/' + current.img) : 'docs/img/icon/default.svg') + '" width="62" alt="' + current.name + '" title="' + current.name + '"></a></td>';
+				readme += '\r\n<td align="center"><a href="' + (current["description-url-override"] ? current["description-url-override"] : current.url) + '" title="' + current.name + '"><img src="' + (current.img ? (current.img.startsWith('https://') ? current.img : 'docs/img/icon/' + current.img) : 'docs/img/icon/default.svg') + '" width="31" alt="' + current.name + '" title="' + current.name + '"></a></td>';
 
 				// Name
 				readme += '\r\n<td><a href="' + (current["description-url-override"] ? current["description-url-override"] : current.url) + '" title="' + current.name + '">' + current.name + '</a>' + (current["description-url-override"] && current.url ? ' <a href="' + current.url + '" title="“' + current.name + '” download"><img src="docs/img/svg/download.svg" height="24" alt="(download)" title="“' + current.name + '” download"></a>' : '') + '</td>';
@@ -513,7 +513,7 @@ module.exports = function(filetype) {
 					readme += 'https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg';
 				else
 					readme += 'https://avatars.githubusercontent.com/u/9919';
-				readme += '" width="62" alt="' + packageData._location.substr(1) + '" title="' + packageData._location.substr(1) + '"></a></td>';
+				readme += '" width="31" alt="' + packageData._location.substr(1) + '" title="' + packageData._location.substr(1) + '"></a></td>';
 
 				// Name
 				readme += '\r\n<td><a href="' + ((typeof packageData._requested === 'undefined') || (packageData._requested.saveSpec === null) ? packageData.homepage : 'https://github.com/' + packageData._from.slice(7).split('#')[0]) + '" title="' + packageData._location.substr(1) + '">' + packageData._location.substr(1) + '</a></td>';
