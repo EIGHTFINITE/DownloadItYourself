@@ -462,7 +462,7 @@ module.exports = function(filetype) {
 				else if(packageData.repository.url === 'https://github.com/kriszyp/json-schema') {
 					packageData.license = 'AFL-2.1 OR BSD-3-Clause';
 				}
-				else if(packageData.repository.url === 'https://github.com/npm/cli' {
+				else if(packageData.repository.url === 'https://github.com/npm/cli') {
 					packageData.license = 'npm license';
 				}
 
