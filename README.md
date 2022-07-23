@@ -3003,7 +3003,7 @@
 <td><a href="https://www.npmjs.com/package/npm" title="npm">npm</a></td>
 <td>Package</td>
 <td><a href="https://github.com/npm" title="Isaac Z. Schlueter">Isaac Z. Schlueter</a></td>
-<td><a href="docs/legal/Artistic-2.0.txt" title="“npm” license">Artistic-2.0</a><a href="https://github.com/npm/cli" title="“npm” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“npm” license information"></a>
+<td><a href="docs/legal/npm license.txt" title="“npm” license">npm license</a><a href="https://github.com/npm/cli" title="“npm” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“npm” license information"></a>
 <td><a href="https://github.com/npm/cli" title="“npm” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A package manager for JavaScript.</td>
@@ -3014,7 +3014,7 @@
 <td><a href="https://www.npmjs.com/package/npm" title="npm-6">npm-6</a></td>
 <td>Package</td>
 <td><a href="https://github.com/npm" title="Isaac Z. Schlueter">Isaac Z. Schlueter</a></td>
-<td><a href="docs/legal/Artistic-2.0.txt" title="“npm-6” license">Artistic-2.0</a><a href="https://github.com/npm/cli" title="“npm-6” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“npm-6” license information"></a>
+<td><a href="docs/legal/npm license.txt" title="“npm-6” license">npm license</a><a href="https://github.com/npm/cli" title="“npm-6” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“npm-6” license information"></a>
 <td><a href="https://github.com/npm/cli" title="“npm-6” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A package manager for JavaScript.</td>
@@ -3025,7 +3025,7 @@
 <td><a href="https://www.npmjs.com/package/npm" title="npm-7">npm-7</a></td>
 <td>Package</td>
 <td><a href="https://github.com/npm" title="Isaac Z. Schlueter">Isaac Z. Schlueter</a></td>
-<td><a href="docs/legal/Artistic-2.0.txt" title="“npm-7” license">Artistic-2.0</a><a href="https://github.com/npm/cli" title="“npm-7” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“npm-7” license information"></a>
+<td><a href="docs/legal/npm license.txt" title="“npm-7” license">npm license</a><a href="https://github.com/npm/cli" title="“npm-7” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“npm-7” license information"></a>
 <td><a href="https://github.com/npm/cli" title="“npm-7” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A package manager for JavaScript.</td>
