@@ -456,10 +456,15 @@ module.exports = function(filetype) {
 				if(packageData.repository.url === 'https://github.com/garycourt/JSV') {
 					packageData.license = 'BSD-2-Clause-Views';
 				}
-				else if(packageData.repository.url === 'https://github.com/joyent/node-bcrypt-pbkdf')
+				else if(packageData.repository.url === 'https://github.com/joyent/node-bcrypt-pbkdf') {
 					packageData.license = 'BSD-3-Clause AND MIT';
-				else if(packageData.repository.url === 'https://github.com/kriszyp/json-schema' && !packageData.license)
+				}
+				else if(packageData.repository.url === 'https://github.com/kriszyp/json-schema') {
 					packageData.license = 'AFL-2.1 OR BSD-3-Clause';
+				}
+				else if(packageData.repository.url === 'https://github.com/npm/cli' {
+					packageData.license = 'npm license';
+				}
 
 				// Description corrections
 				if(packageData.repository.url === 'https://github.com/indutny/node-ip')
