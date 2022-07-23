@@ -121,7 +121,6 @@ rm -r node_modules/typedarray/
 rm -r node_modules/universalify/
 rm -r node_modules/url-parse-lax/
 rm -r node_modules/util-deprecate/
-rm -r node_modules/wrappy/
 rm -r node_modules/yauzl/
 # Remove vulnerable dependencies
 rm -r node_modules/npm-6/node_modules/string-width/node_modules/ansi-regex/
