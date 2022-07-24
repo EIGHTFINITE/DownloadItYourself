@@ -26,7 +26,11 @@
     "spdx-expression-parse": "github:EIGHTFINITE/spdx-expression-parse#master"
   },
   "devDependencies": {
-    "electron": "19.0.9"
+    "ansi-regex-5.0.1": "npm:ansi-regex@5.0.1",
+    "ansi-regex-4.1.1": "npm:ansi-regex@4.1.1",
+    "ansi-regex-3.0.1": "npm:ansi-regex@3.0.1",
+    "electron": "19.0.9",
+    "json-schema-0.4.0": "npm:json-schema@0.4.0"
   },
   "bundleDependencies": [
     "@gerhobbelt/linewrap",

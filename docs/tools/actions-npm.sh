@@ -6,51 +6,51 @@ export npm_version=$(cat npm_version.txt)
 rm npm_version.txt
 # Create a local copy of ansi-regex@5.0.1
 if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install ansi-regex@5.0.1 --no-offline
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --save-dev --no-offline ansi-regex-5.0.1@npm:ansi-regex@5.0.1
 else
-  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install ansi-regex@5.0.1 --no-offline
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --save-dev --no-offline ansi-regex-5.0.1@npm:ansi-regex@5.0.1
 fi
 rm -rf .npm/
 rm package-lock.json
 git checkout -- 'package.json'
-mkdir -p bin/all/all/ansi-regex/ansi-regex@5.0.1/node_modules/ansi-regex
-mv -T node_modules/ansi-regex bin/all/all/ansi-regex/ansi-regex@5.0.1/node_modules/ansi-regex
+mkdir -p bin/all/all/ansi-regex/ansi-regex-5.0.1/node_modules/ansi-regex
+mv -T node_modules/ansi-regex-5.0.1 bin/all/all/ansi-regex/ansi-regex-5.0.1/node_modules/ansi-regex
 rm -r node_modules/
 # Create a local copy of ansi-regex@4.1.1
 if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install ansi-regex@4.1.1 --no-offline
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --save-dev --no-offline ansi-regex-4.1.1@npm:ansi-regex@4.1.1
 else
-  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install ansi-regex@4.1.1 --no-offline
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --save-dev --no-offline ansi-regex-4.1.1@npm:ansi-regex@4.1.1
 fi
 rm -rf .npm/
 rm package-lock.json
 git checkout -- 'package.json'
-mkdir -p bin/all/all/ansi-regex/ansi-regex@4.1.1/node_modules/ansi-regex
-mv -T node_modules/ansi-regex bin/all/all/ansi-regex/ansi-regex@4.1.1/node_modules/ansi-regex
+mkdir -p bin/all/all/ansi-regex/ansi-regex-4.1.1/node_modules/ansi-regex
+mv -T node_modules/ansi-regex-4.1.1 bin/all/all/ansi-regex/ansi-regex-4.1.1/node_modules/ansi-regex
 rm -r node_modules/
 # Create a local copy of ansi-regex@3.0.1
 if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install ansi-regex@3.0.1 --no-offline
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --save-dev --no-offline ansi-regex-3.0.1@npm:ansi-regex@3.0.1
 else
-  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install ansi-regex@3.0.1 --no-offline
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --save-dev --no-offline ansi-regex-3.0.1@npm:ansi-regex@3.0.1
 fi
 rm -rf .npm/
 rm package-lock.json
 git checkout -- 'package.json'
-mkdir -p bin/all/all/ansi-regex/ansi-regex@3.0.1/node_modules/ansi-regex
-mv -T node_modules/ansi-regex bin/all/all/ansi-regex/ansi-regex@3.0.1/node_modules/ansi-regex
+mkdir -p bin/all/all/ansi-regex/ansi-regex-3.0.1/node_modules/ansi-regex
+mv -T node_modules/ansi-regex-3.0.1 bin/all/all/ansi-regex/ansi-regex-3.0.1/node_modules/ansi-regex
 rm -r node_modules/
 # Create a local copy of json-schema@0.4.0
 if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install json-schema@0.4.0 --no-offline
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --save-dev --no-offline json-schema-0.4.0@npm:json-schema@0.4.0
 else
-  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install json-schema@0.4.0 --no-offline
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --save-dev --no-offline json-schema-0.4.0@npm:json-schema@0.4.0
 fi
 rm -rf .npm/
 rm package-lock.json
 git checkout -- 'package.json'
-mkdir -p bin/all/all/json-schema/json-schema@0.4.0/node_modules/json-schema
-mv -T node_modules/json-schema bin/all/all/json-schema/json-schema@0.4.0/node_modules/json-schema
+mkdir -p bin/all/all/json-schema/json-schema-0.4.0/node_modules/json-schema
+mv -T node_modules/json-schema-0.4.0 bin/all/all/json-schema/json-schema-0.4.0/node_modules/json-schema
 rm -r node_modules/
 # Ignore devDependencies
 sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
@@ -94,11 +94,11 @@ rm node_modules/parse5-htmlparser2-tree-adapter/dist/cjs/package.json
 sed -i '/"type": "module"/d' -- 'node_modules/parse5/package.json'
 sed -i '/"type": "module"/d' -- 'node_modules/parse5-htmlparser2-tree-adapter/package.json'
 # Patch vulnerable dependencies
-cp -a bin/all/all/ansi-regex/ansi-regex@3.0.1/node_modules/ansi-regex/ node_modules/npm-6/node_modules/string-width/node_modules/ansi-regex/
-cp -a bin/all/all/ansi-regex/ansi-regex@4.1.1/node_modules/ansi-regex/ node_modules/npm-6/node_modules/yargs/node_modules/ansi-regex/
-cp -a bin/all/all/ansi-regex/ansi-regex@5.0.1/node_modules/ansi-regex/ node_modules/npm-7/node_modules/cli-table3/node_modules/ansi-regex/
-cp -a bin/all/all/ansi-regex/ansi-regex@3.0.1/node_modules/ansi-regex/ node_modules/npm-7/node_modules/string-width/node_modules/ansi-regex/
-cp -a bin/all/all/json-schema/json-schema@0.4.0/node_modules/json-schema/ node_modules/npm-7/node_modules/json-schema/
+cp -a bin/all/all/ansi-regex/ansi-regex-3.0.1/node_modules/ansi-regex/ node_modules/npm-6/node_modules/string-width/node_modules/ansi-regex/
+cp -a bin/all/all/ansi-regex/ansi-regex-4.1.1/node_modules/ansi-regex/ node_modules/npm-6/node_modules/yargs/node_modules/ansi-regex/
+cp -a bin/all/all/ansi-regex/ansi-regex-5.0.1/node_modules/ansi-regex/ node_modules/npm-7/node_modules/cli-table3/node_modules/ansi-regex/
+cp -a bin/all/all/ansi-regex/ansi-regex-3.0.1/node_modules/ansi-regex/ node_modules/npm-7/node_modules/string-width/node_modules/ansi-regex/
+cp -a bin/all/all/json-schema/json-schema-0.4.0/node_modules/json-schema/ node_modules/npm-7/node_modules/json-schema/
 # Set bundled status
 sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-6/node_modules/string-width/node_modules/ansi-regex/package.json
 sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-6/node_modules/yargs/node_modules/ansi-regex/package.json
