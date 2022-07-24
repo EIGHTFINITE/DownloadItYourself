@@ -19,6 +19,7 @@ rm -r node_modules/
 sed -i 's/ansi-regex-5.0.1/ansi-regex/' -- 'bin/all/all/ansi-regex/ansi-regex-5.0.1/node_modules/ansi-regex/package.json'
 sed -i 's/npm:ansi-regex@5.0.1/5.0.1/' -- 'bin/all/all/ansi-regex/ansi-regex-5.0.1/node_modules/ansi-regex/package.json'
 sed -i 's/    "type": "alias"/    "type": "version"/' -- 'bin/all/all/ansi-regex/ansi-regex-5.0.1/node_modules/ansi-regex/package.json'
+sed -i -z 's/    "fetchSpec": null,\n    "subSpec": {.*}/    "fetchSpec": "5.0.1"/' -- 'bin/all/all/ansi-regex/ansi-regex-5.0.1/node_modules/ansi-regex/package.json'
 # Create a local copy of ansi-regex@4.1.1
 if [[ "$OSTYPE" == "msys" ]]; then
   bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline ansi-regex-4.1.1@npm:ansi-regex@4.1.1
@@ -34,6 +35,7 @@ rm -r node_modules/
 sed -i 's/ansi-regex-4.1.1/ansi-regex/' -- 'bin/all/all/ansi-regex/ansi-regex-4.1.1/node_modules/ansi-regex/package.json'
 sed -i 's/npm:ansi-regex@4.1.1/4.1.1/' -- 'bin/all/all/ansi-regex/ansi-regex-4.1.1/node_modules/ansi-regex/package.json'
 sed -i 's/    "type": "alias"/    "type": "version"/' -- 'bin/all/all/ansi-regex/ansi-regex-4.1.1/node_modules/ansi-regex/package.json'
+sed -i -z 's/    "fetchSpec": null,\n    "subSpec": {.*}/    "fetchSpec": "4.1.1"/' -- 'bin/all/all/ansi-regex/ansi-regex-4.1.1/node_modules/ansi-regex/package.json'
 # Create a local copy of ansi-regex@3.0.1
 if [[ "$OSTYPE" == "msys" ]]; then
   bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline ansi-regex-3.0.1@npm:ansi-regex@3.0.1
@@ -49,6 +51,7 @@ rm -r node_modules/
 sed -i 's/ansi-regex-3.0.1/ansi-regex/' -- 'bin/all/all/ansi-regex/ansi-regex-3.0.1/node_modules/ansi-regex/package.json'
 sed -i 's/npm:ansi-regex@3.0.1/3.0.1/' -- 'bin/all/all/ansi-regex/ansi-regex-3.0.1/node_modules/ansi-regex/package.json'
 sed -i 's/    "type": "alias"/    "type": "version"/' -- 'bin/all/all/ansi-regex/ansi-regex-3.0.1/node_modules/ansi-regex/package.json'
+sed -i -z 's/    "fetchSpec": null,\n    "subSpec": {.*}/    "fetchSpec": "3.0.1"/' -- 'bin/all/all/ansi-regex/ansi-regex-3.0.1/node_modules/ansi-regex/package.json'
 # Create a local copy of json-schema@0.4.0
 if [[ "$OSTYPE" == "msys" ]]; then
   bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline json-schema-0.4.0@npm:json-schema@0.4.0
@@ -64,6 +67,7 @@ rm -r node_modules/
 sed -i 's/json-schema-0.4.0/json-schema/' -- 'bin/all/all/json-schema/json-schema-0.4.0/node_modules/json-schema/package.json'
 sed -i 's/npm:json-schema@0.4.0/0.4.0/' -- 'bin/all/all/json-schema/json-schema-0.4.0/node_modules/json-schema/package.json'
 sed -i 's/    "type": "alias"/    "type": "version"/' -- 'bin/all/all/json-schema/json-schema-0.4.0/node_modules/json-schema/package.json'
+sed -i -z 's/    "fetchSpec": null,\n    "subSpec": {.*}/    "fetchSpec": "0.4.0"/' -- 'bin/all/all/json-schema/json-schema-0.4.0/node_modules/json-schema/package.json'
 # Ignore devDependencies, peerDependencies, and bundleDependencies
 sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
 sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
