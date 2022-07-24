@@ -6,9 +6,9 @@ export npm_version=$(cat npm_version.txt)
 rm npm_version.txt
 # Create a local copy of ansi-regex@5.0.1
 if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --save-dev --no-offline ansi-regex-5.0.1@npm:ansi-regex@5.0.1
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline ansi-regex-5.0.1@npm:ansi-regex@5.0.1
 else
-  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --save-dev --no-offline ansi-regex-5.0.1@npm:ansi-regex@5.0.1
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline ansi-regex-5.0.1@npm:ansi-regex@5.0.1
 fi
 rm -rf .npm/
 rm package-lock.json
@@ -18,9 +18,9 @@ mv -T node_modules/ansi-regex-5.0.1 bin/all/all/ansi-regex/ansi-regex-5.0.1/node
 rm -r node_modules/
 # Create a local copy of ansi-regex@4.1.1
 if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --save-dev --no-offline ansi-regex-4.1.1@npm:ansi-regex@4.1.1
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline ansi-regex-4.1.1@npm:ansi-regex@4.1.1
 else
-  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --save-dev --no-offline ansi-regex-4.1.1@npm:ansi-regex@4.1.1
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline ansi-regex-4.1.1@npm:ansi-regex@4.1.1
 fi
 rm -rf .npm/
 rm package-lock.json
@@ -30,9 +30,9 @@ mv -T node_modules/ansi-regex-4.1.1 bin/all/all/ansi-regex/ansi-regex-4.1.1/node
 rm -r node_modules/
 # Create a local copy of ansi-regex@3.0.1
 if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --save-dev --no-offline ansi-regex-3.0.1@npm:ansi-regex@3.0.1
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline ansi-regex-3.0.1@npm:ansi-regex@3.0.1
 else
-  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --save-dev --no-offline ansi-regex-3.0.1@npm:ansi-regex@3.0.1
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline ansi-regex-3.0.1@npm:ansi-regex@3.0.1
 fi
 rm -rf .npm/
 rm package-lock.json
@@ -42,9 +42,9 @@ mv -T node_modules/ansi-regex-3.0.1 bin/all/all/ansi-regex/ansi-regex-3.0.1/node
 rm -r node_modules/
 # Create a local copy of json-schema@0.4.0
 if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --save-dev --no-offline json-schema-0.4.0@npm:json-schema@0.4.0
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline json-schema-0.4.0@npm:json-schema@0.4.0
 else
-  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --save-dev --no-offline json-schema-0.4.0@npm:json-schema@0.4.0
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline json-schema-0.4.0@npm:json-schema@0.4.0
 fi
 rm -rf .npm/
 rm package-lock.json
