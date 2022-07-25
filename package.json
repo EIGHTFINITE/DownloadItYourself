@@ -74,6 +74,7 @@
     "domhandler",
     "domutils",
     "ecc-jsbn",
+    "electron",
     "emoji-regex",
     "entities",
     "exit",
