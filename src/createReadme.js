@@ -411,8 +411,13 @@ module.exports = function(filetype) {
 					packageData.author.url = 'https://github.com/cheeriojs/dom-serializer/graphs/contributors';
 				}
 				else if(packageData.repository.url === 'https://github.com/electron/electron') {
-					packageData.author.name = 'GitHub';
-					packageData.author.url = 'https://github.com/github';
+					packageData.author = [{
+						name: 'Electron contributors',
+						url: 'https://github.com/electron/electron/graphs/contributors'
+					},{
+						name: 'GitHub',
+						url: 'https://github.com/github'
+					}];
 				}
 				else if(packageData.repository.url === 'https://github.com/joyent/node-extsprintf' || packageData.repository.url === 'https://github.com/joyent/node-verror') {
 					packageData.author.name = 'Joyent';
