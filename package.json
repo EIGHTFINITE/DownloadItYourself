@@ -18,6 +18,7 @@
   "dependencies": {
     "better-npm-audit": "3.7.3",
     "cloudscraper": "github:EIGHTFINITE/cloudscraper#master",
+    "electron": "github:EIGHTFINITE/electron#main",
     "jsonlint": "github:EIGHTFINITE/jsonlint#master",
     "npm": "8.15.0",
     "npm-6": "npm:npm@6.14.17",
