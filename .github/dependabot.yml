@@ -4,6 +4,9 @@ updates:
   directory: '/'
   schedule:
     interval: daily
+  allow:
+    - dependency-type: "production"
+    - dependency-type: "development"
   open-pull-requests-limit: 10
   labels:
   - dependencies
