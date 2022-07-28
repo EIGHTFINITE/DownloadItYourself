@@ -2677,7 +2677,7 @@
 <td><a href="https://github.com/EIGHTFINITE/electron" title="“electron” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Build cross platform desktop apps with JavaScript, HTML, and CSS.</td>
-<td align="center"><code>EIGHTFINITE/electron#a95a8a3971ecadfa4f3043348ffd76150852b589</code><br>(based on <code>electron@19.0.9</code>)</td>
+<td align="center"><code>EIGHTFINITE/electron#34d353606fd106e8e8c9fbe33bf34db746c44b39</code><br>(based on <code>electron@19.0.10</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/emoji-regex" title="emoji-regex"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="emoji-regex" title="emoji-regex"></a></td>
@@ -3018,7 +3018,7 @@
 <td><a href="https://github.com/npm/cli" title="“npm” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A package manager for JavaScript.</td>
-<td align="center"><code>npm@8.15.0</code></td>
+<td align="center"><code>npm@8.15.1</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/npm" title="npm-6"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20square/n.svg" width="31" alt="npm-6" title="npm-6"></a></td>
