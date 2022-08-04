@@ -30,7 +30,7 @@
     "ansi-regex-5.0.1": "npm:ansi-regex@5.0.1",
     "ansi-regex-4.1.1": "npm:ansi-regex@4.1.1",
     "ansi-regex-3.0.1": "npm:ansi-regex@3.0.1",
-    "electron": "20.0.0",
+    "electron": "20.0.1",
     "json-schema-0.4.0": "npm:json-schema@0.4.0"
   },
   "bundleDependencies": [
