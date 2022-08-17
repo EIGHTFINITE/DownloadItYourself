@@ -2299,7 +2299,7 @@
 			"author": [
 				{
 					"name": "Node contributors",
-					"url": "https://github.com/nodejs/node/blob/v16.16.0/AUTHORS"
+					"url": "https://github.com/nodejs/node/blob/v16.17.0/AUTHORS"
 				},
 				{
 					"name": "Joyent",
@@ -2307,7 +2307,7 @@
 				},
 				{
 					"name": "others",
-					"url": "https://github.com/nodejs/node/blob/v16.16.0/LICENSE"
+					"url": "https://github.com/nodejs/node/blob/v16.17.0/LICENSE"
 				}
 			],
 			"description": "The binaries required to run JavaScript applications.",
@@ -2319,10 +2319,10 @@
 			"type": "binary",
 			"code": {
 				"title": "Open Source",
-				"url": "https://github.com/nodejs/node/tree/v16.16.0"
+				"url": "https://github.com/nodejs/node/tree/v16.17.0"
 			},
 			"license": {
-				"source": "https://github.com/nodejs/node/tree/v16.16.0",
+				"source": "https://github.com/nodejs/node/tree/v16.17.0",
 				"txt": "Node license"
 			}
 		},
