@@ -61,12 +61,12 @@
 <td align="center"><a href="https://nodejs.org/" title="Node"><img src="https://nodejs.org/static/images/favicons/android-chrome-512x512.png" width="31" alt="Node" title="Node"></a></td>
 <td><a href="https://nodejs.org/" title="Node">Node</a></td>
 <td>Binary</td>
-<td><a href="https://github.com/nodejs/node/blob/v16.16.0/AUTHORS" title="Node contributors">Node contributors</a>, <a href="https://github.com/joyent" title="Joyent">Joyent</a>, <a href="https://github.com/nodejs/node/blob/v16.16.0/LICENSE" title="others">others</a></td>
-<td><a href="docs/legal/Node license.txt" title="“Node” license">Node license</a><a href="https://github.com/nodejs/node/tree/v16.16.0" title="“Node” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“Node” license information"></a></td>
-<td><a href="https://github.com/nodejs/node/tree/v16.16.0" title="“Node” source code">Open Source</a></td>
+<td><a href="https://github.com/nodejs/node/blob/v16.17.0/AUTHORS" title="Node contributors">Node contributors</a>, <a href="https://github.com/joyent" title="Joyent">Joyent</a>, <a href="https://github.com/nodejs/node/blob/v16.17.0/LICENSE" title="others">others</a></td>
+<td><a href="docs/legal/Node license.txt" title="“Node” license">Node license</a><a href="https://github.com/nodejs/node/tree/v16.17.0" title="“Node” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“Node” license information"></a></td>
+<td><a href="https://github.com/nodejs/node/tree/v16.17.0" title="“Node” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>The binaries required to run JavaScript applications.</td>
-<td align="center"><code>node-v16.16.0-linux-arm64.tar.gz</code>, <code>node-v16.16.0-win-x64.7z</code></td>
+<td align="center"><code>node-v16.17.0-linux-arm64.tar.gz</code>, <code>node-v16.17.0-win-x64.7z</code></td>
 </tr>
 </tbody>
 </table>
