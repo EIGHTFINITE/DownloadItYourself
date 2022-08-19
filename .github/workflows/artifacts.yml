@@ -44,7 +44,7 @@ jobs:
         export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         bin/linux/x64/node/node-v$node_version-linux-x64/bin/node --use_strict main.js --readme_only
         git checkout -- downloadlist.json
-    - uses: peter-evans/create-pull-request@v4.1.0
+    - uses: peter-evans/create-pull-request@v4.1.1
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: Update README
@@ -71,7 +71,7 @@ jobs:
         export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         bin/linux/x64/node/node-v$node_version-linux-x64/bin/node --use_strict main.js --readme_only
         git checkout -- README.html README.md
-    - uses: peter-evans/create-pull-request@v4.1.0
+    - uses: peter-evans/create-pull-request@v4.1.1
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: Update downloadlist
@@ -97,7 +97,7 @@ jobs:
         git restore --source=artifacts -- node_modules/
         sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat node_modules/npm-6/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") || $(cat node_modules/npm-7/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") || $(cat node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
         rm -r node_modules/
-    - uses: peter-evans/create-pull-request@v4.1.0
+    - uses: peter-evans/create-pull-request@v4.1.1
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: Update engines
@@ -123,7 +123,7 @@ jobs:
         git restore --source=artifacts -- node_modules/
         sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\n'"$(printf '    "%s",\\n' $(find node_modules/ -mindepth 2 -maxdepth 3 -type f -name 'package.json' -exec bash -c 'path={}; echo "${path:13:-13}"' ';' | sort) | sed '$ s/...$//')"'\n  \]|' -- 'package.json'
         rm -r node_modules/
-    - uses: peter-evans/create-pull-request@v4.1.0
+    - uses: peter-evans/create-pull-request@v4.1.1
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: Update bundleDependencies
