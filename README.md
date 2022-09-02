@@ -3018,7 +3018,7 @@
 <td><a href="https://github.com/npm/cli" title="“npm” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A package manager for JavaScript.</td>
-<td align="center"><code>npm@8.19.0</code></td>
+<td align="center"><code>npm@8.19.1</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/npm" title="npm-6"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20square/n.svg" width="31" alt="npm-6" title="npm-6"></a></td>
