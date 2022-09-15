@@ -31,9 +31,7 @@ jobs:
         echo -n "$node_version" > node_version.txt
         echo -n "$npm_version" > npm_version.txt
         bash --noprofile --norc -e -o pipefail docs/tools/actions-npm.sh
-        export FORCE_COLOR=true
-        bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/npm/bin/npm-cli.js ls --no-unicode --color=true --loglevel=silent || true
-        unset FORCE_COLOR
+        bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent || true
         rm -rf .npm/
         cd ..
         echo '{
@@ -78,9 +76,7 @@ jobs:
         tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
         rm "npm-$npm_version.tgz"
         bash --noprofile --norc -e -o pipefail docs/tools/actions-npm.sh
-        export FORCE_COLOR=true
-        bin/windows/x64/node/node-v$node_version-win-x64/node.exe node_modules/npm/bin/npm-cli.js ls --no-unicode --color=true --loglevel=silent || true
-        unset FORCE_COLOR
+        bin/windows/x64/node/node-v$node_version-win-x64/node.exe node_modules/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent || true
         rm -rf .npm/
         cd ..
         echo '{
