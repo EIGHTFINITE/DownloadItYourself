@@ -8,7 +8,7 @@
   "packageRules": [
     {
       "packageNames": ["electron"],
-      "labels": ["dependencies", "auto-merge"],
+      "labels": ["dependencies", "automerge"],
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "fast-forward",

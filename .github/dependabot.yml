@@ -10,7 +10,7 @@ updates:
   open-pull-requests-limit: 10
   labels:
   - dependencies
-  - auto-merge
+  - automerge
   versioning-strategy: increase
 - package-ecosystem: 'github-actions'
   directory: '/'
@@ -19,4 +19,4 @@ updates:
   open-pull-requests-limit: 10
   labels:
   - dependencies
-  - auto-merge
+  - automerge

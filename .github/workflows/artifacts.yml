@@ -53,7 +53,7 @@ jobs:
         title: Update README
         body: |
           Update the README to reflect the latest changes.
-        labels: auto-merge
+        labels: automerge
         branch: actions/readme
         base: master
   downloadlist:
@@ -80,7 +80,7 @@ jobs:
         title: Update downloadlist
         body: |
           Update the downloadlist to reflect the latest changes.
-        labels: auto-merge
+        labels: automerge
         branch: actions/downloadlist
         base: master
   engines:
@@ -106,7 +106,7 @@ jobs:
         title: Update engines
         body: |
           Update the engines field.
-        labels: auto-merge
+        labels: automerge
         branch: actions/engines
         base: master
   bundled:
@@ -132,7 +132,7 @@ jobs:
         title: Update bundleDependencies
         body: |
           Update the bundleDependencies field.
-        labels: auto-merge
+        labels: automerge
         branch: actions/bundled
         base: master
   artifacts_jsonlint:
