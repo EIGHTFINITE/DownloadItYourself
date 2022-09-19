@@ -6,6 +6,8 @@ on:
   schedule:
     - cron: '0 0 * * *'
 
+permissions: write-all
+
 jobs:
   artifacts:
     runs-on: ubuntu-latest
@@ -44,7 +46,8 @@ jobs:
         export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         bin/linux/x64/node/node-v$node_version-linux-x64/bin/node --use_strict main.js --readme_only
         git checkout -- downloadlist.json
-    - uses: peter-evans/create-pull-request@v4.1.1
+    - id: cpr
+      uses: peter-evans/create-pull-request@v4.1.1
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: Update README
@@ -56,6 +59,18 @@ jobs:
         labels: automerge
         branch: actions/readme
         base: master
+    - name: automerge
+      if: ${{ steps.cpr.outputs.pull-request-number }}
+      uses: actions/github-script@v6.2.0
+      with:
+        script: |
+          github.rest.pulls.merge({
+            owner: context.payload.repository.owner.login,
+            repo: context.payload.repository.name,
+            pull_number: ${{ steps.cpr.outputs.pull-request-number }},
+            sha: ${{ steps.cpr.outputs.pull-request-head-sha }},
+            merge_method: 'merge'
+          })
   downloadlist:
     runs-on: ubuntu-latest
     needs: artifacts
@@ -71,7 +86,8 @@ jobs:
         export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         bin/linux/x64/node/node-v$node_version-linux-x64/bin/node --use_strict main.js --readme_only
         git checkout -- README.html README.md
-    - uses: peter-evans/create-pull-request@v4.1.1
+    - id: cpr
+      uses: peter-evans/create-pull-request@v4.1.1
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: Update downloadlist
@@ -83,6 +99,18 @@ jobs:
         labels: automerge
         branch: actions/downloadlist
         base: master
+    - name: automerge
+      if: ${{ steps.cpr.outputs.pull-request-number }}
+      uses: actions/github-script@v6.2.0
+      with:
+        script: |
+          github.rest.pulls.merge({
+            owner: context.payload.repository.owner.login,
+            repo: context.payload.repository.name,
+            pull_number: ${{ steps.cpr.outputs.pull-request-number }},
+            sha: ${{ steps.cpr.outputs.pull-request-head-sha }},
+            merge_method: 'merge'
+          })
   engines:
     runs-on: ubuntu-latest
     needs: artifacts
@@ -97,7 +125,8 @@ jobs:
         git restore --source=artifacts -- node_modules/
         sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat node_modules/npm-6/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") || $(cat node_modules/npm-7/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") || $(cat node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
         rm -r node_modules/
-    - uses: peter-evans/create-pull-request@v4.1.1
+    - id: cpr
+      uses: peter-evans/create-pull-request@v4.1.1
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: Update engines
@@ -109,6 +138,18 @@ jobs:
         labels: automerge
         branch: actions/engines
         base: master
+    - name: automerge
+      if: ${{ steps.cpr.outputs.pull-request-number }}
+      uses: actions/github-script@v6.2.0
+      with:
+        script: |
+          github.rest.pulls.merge({
+            owner: context.payload.repository.owner.login,
+            repo: context.payload.repository.name,
+            pull_number: ${{ steps.cpr.outputs.pull-request-number }},
+            sha: ${{ steps.cpr.outputs.pull-request-head-sha }},
+            merge_method: 'merge'
+          })
   bundled:
     runs-on: ubuntu-latest
     needs: artifacts
@@ -123,7 +164,8 @@ jobs:
         git restore --source=artifacts -- node_modules/
         sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\n'"$(printf '    "%s",\\n' $(find node_modules/ -mindepth 2 -maxdepth 3 -type f -name 'package.json' -exec bash -c 'path={}; echo "${path:13:-13}"' ';' | sort) | sed '$ s/...$//')"'\n  \]|' -- 'package.json'
         rm -r node_modules/
-    - uses: peter-evans/create-pull-request@v4.1.1
+    - id: cpr
+      uses: peter-evans/create-pull-request@v4.1.1
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: Update bundleDependencies
@@ -135,6 +177,18 @@ jobs:
         labels: automerge
         branch: actions/bundled
         base: master
+    - name: automerge
+      if: ${{ steps.cpr.outputs.pull-request-number }}
+      uses: actions/github-script@v6.2.0
+      with:
+        script: |
+          github.rest.pulls.merge({
+            owner: context.payload.repository.owner.login,
+            repo: context.payload.repository.name,
+            pull_number: ${{ steps.cpr.outputs.pull-request-number }},
+            sha: ${{ steps.cpr.outputs.pull-request-head-sha }},
+            merge_method: 'merge'
+          })
   artifacts_jsonlint:
     runs-on: ubuntu-latest
     needs: artifacts

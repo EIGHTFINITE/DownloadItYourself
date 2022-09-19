@@ -4,6 +4,8 @@ on:
   push:
     branches: [ master ]
 
+permissions: write-all
+
 jobs:
   authors:
     runs-on: ubuntu-latest
@@ -19,7 +21,8 @@ jobs:
         git fetch origin +refs/tags/latest:refs/tags/latest --no-tags
         git log --format='%aN <%aE>%n%cN <%cE>' --all | sort -u > AUTHORS.txt
         sort -muo .mailmap -- .mailmap AUTHORS.txt
-    - uses: peter-evans/create-pull-request@v4.1.1
+    - id: cpr
+      uses: peter-evans/create-pull-request@v4.1.1
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: Update AUTHORS
@@ -31,3 +34,15 @@ jobs:
         labels: automerge
         branch: actions/authors
         base: master
+    - name: automerge
+      if: ${{ steps.cpr.outputs.pull-request-number }}
+      uses: actions/github-script@v6.2.0
+      with:
+        script: |
+          github.rest.pulls.merge({
+            owner: context.payload.repository.owner.login,
+            repo: context.payload.repository.name,
+            pull_number: ${{ steps.cpr.outputs.pull-request-number }},
+            sha: ${{ steps.cpr.outputs.pull-request-head-sha }},
+            merge_method: 'merge'
+          })
