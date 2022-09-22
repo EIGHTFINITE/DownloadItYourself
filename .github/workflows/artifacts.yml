@@ -69,10 +69,10 @@ jobs:
       with:
         script: |
           github.rest.pulls.merge({
-            owner: ${{ github.repository_owner }},
-            repo: ${{ env.REPOSITORY_NAME }},
-            pull_number: ${{ steps.cpr.outputs.pull-request-number }},
-            sha: ${{ steps.cpr.outputs.pull-request-head-sha }},
+            owner: '${{ github.repository_owner }}',
+            repo: '${{ env.REPOSITORY_NAME }}',
+            pull_number: '${{ steps.cpr.outputs.pull-request-number }}',
+            sha: '${{ steps.cpr.outputs.pull-request-head-sha }}',
             merge_method: 'merge'
           })
   downloadlist:
@@ -113,10 +113,10 @@ jobs:
       with:
         script: |
           github.rest.pulls.merge({
-            owner: ${{ github.repository_owner }},
-            repo: ${{ env.REPOSITORY_NAME }},
-            pull_number: ${{ steps.cpr.outputs.pull-request-number }},
-            sha: ${{ steps.cpr.outputs.pull-request-head-sha }},
+            owner: '${{ github.repository_owner }}',
+            repo: '${{ env.REPOSITORY_NAME }}',
+            pull_number: '${{ steps.cpr.outputs.pull-request-number }}',
+            sha: '${{ steps.cpr.outputs.pull-request-head-sha }}',
             merge_method: 'merge'
           })
   engines:
@@ -156,10 +156,10 @@ jobs:
       with:
         script: |
           github.rest.pulls.merge({
-            owner: ${{ github.repository_owner }},
-            repo: ${{ env.REPOSITORY_NAME }},
-            pull_number: ${{ steps.cpr.outputs.pull-request-number }},
-            sha: ${{ steps.cpr.outputs.pull-request-head-sha }},
+            owner: '${{ github.repository_owner }}',
+            repo: '${{ env.REPOSITORY_NAME }}',
+            pull_number: '${{ steps.cpr.outputs.pull-request-number }}',
+            sha: '${{ steps.cpr.outputs.pull-request-head-sha }}',
             merge_method: 'merge'
           })
   bundled:
@@ -199,10 +199,10 @@ jobs:
       with:
         script: |
           github.rest.pulls.merge({
-            owner: ${{ github.repository_owner }},
-            repo: ${{ env.REPOSITORY_NAME }},
-            pull_number: ${{ steps.cpr.outputs.pull-request-number }},
-            sha: ${{ steps.cpr.outputs.pull-request-head-sha }},
+            owner: '${{ github.repository_owner }}',
+            repo: '${{ env.REPOSITORY_NAME }}',
+            pull_number: '${{ steps.cpr.outputs.pull-request-number }}',
+            sha: '${{ steps.cpr.outputs.pull-request-head-sha }}',
             merge_method: 'merge'
           })
   artifacts_jsonlint:
