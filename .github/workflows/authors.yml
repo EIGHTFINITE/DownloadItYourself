@@ -34,14 +34,18 @@ jobs:
         labels: automerge
         branch: actions/authors
         base: master
+    - name: get repository name
+      if: ${{ steps.cpr.outputs.pull-request-number }}
+      shell: bash
+      run: echo "REPOSITORY_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
     - name: automerge
       if: ${{ steps.cpr.outputs.pull-request-number }}
       uses: actions/github-script@v6.2.0
       with:
         script: |
           github.rest.pulls.merge({
-            owner: context.payload.repository.owner.login,
-            repo: context.payload.repository.name,
+            owner: ${{ github.repository_owner }},
+            repo: ${{ env.REPOSITORY_NAME }},
             pull_number: ${{ steps.cpr.outputs.pull-request-number }},
             sha: ${{ steps.cpr.outputs.pull-request-head-sha }},
             merge_method: 'merge'
