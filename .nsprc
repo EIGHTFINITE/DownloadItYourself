@@ -2,7 +2,7 @@
   "GHSA-93q8-gq69-wqmw": {
     "active": false,
     "notes": "Patched via update in `npm-{6>{string-width,yargs},7>{cli-table3,string-width}}>ansi-regex`",
-    "expiry": "2022-09-20T20:20:09Z"
+    "expiry": "2023-09-20T20:20:09Z"
   },
   "GHSA-896r-f27r-55mw": {
     "active": false,
