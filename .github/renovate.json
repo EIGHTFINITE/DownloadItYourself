@@ -7,7 +7,7 @@
   "labels": ["dependencies", "do-not-merge"],
   "packageRules": [
     {
-      "packageNames": ["electron"],
+      "matchPackageNames": ["electron", "node"],
       "labels": ["dependencies", "automerge"],
       "automerge": true,
       "automergeType": "pr",
