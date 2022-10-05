@@ -12,7 +12,7 @@ jobs:
   npm_linux:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3.0.2
+    - uses: actions/checkout@v3.1.0
       with:
         path: EIGHTFINITE-build
     - name: npm
@@ -43,7 +43,7 @@ jobs:
   npm_windows:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v3.0.2
+    - uses: actions/checkout@v3.1.0
       with:
         path: EIGHTFINITE-build
     - name: npm
@@ -90,7 +90,7 @@ jobs:
     needs: [npm_linux, npm_windows]
     if: ${{ needs.npm_linux.result == 'success' && needs.npm_windows.result == 'success' }}
     steps:
-    - uses: actions/checkout@v3.0.2
+    - uses: actions/checkout@v3.1.0
     - name: audit
       shell: bash
       run: |
@@ -119,7 +119,7 @@ jobs:
     needs: [npm_linux, npm_windows]
     if: ${{ needs.npm_linux.result == 'success' && needs.npm_windows.result == 'success' }}
     steps:
-    - uses: actions/checkout@v3.0.2
+    - uses: actions/checkout@v3.1.0
     - name: audit
       shell: bash
       run: |
