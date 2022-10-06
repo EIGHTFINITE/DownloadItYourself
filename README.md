@@ -3032,17 +3032,6 @@
 <td align="center"><code>npm@6.14.17</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/npm" title="npm-7"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20square/n.svg" width="31" alt="npm-7" title="npm-7"></a></td>
-<td><a href="https://www.npmjs.com/package/npm" title="npm-7">npm-7</a></td>
-<td>Package</td>
-<td><a href="https://github.com/npm" title="Isaac Z. Schlueter">Isaac Z. Schlueter</a></td>
-<td><a href="docs/legal/npm license.txt" title="“npm-7” license">npm license</a><a href="https://github.com/npm/cli" title="“npm-7” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“npm-7” license information"></a>
-<td><a href="https://github.com/npm/cli" title="“npm-7” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>A package manager for JavaScript.</td>
-<td align="center"><code>npm@7.24.2</code></td>
-</tr>
-<tr>
 <td align="center"><a href="https://www.npmjs.com/package/nth-check" title="nth-check"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="nth-check" title="nth-check"></a></td>
 <td><a href="https://www.npmjs.com/package/nth-check" title="nth-check">nth-check</a></td>
 <td>Package</td>
