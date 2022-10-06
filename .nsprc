@@ -8,10 +8,5 @@
     "active": true,
     "notes": "Windows not affected. Only connects to the npm registry with got and cannot produce UNIX redirects",
     "expiry": "2023-06-19T00:00:21Z"
-  },
-  "GHSA-hj9c-8jmm-8c52": {
-    "active": true,
-    "notes": "Workspaces and the affected npm commands aren't being used",
-    "expiry": "2023-06-02T15:37:27Z"
   }
 }
