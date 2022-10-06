@@ -90,6 +90,7 @@
     "is-typedarray",
     "isstream",
     "jsbn",
+    "json-schema",
     "json-schema-traverse",
     "json-stringify-safe",
     "jsonlint",
