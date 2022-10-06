@@ -15,5 +15,5 @@
       "ignoreTests": true
     }
   ],
-  "ignoreDeps": ["npm-6", "npm-7", "ansi-regex-5.0.1", "ansi-regex-4.1.1", "ansi-regex-3.0.1", "json-schema-0.4.0"]
+  "ignoreDeps": ["npm-6", "ansi-regex-4.1.1", "ansi-regex-3.0.1"]
 }
