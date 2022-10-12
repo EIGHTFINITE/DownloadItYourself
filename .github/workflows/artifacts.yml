@@ -65,7 +65,7 @@ jobs:
       run: echo "REPOSITORY_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
     - name: automerge
       if: ${{ steps.cpr.outputs.pull-request-number }}
-      uses: actions/github-script@v6.3.1
+      uses: actions/github-script@v6.3.2
       with:
         script: |
           github.rest.pulls.merge({
@@ -109,7 +109,7 @@ jobs:
       run: echo "REPOSITORY_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
     - name: automerge
       if: ${{ steps.cpr.outputs.pull-request-number }}
-      uses: actions/github-script@v6.3.1
+      uses: actions/github-script@v6.3.2
       with:
         script: |
           github.rest.pulls.merge({
@@ -152,7 +152,7 @@ jobs:
       run: echo "REPOSITORY_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
     - name: automerge
       if: ${{ steps.cpr.outputs.pull-request-number }}
-      uses: actions/github-script@v6.3.1
+      uses: actions/github-script@v6.3.2
       with:
         script: |
           github.rest.pulls.merge({
@@ -195,7 +195,7 @@ jobs:
       run: echo "REPOSITORY_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
     - name: automerge
       if: ${{ steps.cpr.outputs.pull-request-number }}
-      uses: actions/github-script@v6.3.1
+      uses: actions/github-script@v6.3.2
       with:
         script: |
           github.rest.pulls.merge({
