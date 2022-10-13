@@ -2677,7 +2677,7 @@
 <td><a href="https://github.com/EIGHTFINITE/electron" title="“electron” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Build cross platform desktop apps with JavaScript, HTML, and CSS.</td>
-<td align="center"><code>EIGHTFINITE/electron#9ef7ee581d75322f5255ea86790803764db9c179</code><br>(based on <code>electron@21.1.0</code>)</td>
+<td align="center"><code>EIGHTFINITE/electron#802fc1a265e1cf445e4b33769f27b3cebf887fd7</code><br>(based on <code>electron@21.1.1</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/emoji-regex" title="emoji-regex"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="emoji-regex" title="emoji-regex"></a></td>
