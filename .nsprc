@@ -8,5 +8,10 @@
     "active": true,
     "notes": "Windows not affected. Only connects to the npm registry with got and cannot produce UNIX redirects",
     "expiry": "2023-06-19T00:00:21Z"
+  },
+  "GHSA-f8q6-p94x-37v3": {
+    "active": true,
+    "notes": "Only parses known safe npm input",
+    "expiry": "2023-10-18T12:00:32Z"
   }
 }
