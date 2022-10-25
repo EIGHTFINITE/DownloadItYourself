@@ -44,9 +44,9 @@ fi
 rm -rf .npm/
 git checkout -- 'package.json'
 if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe node_modules/npm-6/bin/npm-cli.js dedupe
 else
-  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/npm-6/bin/npm-cli.js dedupe
 fi
 rm -rf .npm/
 # Remove vulnerable dependencies
@@ -91,9 +91,9 @@ find node_modules/ -mindepth 2 -type f -name 'package.json' -exec sed -i '/"_whe
 find node_modules/ -mindepth 2 -type f -name 'package.json' -exec sed -i '/"man": \[/,/\],/d' -- '{}' ';'
 # Update package-lock.json
 if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe node_modules/npm-6/bin/npm-cli.js dedupe
 else
-  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/npm-6/bin/npm-cli.js dedupe
 fi
 rm -rf .npm/
 rm -r bin/all/
