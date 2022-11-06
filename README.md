@@ -2749,7 +2749,7 @@
 <td align="center"><a href="https://www.npmjs.com/package/fast-json-stable-stringify" title="fast-json-stable-stringify"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="fast-json-stable-stringify" title="fast-json-stable-stringify"></a></td>
 <td><a href="https://www.npmjs.com/package/fast-json-stable-stringify" title="fast-json-stable-stringify">fast-json-stable-stringify</a></td>
 <td>Package</td>
-<td><a href="https://github.com/epoberezkin" title="Evgeny Poberezkin">Evgeny Poberezkin</a>, <a href="https://github.com/substack" title="James Halliday">James Halliday</a></td>
+<td><a href="https://github.com/epoberezkin" title="Evgeny Poberezkin">Evgeny Poberezkin</a>, <a href="https://web.archive.org/web/20220804032815/https://github.com/substack" title="James Halliday">James Halliday</a></td>
 <td><a href="docs/legal/MIT.txt" title="“fast-json-stable-stringify” license">MIT</a><a href="https://github.com/epoberezkin/fast-json-stable-stringify" title="“fast-json-stable-stringify” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“fast-json-stable-stringify” license information"></a>
 <td><a href="https://github.com/epoberezkin/fast-json-stable-stringify" title="“fast-json-stable-stringify” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
