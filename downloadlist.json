@@ -33,7 +33,7 @@
 			"md5": "43e9d2f702235b1025d52c237b8f6edd",
 			"name": "Advanced Machines",
 			"type": "client/server mod",
-			"url": "http://atomicstryker.net/advancedmachines.php",
+			"url": "https://web.archive.org/web/20220511105436/http://atomicstryker.net/advancedmachines.php",
 			"author": {
 				"name": "AtomicStryker",
 				"url": "https://www.curseforge.com/members/atomicstrykergrumpy"
@@ -43,7 +43,7 @@
 				"url": "https://github.com/AtomicStryker/atomicstrykers-minecraft-mods/tree/1.7.10/AdvancedMachinesAS"
 			},
 			"license": {
-				"source": "http://atomicstryker.net/about.php",
+				"source": "https://web.archive.org/web/20211217214446/http://atomicstryker.net/about.php",
 				"txt": "AtomicStryker license"
 			}
 		},
@@ -338,7 +338,7 @@
 			"md5": "71f31f9fceca891f78cacbd0f9908cac",
 			"name": "AtomicStryker's Battle Towers",
 			"type": "client/server mod",
-			"url": "http://atomicstryker.net/battletowers.php",
+			"url": "https://web.archive.org/web/20220510185658/http://atomicstryker.net/battletowers.php",
 			"author": {
 				"name": "AtomicStryker",
 				"url": "https://www.curseforge.com/members/atomicstrykergrumpy"
@@ -352,7 +352,7 @@
 				"cmd": "cmd"
 			},
 			"license": {
-				"source": "http://atomicstryker.net/about.php",
+				"source": "https://web.archive.org/web/20211217214446/http://atomicstryker.net/about.php",
 				"txt": "AtomicStryker license"
 			}
 		},
@@ -1085,7 +1085,7 @@
 				"url": "https://github.com/AtomicStryker/atomicstrykers-minecraft-mods/tree/1.7.10/DynamicLights"
 			},
 			"license": {
-				"source": "http://atomicstryker.net/about.php",
+				"source": "https://web.archive.org/web/20211217214446/http://atomicstryker.net/about.php",
 				"txt": "AtomicStryker license"
 			}
 		},
@@ -3027,7 +3027,7 @@
 				"url": "https://www.curseforge.com/members/atomicstrykergrumpy"
 			},
 			"license": {
-				"source": "http://atomicstryker.net/about.php",
+				"source": "https://web.archive.org/web/20211217214446/http://atomicstryker.net/about.php",
 				"txt": "AtomicStryker license"
 			}
 		},
