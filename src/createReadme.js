@@ -429,7 +429,7 @@ module.exports = function(filetype) {
 						url: 'https://github.com/epoberezkin'
 					},{
 						name: 'James Halliday',
-						url: 'https://github.com/substack'
+						url: 'https://web.archive.org/web/20220804032815/https://github.com/substack'
 					}];
 				}
 				else if(packageData.repository.url === 'https://github.com/arekinath/node-getpass') {
