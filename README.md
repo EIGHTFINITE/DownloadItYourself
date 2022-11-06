@@ -96,11 +96,11 @@
 <td align="center"><code>A Block of Charcoal-1.0.jar</code></td>
 </tr>
 <tr>
-<td align="center"><a href="http://atomicstryker.net/advancedmachines.php" title="Advanced Machines"><img src="docs/img/icon/advancedmachines.png" width="31" alt="Advanced Machines" title="Advanced Machines"></a></td>
-<td><a href="http://atomicstryker.net/advancedmachines.php" title="Advanced Machines">Advanced Machines</a></td>
+<td align="center"><a href="https://web.archive.org/web/20220511105436/http://atomicstryker.net/advancedmachines.php" title="Advanced Machines"><img src="docs/img/icon/advancedmachines.png" width="31" alt="Advanced Machines" title="Advanced Machines"></a></td>
+<td><a href="https://web.archive.org/web/20220511105436/http://atomicstryker.net/advancedmachines.php" title="Advanced Machines">Advanced Machines</a></td>
 <td>Client/Server Mod</td>
 <td><a href="https://www.curseforge.com/members/atomicstrykergrumpy" title="AtomicStryker">AtomicStryker</a></td>
-<td><a href="docs/legal/AtomicStryker license.txt" title="“Advanced Machines” license">AtomicStryker license</a><a href="http://atomicstryker.net/about.php" title="“Advanced Machines” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“Advanced Machines” license information"></a></td>
+<td><a href="docs/legal/AtomicStryker license.txt" title="“Advanced Machines” license">AtomicStryker license</a><a href="https://web.archive.org/web/20211217214446/http://atomicstryker.net/about.php" title="“Advanced Machines” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“Advanced Machines” license information"></a></td>
 <td><a href="https://github.com/AtomicStryker/atomicstrykers-minecraft-mods/tree/1.7.10/AdvancedMachinesAS" title="“Advanced Machines” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Adds even better IC2 machines.</td>
@@ -217,11 +217,11 @@
 <td align="center"><code>AsieTweaks-1.7.10-0.0.2.jar</code></td>
 </tr>
 <tr>
-<td align="center"><a href="http://atomicstryker.net/battletowers.php" title="AtomicStryker's Battle Towers"><img src="docs/img/icon/atomicstrykers-battle-towers.png" width="31" alt="AtomicStryker's Battle Towers" title="AtomicStryker's Battle Towers"></a></td>
-<td><a href="http://atomicstryker.net/battletowers.php" title="AtomicStryker's Battle Towers">AtomicStryker's Battle Towers</a></td>
+<td align="center"><a href="https://web.archive.org/web/20220510185658/http://atomicstryker.net/battletowers.php" title="AtomicStryker's Battle Towers"><img src="docs/img/icon/atomicstrykers-battle-towers.png" width="31" alt="AtomicStryker's Battle Towers" title="AtomicStryker's Battle Towers"></a></td>
+<td><a href="https://web.archive.org/web/20220510185658/http://atomicstryker.net/battletowers.php" title="AtomicStryker's Battle Towers">AtomicStryker's Battle Towers</a></td>
 <td>Client/Server Mod</td>
 <td><a href="https://www.curseforge.com/members/atomicstrykergrumpy" title="AtomicStryker">AtomicStryker</a></td>
-<td><a href="docs/legal/AtomicStryker license.txt" title="“AtomicStryker's Battle Towers” license">AtomicStryker license</a><a href="http://atomicstryker.net/about.php" title="“AtomicStryker's Battle Towers” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“AtomicStryker's Battle Towers” license information"></a></td>
+<td><a href="docs/legal/AtomicStryker license.txt" title="“AtomicStryker's Battle Towers” license">AtomicStryker license</a><a href="https://web.archive.org/web/20211217214446/http://atomicstryker.net/about.php" title="“AtomicStryker's Battle Towers” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“AtomicStryker's Battle Towers” license information"></a></td>
 <td><a href="https://github.com/AtomicStryker/atomicstrykers-minecraft-mods/tree/1.7.10/BattleTowers" title="“AtomicStryker's Battle Towers” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td></td>
@@ -606,7 +606,7 @@
 <td><a href="https://www.curseforge.com/minecraft/mc-mods/dynamic-lights" title="Dynamic Lights">Dynamic Lights</a></td>
 <td>Client Mod</td>
 <td><a href="https://www.curseforge.com/members/atomicstrykergrumpy" title="AtomicStryker">AtomicStryker</a></td>
-<td><a href="docs/legal/AtomicStryker license.txt" title="“Dynamic Lights” license">AtomicStryker license</a><a href="http://atomicstryker.net/about.php" title="“Dynamic Lights” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“Dynamic Lights” license information"></a></td>
+<td><a href="docs/legal/AtomicStryker license.txt" title="“Dynamic Lights” license">AtomicStryker license</a><a href="https://web.archive.org/web/20211217214446/http://atomicstryker.net/about.php" title="“Dynamic Lights” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“Dynamic Lights” license information"></a></td>
 <td><a href="https://github.com/AtomicStryker/atomicstrykers-minecraft-mods/tree/1.7.10/DynamicLights" title="“Dynamic Lights” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td></td>
@@ -1585,7 +1585,7 @@
 <td><a href="https://www.curseforge.com/minecraft/mc-mods/stalker-creepers" title="Stalker Creepers">Stalker Creepers</a></td>
 <td>Client/Server Mod</td>
 <td><a href="https://www.curseforge.com/members/atomicstrykergrumpy" title="AtomicStryker">AtomicStryker</a></td>
-<td><a href="docs/legal/AtomicStryker license.txt" title="“Stalker Creepers” license">AtomicStryker license</a><a href="http://atomicstryker.net/about.php" title="“Stalker Creepers” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“Stalker Creepers” license information"></a></td>
+<td><a href="docs/legal/AtomicStryker license.txt" title="“Stalker Creepers” license">AtomicStryker license</a><a href="https://web.archive.org/web/20211217214446/http://atomicstryker.net/about.php" title="“Stalker Creepers” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“Stalker Creepers” license information"></a></td>
 <td></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td></td>
