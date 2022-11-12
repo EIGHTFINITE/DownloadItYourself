@@ -19,8 +19,4 @@ jobs:
       - name: 'Dependency Review'
         uses: actions/dependency-review-action@v3.0.0
         with:
-          allow-licenses:
-            - MIT
-            - Apache-2.0
-            - Artistic-2.0
-            - NOASSERTION
+          allow-licenses: MIT, Apache-2.0, Artistic-2.0, NOASSERTION
