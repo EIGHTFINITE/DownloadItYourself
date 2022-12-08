@@ -20,7 +20,7 @@
     "cloudscraper": "github:EIGHTFINITE/cloudscraper#master",
     "electron": "github:EIGHTFINITE/electron#main",
     "jsonlint": "github:EIGHTFINITE/jsonlint#master",
-    "npm": "9.1.3",
+    "npm": "9.2.0",
     "npm-6": "npm:npm@6.14.17",
     "postman-request": "github:EIGHTFINITE/postman-request#master",
     "spdx-expression-parse": "github:EIGHTFINITE/spdx-expression-parse#master"
