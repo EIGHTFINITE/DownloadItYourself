@@ -2449,6 +2449,17 @@
 <td align="center"><code>brotli@1.3.3</code></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.npmjs.com/package/call-bind" title="call-bind"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="call-bind" title="call-bind"></a></td>
+<td><a href="https://www.npmjs.com/package/call-bind" title="call-bind">call-bind</a></td>
+<td>Package</td>
+<td><a href="https://github.com/ljharb" title="Jordan Harband">Jordan Harband</a></td>
+<td><a href="docs/legal/MIT.txt" title="“call-bind” license">MIT</a><a href="https://github.com/ljharb/call-bind" title="“call-bind” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“call-bind” license information"></a>
+<td><a href="https://github.com/ljharb/call-bind" title="“call-bind” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Robustly `.call.bind()` a function.<br>Required by side-channel.</td>
+<td align="center"><code>call-bind@1.0.2</code></td>
+</tr>
+<tr>
 <td align="center"><a href="https://www.npmjs.com/package/caseless" title="caseless"><img src="https://avatars.githubusercontent.com/u/730467?s=200" width="31" alt="caseless" title="caseless"></a></td>
 <td><a href="https://www.npmjs.com/package/caseless" title="caseless">caseless</a></td>
 <td>Package</td>
@@ -2768,6 +2779,28 @@
 <td align="center"><code>forever-agent@0.6.1</code></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.npmjs.com/package/function-bind" title="function-bind"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="function-bind" title="function-bind"></a></td>
+<td><a href="https://www.npmjs.com/package/function-bind" title="function-bind">function-bind</a></td>
+<td>Package</td>
+<td><a href="https://github.com/Raynos" title="Raynos">Raynos</a></td>
+<td><a href="docs/legal/MIT.txt" title="“function-bind” license">MIT</a><a href="https://github.com/Raynos/function-bind" title="“function-bind” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“function-bind” license information"></a>
+<td><a href="https://github.com/Raynos/function-bind" title="“function-bind” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Implementation of Function.prototype.bind.<br>Required by call-bind, get-intrinsic, has.</td>
+<td align="center"><code>function-bind@1.1.1</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/get-intrinsic" title="get-intrinsic"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="get-intrinsic" title="get-intrinsic"></a></td>
+<td><a href="https://www.npmjs.com/package/get-intrinsic" title="get-intrinsic">get-intrinsic</a></td>
+<td>Package</td>
+<td><a href="https://github.com/ljharb" title="Jordan Harband">Jordan Harband</a></td>
+<td><a href="docs/legal/MIT.txt" title="“get-intrinsic” license">MIT</a><a href="https://github.com/ljharb/get-intrinsic" title="“get-intrinsic” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“get-intrinsic” license information"></a>
+<td><a href="https://github.com/ljharb/get-intrinsic" title="“get-intrinsic” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Get and robustly cache all JS language-level intrinsics at first require time.<br>Required by call-bind, side-channel.</td>
+<td align="center"><code>get-intrinsic@1.1.3</code></td>
+</tr>
+<tr>
 <td align="center"><a href="https://www.npmjs.com/package/getpass" title="getpass"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="getpass" title="getpass"></a></td>
 <td><a href="https://www.npmjs.com/package/getpass" title="getpass">getpass</a></td>
 <td>Package</td>
@@ -2823,6 +2856,17 @@
 <td align="center"><code>json-schema-traverse@0.4.1</code></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.npmjs.com/package/has" title="has"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="has" title="has"></a></td>
+<td><a href="https://www.npmjs.com/package/has" title="has">has</a></td>
+<td>Package</td>
+<td><a href="https://github.com/tarruda" title="Thiago de Arruda">Thiago de Arruda</a></td>
+<td><a href="docs/legal/MIT.txt" title="“has” license">MIT</a><a href="https://github.com/tarruda/has" title="“has” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“has” license information"></a>
+<td><a href="https://github.com/tarruda/has" title="“has” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Object.prototype.hasOwnProperty.call shortcut.<br>Required by get-intrinsic.</td>
+<td align="center"><code>has@1.0.3</code></td>
+</tr>
+<tr>
 <td align="center"><a href="https://www.npmjs.com/package/has-flag" title="has-flag"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="has-flag" title="has-flag"></a></td>
 <td><a href="https://www.npmjs.com/package/has-flag" title="has-flag">has-flag</a></td>
 <td>Package</td>
@@ -2832,6 +2876,17 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Check if argv has a specific flag.<br>Required by supports-color.</td>
 <td align="center"><code>has-flag@4.0.0</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/has-symbols" title="has-symbols"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="has-symbols" title="has-symbols"></a></td>
+<td><a href="https://www.npmjs.com/package/has-symbols" title="has-symbols">has-symbols</a></td>
+<td>Package</td>
+<td><a href="https://github.com/inspect-js" title="Jordan Harband">Jordan Harband</a></td>
+<td><a href="docs/legal/MIT.txt" title="“has-symbols” license">MIT</a><a href="https://github.com/inspect-js/has-symbols" title="“has-symbols” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“has-symbols” license information"></a>
+<td><a href="https://github.com/inspect-js/has-symbols" title="“has-symbols” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Determine if the JS environment has Symbol support. Supports spec, or shams.<br>Required by get-intrinsic.</td>
+<td align="center"><code>has-symbols@1.0.3</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/htmlparser2" title="htmlparser2"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="htmlparser2" title="htmlparser2"></a></td>
@@ -3054,6 +3109,17 @@
 <td align="center"><code>oauth-sign@0.9.0</code></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.npmjs.com/package/object-inspect" title="object-inspect"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="object-inspect" title="object-inspect"></a></td>
+<td><a href="https://www.npmjs.com/package/object-inspect" title="object-inspect">object-inspect</a></td>
+<td>Package</td>
+<td><a href="https://github.com/inspect-js" title="James Halliday">James Halliday</a></td>
+<td><a href="docs/legal/MIT.txt" title="“object-inspect” license">MIT</a><a href="https://github.com/inspect-js/object-inspect" title="“object-inspect” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“object-inspect” license information"></a>
+<td><a href="https://github.com/inspect-js/object-inspect" title="“object-inspect” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>String representations of objects in Node and the browser.<br>Required by side-channel.</td>
+<td align="center"><code>object-inspect@1.12.2</code></td>
+</tr>
+<tr>
 <td align="center"><a href="https://www.npmjs.com/package/parse5" title="parse5"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="parse5" title="parse5"></a></td>
 <td><a href="https://www.npmjs.com/package/parse5" title="parse5">parse5</a></td>
 <td>Package</td>
@@ -3084,7 +3150,7 @@
 <td><a href="https://github.com/EIGHTFINITE/postman-request" title="“postman-request” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Simplified HTTP request client.<br>Required by cloudscraper, request-promise, request-promise-core.</td>
-<td align="center"><code>EIGHTFINITE/postman-request#69f668842eb542a55dcbb692849dfb517e48deb1</code><br>(based on <code>postman-request@2.88.1-postman.31</code>)</td>
+<td align="center"><code>EIGHTFINITE/postman-request#0ee18471a0f8c4107f98c4541f403fb4b2c44ab7</code><br>(based on <code>postman-request@2.88.1-postman.31</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/psl" title="psl"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="psl" title="psl"></a></td>
@@ -3117,7 +3183,7 @@
 <td><a href="https://github.com/ljharb/qs" title="“qs” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A querystring parser that supports nesting and arrays, with a depth limit.<br>Required by postman-request.</td>
-<td align="center"><code>qs@6.5.3</code></td>
+<td align="center"><code>qs@6.10.4</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://github.com/EIGHTFINITE/request-promise" title="request-promise"><img src="https://avatars.githubusercontent.com/u/730467?s=200" width="31" alt="request-promise" title="request-promise"></a></td>
@@ -3173,6 +3239,17 @@
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Modern Buffer API polyfill without footguns.<br>Required by asn1, ecc-jsbn, sshpk.</td>
 <td align="center"><code>safer-buffer@2.1.2</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.npmjs.com/package/side-channel" title="side-channel"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="side-channel" title="side-channel"></a></td>
+<td><a href="https://www.npmjs.com/package/side-channel" title="side-channel">side-channel</a></td>
+<td>Package</td>
+<td><a href="https://github.com/ljharb" title="Jordan Harband">Jordan Harband</a></td>
+<td><a href="docs/legal/MIT.txt" title="“side-channel” license">MIT</a><a href="https://github.com/ljharb/side-channel" title="“side-channel” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“side-channel” license information"></a>
+<td><a href="https://github.com/ljharb/side-channel" title="“side-channel” source code">Open Source</a></td>
+<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
+<td>Store information about any JS value in a side channel. Uses WeakMap if available.<br>Required by qs.</td>
+<td align="center"><code>side-channel@1.0.4</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/slice-ansi" title="slice-ansi"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="slice-ansi" title="slice-ansi"></a></td>
