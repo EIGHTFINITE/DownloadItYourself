@@ -17,6 +17,6 @@ jobs:
       - name: 'Checkout Repository'
         uses: actions/checkout@v3.2.0
       - name: 'Dependency Review'
-        uses: actions/dependency-review-action@v3.0.1
+        uses: actions/dependency-review-action@v3.0.2
         with:
           allow-licenses: MIT, Apache-2.0, Artistic-2.0
