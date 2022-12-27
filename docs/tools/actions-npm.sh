@@ -84,7 +84,7 @@ sed -i "/  All good!');/d" -- node_modules/better-npm-audit/src/handlers/handleF
 sed -i "s/'npm audit'/'npm --no-offline --loglevel=error audit'/" -- node_modules/better-npm-audit/src/handlers/handleInput.js
 sed -i '/header: {/,/},/d' -- node_modules/better-npm-audit/src/utils/print.js
 # Remove unnecessary files
-find node_modules/ -mindepth 2 -type d \( -name '.github' -o -name 'changelogs' -o -name 'docs' -o -name 'example' -o -name 'man' -o -name 'scripts' -o -name 'tap-snapshots' -o -name 'test' -o -name 'typings' \) | xargs rm -rf
+find node_modules/ -mindepth 2 -type d \( -name '.github' -o -name 'changelogs' -o -name 'docs' -o -name 'example' -o -name 'examples' -o -name 'man' -o -name 'scripts' -o -name 'tap-snapshots' -o -name 'test' -o -name 'typings' \) | xargs rm -rf
 find node_modules/ -mindepth 2 -type f \( -name '*.d.ts' -o -name '*.d.ts.map' -o -name '*.js.map' -o -name '.editorconfig' -o -name '.eslintrc' -o -name '.eslintrc.json' -o -name '.eslintrc.yml' -o -name '.gitattributes' -o -name '.gitmodules' -o -name '.licensee.json' -o -name '.mailmap' -o -name '.npmignore' -o -name '.nycrc' -o -name '.project' -o -name '.travis.yml' -o -name 'AUTHORS' -o -name 'AUTHORS.md' -o -name 'changelog.md' -o -name 'CHANGELOG.md' -o -name 'configure' -o -name 'CONTRIBUTING.md' -o -name 'make.bat' -o -name 'Makefile' -o -name 'yarn.lock' \) -exec bash -c 'rm "$1"; rmdir --ignore-fail-on-non-empty $(dirname "$1")' bash '{}' ';'
 # Remove non-deterministic information
 find node_modules/ -mindepth 2 -type f -name 'package.json' -exec sed -i '/"_where": "/d' -- '{}' ';'
