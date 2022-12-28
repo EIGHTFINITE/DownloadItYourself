@@ -21,7 +21,7 @@
     "electron": "github:EIGHTFINITE/electron#main",
     "jsonlint": "github:EIGHTFINITE/jsonlint#master",
     "npm": "9.2.0",
-    "npm-6": "npm:npm@latest-6",
+    "npm-6": "npm:npm@6.14.18",
     "postman-request": "github:EIGHTFINITE/postman-request#master",
     "spdx-expression-parse": "github:EIGHTFINITE/spdx-expression-parse#master"
   },
