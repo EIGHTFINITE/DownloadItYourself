@@ -1,12 +1,12 @@
 {
   "GHSA-93q8-gq69-wqmw": {
     "active": false,
-    "notes": "Patched via update in `npm-6>{string-width,yargs}>ansi-regex`",
+    "notes": "Patched via update in `npm-6>string-width>ansi-regex` and `npm-6>yargs>ansi-regex`",
     "expiry": "2023-09-20T20:20:09Z"
   },
   "GHSA-pfrx-2q88-qq97": {
     "active": true,
-    "notes": "Windows not affected. Only connects to the npm registry with got and cannot produce UNIX redirects",
+    "notes": "Windows not affected. Linux only connects to the npm registry with got and cannot produce UNIX redirects",
     "expiry": "2023-06-19T00:00:21Z"
   }
 }
