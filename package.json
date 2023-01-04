@@ -116,9 +116,11 @@
     "psl",
     "punycode",
     "qs",
+    "querystringify",
     "request-promise",
     "request-promise-core",
     "require-from-string",
+    "requires-port",
     "safe-buffer",
     "safer-buffer",
     "side-channel",
@@ -136,7 +138,9 @@
     "top-user-agents",
     "tough-cookie",
     "tweetnacl",
+    "universalify",
     "uri-js",
+    "url-parse",
     "uuid",
     "verror"
   ]
