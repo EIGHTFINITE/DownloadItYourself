@@ -3153,17 +3153,6 @@
 <td align="center"><code>EIGHTFINITE/postman-request#459e690c30fb64836ebc0e4459d412908821bef5</code><br>(based on <code>postman-request@2.88.1-postman.31</code>)</td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/tough-cookie" title="postman-request/tough-cookie"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="postman-request/tough-cookie" title="postman-request/tough-cookie"></a></td>
-<td><a href="https://www.npmjs.com/package/tough-cookie" title="postman-request/tough-cookie">postman-request/tough-cookie</a></td>
-<td>Package</td>
-<td><a href="https://github.com/salesforce" title="Jeremy Stashewsky">Jeremy Stashewsky</a></td>
-<td><a href="docs/legal/BSD-3-Clause.txt" title="“postman-request/tough-cookie” license">BSD-3-Clause</a><a href="https://github.com/salesforce/tough-cookie" title="“postman-request/tough-cookie” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“postman-request/tough-cookie” license information"></a>
-<td><a href="https://github.com/salesforce/tough-cookie" title="“postman-request/tough-cookie” source code">Open Source</a></td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>RFC6265 Cookies and Cookie Jar for Node.<br>Required by postman-request.</td>
-<td align="center"><code>tough-cookie@4.1.2</code></td>
-</tr>
-<tr>
 <td align="center"><a href="https://www.npmjs.com/package/psl" title="psl"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="psl" title="psl"></a></td>
 <td><a href="https://www.npmjs.com/package/psl" title="psl">psl</a></td>
 <td>Package</td>
@@ -3171,7 +3160,7 @@
 <td><a href="docs/legal/MIT.txt" title="“psl” license">MIT</a><a href="https://github.com/lupomontero/psl" title="“psl” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“psl” license information"></a>
 <td><a href="https://github.com/lupomontero/psl" title="“psl” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Domain name parser based on the Public Suffix List.<br>Required by postman-request/tough-cookie, tough-cookie.</td>
+<td>Domain name parser based on the Public Suffix List.<br>Required by tough-cookie.</td>
 <td align="center"><code>psl@1.9.0</code></td>
 </tr>
 <tr>
@@ -3182,7 +3171,7 @@
 <td><a href="docs/legal/MIT.txt" title="“punycode” license">MIT</a><a href="https://github.com/bestiejs/punycode.js" title="“punycode” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“punycode” license information"></a>
 <td><a href="https://github.com/bestiejs/punycode.js" title="“punycode” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>A robust Punycode converter that fully complies to RFC 3492 and RFC 5891, and works on nearly all JavaScript platforms.<br>Required by postman-request/tough-cookie, tough-cookie, uri-js.</td>
+<td>A robust Punycode converter that fully complies to RFC 3492 and RFC 5891, and works on nearly all JavaScript platforms.<br>Required by tough-cookie, uri-js.</td>
 <td align="center"><code>punycode@2.1.1</code></td>
 </tr>
 <tr>
@@ -3216,7 +3205,7 @@
 <td><a href="https://github.com/EIGHTFINITE/request-promise" title="“request-promise” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>The simplified HTTP request client 'request' with Promise support. Powered by Bluebird.<br>Required by cloudscraper.</td>
-<td align="center"><code>EIGHTFINITE/request-promise#5c8d2bb175c4bba9c3abe5961e24f64a0ccee046</code><br>(based on <code>request-promise@4.2.6</code>)</td>
+<td align="center"><code>EIGHTFINITE/request-promise#6cf8772f023afe01d4989e70cc23a7103bc78f41</code><br>(based on <code>request-promise@4.2.6</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://github.com/EIGHTFINITE/request-promise-core" title="request-promise-core"><img src="https://avatars.githubusercontent.com/u/730467?s=200" width="31" alt="request-promise-core" title="request-promise-core"></a></td>
@@ -3435,8 +3424,8 @@
 <td><a href="docs/legal/BSD-3-Clause.txt" title="“tough-cookie” license">BSD-3-Clause</a><a href="https://github.com/salesforce/tough-cookie" title="“tough-cookie” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“tough-cookie” license information"></a>
 <td><a href="https://github.com/salesforce/tough-cookie" title="“tough-cookie” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>RFC6265 Cookies and Cookie Jar for Node.<br>Required by request-promise.</td>
-<td align="center"><code>tough-cookie@2.5.0</code></td>
+<td>RFC6265 Cookies and Cookie Jar for Node.<br>Required by postman-request, request-promise.</td>
+<td align="center"><code>tough-cookie@4.1.2</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/tweetnacl" title="tweetnacl"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="tweetnacl" title="tweetnacl"></a></td>
@@ -3457,7 +3446,7 @@
 <td><a href="docs/legal/MIT.txt" title="“universalify” license">MIT</a><a href="https://github.com/RyanZim/universalify" title="“universalify” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“universalify” license information"></a>
 <td><a href="https://github.com/RyanZim/universalify" title="“universalify” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Make a callback- or promise-based function support both promises and callbacks.<br>Required by postman-request/tough-cookie.</td>
+<td>Make a callback- or promise-based function support both promises and callbacks.<br>Required by tough-cookie.</td>
 <td align="center"><code>universalify@0.2.0</code></td>
 </tr>
 <tr>
@@ -3479,7 +3468,7 @@
 <td><a href="docs/legal/MIT.txt" title="“url-parse” license">MIT</a><a href="https://github.com/unshiftio/url-parse" title="“url-parse” license information"><img src="docs/img/svg/source.svg" height="24" alt="(info)" title="“url-parse” license information"></a>
 <td><a href="https://github.com/unshiftio/url-parse" title="“url-parse” source code">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" height="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Small footprint URL parser that works seamlessly across Node and browser environments.<br>Required by postman-request/tough-cookie.</td>
+<td>Small footprint URL parser that works seamlessly across Node and browser environments.<br>Required by tough-cookie.</td>
 <td align="center"><code>url-parse@1.5.10</code></td>
 </tr>
 <tr>
