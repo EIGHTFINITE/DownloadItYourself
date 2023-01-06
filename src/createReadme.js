@@ -415,7 +415,7 @@ module.exports = function(filetype) {
 						name: 'Electron contributors',
 						url: 'https://github.com/electron/electron/graphs/contributors'
 					},{
-						name: 'GitHub',
+						name: 'GitHub Inc.',
 						url: 'https://github.com/github'
 					}];
 				}
@@ -452,6 +452,10 @@ module.exports = function(filetype) {
 				else if(packageData.repository.url === 'https://github.com/postmanlabs/postman-request') {
 					packageData.author.name = 'Mikeal Rogers',
 					packageData.author.url = 'https://github.com/mikeal'
+				}
+				else if(packageData.repository.url === 'https://github.com/npm/cli') {
+					packageData.author.name = 'GitHub Inc.',
+					packageData.author.url = 'https://github.com/github'
 				}
 
 				// Homepage corrections
