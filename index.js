@@ -22,7 +22,7 @@ if(!process.versions.electron) {
 	const child = spawn(electron, ['--use_strict', 'index.js'], { stdio: 'inherit', windowsHide: false });
 }
 else {
-	console.log('Running on Electron ' + process.versions.electron);
+	console.log('Running on Electron ' + process.versions.electron + ' + Node ' + process.versions.node);
 	if(process.versions.electron !== electronVersion) {
 		throw Error('Expected Electron ' + electronVersion + ' instead of Electron ' + process.versions.electron);
 	}
@@ -70,7 +70,7 @@ else {
 
 // After everything is done (even if we error out)
 process.on('exit', () => { // Asynchronous functions do not work beyond this point
-	console.log(process.versions.electron ? 'Exiting Electron ' + process.versions.electron : 'Exiting Node ' + process.versions.node);
+	console.log(process.versions.electron ? 'Exiting Electron ' + process.versions.electron + ' + Node ' + process.versions.node : 'Exiting Node ' + process.versions.node);
 });
 
 })();
