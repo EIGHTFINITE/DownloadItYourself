@@ -32,7 +32,7 @@ if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(
 fi
 
 # 7z Windows x64
-wget -nv -O "7z2201-x64.exe" https://www.7-zip.org/a/7z2201-x64.exe
+curl -sSo "7z2201-x64.exe" https://www.7-zip.org/a/7z2201-x64.exe
 mkdir -p "bin/windows/x64/7z/7z2201-x64"
 7z x -o"bin/windows/x64/7z/7z2201-x64" "7z2201-x64.exe" | grep "ing archive"
 rm "7z2201-x64.exe"
@@ -47,7 +47,7 @@ fi
 
 # Node Windows x64
 export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
-wget -nv -O "node-v$node_version-win-x64.7z" https://nodejs.org/dist/v$node_version/node-v$node_version-win-x64.7z
+curl -sSo "node-v$node_version-win-x64.7z" https://nodejs.org/dist/v$node_version/node-v$node_version-win-x64.7z
 mkdir -p "bin/windows/x64/node"
 7z x -o"bin/windows/x64/node" "node-v$node_version-win-x64.7z" | grep "ing archive"
 rm -r "bin/windows/x64/node/node-v$node_version-win-x64/node_modules"
@@ -61,7 +61,7 @@ if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(
 fi
 
 # Node Linux x64
-wget -nv -O "node-v$node_version-linux-x64.tar.xz" https://nodejs.org/dist/v$node_version/node-v$node_version-linux-x64.tar.xz
+curl -sSo "node-v$node_version-linux-x64.tar.xz" https://nodejs.org/dist/v$node_version/node-v$node_version-linux-x64.tar.xz
 mkdir -p "bin/linux/x64/node"
 tar -xJf "node-v$node_version-linux-x64.tar.xz" -C "bin/linux/x64/node"
 rm -r "bin/linux/x64/node/node-v$node_version-linux-x64/lib"
@@ -79,7 +79,7 @@ export force_no_cache=true
 export npm_config_platform=win32
 export npm_config_arch=x64
 export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
-wget -nv -O "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
+curl -sSo "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
 mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
 tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
 rm "npm-$npm_version.tgz"
@@ -110,7 +110,7 @@ fi
 
 # Electron Linux x64
 export npm_config_platform=linux
-wget -nv -O "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
+curl -sSo "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
 mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
 tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
 rm "npm-$npm_version.tgz"
@@ -144,7 +144,7 @@ if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(
 fi
 
 # Node modules
-wget -nv -O "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
+curl -sSo "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
 mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
 tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
 rm "npm-$npm_version.tgz"
