@@ -25,6 +25,9 @@
     "spdx-expression-parse": "github:EIGHTFINITE/spdx-expression-parse#master",
     "top-user-agents": "github:EIGHTFINITE/top-user-agents#main"
   },
+  "peerDependencies": {
+    "json-stringify-nice": "^1.1.4"
+  },
   "devDependencies": {
     "ansi-regex-4.1.1": "npm:ansi-regex@4.1.1",
     "ansi-regex-3.0.1": "npm:ansi-regex@3.0.1",
