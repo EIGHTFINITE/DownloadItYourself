@@ -1,5 +1,3 @@
-(function() {
-
 // Version
 const nodeVersion = require('./package.json').engines.node;
 const electronVersion = require('./node_modules/electron/package.json').version;
@@ -9,19 +7,7 @@ let electronUserAgent = require('./node_modules/top-user-agents/index.json')[0];
 process.env.ELECTRON_OVERRIDE_DIST_PATH = (/^win/.test(process.platform) ? 'bin/windows/x64/electron/electron-v' + electronVersion + '-win32-x64' : 'bin/linux/x64/electron/electron-v' + electronVersion + '-linux-x64');
 
 // Executable check
-if(!process.versions.electron) {
-	console.log('Running on Node ' + process.versions.node);
-	if(process.versions.node !== nodeVersion) {
-		throw Error('Expected Node ' + nodeVersion + ' instead of Node ' + process.versions.node);
-	}
-
-	// Start Electron
-	const electron = require('electron');
-	const { spawn } = require('child_process');
-	console.log('Starting Electron ' + electronVersion);
-	const child = spawn(electron, ['--use_strict', 'index.js'], { stdio: 'inherit', windowsHide: false });
-}
-else {
+if(process.versions.electron) {
 	console.log('Running on Electron ' + process.versions.electron + ' + Node ' + process.versions.node);
 	if(process.versions.electron !== electronVersion) {
 		throw Error('Expected Electron ' + electronVersion + ' instead of Electron ' + process.versions.electron);
@@ -67,10 +53,20 @@ else {
 		});
 	});
 }
+else {
+	console.log('Running on Node ' + process.versions.node);
+	if(process.versions.node !== nodeVersion) {
+		throw Error('Expected Node ' + nodeVersion + ' instead of Node ' + process.versions.node);
+	}
+
+	// Start Electron
+	const electron = require('electron');
+	const { spawn } = require('child_process');
+	console.log('Starting Electron ' + electronVersion);
+	spawn(electron, ['--use_strict', 'index.js'], { stdio: 'inherit', windowsHide: false });
+}
 
 // After everything is done (even if we error out)
 process.on('exit', () => { // Asynchronous functions do not work beyond this point
 	console.log(process.versions.electron ? 'Exiting Electron ' + process.versions.electron + ' + Node ' + process.versions.node : 'Exiting Node ' + process.versions.node);
 });
-
-})();
