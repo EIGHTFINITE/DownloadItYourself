@@ -5,7 +5,7 @@ var nodeVersion = require('./package.json').engines.node;
 var electronVersion = require('./node_modules/electron/package.json').version;
 
 // Env
-process.env.ELECTRON_OVERRIDE_DIST_PATH = 'bin/windows/x64/electron/electron-v' + electronVersion + '-win32-x64';
+process.env.ELECTRON_OVERRIDE_DIST_PATH = (/^win/.test(process.platform) ? 'bin/windows/x64/electron/electron-v' + electronVersion + '-win32-x64' : 'bin/linux/x64/electron/electron-v' + electronVersion + '-linux-x64');
 
 // Executable check
 if(!process.versions.electron) {
