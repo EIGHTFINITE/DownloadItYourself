@@ -1,7 +1,7 @@
 // Version
 const nodeVersion = require('./package.json').engines.node;
 const electronVersion = require('./node_modules/electron/package.json').version;
-let electronUserAgent = require('./node_modules/top-user-agents/index.json')[0];
+let electronUserAgent = require('top-user-agents')[0];
 
 // Env
 process.env.ELECTRON_OVERRIDE_DIST_PATH = (/^win/.test(process.platform) ? 'bin/windows/x64/electron/electron-v' + electronVersion + '-win32-x64' : 'bin/linux/x64/electron/electron-v' + electronVersion + '-linux-x64');
@@ -47,7 +47,7 @@ if(process.versions.electron) {
 					app.exit();
 				}
 			}).catch((error) => {
-				console.log(error);
+				console.error(error);
 				app.exit();
 			});
 		});
