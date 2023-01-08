@@ -65,9 +65,13 @@ if(process.versions.electron) {
 					}
 					// Write User Agents to file
 					if(!isEqualArrayShallow(userAgents, result)) {
-						fs.writeFileSync('./node_modules/top-user-agents/index.json', stringify(result), 'utf-8')
+						fs.writeFile('./node_modules/top-user-agents/index.json', stringify(result), 'utf-8', () => {
+							app.exit()
+						})
 					}
-					app.exit()
+					else {
+						app.exit()
+					}
 				}
 			}).catch((error) => {
 				console.error(error)
@@ -89,7 +93,7 @@ else {
 	spawn(electron, ['--use_strict', 'index.js'], { stdio: 'inherit' })
 }
 
-// After everything is done (even if we error out)
-process.on('exit', () => { // Asynchronous functions do not work beyond this point
+// Shutdown
+process.on('exit', () => {
 	console.log(process.versions.electron ? 'Exiting Electron ' + process.versions.electron + ' + Node ' + process.versions.node : 'Exiting Node ' + process.versions.node)
 })
