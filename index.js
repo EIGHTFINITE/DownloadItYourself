@@ -48,7 +48,7 @@ if(process.versions.electron) {
 			frame: false,
 			show: false,
 			webPreferences: {
-				nativeWindowOpen: true
+				backgroundThrottling: false
 			}
 		});
 
