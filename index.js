@@ -16,7 +16,7 @@ if(process.versions.electron) {
 	}
 
 	// Require
-	const fs = require('fs')
+	const fs = require('./node_modules/npm/node_modules/graceful-fs')
 	const { app, BrowserWindow } = require('electron')
 	const stringify = require('./node_modules/npm/node_modules/json-stringify-nice')
 	const userAgents = require('top-user-agents')
