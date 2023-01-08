@@ -1,7 +1,9 @@
+#!/usr/bin/env node
+'use strict'
+
 // Version
 const nodeVersion = require('./package.json').engines.node;
 const electronVersion = require('./node_modules/electron/package.json').version;
-let electronUserAgent = require('top-user-agents')[0];
 
 // Env
 process.env.ELECTRON_OVERRIDE_DIST_PATH = (/^win/.test(process.platform) ? 'bin/windows/x64/electron/electron-v' + electronVersion + '-win32-x64' : 'bin/linux/x64/electron/electron-v' + electronVersion + '-linux-x64');
@@ -12,12 +14,31 @@ if(process.versions.electron) {
 	if(process.versions.electron !== electronVersion) {
 		throw Error('Expected Electron ' + electronVersion + ' instead of Electron ' + process.versions.electron);
 	}
-	console.log('User Agent set to "' + electronUserAgent + '"');
 
 	// Require
 	const fs = require('fs');
 	const { app, BrowserWindow } = require('electron');
 	const stringify = require('./node_modules/npm/node_modules/json-stringify-nice');
+	const userAgents = require('top-user-agents');
+	let electronUserAgent = userAgents[0];
+	console.log('User Agent set to "' + electronUserAgent + '"');
+
+	// Function
+	function isArrayLike(a) {
+		return (Array.isArray(a) || (a !== null && typeof a === "object" && typeof a.length === "number" && (a.length === 0 || (a.length > 0 && (a.length - 1) in a))));
+	}
+	function isEqualArrayShallow(a, b) {
+		if (!isArrayLike(a) || !isArrayLike(b) || a.length !== b.length) {
+			return false;
+		}
+		let i=0;
+		for (; i<a.length; i++) {
+			if (a[i] !== b[i]) {
+				return false;
+			}
+		}
+		return true;
+	}
 
 	// Run
 	app.whenReady().then(() => {
@@ -43,7 +64,9 @@ if(process.versions.electron) {
 						console.log('User Agent updated to "' + electronUserAgent + '"');
 					}
 					// Write User Agents to file
-					fs.writeFileSync('./node_modules/top-user-agents/index.json', stringify(result), 'utf-8');
+					if(!isEqualArrayShallow(userAgents, result)) {
+						fs.writeFileSync('./node_modules/top-user-agents/index.json', stringify(result), 'utf-8');
+					}
 					app.exit();
 				}
 			}).catch((error) => {
@@ -63,7 +86,7 @@ else {
 	const electron = require('electron');
 	const { spawn } = require('child_process');
 	console.log('Starting Electron ' + electronVersion);
-	spawn(electron, ['--use_strict', 'index.js'], { stdio: 'inherit', windowsHide: false });
+	spawn(electron, ['--use_strict', 'index.js'], { stdio: 'inherit' });
 }
 
 // After everything is done (even if we error out)
