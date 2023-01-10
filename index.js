@@ -1,12 +1,11 @@
 #!/usr/bin/env node
 'use strict'
 
-// Version
+// Require
 const nodeVersion = require('./package.json').engines.node
 const electronVersion = require('./node_modules/electron/package.json').version
-
-// Env
-process.env.ELECTRON_OVERRIDE_DIST_PATH = (/^win/.test(process.platform) ? 'bin/windows/x64/electron/electron-v' + electronVersion + '-win32-x64' : 'bin/linux/x64/electron/electron-v' + electronVersion + '-linux-x64')
+const fs = require('./node_modules/npm/node_modules/graceful-fs')
+const rimraf = require('./node_modules/npm/node_modules/rimraf')
 
 // Executable check
 if(process.versions.electron) {
@@ -16,7 +15,6 @@ if(process.versions.electron) {
 	}
 
 	// Require
-	const fs = require('./node_modules/npm/node_modules/graceful-fs')
 	const { app, BrowserWindow } = require('electron')
 	const stringify = require('./node_modules/npm/node_modules/json-stringify-nice')
 	const userAgents = require('top-user-agents')
@@ -66,17 +64,21 @@ if(process.versions.electron) {
 					// Write User Agents to file
 					if(!isEqualArrayShallow(userAgents, result)) {
 						fs.writeFile('./node_modules/top-user-agents/index.json', stringify(result), 'utf-8', () => {
-							app.exit()
+							win.close()
 						})
 					}
 					else {
-						app.exit()
+						win.close()
 					}
 				}
 			}).catch((error) => {
 				console.error(error)
-				app.exit()
+				win.close()
 			})
+		})
+		
+		win.on('close', () => {
+			app.exit()
 		})
 	})
 }
@@ -86,11 +88,31 @@ else {
 		throw Error('Expected Node ' + nodeVersion + ' instead of Node ' + process.versions.node)
 	}
 
-	// Start Electron
-	const electron = require('electron')
+	// Require
 	const { spawn } = require('child_process')
-	console.log('Starting Electron ' + electronVersion)
-	spawn(electron, ['--use_strict', 'index.js'], { stdio: 'inherit' })
+	const isWindows = /^win/.test(process.platform)
+
+	// Function
+	function startElectron() {
+		process.env.ELECTRON_OVERRIDE_DIST_PATH = (isWindows ? 'bin/windows/x64/electron/electron-v' + electronVersion + '-win32-x64' : 'bin/linux/x64/electron/electron-v' + electronVersion + '-linux-x64')
+		const electron = require('electron')
+		console.log('Starting Electron ' + electronVersion)
+		spawn(electron, ['--use_strict', 'index.js'], { stdio: 'inherit' })
+	}
+
+	// Unpack Electron
+	if(isWindows && !fs.existsSync(process.env.ELECTRON_OVERRIDE_DIST_PATH + '/electron.exe')) {
+		const winElectronPath = 'bin\\windows\\x64\\electron\\electron-v' + electronVersion + '-win32-x64'
+		const p7zip = spawn('bin\\windows\\x64\\7z\\7z2201-x64\\7z.exe', ['x', '-tsplit', winElectronPath + '\\electron.exe.001', '-o' + winElectronPath])
+		p7zip.on('exit', () => {
+			rimraf(process.env.ELECTRON_OVERRIDE_DIST_PATH + '/electron.exe.*', () => {
+				startElectron()
+			})
+		})
+	}
+	else {
+		startElectron()
+	}
 }
 
 // Shutdown
