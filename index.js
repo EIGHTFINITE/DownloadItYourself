@@ -102,7 +102,7 @@ else {
 		}
 		process.env.ELECTRON_OVERRIDE_DIST_PATH = (isWindows ? 'bin/windows/x64/electron/electron-v' + electronVersion + '-win32-x64' : 'bin/linux/x64/electron/electron-v' + electronVersion + '-linux-x64')
 		const electron = require('electron')
-		spawn(electron, ['--use_strict', 'index.js'], { stdio: 'inherit' })
+		const child = spawn(electron, ['--use_strict', 'index.js'], { stdio: 'inherit' })
 	}
 
 	// Unpack Electron
