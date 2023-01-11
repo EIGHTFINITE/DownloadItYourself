@@ -3,7 +3,8 @@
 
 // Require
 const nodeVersion = require('./package.json').engines.node
-const electronVersion = require('./node_modules/electron/package.json').version
+const electronVersion = require('./package.json').devDependencies.electron
+const electronCliVersion = require('./node_modules/electron/package.json').version
 const fs = require('./node_modules/npm/node_modules/graceful-fs')
 const rimraf = require('./node_modules/npm/node_modules/rimraf')
 
@@ -91,21 +92,24 @@ else {
 	// Require
 	const { spawn } = require('child_process')
 	const isWindows = /^win/.test(process.platform)
+	const winElectronPath = 'bin\\windows\\x64\\electron\\electron-v' + electronVersion + '-win32-x64'
 
 	// Function
 	function startElectron() {
+		console.log('Starting Electron ' + electronVersion)
+		if(electronCliVersion !== electronVersion) {
+			console.log('Electron CLI ' + electronCliVersion + ' is behind Electron ' + electronVersion + '. This is harmless and will fix itself within 24-hours.')
+		}
 		process.env.ELECTRON_OVERRIDE_DIST_PATH = (isWindows ? 'bin/windows/x64/electron/electron-v' + electronVersion + '-win32-x64' : 'bin/linux/x64/electron/electron-v' + electronVersion + '-linux-x64')
 		const electron = require('electron')
-		console.log('Starting Electron ' + electronVersion)
 		spawn(electron, ['--use_strict', 'index.js'], { stdio: 'inherit' })
 	}
 
 	// Unpack Electron
-	if(isWindows && !fs.existsSync(process.env.ELECTRON_OVERRIDE_DIST_PATH + '/electron.exe')) {
-		const winElectronPath = 'bin\\windows\\x64\\electron\\electron-v' + electronVersion + '-win32-x64'
+	if(isWindows && !fs.existsSync(winElectronPath + '\\electron.exe')) {
 		const p7zip = spawn('bin\\windows\\x64\\7z\\7z2201-x64\\7z.exe', ['x', '-tsplit', winElectronPath + '\\electron.exe.001', '-o' + winElectronPath])
 		p7zip.on('exit', () => {
-			rimraf(process.env.ELECTRON_OVERRIDE_DIST_PATH + '/electron.exe.*', () => {
+			rimraf(winElectronPath + '\\electron.exe.*', fs, () => {
 				startElectron()
 			})
 		})
