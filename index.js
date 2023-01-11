@@ -79,6 +79,37 @@ if(process.versions.electron) {
 		})
 		
 		win.on('close', () => {
+			// Function
+			function traverseDependencies(d,p) {
+				const ifP = (p !== undefined)
+				let a = []
+				Object.keys(d).forEach((k) => {
+					d[k].name = k
+					d[k].location = (ifP ? p + '/' + k : k)
+					a.push(d[k])
+					if(d[k].dependencies) {
+						const b = traverseDependencies(d[k].dependencies,(ifP ? p + '/' + k : k))
+						let i=0
+						for (; i<b.length; i++) {
+							a.push(b[i])
+						}
+					}
+				})
+				return a
+			}
+			
+			// Readme
+			const dependencies = traverseDependencies(require('./package-lock.json').dependencies)
+			let html = '<table>\n'
+			let i=0
+			for (; i<dependencies.length; i++) {
+				const d = dependencies[i]
+				if(!d.location.startsWith('npm/') && !d.location.startsWith('npm-6/')) {
+					html += '<tr><td>' + d.location + '</td><td>' + (d.from ? d.from : d.version) + '</td></tr>\n'
+				}
+			}
+			html += '</table>\n'
+			console.log(html)
 			app.exit()
 		})
 	})
@@ -98,7 +129,7 @@ else {
 	function startElectron() {
 		console.log('Starting Electron ' + electronVersion)
 		if(electronCliVersion !== electronVersion) {
-			console.log('Electron CLI ' + electronCliVersion + ' is behind Electron ' + electronVersion + '. This is harmless and will fix itself within 24-hours.')
+			console.log('Electron ' + electronVersion + ' is ahead of Electron CLI ' + electronCliVersion + '. This is harmless and will fix itself.')
 		}
 		process.env.ELECTRON_OVERRIDE_DIST_PATH = (isWindows ? 'bin/windows/x64/electron/electron-v' + electronVersion + '-win32-x64' : 'bin/linux/x64/electron/electron-v' + electronVersion + '-linux-x64')
 		const electron = require('electron')
