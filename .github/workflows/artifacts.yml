@@ -46,9 +46,12 @@ jobs:
         git restore --source=artifacts -- bin/ node_modules/ package-lock.json
         export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         bin/linux/x64/node/node-v$node_version-linux-x64/bin/node --use_strict index.js --readme_only
+        rm -r bin/
+        rm -r node_modules/
+        rm package-lock.json
         git checkout -- downloadlist.json
         git add README.html README.md
-        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update README" | sed -n 1p
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update README" | sed -n 1p || true
         if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
@@ -95,9 +98,12 @@ jobs:
         git restore --source=artifacts -- bin/ node_modules/ package-lock.json
         export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         bin/linux/x64/node/node-v$node_version-linux-x64/bin/node --use_strict index.js --readme_only
+        rm -r bin/
+        rm -r node_modules/
+        rm package-lock.json
         git checkout -- README.html README.md
         git add downloadlist.json
-        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update downloadlist" | sed -n 1p
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update downloadlist" | sed -n 1p || true
         if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
