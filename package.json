@@ -101,6 +101,7 @@
     "jsonlint",
     "jsprim",
     "lodash.get",
+    "lodash.isarraylike",
     "lodash.isfunction",
     "lodash.isobjectlike",
     "lodash.isstring",
