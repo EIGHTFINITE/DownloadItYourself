@@ -5,6 +5,162 @@
 const electronVersion = require('./package.json').devDependencies.electron
 const fs = require('./node_modules/npm/node_modules/graceful-fs')
 
+// Function
+function writeReadme() {
+	function traverseDependencies(d,p) {
+		// Require
+		const isString = require('./node_modules/lodash.isstring')
+		
+		let a = []
+		Object.keys(d).forEach((k) => {
+			// Name
+			d[k].name = k
+			
+			// Path
+			d[k].path = (isString(p) ? p + '/node_modules/' + k : 'node_modules/' + k)
+			
+			// Location
+			d[k].location = d[k].path.replaceAll('node_modules/','')
+			
+			// Package
+			const pkg = require('./' + d[k].path + '/package.json')
+			
+			// Version
+			d[k].version = pkg.version
+			
+			// License
+			if(!pkg.license) {
+				d[k].license = ''
+			}
+			else if(isString(pkg.license)) {
+				d[k].license = pkg.license
+			}
+			else {
+				d[k].license = pkg.license.type
+			}
+			
+			// Author
+			if(!pkg.author) {
+				d[k].author = ''
+			}
+			else if(isString(pkg.author)) {
+				d[k].author = pkg.author
+			}
+			else {
+				d[k].author = pkg.author.name
+			}
+			
+			// Source Code
+			if(!pkg.repository) {
+				d[k].source = ''
+			}
+			else if(isString(pkg.repository)) {
+				d[k].source = pkg.repository
+			}
+			else {
+				d[k].source = pkg.repository.url
+			}
+			if(d[k].source.startsWith('git+')) {
+				d[k].source = d[k].source.slice(4)
+			}
+			if(d[k].source.startsWith('git://')) {
+				d[k].source = 'https://' + d[k].source.slice(6)
+			}
+			else if(d[k].source.startsWith('ssh://git@')) {
+				d[k].source = 'https://' + d[k].source.slice(10)
+			}
+			if(d[k].source.endsWith('.git')) {
+				d[k].source = d[k].source.slice(0,-4)
+			}
+			
+			// Description
+			const _requiredBy = pkg._requiredBy
+			if(isString(pkg.description)) {
+				d[k].description = pkg.description.replace(/[^ -~]/g,' ').trim().replace(/ +/g,' ').replace(/[Nn]ode\.js|[Nn]ode(?!s)/g,'Node').replace(/\.$/,'') + '.'
+				d[k].description = d[k].description[0].toUpperCase() + d[k].description.slice(1)
+			}
+			else {
+				d[k].description = ''
+			}
+			for (let i=0; i<_requiredBy.length; i++) {
+				if(_requiredBy[i] === '/') {
+					_requiredBy.splice(i, 1)
+					i--
+					continue
+				}
+				if(i === 0) {
+					if(d[k].description === '') {
+						d[k].description += 'Required by '
+					}
+					else {
+						d[k].description += '<br>Required by '
+					}
+				}
+				else {
+					d[k].description += ', '
+				}
+				d[k].description += _requiredBy[i].slice(1)
+				if(i === _requiredBy.length-1) {
+					d[k].description += '.'
+				}
+			}
+			
+			// Add to array
+			a.push(d[k])
+			
+			// Resolve children
+			if(d[k].dependencies) {
+				const b = traverseDependencies(d[k].dependencies,d[k].path)
+				for (let i=0; i<b.length; i++) {
+					a.push(b[i])
+				}
+			}
+		})
+		return a
+	}
+	function htmlspecialchars(s) {
+		return s.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll("'", '&#039;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
+	}
+	
+	// Readme
+	const dependencies = traverseDependencies(require('./package-lock.json').dependencies)
+	let html = '<h2>Node dependencies</h2>\n'
+	html += '<table>\n'
+	html += '<tr>\n'
+	html += '<th>Icon</th>\n'
+	html += '<th>Name</th>\n'
+	html += '<th>Author</th>\n'
+	html += '<th>License</th>\n'
+	html += '<th>Source&nbsp;Code</th>\n'
+	html += '<th>Distribution</th>\n'
+	html += '<th>Description</th>\n'
+	html += '<th>Version</th>\n'
+	html += '</tr>\n'
+	for (let i=0; i<dependencies.length; i++) {
+		const d = dependencies[i]
+		const escName = htmlspecialchars(d.name)
+		const escLocation = htmlspecialchars(d.location)
+		const escAuthor = htmlspecialchars(d.author)
+		const escLicense = htmlspecialchars(d.license)
+		const escSource = htmlspecialchars(d.source)
+		const escDescription = htmlspecialchars(d.description)
+		const escVersion = htmlspecialchars(d.version)
+		html += '<tr>\n'
+		html += '<td align="center"><a href="https://www.npmjs.com/package/' + escName +'" title="' + escName +'"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="' + escName +'" title="' + escName +'"></a></td>\n'
+		html += '<td><a href="https://www.npmjs.com/package/' + escName +'" title="' + escName +'">' + escLocation + '</a></td>\n'
+		html += '<td>' + escAuthor + '</td>\n'
+		html += '<td>' + escLicense + '</td>\n'
+		html += '<td>' + escSource + '</td>\n'
+		html += '<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></a></td>\n'
+		html += '<td>' + escDescription +'</td>\n'
+		html += '<td align="center">' + escVersion + '</td>\n'
+		html += '</tr>\n'
+	}
+	html += '</table>\n'
+	fs.writeFileSync('README.html', html, 'utf-8')
+	fs.writeFileSync('README.md', html, 'utf-8')
+}
+
 // Executable check
 if(process.versions.electron) {
 	// Validate executable
@@ -21,9 +177,7 @@ if(process.versions.electron) {
 	console.log('User Agent set to "' + electronUserAgent + '"')
 
 	// Function
-	function isArrayLike(a) {
-		return (Array.isArray(a) || (a !== null && typeof a === "object" && typeof a.length === "number" && (a.length === 0 || (a.length > 0 && (a.length - 1) in a))))
-	}
+	const isArrayLike = require('./node_modules/lodash.isarraylike')
 	function isEqualArrayShallow(a, b) {
 		if (!isArrayLike(a) || !isArrayLike(b) || a.length !== b.length) {
 			return false
@@ -61,9 +215,8 @@ if(process.versions.electron) {
 					}
 					// Write User Agents to file
 					if(!isEqualArrayShallow(userAgents, result)) {
-						fs.writeFile('./node_modules/top-user-agents/index.json', stringify(result), 'utf-8', () => {
-							win.close()
-						})
+						fs.writeFileSync('./node_modules/top-user-agents/index.json', stringify(result), 'utf-8')
+						win.close()
 					}
 					else {
 						win.close()
@@ -76,35 +229,7 @@ if(process.versions.electron) {
 		})
 		
 		win.on('close', () => {
-			// Function
-			function traverseDependencies(d,p) {
-				const ifP = (p !== undefined)
-				let a = []
-				Object.keys(d).forEach((k) => {
-					d[k].name = k
-					d[k].location = (ifP ? p + '/' + k : k)
-					a.push(d[k])
-					if(d[k].dependencies) {
-						const b = traverseDependencies(d[k].dependencies,(ifP ? p + '/' + k : k))
-						for (let i=0; i<b.length; i++) {
-							a.push(b[i])
-						}
-					}
-				})
-				return a
-			}
-			
-			// Readme
-			const dependencies = traverseDependencies(require('./package-lock.json').dependencies)
-			let html = '<table>\n'
-			for (let i=0; i<dependencies.length; i++) {
-				const d = dependencies[i]
-				if(!d.location.startsWith('npm/') && !d.location.startsWith('npm-6/')) {
-					html += '<tr><td>' + d.location + '</td><td>' + (d.from ? d.from : d.version) + '</td></tr>\n'
-				}
-			}
-			html += '</table>\n'
-			console.log(html)
+			writeReadme()
 			app.exit()
 		})
 	})
@@ -115,6 +240,11 @@ else {
 	console.log('Running on Node ' + process.versions.node)
 	if(process.versions.node !== nodeVersion) {
 		throw Error('Expected Node ' + nodeVersion + ' instead of Node ' + process.versions.node)
+	}
+	
+	if(process.argv.slice(2).includes('--readme_only')) {
+		writeReadme()
+		return
 	}
 
 	// Require
