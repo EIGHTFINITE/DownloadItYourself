@@ -2,14 +2,12 @@
 'use strict'
 
 // Require
-const nodeVersion = require('./package.json').engines.node
 const electronVersion = require('./package.json').devDependencies.electron
-const electronCliVersion = require('./node_modules/electron/package.json').version
 const fs = require('./node_modules/npm/node_modules/graceful-fs')
-const rimraf = require('./node_modules/npm/node_modules/rimraf')
 
 // Executable check
 if(process.versions.electron) {
+	// Validate executable
 	console.log('Running on Electron ' + process.versions.electron + ' + Node ' + process.versions.node)
 	if(process.versions.electron !== electronVersion) {
 		throw Error('Expected Electron ' + electronVersion + ' instead of Electron ' + process.versions.electron)
@@ -30,8 +28,7 @@ if(process.versions.electron) {
 		if (!isArrayLike(a) || !isArrayLike(b) || a.length !== b.length) {
 			return false
 		}
-		let i=0
-		for (; i<a.length; i++) {
+		for (let i=0; i<a.length; i++) {
 			if (a[i] !== b[i]) {
 				return false
 			}
@@ -89,8 +86,7 @@ if(process.versions.electron) {
 					a.push(d[k])
 					if(d[k].dependencies) {
 						const b = traverseDependencies(d[k].dependencies,(ifP ? p + '/' + k : k))
-						let i=0
-						for (; i<b.length; i++) {
+						for (let i=0; i<b.length; i++) {
 							a.push(b[i])
 						}
 					}
@@ -101,8 +97,7 @@ if(process.versions.electron) {
 			// Readme
 			const dependencies = traverseDependencies(require('./package-lock.json').dependencies)
 			let html = '<table>\n'
-			let i=0
-			for (; i<dependencies.length; i++) {
+			for (let i=0; i<dependencies.length; i++) {
 				const d = dependencies[i]
 				if(!d.location.startsWith('npm/') && !d.location.startsWith('npm-6/')) {
 					html += '<tr><td>' + d.location + '</td><td>' + (d.from ? d.from : d.version) + '</td></tr>\n'
@@ -115,6 +110,8 @@ if(process.versions.electron) {
 	})
 }
 else {
+	// Validate executable
+	const nodeVersion = require('./package.json').engines.node
 	console.log('Running on Node ' + process.versions.node)
 	if(process.versions.node !== nodeVersion) {
 		throw Error('Expected Node ' + nodeVersion + ' instead of Node ' + process.versions.node)
@@ -122,7 +119,9 @@ else {
 
 	// Require
 	const { spawn } = require('child_process')
+	const rimraf = require('./node_modules/npm/node_modules/rimraf')
 	const isWindows = /^win/.test(process.platform)
+	const electronCliVersion = require('./node_modules/electron/package.json').version
 	const winElectronPath = 'bin\\windows\\x64\\electron\\electron-v' + electronVersion + '-win32-x64'
 
 	// Function
