@@ -54,7 +54,7 @@
 <td align="center"><a href="https://www.npmjs.com/package/JSV" title="JSV"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="JSV" title="JSV"></a></td>
 <td><a href="https://www.npmjs.com/package/JSV" title="JSV">JSV</a></td>
 <td>Gary Court</td>
-<td></td>
+<td>BSD-2-Clause-Views</td>
 <td><a href="https://github.com/garycourt/JSV" title="JSV">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A JavaScript implementation of a extendable, fully compliant JSON Schema validator.<br>Required by jsonlint.</td>
@@ -454,7 +454,7 @@
 <td align="center"><a href="https://www.npmjs.com/package/exit" title="exit"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="exit" title="exit"></a></td>
 <td><a href="https://www.npmjs.com/package/exit" title="exit">exit</a></td>
 <td>&quot;Cowboy&quot; Ben Alman</td>
-<td></td>
+<td>MIT</td>
 <td><a href="https://github.com/cowboy/node-exit" title="exit">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A replacement for process.exit that ensures stdio are fully drained before exiting.<br>Required by @gerhobbelt/nomnom.</td>
@@ -777,7 +777,7 @@
 <td>MIT</td>
 <td><a href="https://github.com/lodash/lodash" title="lodash.isundefined">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>The modern build of lodash s `_.isUndefined` as a module.<br>Required by request-promise-core.</td>
+<td>The modern build of lodash&#039;s `_.isUndefined` as a module.<br>Required by request-promise-core.</td>
 <td align="center"><code>lodash.isundefined@3.0.1</code></td>
 </tr>
 <tr>
