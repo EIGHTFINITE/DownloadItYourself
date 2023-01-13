@@ -33,12 +33,18 @@ function writeReadme() {
 					}
 					else {
 						d[k].type = 'github'
+						if(d[k].resolved.startsWith('github:')) {
+							d[k].resolved = d[k].resolved.slice(7)
+						}
 					}
 				}
 				else {
 					if(d[k].from) {
 						d[k].type = 'github'
 						d[k].resolved = d[k].version
+						if(d[k].resolved.startsWith('github:')) {
+							d[k].resolved = d[k].resolved.slice(7)
+						}
 					}
 					else {
 						d[k].type = 'npm'
