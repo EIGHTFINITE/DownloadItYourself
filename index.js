@@ -26,8 +26,28 @@ function writeReadme() {
 				// Package
 				const pkg = require('./' + d[k].path + '/package.json')
 				
+				// Type, Resolved
+				if(d[k].resolved) {
+					if(d[k].resolved.startsWith('https://registry.npmjs.org/') || d[k].resolved.startsWith('http://registry.npmjs.org/')) {
+						d[k].type = 'npm'
+					}
+					else {
+						d[k].type = 'github'
+					}
+				}
+				else {
+					if(d[k].from) {
+						d[k].type = 'github'
+						d[k].resolved = d[k].version
+					}
+					else {
+						d[k].type = 'npm'
+						d[k].resolved = ''
+					}
+				}
+				
 				// Version
-				d[k].version = pkg.version
+				d[k].version = d[k].name + '@' + pkg.version
 				
 				// License
 				if(!pkg.license) {
@@ -146,16 +166,22 @@ function writeReadme() {
 			const escSource = htmlspecialchars(d.source)
 			const escDescription = htmlspecialchars(d.description)
 			const escRequiredBy = htmlspecialchars(d.requiredBy)
+			const escResolved = htmlspecialchars(d.resolved)
 			const escVersion = htmlspecialchars(d.version)
 			html += '<tr>\n'
 			html += '<td align="center"><a href="https://www.npmjs.com/package/' + escName +'" title="' + escName +'"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="' + escName +'" title="' + escName +'"></a></td>\n'
 			html += '<td><a href="https://www.npmjs.com/package/' + escName +'" title="' + escName +'">' + escLocation + '</a></td>\n'
 			html += '<td>' + escAuthor + '</td>\n'
 			html += '<td>' + escLicense + '</td>\n'
-			html += '<td>' + escSource + '</td>\n'
-			html += '<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></a></td>\n'
+			html += '<td><a href="' + escSource + '" title="' + escName +'">Open Source</a></td>\n'
+			if(t == 'md') {
+				html += '<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></a></td>\n'
+			}
+			else {
+				html += '<td align="center"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></td>\n'
+			}
 			html += '<td>' + (escDescription !== '' ? (escRequiredBy !== '' ? escDescription + '<br>' + escRequiredBy : escDescription) : escRequiredBy) +'</td>\n'
-			html += '<td align="center">' + escVersion + '</td>\n'
+			html += '<td align="center">' + (d.type === 'github' ? '<code>' + escResolved + '</code><br>(based on <code>' + escVersion + '</code>)' : '<code>' + escVersion + '</code>') + '</td>\n'
 			html += '</tr>\n'
 		}
 		return html += '</table>\n'
