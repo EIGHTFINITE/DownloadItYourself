@@ -11,6 +11,7 @@ function writeReadme() {
 		function traverseDependencies(d,p) {
 			// Require
 			const isString = require('./node_modules/lodash.isstring')
+			const parse = require('spdx-expression-parse');
 			
 			let a = []
 			Object.keys(d).forEach((k) => {
@@ -64,7 +65,7 @@ function writeReadme() {
 						d[k].license = pkg.licenses[0].type
 					}
 					else {
-						d[k].license = ''
+						d[k].license = 'All Rights Reserved'
 					}
 				}
 				else if(isString(pkg.license)) {
@@ -79,6 +80,26 @@ function writeReadme() {
 				else if(d[k].license === 'FreeBSD') {
 					d[k].license = 'BSD-2-Clause-Views'
 				}
+				
+				// License corrections
+				if(d[k].version === 'cyclist@0.2.2') {
+					d[k].license = 'MIT'
+				}
+				
+				// License HTML
+				function parseLicenseHtml(x) {
+					let lHtml = ''
+					if(x.license) {
+						lHtml += '<a href="docs/legal/' + htmlspecialchars(x.license) + '.txt">' + htmlspecialchars(x.license) + '</a>'
+					}
+					else {
+						lHtml += parseLicenseHtml(x.left)
+						lHtml += ' ' + htmlspecialchars(x.conjunction) + ' '
+						lHtml += parseLicenseHtml(x.right)
+					}
+					return lHtml
+				}
+				d[k].licenseHtml = parseLicenseHtml(parse(d[k].license, true, true))
 				
 				// Author
 				if(!pkg.author) {
@@ -155,7 +176,7 @@ function writeReadme() {
 					// Check for invalid characters
 					if(/[^ -~]/.test(d[k].description)) {
 						console.error(d[k].description)
-						throw Error('Invalid characters in description')
+						throw Error('Invalid characters in description of ' + d[k].name)
 					}
 					
 					// Readability & consistency
@@ -227,7 +248,6 @@ function writeReadme() {
 			const escIcon = htmlspecialchars(d.icon)
 			const escHomepage = htmlspecialchars(d.homepage)
 			const escAuthor = htmlspecialchars(d.author)
-			const escLicense = htmlspecialchars(d.license)
 			const escSource = htmlspecialchars(d.source)
 			const escDescription = htmlspecialchars(d.description)
 			const escRequiredBy = htmlspecialchars(d.requiredBy)
@@ -237,7 +257,7 @@ function writeReadme() {
 			html += '<td align="center"><a href="' + escHomepage + '" title="' + escName +'"><img src="' + escIcon + '" width="31" alt="' + escName +'" title="' + escName +'"></a></td>\n'
 			html += '<td><a href="' + escHomepage + '" title="' + escName +'">' + escLocation + '</a></td>\n'
 			html += '<td>' + escAuthor + '</td>\n'
-			html += '<td>' + escLicense + '</td>\n'
+			html += '<td>' + d.licenseHtml + '</td>\n'
 			html += '<td><a href="' + escSource + '" title="' + escName +'">Open Source</a></td>\n'
 			if(t == 'md') {
 				html += '<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></a></td>\n'
@@ -352,7 +372,7 @@ else {
 	function startElectron() {
 		console.log('Starting Electron ' + electronVersion)
 		if(electronCliVersion !== electronVersion) {
-			console.log('Electron ' + electronVersion + ' is ahead of Electron CLI ' + electronCliVersion + '. This is harmless and will fix itself.')
+			console.warn('Electron ' + electronVersion + ' is ahead of Electron CLI ' + electronCliVersion + '. This is harmless and will fix itself.')
 		}
 		process.env.ELECTRON_OVERRIDE_DIST_PATH = (isWindows ? 'bin/windows/x64/electron/electron-v' + electronVersion + '-win32-x64' : 'bin/linux/x64/electron/electron-v' + electronVersion + '-linux-x64')
 		const electron = require('electron')
