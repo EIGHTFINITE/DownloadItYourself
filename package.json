@@ -28,7 +28,7 @@
   "devDependencies": {
     "ansi-regex-4.1.1": "npm:ansi-regex@4.1.1",
     "ansi-regex-3.0.1": "npm:ansi-regex@3.0.1",
-    "electron": "22.0.1"
+    "electron": "22.0.2"
   },
   "bundleDependencies": [
     "@gerhobbelt/linewrap",
