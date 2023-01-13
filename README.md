@@ -818,7 +818,7 @@
 <td>https://github.com/npm/cli</td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A package manager for JavaScript.</td>
-<td align="center">9.2.0</td>
+<td align="center">9.3.0</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/@gar/promisify" title="@gar/promisify"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="@gar/promisify" title="@gar/promisify"></a></td>
@@ -848,7 +848,7 @@
 <td>https://github.com/npm/cli</td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Manage Node_modules trees.&lt;br&gt;Required by npm, npm/libnpmdiff, npm/libnpmexec, npm/libnpmfund, npm/libnpmpack.</td>
-<td align="center">6.1.5</td>
+<td align="center">6.1.6</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/@npmcli/config" title="@npmcli/config"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="@npmcli/config" title="@npmcli/config"></a></td>
@@ -858,7 +858,7 @@
 <td>https://github.com/npm/cli</td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Configuration management for the npm cli.&lt;br&gt;Required by npm.</td>
-<td align="center">6.1.0</td>
+<td align="center">6.1.1</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/@npmcli/disparity-colors" title="@npmcli/disparity-colors"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="@npmcli/disparity-colors" title="@npmcli/disparity-colors"></a></td>
@@ -1848,7 +1848,7 @@
 <td>https://github.com/npm/cli</td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>The registry diff.&lt;br&gt;Required by npm.</td>
-<td align="center">5.0.6</td>
+<td align="center">5.0.7</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/libnpmexec" title="libnpmexec"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="libnpmexec" title="libnpmexec"></a></td>
@@ -1858,7 +1858,7 @@
 <td>https://github.com/npm/cli</td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Npm exec (npx) programmatic API.&lt;br&gt;Required by npm.</td>
-<td align="center">5.0.6</td>
+<td align="center">5.0.7</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/libnpmfund" title="libnpmfund"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="libnpmfund" title="libnpmfund"></a></td>
@@ -1868,7 +1868,7 @@
 <td>https://github.com/npm/cli</td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Programmatic API for npm fund.&lt;br&gt;Required by npm.</td>
-<td align="center">4.0.6</td>
+<td align="center">4.0.7</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/libnpmhook" title="libnpmhook"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="libnpmhook" title="libnpmhook"></a></td>
@@ -1898,7 +1898,7 @@
 <td>https://github.com/npm/cli</td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Programmatic API for the bits behind npm pack.&lt;br&gt;Required by npm.</td>
-<td align="center">5.0.6</td>
+<td align="center">5.0.7</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/libnpmpublish" title="libnpmpublish"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="libnpmpublish" title="libnpmpublish"></a></td>
@@ -1977,7 +1977,7 @@
 <td>ISC</td>
 <td>https://github.com/isaacs/minipass</td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Minimal implementation of a PassThrough stream.&lt;br&gt;Required by npm, npm/cacache, npm/make-fetch-happen, npm/npm-registry-fetch, npm/pacote, npm/ssri, npm/tar.</td>
+<td>Minimal implementation of a PassThrough stream.&lt;br&gt;Required by npm, npm/cacache, npm/make-fetch-happen, npm/minipass-fetch, npm/npm-registry-fetch, npm/pacote, npm/ssri, npm/tar.</td>
 <td align="center">4.0.0</td>
 </tr>
 <tr>
@@ -2008,17 +2008,7 @@
 <td>https://github.com/npm/minipass-fetch</td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>An implementation of window.fetch in Node using Minipass streams.&lt;br&gt;Required by npm/make-fetch-happen, npm/npm-registry-fetch.</td>
-<td align="center">3.0.0</td>
-</tr>
-<tr>
-<td align="center"><a href="https://www.npmjs.com/package/minipass" title="minipass"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="minipass" title="minipass"></a></td>
-<td><a href="https://www.npmjs.com/package/minipass" title="minipass">npm/minipass-fetch/minipass</a></td>
-<td>Isaac Z. Schlueter</td>
-<td>ISC</td>
-<td>https://github.com/isaacs/minipass</td>
-<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Minimal implementation of a PassThrough stream.&lt;br&gt;Required by npm/minipass-fetch.</td>
-<td align="center">3.3.6</td>
+<td align="center">3.0.1</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/minipass-flush" title="minipass-flush"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="minipass-flush" title="minipass-flush"></a></td>
@@ -2717,7 +2707,7 @@
 <td>ISC</td>
 <td>https://github.com/isaacs/rimraf</td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>A deep deletion module for Node (like `rm -rf`).&lt;br&gt;Required by npm, npm/node-gyp, npm/node-gyp/@npmcli/move-file, npm/node-gyp/cacache.</td>
+<td>A deep deletion module for Node (like `rm -rf`).&lt;br&gt;Required by npm/node-gyp, npm/node-gyp/@npmcli/move-file, npm/node-gyp/cacache.</td>
 <td align="center">3.0.2</td>
 </tr>
 <tr>
@@ -3077,7 +3067,7 @@
 <td>ISC</td>
 <td>https://github.com/isaacs/yallist</td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></a></td>
-<td>Yet Another Linked List.&lt;br&gt;Required by npm/fs-minipass/minipass, npm/minipass, npm/minipass-collect/minipass, npm/minipass-fetch/minipass, npm/minipass-flush/minipass, npm/minipass-json-stream/minipass, npm/minipass-pipeline/minipass, npm/minipass-sized/minipass, npm/minizlib, npm/minizlib/minipass, npm/node-gyp/minipass, npm/semver/lru-cache, npm/tar.</td>
+<td>Yet Another Linked List.&lt;br&gt;Required by npm/fs-minipass/minipass, npm/minipass, npm/minipass-collect/minipass, npm/minipass-flush/minipass, npm/minipass-json-stream/minipass, npm/minipass-pipeline/minipass, npm/minipass-sized/minipass, npm/minizlib, npm/minizlib/minipass, npm/node-gyp/minipass, npm/semver/lru-cache, npm/tar.</td>
 <td align="center">4.0.0</td>
 </tr>
 <tr>
