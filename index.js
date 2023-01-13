@@ -57,13 +57,27 @@ function writeReadme() {
 				
 				// License
 				if(!pkg.license) {
-					d[k].license = ''
+					if(pkg.licenses) {
+						if(pkg.licenses.length !== 1) {
+							throw Error('Unimplemented')
+						}
+						d[k].license = pkg.licenses[0].type
+					}
+					else {
+						d[k].license = ''
+					}
 				}
 				else if(isString(pkg.license)) {
 					d[k].license = pkg.license
 				}
 				else {
 					d[k].license = pkg.license.type
+				}
+				if(d[k].license === 'Apache 2.0') {
+					d[k].license = 'Apache-2.0'
+				}
+				else if(d[k].license === 'FreeBSD') {
+					d[k].license = 'BSD-2-Clause-Views'
 				}
 				
 				// Author
@@ -125,7 +139,27 @@ function writeReadme() {
 				
 				// Description
 				if(isString(pkg.description)) {
-					d[k].description = pkg.description.replace(/[^ -~]/g,' ').trim().replace(/ +/g,' ').replace(/[Nn]ode\.js|[Nn]ode(?!s)/g,'Node').replace(/\.$/,'') + '.'
+					d[k].description = pkg.description
+					
+					// LATIN SMALL LETTER U WITH DIAERESIS
+					d[k].description = d[k].description.replaceAll('\u{FC}', 'u')
+					// RIGHT SINGLE QUOTATION MARK
+					d[k].description = d[k].description.replaceAll('\u{2019}', "'")
+					// LEFT DOUBLE QUOTATION MARK
+					d[k].description = d[k].description.replaceAll('\u{201C}', '"')
+					// RIGHT DOUBLE QUOTATION MARK
+					d[k].description = d[k].description.replaceAll('\u{201D}', '"')
+					// RIGHTWARDS ARROW
+					d[k].description = d[k].description.replaceAll('\u{2192}', '->')
+					
+					// Check for invalid characters
+					if(/[^ -~]/.test(d[k].description)) {
+						console.error(d[k].description)
+						throw Error('Invalid characters in description')
+					}
+					
+					// Readability & consistency
+					d[k].description = d[k].description.trim().replace(/ +/g,' ').replace(/[Nn]ode\.js|[Nn]ode(?!s)/g,'Node').replace(/\.$/,'') + '.'
 					d[k].description = d[k].description[0].toUpperCase() + d[k].description.slice(1)
 				}
 				else {
