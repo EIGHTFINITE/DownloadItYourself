@@ -78,26 +78,49 @@ function writeReadme() {
 				}
 				
 				// Source Code
-				if(!pkg.repository) {
-					d[k].source = ''
-				}
-				else if(isString(pkg.repository)) {
-					d[k].source = pkg.repository
+				if(d[k].type === 'github') {
+					const uri = new URL('https://github.com/' + d[k].resolved)
+					uri.hash = ''
+					d[k].source = uri.toString()
 				}
 				else {
-					d[k].source = pkg.repository.url
+					if(!pkg.repository) {
+						d[k].source = ''
+					}
+					else if(isString(pkg.repository)) {
+						d[k].source = pkg.repository
+					}
+					else {
+						d[k].source = pkg.repository.url
+					}
+					if(d[k].source.startsWith('git+')) {
+						d[k].source = d[k].source.slice(4)
+					}
+					if(d[k].source.startsWith('git://')) {
+						d[k].source = 'https://' + d[k].source.slice(6)
+					}
+					else if(d[k].source.startsWith('ssh://git@')) {
+						d[k].source = 'https://' + d[k].source.slice(10)
+					}
+					if(d[k].source.endsWith('.git')) {
+						d[k].source = d[k].source.slice(0,-4)
+					}
 				}
-				if(d[k].source.startsWith('git+')) {
-					d[k].source = d[k].source.slice(4)
+				
+				// Home
+				if(d[k].type === 'github') {
+					d[k].homepage = d[k].source
 				}
-				if(d[k].source.startsWith('git://')) {
-					d[k].source = 'https://' + d[k].source.slice(6)
+				else {
+					d[k].homepage = 'https://www.npmjs.com/package/' + pkg.name
 				}
-				else if(d[k].source.startsWith('ssh://git@')) {
-					d[k].source = 'https://' + d[k].source.slice(10)
+				
+				// Icon
+				if(d[k].type === 'github') {
+					d[k].icon = 'https://avatars.githubusercontent.com/u/9919'
 				}
-				if(d[k].source.endsWith('.git')) {
-					d[k].source = d[k].source.slice(0,-4)
+				else {
+					d[k].icon = 'https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg'
 				}
 				
 				// Description
@@ -167,6 +190,8 @@ function writeReadme() {
 			}
 			const escName = htmlspecialchars(d.name)
 			const escLocation = htmlspecialchars(d.location)
+			const escIcon = htmlspecialchars(d.icon)
+			const escHomepage = htmlspecialchars(d.homepage)
 			const escAuthor = htmlspecialchars(d.author)
 			const escLicense = htmlspecialchars(d.license)
 			const escSource = htmlspecialchars(d.source)
@@ -175,8 +200,8 @@ function writeReadme() {
 			const escResolved = htmlspecialchars(d.resolved)
 			const escVersion = htmlspecialchars(d.version)
 			html += '<tr>\n'
-			html += '<td align="center"><a href="https://www.npmjs.com/package/' + escName +'" title="' + escName +'"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="' + escName +'" title="' + escName +'"></a></td>\n'
-			html += '<td><a href="https://www.npmjs.com/package/' + escName +'" title="' + escName +'">' + escLocation + '</a></td>\n'
+			html += '<td align="center"><a href="' + escHomepage + '" title="' + escName +'"><img src="' + escIcon + '" width="31" alt="' + escName +'" title="' + escName +'"></a></td>\n'
+			html += '<td><a href="' + escHomepage + '" title="' + escName +'">' + escLocation + '</a></td>\n'
 			html += '<td>' + escAuthor + '</td>\n'
 			html += '<td>' + escLicense + '</td>\n'
 			html += '<td><a href="' + escSource + '" title="' + escName +'">Open Source</a></td>\n'
