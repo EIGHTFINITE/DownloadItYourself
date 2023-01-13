@@ -30,6 +30,17 @@
     "ansi-regex-3.0.1": "npm:ansi-regex@3.0.1",
     "electron": "22.0.2"
   },
+  "peerDependencies": {
+    "cheerio": "1.0.0-rc.12",
+    "cloudscraper": "4.6.0",
+    "electron": "22.0.2",
+    "jsonlint": "1.6.3",
+    "postman-request": "2.88.1-postman.31",
+    "request-promise": "4.2.6",
+    "request-promise-core": "1.1.4",
+    "spdx-expression-parse": "3.0.1",
+    "top-user-agents": "1.0.50"
+  },
   "bundleDependencies": [
     "@gerhobbelt/linewrap",
     "@gerhobbelt/nomnom",
