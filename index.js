@@ -47,7 +47,7 @@ function writeReadme() {
 				}
 				
 				// Version
-				d[k].version = d[k].name + '@' + pkg.version
+				d[k].version = pkg.name + '@' + pkg.version
 				
 				// License
 				if(!pkg.license) {
