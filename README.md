@@ -241,11 +241,11 @@
 <td align="center"><code>chalk@4.1.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/cheerio" title="cheerio"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="cheerio" title="cheerio"></a></td>
-<td><a href="https://www.npmjs.com/package/cheerio" title="cheerio">cheerio</a></td>
+<td align="center"><a href="https://github.com/EIGHTFINITE/cheerio" title="cheerio"><img src="https://avatars.githubusercontent.com/u/9919" width="31" alt="cheerio" title="cheerio"></a></td>
+<td><a href="https://github.com/EIGHTFINITE/cheerio" title="cheerio">cheerio</a></td>
 <td>Matt Mueller</td>
 <td>MIT</td>
-<td><a href="https://github.com/cheeriojs/cheerio" title="cheerio">Open Source</a></td>
+<td><a href="https://github.com/EIGHTFINITE/cheerio" title="cheerio">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Tiny, fast, and elegant implementation of core jQuery designed specifically for the server.<br>Required by cloudscraper.</td>
 <td align="center"><code>EIGHTFINITE/cheerio#e6f7f13269723c32b1405d76dd0e61185b5020c1</code><br>(based on <code>cheerio@1.0.0-rc.12</code>)</td>
@@ -261,11 +261,11 @@
 <td align="center"><code>cheerio-select@2.1.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/cloudscraper" title="cloudscraper"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="cloudscraper" title="cloudscraper"></a></td>
-<td><a href="https://www.npmjs.com/package/cloudscraper" title="cloudscraper">cloudscraper</a></td>
+<td align="center"><a href="https://github.com/EIGHTFINITE/cloudscraper" title="cloudscraper"><img src="https://avatars.githubusercontent.com/u/9919" width="31" alt="cloudscraper" title="cloudscraper"></a></td>
+<td><a href="https://github.com/EIGHTFINITE/cloudscraper" title="cloudscraper">cloudscraper</a></td>
 <td>Oleksii Sribnyi</td>
 <td>MIT</td>
-<td><a href="https://github.com/codemanki/cloudscraper" title="cloudscraper">Open Source</a></td>
+<td><a href="https://github.com/EIGHTFINITE/cloudscraper" title="cloudscraper">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Bypasses cloudflare&#039;s anti-ddos page.</td>
 <td align="center"><code>EIGHTFINITE/cloudscraper#9e2fe85cf60b5d0974b6c443582269ccc6ed8205</code><br>(based on <code>cloudscraper@4.6.0</code>)</td>
@@ -421,11 +421,11 @@
 <td align="center"><code>ecc-jsbn@0.1.2</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/electron" title="electron"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="electron" title="electron"></a></td>
-<td><a href="https://www.npmjs.com/package/electron" title="electron">electron</a></td>
+<td align="center"><a href="https://github.com/EIGHTFINITE/electron" title="electron"><img src="https://avatars.githubusercontent.com/u/9919" width="31" alt="electron" title="electron"></a></td>
+<td><a href="https://github.com/EIGHTFINITE/electron" title="electron">electron</a></td>
 <td>Electron Community</td>
 <td>MIT</td>
-<td><a href="https://github.com/electron/electron" title="electron">Open Source</a></td>
+<td><a href="https://github.com/EIGHTFINITE/electron" title="electron">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Build cross platform desktop apps with JavaScript, HTML, and CSS.</td>
 <td align="center"><code>EIGHTFINITE/electron#e9d48d8089cf25093da723b7910ab6b3aa50f47e</code><br>(based on <code>electron@22.0.1</code>)</td>
@@ -701,11 +701,11 @@
 <td align="center"><code>json-stringify-safe@5.0.1</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/jsonlint" title="jsonlint"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="jsonlint" title="jsonlint"></a></td>
-<td><a href="https://www.npmjs.com/package/jsonlint" title="jsonlint">jsonlint</a></td>
+<td align="center"><a href="https://github.com/EIGHTFINITE/jsonlint" title="jsonlint"><img src="https://avatars.githubusercontent.com/u/9919" width="31" alt="jsonlint" title="jsonlint"></a></td>
+<td><a href="https://github.com/EIGHTFINITE/jsonlint" title="jsonlint">jsonlint</a></td>
 <td>Zach Carter</td>
 <td>MIT</td>
-<td><a href="https://github.com/zaach/jsonlint" title="jsonlint">Open Source</a></td>
+<td><a href="https://github.com/EIGHTFINITE/jsonlint" title="jsonlint">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Validate JSON.</td>
 <td align="center"><code>EIGHTFINITE/jsonlint#ea2293bff68bbf500ca162ab046cd28b1bbc1de7</code><br>(based on <code>jsonlint@1.6.3</code>)</td>
@@ -821,8 +821,8 @@
 <td align="center"><code>npm@9.3.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/npm-6" title="npm-6"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="npm-6" title="npm-6"></a></td>
-<td><a href="https://www.npmjs.com/package/npm-6" title="npm-6">npm-6</a></td>
+<td align="center"><a href="https://www.npmjs.com/package/npm" title="npm-6"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="npm-6" title="npm-6"></a></td>
+<td><a href="https://www.npmjs.com/package/npm" title="npm-6">npm-6</a></td>
 <td>Isaac Z. Schlueter</td>
 <td>Artistic-2.0</td>
 <td><a href="https://github.com/npm/cli" title="npm-6">Open Source</a></td>
@@ -881,11 +881,11 @@
 <td align="center"><code>parse5-htmlparser2-tree-adapter@7.0.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/postman-request" title="postman-request"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="postman-request" title="postman-request"></a></td>
-<td><a href="https://www.npmjs.com/package/postman-request" title="postman-request">postman-request</a></td>
+<td align="center"><a href="https://github.com/EIGHTFINITE/postman-request" title="postman-request"><img src="https://avatars.githubusercontent.com/u/9919" width="31" alt="postman-request" title="postman-request"></a></td>
+<td><a href="https://github.com/EIGHTFINITE/postman-request" title="postman-request">postman-request</a></td>
 <td></td>
 <td>Apache-2.0</td>
-<td><a href="https://github.com/postmanlabs/postman-request" title="postman-request">Open Source</a></td>
+<td><a href="https://github.com/EIGHTFINITE/postman-request" title="postman-request">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Simplified HTTP request client.</td>
 <td align="center"><code>EIGHTFINITE/postman-request#35cb6a8935d5f5647f1dd0e2353beffa71b9ca95</code><br>(based on <code>postman-request@2.88.1-postman.31</code>)</td>
@@ -931,21 +931,21 @@
 <td align="center"><code>querystringify@2.2.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/request-promise" title="request-promise"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="request-promise" title="request-promise"></a></td>
-<td><a href="https://www.npmjs.com/package/request-promise" title="request-promise">request-promise</a></td>
+<td align="center"><a href="https://github.com/EIGHTFINITE/request-promise" title="request-promise"><img src="https://avatars.githubusercontent.com/u/9919" width="31" alt="request-promise" title="request-promise"></a></td>
+<td><a href="https://github.com/EIGHTFINITE/request-promise" title="request-promise">request-promise</a></td>
 <td>Nicolai Kamenzky</td>
 <td>ISC</td>
-<td><a href="https://github.com/request/request-promise" title="request-promise">Open Source</a></td>
+<td><a href="https://github.com/EIGHTFINITE/request-promise" title="request-promise">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>The simplified HTTP request client &#039;request&#039; with Promise support. Powered by Bluebird.<br>Required by cloudscraper.</td>
 <td align="center"><code>EIGHTFINITE/request-promise#6cf8772f023afe01d4989e70cc23a7103bc78f41</code><br>(based on <code>request-promise@4.2.6</code>)</td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/request-promise-core" title="request-promise-core"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="request-promise-core" title="request-promise-core"></a></td>
-<td><a href="https://www.npmjs.com/package/request-promise-core" title="request-promise-core">request-promise-core</a></td>
+<td align="center"><a href="https://github.com/EIGHTFINITE/request-promise-core" title="request-promise-core"><img src="https://avatars.githubusercontent.com/u/9919" width="31" alt="request-promise-core" title="request-promise-core"></a></td>
+<td><a href="https://github.com/EIGHTFINITE/request-promise-core" title="request-promise-core">request-promise-core</a></td>
 <td>Nicolai Kamenzky</td>
 <td>ISC</td>
-<td><a href="https://github.com/request/promise-core" title="request-promise-core">Open Source</a></td>
+<td><a href="https://github.com/EIGHTFINITE/request-promise-core" title="request-promise-core">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Core Promise support implementation for the simplified HTTP request client &#039;request&#039;.<br>Required by request-promise.</td>
 <td align="center"><code>EIGHTFINITE/request-promise-core#730c6fccb31326ad3d3830f01d70ad570df04a24</code><br>(based on <code>request-promise-core@1.1.4</code>)</td>
@@ -1021,11 +1021,11 @@
 <td align="center"><code>spdx-exceptions@2.3.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/spdx-expression-parse" title="spdx-expression-parse"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="spdx-expression-parse" title="spdx-expression-parse"></a></td>
-<td><a href="https://www.npmjs.com/package/spdx-expression-parse" title="spdx-expression-parse">spdx-expression-parse</a></td>
+<td align="center"><a href="https://github.com/EIGHTFINITE/spdx-expression-parse" title="spdx-expression-parse"><img src="https://avatars.githubusercontent.com/u/9919" width="31" alt="spdx-expression-parse" title="spdx-expression-parse"></a></td>
+<td><a href="https://github.com/EIGHTFINITE/spdx-expression-parse" title="spdx-expression-parse">spdx-expression-parse</a></td>
 <td>Kyle E. Mitchell</td>
 <td>MIT</td>
-<td><a href="https://github.com/jslicense/spdx-expression-parse.js" title="spdx-expression-parse">Open Source</a></td>
+<td><a href="https://github.com/EIGHTFINITE/spdx-expression-parse" title="spdx-expression-parse">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>Parse SPDX license expressions.</td>
 <td align="center"><code>EIGHTFINITE/spdx-expression-parse#cd36b8da4bad8b6415035400a9cba757e36046f6</code><br>(based on <code>spdx-expression-parse@3.0.1</code>)</td>
@@ -1121,11 +1121,11 @@
 <td align="center"><code>table@6.8.1</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/top-user-agents" title="top-user-agents"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="top-user-agents" title="top-user-agents"></a></td>
-<td><a href="https://www.npmjs.com/package/top-user-agents" title="top-user-agents">top-user-agents</a></td>
+<td align="center"><a href="https://github.com/EIGHTFINITE/top-user-agents" title="top-user-agents"><img src="https://avatars.githubusercontent.com/u/9919" width="31" alt="top-user-agents" title="top-user-agents"></a></td>
+<td><a href="https://github.com/EIGHTFINITE/top-user-agents" title="top-user-agents">top-user-agents</a></td>
 <td>Kiko Beats</td>
 <td>MIT</td>
-<td><a href="https://github.com/Kikobeats/top-user-agents" title="top-user-agents">Open Source</a></td>
+<td><a href="https://github.com/EIGHTFINITE/top-user-agents" title="top-user-agents">Open Source</a></td>
 <td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></a></td>
 <td>A list of most common User Agent.</td>
 <td align="center"><code>EIGHTFINITE/top-user-agents#237003af1d760db1916ddc4d39febe3ffbec6240</code><br>(based on <code>top-user-agents@1.0.50</code>)</td>
