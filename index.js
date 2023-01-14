@@ -231,14 +231,11 @@ function writeReadme() {
 		let html = ''
 		for (let i=0, k=false, l=[]; i<readmeHeader.length; i++) {
 			if(isArray(readmeHeader[i])) {
-				if(readmeHeader[i].length === 0 || l.length > 0) {
+				if(l.length > 0) {
 					throw Error('Unimplemented')
 				}
 				l=readmeHeader[i]
 				readmeHeader.splice(i--, 1)
-				if(readmeHeader.length === 0) {
-					continue
-				}
 			}
 			else if(readmeHeader[i] === '<br>') {
 				if(i === 0 || l.length > 0) {
@@ -354,14 +351,11 @@ function writeReadme() {
 		const readmeFooter = [...downloadlist.config['readme-footer']]
 		for (let i=0, k=false, l=[]; i<readmeFooter.length; i++) {
 			if(isArray(readmeFooter[i])) {
-				if(readmeFooter[i].length === 0 || l.length > 0) {
+				if(l.length > 0) {
 					throw Error('Unimplemented')
 				}
 				l=readmeFooter[i]
 				readmeFooter.splice(i--, 1)
-				if(readmeFooter.length === 0) {
-					continue
-				}
 			}
 			else if(readmeFooter[i] === '<br>') {
 				if(i === 0 || l.length > 0) {
