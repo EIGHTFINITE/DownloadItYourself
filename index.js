@@ -2,6 +2,7 @@
 'use strict'
 
 // Require
+const isArray = Array.isArray
 const electronVersion = require('./package.json').devDependencies.electron
 const fs = require('./node_modules/npm/node_modules/graceful-fs')
 
@@ -224,9 +225,87 @@ function writeReadme() {
 			return s.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll("'", '&#039;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
 		}
 		
-		// Readme
+		// Header
+		const downloadlist = require('./downloadlist.json')
+		const readmeHeader = [...downloadlist.config['readme-header']]
+		let html = ''
+		for (let i=0, k=false, l=[]; i<readmeHeader.length; i++) {
+			if(isArray(readmeHeader[i])) {
+				if(readmeHeader[i].length === 0 || l.length > 0) {
+					throw Error('Unimplemented')
+				}
+				l=readmeHeader[i]
+				readmeHeader.splice(i--, 1)
+				if(readmeHeader.length === 0) {
+					continue
+				}
+			}
+			else if(readmeHeader[i] === '<br>') {
+				if(i === 0 || l.length > 0) {
+					throw Error('Unimplemented')
+				}
+				readmeHeader.splice(i--, 1)
+				if(readmeHeader.length === 0) {
+					continue
+				}
+				else if(k) {
+					html += '</p>\n<p>'
+					continue
+				}
+				html += '</h1>\n<p>'
+				k = true
+			}
+			else {
+				if(i === 0) {
+					html += '<h1>'
+				}
+				if(l.length === 1) {
+					if(i+1 === readmeHeader.length) {
+						if(k) {
+							html += '<a href="' + htmlspecialchars(l[0]) + '">' + htmlspecialchars(readmeHeader[i]) + '</a></p>\n'
+							continue
+						}
+						html += '<a href="' + htmlspecialchars(l[0]) + '">' + htmlspecialchars(readmeHeader[i]) + '</a></h1>\n'
+					}
+					else {
+						html += '<a href="' + htmlspecialchars(l[0]) + '">' + htmlspecialchars(readmeHeader[i]) + '</a>'
+					}
+					l = []
+				}
+				else if(l.length > 1) {
+					if(i+1 === readmeHeader.length) {
+						if(k) {
+							html += '<b>' + htmlspecialchars(readmeHeader[i]) + '</b></p>\n'
+							continue
+						}
+						html += '<b>' + htmlspecialchars(readmeHeader[i]) + '</b></h1>\n'
+					}
+					else {
+						html += '<b>' + htmlspecialchars(readmeHeader[i]) + '</b>'
+					}
+					for (let j=0; j<l.length; j++) {
+						html += '<a href="' + htmlspecialchars(l[j]) + '">[' + (j+1) + ']</a>'
+					}
+					l = []
+				}
+				else {
+					if(i+1 === readmeHeader.length) {
+						if(k) {
+							html += htmlspecialchars(readmeHeader[i]) + '</p>\n'
+							continue
+						}
+						html += htmlspecialchars(readmeHeader[i]) + '</h1>\n'
+					}
+					else {
+						html += htmlspecialchars(readmeHeader[i])
+					}
+				}
+			}
+		}
+		
+		// Node dependencies
 		const dependencies = traverseDependencies(require('./package-lock.json').dependencies)
-		let html = '<h2>Node dependencies</h2>\n'
+		html += '<h2>Node dependencies</h2>\n'
 		html += '<table>\n'
 		html += '<tr>\n'
 		html += '<th>Icon</th>\n'
@@ -254,22 +333,101 @@ function writeReadme() {
 			const escResolved = htmlspecialchars(d.resolved)
 			const escVersion = htmlspecialchars(d.version)
 			html += '<tr>\n'
-			html += '<td align="center"><a href="' + escHomepage + '" title="' + escName +'"><img src="' + escIcon + '" width="31" alt="' + escName +'" title="' + escName +'"></a></td>\n'
-			html += '<td><a href="' + escHomepage + '" title="' + escName +'">' + escLocation + '</a></td>\n'
+			html += '<td align="center"><a href="' + escHomepage + '"><img src="' + escIcon + '" width="31" alt="' + escName +'"></a></td>\n'
+			html += '<td><a href="' + escHomepage + '">' + escLocation + '</a></td>\n'
 			html += '<td>' + escAuthor + '</td>\n'
 			html += '<td>' + d.licenseHtml + '</td>\n'
-			html += '<td><a href="' + escSource + '" title="' + escName +'">Open Source</a></td>\n'
+			html += '<td><a href="' + escSource + '">Open Source</a></td>\n'
 			if(t == 'md') {
-				html += '<td align="center"><a href="##" title="Distribution Allowed"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></a></td>\n'
+				html += '<td align="center"><a href="##"><img src="docs/img/svg/check.svg" width="24" alt="OK"></a></td>\n'
 			}
 			else {
-				html += '<td align="center"><img src="docs/img/svg/check.svg" width="24" alt="OK" title="Distribution Allowed"></td>\n'
+				html += '<td align="center"><img src="docs/img/svg/check.svg" width="24" alt="OK"></td>\n'
 			}
 			html += '<td>' + (escDescription !== '' ? (escRequiredBy !== '' ? escDescription + '<br>' + escRequiredBy : escDescription) : escRequiredBy) +'</td>\n'
 			html += '<td align="center">' + (d.type === 'github' ? '<code>' + escResolved + '</code><br>(based on <code>' + escVersion + '</code>)' : '<code>' + escVersion + '</code>') + '</td>\n'
 			html += '</tr>\n'
 		}
-		return html += '</table>\n'
+		html += '</table>\n'
+		
+		// Footer
+		const readmeFooter = [...downloadlist.config['readme-footer']]
+		for (let i=0, k=false, l=[]; i<readmeFooter.length; i++) {
+			if(isArray(readmeFooter[i])) {
+				if(readmeFooter[i].length === 0 || l.length > 0) {
+					throw Error('Unimplemented')
+				}
+				l=readmeFooter[i]
+				readmeFooter.splice(i--, 1)
+				if(readmeFooter.length === 0) {
+					continue
+				}
+			}
+			else if(readmeFooter[i] === '<br>') {
+				if(i === 0 || l.length > 0) {
+					throw Error('Unimplemented')
+				}
+				readmeFooter.splice(i--, 1)
+				if(readmeFooter.length === 0) {
+					continue
+				}
+				else if(k) {
+					html += '</p>\n<p>'
+					continue
+				}
+				html += '</h1>\n<p>'
+				k = true
+			}
+			else {
+				if(i === 0) {
+					html += '<h1>'
+				}
+				if(l.length === 1) {
+					if(i+1 === readmeFooter.length) {
+						if(k) {
+							html += '<a href="' + htmlspecialchars(l[0]) + '">' + htmlspecialchars(readmeFooter[i]) + '</a></p>\n'
+							continue
+						}
+						html += '<a href="' + htmlspecialchars(l[0]) + '">' + htmlspecialchars(readmeFooter[i]) + '</a></h1>\n'
+					}
+					else {
+						html += '<a href="' + htmlspecialchars(l[0]) + '">' + htmlspecialchars(readmeFooter[i]) + '</a>'
+					}
+					l = []
+				}
+				else if(l.length > 1) {
+					if(i+1 === readmeFooter.length) {
+						if(k) {
+							html += '<b>' + htmlspecialchars(readmeFooter[i]) + '</b></p>\n'
+							continue
+						}
+						html += '<b>' + htmlspecialchars(readmeFooter[i]) + '</b></h1>\n'
+					}
+					else {
+						html += '<b>' + htmlspecialchars(readmeFooter[i]) + '</b>'
+					}
+					for (let j=0; j<l.length; j++) {
+						html += '<a href="' + htmlspecialchars(l[j]) + '">[' + (j+1) + ']</a>'
+					}
+					l = []
+				}
+				else {
+					if(i+1 === readmeFooter.length) {
+						if(k) {
+							html += htmlspecialchars(readmeFooter[i]) + '</p>\n'
+							continue
+						}
+						html += htmlspecialchars(readmeFooter[i]) + '</h1>\n'
+					}
+					else {
+						html += htmlspecialchars(readmeFooter[i])
+					}
+				}
+			}
+		}
+		
+		// Write
+		return html
 	}
 	fs.writeFileSync('README.html', generateReadme('html'), 'utf-8')
 	fs.writeFileSync('README.md', generateReadme('md'), 'utf-8')
