@@ -4,6 +4,10 @@ export node_version=$(cat node_version.txt)
 rm node_version.txt
 export npm_version=$(cat npm_version.txt)
 rm npm_version.txt
+# Ignore devDependencies, peerDependencies, and bundleDependencies
+sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
+sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
+sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
 # Temporarily install ansi-regex@4.1.1 and ansi-regex@3.0.1
 if [[ "$OSTYPE" == "msys" ]]; then
   bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline ansi-regex-4.1.1@npm:ansi-regex@4.1.1 ansi-regex-3.0.1@npm:ansi-regex@3.0.1

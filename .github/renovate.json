@@ -15,5 +15,5 @@
       "ignoreTests": true
     }
   ],
-  "ignoreDeps": ["npm-6", "ansi-regex-4.1.1", "ansi-regex-3.0.1"]
+  "ignoreDeps": ["npm-6"]
 }

@@ -31,8 +31,13 @@ jobs:
         echo -n "$node_version" > node_version.txt
         echo -n "$npm_version" > npm_version.txt
         bash --noprofile --norc -e -o pipefail docs/tools/actions-npm.sh
+        # Ignore devDependencies, peerDependencies, and bundleDependencies
+        sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
+        sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
+        sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
         bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent || true
         rm -rf .npm/
+        git checkout -- 'package.json'
         cd ..
         echo '{
           "private": "true"
@@ -53,9 +58,14 @@ jobs:
         docs/tools/git-config.bat
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git restore --source=artifacts -- bin/ node_modules/ package-lock.json
+        # Ignore devDependencies, peerDependencies, and bundleDependencies
+        sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
+        sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
+        sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
         export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         bin/windows/x64/node/node-v$node_version-win-x64/node.exe node_modules/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent || true
         rm -rf .npm/
+        git checkout -- 'package.json'
         cd ..
         echo '{
           "private": "true"
