@@ -86,6 +86,9 @@ function writeReadme() {
 				if(d[k].version === 'cyclist@0.2.2') {
 					d[k].license = 'MIT'
 				}
+				else if(pkg.name === 'npm') {
+					d[k].license = 'npm license'
+				}
 				
 				// License HTML
 				function parseLicenseHtml(x) {
