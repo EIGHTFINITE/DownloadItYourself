@@ -71,7 +71,7 @@
 <td><a href="docs/legal/MIT.txt">MIT</a></td>
 <td><a href="https://github.com/ajv-validator/ajv">Open Source</a></td>
 <td align="center"><a href="##"><img src="docs/img/svg/check.svg" width="24" alt="OK"></a></td>
-<td>Another JSON Schema Validator.<br>Required by table.</td>
+<td>Another JSON Schema Validator.<br>Required by har-validator, table.</td>
 <td align="center"><code>ajv@8.12.0</code></td>
 </tr>
 <tr>
@@ -491,18 +491,8 @@
 <td><a href="docs/legal/MIT.txt">MIT</a></td>
 <td><a href="https://github.com/epoberezkin/fast-deep-equal">Open Source</a></td>
 <td align="center"><a href="##"><img src="docs/img/svg/check.svg" width="24" alt="OK"></a></td>
-<td>Fast deep equal.<br>Required by ajv, har-validator/ajv.</td>
+<td>Fast deep equal.<br>Required by ajv.</td>
 <td align="center"><code>fast-deep-equal@3.1.3</code></td>
-</tr>
-<tr>
-<td align="center"><a href="https://www.npmjs.com/package/fast-json-stable-stringify"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="fast-json-stable-stringify"></a></td>
-<td><a href="https://www.npmjs.com/package/fast-json-stable-stringify">fast-json-stable-stringify</a></td>
-<td>James Halliday</td>
-<td><a href="docs/legal/MIT.txt">MIT</a></td>
-<td><a href="https://github.com/epoberezkin/fast-json-stable-stringify">Open Source</a></td>
-<td align="center"><a href="##"><img src="docs/img/svg/check.svg" width="24" alt="OK"></a></td>
-<td>Deterministic `JSON.stringify()` - a faster version of substack&#039;s json-stable-strigify without jsonify.<br>Required by har-validator/ajv.</td>
-<td align="center"><code>fast-json-stable-stringify@2.1.0</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/forever-agent"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="forever-agent"></a></td>
@@ -555,34 +545,14 @@
 <td align="center"><code>har-schema@2.0.0</code></td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.npmjs.com/package/har-validator"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="har-validator"></a></td>
-<td><a href="https://www.npmjs.com/package/har-validator">har-validator</a></td>
+<td align="center"><a href="https://github.com/EIGHTFINITE/har-validator"><img src="https://avatars.githubusercontent.com/u/9919" width="31" alt="har-validator"></a></td>
+<td><a href="https://github.com/EIGHTFINITE/har-validator">har-validator</a></td>
 <td>Ahmad Nassri</td>
 <td><a href="docs/legal/MIT.txt">MIT</a></td>
-<td><a href="https://github.com/ahmadnassri/node-har-validator">Open Source</a></td>
+<td><a href="https://github.com/EIGHTFINITE/har-validator">Open Source</a></td>
 <td align="center"><a href="##"><img src="docs/img/svg/check.svg" width="24" alt="OK"></a></td>
 <td>Extremely fast HTTP Archive (HAR) validator using JSON Schema.<br>Required by postman-request.</td>
-<td align="center"><code>har-validator@5.1.5</code></td>
-</tr>
-<tr>
-<td align="center"><a href="https://www.npmjs.com/package/ajv"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="ajv"></a></td>
-<td><a href="https://www.npmjs.com/package/ajv">har-validator/ajv</a></td>
-<td>Evgeny Poberezkin</td>
-<td><a href="docs/legal/MIT.txt">MIT</a></td>
-<td><a href="https://github.com/ajv-validator/ajv">Open Source</a></td>
-<td align="center"><a href="##"><img src="docs/img/svg/check.svg" width="24" alt="OK"></a></td>
-<td>Another JSON Schema Validator.<br>Required by har-validator.</td>
-<td align="center"><code>ajv@6.12.6</code></td>
-</tr>
-<tr>
-<td align="center"><a href="https://www.npmjs.com/package/json-schema-traverse"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="json-schema-traverse"></a></td>
-<td><a href="https://www.npmjs.com/package/json-schema-traverse">har-validator/json-schema-traverse</a></td>
-<td>Evgeny Poberezkin</td>
-<td><a href="docs/legal/MIT.txt">MIT</a></td>
-<td><a href="https://github.com/epoberezkin/json-schema-traverse">Open Source</a></td>
-<td align="center"><a href="##"><img src="docs/img/svg/check.svg" width="24" alt="OK"></a></td>
-<td>Traverse JSON Schema passing each schema object to callback.<br>Required by har-validator/ajv.</td>
-<td align="center"><code>json-schema-traverse@0.4.1</code></td>
+<td align="center"><code>EIGHTFINITE/har-validator#6cee4149332738b80b97982564f08df55ffe5fac</code><br>(based on <code>har-validator@5.1.3</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/has"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="has"></a></td>
@@ -818,7 +788,7 @@
 <td align="center"><a href="https://www.npmjs.com/package/npm"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="npm"></a></td>
 <td><a href="https://www.npmjs.com/package/npm">npm</a></td>
 <td>GitHub Inc.</td>
-<td><a href="docs/legal/Artistic-2.0.txt">Artistic-2.0</a></td>
+<td><a href="docs/legal/npm license.txt">npm license</a></td>
 <td><a href="https://github.com/npm/cli">Open Source</a></td>
 <td align="center"><a href="##"><img src="docs/img/svg/check.svg" width="24" alt="OK"></a></td>
 <td>A package manager for JavaScript.</td>
@@ -828,7 +798,7 @@
 <td align="center"><a href="https://www.npmjs.com/package/npm"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="npm-6"></a></td>
 <td><a href="https://www.npmjs.com/package/npm">npm-6</a></td>
 <td>Isaac Z. Schlueter</td>
-<td><a href="docs/legal/Artistic-2.0.txt">Artistic-2.0</a></td>
+<td><a href="docs/legal/npm license.txt">npm license</a></td>
 <td><a href="https://github.com/npm/cli">Open Source</a></td>
 <td align="center"><a href="##"><img src="docs/img/svg/check.svg" width="24" alt="OK"></a></td>
 <td>A package manager for JavaScript.</td>
@@ -892,7 +862,7 @@
 <td><a href="https://github.com/EIGHTFINITE/postman-request">Open Source</a></td>
 <td align="center"><a href="##"><img src="docs/img/svg/check.svg" width="24" alt="OK"></a></td>
 <td>Simplified HTTP request client.</td>
-<td align="center"><code>EIGHTFINITE/postman-request#5f70e2921db14f344b7cc1edc88e5c6abcacfcde</code><br>(based on <code>postman-request@2.88.1-postman.31</code>)</td>
+<td align="center"><code>EIGHTFINITE/postman-request#07e666615f0a01a8d693edf6b668685be08a4b29</code><br>(based on <code>postman-request@2.88.1-postman.31</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/psl"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="psl"></a></td>
@@ -1171,7 +1141,7 @@
 <td><a href="docs/legal/BSD-2-Clause.txt">BSD-2-Clause</a></td>
 <td><a href="https://github.com/garycourt/uri-js">Open Source</a></td>
 <td align="center"><a href="##"><img src="docs/img/svg/check.svg" width="24" alt="OK"></a></td>
-<td>An RFC 3986/3987 compliant, scheme extendable URI/IRI parsing/validating/resolving library for JavaScript.<br>Required by ajv, har-validator/ajv.</td>
+<td>An RFC 3986/3987 compliant, scheme extendable URI/IRI parsing/validating/resolving library for JavaScript.<br>Required by ajv.</td>
 <td align="center"><code>uri-js@4.4.1</code></td>
 </tr>
 <tr>
