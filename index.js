@@ -105,17 +105,6 @@ function writeReadme() {
 				}
 				d[k].licenseHtml = parseLicenseHtml(parse(d[k].license, true, true))
 				
-				// Author
-				if(!pkg.author) {
-					d[k].author = ''
-				}
-				else if(isString(pkg.author)) {
-					d[k].author = pkg.author
-				}
-				else {
-					d[k].author = pkg.author.name
-				}
-				
 				// Source Code
 				if(d[k].type === 'github') {
 					const uri = new URL('https://github.com/' + d[k].resolved)
@@ -144,6 +133,31 @@ function writeReadme() {
 					if(d[k].source.endsWith('.git')) {
 						d[k].source = d[k].source.slice(0,-4)
 					}
+				}
+				
+				// Author
+				if(!pkg.author) {
+					if(d[k].source.startsWith('https://github.com/')) {
+						d[k].author = d[k].source.slice(19)
+						d[k].author = d[k].author.substring(0,d[k].author.indexOf('/'))
+					}
+					else {
+						d[k].author = ''
+					}
+				}
+				else if(isString(pkg.author)) {
+					d[k].author = pkg.author
+				}
+				else if(isString(pkg.author.name)) {
+					d[k].author = pkg.author.name
+				}
+				else {
+					throw Error('Unimplemented')
+				}
+				
+				// Author corrections
+				if(d[k].name === 'npm-6') {
+					d[k].author = 'GitHub Inc.'
 				}
 				
 				// Source Code corrections
