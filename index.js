@@ -143,6 +143,35 @@ function writeReadme() {
 					}
 				}
 				
+				// Source Code corrections
+				if(d[k].version === 'minipass-json-stream@1.0.1') {
+					d[k].source = 'https://www.npmjs.com/package/minipass-json-stream?activeTab=explore'
+				}
+				else if(d[k].version === 'concat-map@0.0.1') {
+					d[k].source = 'https://github.com/ljharb/concat-map'
+				}
+				else if(d[k].version === 'minimist@1.2.6') {
+					d[k].source = 'https://github.com/minimistjs/minimist'
+				}
+				else if(d[k].version === 'typedarray@0.0.6') {
+					d[k].source = 'https://github.com/es-shims/typedarray'
+				}
+				else if(d[k].version === 'walk-up-path@1.0.0') {
+					d[k].source = 'https://www.npmjs.com/package/walk-up-path?activeTab=explore'
+				}
+				else if(d[k].version === 'mkdirp@0.5.6') {
+					d[k].source = 'https://github.com/isaacs/node-mkdirp'
+				}
+				else if(d[k].version === 'text-table@0.2.0') {
+					d[k].source = 'https://www.npmjs.com/package/text-table?activeTab=explore'
+				}
+				else if(d[k].version === 'editor@1.0.0') {
+					d[k].source = 'https://www.npmjs.com/package/editor?activeTab=explore'
+				}
+				else if(d[k].version === 'archy@1.0.0') {
+					d[k].source = 'https://www.npmjs.com/package/archy?activeTab=explore'
+				}
+				
 				// Home
 				if(d[k].type === 'github') {
 					d[k].homepage = d[k].source
@@ -163,19 +192,17 @@ function writeReadme() {
 				if(isString(pkg.description)) {
 					d[k].description = pkg.description
 					
-					// LATIN SMALL LETTER U WITH DIAERESIS
-					d[k].description = d[k].description.replaceAll('\u{FC}', 'u')
 					// RIGHT SINGLE QUOTATION MARK
-					d[k].description = d[k].description.replaceAll('\u{2019}', "'")
+					d[k].description = d[k].description.replaceAll('\u2019', "'")
 					// LEFT DOUBLE QUOTATION MARK
-					d[k].description = d[k].description.replaceAll('\u{201C}', '"')
+					d[k].description = d[k].description.replaceAll('\u201C', '"')
 					// RIGHT DOUBLE QUOTATION MARK
-					d[k].description = d[k].description.replaceAll('\u{201D}', '"')
+					d[k].description = d[k].description.replaceAll('\u201D', '"')
 					// RIGHTWARDS ARROW
-					d[k].description = d[k].description.replaceAll('\u{2192}', '->')
+					d[k].description = d[k].description.replaceAll('\u2192', '->')
 					
 					// Check for invalid characters
-					if(/[^ -~]/.test(d[k].description)) {
+					if(/[^ -~\u00FC]/.test(d[k].description)) {
 						console.error(d[k].description)
 						throw Error('Invalid characters in description of ' + d[k].name)
 					}
