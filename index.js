@@ -183,6 +183,7 @@ function writeReadme() {
 					// Readability & consistency
 					d[k].description = d[k].description.trim().replace(/ +/g,' ').replace(/[Nn]ode\.js|[Nn]ode(?!s)/g,'Node').replace(/\.$/,'') + '.'
 					d[k].description = d[k].description[0].toUpperCase() + d[k].description.slice(1)
+					d[k].description = d[k].description.trim().replace(/^Npm/,'npm')
 				}
 				else {
 					d[k].description = ''
