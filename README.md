@@ -252,7 +252,7 @@
 <td><a href="https://github.com/EIGHTFINITE/cheerio">Open Source</a></td>
 <td align="center"><a href="##"><img src="docs/img/svg/check.svg" width="24" alt="OK"></a></td>
 <td>Tiny, fast, and elegant implementation of core jQuery designed specifically for the server.<br>Required by cloudscraper.</td>
-<td align="center"><code>EIGHTFINITE/cheerio#e6f7f13269723c32b1405d76dd0e61185b5020c1</code><br>(based on <code>cheerio@1.0.0-rc.12</code>)</td>
+<td align="center"><code>EIGHTFINITE/cheerio#211129ad2ee57f78254a6c238f00b6d500dec326</code><br>(based on <code>cheerio@1.0.0-rc.12</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/cheerio-select"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="cheerio-select"></a></td>
