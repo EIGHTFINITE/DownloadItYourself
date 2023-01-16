@@ -37,7 +37,7 @@
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/@postman/form-data"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="@postman/form-data"></a></td>
 <td><a href="https://www.npmjs.com/package/@postman/form-data">@postman/form-data</a></td>
-<td></td>
+<td>postmanlabs</td>
 <td><a href="docs/legal/MIT.txt">MIT</a></td>
 <td><a href="https://github.com/postmanlabs/form-data">Open Source</a></td>
 <td align="center"><a href="##"><img src="docs/img/svg/check.svg" width="24" alt="OK"></a></td>
@@ -167,7 +167,7 @@
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/bcrypt-pbkdf"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="bcrypt-pbkdf"></a></td>
 <td><a href="https://www.npmjs.com/package/bcrypt-pbkdf">bcrypt-pbkdf</a></td>
-<td></td>
+<td>joyent</td>
 <td><a href="docs/legal/BSD-3-Clause.txt">BSD-3-Clause</a></td>
 <td><a href="https://github.com/joyent/node-bcrypt-pbkdf">Open Source</a></td>
 <td align="center"><a href="##"><img src="docs/img/svg/check.svg" width="24" alt="OK"></a></td>
@@ -237,7 +237,7 @@
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/chalk"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="chalk"></a></td>
 <td><a href="https://www.npmjs.com/package/chalk">chalk</a></td>
-<td></td>
+<td>chalk</td>
 <td><a href="docs/legal/MIT.txt">MIT</a></td>
 <td><a href="https://github.com/chalk/chalk">Open Source</a></td>
 <td align="center"><a href="##"><img src="docs/img/svg/check.svg" width="24" alt="OK"></a></td>
@@ -477,7 +477,7 @@
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/extsprintf"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="extsprintf"></a></td>
 <td><a href="https://www.npmjs.com/package/extsprintf">extsprintf</a></td>
-<td></td>
+<td>davepacheco</td>
 <td><a href="docs/legal/MIT.txt">MIT</a></td>
 <td><a href="https://github.com/davepacheco/node-extsprintf">Open Source</a></td>
 <td align="center"><a href="##"><img src="docs/img/svg/check.svg" width="24" alt="OK"></a></td>
@@ -552,7 +552,7 @@
 <td><a href="https://github.com/EIGHTFINITE/har-validator">Open Source</a></td>
 <td align="center"><a href="##"><img src="docs/img/svg/check.svg" width="24" alt="OK"></a></td>
 <td>Extremely fast HTTP Archive (HAR) validator using JSON Schema.<br>Required by postman-request.</td>
-<td align="center"><code>EIGHTFINITE/har-validator#6cee4149332738b80b97982564f08df55ffe5fac</code><br>(based on <code>har-validator@5.1.3</code>)</td>
+<td align="center"><code>EIGHTFINITE/har-validator#246854fcafed9d4a6ae7312ae767dd14ff23b97b</code><br>(based on <code>har-validator@5.1.5</code>)</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/has"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="has"></a></td>
@@ -687,7 +687,7 @@
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/jsprim"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="jsprim"></a></td>
 <td><a href="https://www.npmjs.com/package/jsprim">jsprim</a></td>
-<td></td>
+<td>joyent</td>
 <td><a href="docs/legal/MIT.txt">MIT</a></td>
 <td><a href="https://github.com/joyent/node-jsprim">Open Source</a></td>
 <td align="center"><a href="##"><img src="docs/img/svg/check.svg" width="24" alt="OK"></a></td>
@@ -767,7 +767,7 @@
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/mime-db"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="mime-db"></a></td>
 <td><a href="https://www.npmjs.com/package/mime-db">mime-db</a></td>
-<td></td>
+<td>jshttp</td>
 <td><a href="docs/legal/MIT.txt">MIT</a></td>
 <td><a href="https://github.com/jshttp/mime-db">Open Source</a></td>
 <td align="center"><a href="##"><img src="docs/img/svg/check.svg" width="24" alt="OK"></a></td>
@@ -777,7 +777,7 @@
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/mime-types"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="mime-types"></a></td>
 <td><a href="https://www.npmjs.com/package/mime-types">mime-types</a></td>
-<td></td>
+<td>jshttp</td>
 <td><a href="docs/legal/MIT.txt">MIT</a></td>
 <td><a href="https://github.com/jshttp/mime-types">Open Source</a></td>
 <td align="center"><a href="##"><img src="docs/img/svg/check.svg" width="24" alt="OK"></a></td>
@@ -797,7 +797,7 @@
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/npm"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="npm-6"></a></td>
 <td><a href="https://www.npmjs.com/package/npm">npm-6</a></td>
-<td>Isaac Z. Schlueter</td>
+<td>GitHub Inc.</td>
 <td><a href="docs/legal/npm license.txt">npm license</a></td>
 <td><a href="https://github.com/npm/cli">Open Source</a></td>
 <td align="center"><a href="##"><img src="docs/img/svg/check.svg" width="24" alt="OK"></a></td>
@@ -857,7 +857,7 @@
 <tr>
 <td align="center"><a href="https://github.com/EIGHTFINITE/postman-request"><img src="https://avatars.githubusercontent.com/u/9919" width="31" alt="postman-request"></a></td>
 <td><a href="https://github.com/EIGHTFINITE/postman-request">postman-request</a></td>
-<td></td>
+<td>EIGHTFINITE</td>
 <td><a href="docs/legal/Apache-2.0.txt">Apache-2.0</a></td>
 <td><a href="https://github.com/EIGHTFINITE/postman-request">Open Source</a></td>
 <td align="center"><a href="##"><img src="docs/img/svg/check.svg" width="24" alt="OK"></a></td>
@@ -887,7 +887,7 @@
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/qs"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="qs"></a></td>
 <td><a href="https://www.npmjs.com/package/qs">qs</a></td>
-<td></td>
+<td>ljharb</td>
 <td><a href="docs/legal/BSD-3-Clause.txt">BSD-3-Clause</a></td>
 <td><a href="https://github.com/ljharb/qs">Open Source</a></td>
 <td align="center"><a href="##"><img src="docs/img/svg/check.svg" width="24" alt="OK"></a></td>
@@ -977,7 +977,7 @@
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/slice-ansi"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="slice-ansi"></a></td>
 <td><a href="https://www.npmjs.com/package/slice-ansi">slice-ansi</a></td>
-<td></td>
+<td>chalk</td>
 <td><a href="docs/legal/MIT.txt">MIT</a></td>
 <td><a href="https://github.com/chalk/slice-ansi">Open Source</a></td>
 <td align="center"><a href="##"><img src="docs/img/svg/check.svg" width="24" alt="OK"></a></td>
@@ -1157,7 +1157,7 @@
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/uuid"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="uuid"></a></td>
 <td><a href="https://www.npmjs.com/package/uuid">uuid</a></td>
-<td></td>
+<td>uuidjs</td>
 <td><a href="docs/legal/MIT.txt">MIT</a></td>
 <td><a href="https://github.com/uuidjs/uuid">Open Source</a></td>
 <td align="center"><a href="##"><img src="docs/img/svg/check.svg" width="24" alt="OK"></a></td>
@@ -1167,7 +1167,7 @@
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/verror"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="verror"></a></td>
 <td><a href="https://www.npmjs.com/package/verror">verror</a></td>
-<td></td>
+<td>davepacheco</td>
 <td><a href="docs/legal/MIT.txt">MIT</a></td>
 <td><a href="https://github.com/davepacheco/node-verror">Open Source</a></td>
 <td align="center"><a href="##"><img src="docs/img/svg/check.svg" width="24" alt="OK"></a></td>
