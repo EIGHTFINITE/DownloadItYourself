@@ -787,7 +787,7 @@
 <tr>
 <td align="center"><a href="https://github.com/EIGHTFINITE/postman-request"><img src="https://avatars.githubusercontent.com/u/9919" width="31" alt="postman-request"></a></td>
 <td><a href="https://github.com/EIGHTFINITE/postman-request">postman-request</a></td>
-<td>EIGHTFINITE</td>
+<td>Mikeal Rogers</td>
 <td><a href="docs/legal/Apache-2.0.txt">Apache-2.0</a></td>
 <td><a href="https://github.com/EIGHTFINITE/postman-request">Open Source</a></td>
 <td align="center"><a href="##"><img src="docs/img/svg/check.svg" width="24" alt="OK"></a></td>
