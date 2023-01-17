@@ -15,4 +15,4 @@ jobs:
     - uses: actions/checkout@v3.3.0
     - uses: lycheeverse/lychee-action@v1.5.4
       with:
-        args: '-v -m 20 -t 300 --max-concurrency 1 --accept "403,429,503" --exclude "^[/-9@-Za-z_.-]+@[0-9a-z.-]+$" --user-agent "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko" --github-token "${{ secrets.GITHUB_TOKEN }}" -- README.html'
+        args: '-m 20 -t 300 --max-concurrency 1 --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" -- README.html'
