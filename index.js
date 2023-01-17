@@ -383,12 +383,7 @@ function writeReadme() {
 			html += '<td>' + escAuthor + '</td>\n'
 			html += '<td>' + d.licenseHtml + '</td>\n'
 			html += '<td><a href="' + escSource + '">Open Source</a></td>\n'
-			if(t == 'md') {
-				html += '<td align="center"><a href="##"><img src="docs/img/svg/check.svg" width="24" alt="OK"></a></td>\n'
-			}
-			else {
-				html += '<td align="center"><img src="docs/img/svg/check.svg" width="24" alt="OK"></td>\n'
-			}
+			html += '<td align="center">\u2714\ufe0f</td>\n'
 			html += '<td>' + (escDescription !== '' ? (escRequiredBy !== '' ? escDescription + '<br>' + escRequiredBy : escDescription) : escRequiredBy) +'</td>\n'
 			html += '<td align="center">' + (d.type === 'github' ? '<code>' + escResolved + '</code><br>(based on <code>' + escVersion + '</code>)' : '<code>' + escVersion + '</code>') + '</td>\n'
 			html += '</tr>\n'
