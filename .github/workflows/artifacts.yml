@@ -227,26 +227,17 @@ jobs:
     needs: artifacts
     if: needs.artifacts.result == 'success'
     steps:
-    - uses: actions/checkout@v3.3.0
-      with:
-        repository: EIGHTFINITE/demjson
-        ref: master
-        path: demjson
     - name: Build demjson
       shell: bash
       run: |
-        cd demjson
         pip3 install setuptools==57.4.0
-        sudo python setup.py install
-        cd ..
+        pip3 install git+https://github.com/EIGHTFINITE/demjson.git@master
     - uses: actions/checkout@v3.3.0
       with:
         ref: artifacts
-        path: EIGHTFINITE-build
     - name: jsonlint
       shell: bash
       run: |
-        cd EIGHTFINITE-build
         # Forbid all
         if [[ $(find . -type f -path ./.git -prune -o -path ./node_modules/npm-6/node_modules/iconv-lite/encodings/tables -prune -o -name '*.json' -exec jsonlint -s --forbid any-type-at-start,bom,duplicate-keys,non-portable,non-bmp,zero-byte -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
@@ -255,7 +246,6 @@ jobs:
         if [[ $(find ./node_modules/npm-6/node_modules/iconv-lite/encodings/tables -type f -name '*.json' -exec jsonlint -s --allow non-bmp,zero-byte --forbid any-type-at-start,bom,duplicate-keys,non-portable -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
-        cd ..
   artifacts_npm_linux:
     runs-on: ubuntu-latest
     needs: artifacts
@@ -384,26 +374,17 @@ jobs:
     needs: release
     if: needs.release.result == 'success'
     steps:
-    - uses: actions/checkout@v3.3.0
-      with:
-        repository: EIGHTFINITE/demjson
-        ref: master
-        path: demjson
     - name: Build demjson
       shell: bash
       run: |
-        cd demjson
         pip3 install setuptools==57.4.0
-        sudo python setup.py install
-        cd ..
+        pip3 install git+https://github.com/EIGHTFINITE/demjson.git@master
     - uses: actions/checkout@v3.3.0
       with:
         ref: latest
-        path: EIGHTFINITE-build
     - name: jsonlint
       shell: bash
       run: |
-        cd EIGHTFINITE-build
         # Forbid all
         if [[ $(find . -type f -path ./.git -prune -o -path ./node_modules/npm-6/node_modules/iconv-lite/encodings/tables -prune -o -name '*.json' -exec jsonlint -s --forbid any-type-at-start,bom,duplicate-keys,non-portable,non-bmp,zero-byte -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
@@ -412,4 +393,3 @@ jobs:
         if [[ $(find ./node_modules/npm-6/node_modules/iconv-lite/encodings/tables -type f -name '*.json' -exec jsonlint -s --allow non-bmp,zero-byte --forbid any-type-at-start,bom,duplicate-keys,non-portable -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
-        cd ..
