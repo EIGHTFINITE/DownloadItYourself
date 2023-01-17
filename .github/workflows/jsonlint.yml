@@ -19,6 +19,7 @@ jobs:
       shell: bash
       run: |
         cd demjson
+        pip3 install setuptools==57.4.0
         sudo python setup.py install
         cd ..
     - uses: actions/checkout@v3.3.0
