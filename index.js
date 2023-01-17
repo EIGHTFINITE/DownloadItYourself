@@ -159,6 +159,9 @@ function writeReadme() {
 				if(d[k].name === 'npm-6') {
 					d[k].author = 'GitHub Inc.'
 				}
+				else if(pkg.name === 'postman-request') {
+					d[k].author = 'Mikeal Rogers'
+				}
 				
 				// Source Code corrections
 				if(d[k].version === 'minipass-json-stream@1.0.1') {
