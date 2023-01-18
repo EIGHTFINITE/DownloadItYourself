@@ -722,7 +722,7 @@
 <td><a href="https://github.com/npm/cli">Open Source</a></td>
 <td align="center">✔️</td>
 <td>A package manager for JavaScript.</td>
-<td align="center"><code>npm@9.3.0</code></td>
+<td align="center"><code>npm@9.3.1</code></td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.npmjs.com/package/npm"><img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31" alt="npm-6"></a></td>
