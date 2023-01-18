@@ -12,7 +12,8 @@ function writeReadme() {
 		function traverseDependencies(d,p) {
 			// Require
 			const isString = require('./node_modules/lodash.isstring')
-			const parse = require('spdx-expression-parse');
+			const parse = require('spdx-expression-parse')
+			const allowedCharacters = /[^ -~\u00E1\u00E5\u00F6\u00FC\u0144]/
 			
 			let a = []
 			Object.keys(d).forEach((k) => {
@@ -103,7 +104,20 @@ function writeReadme() {
 					}
 					return lHtml
 				}
+				function parseLicenseMd(x) {
+					let lMd = ''
+					if(x.license) {
+						lMd += '[' + htmlspecialchars(x.license) + '](docs/legal/' + htmlspecialchars(x.license) + '.txt)'
+					}
+					else {
+						lMd += parseLicenseMd(x.left)
+						lMd += ' ' + htmlspecialchars(x.conjunction) + ' '
+						lMd += parseLicenseMd(x.right)
+					}
+					return lMd
+				}
 				d[k].licenseHtml = parseLicenseHtml(parse(d[k].license, true, true))
+				d[k].licenseMd = parseLicenseMd(parse(d[k].license, true, true))
 				
 				// Source Code
 				if(d[k].type === 'github') {
@@ -153,6 +167,12 @@ function writeReadme() {
 				}
 				else {
 					throw Error('Unimplemented')
+				}
+				
+				// Check for invalid characters
+				if(allowedCharacters.test(d[k].author)) {
+					console.error(d[k].description)
+					throw Error('Invalid characters in author name of ' + d[k].name)
 				}
 				
 				// Author corrections
@@ -222,15 +242,17 @@ function writeReadme() {
 					d[k].description = d[k].description.replaceAll('\u2192', '->')
 					
 					// Check for invalid characters
-					if(/[^ -~\u00FC]/.test(d[k].description)) {
+					if(allowedCharacters.test(d[k].description)) {
 						console.error(d[k].description)
 						throw Error('Invalid characters in description of ' + d[k].name)
 					}
 					
 					// Readability & consistency
-					d[k].description = d[k].description.trim().replace(/ +/g,' ').replace(/\!\[[ -~]*?\]\([ -~]+?\)/g,'').replace(/\[([ -~]*?)\]\([ -~]+?\)/g,'$1').replace(/[Nn]ode\.js|[Nn]ode(?!s)/g,'Node').replace(/[!.?]$/,'') + '.'
-					d[k].description = d[k].description[0].toUpperCase() + d[k].description.slice(1)
-					d[k].description = d[k].description.trim().replace(/^Npm/,'npm')
+					d[k].description = d[k].description.trim().replace(/ +/g,' ').replace(/\!\[[ -~]*?\]\([ -~]+?\)/g,'').replace(/\[([ -~]*?)\]\([ -~]+?\)/g,'$1').replace(/[Nn]ode\.js|[Nn]ode(?!s)/g,'Node').trim().replace(/ +/g,' ').replace(/([^!.?]$)/,'$1.')
+					if(d[k].description !== '') {
+						d[k].description = d[k].description[0].toUpperCase() + d[k].description.slice(1)
+						d[k].description = d[k].description.trim().replace(/^Npm/,'npm')
+					}
 					if(d[k].description === '.') {
 						d[k].description = ''
 					}
@@ -353,45 +375,74 @@ function writeReadme() {
 		
 		// Node dependencies
 		const dependencies = traverseDependencies(require('./package-lock.json').dependencies)
-		html += '<h2>Node dependencies</h2>\n'
-		html += '<table>\n'
-		html += '<tr>\n'
-		html += '<th>Icon</th>\n'
-		html += '<th>Name</th>\n'
-		html += '<th>Author</th>\n'
-		html += '<th>License</th>\n'
-		html += '<th>Source&nbsp;Code</th>\n'
-		html += '<th>Distribution</th>\n'
-		html += '<th>Description</th>\n'
-		html += '<th>Version</th>\n'
-		html += '</tr>\n'
-		for (let i=0; i<dependencies.length; i++) {
-			const d = dependencies[i]
-			if(t === 'md' && (d.location.startsWith('npm/') || d.location.startsWith('npm-6/'))) {
-				continue
+		if(t === 'md') {
+			html += '\n## Node dependencies\n\n'
+			html += '| Icon | Name | Author | License | Source&nbsp;Code | Distribution | Description | Version |\n'
+			html += '| --- | --- | --- | --- | --- | --- | --- | --- |\n'
+			for (let i=0; i<dependencies.length; i++) {
+				const d = dependencies[i]
+				if(d.location.startsWith('npm/') || d.location.startsWith('npm-6/')) {
+					continue
+				}
+				const escName = htmlspecialchars(d.name)
+				const escLocation = htmlspecialchars(d.location)
+				const escIcon = htmlspecialchars(d.icon)
+				const escHomepage = htmlspecialchars(d.homepage)
+				const escAuthor = htmlspecialchars(d.author)
+				const escSource = htmlspecialchars(d.source)
+				const escDescription = htmlspecialchars(d.description)
+				const escRequiredBy = htmlspecialchars(d.requiredBy)
+				const escResolved = htmlspecialchars(d.resolved)
+				const escVersion = htmlspecialchars(d.version)
+				html += '| [![](' + escIcon + ')](' + escHomepage + ')'
+				html += ' | [' + escLocation + '](' + escHomepage + ')'
+				html += ' | ' + escAuthor
+				html += ' | ' + d.licenseMd
+				html += ' | [Open Source](' + escSource + ')'
+				html += ' | \u2714\ufe0f'
+				html += ' | ' + (escDescription !== '' ? (escRequiredBy !== '' ? escDescription + '<br>' + escRequiredBy : escDescription) : escRequiredBy)
+				html += ' | ' + (d.type === 'github' ? '`' + escResolved + '`<br>(based on `' + escVersion + '`)' : '`' + escVersion + '`') + ' |\n'
 			}
-			const escName = htmlspecialchars(d.name)
-			const escLocation = htmlspecialchars(d.location)
-			const escIcon = htmlspecialchars(d.icon)
-			const escHomepage = htmlspecialchars(d.homepage)
-			const escAuthor = htmlspecialchars(d.author)
-			const escSource = htmlspecialchars(d.source)
-			const escDescription = htmlspecialchars(d.description)
-			const escRequiredBy = htmlspecialchars(d.requiredBy)
-			const escResolved = htmlspecialchars(d.resolved)
-			const escVersion = htmlspecialchars(d.version)
-			html += '<tr>\n'
-			html += '<td align="center"><a href="' + escHomepage + '"><img src="' + escIcon + '" width="31" alt="' + escName +'"></a></td>\n'
-			html += '<td><a href="' + escHomepage + '">' + escLocation + '</a></td>\n'
-			html += '<td>' + escAuthor + '</td>\n'
-			html += '<td>' + d.licenseHtml + '</td>\n'
-			html += '<td><a href="' + escSource + '">Open Source</a></td>\n'
-			html += '<td align="center">\u2714\ufe0f</td>\n'
-			html += '<td>' + (escDescription !== '' ? (escRequiredBy !== '' ? escDescription + '<br>' + escRequiredBy : escDescription) : escRequiredBy) +'</td>\n'
-			html += '<td align="center">' + (d.type === 'github' ? '<code>' + escResolved + '</code><br>(based on <code>' + escVersion + '</code>)' : '<code>' + escVersion + '</code>') + '</td>\n'
-			html += '</tr>\n'
+			html += '\n'
 		}
-		html += '</table>\n'
+		else {
+			html += '<h2>Node dependencies</h2>\n'
+			html += '<table>\n'
+			html += '<tr>\n'
+			html += '<th>Icon</th>\n'
+			html += '<th>Name</th>\n'
+			html += '<th>Author</th>\n'
+			html += '<th>License</th>\n'
+			html += '<th>Source&nbsp;Code</th>\n'
+			html += '<th>Distribution</th>\n'
+			html += '<th>Description</th>\n'
+			html += '<th>Version</th>\n'
+			html += '</tr>\n'
+			for (let i=0; i<dependencies.length; i++) {
+				const d = dependencies[i]
+				const escName = htmlspecialchars(d.name)
+				const escLocation = htmlspecialchars(d.location)
+				const escIcon = htmlspecialchars(d.icon)
+				const escHomepage = htmlspecialchars(d.homepage)
+				const escAuthor = htmlspecialchars(d.author)
+				const escSource = htmlspecialchars(d.source)
+				const escDescription = htmlspecialchars(d.description)
+				const escRequiredBy = htmlspecialchars(d.requiredBy)
+				const escResolved = htmlspecialchars(d.resolved)
+				const escVersion = htmlspecialchars(d.version)
+				html += '<tr>\n'
+				html += '<td align="center"><a href="' + escHomepage + '"><img src="' + escIcon + '" width="31"></a></td>\n'
+				html += '<td><a href="' + escHomepage + '">' + escLocation + '</a></td>\n'
+				html += '<td>' + escAuthor + '</td>\n'
+				html += '<td>' + d.licenseHtml + '</td>\n'
+				html += '<td><a href="' + escSource + '">Open Source</a></td>\n'
+				html += '<td align="center">\u2714\ufe0f</td>\n'
+				html += '<td>' + (escDescription !== '' ? (escRequiredBy !== '' ? escDescription + '<br>' + escRequiredBy : escDescription) : escRequiredBy) +'</td>\n'
+				html += '<td align="center">' + (d.type === 'github' ? '<code>' + escResolved + '</code><br>(based on <code>' + escVersion + '</code>)' : '<code>' + escVersion + '</code>') + '</td>\n'
+				html += '</tr>\n'
+			}
+			html += '</table>\n'
+		}
 		
 		// Footer
 		const readmeFooter = [...downloadlist.config['readme-footer']]
