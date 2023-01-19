@@ -107,11 +107,11 @@ function writeReadme() {
 				function parseLicenseMd(x) {
 					let lMd = ''
 					if(x.license) {
-						lMd += '[' + htmlspecialchars(x.license) + '](docs/legal/' + htmlspecialchars(x.license) + '.txt)'
+						lMd += '[' + htmlspecialchars(escapeMd(x.license)) + '](docs/legal/' + htmlspecialchars(escapeMd(x.license)) + '.txt)'
 					}
 					else {
 						lMd += parseLicenseMd(x.left)
-						lMd += ' ' + htmlspecialchars(x.conjunction) + ' '
+						lMd += ' ' + htmlspecialchars(escapeMd(x.conjunction)) + ' '
 						lMd += parseLicenseMd(x.right)
 					}
 					return lMd
@@ -297,18 +297,40 @@ function writeReadme() {
 		function htmlspecialchars(s) {
 			return s.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll("'", '&#039;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
 		}
-		
+		function escapeMd(s) {
+			s = s.replace(/^(\s*)([0-9]+)\./,'$1$2\\.').replace(/^(\s*)([-+#])/,'$1\\$2')
+			if(s.split('*').length > 2) {
+				s = s.replaceAll('*', '\\*')
+			}
+			if(s.split('_').length > 2) {
+				s = s.replaceAll('_', '\\_')
+			}
+			if(s.split('~').length > 2) {
+				s = s.replaceAll('~', '\\~')
+			}
+			if(s.split('`').length > 2) {
+				s = s.replaceAll('`', '\\`')
+			}
+			return s.replaceAll('|', '\\|').replaceAll('[', '\\[').replaceAll(']', '\\]')
+		}
+		function escapeUrl(s) {
+			return s.replaceAll(' ', '%20').replaceAll('(', '%28').replaceAll(')', '%29')
+		}
+
 		// Header
 		const downloadlist = require('./downloadlist.json')
 		const readmeHeader = [...downloadlist.config['readme-header']]
 		let html = ''
-		for (let i=0, k=false, l=[]; i<readmeHeader.length; i++) {
+		for (let i=0, k=false, n=false, l=[]; i<readmeHeader.length; i++) {
 			if(isArray(readmeHeader[i])) {
 				if(l.length > 0) {
 					throw Error('Unimplemented')
 				}
 				l=readmeHeader[i]
 				readmeHeader.splice(i--, 1)
+				if(readmeHeader.length === 0) {
+					throw Error('Unimplemented')
+				}
 			}
 			else if(readmeHeader[i] === '<br>') {
 				if(i === 0 || l.length > 0) {
@@ -316,18 +338,18 @@ function writeReadme() {
 				}
 				readmeHeader.splice(i--, 1)
 				if(readmeHeader.length === 0) {
-					continue
+					continue // Nothing left to write
 				}
-				if(t === 'md') {
+				else if(t === 'md') {
 					html += '\n\n'
-					continue
 				}
-				if(k) {
+				else if(k) {
 					html += '</p>\n<p>'
-					continue
 				}
-				html += '</h1>\n<p>'
-				k = true
+				else {
+					html += '</h1>\n<p>'
+					k = true
+				}
 			}
 			else {
 				if(i === 0) {
@@ -341,21 +363,21 @@ function writeReadme() {
 				if(l.length === 1) {
 					if(i+1 === readmeHeader.length) {
 						if(t === 'md') {
-							html += '[' + htmlspecialchars(readmeHeader[i]) + '](' + htmlspecialchars(l[0]) + ')\n\n'
-							continue
+							html += '[' + htmlspecialchars(escapeMd(readmeHeader[i])) + '](' + htmlspecialchars(escapeUrl(l[0])) + ')\n\n'
 						}
-						if(k) {
-							html += '<a href="' + htmlspecialchars(l[0]) + '">' + htmlspecialchars(readmeHeader[i]) + '</a></p>\n'
-							continue
+						else if(k) {
+							html += '<a href="' + htmlspecialchars(escapeUrl(l[0])) + '">' + htmlspecialchars(readmeHeader[i]) + '</a></p>\n'
 						}
-						html += '<a href="' + htmlspecialchars(l[0]) + '">' + htmlspecialchars(readmeHeader[i]) + '</a></h1>\n'
+						else {
+							html += '<a href="' + htmlspecialchars(escapeUrl(l[0])) + '">' + htmlspecialchars(readmeHeader[i]) + '</a></h1>\n'
+						}
 					}
 					else {
 						if(t === 'md') {
-							html += '[' + htmlspecialchars(readmeHeader[i]) + '](' + htmlspecialchars(l[0]) + ')'
+							html += '[' + htmlspecialchars(escapeMd(readmeHeader[i])) + '](' + htmlspecialchars(escapeUrl(l[0])) + ')'
 						}
 						else {
-							html += '<a href="' + htmlspecialchars(l[0]) + '">' + htmlspecialchars(readmeHeader[i]) + '</a>'
+							html += '<a href="' + htmlspecialchars(escapeUrl(l[0])) + '">' + htmlspecialchars(readmeHeader[i]) + '</a>'
 						}
 					}
 					l = []
@@ -363,18 +385,18 @@ function writeReadme() {
 				else if(l.length > 1) {
 					if(i+1 === readmeHeader.length) {
 						if(t === 'md') {
-							html += '**' + htmlspecialchars(readmeHeader[i]) + '**\n\n'
-							continue
+							html += '**' + htmlspecialchars(escapeMd(readmeHeader[i])) + '**\n\n'
 						}
-						if(k) {
+						else if(k) {
 							html += '<b>' + htmlspecialchars(readmeHeader[i]) + '</b></p>\n'
-							continue
 						}
-						html += '<b>' + htmlspecialchars(readmeHeader[i]) + '</b></h1>\n'
+						else {
+							html += '<b>' + htmlspecialchars(readmeHeader[i]) + '</b></h1>\n'
+						}
 					}
 					else {
 						if(t === 'md') {
-							html += '**' + htmlspecialchars(readmeHeader[i]) + '**'
+							html += '**' + htmlspecialchars(escapeMd(readmeHeader[i])) + '**'
 						}
 						else {
 							html += '<b>' + htmlspecialchars(readmeHeader[i]) + '</b>'
@@ -382,31 +404,42 @@ function writeReadme() {
 					}
 					for (let j=0; j<l.length; j++) {
 						if(t === 'md') {
-							html += '[[' + (j+1) + ']](' + htmlspecialchars(l[j]) + ')'
+							html += '[[' + (j+1) + ']](' + htmlspecialchars(escapeUrl(l[j])) + ')'
 						}
 						else {
-							html += '<a href="' + htmlspecialchars(l[j]) + '">[' + (j+1) + ']</a>'
+							html += '<a href="' + htmlspecialchars(escapeUrl(l[j])) + '">[' + (j+1) + ']</a>'
 						}
 					}
 					l = []
 				}
 				else {
+					if(n) {
+						throw Error('Unimplemented')
+					}
 					if(i+1 === readmeHeader.length) {
 						if(t === 'md') {
-							html += htmlspecialchars(readmeHeader[i]) + '\n\n'
-							continue
+							html += htmlspecialchars(escapeMd(readmeHeader[i])) + '\n\n'
 						}
-						if(k) {
+						else if(k) {
 							html += htmlspecialchars(readmeHeader[i]) + '</p>\n'
-							continue
 						}
-						html += htmlspecialchars(readmeHeader[i]) + '</h1>\n'
+						else {
+							html += htmlspecialchars(readmeHeader[i]) + '</h1>\n'
+						}
 					}
 					else {
-						html += htmlspecialchars(readmeHeader[i])
+						if(t === 'md') {
+							html += htmlspecialchars(escapeMd(readmeHeader[i]))
+						}
+						else {
+							html += htmlspecialchars(readmeHeader[i])
+						}
 					}
+					n = true
+					continue
 				}
 			}
+			n = false
 		}
 		
 		// Node dependencies
@@ -420,16 +453,16 @@ function writeReadme() {
 				if(d.location.startsWith('npm/') || d.location.startsWith('npm-6/')) {
 					continue
 				}
-				const escName = htmlspecialchars(d.name)
-				const escLocation = htmlspecialchars(d.location)
-				const escIcon = htmlspecialchars(d.icon)
-				const escHomepage = htmlspecialchars(d.homepage)
-				const escAuthor = htmlspecialchars(d.author)
-				const escSource = htmlspecialchars(d.source)
-				const escDescription = htmlspecialchars(d.description)
-				const escRequiredBy = htmlspecialchars(d.requiredBy)
-				const escResolved = htmlspecialchars(d.resolved)
-				const escVersion = htmlspecialchars(d.version)
+				const escName = (t === 'md' ? htmlspecialchars(escapeMd(d.name)) : htmlspecialchars(d.name))
+				const escLocation = (t === 'md' ? htmlspecialchars(escapeMd(d.location)) : htmlspecialchars(d.location))
+				const escIcon = (t === 'md' ? htmlspecialchars(escapeMd(d.icon)) : htmlspecialchars(d.icon))
+				const escHomepage = (t === 'md' ? htmlspecialchars(escapeMd(d.homepage)) : htmlspecialchars(d.homepage))
+				const escAuthor = (t === 'md' ? htmlspecialchars(escapeMd(d.author)) : htmlspecialchars(d.author))
+				const escSource = (t === 'md' ? htmlspecialchars(escapeMd(d.source)) : htmlspecialchars(d.source))
+				const escDescription = (t === 'md' ? htmlspecialchars(escapeMd(d.description)) : htmlspecialchars(d.description))
+				const escRequiredBy = (t === 'md' ? htmlspecialchars(escapeMd(d.requiredBy)) : htmlspecialchars(d.requiredBy))
+				const escResolved = (t === 'md' ? htmlspecialchars(escapeMd(d.resolved)) : htmlspecialchars(d.resolved))
+				const escVersion = (t === 'md' ? htmlspecialchars(escapeMd(d.version)) : htmlspecialchars(d.version))
 				html += '| [![](' + escIcon + ')](' + escHomepage + ')'
 				html += ' | [' + escLocation + '](' + escHomepage + ')'
 				html += ' | ' + escAuthor
@@ -482,13 +515,16 @@ function writeReadme() {
 		
 		// Footer
 		const readmeFooter = [...downloadlist.config['readme-footer']]
-		for (let i=0, k=false, l=[]; i<readmeFooter.length; i++) {
+		for (let i=0, k=false, n=false, l=[]; i<readmeFooter.length; i++) {
 			if(isArray(readmeFooter[i])) {
 				if(l.length > 0) {
 					throw Error('Unimplemented')
 				}
 				l=readmeFooter[i]
 				readmeFooter.splice(i--, 1)
+				if(readmeFooter.length === 0) {
+					throw Error('Unimplemented')
+				}
 			}
 			else if(readmeFooter[i] === '<br>') {
 				if(i === 0 || l.length > 0) {
@@ -496,18 +532,18 @@ function writeReadme() {
 				}
 				readmeFooter.splice(i--, 1)
 				if(readmeFooter.length === 0) {
-					continue
+					continue // Nothing left to write
 				}
-				if(t === 'md') {
+				else if(t === 'md') {
 					html += '\n\n'
-					continue
 				}
-				if(k) {
+				else if(k) {
 					html += '</p>\n<p>'
-					continue
 				}
-				html += '</h2>\n<p>'
-				k = true
+				else {
+					html += '</h2>\n<p>'
+					k = true
+				}
 			}
 			else {
 				if(i === 0) {
@@ -521,21 +557,21 @@ function writeReadme() {
 				if(l.length === 1) {
 					if(i+1 === readmeFooter.length) {
 						if(t === 'md') {
-							html += '[' + htmlspecialchars(readmeFooter[i]) + '](' + htmlspecialchars(l[0]) + ')\n\n'
-							continue
+							html += '[' + htmlspecialchars(escapeMd(readmeFooter[i])) + '](' + htmlspecialchars(escapeUrl(l[0])) + ')\n\n'
 						}
-						if(k) {
-							html += '<a href="' + htmlspecialchars(l[0]) + '">' + htmlspecialchars(readmeFooter[i]) + '</a></p>\n'
-							continue
+						else if(k) {
+							html += '<a href="' + htmlspecialchars(escapeUrl(l[0])) + '">' + htmlspecialchars(readmeFooter[i]) + '</a></p>\n'
 						}
-						html += '<a href="' + htmlspecialchars(l[0]) + '">' + htmlspecialchars(readmeFooter[i]) + '</a></h2>\n'
+						else {
+							html += '<a href="' + htmlspecialchars(escapeUrl(l[0])) + '">' + htmlspecialchars(readmeFooter[i]) + '</a></h2>\n'
+						}
 					}
 					else {
 						if(t === 'md') {
-							html += '[' + htmlspecialchars(readmeFooter[i]) + '](' + htmlspecialchars(l[0]) + ')'
+							html += '[' + htmlspecialchars(escapeMd(readmeFooter[i])) + '](' + htmlspecialchars(escapeUrl(l[0])) + ')'
 						}
 						else {
-							html += '<a href="' + htmlspecialchars(l[0]) + '">' + htmlspecialchars(readmeFooter[i]) + '</a>'
+							html += '<a href="' + htmlspecialchars(escapeUrl(l[0])) + '">' + htmlspecialchars(readmeFooter[i]) + '</a>'
 						}
 					}
 					l = []
@@ -543,18 +579,18 @@ function writeReadme() {
 				else if(l.length > 1) {
 					if(i+1 === readmeFooter.length) {
 						if(t === 'md') {
-							html += '**' + htmlspecialchars(readmeFooter[i]) + '**\n\n'
-							continue
+							html += '**' + htmlspecialchars(escapeMd(readmeFooter[i])) + '**\n\n'
 						}
-						if(k) {
+						else if(k) {
 							html += '<b>' + htmlspecialchars(readmeFooter[i]) + '</b></p>\n'
-							continue
 						}
-						html += '<b>' + htmlspecialchars(readmeFooter[i]) + '</b></h2>\n'
+						else {
+							html += '<b>' + htmlspecialchars(readmeFooter[i]) + '</b></h2>\n'
+						}
 					}
 					else {
 						if(t === 'md') {
-							html += '**' + htmlspecialchars(readmeFooter[i]) + '**'
+							html += '**' + htmlspecialchars(escapeMd(readmeFooter[i])) + '**'
 						}
 						else {
 							html += '<b>' + htmlspecialchars(readmeFooter[i]) + '</b>'
@@ -562,31 +598,42 @@ function writeReadme() {
 					}
 					for (let j=0; j<l.length; j++) {
 						if(t === 'md') {
-							html += '[[' + (j+1) + ']](' + htmlspecialchars(l[j]) + ')'
+							html += '[[' + (j+1) + ']](' + htmlspecialchars(escapeUrl(l[j])) + ')'
 						}
 						else {
-							html += '<a href="' + htmlspecialchars(l[j]) + '">[' + (j+1) + ']</a>'
+							html += '<a href="' + htmlspecialchars(escapeUrl(l[j])) + '">[' + (j+1) + ']</a>'
 						}
 					}
 					l = []
 				}
 				else {
+					if(n) {
+						throw Error('Unimplemented')
+					}
 					if(i+1 === readmeFooter.length) {
 						if(t === 'md') {
-							html += htmlspecialchars(readmeFooter[i]) + '\n\n'
-							continue
+							html += htmlspecialchars(escapeMd(readmeFooter[i])) + '\n\n'
 						}
-						if(k) {
+						else if(k) {
 							html += htmlspecialchars(readmeFooter[i]) + '</p>\n'
-							continue
 						}
-						html += htmlspecialchars(readmeFooter[i]) + '</h2>\n'
+						else {
+							html += htmlspecialchars(readmeFooter[i]) + '</h2>\n'
+						}
 					}
 					else {
-						html += htmlspecialchars(readmeFooter[i])
+						if(t === 'md') {
+							html += htmlspecialchars(escapeMd(readmeFooter[i]))
+						}
+						else {
+							html += htmlspecialchars(readmeFooter[i])
+						}
 					}
+					n = true
+					continue
 				}
 			}
+			n = false
 		}
 		
 		// Write
