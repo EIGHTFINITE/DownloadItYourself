@@ -318,7 +318,11 @@ function writeReadme() {
 				if(readmeHeader.length === 0) {
 					continue
 				}
-				else if(k) {
+				if(t === 'md') {
+					html += '\n\n'
+					continue
+				}
+				if(k) {
 					html += '</p>\n<p>'
 					continue
 				}
@@ -327,10 +331,19 @@ function writeReadme() {
 			}
 			else {
 				if(i === 0) {
-					html += '<h1>'
+					if(t === 'md') {
+						html += '# '
+					}
+					else {
+						html += '<h1>'
+					}
 				}
 				if(l.length === 1) {
 					if(i+1 === readmeHeader.length) {
+						if(t === 'md') {
+							html += '[' + htmlspecialchars(readmeHeader[i]) + '](' + htmlspecialchars(l[0]) + ')\n\n'
+							continue
+						}
 						if(k) {
 							html += '<a href="' + htmlspecialchars(l[0]) + '">' + htmlspecialchars(readmeHeader[i]) + '</a></p>\n'
 							continue
@@ -338,12 +351,21 @@ function writeReadme() {
 						html += '<a href="' + htmlspecialchars(l[0]) + '">' + htmlspecialchars(readmeHeader[i]) + '</a></h1>\n'
 					}
 					else {
-						html += '<a href="' + htmlspecialchars(l[0]) + '">' + htmlspecialchars(readmeHeader[i]) + '</a>'
+						if(t === 'md') {
+							html += '[' + htmlspecialchars(readmeHeader[i]) + '](' + htmlspecialchars(l[0]) + ')'
+						}
+						else {
+							html += '<a href="' + htmlspecialchars(l[0]) + '">' + htmlspecialchars(readmeHeader[i]) + '</a>'
+						}
 					}
 					l = []
 				}
 				else if(l.length > 1) {
 					if(i+1 === readmeHeader.length) {
+						if(t === 'md') {
+							html += '**' + htmlspecialchars(readmeHeader[i]) + '**\n\n'
+							continue
+						}
 						if(k) {
 							html += '<b>' + htmlspecialchars(readmeHeader[i]) + '</b></p>\n'
 							continue
@@ -351,15 +373,29 @@ function writeReadme() {
 						html += '<b>' + htmlspecialchars(readmeHeader[i]) + '</b></h1>\n'
 					}
 					else {
-						html += '<b>' + htmlspecialchars(readmeHeader[i]) + '</b>'
+						if(t === 'md') {
+							html += '**' + htmlspecialchars(readmeHeader[i]) + '**'
+						}
+						else {
+							html += '<b>' + htmlspecialchars(readmeHeader[i]) + '</b>'
+						}
 					}
 					for (let j=0; j<l.length; j++) {
-						html += '<a href="' + htmlspecialchars(l[j]) + '">[' + (j+1) + ']</a>'
+						if(t === 'md') {
+							html += '[[' + (j+1) + ']](' + htmlspecialchars(l[j]) + ')'
+						}
+						else {
+							html += '<a href="' + htmlspecialchars(l[j]) + '">[' + (j+1) + ']</a>'
+						}
 					}
 					l = []
 				}
 				else {
 					if(i+1 === readmeHeader.length) {
+						if(t === 'md') {
+							html += htmlspecialchars(readmeHeader[i]) + '\n\n'
+							continue
+						}
 						if(k) {
 							html += htmlspecialchars(readmeHeader[i]) + '</p>\n'
 							continue
@@ -462,53 +498,89 @@ function writeReadme() {
 				if(readmeFooter.length === 0) {
 					continue
 				}
-				else if(k) {
+				if(t === 'md') {
+					html += '\n\n'
+					continue
+				}
+				if(k) {
 					html += '</p>\n<p>'
 					continue
 				}
-				html += '</h1>\n<p>'
+				html += '</h2>\n<p>'
 				k = true
 			}
 			else {
 				if(i === 0) {
-					html += '<h1>'
+					if(t === 'md') {
+						html += '## '
+					}
+					else {
+						html += '<h2>'
+					}
 				}
 				if(l.length === 1) {
 					if(i+1 === readmeFooter.length) {
+						if(t === 'md') {
+							html += '[' + htmlspecialchars(readmeFooter[i]) + '](' + htmlspecialchars(l[0]) + ')\n\n'
+							continue
+						}
 						if(k) {
 							html += '<a href="' + htmlspecialchars(l[0]) + '">' + htmlspecialchars(readmeFooter[i]) + '</a></p>\n'
 							continue
 						}
-						html += '<a href="' + htmlspecialchars(l[0]) + '">' + htmlspecialchars(readmeFooter[i]) + '</a></h1>\n'
+						html += '<a href="' + htmlspecialchars(l[0]) + '">' + htmlspecialchars(readmeFooter[i]) + '</a></h2>\n'
 					}
 					else {
-						html += '<a href="' + htmlspecialchars(l[0]) + '">' + htmlspecialchars(readmeFooter[i]) + '</a>'
+						if(t === 'md') {
+							html += '[' + htmlspecialchars(readmeFooter[i]) + '](' + htmlspecialchars(l[0]) + ')'
+						}
+						else {
+							html += '<a href="' + htmlspecialchars(l[0]) + '">' + htmlspecialchars(readmeFooter[i]) + '</a>'
+						}
 					}
 					l = []
 				}
 				else if(l.length > 1) {
 					if(i+1 === readmeFooter.length) {
+						if(t === 'md') {
+							html += '**' + htmlspecialchars(readmeFooter[i]) + '**\n\n'
+							continue
+						}
 						if(k) {
 							html += '<b>' + htmlspecialchars(readmeFooter[i]) + '</b></p>\n'
 							continue
 						}
-						html += '<b>' + htmlspecialchars(readmeFooter[i]) + '</b></h1>\n'
+						html += '<b>' + htmlspecialchars(readmeFooter[i]) + '</b></h2>\n'
 					}
 					else {
-						html += '<b>' + htmlspecialchars(readmeFooter[i]) + '</b>'
+						if(t === 'md') {
+							html += '**' + htmlspecialchars(readmeFooter[i]) + '**'
+						}
+						else {
+							html += '<b>' + htmlspecialchars(readmeFooter[i]) + '</b>'
+						}
 					}
 					for (let j=0; j<l.length; j++) {
-						html += '<a href="' + htmlspecialchars(l[j]) + '">[' + (j+1) + ']</a>'
+						if(t === 'md') {
+							html += '[[' + (j+1) + ']](' + htmlspecialchars(l[j]) + ')'
+						}
+						else {
+							html += '<a href="' + htmlspecialchars(l[j]) + '">[' + (j+1) + ']</a>'
+						}
 					}
 					l = []
 				}
 				else {
 					if(i+1 === readmeFooter.length) {
+						if(t === 'md') {
+							html += htmlspecialchars(readmeFooter[i]) + '\n\n'
+							continue
+						}
 						if(k) {
 							html += htmlspecialchars(readmeFooter[i]) + '</p>\n'
 							continue
 						}
-						html += htmlspecialchars(readmeFooter[i]) + '</h1>\n'
+						html += htmlspecialchars(readmeFooter[i]) + '</h2>\n'
 					}
 					else {
 						html += htmlspecialchars(readmeFooter[i])
