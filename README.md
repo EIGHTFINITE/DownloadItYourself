@@ -10,7 +10,7 @@ This pack contains Fastcraft, by Player, enabled by default. Fastcraft enhances 
 ## Node dependencies
 
 | Icon | Name | Author | License | Source&nbsp;Code | Distribution | Description | Version |
-| --- | --- | --- | --- | --- | --- | --- | --- |
+| :---: | --- | --- | --- | --- | :---: | --- | :---: |
 | [![](https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg)](https://www.npmjs.com/package/@postman/form-data) | [@postman/form-data](https://www.npmjs.com/package/@postman/form-data) | postmanlabs | [MIT](docs/legal/MIT.txt) | [Open Source](https://github.com/postmanlabs/form-data) | ✔️ | A library to create readable &quot;multipart/form-data&quot; streams. Can be used to submit forms and file uploads to other web applications.<br>Required by postman-request. | `@postman/form-data@3.1.1` |
 | [![](https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg)](https://www.npmjs.com/package/@postman/tunnel-agent) | [@postman/tunnel-agent](https://www.npmjs.com/package/@postman/tunnel-agent) | Postman Labs | [Apache-2.0](docs/legal/Apache-2.0.txt) | [Open Source](https://github.com/postmanlabs/tunnel-agent) | ✔️ | HTTP proxy tunneling agent.<br>Required by postman-request. | `@postman/tunnel-agent@0.6.3` |
 | [![](https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg)](https://www.npmjs.com/package/ajv) | [ajv](https://www.npmjs.com/package/ajv) | Evgeny Poberezkin | [MIT](docs/legal/MIT.txt) | [Open Source](https://github.com/ajv-validator/ajv) | ✔️ | Another JSON Schema Validator.<br>Required by har-validator, table. | `ajv@8.12.0` |
