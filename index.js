@@ -107,7 +107,7 @@ function writeReadme() {
 				function parseLicenseMd(x) {
 					let lMd = ''
 					if(x.license) {
-						lMd += '[' + htmlspecialchars(escapeMd(x.license)) + '](docs/legal/' + htmlspecialchars(escapeMd(x.license)) + '.txt)'
+						lMd += '[' + htmlspecialchars(escapeMd(x.license)) + '](docs/legal/' + htmlspecialchars(escapeUrl(x.license)) + '.txt)'
 					}
 					else {
 						lMd += parseLicenseMd(x.left)
