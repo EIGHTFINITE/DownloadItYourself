@@ -1,7 +1,11 @@
-<h1>EIGHTFINITE-build</h1>
-<p>EIGHTFINITE presents a small Vanilla+ modpack for Minecraft 1.7.10.</p>
-<p>This README is a work in progress. Not all information might be accurate yet. Please report any inaccurate information.</p>
-<p>This pack contains Fastcraft, by Player, enabled by default. Fastcraft enhances Minecraft with increased performance. Bug reports being made directly to Mod Authors should state Fastcraft is enabled.</p>
+# EIGHTFINITE-build
+
+EIGHTFINITE presents a small Vanilla+ modpack for Minecraft 1.7.10.
+
+This README is a work in progress. Not all information might be accurate yet. Please report any inaccurate information.
+
+This pack contains Fastcraft, by Player, enabled by default. Fastcraft enhances Minecraft with increased performance. Bug reports being made directly to Mod Authors should state Fastcraft is enabled.
+
 
 ## Node dependencies
 
@@ -116,7 +120,11 @@
 | [![](https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg)](https://www.npmjs.com/package/uuid) | [uuid](https://www.npmjs.com/package/uuid) | uuidjs | [MIT](docs/legal/MIT.txt) | [Open Source](https://github.com/uuidjs/uuid) | ✔️ | RFC4122 (v1, v4, and v5) UUIDs.<br>Required by postman-request. | `uuid@8.3.2` |
 | [![](https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg)](https://www.npmjs.com/package/verror) | [verror](https://www.npmjs.com/package/verror) | davepacheco | [MIT](docs/legal/MIT.txt) | [Open Source](https://github.com/davepacheco/node-verror) | ✔️ | Richer JavaScript errors.<br>Required by jsprim. | `verror@1.10.0` |
 
-<h1>Attribution</h1>
-<p><a href="https://thenounproject.com/term/download/32391/">Download</a> by <a href="https://thenounproject.com/castoretpollux/">Castor &amp; Pollux</a> is licensed under <a href="docs/legal/CC-BY-3.0.txt">CC-BY-3.0</a></p>
-<p><a href="https://web.archive.org/web/20150220051607/https://www.flaticon.com/free-icon/question-mark-circle-interface-faq-symbol_39409">Question mark circle interface faq symbol</a> by <a href="https://web.archive.org/web/20150316103630/https://www.flaticon.com/authors/freepik">Freepik</a> is licensed under <a href="docs/legal/CC-BY-3.0.txt">CC-BY-3.0</a></p>
-<p><b>Cogs / Gears Icon</b><a href="https://stock.adobe.com/images/cogs-gears-icon/230449567">[1]</a><a href="https://www.iconfinder.com/icons/176306/business_cogs_finance_gears_sprockets_thinking_icon">[2]</a><a href="https://www.shutterstock.com/image-vector/cogs-gears-icon-professional-pixel-perfect-336130190">[3]</a> is Copyright (c) 2013 <b>13ree.design</b><a href="https://stock.adobe.com/contributor/205689395/13ree-design">[1]</a><a href="https://www.iconfinder.com/13ree.design">[2]</a><a href="https://www.shutterstock.com/g/13ree.design">[3]</a>. Licensed to EIGHTFINITE by <a href="https://www.adobe.com/">Adobe Inc.</a>, <a href="https://www.iconfinder.com/">Iconfinder ApS</a>, <a href="https://www.shutterstock.com/">Shutterstock Inc.</a></p>
+## Attribution
+
+[Download](https://thenounproject.com/term/download/32391/) by [Castor &amp; Pollux](https://thenounproject.com/castoretpollux/) is licensed under [CC-BY-3.0](docs/legal/CC-BY-3.0.txt)
+
+[Question mark circle interface faq symbol](https://web.archive.org/web/20150220051607/https://www.flaticon.com/free-icon/question-mark-circle-interface-faq-symbol_39409) by [Freepik](https://web.archive.org/web/20150316103630/https://www.flaticon.com/authors/freepik) is licensed under [CC-BY-3.0](docs/legal/CC-BY-3.0.txt)
+
+**Cogs / Gears Icon**[[1]](https://stock.adobe.com/images/cogs-gears-icon/230449567)[[2]](https://www.iconfinder.com/icons/176306/business_cogs_finance_gears_sprockets_thinking_icon)[[3]](https://www.shutterstock.com/image-vector/cogs-gears-icon-professional-pixel-perfect-336130190) is Copyright (c) 2013 **13ree.design**[[1]](https://stock.adobe.com/contributor/205689395/13ree-design)[[2]](https://www.iconfinder.com/13ree.design)[[3]](https://www.shutterstock.com/g/13ree.design). Licensed to EIGHTFINITE by [Adobe Inc.](https://www.adobe.com/), [Iconfinder ApS](https://www.iconfinder.com/), [Shutterstock Inc.](https://www.shutterstock.com/)
+
