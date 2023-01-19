@@ -25,12 +25,12 @@
     "top-user-agents": "github:EIGHTFINITE/top-user-agents#main"
   },
   "devDependencies": {
-    "electron": "22.0.2"
+    "electron": "22.0.3"
   },
   "peerDependencies": {
     "cheerio": "1.0.0-rc.12",
     "cloudscraper": "4.6.0",
-    "electron": "22.0.2",
+    "electron": "22.0.3",
     "har-validator": "5.1.5",
     "postman-request": "2.88.1-postman.31",
     "request-promise": "4.2.6",
