@@ -414,7 +414,7 @@ function writeReadme() {
 		if(t === 'md') {
 			html += '\n## Node dependencies\n\n'
 			html += '| Icon | Name | Author | License | Source&nbsp;Code | Distribution | Description | Version |\n'
-			html += '| --- | --- | --- | --- | --- | --- | --- | --- |\n'
+			html += '| :---: | --- | --- | --- | --- | :---: | --- | :---: |\n'
 			for (let i=0; i<dependencies.length; i++) {
 				const d = dependencies[i]
 				if(d.location.startsWith('npm/') || d.location.startsWith('npm-6/')) {
