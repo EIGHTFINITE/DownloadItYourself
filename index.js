@@ -313,8 +313,10 @@ function writeReadme() {
 			}
 			return s.replaceAll('|', '\\|').replaceAll('[', '\\[').replaceAll(']', '\\]')
 		}
+		
+		// https://developer.mozilla.org/en-US/docs/Glossary/Percent-encoding
 		function escapeUrl(s) {
-			return s.replaceAll('[', '%5B').replaceAll(']', '%5D').replaceAll('@', '%40').replaceAll('!', '%21').replaceAll('$', '%24').replaceAll("'", '%27').replaceAll('(', '%28').replaceAll(')', '%29').replaceAll('*', '%2A').replaceAll('+', '%2B').replaceAll(',', '%2C').replaceAll(';', '%3B').replaceAll('%', '%25')
+			return s.replaceAll('%', '%25').replaceAll('[', '%5B').replaceAll(']', '%5D').replaceAll('@', '%40').replaceAll('!', '%21').replaceAll('$', '%24').replaceAll("'", '%27').replaceAll('(', '%28').replaceAll(')', '%29').replaceAll('*', '%2A').replaceAll('+', '%2B').replaceAll(',', '%2C').replaceAll(';', '%3B')
 		}
 
 		// Header
