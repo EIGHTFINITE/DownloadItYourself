@@ -40,6 +40,7 @@
   },
   "bundleDependencies": [
     "@postman/form-data",
+    "@postman/tough-cookie",
     "@postman/tunnel-agent",
     "ajv",
     "ansi-regex",
@@ -139,7 +140,6 @@
     "strip-ansi",
     "table",
     "top-user-agents",
-    "tough-cookie",
     "tweetnacl",
     "universalify",
     "uri-js",
