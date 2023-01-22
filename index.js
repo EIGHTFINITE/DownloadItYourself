@@ -294,24 +294,34 @@ function writeReadme() {
 			})
 			return a
 		}
+
 		function htmlspecialchars(s) {
 			return s.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll("'", '&#039;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
 		}
-		function escapeMd(s) {
-			s = s.replace(/^(\s*)([0-9]+)\./,'$1$2\\.').replace(/^(\s*)([-+#])/,'$1\\$2')
-			if(s.split('*').length > 2) {
+
+		// Escape Markdown
+		//
+		// Note that results cannot safely be concatenated together. Concatenate first then escape the entire string or set the aggressive option.
+		//
+		// Additionally, results cannot be safely inserted into emphasized text (`*`, `_`, `~`, and <code>\`</code>) without setting the aggressive option.
+		//
+		// On top of that, <code>\`</code> cannot be easily escaped inside code blocks.
+		// Ensure code blocks are opened with `<code>` and closed with `</code>` instead of using <code>\`</code> if the input can contain <code>\`</code>.
+		function escapeMd(s,aggressive) {
+			s = s.replace(/^(\s*)([0-9]+)\./,'$1$2\\.').replace(/^(\s*)([-+#>])/,'$1\\$2')
+			if(aggressive || s.split('*').length > 2) {
 				s = s.replaceAll('*', '\\*')
 			}
 			else {
 				s = s.replace(/^(\s*)(\*)/,'$1\\$2')
 			}
-			if(s.split('_').length > 2) {
+			if(aggressive || s.split('_').length > 2) {
 				s = s.replaceAll('_', '\\_')
 			}
-			if(s.split('~').length > 2) {
+			if(aggressive || s.split('~').length > 2) {
 				s = s.replaceAll('~', '\\~')
 			}
-			if(s.split('`').length > 2) {
+			if(aggressive || s.split('`').length > 2) {
 				s = s.replaceAll('`', '\\`')
 			}
 			return s.replaceAll('|', '\\|').replaceAll('[', '\\[').replaceAll(']', '\\]')
