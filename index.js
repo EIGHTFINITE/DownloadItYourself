@@ -302,6 +302,9 @@ function writeReadme() {
 			if(s.split('*').length > 2) {
 				s = s.replaceAll('*', '\\*')
 			}
+			else {
+				s = s.replace(/^(\s*)(\*)/,'$1\\$2')
+			}
 			if(s.split('_').length > 2) {
 				s = s.replaceAll('_', '\\_')
 			}
@@ -313,7 +316,7 @@ function writeReadme() {
 			}
 			return s.replaceAll('|', '\\|').replaceAll('[', '\\[').replaceAll(']', '\\]')
 		}
-		
+
 		// https://developer.mozilla.org/en-US/docs/Glossary/Percent-encoding
 		function escapeUrl(s) {
 			return s.replaceAll('%', '%25').replaceAll('[', '%5B').replaceAll(']', '%5D').replaceAll('@', '%40').replaceAll('!', '%21').replaceAll('$', '%24').replaceAll("'", '%27').replaceAll('(', '%28').replaceAll(')', '%29').replaceAll('*', '%2A').replaceAll('+', '%2B').replaceAll(',', '%2C').replaceAll(';', '%3B')
@@ -725,7 +728,7 @@ else {
 	if(process.versions.node !== nodeVersion) {
 		throw Error('Expected Node ' + nodeVersion + ' instead of Node ' + process.versions.node)
 	}
-	
+
 	if(process.argv.slice(2).includes('--readme_only')) {
 		writeReadme()
 		return
