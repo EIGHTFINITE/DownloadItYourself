@@ -83,6 +83,7 @@
     "extend",
     "extsprintf",
     "fast-deep-equal",
+    "fast-json-stable-stringify",
     "forever-agent",
     "function-bind",
     "get-intrinsic",
