@@ -7,7 +7,7 @@
   "labels": ["dependencies", "do-not-merge"],
   "packageRules": [
     {
-      "matchPackageNames": ["electron", "node"],
+      "matchPackageNames": ["cheerio", "cloudscraper", "electron", "har-validator", "node", "postman-request", "request-promise", "request-promise-core", "spdx-expression-parse", "top-user-agents"],
       "labels": ["dependencies", "automerge"],
       "automerge": true,
       "automergeType": "pr",
