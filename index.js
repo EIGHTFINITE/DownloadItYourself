@@ -95,7 +95,7 @@ function writeReadme() {
 				function parseLicenseHtml(x) {
 					let lHtml = ''
 					if(x.license) {
-						lHtml += '<a href="docs/legal/' + htmlspecialchars(x.license) + '.txt">' + htmlspecialchars(x.license) + '</a>'
+						lHtml += '<a href="docs/legal/' + escapeUrl(x.license,true) + '.txt">' + htmlspecialchars(x.license) + '</a>'
 					}
 					else {
 						lHtml += parseLicenseHtml(x.left)
@@ -107,11 +107,11 @@ function writeReadme() {
 				function parseLicenseMd(x) {
 					let lMd = ''
 					if(x.license) {
-						lMd += '[' + htmlspecialchars(escapeMd(x.license)) + '](docs/legal/' + htmlspecialchars(escapeUrl(x.license)) + '.txt)'
+						lMd += '[' + escapeMd(x.license,true) + '](docs/legal/' + escapeUrl(x.license,true,true) + '.txt)'
 					}
 					else {
 						lMd += parseLicenseMd(x.left)
-						lMd += ' ' + htmlspecialchars(escapeMd(x.conjunction)) + ' '
+						lMd += ' ' + escapeMd(x.conjunction,true) + ' '
 						lMd += parseLicenseMd(x.right)
 					}
 					return lMd
@@ -307,7 +307,7 @@ function writeReadme() {
 		//
 		// On top of that, <code>\`</code> cannot be easily escaped inside code blocks.
 		// Ensure code blocks are opened with `<code>` and closed with `</code>` instead of using <code>\`</code> if the input can contain <code>\`</code>.
-		function escapeMd(s,aggressive) {
+		function escapeMd(s,inHtml,aggressive) {
 			s = s.replace(/^(\s*)([0-9]+)\./,'$1$2\\.').replace(/^(\s*)([-+#>])/,'$1\\$2')
 			if(aggressive || s.split('*').length > 2) {
 				s = s.replaceAll('*', '\\*')
@@ -324,12 +324,26 @@ function writeReadme() {
 			if(aggressive || s.split('`').length > 2) {
 				s = s.replaceAll('`', '\\`')
 			}
-			return s.replaceAll('|', '\\|').replaceAll('[', '\\[').replaceAll(']', '\\]')
+			s = s.replaceAll('|', '\\|').replaceAll('[', '\\[').replaceAll(']', '\\]')
+			if(inHtml) {
+				s = htmlspecialchars(s)
+			}
+			return s
 		}
 
 		// https://developer.mozilla.org/en-US/docs/Glossary/Percent-encoding
-		function escapeUrl(s) {
-			return s.replaceAll('%', '%25').replaceAll('[', '%5B').replaceAll(']', '%5D').replaceAll('@', '%40').replaceAll('!', '%21').replaceAll('$', '%24').replaceAll("'", '%27').replaceAll('(', '%28').replaceAll(')', '%29').replaceAll('*', '%2A').replaceAll('+', '%2B').replaceAll(',', '%2C').replaceAll(';', '%3B')
+		function escapeUrl(s,inHtml,escapeSpace) {
+			s = s.replaceAll('%', '%25').replaceAll('[', '%5B').replaceAll(']', '%5D').replaceAll('!', '%21').replaceAll('$', '%24').replaceAll("'", '%27').replaceAll('(', '%28').replaceAll(')', '%29').replaceAll('*', '%2A').replaceAll('+', '%2B').replaceAll(',', '%2C').replaceAll(';', '%3B')
+			if(!s.startsWith('https://') && !s.startsWith('http://')) {
+				s = s.replaceAll(':', '%3A').replaceAll('@', '%40')
+			}
+			if(escapeSpace) {
+				s = s.replaceAll(' ', '%20')
+			}
+			if(inHtml) {
+				s = htmlspecialchars(s)
+			}
+			return s
 		}
 
 		// Header
@@ -378,21 +392,21 @@ function writeReadme() {
 				if(l.length === 1) {
 					if(i+1 === readmeHeader.length) {
 						if(t === 'md') {
-							html += '[' + htmlspecialchars(escapeMd(readmeHeader[i])) + '](' + htmlspecialchars(escapeUrl(l[0])) + ')\n\n'
+							html += '[' + escapeMd(readmeHeader[i],true) + '](' + escapeUrl(l[0],true) + ')\n\n'
 						}
 						else if(k) {
-							html += '<a href="' + htmlspecialchars(escapeUrl(l[0])) + '">' + htmlspecialchars(readmeHeader[i]) + '</a></p>\n'
+							html += '<a href="' + escapeUrl(l[0],true) + '">' + htmlspecialchars(readmeHeader[i]) + '</a></p>\n'
 						}
 						else {
-							html += '<a href="' + htmlspecialchars(escapeUrl(l[0])) + '">' + htmlspecialchars(readmeHeader[i]) + '</a></h1>\n'
+							html += '<a href="' + escapeUrl(l[0],true) + '">' + htmlspecialchars(readmeHeader[i]) + '</a></h1>\n'
 						}
 					}
 					else {
 						if(t === 'md') {
-							html += '[' + htmlspecialchars(escapeMd(readmeHeader[i])) + '](' + htmlspecialchars(escapeUrl(l[0])) + ')'
+							html += '[' + escapeMd(readmeHeader[i],true) + '](' + escapeUrl(l[0],true) + ')'
 						}
 						else {
-							html += '<a href="' + htmlspecialchars(escapeUrl(l[0])) + '">' + htmlspecialchars(readmeHeader[i]) + '</a>'
+							html += '<a href="' + escapeUrl(l[0],true) + '">' + htmlspecialchars(readmeHeader[i]) + '</a>'
 						}
 					}
 					l = []
@@ -400,7 +414,7 @@ function writeReadme() {
 				else if(l.length > 1) {
 					if(i+1 === readmeHeader.length) {
 						if(t === 'md') {
-							html += '**' + htmlspecialchars(escapeMd(readmeHeader[i])) + '**\n\n'
+							html += '**' + escapeMd(readmeHeader[i],true) + '**\n\n'
 						}
 						else if(k) {
 							html += '<b>' + htmlspecialchars(readmeHeader[i]) + '</b></p>\n'
@@ -411,7 +425,7 @@ function writeReadme() {
 					}
 					else {
 						if(t === 'md') {
-							html += '**' + htmlspecialchars(escapeMd(readmeHeader[i])) + '**'
+							html += '**' + escapeMd(readmeHeader[i],true) + '**'
 						}
 						else {
 							html += '<b>' + htmlspecialchars(readmeHeader[i]) + '</b>'
@@ -419,10 +433,10 @@ function writeReadme() {
 					}
 					for (let j=0; j<l.length; j++) {
 						if(t === 'md') {
-							html += '[[' + (j+1) + ']](' + htmlspecialchars(escapeUrl(l[j])) + ')'
+							html += '[[' + (j+1) + ']](' + escapeUrl(l[j],true) + ')'
 						}
 						else {
-							html += '<a href="' + htmlspecialchars(escapeUrl(l[j])) + '">[' + (j+1) + ']</a>'
+							html += '<a href="' + escapeUrl(l[j],true) + '">[' + (j+1) + ']</a>'
 						}
 					}
 					l = []
@@ -433,7 +447,7 @@ function writeReadme() {
 					}
 					if(i+1 === readmeHeader.length) {
 						if(t === 'md') {
-							html += htmlspecialchars(escapeMd(readmeHeader[i])) + '\n\n'
+							html += escapeMd(readmeHeader[i],true) + '\n\n'
 						}
 						else if(k) {
 							html += htmlspecialchars(readmeHeader[i]) + '</p>\n'
@@ -444,7 +458,7 @@ function writeReadme() {
 					}
 					else {
 						if(t === 'md') {
-							html += htmlspecialchars(escapeMd(readmeHeader[i]))
+							html += escapeMd(readmeHeader[i],true)
 						}
 						else {
 							html += htmlspecialchars(readmeHeader[i])
@@ -468,16 +482,16 @@ function writeReadme() {
 				if(d.location.startsWith('npm/') || d.location.startsWith('npm-6/')) {
 					continue
 				}
-				const escName = (t === 'md' ? htmlspecialchars(escapeMd(d.name)) : htmlspecialchars(d.name))
-				const escLocation = (t === 'md' ? htmlspecialchars(escapeMd(d.location)) : htmlspecialchars(d.location))
-				const escIcon = (t === 'md' ? htmlspecialchars(escapeMd(d.icon)) : htmlspecialchars(d.icon))
-				const escHomepage = (t === 'md' ? htmlspecialchars(escapeMd(d.homepage)) : htmlspecialchars(d.homepage))
-				const escAuthor = (t === 'md' ? htmlspecialchars(escapeMd(d.author)) : htmlspecialchars(d.author))
-				const escSource = (t === 'md' ? htmlspecialchars(escapeMd(d.source)) : htmlspecialchars(d.source))
-				const escDescription = (t === 'md' ? htmlspecialchars(escapeMd(d.description)) : htmlspecialchars(d.description))
-				const escRequiredBy = (t === 'md' ? htmlspecialchars(escapeMd(d.requiredBy)) : htmlspecialchars(d.requiredBy))
-				const escResolved = (t === 'md' ? htmlspecialchars(escapeMd(d.resolved)) : htmlspecialchars(d.resolved))
-				const escVersion = (t === 'md' ? htmlspecialchars(escapeMd(d.version)) : htmlspecialchars(d.version))
+				const escName = escapeMd(d.name,true)
+				const escLocation = escapeMd(d.location,true)
+				const escIcon = escapeMd(d.icon,true)
+				const escHomepage = escapeUrl(d.homepage,true)
+				const escAuthor = escapeMd(d.author,true)
+				const escSource = escapeUrl(d.source,true)
+				const escDescription = escapeMd(d.description,true)
+				const escRequiredBy = escapeMd(d.requiredBy,true)
+				const escResolved = escapeMd(d.resolved,true)
+				const escVersion = escapeMd(d.version,true)
 				html += '| [![](' + escIcon + ')](' + escHomepage + ')'
 				html += ' | [' + escLocation + '](' + escHomepage + ')'
 				html += ' | ' + escAuthor
@@ -507,9 +521,9 @@ function writeReadme() {
 				const escName = htmlspecialchars(d.name)
 				const escLocation = htmlspecialchars(d.location)
 				const escIcon = htmlspecialchars(d.icon)
-				const escHomepage = htmlspecialchars(d.homepage)
+				const escHomepage = escapeUrl(d.homepage,true)
 				const escAuthor = htmlspecialchars(d.author)
-				const escSource = htmlspecialchars(d.source)
+				const escSource = escapeUrl(d.source,true)
 				const escDescription = htmlspecialchars(d.description)
 				const escRequiredBy = htmlspecialchars(d.requiredBy)
 				const escResolved = htmlspecialchars(d.resolved)
@@ -572,21 +586,21 @@ function writeReadme() {
 				if(l.length === 1) {
 					if(i+1 === readmeFooter.length) {
 						if(t === 'md') {
-							html += '[' + htmlspecialchars(escapeMd(readmeFooter[i])) + '](' + htmlspecialchars(escapeUrl(l[0])) + ')\n\n'
+							html += '[' + escapeMd(readmeFooter[i],true) + '](' + escapeUrl(l[0],true) + ')\n\n'
 						}
 						else if(k) {
-							html += '<a href="' + htmlspecialchars(escapeUrl(l[0])) + '">' + htmlspecialchars(readmeFooter[i]) + '</a></p>\n'
+							html += '<a href="' + escapeUrl(l[0],true) + '">' + htmlspecialchars(readmeFooter[i]) + '</a></p>\n'
 						}
 						else {
-							html += '<a href="' + htmlspecialchars(escapeUrl(l[0])) + '">' + htmlspecialchars(readmeFooter[i]) + '</a></h2>\n'
+							html += '<a href="' + escapeUrl(l[0],true) + '">' + htmlspecialchars(readmeFooter[i]) + '</a></h2>\n'
 						}
 					}
 					else {
 						if(t === 'md') {
-							html += '[' + htmlspecialchars(escapeMd(readmeFooter[i])) + '](' + htmlspecialchars(escapeUrl(l[0])) + ')'
+							html += '[' + escapeMd(readmeFooter[i],true) + '](' + escapeUrl(l[0],true) + ')'
 						}
 						else {
-							html += '<a href="' + htmlspecialchars(escapeUrl(l[0])) + '">' + htmlspecialchars(readmeFooter[i]) + '</a>'
+							html += '<a href="' + escapeUrl(l[0],true) + '">' + htmlspecialchars(readmeFooter[i]) + '</a>'
 						}
 					}
 					l = []
@@ -594,7 +608,7 @@ function writeReadme() {
 				else if(l.length > 1) {
 					if(i+1 === readmeFooter.length) {
 						if(t === 'md') {
-							html += '**' + htmlspecialchars(escapeMd(readmeFooter[i])) + '**\n\n'
+							html += '**' + escapeMd(readmeFooter[i],true) + '**\n\n'
 						}
 						else if(k) {
 							html += '<b>' + htmlspecialchars(readmeFooter[i]) + '</b></p>\n'
@@ -605,7 +619,7 @@ function writeReadme() {
 					}
 					else {
 						if(t === 'md') {
-							html += '**' + htmlspecialchars(escapeMd(readmeFooter[i])) + '**'
+							html += '**' + escapeMd(readmeFooter[i],true) + '**'
 						}
 						else {
 							html += '<b>' + htmlspecialchars(readmeFooter[i]) + '</b>'
@@ -613,10 +627,10 @@ function writeReadme() {
 					}
 					for (let j=0; j<l.length; j++) {
 						if(t === 'md') {
-							html += '[[' + (j+1) + ']](' + htmlspecialchars(escapeUrl(l[j])) + ')'
+							html += '[[' + (j+1) + ']](' + escapeUrl(l[j],true) + ')'
 						}
 						else {
-							html += '<a href="' + htmlspecialchars(escapeUrl(l[j])) + '">[' + (j+1) + ']</a>'
+							html += '<a href="' + escapeUrl(l[j],true) + '">[' + (j+1) + ']</a>'
 						}
 					}
 					l = []
@@ -627,7 +641,7 @@ function writeReadme() {
 					}
 					if(i+1 === readmeFooter.length) {
 						if(t === 'md') {
-							html += htmlspecialchars(escapeMd(readmeFooter[i])) + '\n\n'
+							html += escapeMd(readmeFooter[i],true) + '\n\n'
 						}
 						else if(k) {
 							html += htmlspecialchars(readmeFooter[i]) + '</p>\n'
@@ -638,7 +652,7 @@ function writeReadme() {
 					}
 					else {
 						if(t === 'md') {
-							html += htmlspecialchars(escapeMd(readmeFooter[i]))
+							html += escapeMd(readmeFooter[i],true)
 						}
 						else {
 							html += htmlspecialchars(readmeFooter[i])
