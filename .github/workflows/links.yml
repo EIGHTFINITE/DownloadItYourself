@@ -9,11 +9,11 @@ on:
     - cron: '0 */8 * * *'
 
 jobs:
-  linkChecker:
+  links:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3.3.0
-    - name: Link Checker
+    - name: lychee
       id: lychee
       uses: lycheeverse/lychee-action@v1.5.4
       env:
@@ -24,6 +24,10 @@ jobs:
       if: env.lychee_exit_code != 0
       shell: bash
       run: |
+        rm lychee-*.tar.gz
+        cd lychee
+        ls | cat
+        cd ..
         if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
