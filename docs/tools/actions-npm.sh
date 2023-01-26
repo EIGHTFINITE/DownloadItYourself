@@ -75,8 +75,8 @@ sed -i '/"type": "module"/d' -- 'node_modules/parse5-htmlparser2-tree-adapter/pa
 cp -a bin/all/all/ansi-regex/ansi-regex-3.0.1/node_modules/ansi-regex/ node_modules/npm-6/node_modules/string-width/node_modules/ansi-regex/
 cp -a bin/all/all/ansi-regex/ansi-regex-4.1.1/node_modules/ansi-regex/ node_modules/npm-6/node_modules/yargs/node_modules/ansi-regex/
 # Set bundled status
-sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-6/node_modules/string-width/node_modules/ansi-regex/package.json
-sed -i "0,/\"_inBundle\": false/s//\"_inBundle\": true/" node_modules/npm-6/node_modules/yargs/node_modules/ansi-regex/package.json
+#sed -i "s/\"_inBundle\": false/\"_inBundle\": true/" node_modules/npm-6/node_modules/string-width/node_modules/ansi-regex/package.json
+#sed -i "s/\"_inBundle\": false/\"_inBundle\": true/" node_modules/npm-6/node_modules/yargs/node_modules/ansi-regex/package.json
 # Set parent dependency
 sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-6\/string-width\"\n  \]/" node_modules/npm-6/node_modules/string-width/node_modules/ansi-regex/package.json
 sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-6\/yargs\"\n  \]/" node_modules/npm-6/node_modules/yargs/node_modules/ansi-regex/package.json
@@ -93,6 +93,8 @@ find node_modules/ -mindepth 2 -type f \( -name '*.d.ts' -o -name '*.d.ts.map' -
 # Remove non-deterministic information
 find node_modules/ -mindepth 2 -type f -name 'package.json' -exec sed -i '/"_where": "/d' -- '{}' ';'
 find node_modules/ -mindepth 2 -type f -name 'package.json' -exec sed -i '/"man": \[/,/\],/d' -- '{}' ';'
+# Set bundled status
+find node_modules/ -mindepth 2 -type f -name 'package.json' -exec sed -i "s/\"_inBundle\": false/\"_inBundle\": true/" -- '{}' ';'
 # Update package-lock.json
 if [[ "$OSTYPE" == "msys" ]]; then
   bin/windows/x64/node/node-v$node_version-win-x64/node.exe node_modules/npm-6/bin/npm-cli.js dedupe
