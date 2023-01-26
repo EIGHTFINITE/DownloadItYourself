@@ -19,15 +19,16 @@ jobs:
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       with:
-        args: '-m 0 -t 300 --max-retries 0 --max-concurrency 1 --require-https --format compact -u "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" -- README.html'
+        args: '-m 0 -t 300 --max-retries 0 --max-concurrency 1 --require-https --format markdown -u "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" -- README.html'
     - name: Links
       if: env.lychee_exit_code != 0
       shell: bash
       run: |
         rm lychee-*.tar.gz
-        cd lychee
-        ls | cat
-        cd ..
+        if [[ $(cat lychee/out.md | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
+        rm -r lychee/
         if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
