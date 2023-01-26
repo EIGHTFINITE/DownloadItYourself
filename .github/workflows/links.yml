@@ -25,7 +25,7 @@ jobs:
       shell: bash
       run: |
         rm lychee-*.tar.gz
-        if [[ $(cat lychee/out.md | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        if [[ $(cat lychee/out.md | grep -F '* [' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         rm -r lychee/
