@@ -1,0 +1,29 @@
+name: Links
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  schedule:
+    - cron: '0 */8 * * *'
+
+jobs:
+  linkChecker:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3.3.0
+    - name: Link Checker
+      id: lychee
+      uses: lycheeverse/lychee-action@v1.5.4
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      with:
+        args: '-m 0 -t 300 --max-retries 0 --max-concurrency 1 --require-https --format compact -u "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" -- README.html'
+    - name: Links
+      if: env.lychee_exit_code != 0
+      shell: bash
+      run: |
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
