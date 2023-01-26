@@ -82,15 +82,24 @@ function writeReadme() {
 				else if(d[k].license === 'FreeBSD') {
 					d[k].license = 'BSD-2-Clause-Views'
 				}
-				
+
 				// License corrections
-				if(d[k].version === 'cyclist@0.2.2') {
-					d[k].license = 'MIT'
-				}
-				else if(pkg.name === 'npm') {
+				if(pkg.name === 'npm') {
 					d[k].license = 'npm license'
 				}
-				
+				else if(d[k].version === 'bin-links@1.1.8') {
+					d[k].license = 'ISC'
+				}
+				else if(d[k].version === 'cyclist@0.2.2') {
+					d[k].license = 'MIT'
+				}
+				else if(d[k].version === 'gentle-fs@2.3.1') {
+					d[k].license = 'npm license'
+				}
+				else if(d[k].version === 'npm-lifecycle@3.1.5') {
+					d[k].license = 'npm license'
+				}
+
 				// License HTML
 				function parseLicenseHtml(x) {
 					let lHtml = ''
