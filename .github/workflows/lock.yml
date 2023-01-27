@@ -11,6 +11,8 @@ jobs:
     - uses: dessant/lock-threads@v4.0.0
       with:
         add-issue-labels: 'locked'
+        remove-issue-labels: 'stale'
         issue-lock-reason: ''
         add-pr-labels: 'locked'
+        remove-pr-labels: 'stale'
         pr-lock-reason: ''
