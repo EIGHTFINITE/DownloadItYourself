@@ -257,7 +257,7 @@ function writeReadme() {
 					}
 					
 					// Readability & consistency
-					d[k].description = d[k].description.trim().replace(/ +/g,' ').replace(/\!\[[ -~]*?\]\([ -~]+?\)/g,'').replace(/\[([ -~]*?)\]\([ -~]+?\)/g,'$1').replace(/[Nn]ode\.js|[Nn]ode(?!s)/g,'Node').trim().replace(/ +/g,' ').replace(/([^!.?]$)/,'$1.')
+					d[k].description = d[k].description.trim().replace(/\s+/g,' ').replace(/\!\[[ -~]*?\]\([ -~]+?\)/g,'').replace(/\[([ -~]*?)\]\([ -~]+?\)/g,'$1').replace(/[Nn]ode\.js|[Nn]ode(?!s)/g,'Node').trim().replace(/ +/g,' ').replace(/([^!.?]$)/,'$1.')
 					if(d[k].description !== '') {
 						d[k].description = d[k].description[0].toUpperCase() + d[k].description.slice(1)
 						d[k].description = d[k].description.trim().replace(/^Npm/,'npm')
