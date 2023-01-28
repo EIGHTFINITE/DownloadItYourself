@@ -257,10 +257,10 @@ function writeReadme() {
 					}
 					
 					// Readability & consistency
-					d[k].description = d[k].description.trim().replace(/\s+/g,' ').replace(/\!\[[ -~]*?\]\([ -~]+?\)/g,'').replace(/\[([ -~]*?)\]\([ -~]+?\)/g,'$1').replace(/[Nn]ode\.js|[Nn]ode(?!s)/g,'Node').trim().replace(/ +/g,' ').replace(/([^!.?]$)/,'$1.')
+					d[k].description = d[k].description.replace(/\s+/g,' ').replace(/\!\[[ -~]*?\]\([ -~]+?\)/g,'').replace(/\[([ -~]*?)\]\([ -~]+?\)/g,'$1').trim().replace(/[Nn]ode\.js|[Nn]ode(?!s)/g,'Node').replace(/([^!.?]$)/,'$1.')
 					if(d[k].description !== '') {
 						d[k].description = d[k].description[0].toUpperCase() + d[k].description.slice(1)
-						d[k].description = d[k].description.trim().replace(/^Npm/,'npm')
+						d[k].description = d[k].description.replace(/^Npm/,'npm')
 					}
 					if(d[k].description === '.') {
 						d[k].description = ''
@@ -304,7 +304,13 @@ function writeReadme() {
 			return a
 		}
 
-		function htmlspecialchars(s) {
+		function htmlspecialchars(s,noTrim) {
+			if(noTrim) {
+				s = s.replace(/\s/g,' ')
+			}
+			else {
+				s = s.replace(/\s+/g,' ').trim()
+			}
 			return s.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll("'", '&#039;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
 		}
 
@@ -316,7 +322,13 @@ function writeReadme() {
 		//
 		// On top of that, <code>\`</code> cannot be easily escaped inside code blocks.
 		// Ensure code blocks are opened with `<code>` and closed with `</code>` instead of using <code>\`</code> if the input can contain <code>\`</code>.
-		function escapeMd(s,inHtml,aggressive) {
+		function escapeMd(s,inHtml,aggressive,noTrim) {
+			if(noTrim) {
+				s = s.replace(/\s/g,' ')
+			}
+			else {
+				s = s.replace(/\s+/g,' ').trim()
+			}
 			s = s.replace(/^(\s*)([0-9]+)\./,'$1$2\\.').replace(/^(\s*)([-+#>])/,'$1\\$2')
 			if(aggressive || s.split('*').length > 2) {
 				s = s.replaceAll('*', '\\*')
@@ -341,7 +353,13 @@ function writeReadme() {
 		}
 
 		// https://developer.mozilla.org/en-US/docs/Glossary/Percent-encoding
-		function escapeUrl(s,inHtml,escapeSpace) {
+		function escapeUrl(s,inHtml,escapeSpace,noTrim) {
+			if(noTrim) {
+				s = s.replace(/\s/g,' ')
+			}
+			else {
+				s = s.replace(/\s+/g,' ').trim()
+			}
 			s = s.replaceAll('%', '%25').replaceAll('[', '%5B').replaceAll(']', '%5D').replaceAll('!', '%21').replaceAll('$', '%24').replaceAll("'", '%27').replaceAll('(', '%28').replaceAll(')', '%29').replaceAll('*', '%2A').replaceAll('+', '%2B').replaceAll(',', '%2C').replaceAll(';', '%3B')
 			if(!s.startsWith('https://') && !s.startsWith('http://')) {
 				s = s.replaceAll(':', '%3A').replaceAll('@', '%40')
@@ -359,125 +377,161 @@ function writeReadme() {
 		const downloadlist = require('./downloadlist.json')
 		const readmeHeader = [...downloadlist.config['readme-header']]
 		let html = ''
-		for (let i=0, k=false, n=false, l=[]; i<readmeHeader.length; i++) {
-			if(isArray(readmeHeader[i])) {
-				if(l.length > 0) {
+		html += optimizedArrayToText(readmeHeader,'h1')
+		
+		function optimizedArrayToText(oa,heading) {
+			let s = ''
+			for (let i=0, k=false, n=false, l=[]; i<oa.length; i++) {
+				if(oa[i].length === 0) {
 					throw Error('Unimplemented')
 				}
-				l=readmeHeader[i]
-				readmeHeader.splice(i--, 1)
-				if(readmeHeader.length === 0) {
-					throw Error('Unimplemented')
-				}
-			}
-			else if(readmeHeader[i] === '<br>') {
-				if(i === 0 || l.length > 0) {
-					throw Error('Unimplemented')
-				}
-				readmeHeader.splice(i--, 1)
-				if(readmeHeader.length === 0) {
-					continue // Nothing left to write
-				}
-				else if(t === 'md') {
-					html += '\n\n'
-				}
-				else if(k) {
-					html += '</p>\n<p>'
-				}
-				else {
-					html += '</h1>\n<p>'
-					k = true
-				}
-			}
-			else {
-				if(i === 0) {
-					if(t === 'md') {
-						html += '# '
-					}
-					else {
-						html += '<h1>'
-					}
-				}
-				if(l.length === 1) {
-					if(i+1 === readmeHeader.length) {
-						if(t === 'md') {
-							html += '[' + escapeMd(readmeHeader[i],true) + '](' + escapeUrl(l[0],true) + ')\n\n'
-						}
-						else if(k) {
-							html += '<a href="' + escapeUrl(l[0],true) + '">' + htmlspecialchars(readmeHeader[i]) + '</a></p>\n'
-						}
-						else {
-							html += '<a href="' + escapeUrl(l[0],true) + '">' + htmlspecialchars(readmeHeader[i]) + '</a></h1>\n'
-						}
-					}
-					else {
-						if(t === 'md') {
-							html += '[' + escapeMd(readmeHeader[i],true) + '](' + escapeUrl(l[0],true) + ')'
-						}
-						else {
-							html += '<a href="' + escapeUrl(l[0],true) + '">' + htmlspecialchars(readmeHeader[i]) + '</a>'
-						}
-					}
-					l = []
-				}
-				else if(l.length > 1) {
-					if(i+1 === readmeHeader.length) {
-						if(t === 'md') {
-							html += '**' + escapeMd(readmeHeader[i],true) + '**\n\n'
-						}
-						else if(k) {
-							html += '<b>' + htmlspecialchars(readmeHeader[i]) + '</b></p>\n'
-						}
-						else {
-							html += '<b>' + htmlspecialchars(readmeHeader[i]) + '</b></h1>\n'
-						}
-					}
-					else {
-						if(t === 'md') {
-							html += '**' + escapeMd(readmeHeader[i],true) + '**'
-						}
-						else {
-							html += '<b>' + htmlspecialchars(readmeHeader[i]) + '</b>'
-						}
-					}
-					for (let j=0; j<l.length; j++) {
-						if(t === 'md') {
-							html += '[[' + (j+1) + ']](' + escapeUrl(l[j],true) + ')'
-						}
-						else {
-							html += '<a href="' + escapeUrl(l[j],true) + '">[' + (j+1) + ']</a>'
-						}
-					}
-					l = []
-				}
-				else {
-					if(n) {
+				if(isArray(oa[i])) {
+					if(l.length > 0) {
 						throw Error('Unimplemented')
 					}
-					if(i+1 === readmeHeader.length) {
-						if(t === 'md') {
-							html += escapeMd(readmeHeader[i],true) + '\n\n'
-						}
-						else if(k) {
-							html += htmlspecialchars(readmeHeader[i]) + '</p>\n'
-						}
-						else {
-							html += htmlspecialchars(readmeHeader[i]) + '</h1>\n'
-						}
+					l=oa[i]
+					oa.splice(i--, 1)
+					if(oa.length === 0) {
+						throw Error('Unimplemented')
+					}
+				}
+				else if(oa[i].replace(/\s+/g,' ').trim() === '') {
+					throw Error('Unimplemented')
+				}
+				else if(oa[i] === '<br>') {
+					if(i === 0 || l.length > 0) {
+						throw Error('Unimplemented')
+					}
+					oa.splice(i--, 1)
+					if(oa.length === 0) {
+						continue // Nothing left to write
+					}
+					else if(t === 'md') {
+						s += '\n\n'
+					}
+					else if(k) {
+						s += '</p>\n<p>'
 					}
 					else {
+						s += '</' + heading + '>\n<p>'
+						k = true
+					}
+				}
+				else {
+					if(i === 0) {
 						if(t === 'md') {
-							html += escapeMd(readmeHeader[i],true)
+							if(heading === 'h1') {
+								s += '# '
+							}
+							else if(heading === 'h2') {
+								s += '## '
+							}
+							else if(heading === 'h3') {
+								s += '### '
+							}
+							else if(heading === 'h4') {
+								s += '#### '
+							}
+							else if(heading === 'h5') {
+								s += '##### '
+							}
+							else if(heading === 'h6') {
+								s += '###### '
+							}
 						}
 						else {
-							html += htmlspecialchars(readmeHeader[i])
+							s += '<' + heading + '>'
 						}
 					}
-					n = true
-					continue
+					if(l.length === 1) {
+						if(i+1 === oa.length) {
+							if(t === 'md') {
+								s += '[' + escapeMd(oa[i],true) + '](' + escapeUrl(l[0],true) + ')\n\n'
+							}
+							else if(k) {
+								s += '<a href="' + escapeUrl(l[0],true) + '">' + htmlspecialchars(oa[i]) + '</a></p>\n'
+							}
+							else {
+								s += '<a href="' + escapeUrl(l[0],true) + '">' + htmlspecialchars(oa[i]) + '</a></' + heading + '>\n'
+							}
+						}
+						else {
+							if(t === 'md') {
+								s += '[' + escapeMd(oa[i],true) + '](' + escapeUrl(l[0],true) + ')'
+							}
+							else {
+								s += '<a href="' + escapeUrl(l[0],true) + '">' + htmlspecialchars(oa[i]) + '</a>'
+							}
+						}
+						l = []
+					}
+					else if(l.length > 1) {
+						if(i+1 === oa.length) {
+							if(t === 'md') {
+								s += '**' + escapeMd(oa[i],true) + '**\n\n'
+							}
+							else if(k) {
+								s += '<b>' + htmlspecialchars(oa[i]) + '</b></p>\n'
+							}
+							else {
+								s += '<b>' + htmlspecialchars(oa[i]) + '</b></' + heading + '>\n'
+							}
+						}
+						else {
+							if(t === 'md') {
+								s += '**' + escapeMd(oa[i],true) + '**'
+							}
+							else {
+								s += '<b>' + htmlspecialchars(oa[i]) + '</b>'
+							}
+						}
+						for (let j=0; j<l.length; j++) {
+							if(t === 'md') {
+								s += '[[' + (j+1) + ']](' + escapeUrl(l[j],true) + ')'
+							}
+							else {
+								s += '<a href="' + escapeUrl(l[j],true) + '">[' + (j+1) + ']</a>'
+							}
+						}
+						l = []
+					}
+					else {
+						if(n) {
+							throw Error('Unimplemented')
+						}
+						const dummyString = oa[i].replace(/\s+/g,' ')
+						if(dummyString[0] === ' ') {
+							s += ' '
+						}
+						if(i+1 === oa.length) {
+							if(t === 'md') {
+								s += escapeMd(oa[i],true) + '\n\n'
+							}
+							else if(k) {
+								s += htmlspecialchars(oa[i]) + '</p>\n'
+							}
+							else {
+								s += htmlspecialchars(oa[i]) + '</' + heading + '>\n'
+							}
+						}
+						else {
+							if(t === 'md') {
+								s += escapeMd(oa[i],true)
+							}
+							else {
+								s += htmlspecialchars(oa[i])
+							}
+							if(dummyString.slice(-1) === ' ') {
+								s += ' '
+							}
+						}
+						n = true
+						continue
+					}
 				}
+				n = false
 			}
-			n = false
+			return s
 		}
 		
 		// Node dependencies
@@ -553,126 +607,7 @@ function writeReadme() {
 		
 		// Footer
 		const readmeFooter = [...downloadlist.config['readme-footer']]
-		for (let i=0, k=false, n=false, l=[]; i<readmeFooter.length; i++) {
-			if(isArray(readmeFooter[i])) {
-				if(l.length > 0) {
-					throw Error('Unimplemented')
-				}
-				l=readmeFooter[i]
-				readmeFooter.splice(i--, 1)
-				if(readmeFooter.length === 0) {
-					throw Error('Unimplemented')
-				}
-			}
-			else if(readmeFooter[i] === '<br>') {
-				if(i === 0 || l.length > 0) {
-					throw Error('Unimplemented')
-				}
-				readmeFooter.splice(i--, 1)
-				if(readmeFooter.length === 0) {
-					continue // Nothing left to write
-				}
-				else if(t === 'md') {
-					html += '\n\n'
-				}
-				else if(k) {
-					html += '</p>\n<p>'
-				}
-				else {
-					html += '</h2>\n<p>'
-					k = true
-				}
-			}
-			else {
-				if(i === 0) {
-					if(t === 'md') {
-						html += '## '
-					}
-					else {
-						html += '<h2>'
-					}
-				}
-				if(l.length === 1) {
-					if(i+1 === readmeFooter.length) {
-						if(t === 'md') {
-							html += '[' + escapeMd(readmeFooter[i],true) + '](' + escapeUrl(l[0],true) + ')\n\n'
-						}
-						else if(k) {
-							html += '<a href="' + escapeUrl(l[0],true) + '">' + htmlspecialchars(readmeFooter[i]) + '</a></p>\n'
-						}
-						else {
-							html += '<a href="' + escapeUrl(l[0],true) + '">' + htmlspecialchars(readmeFooter[i]) + '</a></h2>\n'
-						}
-					}
-					else {
-						if(t === 'md') {
-							html += '[' + escapeMd(readmeFooter[i],true) + '](' + escapeUrl(l[0],true) + ')'
-						}
-						else {
-							html += '<a href="' + escapeUrl(l[0],true) + '">' + htmlspecialchars(readmeFooter[i]) + '</a>'
-						}
-					}
-					l = []
-				}
-				else if(l.length > 1) {
-					if(i+1 === readmeFooter.length) {
-						if(t === 'md') {
-							html += '**' + escapeMd(readmeFooter[i],true) + '**\n\n'
-						}
-						else if(k) {
-							html += '<b>' + htmlspecialchars(readmeFooter[i]) + '</b></p>\n'
-						}
-						else {
-							html += '<b>' + htmlspecialchars(readmeFooter[i]) + '</b></h2>\n'
-						}
-					}
-					else {
-						if(t === 'md') {
-							html += '**' + escapeMd(readmeFooter[i],true) + '**'
-						}
-						else {
-							html += '<b>' + htmlspecialchars(readmeFooter[i]) + '</b>'
-						}
-					}
-					for (let j=0; j<l.length; j++) {
-						if(t === 'md') {
-							html += '[[' + (j+1) + ']](' + escapeUrl(l[j],true) + ')'
-						}
-						else {
-							html += '<a href="' + escapeUrl(l[j],true) + '">[' + (j+1) + ']</a>'
-						}
-					}
-					l = []
-				}
-				else {
-					if(n) {
-						throw Error('Unimplemented')
-					}
-					if(i+1 === readmeFooter.length) {
-						if(t === 'md') {
-							html += escapeMd(readmeFooter[i],true) + '\n\n'
-						}
-						else if(k) {
-							html += htmlspecialchars(readmeFooter[i]) + '</p>\n'
-						}
-						else {
-							html += htmlspecialchars(readmeFooter[i]) + '</h2>\n'
-						}
-					}
-					else {
-						if(t === 'md') {
-							html += escapeMd(readmeFooter[i],true)
-						}
-						else {
-							html += htmlspecialchars(readmeFooter[i])
-						}
-					}
-					n = true
-					continue
-				}
-			}
-			n = false
-		}
+		html += optimizedArrayToText(readmeFooter,'h2')
 		
 		// Write
 		return html
