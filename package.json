@@ -27,7 +27,7 @@
   "devDependencies": {
     "ansi-regex-4.1.1": "npm:ansi-regex@4.1.1",
     "ansi-regex-3.0.1": "npm:ansi-regex@3.0.1",
-    "electron": "22.2.2",
+    "electron": "22.2.0",
     "http-cache-semantics-4.1.1": "npm:http-cache-semantics@4.1.1"
   },
   "peerDependencies": {
