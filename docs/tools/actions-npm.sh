@@ -8,11 +8,11 @@ rm npm_version.txt
 sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
 sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
 sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
-# Temporarily install ansi-regex@4.1.1 and ansi-regex@3.0.1
+# Temporarily install ansi-regex@4.1.1, ansi-regex@3.0.1 and http-cache-semantics@4.1.1
 if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline ansi-regex-4.1.1@npm:ansi-regex@4.1.1 ansi-regex-3.0.1@npm:ansi-regex@3.0.1
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline ansi-regex-4.1.1@npm:ansi-regex@4.1.1 ansi-regex-3.0.1@npm:ansi-regex@3.0.1 http-cache-semantics-4.1.1@npm:http-cache-semantics@4.1.1
 else
-  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline ansi-regex-4.1.1@npm:ansi-regex@4.1.1 ansi-regex-3.0.1@npm:ansi-regex@3.0.1
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline ansi-regex-4.1.1@npm:ansi-regex@4.1.1 ansi-regex-3.0.1@npm:ansi-regex@3.0.1 http-cache-semantics-4.1.1@npm:http-cache-semantics@4.1.1
 fi
 rm -rf .npm/
 rm package-lock.json
@@ -33,6 +33,14 @@ sed -i 's/npm:ansi-regex@3.0.1/3.0.1/' -- 'bin/all/all/ansi-regex/ansi-regex-3.0
 sed -i 's/    "type": "alias"/    "type": "version"/' -- 'bin/all/all/ansi-regex/ansi-regex-3.0.1/node_modules/ansi-regex/package.json'
 sed -i 's/    "fetchSpec": null,/    "fetchSpec": "3.0.1"/' -- 'bin/all/all/ansi-regex/ansi-regex-3.0.1/node_modules/ansi-regex/package.json'
 sed -i '/    "subSpec": {/,/    }/d' -- 'bin/all/all/ansi-regex/ansi-regex-3.0.1/node_modules/ansi-regex/package.json'
+# Create a local copy of http-cache-semantics@4.1.1
+mkdir -p bin/all/all/http-cache-semantics/http-cache-semantics-4.1.1/node_modules/http-cache-semantics
+mv -T node_modules/http-cache-semantics-4.1.1 bin/all/all/http-cache-semantics/http-cache-semantics-4.1.1/node_modules/http-cache-semantics
+sed -i 's/http-cache-semantics-4.1.1/http-cache-semantics/' -- 'bin/all/all/http-cache-semantics/http-cache-semantics-4.1.1/node_modules/http-cache-semantics/package.json'
+sed -i 's/npm:http-cache-semantics@4.1.1/4.1.1/' -- 'bin/all/all/http-cache-semantics/http-cache-semantics-4.1.1/node_modules/http-cache-semantics/package.json'
+sed -i 's/    "type": "alias"/    "type": "version"/' -- 'bin/all/all/http-cache-semantics/http-cache-semantics-4.1.1/node_modules/http-cache-semantics/package.json'
+sed -i 's/    "fetchSpec": null,/    "fetchSpec": "4.1.1"/' -- 'bin/all/all/http-cache-semantics/http-cache-semantics-4.1.1/node_modules/http-cache-semantics/package.json'
+sed -i '/    "subSpec": {/,/    }/d' -- 'bin/all/all/http-cache-semantics/http-cache-semantics-4.1.1/node_modules/http-cache-semantics/package.json'
 # Clean up Node package dependencies
 rm -r node_modules/
 # Ignore devDependencies, peerDependencies, and bundleDependencies
@@ -56,6 +64,7 @@ rm -rf .npm/
 # Remove vulnerable dependencies
 rm -r node_modules/npm-6/node_modules/string-width/node_modules/ansi-regex/
 rm -r node_modules/npm-6/node_modules/yargs/node_modules/ansi-regex/
+rm -r node_modules/npm-6/node_modules/http-cache-semantics/
 # Remove module typing
 rm node_modules/cheerio/lib/esm/package.json
 rm node_modules/cheerio-select/lib/esm/package.json
@@ -74,15 +83,21 @@ sed -i '/"type": "module"/d' -- 'node_modules/parse5-htmlparser2-tree-adapter/pa
 # Patch vulnerable dependencies
 cp -a bin/all/all/ansi-regex/ansi-regex-3.0.1/node_modules/ansi-regex/ node_modules/npm-6/node_modules/string-width/node_modules/ansi-regex/
 cp -a bin/all/all/ansi-regex/ansi-regex-4.1.1/node_modules/ansi-regex/ node_modules/npm-6/node_modules/yargs/node_modules/ansi-regex/
+cp -a bin/all/all/http-cache-semantics/http-cache-semantics-4.1.1/node_modules/http-cache-semantics/ node_modules/npm-6/node_modules/http-cache-semantics/
 # Set bundled status
 #sed -i "s/\"_inBundle\": false/\"_inBundle\": true/" node_modules/npm-6/node_modules/string-width/node_modules/ansi-regex/package.json
 #sed -i "s/\"_inBundle\": false/\"_inBundle\": true/" node_modules/npm-6/node_modules/yargs/node_modules/ansi-regex/package.json
+#sed -i "s/\"_inBundle\": false/\"_inBundle\": true/" node_modules/npm-6/node_modules/http-cache-semantics/package.json
 # Set parent dependency
 sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-6\/string-width\"\n  \]/" node_modules/npm-6/node_modules/string-width/node_modules/ansi-regex/package.json
 sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-6\/yargs\"\n  \]/" node_modules/npm-6/node_modules/yargs/node_modules/ansi-regex/package.json
+sed -i -z "0,/  \"_requiredBy\": \[\n    \".*\"\n  \]/s//  \"_requiredBy\": \[\n    \"\/npm-6\/make-fetch-happen\"\n  \]/" node_modules/npm-6/node_modules/http-cache-semantics/package.json
+# Update parent to accept new dependency version
+sed -i 's/    "http-cache-semantics": ".*"/    "http-cache-semantics": "4.1.1"/' node_modules/npm-6/node_modules/make-fetch-happen/package.json
 # Set current location
 sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-6\/string-width\/ansi-regex\"/" node_modules/npm-6/node_modules/string-width/node_modules/ansi-regex/package.json
 sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-6\/yargs\/ansi-regex\"/" node_modules/npm-6/node_modules/yargs/node_modules/ansi-regex/package.json
+sed -i "0,/\"_location\": \".*\"/s//\"_location\": \"\/npm-6\/http-cache-semantics\"/" node_modules/npm-6/node_modules/http-cache-semantics/package.json
 # better-npm-audit changes
 sed -i "/  All good!');/d" -- node_modules/better-npm-audit/src/handlers/handleFinish.js
 sed -i "s/'npm audit'/'npm --no-offline --loglevel=error audit'/" -- node_modules/better-npm-audit/src/handlers/handleInput.js

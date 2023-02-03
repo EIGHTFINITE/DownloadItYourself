@@ -25,7 +25,10 @@
     "top-user-agents": "github:EIGHTFINITE/top-user-agents#main"
   },
   "devDependencies": {
-    "electron": "22.2.0"
+    "ansi-regex-4.1.1": "npm:ansi-regex@4.1.1",
+    "ansi-regex-3.0.1": "npm:ansi-regex@3.0.1",
+    "electron": "22.2.2",
+    "http-cache-semantics-4.1.1": "npm:http-cache-semantics@4.1.1"
   },
   "peerDependencies": {
     "cheerio": "1.0.0-rc.12",
