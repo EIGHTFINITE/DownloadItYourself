@@ -19,13 +19,13 @@ jobs:
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       with:
-        args: '-m 0 -a "429" -t 300 --max-retries 0 --max-concurrency 1 --require-https --format markdown -u "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" -- README.html'
+        args: '-m 0 -t 300 --max-retries 0 --max-concurrency 1 --require-https --format markdown -u "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" -- README.html'
     - name: Links
       if: env.lychee_exit_code != 0
       shell: bash
       run: |
         rm lychee-*.tar.gz
-        if [[ $(cat lychee/out.md | grep -Fe '* [' | grep -vFe '* [TIMEOUT] [https://www.adobe.com/]' -e '* [TIMEOUT] [https://web.archive.org/web/' -e '* [ERR] [https://www.npmjs.com/package/' -e '* [503] [https://www.npmjs.com/package/' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        if [[ $(cat lychee/out.md | grep -Fe '* [' | grep -vFe '* [429] [https://www.npmjs.com/package/' -e '* [TIMEOUT] [https://www.adobe.com/]' -e '* [TIMEOUT] [https://web.archive.org/web/' -e '* [ERR] [https://www.npmjs.com/package/' -e '* [503] [https://www.npmjs.com/package/' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         rm -r lychee/
