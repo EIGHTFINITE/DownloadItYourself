@@ -27,13 +27,13 @@
   "devDependencies": {
     "ansi-regex-4.1.1": "npm:ansi-regex@4.1.1",
     "ansi-regex-3.0.1": "npm:ansi-regex@3.0.1",
-    "electron": "22.2.0",
+    "electron": "23.0.0",
     "http-cache-semantics-4.1.1": "npm:http-cache-semantics@4.1.1"
   },
   "peerDependencies": {
     "cheerio": "1.0.0-rc.12",
     "cloudscraper": "4.6.0",
-    "electron": "22.2.0",
+    "electron": "23.0.0",
     "har-validator": "5.1.5",
     "postman-request": "2.88.1-postman.32",
     "request-promise": "4.2.6",
