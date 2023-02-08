@@ -50,10 +50,14 @@ export node_version=$(cat package.json | python -c "import sys, json; print(json
 curl -sSo "node-v$node_version-win-x64.7z" https://nodejs.org/dist/v$node_version/node-v$node_version-win-x64.7z
 mkdir -p "bin/windows/x64/node"
 7z x -o"bin/windows/x64/node" "node-v$node_version-win-x64.7z" | grep "ing archive"
-rm -r "bin/windows/x64/node/node-v$node_version-win-x64/node_modules"
 rm "node-v$node_version-win-x64.7z"
 sed -i '/\/bin\//d' -- '.gitignore'
-git add "bin/windows/x64/node"
+git add -f "bin/windows/x64/node/node-v$node_version-win-x64"
+if [ -d "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/tap-snapshots" ] && [ -z "$(ls -A "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/tap-snapshots")" ]; then
+  rm -d "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/tap-snapshots"
+  git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/tap-snapshots"
+  git add -f ".gitmodules"
+fi
 git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 Node $node_version release artifacts" | sed -n 1p
 git checkout -- '.gitignore'
 if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
@@ -64,10 +68,9 @@ fi
 curl -sSo "node-v$node_version-linux-x64.tar.xz" https://nodejs.org/dist/v$node_version/node-v$node_version-linux-x64.tar.xz
 mkdir -p "bin/linux/x64/node"
 tar -xJf "node-v$node_version-linux-x64.tar.xz" -C "bin/linux/x64/node"
-rm -r "bin/linux/x64/node/node-v$node_version-linux-x64/lib"
 rm "node-v$node_version-linux-x64.tar.xz"
 sed -i '/\/bin\//d' -- '.gitignore'
-git add "bin/linux/x64/node"
+git add -f "bin/linux/x64/node/node-v$node_version-linux-x64"
 git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 Node $node_version release artifacts" | sed -n 1p
 git checkout -- '.gitignore'
 if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
