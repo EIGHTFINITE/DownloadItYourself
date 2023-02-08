@@ -147,8 +147,18 @@ jobs:
       run: |
         bash --noprofile --norc -e -o pipefail docs/tools/git-config.sh
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
-        git restore --source=artifacts -- node_modules/
-        sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat node_modules/npm-6/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") || $(cat node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
+        git restore --source=artifacts -- bin/ node_modules/
+        export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
+        if [ $(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") == $(cat bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") ]; then
+          if [ $(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") == $(cat node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") ]; then
+            sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") || $(cat node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
+          else
+            sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") || $(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") || $(cat node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
+          fi
+        else
+          exit 1
+        fi
+        sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") || $(cat node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
         rm -r node_modules/
     - id: cpr
       uses: peter-evans/create-pull-request@v4.2.3
@@ -239,11 +249,11 @@ jobs:
       shell: bash
       run: |
         # Forbid all
-        if [[ $(find . -type f -path ./.git -prune -o -path ./node_modules/npm-6/node_modules/iconv-lite/encodings/tables -prune -o -name '*.json' -exec jsonlint -s --forbid any-type-at-start,bom,duplicate-keys,non-portable,non-bmp,zero-byte -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        if [[ $(find . -type f -path ./.git -prune -o -path ./node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -name '*.json' -exec jsonlint -s --forbid any-type-at-start,bom,duplicate-keys,non-portable,non-bmp,zero-byte -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         # Allow non-bmp, zero-byte
-        if [[ $(find ./node_modules/npm-6/node_modules/iconv-lite/encodings/tables -type f -name '*.json' -exec jsonlint -s --allow non-bmp,zero-byte --forbid any-type-at-start,bom,duplicate-keys,non-portable -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        if [[ $(find ./node_modules/npm/node_modules/iconv-lite/encodings/tables -type f -name '*.json' -exec jsonlint -s --allow non-bmp,zero-byte --forbid any-type-at-start,bom,duplicate-keys,non-portable -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
   artifacts_npm_linux:
@@ -270,7 +280,7 @@ jobs:
           "private": "true"
         }' > package.json
         cp EIGHTFINITE-build/.npmrc .npmrc
-        EIGHTFINITE-build/bin/linux/x64/node/node-v$node_version-linux-x64/bin/node EIGHTFINITE-build/node_modules/npm-6/bin/npm-cli.js install ./EIGHTFINITE-build
+        EIGHTFINITE-build/bin/linux/x64/node/node-v$node_version-linux-x64/bin/node EIGHTFINITE-build/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build
         rm -rf .npm/
   artifacts_npm_windows:
     runs-on: windows-latest
@@ -296,7 +306,7 @@ jobs:
           "private": "true"
         }' > package.json
         cp EIGHTFINITE-build/.npmrc .npmrc
-        EIGHTFINITE-build/bin/windows/x64/node/node-v$node_version-win-x64/node.exe EIGHTFINITE-build/node_modules/npm-6/bin/npm-cli.js install .\\EIGHTFINITE-build
+        EIGHTFINITE-build/bin/windows/x64/node/node-v$node_version-win-x64/node.exe EIGHTFINITE-build/node_modules/npm/bin/npm-cli.js install .\\EIGHTFINITE-build
         rm -rf .npm/
   artifacts_audit_linux:
     runs-on: ubuntu-latest
@@ -310,12 +320,8 @@ jobs:
       shell: bash
       run: |
         export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
-        mkdir -p "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules"
-        cp -r "node_modules/npm" "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm"
-        export old_PATH="$PATH"
         export PATH="$(pwd)/bin/linux/x64/node/node-v$node_version-linux-x64/bin:$PATH"
         bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/better-npm-audit/index.js audit
-        export PATH="$old_PATH"
         rm -rf .npm/
         rm -r "bin/linux/x64/node/node-v$node_version-linux-x64/lib"
   artifacts_audit_windows:
@@ -330,12 +336,8 @@ jobs:
       shell: bash
       run: |
         export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
-        mkdir -p "bin/windows/x64/node/node-v$node_version-win-x64/node_modules"
-        cp -r "node_modules/npm" "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm"
-        export old_PATH="$PATH"
         export PATH="$(pwd)/bin/windows/x64/node/node-v$node_version-win-x64:$PATH"
         bin/windows/x64/node/node-v$node_version-win-x64/node.exe node_modules/better-npm-audit/index.js audit
-        export PATH="$old_PATH"
         rm -rf .npm/
         rm -r "bin/windows/x64/node/node-v$node_version-win-x64"
   release:

@@ -23,13 +23,7 @@ jobs:
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git restore --source=artifacts -- bin/
         export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
-        export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
-        curl -sSo "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
-        mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
-        tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
-        rm "npm-$npm_version.tgz"
         echo -n "$node_version" > node_version.txt
-        echo -n "$npm_version" > npm_version.txt
         bash --noprofile --norc -e -o pipefail docs/tools/actions-npm.sh
         bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent || true
         rm -rf .npm/
@@ -41,7 +35,7 @@ jobs:
           "private": "true"
         }' > package.json
         cp EIGHTFINITE-build/.npmrc .npmrc
-        EIGHTFINITE-build/bin/linux/x64/node/node-v$node_version-linux-x64/bin/node EIGHTFINITE-build/node_modules/npm-6/bin/npm-cli.js install ./EIGHTFINITE-build
+        EIGHTFINITE-build/bin/linux/x64/node/node-v$node_version-linux-x64/bin/node EIGHTFINITE-build/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build
         rm -rf .npm/
   npm_windows:
     runs-on: windows-latest
@@ -67,7 +61,7 @@ jobs:
           "private": "true"
         }' > package.json
         cp EIGHTFINITE-build/.npmrc .npmrc
-        EIGHTFINITE-build/bin/windows/x64/node/node-v$node_version-win-x64/node.exe EIGHTFINITE-build/node_modules/npm-6/bin/npm-cli.js install .\\EIGHTFINITE-build
+        EIGHTFINITE-build/bin/windows/x64/node/node-v$node_version-win-x64/node.exe EIGHTFINITE-build/node_modules/npm/bin/npm-cli.js install .\\EIGHTFINITE-build
         rm -rf .npm/
   audit_linux:
     runs-on: ubuntu-latest
@@ -82,20 +76,10 @@ jobs:
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git restore --source=artifacts -- bin/
         export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
-        export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
-        curl -sSo "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
-        mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
-        tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
-        rm "npm-$npm_version.tgz"
         echo -n "$node_version" > node_version.txt
-        echo -n "$npm_version" > npm_version.txt
         bash --noprofile --norc -e -o pipefail docs/tools/actions-npm.sh
-        mkdir -p "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules"
-        cp -r "node_modules/npm" "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm"
-        export old_PATH="$PATH"
         export PATH="$(pwd)/bin/linux/x64/node/node-v$node_version-linux-x64/bin:$PATH"
         bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/better-npm-audit/index.js audit
-        export PATH="$old_PATH"
         rm -rf .npm/
         rm -r "bin/linux/x64/node/node-v$node_version-linux-x64/lib"
   audit_windows:
@@ -111,11 +95,7 @@ jobs:
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git restore --source=artifacts -- bin/ node_modules/ package-lock.json
         export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
-        mkdir -p "bin/windows/x64/node/node-v$node_version-win-x64/node_modules"
-        cp -r "node_modules/npm" "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm"
-        export old_PATH="$PATH"
         export PATH="$(pwd)/bin/windows/x64/node/node-v$node_version-win-x64:$PATH"
         bin/windows/x64/node/node-v$node_version-win-x64/node.exe node_modules/better-npm-audit/index.js audit
-        export PATH="$old_PATH"
         rm -rf .npm/
         rm -r "bin/windows/x64/node/node-v$node_version-win-x64"

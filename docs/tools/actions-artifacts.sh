@@ -50,10 +50,14 @@ export node_version=$(cat package.json | python -c "import sys, json; print(json
 curl -sSo "node-v$node_version-win-x64.7z" https://nodejs.org/dist/v$node_version/node-v$node_version-win-x64.7z
 mkdir -p "bin/windows/x64/node"
 7z x -o"bin/windows/x64/node" "node-v$node_version-win-x64.7z" | grep "ing archive"
-rm -r "bin/windows/x64/node/node-v$node_version-win-x64/node_modules"
 rm "node-v$node_version-win-x64.7z"
 sed -i '/\/bin\//d' -- '.gitignore'
-git add "bin/windows/x64/node"
+git add "bin/windows/x64/node/node-v$node_version-win-x64"
+if [ -d "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/tap-snapshots" ] && [ -z "$(ls -A "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/tap-snapshots")" ]; then
+  rm -d "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/tap-snapshots"
+  git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/tap-snapshots"
+  git add -f ".gitmodules"
+fi
 git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 Node $node_version release artifacts" | sed -n 1p
 git checkout -- '.gitignore'
 if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
@@ -64,10 +68,9 @@ fi
 curl -sSo "node-v$node_version-linux-x64.tar.xz" https://nodejs.org/dist/v$node_version/node-v$node_version-linux-x64.tar.xz
 mkdir -p "bin/linux/x64/node"
 tar -xJf "node-v$node_version-linux-x64.tar.xz" -C "bin/linux/x64/node"
-rm -r "bin/linux/x64/node/node-v$node_version-linux-x64/lib"
 rm "node-v$node_version-linux-x64.tar.xz"
 sed -i '/\/bin\//d' -- '.gitignore'
-git add "bin/linux/x64/node"
+git add "bin/linux/x64/node/node-v$node_version-linux-x64"
 git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 Node $node_version release artifacts" | sed -n 1p
 git checkout -- '.gitignore'
 if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
@@ -78,26 +81,18 @@ fi
 export force_no_cache=true
 export npm_config_platform=win32
 export npm_config_arch=x64
-export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
 export electron_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['devDependencies']['electron'])")
-curl -sSo "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
-mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
-tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
-rm "npm-$npm_version.tgz"
 # Ignore devDependencies, peerDependencies, and bundleDependencies
 sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
 sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
 sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
-sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat bin/all/all/npm/npm-$npm_version/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
-bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline "electron@$electron_version"
+bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "electron@$electron_version"
 rm -rf .npm/
+rm node_modules/.package-lock.json
 export npm_config_target=$(cat node_modules/electron/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")
-bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
-rm -rf .npm/
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/electron/install.js
 mkdir -p "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
 mv -T node_modules/electron/dist "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
-rm -r bin/all/
 rm -r node_modules/
 rm package-lock.json
 git checkout -- 'package.json'
@@ -115,23 +110,16 @@ fi
 
 # Electron Linux x64
 export npm_config_platform=linux
-curl -sSo "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
-mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
-tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
-rm "npm-$npm_version.tgz"
 # Ignore devDependencies, peerDependencies, and bundleDependencies
 sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
 sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
 sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
-sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat bin/all/all/npm/npm-$npm_version/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
-bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline "electron@$electron_version"
+bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "electron@$electron_version"
 rm -rf .npm/
-bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js dedupe
-rm -rf .npm/
+rm node_modules/.package-lock.json
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/electron/install.js
 mkdir -p "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64"
 mv -T node_modules/electron/dist "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64"
-rm -r bin/all/
 rm -r node_modules/
 rm package-lock.json
 git checkout -- 'package.json'
@@ -153,13 +141,7 @@ if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(
 fi
 
 # Node modules
-curl -sSo "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
-mkdir -p "bin/all/all/npm/npm-$npm_version/npm"
-tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/all/all/npm/npm-$npm_version/npm"
-rm "npm-$npm_version.tgz"
-sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat bin/all/all/npm/npm-$npm_version/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
 echo -n "$node_version" > node_version.txt
-echo -n "$npm_version" > npm_version.txt
 bash --noprofile --norc -e -o pipefail docs/tools/actions-npm.sh
 sed -i '/\/node_modules\//d' -- '.gitignore'
 find node_modules/ -mindepth 2 -maxdepth 3 -type f -name 'package.json' -exec bash -c 'path={}; git add -- "${path:0:-13}"; git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add ${path:13:-13} release artifacts" | sed -n 1p' ';'
