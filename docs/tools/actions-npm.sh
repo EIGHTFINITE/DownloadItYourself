@@ -5,9 +5,9 @@ rm node_version.txt
 # Correct engines
 if [ $(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") == $(cat bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") ]; then
   if [ $(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") == $(cat node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") ]; then
-	sed -i "s/\"npm\": \".*\"/\"npm\": \"$(cat node_modules/npm-6/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") || $(cat node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
+	sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat node_modules/npm-6/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") || $(cat node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
   else
-	sed -i "s/\"npm\": \".*\"/\"npm\": \"$(cat node_modules/npm-6/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") || $(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") || $(cat node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
+	sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat node_modules/npm-6/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") || $(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") || $(cat node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
   fi
 else
   exit 1
@@ -25,12 +25,6 @@ fi
 rm -rf .npm/
 rm node_modules/.package-lock.json
 git checkout -- 'package.json'
-if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v$node_version-win-x64/node.exe node_modules/npm-6/bin/npm-cli.js dedupe
-else
-  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/npm-6/bin/npm-cli.js dedupe
-fi
-rm -rf .npm/
 # better-npm-audit changes
 sed -i "/  All good!');/d" -- node_modules/better-npm-audit/src/handlers/handleFinish.js
 sed -i "s/'npm audit'/'npm --no-offline --loglevel=error audit'/" -- node_modules/better-npm-audit/src/handlers/handleInput.js
