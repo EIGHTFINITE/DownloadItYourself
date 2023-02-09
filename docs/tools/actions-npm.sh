@@ -23,6 +23,7 @@ else
   bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline
 fi
 rm -rf .npm/
+rm node_modules/.package-lock.json
 git checkout -- 'package.json'
 if [[ "$OSTYPE" == "msys" ]]; then
   bin/windows/x64/node/node-v$node_version-win-x64/node.exe node_modules/npm-6/bin/npm-cli.js dedupe
