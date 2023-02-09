@@ -15,5 +15,5 @@
       "ignoreTests": true
     }
   ],
-  "ignoreDeps": ["npm-6"]
+  "ignoreDeps": ["npm"]
 }

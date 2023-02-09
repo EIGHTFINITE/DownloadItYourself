@@ -19,13 +19,13 @@
     "cloudscraper": "github:EIGHTFINITE/cloudscraper#master",
     "electron": "github:EIGHTFINITE/electron#main",
     "npm": "9.4.2",
-    "npm-6": "npm:npm@6.14.18",
     "postman-request": "github:EIGHTFINITE/postman-request#master",
     "spdx-expression-parse": "github:EIGHTFINITE/spdx-expression-parse#master",
     "top-user-agents": "github:EIGHTFINITE/top-user-agents#main"
   },
   "devDependencies": {
-    "electron": "23.0.0"
+    "electron": "23.0.0",
+    "npm": "6.14.18"
   },
   "peerDependencies": {
     "cheerio": "1.0.0-rc.12",
@@ -106,7 +106,6 @@
     "mime-db",
     "mime-types",
     "npm",
-    "npm-6",
     "nth-check",
     "oauth-sign",
     "parse5",

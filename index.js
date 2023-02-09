@@ -185,10 +185,7 @@ function writeReadme() {
 				}
 				
 				// Author corrections
-				if(d[k].name === 'npm-6') {
-					d[k].author = 'GitHub Inc.'
-				}
-				else if(pkg.name === 'postman-request') {
+				if(pkg.name === 'postman-request') {
 					d[k].author = 'Mikeal Rogers'
 				}
 				
@@ -544,7 +541,7 @@ function writeReadme() {
 			html += '| :---: | --- | --- | --- | --- | :---: | --- | :---: |\n'
 			for (let i=0; i<dependencies.length; i++) {
 				const d = dependencies[i]
-				if(d.location.startsWith('npm/') || d.location.startsWith('npm-6/')) {
+				if(d.location.startsWith('npm/')) {
 					continue
 				}
 				const escName = escapeMd(d.name,true)
