@@ -1,7 +1,7 @@
 {
   "GHSA-93q8-gq69-wqmw": {
     "active": true,
-    "notes": "Only parses trusted data"
+    "notes": "Only parses sanitized data"
   },
   "GHSA-pfrx-2q88-qq97": {
     "active": true,
@@ -9,6 +9,6 @@
   },
   "GHSA-rc47-6667-2j5j": {
     "active": true,
-    "notes": "Only parses trusted data"
+    "notes": "Only parses sanitized data"
   }
 }
