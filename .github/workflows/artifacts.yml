@@ -241,7 +241,7 @@ jobs:
       run: |
         export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         # Forbid all
-        if [[ $(find . -type f -path ./.git -prune -o -path ./bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/node_modules/iconv-lite/encodings/tables/ -prune -o -path ./bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/node_modules/iconv-lite/encodings/tables/ -prune -o -name '*.json' -exec jsonlint -s --forbid any-type-at-start,bom,duplicate-keys,non-portable,non-bmp,zero-byte -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        if [[ $(find . -type f -path ./.git -prune -o -path ./bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -path ./bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -name '*.json' -exec jsonlint -s --forbid any-type-at-start,bom,duplicate-keys,non-portable,non-bmp,zero-byte -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         # Allow non-bmp, zero-byte
@@ -272,7 +272,7 @@ jobs:
           "private": "true"
         }' > package.json
         cp EIGHTFINITE-build/.npmrc .npmrc
-        EIGHTFINITE-build/bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build
+        EIGHTFINITE-build/bin/linux/x64/node/node-v$node_version-linux-x64/bin/node EIGHTFINITE-build/bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build
         rm -rf .npm/
   artifacts_npm_windows:
     runs-on: windows-latest
@@ -298,7 +298,7 @@ jobs:
           "private": "true"
         }' > package.json
         cp EIGHTFINITE-build/.npmrc .npmrc
-        EIGHTFINITE-build/bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install .\\EIGHTFINITE-build
+        EIGHTFINITE-build/bin/windows/x64/node/node-v$node_version-win-x64/node.exe EIGHTFINITE-build/bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install .\\EIGHTFINITE-build
         rm -rf .npm/
   artifacts_audit_linux:
     runs-on: ubuntu-latest
