@@ -52,12 +52,8 @@ mkdir -p "bin/windows/x64/node"
 7z x -o"bin/windows/x64/node" "node-v$node_version-win-x64.7z" | grep "ing archive"
 rm "node-v$node_version-win-x64.7z"
 sed -i '/\/bin\//d' -- '.gitignore'
+rm -d "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/tap-snapshots"
 git add -f "bin/windows/x64/node/node-v$node_version-win-x64"
-if [ -d "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/tap-snapshots" ] && [ -z "$(ls -A "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/tap-snapshots")" ]; then
-  rm -d "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/tap-snapshots"
-  git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/tap-snapshots"
-  git add -f ".gitmodules"
-fi
 git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 Node $node_version release artifacts" | sed -n 1p
 git checkout -- '.gitignore'
 if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
