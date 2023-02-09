@@ -3,20 +3,6 @@
 export GIT_AUTHOR_DATE="$(git log -1 --format=%aD)"
 export GIT_COMMITTER_DATE="$(git log -1 --format=%cD)"
 
-# JRE Windows x64
-sed -i '/\/bin\//d' -- '.gitignore'
-git checkout refs/tags/artifacts -- "bin/windows/x64/jre/jre-8u201-windows-x64"
-rmdir "bin/windows/x64/jre/jre-8u201-windows-x64/jre1.8.0_201/lib/applet"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x64/jre/jre-8u201-windows-x64/jre1.8.0_201/lib/applet"
-git add -f ".gitmodules"
-git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 JRE 8u201 release artifacts
-
-The fix for JDK-8155635 in 8u202 causes performance issues, so 8u201 becomes the final BCL release." | sed -n 1p
-git checkout -- '.gitignore'
-if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
-  then exit 1
-fi
-
 # JRE Linux x64
 sed -i '/\/bin\//d' -- '.gitignore'
 git checkout refs/tags/artifacts -- "bin/linux/x64/jre/jre-8u201-linux-x64"
@@ -24,6 +10,20 @@ rmdir "bin/linux/x64/jre/jre-8u201-linux-x64/jre1.8.0_201/lib/applet"
 git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/linux/x64/jre/jre-8u201-linux-x64/jre1.8.0_201/lib/applet"
 git add -f ".gitmodules"
 git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 JRE 8u201 release artifacts
+
+The fix for JDK-8155635 in 8u202 causes performance issues, so 8u201 becomes the final BCL release." | sed -n 1p
+git checkout -- '.gitignore'
+if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+  then exit 1
+fi
+
+# JRE Windows x64
+sed -i '/\/bin\//d' -- '.gitignore'
+git checkout refs/tags/artifacts -- "bin/windows/x64/jre/jre-8u201-windows-x64"
+rmdir "bin/windows/x64/jre/jre-8u201-windows-x64/jre1.8.0_201/lib/applet"
+git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x64/jre/jre-8u201-windows-x64/jre1.8.0_201/lib/applet"
+git add -f ".gitmodules"
+git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 JRE 8u201 release artifacts
 
 The fix for JDK-8155635 in 8u202 causes performance issues, so 8u201 becomes the final BCL release." | sed -n 1p
 git checkout -- '.gitignore'
@@ -45,86 +45,75 @@ if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(
   then exit 1
 fi
 
-# Node Windows x64
-export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
-curl -sSo "node-v$node_version-win-x64.7z" https://nodejs.org/dist/v$node_version/node-v$node_version-win-x64.7z
-mkdir -p "bin/windows/x64/node"
-7z x -o"bin/windows/x64/node" "node-v$node_version-win-x64.7z" | grep "ing archive"
-rm "node-v$node_version-win-x64.7z"
-sed -i '/\/bin\//d' -- '.gitignore'
-rm -d "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/tap-snapshots"
-git add -f "bin/windows/x64/node/node-v$node_version-win-x64"
-git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 Node $node_version release artifacts" | sed -n 1p
-git checkout -- '.gitignore'
-if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
-  then exit 1
-fi
-
 # Node Linux x64
+export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
 curl -sSo "node-v$node_version-linux-x64.tar.xz" https://nodejs.org/dist/v$node_version/node-v$node_version-linux-x64.tar.xz
 mkdir -p "bin/linux/x64/node"
 tar -xJf "node-v$node_version-linux-x64.tar.xz" -C "bin/linux/x64/node"
 rm "node-v$node_version-linux-x64.tar.xz"
 sed -i '/\/bin\//d' -- '.gitignore'
-git add -f "bin/linux/x64/node/node-v$node_version-linux-x64"
+# Replace bundled npm with npm 6
+# Later versions fail to create sane dependency trees
+rm -r "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm"
+export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
+curl -sSo "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
+mkdir -p "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm"
+tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm"
+rm "npm-$npm_version.tgz"
+# Commit
+git add "bin/linux/x64/node/node-v$node_version-linux-x64"
 git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 Node $node_version release artifacts" | sed -n 1p
 git checkout -- '.gitignore'
 if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
   then exit 1
 fi
 
-# Electron Windows x64
-export force_no_cache=true
-export npm_config_platform=win32
-export npm_config_arch=x64
-export electron_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['devDependencies']['electron'])")
-# Correct engines
-if [ $(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") == $(cat bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") ]; then
-  sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
-else
-  exit 1
-fi
-# Ignore devDependencies, peerDependencies, and bundleDependencies
-sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
-sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
-sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
-bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "electron@$electron_version"
-rm -rf .npm/
-rm node_modules/.package-lock.json
-export npm_config_target=$(cat node_modules/electron/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")
-bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/electron/install.js
-mkdir -p "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
-mv -T node_modules/electron/dist "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
-rm -r node_modules/
-rm package-lock.json
-git checkout -- 'package.json'
-if [[ $(stat -c%s "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64/electron.exe") -gt 104857600 ]]; then
-  split -b 104857600 --numeric-suffixes=1 --suffix-length=3 "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64/electron.exe" "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64/electron.exe."
-  rm "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64/electron.exe"
-fi
+# Node Windows x64
+curl -sSo "node-v$node_version-win-x64.7z" https://nodejs.org/dist/v$node_version/node-v$node_version-win-x64.7z
+mkdir -p "bin/windows/x64/node"
+7z x -o"bin/windows/x64/node" "node-v$node_version-win-x64.7z" | grep "ing archive"
+rm "node-v$node_version-win-x64.7z"
 sed -i '/\/bin\//d' -- '.gitignore'
-git add "bin/windows/x64/electron"
-git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 Electron $npm_config_target release artifacts" | sed -n 1p
+# Replace bundled npm with npm 6
+# Later versions fail to create sane dependency trees
+rm -r "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm"
+curl -sSo "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
+mkdir -p "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm"
+tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm"
+rm "npm-$npm_version.tgz"
+# Commit
+git add "bin/windows/x64/node/node-v$node_version-win-x64"
+git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 Node $node_version release artifacts" | sed -n 1p
 git checkout -- '.gitignore'
 if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
   then exit 1
 fi
 
 # Electron Linux x64
+export force_no_cache=true
 export npm_config_platform=linux
+export npm_config_arch=x64
+export electron_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['devDependencies']['electron'])")
 # Correct engines
-if [ $(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") == $(cat bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") ]; then
-  sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
-else
-  exit 1
-fi
+sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$npm_version\"/" package.json
 # Ignore devDependencies, peerDependencies, and bundleDependencies
 sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
 sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
 sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
-bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "electron@$electron_version"
+# Install
+if [[ "$OSTYPE" == "msys" ]]; then
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline "electron@$electron_version"
+else
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "electron@$electron_version"
+fi
 rm -rf .npm/
-rm node_modules/.package-lock.json
+# Dedupe
+if [[ "$OSTYPE" == "msys" ]]; then
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js dedupe
+else
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
+fi
+rm -rf .npm/
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/electron/install.js
 mkdir -p "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64"
 mv -T node_modules/electron/dist "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64"
@@ -148,8 +137,48 @@ if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(
   then exit 1
 fi
 
+# Electron Windows x64
+export npm_config_platform=win32
+# Correct engines
+sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$npm_version\"/" package.json
+# Ignore devDependencies, peerDependencies, and bundleDependencies
+sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
+sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
+sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
+# Install
+if [[ "$OSTYPE" == "msys" ]]; then
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline "electron@$electron_version"
+else
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "electron@$electron_version"
+fi
+rm -rf .npm/
+# Dedupe
+if [[ "$OSTYPE" == "msys" ]]; then
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js dedupe
+else
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
+fi
+rm -rf .npm/
+export npm_config_target=$(cat node_modules/electron/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")
+bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/electron/install.js
+mkdir -p "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
+mv -T node_modules/electron/dist "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
+rm -r node_modules/
+rm package-lock.json
+git checkout -- 'package.json'
+if [[ $(stat -c%s "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64/electron.exe") -gt 104857600 ]]; then
+  split -b 104857600 --numeric-suffixes=1 --suffix-length=3 "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64/electron.exe" "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64/electron.exe."
+  rm "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64/electron.exe"
+fi
+sed -i '/\/bin\//d' -- '.gitignore'
+git add "bin/windows/x64/electron"
+git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 Electron $npm_config_target release artifacts" | sed -n 1p
+git checkout -- '.gitignore'
+if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+  then exit 1
+fi
+
 # Node modules
-echo -n "$node_version" > node_version.txt
 bash --noprofile --norc -e -o pipefail docs/tools/actions-npm.sh
 sed -i '/\/node_modules\//d' -- '.gitignore'
 find node_modules/ -mindepth 2 -maxdepth 3 -type f -name 'package.json' -exec bash -c 'path={}; git add -- "${path:0:-13}"; git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add ${path:13:-13} release artifacts" | sed -n 1p' ';'
