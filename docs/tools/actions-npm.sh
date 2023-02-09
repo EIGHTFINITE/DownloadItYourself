@@ -2,25 +2,29 @@
 # Execution starts in .github/workflows/npm.yml or docs/tools/actions-artifacts.sh
 export node_version=$(cat node_version.txt)
 rm node_version.txt
+# Install using npm 6
+# Later versions fail to create a sane dependency tree
+export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
+curl -sSo "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
+mkdir -p "bin/temp/all/npm/npm-$npm_version"
+tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/temp/all/npm/npm-$npm_version"
+rm "npm-$npm_version.tgz"
 # Correct engines
-if [ $(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") == $(cat bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") ]; then
-  sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
-else
-  exit 1
-fi
+sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$npm_version\"/" package.json
 # Ignore devDependencies, peerDependencies, and bundleDependencies
 sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
 sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
 sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
 # Install
 if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline --prefer-dedupe
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/temp/all/npm/npm-$npm_version/bin/npm-cli.js install --no-offline
 else
-  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline --prefer-dedupe
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/temp/all/npm/npm-$npm_version/bin/npm-cli.js install --no-offline
 fi
 rm -rf .npm/
-rm node_modules/.package-lock.json
 git checkout -- 'package.json'
+# Delete temp npm
+rm -r bin/temp/
 # better-npm-audit changes
 sed -i "/  All good!');/d" -- node_modules/better-npm-audit/src/handlers/handleFinish.js
 sed -i "s/'npm audit'/'npm --no-offline --loglevel=error audit'/" -- node_modules/better-npm-audit/src/handlers/handleInput.js
