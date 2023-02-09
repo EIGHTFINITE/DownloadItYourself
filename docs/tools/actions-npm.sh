@@ -24,7 +24,7 @@ rm -rf .npm/
 git checkout -- 'package.json'
 # better-npm-audit changes
 sed -i "/  All good!');/d" -- node_modules/better-npm-audit/src/handlers/handleFinish.js
-sed -i "s/'npm audit'/'npm --no-offline --loglevel=error audit'/" -- node_modules/better-npm-audit/src/handlers/handleInput.js
+sed -i "s/'npm audit'/'npm --no-offline audit'/" -- node_modules/better-npm-audit/src/handlers/handleInput.js
 sed -i '/header: {/,/},/d' -- node_modules/better-npm-audit/src/utils/print.js
 # Remove unnecessary files
 find node_modules/ -mindepth 2 -type d \( -name '.github' -o -name 'docs' -o -name 'example' -o -name 'examples' -o -name 'jsdoc-toolkit' -o -name 'man' -o -name 'tap-snapshots' -o -name 'test' -o -name 'tests' -o -name 'typings' \) | xargs rm -rf
