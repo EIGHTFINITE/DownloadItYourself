@@ -62,14 +62,15 @@ tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/linux/x64/node/node
 rm "npm-$npm_version.tgz"
 # Correct engines
 sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$npm_version\"/" package.json
-# Ignore peerDependencies and bundleDependencies
+# Ignore devDependencies, peerDependencies, and bundleDependencies
+sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
 sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
 sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
 # Reinstall to fix dependency tree and update the package.json with the latest information from the registry
 if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline --save-dev "npm@$npm_version"
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline "npm@$npm_version"
 else
-  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline --save-dev "npm@$npm_version"
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "npm@$npm_version"
 fi
 rm -rf .npm/
 # Dedupe
@@ -123,14 +124,15 @@ export npm_config_arch=x64
 export electron_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['devDependencies']['electron'])")
 # Correct engines
 sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$npm_version\"/" package.json
-# Ignore peerDependencies and bundleDependencies
+# Ignore devDependencies, peerDependencies, and bundleDependencies
+sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
 sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
 sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
 # Install
 if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline --save-dev "electron@$electron_version"
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline "electron@$electron_version"
 else
-  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline --save-dev "electron@$electron_version"
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "electron@$electron_version"
 fi
 rm -rf .npm/
 # Dedupe
@@ -167,14 +169,15 @@ fi
 export npm_config_platform=win32
 # Correct engines
 sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$npm_version\"/" package.json
-# Ignore peerDependencies and bundleDependencies
+# Ignore devDependencies, peerDependencies, and bundleDependencies
+sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
 sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
 sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
 # Install
 if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline --save-dev "electron@$electron_version"
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline "electron@$electron_version"
 else
-  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline --save-dev "electron@$electron_version"
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "electron@$electron_version"
 fi
 rm -rf .npm/
 # Dedupe
