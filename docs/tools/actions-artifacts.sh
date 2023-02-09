@@ -84,11 +84,7 @@ export npm_config_arch=x64
 export electron_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['devDependencies']['electron'])")
 # Correct engines
 if [ $(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") == $(cat bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") ]; then
-  if [ $(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") == $(cat node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") ]; then
-	sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat node_modules/npm-6/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") || $(cat node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
-  else
-	sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat node_modules/npm-6/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") || $(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") || $(cat node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
-  fi
+  sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
 else
   exit 1
 fi
@@ -122,11 +118,7 @@ fi
 export npm_config_platform=linux
 # Correct engines
 if [ $(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") == $(cat bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") ]; then
-  if [ $(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") == $(cat node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") ]; then
-	sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat node_modules/npm-6/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") || $(cat node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
-  else
-	sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat node_modules/npm-6/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") || $(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") || $(cat node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
-  fi
+  sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
 else
   exit 1
 fi

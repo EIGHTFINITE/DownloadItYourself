@@ -4,11 +4,7 @@ export node_version=$(cat node_version.txt)
 rm node_version.txt
 # Correct engines
 if [ $(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") == $(cat bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") ]; then
-  if [ $(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") == $(cat node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") ]; then
-	sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat node_modules/npm-6/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") || $(cat node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
-  else
-	sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat node_modules/npm-6/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") || $(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") || $(cat node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
-  fi
+  sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
 else
   exit 1
 fi
@@ -18,9 +14,9 @@ sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
 sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
 # Install
 if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline --prefer-dedupe
 else
-  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline --prefer-dedupe
 fi
 rm -rf .npm/
 rm node_modules/.package-lock.json
