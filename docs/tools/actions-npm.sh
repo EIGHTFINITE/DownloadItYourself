@@ -11,9 +11,8 @@ tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/temp/all/npm/npm-$n
 rm "npm-$npm_version.tgz"
 # Correct engines
 sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$npm_version\"/" package.json
-# Ignore devDependencies, peerDependencies, and bundleDependencies
+# Ignore devDependencies and bundleDependencies
 sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
-sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
 sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
 # Install
 if [[ "$OSTYPE" == "msys" ]]; then
