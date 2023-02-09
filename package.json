@@ -5,7 +5,7 @@
   "engineStrict": true,
   "engines": {
     "node": "18.14.0",
-    "npm": "6.14.18 || 9.4.2"
+    "npm": "6.14.18 ||  || 9.4.2"
   },
   "main": "index.js",
   "author": "EIGHTFINITE",
@@ -18,7 +18,7 @@
     "better-npm-audit": "3.7.3",
     "cloudscraper": "github:EIGHTFINITE/cloudscraper#master",
     "electron": "github:EIGHTFINITE/electron#main",
-    "npm": "9.4.2",
+    "npm": "6.14.18 ||  || 9.4.2",
     "npm-6": "npm:npm@6.14.18",
     "postman-request": "github:EIGHTFINITE/postman-request#master",
     "spdx-expression-parse": "github:EIGHTFINITE/spdx-expression-parse#master",
