@@ -2,17 +2,15 @@
 # Execution starts in .github/workflows/npm.yml or docs/tools/actions-artifacts.sh
 export node_version=$(cat node_version.txt)
 rm node_version.txt
-export npm_version=$(cat npm_version.txt)
-rm npm_version.txt
 # Ignore devDependencies, peerDependencies, and bundleDependencies
 sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
 sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
 sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
 # Install
 if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline
 else
-  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/all/all/npm/npm-$npm_version/npm/bin/npm-cli.js install --no-offline
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline
 fi
 rm -rf .npm/
 git checkout -- 'package.json'
@@ -34,5 +32,4 @@ find node_modules/ -mindepth 2 -type f -name 'package.json' -exec sed -i '/"_whe
 find node_modules/ -mindepth 2 -type f -name 'package.json' -exec sed -i '/"man": \[/,/\],/d' -- '{}' ';'
 # Set bundled status
 find node_modules/ -mindepth 2 -type f -name 'package.json' -exec sed -i "s/\"_inBundle\": false/\"_inBundle\": true/" -- '{}' ';'
-rm -r bin/all/
 # Execution continues in .github/workflows/npm.yml or docs/tools/actions-artifacts.sh ...
