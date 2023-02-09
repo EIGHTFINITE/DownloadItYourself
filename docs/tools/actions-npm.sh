@@ -22,6 +22,13 @@ else
   bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/temp/all/npm/npm-$npm_version/bin/npm-cli.js install --no-offline
 fi
 rm -rf .npm/
+# Dedupe
+if [[ "$OSTYPE" == "msys" ]]; then
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/temp/all/npm/npm-$npm_version/bin/npm-cli.js dedupe
+else
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/temp/all/npm/npm-$npm_version/bin/npm-cli.js dedupe
+fi
+rm -rf .npm/
 git checkout -- 'package.json'
 # Delete temp npm
 rm -r bin/temp/
