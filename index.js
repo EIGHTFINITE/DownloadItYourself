@@ -272,21 +272,23 @@ function writeReadme() {
 				
 				// Required by
 				d[k].requiredBy = ''
-				for (let i=0; i<pkg._requiredBy.length; i++) {
-					if(pkg._requiredBy[i] === '/') {
-						pkg._requiredBy.splice(i, 1)
-						i--
-						continue
-					}
-					if(i === 0) {
-						d[k].requiredBy += 'Required by '
-					}
-					else {
-						d[k].requiredBy += ', '
-					}
-					d[k].requiredBy += pkg._requiredBy[i].slice(1)
-					if(i === pkg._requiredBy.length-1) {
-						d[k].requiredBy += '.'
+				if(pkg._requiredBy) {
+					for (let i=0; i<pkg._requiredBy.length; i++) {
+						if(pkg._requiredBy[i] === '/') {
+							pkg._requiredBy.splice(i, 1)
+							i--
+							continue
+						}
+						if(i === 0) {
+							d[k].requiredBy += 'Required by '
+						}
+						else {
+							d[k].requiredBy += ', '
+						}
+						d[k].requiredBy += pkg._requiredBy[i].slice(1)
+						if(i === pkg._requiredBy.length-1) {
+							d[k].requiredBy += '.'
+						}
 					}
 				}
 				
