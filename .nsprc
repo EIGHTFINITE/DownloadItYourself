@@ -1,14 +1,17 @@
 {
   "GHSA-93q8-gq69-wqmw": {
     "active": true,
+    "expiry": "invalid",
     "notes": "Only parses sanitized data"
   },
   "GHSA-pfrx-2q88-qq97": {
     "active": true,
-    "notes": "Windows not affected. Linux got only connects to the npm registry and cannot produce UNIX redirects"
+    "expiry": "invalid",
+    "notes": "Windows not affected. Linux only connects to the npm registry and cannot produce UNIX redirects"
   },
   "GHSA-rc47-6667-2j5j": {
     "active": true,
+    "expiry": "invalid",
     "notes": "Only parses sanitized data"
   }
 }
