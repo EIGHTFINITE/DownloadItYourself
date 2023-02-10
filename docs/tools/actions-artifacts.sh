@@ -62,7 +62,8 @@ tar -xzf "npm-$npm_version.tgz" --strip-components=1 -C "bin/linux/x64/node/node
 rm "npm-$npm_version.tgz"
 # Correct engines
 sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$npm_version\"/" package.json
-# Ignore devDependencies, peerDependencies, and bundleDependencies
+# Ignore dependencies, devDependencies, peerDependencies, and bundleDependencies
+sed -i '/"dependencies": {/,/}/d' -- 'package.json'
 sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
 sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
 sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
@@ -124,7 +125,8 @@ export npm_config_arch=x64
 export electron_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['devDependencies']['electron'])")
 # Correct engines
 sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$npm_version\"/" package.json
-# Ignore devDependencies, peerDependencies, and bundleDependencies
+# Ignore dependencies, devDependencies, peerDependencies, and bundleDependencies
+sed -i '/"dependencies": {/,/}/d' -- 'package.json'
 sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
 sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
 sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
@@ -169,7 +171,8 @@ fi
 export npm_config_platform=win32
 # Correct engines
 sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$npm_version\"/" package.json
-# Ignore devDependencies, peerDependencies, and bundleDependencies
+# Ignore dependencies, devDependencies, peerDependencies, and bundleDependencies
+sed -i '/"dependencies": {/,/}/d' -- 'package.json'
 sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
 sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
 sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
