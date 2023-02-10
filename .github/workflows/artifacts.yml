@@ -291,21 +291,42 @@ jobs:
         export PATH="$(pwd)/bin/linux/x64/node/node-v$node_version-linux-x64/bin:$PATH"
         bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/better-npm-audit/index.js audit
         rm -rf .npm/
-        # Audit devDependencies
+        # devDependencies
+        export better_npm_audit_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['dependencies']['better-npm-audit'])")
+        export electron_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['devDependencies']['electron'])")
+        export npm_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['devDependencies']['npm'])")
         # electron
         rm -r node_modules/
         rm package-lock.json
-        export electron_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['devDependencies']['electron'])")
-        bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline "electron@$electron_version"
+        # Ignore devDependencies, peerDependencies, and bundleDependencies
+        sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
+        sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
+        sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
+        # Install
+        bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline "electron@$electron_version" "better-npm-audit@$better_npm_audit_version"
         rm -rf .npm/
+        # Dedupe
+        bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js dedupe
+        rm -rf .npm/
+        git checkout -- 'package.json'
+        # Audit
         bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/better-npm-audit/index.js audit
         rm -rf .npm/
         # npm
         rm -r node_modules/
         rm package-lock.json
-        export npm_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['devDependencies']['npm'])")
-        bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline "npm@$npm_version"
+        # Ignore devDependencies, peerDependencies, and bundleDependencies
+        sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
+        sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
+        sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
+        # Install
+        bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline "npm@$npm_version" "better-npm-audit@$better_npm_audit_version"
         rm -rf .npm/
+        # Dedupe
+        bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js dedupe
+        rm -rf .npm/
+        git checkout -- 'package.json'
+        # Audit
         bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/better-npm-audit/index.js audit
         rm -rf .npm/
   release:
