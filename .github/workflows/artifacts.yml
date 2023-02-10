@@ -298,7 +298,8 @@ jobs:
         # electron
         rm -r node_modules/
         rm package-lock.json
-        # Ignore devDependencies, peerDependencies, and bundleDependencies
+        # Ignore dependencies, devDependencies, peerDependencies, and bundleDependencies
+        sed -i '/"dependencies": {/,/}/d' -- 'package.json'
         sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
         sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
         sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
@@ -315,7 +316,8 @@ jobs:
         # npm
         rm -r node_modules/
         rm package-lock.json
-        # Ignore devDependencies, peerDependencies, and bundleDependencies
+        # Ignore dependencies, devDependencies, peerDependencies, and bundleDependencies
+        sed -i '/"dependencies": {/,/}/d' -- 'package.json'
         sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
         sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
         sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
