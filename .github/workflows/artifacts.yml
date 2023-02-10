@@ -248,7 +248,7 @@ jobs:
         if [[ $(find ./bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/node_modules/iconv-lite/encodings/tables/ ./bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/node_modules/iconv-lite/encodings/tables/ -type f -name '*.json' -exec jsonlint -s --allow non-bmp,zero-byte --forbid any-type-at-start,bom,duplicate-keys,non-portable -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
-  artifacts_npm_linux:
+  artifacts_npm:
     runs-on: ubuntu-latest
     needs: artifacts
     if: needs.artifacts.result == 'success'
@@ -274,36 +274,10 @@ jobs:
         cp EIGHTFINITE-build/.npmrc .npmrc
         EIGHTFINITE-build/bin/linux/x64/node/node-v$node_version-linux-x64/bin/node EIGHTFINITE-build/bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build
         rm -rf .npm/
-  artifacts_npm_windows:
-    runs-on: windows-latest
-    needs: artifacts
-    if: needs.artifacts.result == 'success'
-    steps:
-    - uses: actions/checkout@v3.3.0
-      with:
-        ref: artifacts
-        path: EIGHTFINITE-build
-    - name: npm
-      shell: bash
-      run: |
-        cd EIGHTFINITE-build
-        export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
-        bin/windows/x64/node/node-v$node_version-win-x64/node.exe node_modules/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent || true
-        rm -rf .npm/
-        git checkout -- 'package.json'
-        # Ignore peerDependencies
-        sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
-        cd ..
-        echo '{
-          "private": "true"
-        }' > package.json
-        cp EIGHTFINITE-build/.npmrc .npmrc
-        EIGHTFINITE-build/bin/windows/x64/node/node-v$node_version-win-x64/node.exe EIGHTFINITE-build/bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install .\\EIGHTFINITE-build
-        rm -rf .npm/
-  artifacts_audit_linux:
+  artifacts_audit:
     runs-on: ubuntu-latest
-    needs: [artifacts_npm_linux, artifacts_npm_windows]
-    if: ${{ needs.artifacts_npm_linux.result == 'success' && needs.artifacts_npm_windows.result == 'success' }}
+    needs: [artifacts_npm]
+    if: ${{ needs.artifacts_npm.result == 'success' }}
     steps:
     - uses: actions/checkout@v3.3.0
       with:
@@ -317,27 +291,27 @@ jobs:
         export PATH="$(pwd)/bin/linux/x64/node/node-v$node_version-linux-x64/bin:$PATH"
         bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/better-npm-audit/index.js audit
         rm -rf .npm/
-  artifacts_audit_windows:
-    runs-on: windows-latest
-    needs: [artifacts_npm_linux, artifacts_npm_windows]
-    if: ${{ needs.artifacts_npm_linux.result == 'success' && needs.artifacts_npm_windows.result == 'success' }}
-    steps:
-    - uses: actions/checkout@v3.3.0
-      with:
-        ref: artifacts
-    - name: audit
-      shell: bash
-      run: |
-        export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
-        rm -r "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm"
-        cp -aR "node_modules/npm" "bin/windows/x64/node/node-v$node_version-win-x64/node_modules"
-        export PATH="$(pwd)/bin/windows/x64/node/node-v$node_version-win-x64:$PATH"
-        bin/windows/x64/node/node-v$node_version-win-x64/node.exe node_modules/better-npm-audit/index.js audit
+        # Audit devDependencies
+        # electron
+        rm -r node_modules/
+        rm package-lock.json
+        export electron_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['devDependencies']['electron'])")
+        bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline "electron@$electron_version"
+        rm -rf .npm/
+        bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/better-npm-audit/index.js audit
+        rm -rf .npm/
+        # npm
+        rm -r node_modules/
+        rm package-lock.json
+        export npm_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['devDependencies']['npm'])")
+        bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline "npm@$npm_version"
+        rm -rf .npm/
+        bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/better-npm-audit/index.js audit
         rm -rf .npm/
   release:
     runs-on: ubuntu-latest
-    needs: [artifacts_jsonlint, artifacts_audit_linux, artifacts_audit_windows]
-    if: ${{ needs.artifacts_jsonlint.result == 'success' && needs.artifacts_audit_linux.result == 'success' && needs.artifacts_audit_windows.result == 'success' }}
+    needs: [artifacts_jsonlint, artifacts_audit]
+    if: ${{ needs.artifacts_jsonlint.result == 'success' && needs.artifacts_audit.result == 'success' }}
     steps:
     - uses: actions/checkout@v3.3.0
       with:
