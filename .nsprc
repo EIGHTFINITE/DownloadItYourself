@@ -7,12 +7,12 @@
   "GHSA-93q8-gq69-wqmw": {
     "active": true,
     "expiry": "invalid",
-    "notes": "Only parses sanitized data"
+    "notes": "Only parses trusted/sanitized data"
   },
   "GHSA-rc47-6667-2j5j": {
     "active": true,
     "expiry": "invalid",
-    "notes": "Only parses sanitized data"
+    "notes": "Only parses trusted/sanitized data"
   },
   "GHSA-pfrx-2q88-qq97": {
     "active": true,
