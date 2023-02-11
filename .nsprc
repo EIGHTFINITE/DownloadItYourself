@@ -1,5 +1,15 @@
 {
+  "GHSA-8x6c-cv3v-vp6g": {
+    "active": true,
+    "expiry": "invalid",
+    "notes": "Duplicate of GHSA-rc47-6667-2j5j"
+  },
   "GHSA-93q8-gq69-wqmw": {
+    "active": true,
+    "expiry": "invalid",
+    "notes": "Only parses sanitized data"
+  },
+  "GHSA-rc47-6667-2j5j": {
     "active": true,
     "expiry": "invalid",
     "notes": "Only parses sanitized data"
@@ -8,10 +18,5 @@
     "active": true,
     "expiry": "invalid",
     "notes": "Windows not affected. Linux only connects to the npm registry and cannot produce UNIX redirects"
-  },
-  "GHSA-rc47-6667-2j5j": {
-    "active": true,
-    "expiry": "invalid",
-    "notes": "Only parses sanitized data"
   }
 }
