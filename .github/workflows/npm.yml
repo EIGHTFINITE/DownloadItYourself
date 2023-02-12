@@ -24,7 +24,7 @@ jobs:
         git restore --source=artifacts -- bin/
         bash --noprofile --norc -e -o pipefail docs/tools/actions-npm.sh
         export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
-        bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent || true
+        bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/npm/bin/npm-cli.js ls || true
         rm -rf .npm/
         git checkout -- 'package.json'
         # Ignore peerDependencies
@@ -50,7 +50,7 @@ jobs:
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git restore --source=artifacts -- bin/ node_modules/ package-lock.json
         export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
-        bin/windows/x64/node/node-v$node_version-win-x64/node.exe node_modules/npm/bin/npm-cli.js ls --no-unicode --loglevel=silent || true
+        bin/windows/x64/node/node-v$node_version-win-x64/node.exe node_modules/npm/bin/npm-cli.js ls || true
         rm -rf .npm/
         git checkout -- 'package.json'
         # Ignore peerDependencies
