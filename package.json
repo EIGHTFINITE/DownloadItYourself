@@ -32,6 +32,7 @@
     "cheerio": "1.0.0-rc.12",
     "cloudscraper": "4.6.0",
     "electron": "23.0.0",
+    "har-schema": "2.0.0",
     "har-validator": "5.1.5",
     "postman-request": "2.88.1-postman.32",
     "request-promise": "4.2.6",
