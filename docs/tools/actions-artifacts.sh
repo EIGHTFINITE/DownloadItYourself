@@ -144,6 +144,7 @@ else
   bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
 fi
 rm -rf .npm/
+export npm_config_target=$(cat node_modules/electron/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/electron/install.js
 mkdir -p "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64"
 mv -T node_modules/electron/dist "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64"
@@ -190,7 +191,6 @@ else
   bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
 fi
 rm -rf .npm/
-export npm_config_target=$(cat node_modules/electron/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/electron/install.js
 mkdir -p "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
 mv -T node_modules/electron/dist "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
