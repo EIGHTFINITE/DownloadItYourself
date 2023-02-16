@@ -19,7 +19,7 @@ jobs:
       run: |
         bash --noprofile --norc -e -o pipefail docs/tools/git-config.sh
         export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
-        sed -i "s/\"npm\": \".*\"/\"npm\": \"$npm_version\"/3" -- package.json
+        sed -i -z "s/\"npm\": \"[a-zA-Z0-9+.-]*\"/\"npm\": \"$npm_version\"/2" -- package.json
         git add package.json
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Fix package.json" | sed -n 1p || true
         git push
