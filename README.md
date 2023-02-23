@@ -114,11 +114,9 @@ This pack contains Fastcraft, by Player, enabled by default. Fastcraft enhances 
 
 ## Attribution
 
-[Download](https://thenounproject.com/icon/download-32391/) by [Castor &amp; Pollux](https://thenounproject.com/castoretpollux/) is licensed under [CC-BY-3.0](docs/legal/CC-BY-3.0.txt)
-
-[Question mark circle interface faq symbol](https://web.archive.org/web/20150220051607/https://www.flaticon.com/free-icon/question-mark-circle-interface-faq-symbol_39409) by [Freepik](https://web.archive.org/web/20150316103630/https://www.flaticon.com/authors/freepik) is licensed under [CC-BY-3.0](docs/legal/CC-BY-3.0.txt)
-
 [球体](https://www.pixiv.net/en/artworks/9905384) is Copyright (c) 2010 [８マン](https://www.pixiv.net/en/users/266555).
 
-**Cogs / Gears Icon**[[1]](https://stock.adobe.com/images/cogs-gears-icon/230449567)[[2]](https://www.iconfinder.com/icons/176306/business_cogs_finance_gears_sprockets_thinking_icon)[[3]](https://www.shutterstock.com/image-vector/cogs-gears-icon-professional-pixel-perfect-336130190) is Copyright (c) 2013 **13ree.design**[[1]](https://stock.adobe.com/contributor/205689395/13ree-design)[[2]](https://www.iconfinder.com/13ree.design)[[3]](https://www.shutterstock.com/g/13ree.design). Licensed to EIGHTFINITE by [Adobe Inc.](https://www.adobe.com/), [Iconfinder ApS](https://www.iconfinder.com/), [Shutterstock Inc.](https://www.shutterstock.com/)
+**Cogs / Gears Icon**[[1]](https://stock.adobe.com/images/cogs-gears-icon/230449567)[[2]](https://www.iconfinder.com/icons/176306/business_cogs_finance_gears_sprockets_thinking_icon)[[3]](https://www.shutterstock.com/image-vector/cogs-gears-icon-professional-pixel-perfect-336130190) is Copyright (c) 2013 **13ree.design**[[1]](https://stock.adobe.com/contributor/205689395/13ree-design)[[2]](https://www.iconfinder.com/13ree.design)[[3]](https://www.shutterstock.com/g/13ree.design).
+
+Licensed to EIGHTFINITE by [Adobe Inc.](https://www.adobe.com/), [Iconfinder ApS](https://www.iconfinder.com/), [Shutterstock Inc.](https://www.shutterstock.com/)
 
