@@ -24,7 +24,7 @@
     "top-user-agents": "github:EIGHTFINITE/top-user-agents#main"
   },
   "optionalDependencies": {
-    "lodash.isarray": "3.0.4"
+    "lodash.isarray": "4.0.0"
   },
   "devDependencies": {
     "electron": "23.1.1",
