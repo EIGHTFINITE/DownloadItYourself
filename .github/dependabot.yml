@@ -6,6 +6,9 @@ updates:
     interval: daily
   allow:
     - dependency-type: "production"
+  ignore:
+    - dependency-name: "lodash.isarray"
+      versions: ["4.x"]
   open-pull-requests-limit: 10
   labels:
   - dependencies
