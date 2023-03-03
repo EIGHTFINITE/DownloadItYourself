@@ -18,7 +18,7 @@
     "better-npm-audit": "github:EIGHTFINITE/better-npm-audit#main",
     "cloudscraper": "github:EIGHTFINITE/cloudscraper#master",
     "electron": "github:EIGHTFINITE/electron#main",
-    "npm": "9.5.1",
+    "npm": "9.6.0",
     "postman-request": "github:EIGHTFINITE/postman-request#master",
     "spdx-expression-parse": "github:EIGHTFINITE/spdx-expression-parse#master",
     "top-user-agents": "github:EIGHTFINITE/top-user-agents#main"
