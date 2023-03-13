@@ -14,6 +14,5 @@
       "automergeStrategy": "fast-forward",
       "ignoreTests": true
     }
-  ],
-  "ignoreDeps": ["npm"]
+  ]
 }
