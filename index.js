@@ -2,7 +2,11 @@
 'use strict'
 
 // Require
-const isArray = Array.isArray
+try {
+  var isArray = require('lodash.isarray')
+} catch (e) {
+  isArray = Array.isArray
+}
 const electronVersion = require('./package.json').devDependencies.electron
 const fs = require('./node_modules/npm/node_modules/graceful-fs')
 
