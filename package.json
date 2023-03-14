@@ -19,7 +19,7 @@
     "cloudscraper": "github:EIGHTFINITE/cloudscraper#master",
     "electron": "github:EIGHTFINITE/electron#main",
     "npm": "9.6.1",
-    "postman-request": "github:EIGHTFINITE/postman-request#master",
+    "postman-request": "github:EIGHTFINITE/postman-request#stable",
     "spdx-expression-parse": "github:EIGHTFINITE/spdx-expression-parse#master",
     "top-user-agents": "github:EIGHTFINITE/top-user-agents#main"
   },
