@@ -4,14 +4,19 @@
     "expiry": "invalid",
     "notes": "Only parses trusted/sanitized data"
   },
+  "GHSA-pfrx-2q88-qq97": {
+    "active": true,
+    "expiry": "invalid",
+    "notes": "Windows not affected. Linux only connects to the npm registry and cannot produce UNIX redirects"
+  },
   "GHSA-rc47-6667-2j5j": {
     "active": true,
     "expiry": "invalid",
     "notes": "Only parses trusted/sanitized data"
   },
-  "GHSA-pfrx-2q88-qq97": {
+  "GHSA-p8p7-x288-28g6": {
     "active": true,
     "expiry": "invalid",
-    "notes": "Windows not affected. Linux only connects to the npm registry and cannot produce UNIX redirects"
+    "notes": "Only parses trusted/sanitized data. Patched in https://github.com/EIGHTFINITE/postman-request"
   }
 }
