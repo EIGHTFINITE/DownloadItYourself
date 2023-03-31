@@ -49,6 +49,6 @@ jobs:
     if: ${{ github.actor == 'renovate[bot]' && needs.package_json.result == 'success' }}
     steps:
     - name: Close Pull
-      uses: peter-evans/close-pull@v2.0.0
+      uses: peter-evans/close-pull@v2.0.1
       with:
         delete-branch: true
