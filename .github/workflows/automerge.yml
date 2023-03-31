@@ -43,3 +43,12 @@ jobs:
             pull_number: context.payload.pull_request.number,
             merge_method: 'merge'
           })
+  close:
+    runs-on: ubuntu-latest
+    needs: package_json
+    if: ${{ github.actor == 'renovate[bot]' && needs.package_json.result == 'success' }}
+    steps:
+    - name: Close Pull
+      uses: peter-evans/close-pull@v2.0.0
+      with:
+        delete-branch: true
