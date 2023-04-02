@@ -2,7 +2,7 @@
   "GHSA-93q8-gq69-wqmw": {
     "active": true,
     "expiry": "invalid",
-    "notes": "Only parses trusted/sanitized data"
+    "notes": "Only parses sanitized data from the npm registry"
   },
   "GHSA-pfrx-2q88-qq97": {
     "active": true,
@@ -12,7 +12,7 @@
   "GHSA-rc47-6667-2j5j": {
     "active": true,
     "expiry": "invalid",
-    "notes": "Only parses trusted/sanitized data"
+    "notes": "Only parses sanitized data from the npm registry"
   },
   "GHSA-p8p7-x288-28g6": {
     "active": true,
