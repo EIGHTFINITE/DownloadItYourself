@@ -34,7 +34,7 @@ jobs:
     if: ${{ github.actor == 'dependabot[bot]' && needs.package_json.result == 'success' }}
     steps:
     - name: automerge
-      uses: actions/github-script@v6.4.0
+      uses: actions/github-script@v6.4.1
       with:
         script: |
           github.rest.pulls.merge({
