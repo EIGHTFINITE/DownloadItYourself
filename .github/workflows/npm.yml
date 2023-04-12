@@ -12,7 +12,7 @@ jobs:
   install:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3.5.0
+    - uses: actions/checkout@v3.5.1
       with:
         path: EIGHTFINITE-build
     - name: install
@@ -45,7 +45,7 @@ jobs:
     needs: [install]
     if: ${{ needs.install.result == 'success' }}
     steps:
-    - uses: actions/checkout@v3.5.0
+    - uses: actions/checkout@v3.5.1
     - name: audit
       shell: bash
       run: |
