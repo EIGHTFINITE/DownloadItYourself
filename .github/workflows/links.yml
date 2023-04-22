@@ -19,7 +19,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       with:
-        args: '-m 0 -t 300 --max-retries 0 --max-concurrency 1 --require-https --format markdown -u "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" -- README.html'
+        args: '-m 0 -t 300 --max-retries 0 --max-concurrency 1 --require-https --format markdown -u "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" -- README.html'
     - name: Links
       if: env.lychee_exit_code != 0
       shell: bash
