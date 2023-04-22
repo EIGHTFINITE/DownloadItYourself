@@ -206,9 +206,6 @@ function writeReadme() {
 				else if(d[k].version === 'typedarray@0.0.6') {
 					d[k].source = 'https://github.com/es-shims/typedarray'
 				}
-				else if(d[k].version === 'walk-up-path@1.0.0') {
-					d[k].source = 'https://www.npmjs.com/package/walk-up-path?activeTab=explore'
-				}
 				else if(d[k].version === 'mkdirp@0.5.6') {
 					d[k].source = 'https://github.com/isaacs/node-mkdirp'
 				}
@@ -220,6 +217,96 @@ function writeReadme() {
 				}
 				else if(d[k].version === 'archy@1.0.0') {
 					d[k].source = 'https://www.npmjs.com/package/archy?activeTab=explore'
+				}
+				else if(d[k].version === 'abbrev@1.1.1') {
+					d[k].source = 'https://github.com/npm/abbrev-js'
+				}
+				else if(d[k].version === 'delegates@1.0.0') {
+					d[k].source = 'https://github.com/tj/node-delegates'
+				}
+				else if(d[k].version === 'assert-plus@1.0.0') {
+					d[k].source = 'https://github.com/TritonDataCenter/node-assert-plus'
+				}
+				else if(d[k].version === 'oauth-sign@0.9.0') {
+					d[k].source = 'https://github.com/request/oauth-sign'
+				}
+				else if(d[k].version === 'brotli@1.3.3') {
+					d[k].source = 'https://github.com/foliojs/brotli.js'
+				}
+				else if(d[k].version === 'jsprim@2.0.2') {
+					d[k].source = 'https://github.com/TritonDataCenter/node-jsprim'
+				}
+				else if(d[k].version === 'asn1@0.2.6') {
+					d[k].source = 'https://github.com/TritonDataCenter/node-asn1'
+				}
+				else if(d[k].version === 'clone@1.0.4') {
+					d[k].source = 'https://github.com/pvorb/clone'
+				}
+				else if(d[k].version === 'spdx-exceptions@2.3.0') {
+					d[k].source = 'https://github.com/jslicense/spdx-exceptions.json'
+				}
+				else if(d[k].version === 'ecc-jsbn@0.1.2') {
+					d[k].source = 'https://github.com/aduh95/ecc-jsbn'
+				}
+				else if(d[k].version === 'treeverse@3.0.0') {
+					d[k].source = 'https://github.com/isaacs/treeverse'
+				}
+				else if(d[k].version === 'bcrypt-pbkdf@1.0.2') {
+					d[k].source = 'https://github.com/TritonDataCenter/node-bcrypt-pbkdf'
+				}
+				else if(d[k].version === 'extsprintf@1.3.0') {
+					d[k].source = 'https://github.com/TritonDataCenter/node-extsprintf'
+				}
+				else if(d[k].version === 'caseless@0.12.0') {
+					d[k].source = 'https://github.com/request/caseless'
+				}
+				else if(d[k].version === 'path-scurry@1.6.3') {
+					d[k].source = 'https://github.com/isaacs/path-scurry'
+				}
+				else if(d[k].version === 'aws-sign2@0.7.0') {
+					d[k].source = 'https://github.com/request/aws-sign'
+				}
+				else if(d[k].version === 'ms@2.1.2') {
+					d[k].source = 'https://github.com/vercel/ms'
+				}
+				else if(d[k].version === 'inflight@1.0.6') {
+					d[k].source = 'https://github.com/isaacs/inflight'
+				}
+				else if(d[k].version === 'wrappy@1.0.2') {
+					d[k].source = 'https://github.com/isaacs/wrappy'
+				}
+				else if(d[k].version === 'tar@6.1.13') {
+					d[k].source = 'https://github.com/isaacs/node-tar'
+				}
+				else if(d[k].version === 'sshpk@1.17.0') {
+					d[k].source = 'https://github.com/TritonDataCenter/node-sshpk'
+				}
+				else if(d[k].version === 'forever-agent@0.6.1') {
+					d[k].source = 'https://github.com/request/forever-agent'
+				}
+				else if(d[k].version === 'http-signature@1.3.6') {
+					d[k].source = 'https://github.com/TritonDataCenter/node-http-signature'
+				}
+				else if(d[k].version === 'verror@1.10.0') {
+					d[k].source = 'https://github.com/TritonDataCenter/node-verror'
+				}
+				else if(d[k].version === 'json-stringify-safe@5.0.1') {
+					d[k].source = 'https://github.com/moll/json-stringify-safe'
+				}
+				else if(d[k].version === 'process@0.11.10') {
+					d[k].source = 'https://github.com/defunctzombie/node-process'
+				}
+				else if(d[k].version === 'which@2.0.2') {
+					d[k].source = 'https://github.com/npm/node-which'
+				}
+				else if(d[k].version === 'tiny-relative-date@1.3.0') {
+					d[k].source = 'https://github.com/wildlyinaccurate/tiny-relative-date'
+				}
+				else if(d[k].version === 'infer-owner@1.0.4') {
+					d[k].source = 'https://github.com/isaacs/infer-owner'
+				}
+				else if(d[k].version === 'events@3.3.0') {
+					d[k].source = 'https://github.com/browserify/events'
 				}
 				
 				// Home
