@@ -308,6 +308,9 @@ function writeReadme() {
 				else if(d[k].version === 'events@3.3.0') {
 					d[k].source = 'https://github.com/browserify/events'
 				}
+				else if(d[k].version === 'https-proxy-agent@5.0.1') {
+					d[k].source = 'https://github.com/TooTallNate/proxy-agents'
+				}
 				
 				// Home
 				if(d[k].type === 'github') {
