@@ -17,7 +17,7 @@ function writeReadme() {
 			// Require
 			const isString = require('./node_modules/lodash.isstring')
 			const parse = require('spdx-expression-parse')
-			const allowedCharacters = /[^ -~\u00E1\u00E5\u00F6\u00FC\u0144]/
+			const allowedCharacters = /[^ -~\u00E1\u00E9\u00E5\u00F6\u00FC\u0144]/
 			
 			let a = []
 			Object.keys(d).forEach((k) => {
