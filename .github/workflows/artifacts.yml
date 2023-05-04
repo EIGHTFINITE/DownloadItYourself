@@ -256,11 +256,11 @@ jobs:
     - uses: actions/checkout@v3.5.2
       with:
         ref: artifacts
-        path: EIGHTFINITE-build
+        path: DownloadItYourself
     - name: install
       shell: bash
       run: |
-        cd EIGHTFINITE-build
+        cd DownloadItYourself
         export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         sed -i '/cache-max = 0/d' -- '.npmrc'
         sed -i '/only = prod/d' -- '.npmrc'
@@ -275,8 +275,8 @@ jobs:
         echo '{
           "private": "true"
         }' > package.json
-        cp EIGHTFINITE-build/.npmrc .npmrc
-        EIGHTFINITE-build/bin/linux/x64/node/node-v$node_version-linux-x64/bin/node EIGHTFINITE-build/bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build
+        cp DownloadItYourself/.npmrc .npmrc
+        DownloadItYourself/bin/linux/x64/node/node-v$node_version-linux-x64/bin/node DownloadItYourself/bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install ./DownloadItYourself
         rm -rf .npm/
   artifacts_audit:
     runs-on: ubuntu-latest

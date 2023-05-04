@@ -1,4 +1,4 @@
-# EIGHTFINITE-build
+# DownloadItYourself
 
 EIGHTFINITE presents a small Vanilla+ modpack for Minecraft 1.7.10.
 

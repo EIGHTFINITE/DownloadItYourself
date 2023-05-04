@@ -14,11 +14,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3.5.2
       with:
-        path: EIGHTFINITE-build
+        path: DownloadItYourself
     - name: install
       shell: bash
       run: |
-        cd EIGHTFINITE-build
+        cd DownloadItYourself
         bash --noprofile --norc -e -o pipefail docs/tools/git-config.sh
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git restore --source=artifacts -- bin/
@@ -37,8 +37,8 @@ jobs:
         echo '{
           "private": "true"
         }' > package.json
-        cp EIGHTFINITE-build/.npmrc .npmrc
-        EIGHTFINITE-build/bin/linux/x64/node/node-v$node_version-linux-x64/bin/node EIGHTFINITE-build/bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install ./EIGHTFINITE-build
+        cp DownloadItYourself/.npmrc .npmrc
+        DownloadItYourself/bin/linux/x64/node/node-v$node_version-linux-x64/bin/node DownloadItYourself/bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install ./DownloadItYourself
         rm -rf .npm/
   audit:
     runs-on: ubuntu-latest
