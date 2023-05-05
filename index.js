@@ -311,6 +311,9 @@ function writeReadme() {
 				else if(d[k].version === 'https-proxy-agent@5.0.1') {
 					d[k].source = 'https://github.com/TooTallNate/proxy-agents'
 				}
+				else if(d[k].version === 'path-scurry@1.7.0') {
+					d[k].source = 'https://github.com/isaacs/path-scurry'
+				}
 				
 				// Home
 				if(d[k].type === 'github') {
