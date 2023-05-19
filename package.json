@@ -37,7 +37,7 @@
     "electron": "24.3.1",
     "har-schema": "2.0.0",
     "har-validator": "5.1.5",
-    "postman-request": "2.88.1-postman.32",
+    "postman-request": "2.88.1-postman.33",
     "request-promise": "4.2.6",
     "request-promise-core": "1.1.4",
     "spdx-expression-parse": "3.0.1",
