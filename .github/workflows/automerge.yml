@@ -12,6 +12,7 @@ jobs:
     if: ${{ github.actor == 'dependabot[bot]' || github.actor == 'renovate[bot]' }}
     steps:
     - uses: actions/checkout@v3.5.2
+      continue-on-error: true
       with:
         ref: ${{ github.event.pull_request.head.ref }}
     - name: package_json
@@ -47,7 +48,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: package_json
     if: ${{ github.actor == 'renovate[bot]' && needs.package_json.result == 'success' }}
-    continue-on-error: true
     steps:
     - name: Close Pull
       uses: peter-evans/close-pull@v3.0.1
