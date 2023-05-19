@@ -260,7 +260,7 @@ function writeReadme() {
 				else if(d[k].version === 'caseless@0.12.0') {
 					d[k].source = 'https://github.com/request/caseless'
 				}
-				else if(d[k].version === 'path-scurry@1.6.3') {
+				else if(d[k].version === 'path-scurry@1.9.1') {
 					d[k].source = 'https://github.com/isaacs/path-scurry'
 				}
 				else if(d[k].version === 'aws-sign2@0.7.0') {
