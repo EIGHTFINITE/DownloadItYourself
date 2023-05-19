@@ -20,6 +20,7 @@
     {
       "matchPackageNames": ["postman-request"],
       "labels": ["dependencies", "automerge"],
+      "allowedVersions": "/^[0-9]+\\.[0-9]+\\.[0-9]+-postman\\.[0-9]+$/",
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "fast-forward",
