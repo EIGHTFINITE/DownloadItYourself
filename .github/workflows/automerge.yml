@@ -50,6 +50,6 @@ jobs:
     if: ${{ github.actor == 'renovate[bot]' && needs.package_json.result == 'success' }}
     steps:
     - name: Close Pull
-      uses: peter-evans/close-pull@v3.0.1
-      with:
-        delete-branch: true
+      run: gh pr close --delete-branch "${{ github.event.pull_request.number }}"
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
