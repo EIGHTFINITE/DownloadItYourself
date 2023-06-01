@@ -1,0 +1,31 @@
+{
+  "extends": [
+    "config:base",
+    ":disableDependencyDashboard",
+    ":disablePrControls",
+    ":gitSignOff",
+    ":rebaseStalePrs",
+    ":skipStatusChecks"
+  ],
+  "labels": ["dependencies", "do-not-merge"],
+  "packageRules": [
+    {
+      "matchPackageNames": ["better-npm-audit", "cheerio", "cloudscraper", "electron", "har-validator", "node", "request-promise", "request-promise-core", "spdx-expression-parse", "top-user-agents"],
+      "labels": ["dependencies", "automerge"],
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "fast-forward",
+      "ignoreTests": true
+    },
+    {
+      "matchPackageNames": ["postman-request"],
+      "labels": ["dependencies", "automerge"],
+      "allowedVersions": "/^[0-9]+\\.[0-9]+\\.[0-9]+-postman\\.[0-9]+$/",
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "fast-forward",
+      "ignoreTests": true,
+      "rollbackPrs": false
+    }
+  ]
+}
