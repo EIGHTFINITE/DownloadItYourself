@@ -15,7 +15,7 @@
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "fast-forward",
-      "ignoreTests": true
+      "ignoreTests": true,
       "matchUpdateTypes": ["major", "minor", "patch", "pin", "pinDigest", "digest", "lockFileMaintenance", "rollback", "bump", "replacement"],
       "rollbackPrs": true
     },
