@@ -2,21 +2,21 @@
   "GHSA-93q8-gq69-wqmw": {
     "active": true,
     "expiry": "invalid",
-    "notes": "Only parses sanitized data from the npm registry"
+    "notes": "Only parses sanitized data from the npm registry. Fixed in later versions of npm"
   },
   "GHSA-pfrx-2q88-qq97": {
     "active": true,
     "expiry": "invalid",
-    "notes": "Windows not affected. Linux only connects to the npm registry and cannot produce UNIX redirects"
+    "notes": "Windows not affected. Linux only connects to the npm registry and cannot produce UNIX redirects. Fixed in later versions of npm"
   },
   "GHSA-rc47-6667-2j5j": {
     "active": true,
     "expiry": "invalid",
-    "notes": "Only parses sanitized data from the npm registry"
+    "notes": "Only parses sanitized data from the npm registry. Fixed in later versions of npm"
   },
   "GHSA-p8p7-x288-28g6": {
     "active": true,
     "expiry": "invalid",
-    "notes": "Only connects to the npm registry and cannot produce SSRF redirects"
+    "notes": "Only connects to the npm registry and cannot produce SSRF redirects. Fixed in EIGHTFINITE/postman-request and in later versions of npm"
   }
 }
