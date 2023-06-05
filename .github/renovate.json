@@ -16,6 +16,8 @@
       "automergeType": "pr",
       "automergeStrategy": "fast-forward",
       "ignoreTests": true
+      "matchUpdateTypes": ["major", "minor", "patch", "pin", "pinDigest", "digest", "lockFileMaintenance", "rollback", "bump", "replacement"],
+      "rollbackPrs": true
     },
     {
       "matchPackageNames": ["postman-request"],
@@ -25,6 +27,7 @@
       "automergeType": "pr",
       "automergeStrategy": "fast-forward",
       "ignoreTests": true,
+      "matchUpdateTypes": ["major", "minor", "patch", "pin", "pinDigest", "digest", "lockFileMaintenance", "bump", "replacement"],
       "rollbackPrs": false
     }
   ]
