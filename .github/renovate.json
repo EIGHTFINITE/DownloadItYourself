@@ -8,6 +8,7 @@
     ":skipStatusChecks"
   ],
   "labels": ["dependencies", "do-not-merge"],
+  "rollbackPrs": true,
   "packageRules": [
     {
       "matchPackageNames": ["better-npm-audit", "cheerio", "cloudscraper", "electron", "har-validator", "node", "request-promise", "request-promise-core", "spdx-expression-parse", "top-user-agents"],
@@ -15,9 +16,7 @@
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "fast-forward",
-      "ignoreTests": true,
-      "matchUpdateTypes": ["major", "minor", "patch", "pin", "pinDigest", "digest", "lockFileMaintenance", "rollback", "bump", "replacement"],
-      "rollbackPrs": true
+      "ignoreTests": true
     },
     {
       "matchPackageNames": ["postman-request"],
@@ -27,7 +26,6 @@
       "automergeType": "pr",
       "automergeStrategy": "fast-forward",
       "ignoreTests": true,
-      "matchUpdateTypes": ["major", "minor", "patch", "pin", "pinDigest", "digest", "lockFileMaintenance", "bump", "replacement"],
       "rollbackPrs": false
     }
   ]
