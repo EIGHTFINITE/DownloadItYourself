@@ -53,5 +53,6 @@ jobs:
     steps:
     - name: Close Pull
       uses: peter-evans/close-pull@v3.0.1
+      continue-on-error: true
       with:
         delete-branch: true
