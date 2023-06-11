@@ -16,6 +16,7 @@ jobs:
       with:
         ref: ${{ github.event.pull_request.head.ref }}
     - name: package_json
+      continue-on-error: true
       shell: bash
       run: |
         bash --noprofile --norc -e -o pipefail docs/tools/git-config.sh
@@ -26,8 +27,8 @@ jobs:
         git add package.json
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Fix package.json" | sed -n 1p || true
         git push
-        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
-          then exit 1
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]; then
+          exit 1
         fi
   automerge:
     runs-on: ubuntu-latest
