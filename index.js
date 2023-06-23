@@ -194,20 +194,23 @@ function writeReadme() {
 				}
 				
 				// Source Code corrections
-				if(d[k].source === 'https://github.com/npm/minipass-json-stream') {
-					d[k].source = 'https://www.npmjs.com/package/minipass-json-stream?activeTab=code'
-				}
-				else if(d[k].source === 'https://github.com/substack/text-table') {
-					d[k].source = 'https://www.npmjs.com/package/text-table?activeTab=code'
-				}
-				else if(d[k].source === 'https://github.com/substack/node-editor') {
-					d[k].source = 'https://www.npmjs.com/package/editor?activeTab=code'
-				}
-				else if(d[k].source === 'https://github.com/substack/node-archy') {
+				if(d[k].source === 'https://github.com/substack/node-archy') { // archy
 					d[k].source = 'https://www.npmjs.com/package/archy?activeTab=code'
 				}
-				else if(d[k].source === 'https://github.com/isaacs/path-walker') {
+				else if(d[k].source === 'https://github.com/substack/node-editor') { // editor
+					d[k].source = 'https://www.npmjs.com/package/editor?activeTab=code'
+				}
+				else if(d[k].source === 'https://github.com/coveo/exponential-backoff') { // exponential-backoff
+					d[k].source = 'https://github.com/coveooss/exponential-backoff'
+				}
+				else if(d[k].source === 'https://github.com/npm/minipass-json-stream') { // minipass-json-stream
+					d[k].source = 'https://www.npmjs.com/package/minipass-json-stream?activeTab=code'
+				}
+				else if(d[k].source === 'https://github.com/isaacs/path-walker') { // path-scurry
 					d[k].source = 'https://github.com/isaacs/path-scurry'
+				}
+				else if(d[k].source === 'https://github.com/substack/text-table') { // text-table
+					d[k].source = 'https://www.npmjs.com/package/text-table?activeTab=code'
 				}
 				
 				// Home
