@@ -197,6 +197,9 @@ function writeReadme() {
 				if(d[k].source === 'https://github.com/substack/node-archy') { // archy
 					d[k].source = 'https://www.npmjs.com/package/archy?activeTab=code'
 				}
+				else if(d[k].source === 'https://github.com/substack/node-concat-map') { // concat-map
+					d[k].source = 'https://github.com/ljharb/concat-map'
+				}
 				else if(d[k].source === 'https://github.com/substack/node-editor') { // editor
 					d[k].source = 'https://www.npmjs.com/package/editor?activeTab=code'
 				}
