@@ -215,6 +215,9 @@ function writeReadme() {
 				else if(d[k].source === 'https://github.com/substack/text-table') { // text-table
 					d[k].source = 'https://www.npmjs.com/package/text-table?activeTab=code'
 				}
+				else if(d[k].source === 'https://github.com/npm/wrappy') { // wrappy
+					d[k].source = 'https://github.com/isaacs/wrappy'
+				}
 				
 				// Home
 				if(d[k].type === 'github') {
