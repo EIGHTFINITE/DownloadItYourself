@@ -212,6 +212,9 @@ function writeReadme() {
 				else if(d[k].source === 'https://github.com/npm/minipass-json-stream') { // minipass-json-stream
 					d[k].source = 'https://www.npmjs.com/package/minipass-json-stream?activeTab=code'
 				}
+				else if(d[k].source === 'https://github.com/mikeal/oauth-sign') { // oauth-sign
+					d[k].source = 'https://github.com/request/oauth-sign'
+				}
 				else if(d[k].source === 'https://github.com/isaacs/path-walker') { // path-scurry
 					d[k].source = 'https://github.com/isaacs/path-scurry'
 				}
