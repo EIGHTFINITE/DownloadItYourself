@@ -212,6 +212,9 @@ function writeReadme() {
 				else if(d[k].source === 'https://github.com/isaacs/path-walker') { // path-scurry
 					d[k].source = 'https://github.com/isaacs/path-scurry'
 				}
+				else if(d[k].source === 'https://github.com/joyent/node-sshpk') { // sshpk
+					d[k].source = 'https://github.com/TritonDataCenter/node-sshpk'
+				}
 				else if(d[k].source === 'https://github.com/substack/text-table') { // text-table
 					d[k].source = 'https://www.npmjs.com/package/text-table?activeTab=code'
 				}
