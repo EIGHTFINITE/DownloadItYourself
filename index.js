@@ -197,8 +197,11 @@ function writeReadme() {
 				if(d[k].source === 'https://github.com/substack/node-archy') { // archy
 					d[k].source = 'https://www.npmjs.com/package/archy?activeTab=code'
 				}
-				if(d[k].source === 'https://github.com/mikeal/caseless') { // caseless
+				else if(d[k].source === 'https://github.com/mikeal/caseless') { // caseless
 					d[k].source = 'https://github.com/request/caseless'
+				}
+				else if(d[k].source === 'https://github.com/pvorb/node-clone') { // clone
+					d[k].source = 'https://github.com/pvorb/clone'
 				}
 				else if(d[k].source === 'https://github.com/substack/node-concat-map') { // concat-map
 					d[k].source = 'https://github.com/ljharb/concat-map'
