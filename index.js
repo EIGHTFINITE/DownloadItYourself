@@ -200,6 +200,9 @@ function writeReadme() {
 				else if(d[k].source === 'https://github.com/substack/node-archy') { // archy
 					d[k].source = 'https://www.npmjs.com/package/archy?activeTab=code'
 				}
+				else if(d[k].source === 'https://github.com/mikeal/aws-sign') { // aws-sign2
+					d[k].source = 'https://github.com/request/aws-sign'
+				}
 				else if(d[k].source === 'https://github.com/mikeal/caseless') { // caseless
 					d[k].source = 'https://github.com/request/caseless'
 				}
