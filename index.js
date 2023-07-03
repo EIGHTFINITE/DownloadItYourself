@@ -212,6 +212,9 @@ function writeReadme() {
 				else if(d[k].source === 'https://github.com/coveo/exponential-backoff') { // exponential-backoff
 					d[k].source = 'https://github.com/coveooss/exponential-backoff'
 				}
+				else if(d[k].source === 'https://github.com/joyent/node-jsprim') { // jsprim
+					d[k].source = 'https://github.com/TritonDataCenter/node-jsprim'
+				}
 				else if(d[k].source === 'https://github.com/npm/minipass-json-stream') { // minipass-json-stream
 					d[k].source = 'https://www.npmjs.com/package/minipass-json-stream?activeTab=code'
 				}
