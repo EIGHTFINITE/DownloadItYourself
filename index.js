@@ -248,6 +248,9 @@ function writeReadme() {
 				else if(d[k].source === 'https://github.com/wildlyinaccurate/relative-date') { // tiny-relative-date
 					d[k].source = 'https://github.com/wildlyinaccurate/tiny-relative-date'
 				}
+				else if(d[k].source === 'https://github.com/isaacs/node-which') { // which
+					d[k].source = 'https://github.com/npm/node-which'
+				}
 				else if(d[k].source === 'https://github.com/npm/wrappy') { // wrappy
 					d[k].source = 'https://github.com/isaacs/wrappy'
 				}
