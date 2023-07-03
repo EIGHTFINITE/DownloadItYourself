@@ -203,6 +203,9 @@ function writeReadme() {
 				else if(d[k].source === 'https://github.com/mikeal/aws-sign') { // aws-sign2
 					d[k].source = 'https://github.com/request/aws-sign'
 				}
+				else if(d[k].source === 'https://github.com/devongovett/brotli.js') { // brotli
+					d[k].source = 'https://github.com/foliojs/brotli.js'
+				}
 				else if(d[k].source === 'https://github.com/mikeal/caseless') { // caseless
 					d[k].source = 'https://github.com/request/caseless'
 				}
