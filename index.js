@@ -194,7 +194,10 @@ function writeReadme() {
 				}
 				
 				// Source Code corrections
-				if(d[k].source === 'https://github.com/substack/node-archy') { // archy
+				if(d[k].source === 'https://github.com/isaacs/abbrev-js') { // abbrev
+					d[k].source = 'https://github.com/npm/abbrev-js'
+				}
+				else if(d[k].source === 'https://github.com/substack/node-archy') { // archy
 					d[k].source = 'https://www.npmjs.com/package/archy?activeTab=code'
 				}
 				else if(d[k].source === 'https://github.com/mikeal/caseless') { // caseless
