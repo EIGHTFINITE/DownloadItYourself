@@ -215,6 +215,9 @@ function writeReadme() {
 				else if(d[k].source === 'https://github.com/substack/node-concat-map') { // concat-map
 					d[k].source = 'https://github.com/ljharb/concat-map'
 				}
+				else if(d[k].source === 'https://github.com/visionmedia/node-delegates') { // delegates
+					d[k].source = 'https://github.com/tj/node-delegates'
+				}
 				else if(d[k].source === 'https://github.com/substack/node-editor') { // editor
 					d[k].source = 'https://www.npmjs.com/package/editor?activeTab=code'
 				}
