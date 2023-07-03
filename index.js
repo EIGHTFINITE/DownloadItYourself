@@ -236,6 +236,9 @@ function writeReadme() {
 				else if(d[k].source === 'https://github.com/substack/text-table') { // text-table
 					d[k].source = 'https://www.npmjs.com/package/text-table?activeTab=code'
 				}
+				else if(d[k].source === 'https://github.com/wildlyinaccurate/relative-date') { // tiny-relative-date
+					d[k].source = 'https://github.com/wildlyinaccurate/tiny-relative-date'
+				}
 				else if(d[k].source === 'https://github.com/npm/wrappy') { // wrappy
 					d[k].source = 'https://github.com/isaacs/wrappy'
 				}
