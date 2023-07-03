@@ -218,6 +218,9 @@ function writeReadme() {
 				else if(d[k].source === 'https://github.com/coveo/exponential-backoff') { // exponential-backoff
 					d[k].source = 'https://github.com/coveooss/exponential-backoff'
 				}
+				else if(d[k].source === 'https://github.com/davepacheco/node-extsprintf') { // extsprintf
+					d[k].source = 'https://github.com/TritonDataCenter/node-extsprintf'
+				}
 				else if(d[k].source === 'https://github.com/joyent/node-jsprim') { // jsprim
 					d[k].source = 'https://github.com/TritonDataCenter/node-jsprim'
 				}
