@@ -203,6 +203,9 @@ function writeReadme() {
 				else if(d[k].source === 'https://github.com/mikeal/aws-sign') { // aws-sign2
 					d[k].source = 'https://github.com/request/aws-sign'
 				}
+				else if(d[k].source === 'https://github.com/joyent/node-bcrypt-pbkdf') { // bcrypt-pbkdf
+					d[k].source = 'https://github.com/TritonDataCenter/node-bcrypt-pbkdf'
+				}
 				else if(d[k].source === 'https://github.com/devongovett/brotli.js') { // brotli
 					d[k].source = 'https://github.com/foliojs/brotli.js'
 				}
