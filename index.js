@@ -221,6 +221,9 @@ function writeReadme() {
 				else if(d[k].source === 'https://github.com/substack/node-editor') { // editor
 					d[k].source = 'https://www.npmjs.com/package/editor?activeTab=code'
 				}
+				else if(d[k].source === 'https://github.com/Gozala/events') { // events
+					d[k].source = 'https://github.com/browserify/events'
+				}
 				else if(d[k].source === 'https://github.com/coveo/exponential-backoff') { // exponential-backoff
 					d[k].source = 'https://github.com/coveooss/exponential-backoff'
 				}
