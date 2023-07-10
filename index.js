@@ -218,6 +218,9 @@ function writeReadme() {
 				else if(d[k].source === 'https://github.com/visionmedia/node-delegates') { // delegates
 					d[k].source = 'https://github.com/tj/node-delegates'
 				}
+				else if(d[k].source === 'https://github.com/quartzjer/ecc-jsbn') { // ecc-jsbn
+					d[k].source = 'https://github.com/aduh95/ecc-jsbn'
+				}
 				else if(d[k].source === 'https://github.com/substack/node-editor') { // editor
 					d[k].source = 'https://www.npmjs.com/package/editor?activeTab=code'
 				}
