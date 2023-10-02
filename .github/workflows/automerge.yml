@@ -27,7 +27,7 @@ jobs:
           git add package.json
           git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Fix package.json" | sed -n 1p || true
           git push
-          if [[ $(git diff --stat $(git log -1 --skip=2 --format=%H) $(git log -1 --format=%H)) -eq 0 ]]; then
+          if [[ $(git diff --stat "$(git log -1 --skip=2 --format=%H)" "$(git log -1 --format=%H)" --) -eq 0 ]]; then
             echo "automerge_pull_action=close" >> "$GITHUB_ENV"
           else
             echo "automerge_pull_action=merge" >> "$GITHUB_ENV"
