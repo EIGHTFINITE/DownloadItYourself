@@ -14,7 +14,7 @@ jobs:
       continue-on-error: true
       with:
         ref: ${{ github.event.pull_request.head.ref }}
-        fetch-depth: 2
+        fetch-depth: 3
     - name: package_json
       shell: bash
       run: |
