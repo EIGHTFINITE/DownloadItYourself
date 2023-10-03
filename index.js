@@ -93,19 +93,22 @@ function writeReadme() {
 				}
 
 				// License corrections
-				if(pkg.name === 'npm') {
+				if(pkg.name === 'npm') { // npm
 					d[k].license = 'npm license'
 				}
-				else if(d[k].version === 'bin-links@1.1.8') {
+				else if(pkg.name === 'electron-chrome-extensions') { // electron-chrome-extensions
+					d[k].license = 'GPL-3.0'
+				}
+				else if(d[k].version === 'bin-links@1.1.8') { // bin-links
 					d[k].license = 'ISC'
 				}
-				else if(d[k].version === 'cyclist@0.2.2') {
+				else if(d[k].version === 'cyclist@0.2.2') { // cyclist
 					d[k].license = 'MIT'
 				}
-				else if(d[k].version === 'gentle-fs@2.3.1') {
+				else if(d[k].version === 'gentle-fs@2.3.1') { // gentle-fs
 					d[k].license = 'npm license'
 				}
-				else if(d[k].version === 'npm-lifecycle@3.1.5') {
+				else if(d[k].version === 'npm-lifecycle@3.1.5') { // npm-lifecycle
 					d[k].license = 'npm license'
 				}
 
@@ -231,6 +234,9 @@ function writeReadme() {
 				}
 				else if(d[k].source === 'https://github.com/substack/node-editor') { // editor
 					d[k].source = 'https://www.npmjs.com/package/editor?activeTab=code'
+				}
+				else if(pkg.name === 'electron-chrome-extensions') { // electron-chrome-extensions
+					d[k].source = 'https://github.com/samuelmaddock/electron-browser-shell/tree/master/packages/electron-chrome-extensions'
 				}
 				else if(d[k].source === 'https://github.com/Gozala/events') { // events
 					d[k].source = 'https://github.com/browserify/events'
