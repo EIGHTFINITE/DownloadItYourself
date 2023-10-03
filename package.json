@@ -20,7 +20,7 @@
     "cloudscraper": "github:EIGHTFINITE/cloudscraper#master",
     "electron": "github:EIGHTFINITE/electron#main",
     "electron-chrome-extensions": "3.10.1",
-    "npm": "10.1.0",
+    "npm": "10.2.0",
     "postman-request": "github:EIGHTFINITE/postman-request#master",
     "spdx-expression-parse": "github:EIGHTFINITE/spdx-expression-parse#master",
     "top-user-agents": "github:EIGHTFINITE/top-user-agents#main"
@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "electron": "26.2.4",
-    "npm": "6.14.18"
+    "npm": "10.2.0"
   },
   "peerDependencies": {
     "better-npm-audit": "3.7.3",
