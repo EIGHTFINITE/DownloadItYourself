@@ -14,12 +14,13 @@ jobs:
       continue-on-error: true
       with:
         ref: ${{ github.event.pull_request.head.ref }}
-        fetch-depth: 3
+        fetch-depth: 1
     - name: package_json
       shell: bash
       run: |
         if [[ -f package.json ]]; then
           bash --noprofile --norc -e -o pipefail docs/tools/git-config.sh
+          git fetch --depth 1 origin +master:master --no-tags
           export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
           export new_npm_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['dependencies']['npm'])")
           sed -i -z "s/\"npm\": \"[a-zA-Z0-9+.-]*\"/\"npm\": \"$npm_version\"/2" -- package.json
@@ -27,10 +28,14 @@ jobs:
           git add package.json
           git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Fix package.json" | sed -n 1p || true
           git push
-          if [[ $(git diff --stat "$(git log -1 --skip=2 --format=%H)" "$(git log -1 --format=%H)" --) -eq 0 ]]; then
-            echo "automerge_pull_action=close" >> "$GITHUB_ENV"
-          else
+          if [[ "${{ github.event.pull_request.head.sha }}" == "$(git log -1 --format=%H)" ]]; then
             echo "automerge_pull_action=merge" >> "$GITHUB_ENV"
+          else
+            if [[ $(git diff --stat "$(git log origin/master -1 --format=%H)" "$(git log -1 --format=%H)" --) -eq 0 ]]; then
+              echo "automerge_pull_action=close" >> "$GITHUB_ENV"
+            else
+              echo "automerge_pull_action=merge" >> "$GITHUB_ENV"
+            fi
           fi
         fi
     - name: automerge
