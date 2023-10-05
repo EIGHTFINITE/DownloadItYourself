@@ -52,5 +52,6 @@ jobs:
     - name: close
       if: ${{ github.actor == 'renovate[bot]' || (github.actor == 'dependabot[bot]' && env.automerge_pull_action == 'close') }}
       uses: peter-evans/close-pull@v3.0.1
+      continue-on-error: true
       with:
         delete-branch: true
