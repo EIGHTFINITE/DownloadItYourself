@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "electron": "27.1.0",
-    "npm": "6.14.18"
+    "npm": "10.2.4"
   },
   "peerDependencies": {
     "better-npm-audit": "3.7.3",
