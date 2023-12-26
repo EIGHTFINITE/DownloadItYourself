@@ -231,7 +231,7 @@ jobs:
     - name: Build demjson
       shell: bash
       run: |
-        pip install setuptools==57.4.0
+        pip install setuptools==57.5.0
         pip install git+https://github.com/EIGHTFINITE/demjson.git@master
     - uses: actions/checkout@v4.1.1
       with:
@@ -330,7 +330,7 @@ jobs:
     - name: Build demjson
       shell: bash
       run: |
-        pip install setuptools==57.4.0
+        pip install setuptools==57.5.0
         pip install git+https://github.com/EIGHTFINITE/demjson.git@master
     - uses: actions/checkout@v4.1.1
       with:
