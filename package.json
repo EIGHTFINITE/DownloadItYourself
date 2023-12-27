@@ -21,6 +21,7 @@
     "electron": "github:EIGHTFINITE/electron#main",
     "electron-chrome-extensions": "3.10.1",
     "npm": "10.2.5",
+    "npm-6": "npm:npm@6.14.18",
     "postman-request": "github:EIGHTFINITE/postman-request#master",
     "spdx-expression-parse": "github:EIGHTFINITE/spdx-expression-parse#master",
     "top-user-agents": "github:EIGHTFINITE/top-user-agents#main"
@@ -29,8 +30,7 @@
     "lodash.isarray": "3.0.4"
   },
   "devDependencies": {
-    "electron": "28.1.0",
-    "npm": "6.14.18"
+    "electron": "28.1.0"
   },
   "peerDependencies": {
     "better-npm-audit": "3.7.3",
