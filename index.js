@@ -59,11 +59,6 @@ function writeReadme() {
 					}
 				}
 				
-				// Resolved corrections
-				if(d[k].type === 'github' && d[k].resolved.startsWith('EIGHTFINITE/top-user-agents#')) { // top-user-agents
-					d[k].resolved = 'EIGHTFINITE/top-user-agents#main'
-				}
-				
 				// Version
 				d[k].version = pkg.name + '@' + pkg.version
 				
@@ -192,7 +187,7 @@ function writeReadme() {
 				
 				// Check for invalid characters
 				if(allowedCharacters.test(d[k].author)) {
-					console.error(d[k].description)
+					console.log(d[k].description)
 					throw Error('Invalid characters in author name of ' + d[k].name)
 				}
 				
@@ -309,7 +304,7 @@ function writeReadme() {
 					
 					// Check for invalid characters
 					if(allowedCharacters.test(d[k].description)) {
-						console.error(d[k].description)
+						console.log(d[k].description)
 						throw Error('Invalid characters in description of ' + d[k].name)
 					}
 					
@@ -737,7 +732,7 @@ if(process.versions.electron) {
 					}
 				}
 			}).catch((error) => {
-				console.error(error)
+				console.log(error)
 				win.close()
 			})
 		})
@@ -772,7 +767,7 @@ else {
 	function startElectron() {
 		console.log('Starting Electron ' + electronVersion)
 		if(electronCliVersion !== electronVersion) {
-			console.warn('Electron ' + electronVersion + ' is ahead of Electron CLI ' + electronCliVersion + '. This is harmless and will fix itself.')
+			console.log('Electron ' + electronVersion + ' is ahead of Electron CLI ' + electronCliVersion + '. This is harmless and will fix itself.')
 		}
 		process.env.ELECTRON_OVERRIDE_DIST_PATH = (isWindows ? 'bin/windows/x64/electron/electron-v' + electronVersion + '-win32-x64' : 'bin/linux/x64/electron/electron-v' + electronVersion + '-linux-x64')
 		const electron = require('electron')
