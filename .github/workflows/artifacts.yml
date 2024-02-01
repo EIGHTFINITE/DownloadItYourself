@@ -56,7 +56,7 @@ jobs:
           then exit 1
         fi
     - id: cpr
-      uses: peter-evans/create-pull-request@v5.0.2
+      uses: peter-evans/create-pull-request@v6.0.0
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: Update README
@@ -108,7 +108,7 @@ jobs:
           then exit 1
         fi
     - id: cpr
-      uses: peter-evans/create-pull-request@v5.0.2
+      uses: peter-evans/create-pull-request@v6.0.0
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: Update downloadlist
@@ -152,7 +152,7 @@ jobs:
         sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") || $(cat node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
         rm -r bin/ node_modules/
     - id: cpr
-      uses: peter-evans/create-pull-request@v5.0.2
+      uses: peter-evans/create-pull-request@v6.0.0
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: Update engines
@@ -195,7 +195,7 @@ jobs:
         sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\n'"$(printf '    "%s",\\n' $(find node_modules/ -mindepth 2 -maxdepth 3 -type f -name 'package.json' -exec bash -c 'path={}; echo "${path:13:-13}"' ';' | sort) | sed '$ s/...$//')"'\n  \]|' -- 'package.json'
         rm -r node_modules/
     - id: cpr
-      uses: peter-evans/create-pull-request@v5.0.2
+      uses: peter-evans/create-pull-request@v6.0.0
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: Update bundleDependencies
