@@ -12,7 +12,7 @@ jobs:
   artifacts:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4.1.1
+    - uses: actions/checkout@v4.1.2
     - name: Artifacts
       shell: bash
       run: |
@@ -37,7 +37,7 @@ jobs:
     needs: artifacts
     if: needs.artifacts.result == 'success'
     steps:
-    - uses: actions/checkout@v4.1.1
+    - uses: actions/checkout@v4.1.2
     - name: README
       shell: bash
       run: |
@@ -89,7 +89,7 @@ jobs:
     needs: artifacts
     if: needs.artifacts.result == 'success'
     steps:
-    - uses: actions/checkout@v4.1.1
+    - uses: actions/checkout@v4.1.2
     - name: Downloadlist
       shell: bash
       run: |
@@ -141,7 +141,7 @@ jobs:
     needs: artifacts
     if: needs.artifacts.result == 'success'
     steps:
-    - uses: actions/checkout@v4.1.1
+    - uses: actions/checkout@v4.1.2
     - name: Engines
       shell: bash
       run: |
@@ -185,7 +185,7 @@ jobs:
     needs: artifacts
     if: needs.artifacts.result == 'success'
     steps:
-    - uses: actions/checkout@v4.1.1
+    - uses: actions/checkout@v4.1.2
     - name: Bundled
       shell: bash
       run: |
@@ -233,7 +233,7 @@ jobs:
       run: |
         pip install setuptools==57.5.0
         pip install git+https://github.com/EIGHTFINITE/demjson.git@master
-    - uses: actions/checkout@v4.1.1
+    - uses: actions/checkout@v4.1.2
       with:
         ref: artifacts
     - name: jsonlint
@@ -253,7 +253,7 @@ jobs:
     needs: artifacts
     if: needs.artifacts.result == 'success'
     steps:
-    - uses: actions/checkout@v4.1.1
+    - uses: actions/checkout@v4.1.2
       with:
         ref: artifacts
         path: DownloadItYourself
@@ -283,7 +283,7 @@ jobs:
     needs: [artifacts_install]
     if: ${{ needs.artifacts_install.result == 'success' }}
     steps:
-    - uses: actions/checkout@v4.1.1
+    - uses: actions/checkout@v4.1.2
       with:
         ref: artifacts
     - name: audit
@@ -296,7 +296,7 @@ jobs:
     needs: [artifacts_jsonlint, artifacts_audit]
     if: ${{ needs.artifacts_jsonlint.result == 'success' && needs.artifacts_audit.result == 'success' }}
     steps:
-    - uses: actions/checkout@v4.1.1
+    - uses: actions/checkout@v4.1.2
       with:
         ref: artifacts
     - name: Release
@@ -332,7 +332,7 @@ jobs:
       run: |
         pip install setuptools==57.5.0
         pip install git+https://github.com/EIGHTFINITE/demjson.git@master
-    - uses: actions/checkout@v4.1.1
+    - uses: actions/checkout@v4.1.2
       with:
         ref: latest
     - name: jsonlint
