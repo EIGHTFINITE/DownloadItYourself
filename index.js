@@ -309,7 +309,7 @@ function writeReadme() {
 					}
 					
 					// Readability & consistency
-					d[k].description = d[k].description.replace(/\s+/g,' ').replace(/\!\[[ -~]*?\]\([ -~]+?\)/g,'').replace(/\[([ -~]*?)\]\([ -~]+?\)/g,'$1').trim().replace(/[Nn]ode\.js|[Nn]ode(?!s)/g,'Node').replace(/([^!.?]$)/,'$1.')
+					d[k].description = d[k].description.replace(/\s+/g,' ').replace(/\!\[[ -~]*?\]\([ -~]+?\)/g,'').replace(/\[([ -~]*?)\]\([ -~]+?\)/g,'$1').trim().replace(/[Nn]ode\.js|[Nn]ode(?!s)/g,'Node').replace(/javascript/ig,'JavaScript').replace(/([^!.?]$)/,'$1.')
 					if(d[k].description !== '') {
 						d[k].description = d[k].description[0].toUpperCase() + d[k].description.slice(1)
 						d[k].description = d[k].description.replace(/^Npm/,'npm')
@@ -614,7 +614,7 @@ function writeReadme() {
 				html += ' | ' + escAuthor
 				html += ' | ' + d.licenseMd
 				html += ' | [Open Source](' + escSource + ')'
-				html += ' | \u2714\ufe0f'
+				html += ' | &#x2714;&#xFE0F;'
 				html += ' | ' + (escDescription !== '' ? (escRequiredBy !== '' ? escDescription + '<br>' + escRequiredBy : escDescription) : escRequiredBy)
 				html += ' | ' + (d.type === 'github' ? '`' + escResolved + '`<br>(based on `' + escVersion + '`)' : '`' + escVersion + '`') + ' |\n'
 			}
@@ -651,7 +651,7 @@ function writeReadme() {
 				html += '<td>' + escAuthor + '</td>\n'
 				html += '<td>' + d.licenseHtml + '</td>\n'
 				html += '<td><a href="' + escSource + '">Open Source</a></td>\n'
-				html += '<td align="center">\u2714\ufe0f</td>\n'
+				html += '<td align="center">&#x2714;&#xFE0F;</td>\n'
 				html += '<td>' + (escDescription !== '' ? (escRequiredBy !== '' ? escDescription + '<br>' + escRequiredBy : escDescription) : escRequiredBy) +'</td>\n'
 				html += '<td align="center">' + (d.type === 'github' ? '<code>' + escResolved + '</code><br>(based on <code>' + escVersion + '</code>)' : '<code>' + escVersion + '</code>') + '</td>\n'
 				html += '</tr>\n'
