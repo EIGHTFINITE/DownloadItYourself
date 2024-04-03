@@ -4,7 +4,7 @@
   "description": "Keeps a set of files up to date.",
   "engineStrict": true,
   "engines": {
-    "node": "20.12.0",
+    "node": "20.12.1",
     "npm": "6.14.18 || 10.5.0"
   },
   "main": "index.js",
