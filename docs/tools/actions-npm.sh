@@ -29,4 +29,8 @@ rmdir 'node_modules/electron-chrome-extensions/dist/browser' || true
 # Remove non-deterministic information
 find node_modules/ -mindepth 2 -type f -name 'package.json' -exec sed -i '/"_where": "/d' -- '{}' ';'
 find node_modules/ -mindepth 2 -type f -name 'package.json' -exec sed -i '/"man": \[/,/\],/d' -- '{}' ';'
+# Fail if npm dependencies have leaked
+if [[ -d 'node_modules/@npmcli' ]]; then
+  exit 1
+fi
 # Execution continues in .github/workflows/npm.yml or docs/tools/actions-artifacts.sh ...
