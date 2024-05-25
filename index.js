@@ -318,10 +318,11 @@ function writeReadme() {
 					}
 					
 					// Readability & consistency
-					d[k].description = d[k].description.replace(/\s+/g,' ').replace(/\!\[[ -~]*?\]\([ -~]+?\)/g,'').replace(/\[([ -~]*?)\]\([ -~]+?\)/g,'$1').trim().replace(/[Nn]ode\.js|[Nn]ode(?!s)/g,'Node').replace(/javascript/ig,'JavaScript').replace(/htmlparser2/ig,'htmlparser2').replace(/([^!.?]$)/,'$1.')
+					d[k].description = d[k].description.replace(/\s+/g,' ').replace(/\!\[[ -~]*?\]\([ -~]+?\)/g,'').replace(/\[([ -~]*?)\]\([ -~]+?\)/g,'$1').trim().replace(/[Nn]ode\.js|[Nn]ode(?!s)/g,'Node').replace(/javascript/ig,'JavaScript').replace(/([^!.?]$)/,'$1.')
 					if(d[k].description !== '') {
 						d[k].description = d[k].description[0].toUpperCase() + d[k].description.slice(1)
 						d[k].description = d[k].description.replace(/^Npm/,'npm')
+						d[k].description = d[k].description.replace(/^Htmlparser2/,'htmlparser2')
 					}
 					if(d[k].description === '.') {
 						d[k].description = ''
