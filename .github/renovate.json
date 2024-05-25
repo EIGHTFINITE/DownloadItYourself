@@ -29,6 +29,10 @@
       "rollbackPrs": false
     },
     {
+      "matchPackageNames": ["lodash.isarray"],
+      "allowedVersions": "/^([0-35-9]|[0-9][0-9]+)\\.[0-9]+\\.[0-9]+$/"
+    },
+    {
       "matchPackageNames": ["jquery"],
       "allowedVersions": "/^1\\.[0-9]+\\.[0-9]+$/"
     }
