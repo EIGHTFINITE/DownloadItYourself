@@ -248,8 +248,14 @@ function writeReadme() {
 				else if(d[k].source === 'https://github.com/joyent/node-jsprim') { // jsprim
 					d[k].source = 'https://github.com/TritonDataCenter/node-jsprim'
 				}
+				else if(d[k].source === 'https://github.com/substack/minimist') { // minimist
+					d[k].source = 'https://github.com/minimistjs/minimist'
+				}
 				else if(d[k].source === 'https://github.com/npm/minipass-json-stream') { // minipass-json-stream
 					d[k].source = 'https://www.npmjs.com/package/minipass-json-stream?activeTab=code'
+				}
+				else if(d[k].source === 'https://github.com/substack/node-mkdirp') { // mkdirp
+					d[k].source = 'https://github.com/isaacs/node-mkdirp'
 				}
 				else if(d[k].source === 'https://github.com/mikeal/oauth-sign') { // oauth-sign
 					d[k].source = 'https://github.com/request/oauth-sign'
@@ -265,6 +271,9 @@ function writeReadme() {
 				}
 				else if(d[k].source === 'https://github.com/wildlyinaccurate/relative-date') { // tiny-relative-date
 					d[k].source = 'https://github.com/wildlyinaccurate/tiny-relative-date'
+				}
+				else if(d[k].source === 'https://github.com/substack/typedarray') { // typedarray
+					d[k].source = 'https://github.com/es-shims/typedarray'
 				}
 				else if(d[k].source === 'https://github.com/isaacs/node-which') { // which
 					d[k].source = 'https://github.com/npm/node-which'
@@ -309,7 +318,7 @@ function writeReadme() {
 					}
 					
 					// Readability & consistency
-					d[k].description = d[k].description.replace(/\s+/g,' ').replace(/\!\[[ -~]*?\]\([ -~]+?\)/g,'').replace(/\[([ -~]*?)\]\([ -~]+?\)/g,'$1').trim().replace(/[Nn]ode\.js|[Nn]ode(?!s)/g,'Node').replace(/javascript/ig,'JavaScript').replace(/([^!.?]$)/,'$1.')
+					d[k].description = d[k].description.replace(/\s+/g,' ').replace(/\!\[[ -~]*?\]\([ -~]+?\)/g,'').replace(/\[([ -~]*?)\]\([ -~]+?\)/g,'$1').trim().replace(/[Nn]ode\.js|[Nn]ode(?!s)/g,'Node').replace(/javascript/ig,'JavaScript').replace(/htmlparser2/ig,'htmlparser2').replace(/([^!.?]$)/,'$1.')
 					if(d[k].description !== '') {
 						d[k].description = d[k].description[0].toUpperCase() + d[k].description.slice(1)
 						d[k].description = d[k].description.replace(/^Npm/,'npm')
