@@ -10,7 +10,7 @@ updates:
     - dependency-name: "lodash.isarray"
       versions: ["4.x"]
     - dependency-name: "jquery"
-      update-types: ["version-update:semver-major"]
+      versions: [">= 1"]
   open-pull-requests-limit: 10
   labels:
   - dependencies
