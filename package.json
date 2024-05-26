@@ -21,6 +21,7 @@
     "electron": "github:EIGHTFINITE/electron#main",
     "electron-chrome-extensions": "3.10.1",
     "jquery": "1.12.4",
+    "jquery-1": "github:EIGHTFINITE/jquery-1#1.12-stable",
     "npm": "10.8.0",
     "npm-6": "npm:npm@6.14.18",
     "postman-request": "github:EIGHTFINITE/postman-request#master",
