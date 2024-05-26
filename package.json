@@ -104,6 +104,7 @@
     "is-typedarray",
     "isstream",
     "jquery",
+    "jquery-1",
     "jsbn",
     "json-schema",
     "json-schema-traverse",
