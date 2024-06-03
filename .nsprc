@@ -34,6 +34,11 @@
     "expiry": "invalid",
     "notes": "Only connects to the npm registry and cannot produce private IPs. Fixed in later versions of npm"
   },
+  "GHSA-2p57-rm9w-gvfp": {
+    "active": true,
+    "expiry": "invalid",
+    "notes": "Only connects to the npm registry and cannot produce private IPs. Fixed in later versions of npm"
+  },
   "GHSA-f5x3-32g6-xq36": {
     "active": true,
     "expiry": "invalid",
