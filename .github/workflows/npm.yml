@@ -12,7 +12,7 @@ jobs:
   install:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4.1.6
+    - uses: actions/checkout@v4.1.7
       with:
         path: DownloadItYourself
     - name: install
@@ -45,7 +45,7 @@ jobs:
     needs: [install]
     if: ${{ needs.install.result == 'success' }}
     steps:
-    - uses: actions/checkout@v4.1.6
+    - uses: actions/checkout@v4.1.7
     - name: audit
       shell: bash
       run: |
