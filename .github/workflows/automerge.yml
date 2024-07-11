@@ -31,10 +31,10 @@ jobs:
           if [[ "${{ github.event.pull_request.head.sha }}" == "$(git log -1 --format=%H)" ]]; then
             echo "automerge_pull_action=merge" >> "$GITHUB_ENV"
           else
-            if [[ $(git diff --stat "$(git log origin/master -1 --format=%H)" "$(git log -1 --format=%H)" --) -eq 0 ]]; then
-              echo "automerge_pull_action=close" >> "$GITHUB_ENV"
-            else
+            if [[ $(git diff --stat "$(git log origin/master -1 --format=%H)" "$(git log -1 --format=%H)" -- | head -c1 | wc -c) -ne 0 ]]; then
               echo "automerge_pull_action=merge" >> "$GITHUB_ENV"
+            else
+              echo "automerge_pull_action=close" >> "$GITHUB_ENV"
             fi
           fi
         fi
