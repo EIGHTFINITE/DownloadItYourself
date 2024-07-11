@@ -32,7 +32,7 @@ jobs:
             echo "automerge_pull_action=merge" >> "$GITHUB_ENV"
           else
             if [[ $(git diff --stat "$(git log origin/master -1 --format=%H)" "$(git log -1 --format=%H)" -- | head -c1 | wc -c) -ne 0 ]]; then
-              echo "automerge_pull_action=merge" >> "$GITHUB_ENV"
+              echo "automerge_pull_action=fast-forward" >> "$GITHUB_ENV"
             else
               echo "automerge_pull_action=close" >> "$GITHUB_ENV"
             fi
@@ -55,3 +55,8 @@ jobs:
       continue-on-error: true
       with:
         delete-branch: true
+    - name: fast-forward
+      if: ${{ github.actor == 'dependabot[bot]' && env.automerge_pull_action == 'fast-forward' }}
+      shell: bash
+      run: |
+        git push origin HEAD:master
