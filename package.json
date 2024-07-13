@@ -94,6 +94,7 @@
     "extsprintf",
     "fast-deep-equal",
     "fast-json-stable-stringify",
+    "fast-uri",
     "forever-agent",
     "getpass",
     "har-schema",
