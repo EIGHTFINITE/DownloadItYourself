@@ -89,6 +89,7 @@
     "electron",
     "electron-chrome-extensions",
     "emoji-regex",
+    "encoding-sniffer",
     "entities",
     "extend",
     "extsprintf",
@@ -101,6 +102,7 @@
     "har-validator",
     "htmlparser2",
     "http-signature",
+    "iconv-lite",
     "is-fullwidth-code-point",
     "is-typedarray",
     "isstream",
@@ -127,6 +129,7 @@
     "oauth-sign",
     "parse5",
     "parse5-htmlparser2-tree-adapter",
+    "parse5-parser-stream",
     "postman-request",
     "psl",
     "punycode",
@@ -150,10 +153,13 @@
     "table",
     "top-user-agents",
     "tweetnacl",
+    "undici",
     "universalify",
     "uri-js",
     "url-parse",
     "uuid",
-    "verror"
+    "verror",
+    "whatwg-encoding",
+    "whatwg-mimetype"
   ]
 }
