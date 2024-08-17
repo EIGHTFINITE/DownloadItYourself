@@ -141,6 +141,7 @@
     "requires-port",
     "safe-buffer",
     "safer-buffer",
+    "semver",
     "slice-ansi",
     "spdx-exceptions",
     "spdx-expression-parse",
