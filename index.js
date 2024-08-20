@@ -60,8 +60,8 @@ function writeReadme() {
 				}
 				
 				// Resolved corrections
-				if(d[k].type === 'github' && d[k].resolved.startsWith('EIGHTFINITE/top-user-agents#')) { // top-user-agents
-					d[k].resolved = 'EIGHTFINITE/top-user-agents#main'
+				if(d[k].type === 'github' && d[k].resolved.startsWith('EIGHTFINITE/top-user-agents-1#')) { // top-user-agents
+					d[k].resolved = 'EIGHTFINITE/top-user-agents-1#main'
 				}
 				
 				// Version
