@@ -22,7 +22,7 @@ jobs:
         language: [ 'javascript' ]
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4.2.0
+      uses: actions/checkout@v4.2.1
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3.26.12
       with:
