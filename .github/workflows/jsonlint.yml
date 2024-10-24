@@ -15,7 +15,7 @@ jobs:
       run: |
         pip install setuptools==57.5.0
         pip install git+https://github.com/EIGHTFINITE/demjson.git@master
-    - uses: actions/checkout@v4.2.1
+    - uses: actions/checkout@v4.2.2
       with:
         path: DownloadItYourself
     - name: jsonlint
