@@ -87,12 +87,16 @@ rm -r node_modules/
 rm package-lock.json
 git checkout -- 'package.json'
 # Remove unnecessary files
-find bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/ -type d \( -name '.github' -o -name 'docs' -o -name 'example' -o -name 'examples' -o -name 'jsdoc-toolkit' -o -name 'man' -o -name 'tap-snapshots' -o -name 'test' -o -name 'tests' -o -name 'typings' \) | xargs rm -rf
-find bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/ -type f \( -name '*.d.ts' -o -name '*.d.ts.map' -o -name '*.js.map' -o -name '.editorconfig' -o -name '.eslintignore' -o -name '.eslintrc' -o -name '.eslintrc.json' -o -name '.eslintrc.yml' -o -name '.gitattributes' -o -name '.gitmodules' -o -name '.licensee.json' -o -name '.mailmap' -o -name '.npmignore' -o -name '.nycrc' -o -name '.project' -o -name '.runkit_example.js' -o -name '.travis.yml' -o -name 'configure' -o -name 'Jenkinsfile' -o -name 'make.bat' -o -name 'Makefile' -o -name 'yarn.lock' \) -exec bash -c 'rm "$1"; rmdir --ignore-fail-on-non-empty $(dirname "$1")' bash '{}' ';'
+find "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/" -type d \( -name '.github' -o -name 'docs' -o -name 'example' -o -name 'examples' -o -name 'jsdoc-toolkit' -o -name 'man' -o -name 'tap-snapshots' -o -name 'test' -o -name 'tests' -o -name 'typings' \) | xargs rm -rf
+find "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/" -type f \( -name '*.d.ts' -o -name '*.d.ts.map' -o -name '*.js.map' -o -name '.editorconfig' -o -name '.eslintignore' -o -name '.eslintrc' -o -name '.eslintrc.json' -o -name '.eslintrc.yml' -o -name '.gitattributes' -o -name '.gitmodules' -o -name '.licensee.json' -o -name '.mailmap' -o -name '.npmignore' -o -name '.nycrc' -o -name '.project' -o -name '.runkit_example.js' -o -name '.travis.yml' -o -name 'configure' -o -name 'Jenkinsfile' -o -name 'make.bat' -o -name 'Makefile' -o -name 'yarn.lock' \) -exec bash -c 'rm "$1"; rmdir --ignore-fail-on-non-empty $(dirname "$1")' bash '{}' ';'
 # Remove non-deterministic information
-find bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/ -type f -name 'package.json' -exec sed -i '/"_where": "/d' -- '{}' ';'
-find bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/ -type f -name 'package.json' -exec sed -i '/"man": \[/,/\],/d' -- '{}' ';'
+find "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/" -type f -name 'package.json' -exec sed -i '/"_where": "/d' -- '{}' ';'
+find "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/" -type f -name 'package.json' -exec sed -i '/"man": \[/,/\],/d' -- '{}' ';'
 # Commit
+if [[ $(stat -c%s "bin/linux/x64/node/node-v$node_version-linux-x64/bin/node") -gt 104857600 ]]; then
+  split -b 104857600 --numeric-suffixes=1 --suffix-length=3 "bin/linux/x64/node/node-v$node_version-linux-x64/bin/node" "bin/linux/x64/node/node-v$node_version-linux-x64/bin/node."
+  rm "bin/linux/x64/node/node-v$node_version-linux-x64/bin/node"
+fi
 git add "bin/linux/x64/node/node-v$node_version-linux-x64"
 git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 Node $node_version release artifacts" | sed -n 1p
 git checkout -- '.gitignore'
