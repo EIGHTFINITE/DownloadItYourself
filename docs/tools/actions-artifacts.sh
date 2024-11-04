@@ -156,11 +156,11 @@ fi
 rm -rf .npm/
 export npm_config_target=$(cat node_modules/electron/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")
 if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js "node_modules/electron/install.js"
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe "node_modules/electron/install.js"
 else
   cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
   chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js "node_modules/electron/install.js"
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node "node_modules/electron/install.js"
   rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 fi
 mkdir -p "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64"
@@ -215,11 +215,11 @@ else
 fi
 rm -rf .npm/
 if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js "node_modules/electron/install.js"
+  bin/windows/x64/node/node-v$node_version-win-x64/node.exe "node_modules/electron/install.js"
 else
   cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
   chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js "node_modules/electron/install.js"
+  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node "node_modules/electron/install.js"
   rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 fi
 mkdir -p "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
