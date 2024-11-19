@@ -11,7 +11,7 @@
   "rollbackPrs": true,
   "packageRules": [
     {
-      "matchPackageNames": ["better-npm-audit", "cheerio", "cloudscraper", "electron", "har-validator", "node", "request-promise", "request-promise-core", "spdx-expression-parse"],
+      "matchPackageNames": ["better-npm-audit", "cheerio", "cloudscraper", "electron", "har-validator", "node", "request-promise", "request-promise-core", "spdx-expression-parse", "top-user-agents"],
       "labels": ["dependencies", "automerge"],
       "automerge": true,
       "automergeType": "pr",
