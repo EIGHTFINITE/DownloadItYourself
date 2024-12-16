@@ -23,7 +23,7 @@
     "jquery": "3.7.1",
     "jquery-1": "github:EIGHTFINITE/jquery-1#1.12-stable",
     "npm": "10.9.2",
-    "npm-6": "npm:npm@6.14.18",
+    "npm-6": "npm:npm@11.0.0",
     "postman-request": "github:EIGHTFINITE/postman-request#master",
     "spdx-expression-parse": "github:EIGHTFINITE/spdx-expression-parse#main",
     "top-user-agents": "github:EIGHTFINITE/top-user-agents#main",
