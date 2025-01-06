@@ -19,7 +19,7 @@
     "better-npm-audit": "github:EIGHTFINITE/better-npm-audit#main",
     "cloudscraper": "github:EIGHTFINITE/cloudscraper#master",
     "electron": "github:EIGHTFINITE/electron#main",
-    "electron-chrome-extensions": "4.1.0",
+    "electron-chrome-extensions": "4.1.1",
     "jquery": "3.7.1",
     "jquery-1": "github:EIGHTFINITE/jquery-1#1.12-stable",
     "npm": "11.0.0",
