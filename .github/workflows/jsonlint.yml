@@ -16,8 +16,9 @@ jobs:
     - name: Build demjson
       shell: bash
       run: |
-        python -m pip install setuptools==57.5.0
-        python -m pip install git+https://github.com/EIGHTFINITE/demjson.git@master
+        echo 'setuptools==57.5.0' > constraints.txt
+        python -m pip install -c constraints.txt git+https://github.com/EIGHTFINITE/demjson.git@master
+        rm constraints.txt
     - uses: actions/checkout@v4.2.2
       with:
         path: DownloadItYourself
