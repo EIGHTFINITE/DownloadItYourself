@@ -231,10 +231,10 @@ jobs:
     - name: Build demjson
       shell: bash
       run: |
-        curl -sSo pip-24.0.pyz https://bootstrap.pypa.io/pip/zipapp/pip-24.0.pyz
-        python pip-24.0.pyz install setuptools==57.5.0
-        python pip-24.0.pyz install git+https://github.com/EIGHTFINITE/demjson.git@master
-        rm pip-24.0.pyz
+        curl -sSo pip-22.3.1.pyz https://bootstrap.pypa.io/pip/zipapp/pip-22.3.1.pyz
+        python pip-22.3.1.pyz install setuptools==57.5.0
+        python pip-22.3.1.pyz install git+https://github.com/EIGHTFINITE/demjson.git@master
+        rm pip-22.3.1.pyz
     - uses: actions/checkout@v4.2.2
       with:
         ref: artifacts
@@ -346,10 +346,10 @@ jobs:
     - name: Build demjson
       shell: bash
       run: |
-        curl -sSo pip-24.0.pyz https://bootstrap.pypa.io/pip/zipapp/pip-24.0.pyz
-        python pip-24.0.pyz install setuptools==57.5.0
-        python pip-24.0.pyz install git+https://github.com/EIGHTFINITE/demjson.git@master
-        rm pip-24.0.pyz
+        curl -sSo pip-22.3.1.pyz https://bootstrap.pypa.io/pip/zipapp/pip-22.3.1.pyz
+        python pip-22.3.1.pyz install setuptools==57.5.0
+        python pip-22.3.1.pyz install git+https://github.com/EIGHTFINITE/demjson.git@master
+        rm pip-22.3.1.pyz
     - uses: actions/checkout@v4.2.2
       with:
         ref: latest
