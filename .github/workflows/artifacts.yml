@@ -228,13 +228,14 @@ jobs:
     needs: artifacts
     if: needs.artifacts.result == 'success'
     steps:
+    - uses: actions/setup-python@v5.3.0
+      with:
+        python-version: '3.13'
     - name: Build demjson
       shell: bash
       run: |
-        sudo apt-get install python3-pip
-        python3 -m venv myvenv --without-pip --system-site-packages
-        myvenv/bin/python3 -m pip install setuptools==57.5.0
-        myvenv/bin/python3 -m pip install git+https://github.com/EIGHTFINITE/demjson.git@master
+        python -m pip install setuptools==57.5.0
+        python -m pip install git+https://github.com/EIGHTFINITE/demjson.git@master
     - uses: actions/checkout@v4.2.2
       with:
         ref: artifacts
@@ -343,13 +344,14 @@ jobs:
     needs: release
     if: needs.release.result == 'success'
     steps:
+    - uses: actions/setup-python@v5.3.0
+      with:
+        python-version: '3.13'
     - name: Build demjson
       shell: bash
       run: |
-        sudo apt-get install python3-pip
-        python3 -m venv myvenv --without-pip --system-site-packages
-        myvenv/bin/python3 -m pip install setuptools==57.5.0
-        myvenv/bin/python3 -m pip install git+https://github.com/EIGHTFINITE/demjson.git@master
+        python -m pip install setuptools==57.5.0
+        python -m pip install git+https://github.com/EIGHTFINITE/demjson.git@master
     - uses: actions/checkout@v4.2.2
       with:
         ref: latest
