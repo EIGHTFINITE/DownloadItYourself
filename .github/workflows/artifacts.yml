@@ -231,8 +231,9 @@ jobs:
     - name: Build demjson
       shell: bash
       run: |
-        python3 -m pip install setuptools==57.5.0
-        python3 -m pip install git+https://github.com/EIGHTFINITE/demjson.git@master
+        pip -V
+        pip install setuptools==57.5.0
+        pip install git+https://github.com/EIGHTFINITE/demjson.git@master
     - uses: actions/checkout@v4.2.2
       with:
         ref: artifacts
@@ -344,8 +345,9 @@ jobs:
     - name: Build demjson
       shell: bash
       run: |
-        python3 -m pip install setuptools==57.5.0
-        python3 -m pip install git+https://github.com/EIGHTFINITE/demjson.git@master
+        pip -V
+        pip install setuptools==57.5.0
+        pip install git+https://github.com/EIGHTFINITE/demjson.git@master
     - uses: actions/checkout@v4.2.2
       with:
         ref: latest
