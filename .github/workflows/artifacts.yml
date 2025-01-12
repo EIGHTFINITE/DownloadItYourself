@@ -238,6 +238,7 @@ jobs:
         curl -sSo pip.pyz https://bootstrap.pypa.io/pip/pip.pyz
         python pip.pyz -V
         python pip.pyz install setuptools==57.5.0
+        python pip.pyz install wheel==0.42.0
         python pip.pyz install git+https://github.com/EIGHTFINITE/demjson.git@master
         rm pip.pyz
     - uses: actions/checkout@v4.2.2
@@ -358,6 +359,7 @@ jobs:
         curl -sSo pip.pyz https://bootstrap.pypa.io/pip/pip.pyz
         python pip.pyz -V
         python pip.pyz install setuptools==57.5.0
+        python pip.pyz install wheel==0.42.0
         python pip.pyz install git+https://github.com/EIGHTFINITE/demjson.git@master
         rm pip.pyz
     - uses: actions/checkout@v4.2.2
