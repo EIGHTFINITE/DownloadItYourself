@@ -10,17 +10,13 @@ jobs:
   jsonlint:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/setup-python@v5.3.0
+      with:
+        python-version: '3.11'
     - name: Build demjson
       shell: bash
       run: |
-        curl -sSo Python-3.11.11.tar.xz https://www.python.org/ftp/python/3.11.11/Python-3.11.11.tar.xz
-        tar -xJf Python-3.11.11.tar.xz
-        cd Python-3.11.11
-        sudo ./configure --prefix=/opt/python/3.11.11/ --enable-optimizations --with-lto --with-computed-gotos --with-system-ffi
-        sudo make -j "$(nproc)"
-        sudo make altinstall
-        cd ..
-        rm Python-3.11.11.tar.xz
+        python -c "import sys; print(sys.version)"
         curl -sSo pip.pyz https://bootstrap.pypa.io/pip/pip.pyz
         python pip.pyz -V
         python pip.pyz install setuptools==57.5.0
