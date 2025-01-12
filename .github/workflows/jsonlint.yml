@@ -10,15 +10,13 @@ jobs:
   jsonlint:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/setup-python@v5.3.0
-      with:
-        python-version: '3.11'
     - name: Build demjson
       shell: bash
       run: |
-        echo 'setuptools==57.5.0' > constraints.txt
-        python -m pip install -c constraints.txt git+https://github.com/EIGHTFINITE/demjson.git@master
-        rm constraints.txt
+        sudo apt-get install python3-pip
+        python3 -m venv myvenv --without-pip --system-site-packages
+        myvenv/bin/python3 -m pip install setuptools==57.5.0
+        myvenv/bin/python3 -m pip install git+https://github.com/EIGHTFINITE/demjson.git@master
     - uses: actions/checkout@v4.2.2
       with:
         path: DownloadItYourself
