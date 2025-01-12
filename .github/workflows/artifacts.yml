@@ -231,10 +231,10 @@ jobs:
     - name: Build demjson
       shell: bash
       run: |
-        python3 -m venv myvenv --without-pip --system-site-packages
-        myvenv/bin/python3 -m pip install pip==24.0
-        myvenv/bin/python3 -m pip install setuptools==57.5.0
-        myvenv/bin/python3 -m pip install git+https://github.com/EIGHTFINITE/demjson.git@master
+        curl -sSo pip-24.0.pyz https://bootstrap.pypa.io/pip/zipapp/pip-24.0.pyz
+        python pip-24.0.pyz install setuptools==57.5.0
+        python pip-24.0.pyz install git+https://github.com/EIGHTFINITE/demjson.git@master
+        rm pip-24.0.pyz
     - uses: actions/checkout@v4.2.2
       with:
         ref: artifacts
@@ -346,10 +346,10 @@ jobs:
     - name: Build demjson
       shell: bash
       run: |
-        python3 -m venv myvenv --without-pip --system-site-packages
-        myvenv/bin/python3 -m pip install pip==24.0
-        myvenv/bin/python3 -m pip install setuptools==57.5.0
-        myvenv/bin/python3 -m pip install git+https://github.com/EIGHTFINITE/demjson.git@master
+        curl -sSo pip-24.0.pyz https://bootstrap.pypa.io/pip/zipapp/pip-24.0.pyz
+        python pip-24.0.pyz install setuptools==57.5.0
+        python pip-24.0.pyz install git+https://github.com/EIGHTFINITE/demjson.git@master
+        rm pip-24.0.pyz
     - uses: actions/checkout@v4.2.2
       with:
         ref: latest
