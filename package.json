@@ -33,13 +33,13 @@
     "lodash.isarray": "3.0.4"
   },
   "devDependencies": {
-    "electron": "34.1.0"
+    "electron": "34.1.1"
   },
   "peerDependencies": {
     "better-npm-audit": "3.11.0",
     "cheerio": "1.0.0",
     "cloudscraper": "4.6.0",
-    "electron": "34.1.0",
+    "electron": "34.1.1",
     "har-schema": "2.0.0",
     "har-validator": "5.1.5",
     "postman-request": "2.88.1-postman.40",
