@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/setup-python@v5.4.0
       with:
-        python-version: '3.11'
+        python-version: '3.13'
     - name: Build demjson
       shell: bash
       run: |
