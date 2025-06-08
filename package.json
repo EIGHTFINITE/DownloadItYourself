@@ -37,7 +37,7 @@
   },
   "peerDependencies": {
     "better-npm-audit": "3.11.0",
-    "cheerio": "1.0.0",
+    "cheerio": "1.1.0",
     "cloudscraper": "4.6.0",
     "electron": "36.4.0",
     "har-schema": "2.0.0",
