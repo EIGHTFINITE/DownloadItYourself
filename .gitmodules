@@ -1,3 +1,6 @@
 [submodule "bin/linux/x64/jre/jre-8u201-linux-x64/jre1.8.0_201/lib/applet"]
 	path = bin/linux/x64/jre/jre-8u201-linux-x64/jre1.8.0_201/lib/applet
 	url = https://github.com/EIGHTFINITE/void
+[submodule "bin/windows/x64/jre/jre-8u201-windows-x64/jre1.8.0_201/lib/applet"]
+	path = bin/windows/x64/jre/jre-8u201-windows-x64/jre1.8.0_201/lib/applet
+	url = https://github.com/EIGHTFINITE/void
