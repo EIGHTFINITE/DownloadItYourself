@@ -5,7 +5,7 @@
   "engineStrict": true,
   "engines": {
     "node": "22.17.1",
-    "npm": "6.14.18 || 11.5.1"
+    "npm": "6.14.18 || 11.5.1 || 11.5"
   },
   "main": "index.js",
   "author": "EIGHTFINITE",
@@ -22,7 +22,7 @@
     "electron-chrome-extensions": "4.9.0",
     "jquery": "3.7.1",
     "jquery-1": "github:EIGHTFINITE/jquery-1#1.12-stable",
-    "npm": "11.5.1",
+    "npm": "11.5.2",
     "npm-6": "npm:npm@6.14.18",
     "postman-request": "github:EIGHTFINITE/postman-request#master",
     "spdx-expression-parse": "github:EIGHTFINITE/spdx-expression-parse#main",
