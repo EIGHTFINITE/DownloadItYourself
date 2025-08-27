@@ -25,6 +25,7 @@ jobs:
     - name: Links
       shell: bash
       run: |
+        ls lychee
         if [[ $(cat lychee/out.md | grep -Fe '* [' | grep -vFe '* [429] [https://www.npmjs.com/package/' -e '* [403] [https://www.iconfinder.com/' -e '* [403] [https://www.shutterstock.com/' -e '* [403] [https://www.pixiv.net/' -e '* [ERROR] [https://www.pixiv.net/' -e '* [ERROR] [https://www.adobe.com/]' -e '* [TIMEOUT] [https://www.adobe.com/]' -e '* [403] [https://stock.adobe.com/' -e '* [TIMEOUT] [https://web.archive.org/web/' -e '* [ERROR] [https://www.npmjs.com/package/' -e '* [408] [https://www.npmjs.com/package/' -e '* [500] [https://www.npmjs.com/package/' -e '* [503] [https://www.npmjs.com/package/' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
@@ -32,4 +33,5 @@ jobs:
         if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
+
 
