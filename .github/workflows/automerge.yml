@@ -40,7 +40,7 @@ jobs:
         fi
     - name: automerge
       if: ${{ github.actor == 'dependabot[bot]' && env.automerge_pull_action == 'merge' }}
-      uses: actions/github-script@v7.0.1
+      uses: actions/github-script@v7.1.0
       with:
         script: |
           github.rest.pulls.merge({
