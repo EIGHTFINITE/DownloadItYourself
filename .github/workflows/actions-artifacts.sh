@@ -3,48 +3,6 @@
 export GIT_AUTHOR_DATE="$(git log -1 --format=%aD)"
 export GIT_COMMITTER_DATE="$(git log -1 --format=%cD)"
 
-# JRE Linux x64
-sed -i '/\/bin\//d' -- '.gitignore'
-git checkout refs/tags/artifacts -- "bin/linux/x64/jre/jre-8u201-linux-x64"
-rmdir "bin/linux/x64/jre/jre-8u201-linux-x64/jre1.8.0_201/lib/applet"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/linux/x64/jre/jre-8u201-linux-x64/jre1.8.0_201/lib/applet"
-git add -f ".gitmodules"
-git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 JRE 8u201 release artifacts
-
-The fix for JDK-8155635 in 8u202 causes performance issues, so 8u201 becomes the final BCL release." | sed -n 1p
-git checkout -- '.gitignore'
-if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
-  then exit 1
-fi
-
-# JRE Windows x64
-sed -i '/\/bin\//d' -- '.gitignore'
-git checkout refs/tags/artifacts -- "bin/windows/x64/jre/jre-8u201-windows-x64"
-rmdir "bin/windows/x64/jre/jre-8u201-windows-x64/jre1.8.0_201/lib/applet"
-git submodule -q add -f https://github.com/EIGHTFINITE/void "bin/windows/x64/jre/jre-8u201-windows-x64/jre1.8.0_201/lib/applet"
-git add -f ".gitmodules"
-git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 JRE 8u201 release artifacts
-
-The fix for JDK-8155635 in 8u202 causes performance issues, so 8u201 becomes the final BCL release." | sed -n 1p
-git checkout -- '.gitignore'
-if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
-  then exit 1
-fi
-
-# 7z Windows x64
-curl -sSo "7z2404-x64.exe" https://www.7-zip.org/a/7z2404-x64.exe
-mkdir -p "bin/windows/x64/7z/7z2404-x64"
-7z x -o"bin/windows/x64/7z/7z2404-x64" "7z2404-x64.exe" | grep "ing archive"
-rm "7z2404-x64.exe"
-rm "bin/windows/x64/7z/7z2404-x64/Uninstall.exe"
-sed -i '/\/bin\//d' -- '.gitignore'
-git add "bin/windows/x64/7z/7z2404-x64"
-git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 7z 22.01 release artifacts" | sed -n 1p
-git checkout -- '.gitignore'
-if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
-  then exit 1
-fi
-
 # Node Linux x64
 export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
 curl -sSo "node-v$node_version-linux-x64.tar.xz" https://nodejs.org/dist/v$node_version/node-v$node_version-linux-x64.tar.xz
