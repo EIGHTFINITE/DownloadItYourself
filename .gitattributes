@@ -8,15 +8,11 @@
 /.npmrc export-ignore
 /.nsprc export-ignore
 /README.md export-ignore
-/docs/archive/ export-ignore
-/docs/scripts/ export-ignore
 /.github/ export-ignore
 /.github/ linguist-vendored
 /.github/* linguist-vendored
 /bin/ linguist-generated
 /bin/* linguist-generated
-/docs/ linguist-vendored
-/docs/* linguist-vendored
 /node_modules/ linguist-generated
 /node_modules/* linguist-generated
 /package-lock.json linguist-generated
