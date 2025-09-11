@@ -3,6 +3,18 @@
     "active": true,
     "notes": "Only parses sanitized data from the npm registry. Fixed in later versions of npm"
   },
+  "GHSA-v6h2-p8h4-qcjw": {
+    "active": true,
+    "notes": "Only parses sanitized data from the npm registry. Fixed in later versions of npm"
+  },
+  "GHSA-3xgq-45jj-v275": {
+    "active": true,
+    "notes": "Only parses sanitized data from the npm registry. Fixed in later versions of npm"
+  },
+  "GHSA-fjxv-7rqg-78g4": {
+    "active": true,
+    "notes": "Only parses sanitized data from the npm registry. Fixed in later versions of npm"
+  },
   "GHSA-pfrx-2q88-qq97": {
     "active": true,
     "notes": "Windows not affected. Linux only connects to the npm registry and cannot produce UNIX redirects. Fixed in later versions of npm"
