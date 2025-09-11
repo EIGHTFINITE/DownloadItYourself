@@ -94,7 +94,6 @@
     "extsprintf",
     "fast-deep-equal",
     "fast-uri",
-    "fast-uri/benchmark",
     "forever-agent",
     "getpass",
     "htmlparser2",
