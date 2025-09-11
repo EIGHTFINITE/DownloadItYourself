@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 'use strict'
 
+(function(){
+
 // Require
 try {
   var isArray = require('lodash.isarray')
@@ -387,10 +389,10 @@ function writeReadme() {
 		//
 		// Note that results cannot safely be concatenated together. Concatenate first then escape the entire string or set the aggressive option.
 		//
-		// Additionally, results cannot be safely inserted into emphasized text (`*`, `_`, `~`, and <code>\`</code>) without setting the aggressive option.
+		// Additionally, results cannot be safely inserted into emphasized text ('*', '_', '~', and '`') without setting the aggressive option.
 		//
-		// On top of that, <code>\`</code> cannot be easily escaped inside code blocks.
-		// Ensure code blocks are opened with `<code>` and closed with `</code>` instead of using <code>\`</code> if the input can contain <code>\`</code>.
+		// On top of that, '`' cannot be easily escaped inside code blocks.
+		// Ensure code blocks are opened with '<code>' and closed with '</code>' instead of using '`' if the input can contain '`'.
 		function escapeMd(s,inHtml,aggressive,noTrim) {
 			if(noTrim) {
 				s = s.replace(/\s/g,' ')
@@ -696,9 +698,15 @@ if(process.versions.electron) {
 	// Require
 	const { app, BrowserWindow } = require('electron')
 	const stringify = require('./node_modules/npm/node_modules/json-stringify-nice')
-	const userAgents = require('top-user-agents')
+	const userAgents = require('top-user-agents-1')
+	const userAgentsAlt = require('top-user-agents')
 	let electronUserAgent = userAgents[0]
 	console.log('User Agent set to "' + electronUserAgent + '"')
+	if(userAgents[1] == userAgentsAlt[0]) {
+		electronUserAgent = userAgents[0]
+		console.log('Found bleeding edge User Agent "' + electronUserAgent + '"')
+		console.log('User Agent updated to "' + electronUserAgent + '"')
+	}
 
 	// Function
 	const isArrayLike = require('./node_modules/lodash.isarraylike')
@@ -715,48 +723,7 @@ if(process.versions.electron) {
 	}
 
 	// Run
-	app.whenReady().then(() => {
-		const win = new BrowserWindow({
-			width: 1920,
-			height: 969,
-			frame: false,
-			show: false,
-			webPreferences: {
-				backgroundThrottling: false
-			}
-		})
-
-		win.loadURL('https://techblog.willshouse.com/2012/01/03/most-common-user-agents/', {userAgent: electronUserAgent})
-
-		// Intentionally using on instead of once
-		win.webContents.on('did-finish-load', () => {
-			win.webContents.executeJavaScript(`[...document.querySelectorAll('tbody .useragent')].map(e => e.innerText)`).then((result) => {
-				if(result.length > 0) {
-					// Update User Agent
-					if(electronUserAgent !== result[0]) {
-						electronUserAgent = result[0]
-						console.log('User Agent updated to "' + electronUserAgent + '"')
-					}
-					// Write User Agents to file
-					if(!isEqualArrayShallow(userAgents, result)) {
-						fs.writeFileSync('./node_modules/top-user-agents/index.json', stringify(result), 'utf-8')
-						win.close()
-					}
-					else {
-						win.close()
-					}
-				}
-			}).catch((error) => {
-				console.log(error)
-				win.close()
-			})
-		})
-		
-		win.on('close', () => {
-			writeReadme()
-			app.exit()
-		})
-	})
+	writeReadme()
 }
 else {
 	// Validate executable
@@ -816,3 +783,5 @@ else {
 process.on('exit', () => {
 	console.log(process.versions.electron ? 'Exiting Electron ' + process.versions.electron + ' + Node ' + process.versions.node : 'Exiting Node ' + process.versions.node)
 })
+
+})()
