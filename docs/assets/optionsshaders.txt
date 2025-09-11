@@ -1,3 +1,0 @@
-shaderPack=KUDA-Shaders v6.5.56.zip
-tweakBlockDamage=true
-oldLighting=true
