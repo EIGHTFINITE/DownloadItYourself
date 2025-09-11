@@ -19,10 +19,10 @@ jobs:
       shell: bash
       run: |
         cd DownloadItYourself
-        bash --noprofile --norc -e -o pipefail docs/tools/git-config.sh
+        bash --noprofile --norc -e -o pipefail .github/workflows/git-config.sh
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git restore --source=artifacts -- bin/
-        bash --noprofile --norc -e -o pipefail docs/tools/actions-npm.sh
+        bash --noprofile --norc -e -o pipefail .github/workflows/actions-npm.sh
         export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         sed -i '/cache-max = 0/d' -- '.npmrc'
         sed -i '/only = prod/d' -- '.npmrc'
@@ -49,8 +49,8 @@ jobs:
     - name: audit
       shell: bash
       run: |
-        bash --noprofile --norc -e -o pipefail docs/tools/git-config.sh
+        bash --noprofile --norc -e -o pipefail .github/workflows/git-config.sh
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git restore --source=artifacts -- bin/
-        bash --noprofile --norc -e -o pipefail docs/tools/actions-npm.sh
-        bash --noprofile --norc -e -o pipefail docs/tools/actions-audit.sh
+        bash --noprofile --norc -e -o pipefail .github/workflows/actions-npm.sh
+        bash --noprofile --norc -e -o pipefail .github/workflows/actions-audit.sh

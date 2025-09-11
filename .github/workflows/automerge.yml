@@ -19,7 +19,7 @@ jobs:
       shell: bash
       run: |
         if [[ -f package.json ]]; then
-          bash --noprofile --norc -e -o pipefail docs/tools/git-config.sh
+          bash --noprofile --norc -e -o pipefail .github/workflows/git-config.sh
           git fetch --depth 1 origin +master:master --no-tags
           export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
           export new_npm_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['dependencies']['npm'])")
