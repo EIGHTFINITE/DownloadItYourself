@@ -8,6 +8,8 @@ sed -i '/optional = false/d' -- '.npmrc'
 sed -i '/production = true/d' -- '.npmrc'
 export actions_PATH="$PATH"
 export PATH="$(pwd)/bin/linux/x64/node/node-v$node_version-linux-x64/bin:$PATH"
+cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
+chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/better-npm-audit/index.js audit
 export PATH="$actions_PATH"
 rm -rf .npm/
@@ -38,6 +40,7 @@ sed -i '/production = true/d' -- '.npmrc'
 export actions_PATH="$PATH"
 export PATH="$(pwd)/bin/linux/x64/node/node-v$node_version-linux-x64/bin:$PATH"
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/better-npm-audit/index.js audit
+rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 export PATH="$actions_PATH"
 rm -rf .npm/
 git checkout -- '.npmrc' 'package.json'
