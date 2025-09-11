@@ -11,11 +11,8 @@ sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": 
 cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline
-rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 rm -rf .npm/
 # Dedupe
-cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
 rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 rm -rf .npm/

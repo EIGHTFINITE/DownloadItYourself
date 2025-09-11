@@ -102,17 +102,11 @@ sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": 
 cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "electron@$electron_version"
-rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 rm -rf .npm/
 # Dedupe
-cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
-rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 rm -rf .npm/
 export npm_config_target=$(cat node_modules/electron/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")
-cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node "node_modules/electron/install.js"
 rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 mkdir -p "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64"
@@ -150,16 +144,10 @@ sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": 
 cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "electron@$electron_version"
-rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 rm -rf .npm/
 # Dedupe
-cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
-rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 rm -rf .npm/
-cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node "node_modules/electron/install.js"
 rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 mkdir -p "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
