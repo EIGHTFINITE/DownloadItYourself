@@ -6,6 +6,8 @@ export GIT_COMMITTER_DATE="$(git log -1 --format=%cD)"
 # 7z Windows x64
 curl -sSo "7z2501-x64.exe" https://www.7-zip.org/a/7z2501-x64.exe
 mkdir -p "bin/windows/x64/7z/7z2501-x64"
+stat -c%s "7z2501-x64.exe"
+cat "7z2501-x64.exe"
 7z x -o"bin/windows/x64/7z/7z2501-x64" "7z2501-x64.exe" | grep "ing archive"
 rm "7z2501-x64.exe"
 rm "bin/windows/x64/7z/7z2501-x64/Uninstall.exe"
