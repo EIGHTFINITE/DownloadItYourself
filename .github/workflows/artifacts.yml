@@ -32,24 +32,36 @@ jobs:
         # Artifacts
         git tag -f artifacts
         git push -f origin refs/tags/artifacts:refs/tags/artifacts
-  readme:
+  files:
     runs-on: ubuntu-latest
     needs: artifacts
     if: needs.artifacts.result == 'success'
     steps:
     - uses: actions/checkout@v5.0.0
-    - name: README
+    - name: Files
       shell: bash
       run: |
         bash --noprofile --norc -e -o pipefail .github/workflows/git-config.sh
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git restore --source=artifacts -- bin/ node_modules/ package-lock.json
         export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
-        bin/linux/x64/node/node-v$node_version-linux-x64/bin/node --use_strict index.js --readme_only
+        sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") || $(cat node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update engines" | sed -n 1p || true
+        sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\n'"$(printf '    "%s",\\n' $(find node_modules/ -mindepth 2 -maxdepth 3 -type f -name 'package.json' -exec bash -c 'path={}; echo "${path:13:-13}"' ';' | sort) | sed '$ s/...$//')"'\n  \]|' -- 'package.json'
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update bundleDependencies" | sed -n 1p || true
+        if [[ "$OSTYPE" == "msys" ]]; then
+          bin/windows/x64/node/node-v$node_version-win-x64/node.exe --use_strict index.js --readme_only
+        else
+          cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
+          chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
+          bin/linux/x64/node/node-v$node_version-linux-x64/bin/node --use_strict index.js --readme_only
+          rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
+        fi
         rm -r bin/
         rm -r node_modules/
         rm package-lock.json
-        git checkout -- downloadlist.json
+        git add downloadlist.json
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update downloadlist" | sed -n 1p || true
         git add README.html README.md
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update README" | sed -n 1p || true
         if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
@@ -62,150 +74,11 @@ jobs:
         commit-message: Update README
         author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
         committer: GitHub <noreply@github.com>
-        title: Update README
+        title: Automated update
         body: |
-          Update the README to reflect the latest changes.
+          Update files in the repository to reflect the latest changes.
         labels: automerge
         branch: actions/readme
-        base: master
-    - name: get repository name
-      if: ${{ steps.cpr.outputs.pull-request-number }}
-      shell: bash
-      run: echo "REPOSITORY_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
-    - name: automerge
-      if: ${{ steps.cpr.outputs.pull-request-number }}
-      uses: actions/github-script@v8.0.0
-      with:
-        script: |
-          github.rest.pulls.merge({
-            owner: '${{ github.repository_owner }}',
-            repo: '${{ env.REPOSITORY_NAME }}',
-            pull_number: '${{ steps.cpr.outputs.pull-request-number }}',
-            sha: '${{ steps.cpr.outputs.pull-request-head-sha }}',
-            merge_method: 'merge'
-          })
-  downloadlist:
-    runs-on: ubuntu-latest
-    needs: artifacts
-    if: needs.artifacts.result == 'success'
-    steps:
-    - uses: actions/checkout@v5.0.0
-    - name: Downloadlist
-      shell: bash
-      run: |
-        bash --noprofile --norc -e -o pipefail .github/workflows/git-config.sh
-        git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
-        git restore --source=artifacts -- bin/ node_modules/ package-lock.json
-        export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
-        bin/linux/x64/node/node-v$node_version-linux-x64/bin/node --use_strict index.js --readme_only
-        rm -r bin/
-        rm -r node_modules/
-        rm package-lock.json
-        git checkout -- README.html README.md
-        git add downloadlist.json
-        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update downloadlist" | sed -n 1p || true
-        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
-          then exit 1
-        fi
-    - id: cpr
-      uses: peter-evans/create-pull-request@v7.0.8
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        commit-message: Update downloadlist
-        author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
-        committer: GitHub <noreply@github.com>
-        title: Update downloadlist
-        body: |
-          Update the downloadlist to reflect the latest changes.
-        labels: automerge
-        branch: actions/downloadlist
-        base: master
-    - name: get repository name
-      if: ${{ steps.cpr.outputs.pull-request-number }}
-      shell: bash
-      run: echo "REPOSITORY_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
-    - name: automerge
-      if: ${{ steps.cpr.outputs.pull-request-number }}
-      uses: actions/github-script@v8.0.0
-      with:
-        script: |
-          github.rest.pulls.merge({
-            owner: '${{ github.repository_owner }}',
-            repo: '${{ env.REPOSITORY_NAME }}',
-            pull_number: '${{ steps.cpr.outputs.pull-request-number }}',
-            sha: '${{ steps.cpr.outputs.pull-request-head-sha }}',
-            merge_method: 'merge'
-          })
-  engines:
-    runs-on: ubuntu-latest
-    needs: artifacts
-    if: needs.artifacts.result == 'success'
-    steps:
-    - uses: actions/checkout@v5.0.0
-    - name: Engines
-      shell: bash
-      run: |
-        bash --noprofile --norc -e -o pipefail .github/workflows/git-config.sh
-        git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
-        git restore --source=artifacts -- bin/ node_modules/
-        export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
-        sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") || $(cat node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
-        rm -r bin/ node_modules/
-    - id: cpr
-      uses: peter-evans/create-pull-request@v7.0.8
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        commit-message: Update engines
-        author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
-        committer: GitHub <noreply@github.com>
-        title: Update engines
-        body: |
-          Update the engines field.
-        labels: automerge
-        branch: actions/engines
-        base: master
-    - name: get repository name
-      if: ${{ steps.cpr.outputs.pull-request-number }}
-      shell: bash
-      run: echo "REPOSITORY_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
-    - name: automerge
-      if: ${{ steps.cpr.outputs.pull-request-number }}
-      uses: actions/github-script@v8.0.0
-      with:
-        script: |
-          github.rest.pulls.merge({
-            owner: '${{ github.repository_owner }}',
-            repo: '${{ env.REPOSITORY_NAME }}',
-            pull_number: '${{ steps.cpr.outputs.pull-request-number }}',
-            sha: '${{ steps.cpr.outputs.pull-request-head-sha }}',
-            merge_method: 'merge'
-          })
-  bundled:
-    runs-on: ubuntu-latest
-    needs: artifacts
-    if: needs.artifacts.result == 'success'
-    steps:
-    - uses: actions/checkout@v5.0.0
-    - name: Bundled
-      shell: bash
-      run: |
-        bash --noprofile --norc -e -o pipefail .github/workflows/git-config.sh
-        git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
-        git restore --source=artifacts -- node_modules/
-        sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\n'"$(printf '    "%s",\\n' $(find node_modules/ -mindepth 2 -maxdepth 3 -type f -name 'package.json' -exec bash -c 'path={}; echo "${path:13:-13}"' ';' | sort) | sed '$ s/...$//')"'\n  \]|' -- 'package.json'
-        rm -r node_modules/
-    - id: cpr
-      uses: peter-evans/create-pull-request@v7.0.8
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        commit-message: Update bundleDependencies
-        author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
-        committer: GitHub <noreply@github.com>
-        title: Update bundleDependencies
-        body: |
-          Update the bundleDependencies field.
-        labels: automerge
-        branch: actions/bundled
         base: master
     - name: get repository name
       if: ${{ steps.cpr.outputs.pull-request-number }}
