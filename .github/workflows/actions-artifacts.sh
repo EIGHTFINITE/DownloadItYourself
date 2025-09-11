@@ -26,18 +26,10 @@ sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
 sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
 sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
 # Reinstall to fix dependency tree and update the package.json with the latest information from the registry
-if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline "npm@$npm_version"
-else
-  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "npm@$npm_version"
-fi
+bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "npm@$npm_version"
 rm -rf .npm/
 # Dedupe
-if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js dedupe
-else
-  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
-fi
+bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
 rm -rf .npm/
 rm -r "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm"
 mv -T "node_modules/npm" "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm"
@@ -93,34 +85,22 @@ sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
 sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
 sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
 # Install
-if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline "electron@$electron_version"
-else
-  cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-  chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "electron@$electron_version"
-  rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-fi
+cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
+chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
+bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "electron@$electron_version"
+rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 rm -rf .npm/
 # Dedupe
-if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js dedupe
-else
-  cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-  chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
-  rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-fi
+cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
+chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
+bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
+rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 rm -rf .npm/
 export npm_config_target=$(cat node_modules/electron/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")
-if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v$node_version-win-x64/node.exe "node_modules/electron/install.js"
-else
-  cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-  chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node "node_modules/electron/install.js"
-  rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-fi
+cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
+chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
+bin/linux/x64/node/node-v$node_version-linux-x64/bin/node "node_modules/electron/install.js"
+rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 mkdir -p "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64"
 mv -T node_modules/electron/dist "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64"
 rm -r node_modules/
@@ -153,33 +133,21 @@ sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
 sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
 sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
 # Install
-if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline "electron@$electron_version"
-else
-  cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-  chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "electron@$electron_version"
-  rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-fi
+cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
+chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
+bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "electron@$electron_version"
+rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 rm -rf .npm/
 # Dedupe
-if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v$node_version-win-x64/node.exe bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js dedupe
-else
-  cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-  chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
-  rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-fi
+cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
+chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
+bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
+rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 rm -rf .npm/
-if [[ "$OSTYPE" == "msys" ]]; then
-  bin/windows/x64/node/node-v$node_version-win-x64/node.exe "node_modules/electron/install.js"
-else
-  cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-  chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-  bin/linux/x64/node/node-v$node_version-linux-x64/bin/node "node_modules/electron/install.js"
-  rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-fi
+cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
+chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
+bin/linux/x64/node/node-v$node_version-linux-x64/bin/node "node_modules/electron/install.js"
+rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 mkdir -p "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
 mv -T node_modules/electron/dist "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
 rm -r node_modules/
