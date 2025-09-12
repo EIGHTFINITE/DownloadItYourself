@@ -1,11 +1,7 @@
 /.gitmodules
 /.npm/
-/_download/
 /bin/
-/minecraft/
 /node_modules/
-/server/
-/MultiMC/
 /package-lock.json
 [Tt]humbs.db
 [Dd]esktop.ini

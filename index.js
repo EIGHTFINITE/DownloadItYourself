@@ -740,11 +740,8 @@ else {
 
 	// Require
 	const { spawn } = require('child_process')
-	const rimraf = require('./node_modules/npm/node_modules/rimraf')
-	const isexe = require('./node_modules/npm/node_modules/isexe')
 	const isWindows = /^win/.test(process.platform)
 	const electronCliVersion = require('./node_modules/electron/package.json').version
-
 	// Function
 	function startElectron() {
 		console.log('Starting Electron ' + electronVersion)
@@ -758,6 +755,8 @@ else {
 
 	// Unpack Electron
 	if(isWindows) {
+		const rimraf = require('./node_modules/npm/node_modules/rimraf')
+		const isexe = require('./node_modules/npm/node_modules/isexe')
 		isexe('bin/windows/x64/electron/electron-v' + electronVersion + '-win32-x64/electron.exe', function (err, isExe) {
 			if (!err && isExe) {
 				startElectron()
