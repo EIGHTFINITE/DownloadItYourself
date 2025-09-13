@@ -1,12 +1,12 @@
 #!/bin/bash
 export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
 rm -r "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm"
-cp -aR "node_modules/npm" "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules"
+cp -aR "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm" "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules"
 sed -i '/cache-max = 0/d' -- '.npmrc'
 sed -i '/only = prod/d' -- '.npmrc'
 sed -i '/optional = false/d' -- '.npmrc'
 sed -i '/production = true/d' -- '.npmrc'
-export actions_PATH="$PATH"
+actions_PATH="$PATH"
 export PATH="$(pwd)/bin/linux/x64/node/node-v$node_version-linux-x64/bin:$PATH"
 cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
@@ -37,7 +37,7 @@ sed -i '/cache-max = 0/d' -- '.npmrc'
 sed -i '/only = prod/d' -- '.npmrc'
 sed -i '/optional = false/d' -- '.npmrc'
 sed -i '/production = true/d' -- '.npmrc'
-export actions_PATH="$PATH"
+actions_PATH="$PATH"
 export PATH="$(pwd)/bin/linux/x64/node/node-v$node_version-linux-x64/bin:$PATH"
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/better-npm-audit/index.js audit
 rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
