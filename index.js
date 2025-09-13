@@ -9,8 +9,9 @@ try {
 } catch (e) {
   isArray = Array.isArray
 }
+const nodeVersion = require('./package.json').engines.node
 const electronVersion = require('./package.json').devDependencies.electron
-const fs = require('./node_modules/npm/node_modules/graceful-fs')
+const fs = require('./bin/windows/x64/node/node-v'+nodeVersion+'-win-x64/node_modules/npm/node_modules/graceful-fs')
 
 // Function
 function writeReadme() {
@@ -697,7 +698,7 @@ if(process.versions.electron) {
 
 	// Require
 	const { app, BrowserWindow } = require('electron')
-	const stringify = require('./node_modules/npm/node_modules/json-stringify-nice')
+	const stringify = require('./bin/windows/x64/node/node-v'+nodeVersion+'-win-x64/node_modules/npm/node_modules/json-stringify-nice')
 	const userAgents = require('top-user-agents-1')
 	const userAgentsAlt = require('top-user-agents')
 	let electronUserAgent = userAgents[0]
@@ -727,7 +728,6 @@ if(process.versions.electron) {
 }
 else {
 	// Validate executable
-	const nodeVersion = require('./package.json').engines.node
 	console.log('Running on Node ' + process.versions.node)
 	if(process.versions.node !== nodeVersion) {
 		throw Error('Expected Node ' + nodeVersion + ' instead of Node ' + process.versions.node)
@@ -755,8 +755,8 @@ else {
 
 	// Unpack Electron
 	if(isWindows) {
-		const rimraf = require('./node_modules/npm/node_modules/rimraf')
-		const isexe = require('./node_modules/npm/node_modules/isexe')
+		const rimraf = require('./bin/windows/x64/node/node-v'+nodeVersion+'-win-x64/node_modules/npm/node_modules/rimraf')
+		const isexe = require('./bin/windows/x64/node/node-v'+nodeVersion+'-win-x64/node_modules/npm/node_modules/isexe')
 		isexe('bin/windows/x64/electron/electron-v' + electronVersion + '-win32-x64/electron.exe', function (err, isExe) {
 			if (!err && isExe) {
 				startElectron()
