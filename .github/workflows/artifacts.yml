@@ -128,8 +128,8 @@ jobs:
         fi
   artifacts_install:
     runs-on: ubuntu-latest
-    needs: artifacts
-    if: needs.artifacts.result == 'success'
+    needs: [automated_files]
+    if: needs.automated_files.result == 'success'
     steps:
     - uses: actions/checkout@v5.0.0
       with:
