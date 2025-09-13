@@ -65,7 +65,7 @@ jobs:
         if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
-        export return_commit="$(git log -1 --format=%H)"
+        return_commit="$(git log -1 --format=%H)"
         git -c user.name="GitHub" -c user.email="noreply@github.com" rebase refs/tags/artifacts
         git tag -f artifacts
         git push -f origin refs/tags/artifacts:refs/tags/artifacts
