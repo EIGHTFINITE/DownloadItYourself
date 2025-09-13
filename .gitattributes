@@ -1,4 +1,27 @@
 * text=false
+/.gitattributes text working-tree-encoding=UTF-8 eol=lf
+/.gitignore text working-tree-encoding=UTF-8 eol=lf
+/.mailmap text working-tree-encoding=UTF-8 eol=lf
+/.npmignore text working-tree-encoding=UTF-8 eol=lf
+/.npmrc text working-tree-encoding=UTF-8 eol=lf
+/.nsprc text working-tree-encoding=UTF-8 eol=lf
+/AUTHORS.txt text working-tree-encoding=UTF-8 eol=lf
+/downloadlist.json text working-tree-encoding=UTF-8 eol=lf
+/index.bat text working-tree-encoding=UTF-8 eol=crlf
+/index.js text working-tree-encoding=UTF-8 eol=lf
+/LICENSE.txt text working-tree-encoding=UTF-8 eol=lf
+/MIT-0.txt text working-tree-encoding=UTF-8 eol=lf
+/package.json text working-tree-encoding=UTF-8 eol=lf
+/package-lock.json text working-tree-encoding=UTF-8 eol=lf
+/PATENTS.txt text working-tree-encoding=UTF-8 eol=lf
+/README.html text working-tree-encoding=UTF-8 eol=lf
+/README.md text working-tree-encoding=UTF-8 eol=lf
+/.github/*.json text working-tree-encoding=UTF-8 eol=lf
+/.github/*.md text working-tree-encoding=UTF-8 eol=lf
+/.github/*.sh text working-tree-encoding=UTF-8 eol=lf
+/.github/*.yml text working-tree-encoding=UTF-8 eol=lf
+/.github/CODEOWNERS text working-tree-encoding=UTF-8 eol=lf
+/docs/legal/*.txt text working-tree-encoding=UTF-8 eol=lf
 /.gitattributes export-ignore
 /.gitconfig export-ignore
 /.gitignore export-ignore
