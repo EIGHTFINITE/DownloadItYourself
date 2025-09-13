@@ -65,6 +65,13 @@ jobs:
         if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
+        git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
+        git -c user.name="GitHub" -c user.email="noreply@github.com" rebase refs/tags/artifacts
+        git tag -f artifacts
+        git push -f origin refs/tags/artifacts:refs/tags/artifacts
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
     - id: cpr
       uses: peter-evans/create-pull-request@v7.0.8
       with:
