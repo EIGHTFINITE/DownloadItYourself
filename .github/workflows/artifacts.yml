@@ -73,6 +73,9 @@ jobs:
           then exit 1
         fi
         git reset --hard $return_commit
+        if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi
     - id: cpr
       uses: peter-evans/create-pull-request@v7.0.8
       with:
