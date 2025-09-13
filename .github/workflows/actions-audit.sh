@@ -58,7 +58,7 @@ sed -i '/"optionalDependencies": {/,/}/d' -- 'package.json'
 sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
 sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
 # Install
-bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline "npm@$new_npm_version"
+bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline "npm@$new_npm_version" "better-npm-audit@$better_npm_audit_version"
 rm -rf .npm/
 # Dedupe
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js dedupe
@@ -84,7 +84,7 @@ sed -i '/"optionalDependencies": {/,/}/d' -- 'package.json'
 sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
 sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
 # Install
-bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline "npm@$npm_version"
+bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline "npm@$npm_version" "better-npm-audit@$better_npm_audit_version"
 rm -rf .npm/
 # Dedupe
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js dedupe
