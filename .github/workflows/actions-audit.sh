@@ -1,7 +1,10 @@
 #!/bin/bash
 export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
-rm -r "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm"
-cp -aR "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm" "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules"
+# Swap npm versions
+# Keeping this swap in actions means we can audit freely on real Windows machines
+mv -T "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm" "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm-temp"
+mv -T "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm" "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm"
+mv -T "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm-temp" "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm"
 sed -i '/cache-max = 0/d' -- '.npmrc'
 sed -i '/only = prod/d' -- '.npmrc'
 sed -i '/optional = false/d' -- '.npmrc'
