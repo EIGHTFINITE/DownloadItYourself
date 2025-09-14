@@ -703,8 +703,8 @@ if(process.versions.electron) {
 	// Require
 	const { app, BrowserWindow } = require('electron')
 	const stringify = require('./bin/windows/x64/node/node-v'+nodeVersion+'-win-x64/node_modules/npm/node_modules/json-stringify-nice')
-	const userAgents = require('top-user-agents-1')
-	const userAgentsAlt = require('top-user-agents')
+	var userAgents = require('./node_modules/top-user-agents-1/index.json')
+	var userAgentsAlt = require('./node_modules/top-user-agents/desktop.json')
 	let electronUserAgent = userAgents[0]
 	console.log('User Agent set to "' + electronUserAgent + '"')
 	if(userAgents[1] == userAgentsAlt[0]) {
@@ -712,6 +712,8 @@ if(process.versions.electron) {
 		console.log('Found bleeding edge User Agent "' + electronUserAgent + '"')
 		console.log('User Agent updated to "' + electronUserAgent + '"')
 	}
+	userAgents = null
+	userAgentsAlt = null
 
 	// Function
 	const isArrayLike = require('./node_modules/lodash.isarraylike')
