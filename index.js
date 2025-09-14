@@ -767,7 +767,7 @@ else {
 			else {
 				console.log('Need to unpack Electron')
 				const winElectronPath = 'bin\\windows\\x64\\electron\\electron-v' + electronVersion + '-win32-x64'
-				const p7zip = spawn('bin\\windows\\x64\\7z\\7z2201-x64\\7z.exe', ['x', '-tsplit', winElectronPath + '\\electron.exe.001', '-o' + winElectronPath], { stdio: 'inherit' })
+				const p7zip = spawn('bin\\windows\\x64\\7z\\7z2501-x64\\7z.exe', ['x', '-tsplit', winElectronPath + '\\electron.exe.001', '-o' + winElectronPath], { stdio: 'inherit' })
 				p7zip.on('exit', () => {
 					rimraf.windows(winElectronPath + '\\electron.exe.*', fs, () => {
 						startElectron()
