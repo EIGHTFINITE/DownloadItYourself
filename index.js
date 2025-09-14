@@ -347,7 +347,12 @@ function writeReadme() {
 				else {
 					d[k].description = ''
 				}
-				
+
+				// Description corrections
+				if(d[k].description === '' && pkg.name === 'corepack') { // corepack
+					d[k].description = 'Zero-runtime-dependency package acting as bridge between Node projects and their package managers.'
+				}
+
 				// Required by
 				d[k].requiredBy = ''
 				if(pkg._requiredBy) {
