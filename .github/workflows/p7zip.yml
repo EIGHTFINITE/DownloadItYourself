@@ -21,9 +21,10 @@ jobs:
         export GIT_COMMITTER_DATE="$(git log -1 --format=%cD)"
         p7zip_version=$(curl -sSL "https://www.7-zip.org/" | tr '"' '\n' | tr "'" '\n' | grep -E '^a\/7z[0-9]+-x64\.exe$' | head -1)
         p7zip_version=${p7zip_version:4:-8}
+        echo $p7zip_version
         sed -i "0,/\"p7zip-version\": \".*\"/s//\"p7zip-version\": \"$p7zip_version\"/" downloadlist.json
         git add downloadlist.json
-        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update 7z to $p7zip_version"
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update 7z to $p7zip_version" || true
         echo "P7ZIP_VERSION=$p7zip_version" >> $GITHUB_ENV
     - id: cpr
       uses: peter-evans/create-pull-request@v7.0.8
