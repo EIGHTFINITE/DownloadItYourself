@@ -55,6 +55,8 @@ rm -r "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/corepac
 mv -T "node_modules/npm" "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm"
 mv -T "node_modules/corepack" "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/corepack"
 rm -r node_modules/
+sed -i "0,/\"name\": \".*\"/s//\"name\": \"node\"/" -- package-lock.json
+sed -i "0,/\"version\": \".*\"/s//\"version\": \"$node_version\"/" -- package-lock.json
 mv package-lock.json "bin/linux/x64/node/node-v$node_version-linux-x64/package-lock.json"
 git checkout -- 'package.json'
 # Commit
@@ -104,6 +106,8 @@ rm -r "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/corepack"
 mv -T "node_modules/npm" "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm"
 mv -T "node_modules/corepack" "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/corepack"
 rm -r node_modules/
+sed -i "0,/\"name\": \".*\"/s//\"name\": \"node\"/" -- package-lock.json
+sed -i "0,/\"version\": \".*\"/s//\"version\": \"$node_version\"/" -- package-lock.json
 mv package-lock.json "bin/windows/x64/node/node-v$node_version-win-x64/package-lock.json"
 git checkout -- 'package.json'
 # Commit
