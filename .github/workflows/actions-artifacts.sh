@@ -57,7 +57,7 @@ mv -T "node_modules/corepack" "bin/linux/x64/node/node-v$node_version-linux-x64/
 rm -r node_modules/
 sed -i "0,/\"name\": \".*\"/s//\"name\": \"node\"/" -- package-lock.json
 sed -i "0,/\"version\": \".*\"/s//\"version\": \"$node_version\"/" -- package-lock.json
-mv package-lock.json "bin/linux/x64/node/node-v$node_version-linux-x64/package-lock.json"
+mv package-lock.json "bin/linux/x64/node/node-v$node_version-linux-x64/lib/package-lock.json"
 git checkout -- 'package.json'
 # Commit
 if [[ $(stat -c%s "bin/linux/x64/node/node-v$node_version-linux-x64/bin/node") -gt 104857600 ]]; then
