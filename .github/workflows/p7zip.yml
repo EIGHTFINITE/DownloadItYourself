@@ -19,7 +19,7 @@ jobs:
         bash --noprofile --norc -e -o pipefail .github/workflows/git-config.sh
         export GIT_AUTHOR_DATE="$(git log -1 --format=%aD)"
         export GIT_COMMITTER_DATE="$(git log -1 --format=%cD)"
-        p7zip_version=$(curl -sSL "https://www.7-zip.org/" | tr '"' '\n' | tr "'" '\n' | tail -n +1 | grep -m 1 -E '^a\/7z[0-9]+-x64\.exe$' | head -1)
+        p7zip_version=$(curl -sSL "https://www.7-zip.org/" | tr '"' '\n' | tr "'" '\n' | grep -E '^a\/7z[0-9]+-x64\.exe$' | head -1)
         p7zip_version=${p7zip_version:4:-8}
         sed -i "0,/\"p7zip-version\": \".*\"/s//\"p7zip-version\": \"$p7zip_version\"/" downloadlist.json
         git add downloadlist.json
