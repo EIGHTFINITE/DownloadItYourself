@@ -5,7 +5,7 @@
 
 // Require
 try {
-  let isArray = require('lodash.isarray')
+  var isArray = require('lodash.isarray')
 } catch (e) {
   isArray = Array.isArray
 }
