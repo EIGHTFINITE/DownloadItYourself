@@ -52,6 +52,7 @@ bash --noprofile --norc -e -o pipefail .github/workflows/actions-clean-files.sh
 rm -r "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm"
 mv -T "node_modules/npm" "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm"
 rm -r node_modules/
+cat package-lock.json
 rm package-lock.json
 git checkout -- 'package.json'
 # Commit
@@ -99,6 +100,7 @@ bash --noprofile --norc -e -o pipefail .github/workflows/actions-clean-files.sh
 rm -r "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm"
 mv -T "node_modules/npm" "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm"
 rm -r node_modules/
+cat package-lock.json
 rm package-lock.json
 git checkout -- 'package.json'
 # Commit
