@@ -727,7 +727,24 @@ if(process.versions.electron) {
 	}
 
 	// Run
-	writeReadme()
+	app.whenReady().then(() => {
+		const win = new BrowserWindow({
+			width: 1920,
+			height: 969,
+			frame: false,
+			show: false,
+			webPreferences: {
+				backgroundThrottling: false
+			}
+		})
+		
+		win.on('close', () => {
+			writeReadme()
+			app.exit()
+		})
+		
+		win.close()
+	})
 }
 else {
 	// Validate executable
