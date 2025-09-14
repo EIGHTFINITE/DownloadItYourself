@@ -791,23 +791,30 @@ else {
 				const winElectronPath = 'bin\\windows\\x64\\electron\\electron-v' + electronVersion + '-win32-x64'
 				const p7zip = spawn('bin\\windows\\x64\\7z\\7z2501-x64\\7z.exe', ['x', '-tsplit', winElectronPath + '\\electron.exe.001', '-o' + winElectronPath], { stdio: 'inherit' })
 				p7zip.on('exit', () => {
-					function unlinkMultiple(files, callback){
-						let i = files.length
-						files.forEach(function(filepath){
-							fs.unlink(filepath, function(err) {
-								i--
-								if (err) {
-									callback(Error(err.code + ': Failed to delete "' + filepath + '"'))
-									return
-								} else if (i <= 0) {
-									callback(null)
-								}
+					function unlinkFilesStartingWith(directory, fileStartsWith, callback) {
+						fs.readdir(directory, {withFileTypes: true}, (err, files) => {
+							if (err) {
+								callback(Error(err.code + ': Failed to read directory "' + directory + '"'))
+								return
+							}
+							files = files.filter(file => !file.isDirectory() && file.name.startsWith(fileStartsWith)).map(file => file.name)
+							let i = files.length
+							files.forEach(function(file){
+								fs.unlink(directory + '\\' + file, function(err) {
+									i--
+									if (err) {
+										callback(Error(err.code + ': Failed to delete file "' + directory + '\\' + file + '"'))
+										return
+									}
+									if (i <= 0) {
+										callback(null)
+									}
+								});
 							});
 						});
 					}
 
-					// winElectronPath + '\\electron.exe.*'
-					unlinkMultiple([winElectronPath + '\\electron.exe.001', winElectronPath + '\\electron.exe.002', winElectronPath + '\\electron.exe.003'], (err) => {
+					unlinkFilesStartingWith(winElectronPath, 'electron.exe.', (err) => {
 						if (err) {
 							throw err;
 						}
