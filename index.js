@@ -781,7 +781,6 @@ else {
 
 	// Unpack Electron
 	if(isWindows) {
-		const rimraf = require('rimraf')
 		const isexe = require('./bin/windows/x64/node/node-v'+nodeVersion+'-win-x64/node_modules/npm/node_modules/isexe')
 		isexe('bin/windows/x64/electron/electron-v' + electronVersion + '-win32-x64/electron.exe', function (err, isExe) {
 			if (!err && isExe) {
@@ -792,7 +791,26 @@ else {
 				const winElectronPath = 'bin\\windows\\x64\\electron\\electron-v' + electronVersion + '-win32-x64'
 				const p7zip = spawn('bin\\windows\\x64\\7z\\7z2501-x64\\7z.exe', ['x', '-tsplit', winElectronPath + '\\electron.exe.001', '-o' + winElectronPath], { stdio: 'inherit' })
 				p7zip.on('exit', () => {
-					rimraf(winElectronPath + '\\electron.exe.*', fs, () => {
+					function unlinkMultiple(files, callback){
+						var i = files.length
+						files.forEach(function(filepath){
+							fs.unlink(filepath, function(err) {
+								i--
+								if (err) {
+									callback(err)
+									return
+								} else if (i <= 0) {
+									callback(null)
+								}
+							});
+						});
+					}
+
+					// winElectronPath + '\\electron.exe.*'
+					unlinkMultiple([winElectronPath + '\\electron.exe.001', winElectronPath + '\\electron.exe.002', winElectronPath + '\\electron.exe.003'], () => {
+						if (err) {
+							throw err;
+						}
 						startElectron()
 					})
 				})

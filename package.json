@@ -22,7 +22,6 @@
     "electron-chrome-extensions": "4.9.0",
     "jquery": "3.7.1",
     "postman-request": "github:EIGHTFINITE/postman-request#master",
-    "rimraf": "3.0.2",
     "spdx-expression-parse": "github:EIGHTFINITE/spdx-expression-parse#main",
     "top-user-agents": "github:EIGHTFINITE/top-user-agents#main",
     "top-user-agents-1": "github:EIGHTFINITE/top-user-agents-1#main"
