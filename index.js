@@ -13,6 +13,7 @@ const nodeVersion = require('./package.json').engines.node
 const npmVersion = require('./bin/windows/x64/node/node-v'+nodeVersion+'-win-x64/node_modules/npm/package.json').version
 const electronVersion = require('./package.json').devDependencies.electron
 const fs = require('./bin/windows/x64/node/node-v'+nodeVersion+'-win-x64/node_modules/npm/node_modules/graceful-fs')
+const downloadlist = require('./downloadlist.json')
 
 // Function
 function writeReadme() {
@@ -450,7 +451,6 @@ function writeReadme() {
 		}
 
 		// Header
-		const downloadlist = require('./downloadlist.json')
 		const readmeHeader = [...downloadlist.config['readme-header']]
 		let html = ''
 		html += optimizedArrayToText(readmeHeader,'h1')
@@ -783,37 +783,46 @@ else {
 	if(isWindows) {
 		const isexe = require('./bin/windows/x64/node/node-v'+nodeVersion+'-win-x64/node_modules/npm/node_modules/isexe')
 		isexe('bin/windows/x64/electron/electron-v' + electronVersion + '-win32-x64/electron.exe', function (err, isExe) {
+			function unlinkFilesStartingWith(directory, fileStartsWith, callback) {
+				fs.readdir(directory, {withFileTypes: true}, (err, files) => {
+					if (err) {
+						callback(Error(err.code + ': Failed to read directory "' + directory + '"'))
+						return
+					}
+					files = files.filter(file => !file.isDirectory() && file.name.startsWith(fileStartsWith)).map(file => file.name)
+					let i = files.length
+					if(i === 0) {
+						callback(null)
+						return
+					}
+					files.forEach(function(file){
+						fs.unlink(directory + '\\' + file, function(err) {
+							i--
+							if (err) {
+								callback(Error(err.code + ': Failed to delete file "' + directory + '\\' + file + '"'))
+								return
+							}
+							if (i <= 0) {
+								callback(null)
+							}
+						});
+					});
+				});
+			}
+
+			const winElectronPath = 'bin\\windows\\x64\\electron\\electron-v' + electronVersion + '-win32-x64'
 			if (!err && isExe) {
-				startElectron()
+				unlinkFilesStartingWith(winElectronPath, 'electron.exe.', (err) => {
+					if (err) {
+						throw err;
+					}
+					startElectron()
+				})
 			}
 			else {
 				console.log('Need to unpack Electron')
-				const winElectronPath = 'bin\\windows\\x64\\electron\\electron-v' + electronVersion + '-win32-x64'
-				const p7zip = spawn('bin\\windows\\x64\\7z\\7z2501-x64\\7z.exe', ['x', '-tsplit', winElectronPath + '\\electron.exe.001', '-o' + winElectronPath], { stdio: 'inherit' })
+				const p7zip = spawn('bin\\windows\\x64\\7z\\7z' + downloadlist.config['p7zip-version'] + '-x64\\7z.exe', ['x', '-tsplit', winElectronPath + '\\electron.exe.001', '-o' + winElectronPath], { stdio: 'inherit' })
 				p7zip.on('exit', () => {
-					function unlinkFilesStartingWith(directory, fileStartsWith, callback) {
-						fs.readdir(directory, {withFileTypes: true}, (err, files) => {
-							if (err) {
-								callback(Error(err.code + ': Failed to read directory "' + directory + '"'))
-								return
-							}
-							files = files.filter(file => !file.isDirectory() && file.name.startsWith(fileStartsWith)).map(file => file.name)
-							let i = files.length
-							files.forEach(function(file){
-								fs.unlink(directory + '\\' + file, function(err) {
-									i--
-									if (err) {
-										callback(Error(err.code + ': Failed to delete file "' + directory + '\\' + file + '"'))
-										return
-									}
-									if (i <= 0) {
-										callback(null)
-									}
-								});
-							});
-						});
-					}
-
 					unlinkFilesStartingWith(winElectronPath, 'electron.exe.', (err) => {
 						if (err) {
 							throw err;
