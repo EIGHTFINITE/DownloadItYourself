@@ -807,7 +807,7 @@ else {
 					}
 
 					// winElectronPath + '\\electron.exe.*'
-					unlinkMultiple([winElectronPath + '\\electron.exe.001', winElectronPath + '\\electron.exe.002', winElectronPath + '\\electron.exe.003'], () => {
+					unlinkMultiple([winElectronPath + '\\electron.exe.001', winElectronPath + '\\electron.exe.002', winElectronPath + '\\electron.exe.003'], (err) => {
 						if (err) {
 							throw err;
 						}
