@@ -1,4 +1,5 @@
 @echo off
+cd /d "%~dp0"
 git init .
 git config core.autocrlf false
 git config core.ignorecase false
@@ -17,10 +18,8 @@ git fetch --force --all --tags
 git reset --hard
 git checkout -B master refs/remotes/origin/master
 git restore --source=artifacts -- bin/ node_modules/ package-lock.json
-setlocal
-cd /d %~dp0
 for /f "tokens=1,2 delims=:, " %%a in (' find ":" ^< "package.json" ') do (
   set "%%~a_version=%%~b"
 )
-cmd /c bin\windows\x64\node\node-v%node_version%-win-x64\node --use_strict index.js
+cmd /c "bin\windows\x64\node\node-v%node_version%-win-x64\node" --use_strict index.js
 pause
