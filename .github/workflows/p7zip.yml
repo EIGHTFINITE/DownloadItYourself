@@ -24,7 +24,7 @@ jobs:
         sed -i "0,/\"p7zip-version\": \".*\"/s//\"p7zip-version\": \"$p7zip_version\"/" downloadlist.json
         git add downloadlist.json
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update 7z to $p7zip_version" || true
-        echo "P7ZIP_VERSION=$p7zip_version" >> $GITHUB_ENV
+        echo "p7zip_version=$p7zip_version" >> $GITHUB_ENV
     - id: cpr
       uses: peter-evans/create-pull-request@v7.0.8
       with:
@@ -32,7 +32,7 @@ jobs:
         commit-message: Update README
         author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
         committer: GitHub <noreply@github.com>
-        title: "Update 7z to ${{ env.P7ZIP_VERSION }}"
+        title: "Update 7z to ${{ env.p7zip_version }}"
         body: |
           Update 7-Zip to the latest version found on https://www.7-zip.org/
           
