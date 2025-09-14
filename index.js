@@ -5,7 +5,7 @@
 
 // Require
 try {
-  var isArray = require('lodash.isarray')
+  let isArray = require('lodash.isarray')
 } catch (e) {
   isArray = Array.isArray
 }
@@ -792,12 +792,12 @@ else {
 				const p7zip = spawn('bin\\windows\\x64\\7z\\7z2501-x64\\7z.exe', ['x', '-tsplit', winElectronPath + '\\electron.exe.001', '-o' + winElectronPath], { stdio: 'inherit' })
 				p7zip.on('exit', () => {
 					function unlinkMultiple(files, callback){
-						var i = files.length
+						let i = files.length
 						files.forEach(function(filepath){
 							fs.unlink(filepath, function(err) {
 								i--
 								if (err) {
-									callback(err)
+									callback(Error(err.code + ': Failed to delete "' + filepath + '"'))
 									return
 								} else if (i <= 0) {
 									callback(null)
