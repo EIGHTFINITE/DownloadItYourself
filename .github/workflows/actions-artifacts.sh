@@ -20,6 +20,7 @@ fi
 
 # Node Linux x64
 export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
+corepack_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['devDependencies']['corepack'])")
 curl -sSo "node-v$node_version-linux-x64.tar.xz" https://nodejs.org/dist/v$node_version/node-v$node_version-linux-x64.tar.xz
 mkdir -p "bin/linux/x64/node"
 tar -xJf "node-v$node_version-linux-x64.tar.xz" -C "bin/linux/x64/node"
@@ -41,7 +42,7 @@ sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
 sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
 sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
 # Reinstall to fix dependency tree and update the package.json with the latest information from the registry
-bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "npm@$npm_version"
+bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "npm@$npm_version" "corepack@$corepack_version"
 rm -rf .npm/
 # Dedupe
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
@@ -50,7 +51,9 @@ rm -rf .npm/
 bash --noprofile --norc -e -o pipefail .github/workflows/actions-clean-files.sh
 # Reset workspace
 rm -r "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm"
+rm -r "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/corepack"
 mv -T "node_modules/npm" "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm"
+mv -T "node_modules/corepack" "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/corepack"
 rm -r node_modules/
 mv package-lock.json "bin/linux/x64/node/node-v$node_version-linux-x64/package-lock.json"
 git checkout -- 'package.json'
@@ -87,7 +90,7 @@ sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": 
 export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest'])")
 cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "npm@$npm_version"
+bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "npm@$npm_version" "corepack@$corepack_version"
 rm -rf .npm/
 # Dedupe
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
@@ -97,7 +100,9 @@ rm -rf .npm/
 bash --noprofile --norc -e -o pipefail .github/workflows/actions-clean-files.sh
 # Reset workspace
 rm -r "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm"
+rm -r "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/corepack"
 mv -T "node_modules/npm" "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm"
+mv -T "node_modules/corepack" "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/corepack"
 rm -r node_modules/
 mv package-lock.json "bin/windows/x64/node/node-v$node_version-win-x64/package-lock.json"
 git checkout -- 'package.json'
