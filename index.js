@@ -18,7 +18,7 @@ const downloadlist = require('./downloadlist.json')
 // Function
 function writeReadme() {
 	function generateReadme(t) {
-		function traverseDependencies(d,p) {
+		function traverseDependencies(d, p, c) {
 			// Require
 			const isString = require('./node_modules/lodash.isstring')
 			const parse = require('spdx-expression-parse')
@@ -33,7 +33,12 @@ function writeReadme() {
 				d[k].path = (isString(p) ? p + '/node_modules/' + k : 'node_modules/' + k)
 				
 				// Location
-				d[k].location = d[k].path.replaceAll('node_modules/','')
+				if(c > 0) {
+					d[k].location = d[k].path.slice(c+1).replaceAll('node_modules/','')
+				}
+				else {
+					d[k].location = d[k].path.replaceAll('node_modules/','')
+				}
 				
 				// Package
 				const pkg = require('./' + d[k].path + '/package.json')
@@ -200,7 +205,6 @@ function writeReadme() {
 				
 				// Check for invalid characters
 				if(allowedCharacters.test(d[k].author)) {
-					console.log(d[k].description)
 					throw Error('Invalid characters in author name of ' + d[k].name)
 				}
 				
@@ -326,7 +330,6 @@ function writeReadme() {
 					
 					// Check for invalid characters
 					if(allowedCharacters.test(d[k].description)) {
-						console.log(d[k].description)
 						throw Error('Invalid characters in description of ' + d[k].name)
 					}
 					
@@ -349,7 +352,7 @@ function writeReadme() {
 				d[k].requiredBy = ''
 				if(pkg._requiredBy) {
 					for (let i=0; i<pkg._requiredBy.length; i++) {
-						if(pkg._requiredBy[i] === '/') {
+						if(pkg._requiredBy[i] === '/' || pkg._requiredBy[i] === '#USER') {
 							pkg._requiredBy.splice(i, 1)
 							i--
 							continue
@@ -372,7 +375,7 @@ function writeReadme() {
 				
 				// Resolve children
 				if(d[k].dependencies) {
-					const b = traverseDependencies(d[k].dependencies,d[k].path)
+					const b = traverseDependencies(d[k].dependencies, d[k].path, c)
 					for (let i=0; i<b.length; i++) {
 						a.push(b[i])
 					}
@@ -611,7 +614,13 @@ function writeReadme() {
 		}
 		
 		// Node dependencies
-		const dependencies = traverseDependencies(require('./package-lock.json').dependencies)
+		const nodePackageLockWindowsPath = 'bin/windows/x64/node/node-v'+nodeVersion+'-win-x64';
+		const nodePackageLockLinuxPath = 'bin/linux/x64/node/node-v'+nodeVersion+'-linux-x64/lib';
+		const dependencies = [
+			...traverseDependencies(require('./'+nodePackageLockWindowsPath+'/package-lock.json').dependencies, nodePackageLockWindowsPath, nodePackageLockWindowsPath.length),
+			...traverseDependencies(require('./'+nodePackageLockLinuxPath+'/package-lock.json').dependencies, nodePackageLockLinuxPath, nodePackageLockLinuxPath.length),
+			...traverseDependencies(require('./package-lock.json').dependencies, null, 0)
+		]
 		if(t === 'md') {
 			html += '\n## Node dependencies\n\n'
 			html += '| Icon | Name | Author | License | Source&nbsp;Code | Distribution | Description | Version |\n'
