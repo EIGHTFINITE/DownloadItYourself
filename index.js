@@ -695,7 +695,7 @@ function writeReadme() {
 // Executable check
 if(process.versions.electron) {
 	// Validate executable
-	console.log('Running on Electron ' + process.versions.electron + ' + Chrome ' + process.versions.chrome + ' + Node ' + process.versions.node)
+	console.log('Running on Electron ' + process.versions.electron + ' + Node ' + process.versions.node + ' + Chrome ' + process.versions.chrome)
 	if(process.versions.electron !== electronVersion) {
 		throw Error('Expected Electron ' + electronVersion + ' instead of Electron ' + process.versions.electron)
 	}
@@ -749,7 +749,7 @@ if(process.versions.electron) {
 	// Shutdown
 	app.on('quit', () => {
 		writeReadme()
-		console.log(process.versions.electron ? 'Exiting Electron ' + process.versions.electron + ' + Chrome ' + process.versions.chrome + ' + Node ' + process.versions.node : 'Exiting Node ' + process.versions.node)
+		console.log('Exiting Electron ' + process.versions.electron + ' + Node ' + process.versions.node + ' + Chrome ' + process.versions.chrome)
 	})
 }
 else {
@@ -805,7 +805,7 @@ else {
 
 	// Shutdown
 	process.on('exit', () => {
-		console.log(process.versions.electron ? 'Exiting Electron ' + process.versions.electron + ' + Chrome ' + process.versions.chrome + ' + Node ' + process.versions.node : 'Exiting Node ' + process.versions.node + ' + npm ' + npmVersion)
+		console.log(process.versions.electron ? 'Exiting Electron ' + process.versions.electron + ' + Node ' + process.versions.node + ' + Chrome ' + process.versions.chrome : 'Exiting Node ' + process.versions.node + ' + npm ' + npmVersion)
 	})
 }
 
