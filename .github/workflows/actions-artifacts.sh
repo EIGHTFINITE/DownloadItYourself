@@ -4,14 +4,15 @@ export GIT_AUTHOR_DATE="$(git log -1 --format=%aD)"
 export GIT_COMMITTER_DATE="$(git log -1 --format=%cD)"
 
 # 7z Windows x64
-curl -sSLo "7z2501-x64.exe" https://www.7-zip.org/a/7z2501-x64.exe
-mkdir -p "bin/windows/x64/7z/7z2501-x64"
-7z x -o"bin/windows/x64/7z/7z2501-x64" "7z2501-x64.exe" | grep "ing archive"
-rm "7z2501-x64.exe"
-rm "bin/windows/x64/7z/7z2501-x64/Uninstall.exe"
+p7zip_version=$(cat downloadlist.json | python -c "import sys, json; print(json.load(sys.stdin)['config']['p7zip-version'])")
+curl -sSLo "7z$p7zip_version-x64.exe" https://www.7-zip.org/a/7z$p7zip_version-x64.exe
+mkdir -p "bin/windows/x64/7z/7z$p7zip_version-x64"
+7z x -o"bin/windows/x64/7z/7z$p7zip_version-x64" "7z$p7zip_version-x64.exe" | grep "ing archive"
+rm "7z$p7zip_version-x64.exe"
+rm "bin/windows/x64/7z/7z$p7zip_version-x64/Uninstall.exe"
 sed -i '/\/bin\//d' -- '.gitignore'
-git add "bin/windows/x64/7z/7z2501-x64"
-git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 7z 22.01 release artifacts" | sed -n 1p
+git add "bin/windows/x64/7z/7z$p7zip_version-x64"
+git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 7z $p7zip_version release artifacts" | sed -n 1p
 git checkout -- '.gitignore'
 if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
   then exit 1
