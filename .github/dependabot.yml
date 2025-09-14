@@ -8,7 +8,9 @@ updates:
     - dependency-type: "production"
   ignore:
     - dependency-name: "lodash.isarray"
-      versions: ["4.x"]
+      versions: [">=4.0.0"]
+    - dependency-name: "rimraf"
+      versions: [">=4.0.0"]
   open-pull-requests-limit: 10
   labels:
   - dependencies
