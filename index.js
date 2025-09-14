@@ -10,6 +10,7 @@ try {
   isArray = Array.isArray
 }
 const nodeVersion = require('./package.json').engines.node
+const npmVersion = require('./bin/windows/x64/node/node-v'+nodeVersion+'-win-x64/node_modules/npm/package.json').version
 const electronVersion = require('./package.json').devDependencies.electron
 const fs = require('./bin/windows/x64/node/node-v'+nodeVersion+'-win-x64/node_modules/npm/node_modules/graceful-fs')
 
@@ -694,7 +695,7 @@ function writeReadme() {
 // Executable check
 if(process.versions.electron) {
 	// Validate executable
-	console.log('Running on Electron ' + process.versions.electron + ' + Node ' + process.versions.node)
+	console.log('Running on Electron ' + process.versions.electron + ' + Chrome ' + process.versions.chrome + ' + Node ' + process.versions.node)
 	if(process.versions.electron !== electronVersion) {
 		throw Error('Expected Electron ' + electronVersion + ' instead of Electron ' + process.versions.electron)
 	}
@@ -737,18 +738,23 @@ if(process.versions.electron) {
 				backgroundThrottling: false
 			}
 		})
-		
+
+		win.close()
+
 		win.on('close', () => {
-			writeReadme()
 			app.exit()
 		})
-		
-		win.close()
+	})
+
+	// Shutdown
+	app.on('quit', () => {
+		writeReadme()
+		console.log(process.versions.electron ? 'Exiting Electron ' + process.versions.electron + ' + Chrome ' + process.versions.chrome + ' + Node ' + process.versions.node : 'Exiting Node ' + process.versions.node)
 	})
 }
 else {
 	// Validate executable
-	console.log('Running on Node ' + process.versions.node)
+	console.log('Running on Node ' + process.versions.node + ' + npm ' + npmVersion)
 	if(process.versions.node !== nodeVersion) {
 		throw Error('Expected Node ' + nodeVersion + ' instead of Node ' + process.versions.node)
 	}
@@ -796,11 +802,11 @@ else {
 	else {
 		startElectron()
 	}
-}
 
-// Shutdown
-process.on('exit', () => {
-	console.log(process.versions.electron ? 'Exiting Electron ' + process.versions.electron + ' + Node ' + process.versions.node : 'Exiting Node ' + process.versions.node)
-})
+	// Shutdown
+	process.on('exit', () => {
+		console.log(process.versions.electron ? 'Exiting Electron ' + process.versions.electron + ' + Chrome ' + process.versions.chrome + ' + Node ' + process.versions.node : 'Exiting Node ' + process.versions.node + ' + npm ' + npmVersion)
+	})
+}
 
 })()
