@@ -1,0 +1,62 @@
+name: "Dependabot Automerge"
+
+on:
+  pull_request:
+    branches: [ master ]
+
+permissions: write-all
+
+jobs:
+  package_json:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v5.0.0
+      continue-on-error: true
+      with:
+        ref: ${{ github.event.pull_request.head.ref }}
+        fetch-depth: 1
+    - name: package_json
+      shell: bash
+      run: |
+        if [[ -f package.json ]]; then
+          bash --noprofile --norc -e -o pipefail .github/workflows/git-config.sh
+          git fetch --depth 1 origin +master:master --no-tags
+          export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
+          new_npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest'])")
+          sed -i "s/\"npm-6\": \"npm:npm@[a-zA-Z0-9+.-]*\"/\"npm-6\": \"npm:npm@$npm_version\"/" -- package.json
+          sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$npm_version || $new_npm_version\"/" -- package.json
+          git add package.json
+          git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Fix package.json" | sed -n 1p || true
+          git push
+          if [[ "${{ github.event.pull_request.head.sha }}" == "$(git log -1 --format=%H)" ]]; then
+            echo "automerge_pull_action=merge" >> "$GITHUB_ENV"
+          else
+            if [[ $(git diff --stat "$(git log origin/master -1 --format=%H)" "$(git log -1 --format=%H)" -- | head -c1 | wc -c) -ne 0 ]]; then
+              echo "automerge_pull_action=fast-forward" >> "$GITHUB_ENV"
+            else
+              echo "automerge_pull_action=close" >> "$GITHUB_ENV"
+            fi
+          fi
+        fi
+    - name: automerge
+      if: ${{ github.actor == 'dependabot[bot]' && env.automerge_pull_action == 'merge' }}
+      uses: actions/github-script@v8.0.0
+      with:
+        script: |
+          github.rest.pulls.merge({
+            owner: context.payload.repository.owner.login,
+            repo: context.payload.repository.name,
+            pull_number: context.payload.pull_request.number,
+            merge_method: 'merge'
+          })
+    - name: close
+      if: ${{ github.actor == 'renovate[bot]' || (github.actor == 'dependabot[bot]' && env.automerge_pull_action == 'close') }}
+      uses: peter-evans/close-pull@v3.0.1
+      continue-on-error: true
+      with:
+        delete-branch: true
+    - name: fast-forward
+      if: ${{ github.actor == 'dependabot[bot]' && env.automerge_pull_action == 'fast-forward' }}
+      shell: bash
+      run: |
+        git push origin HEAD:master

@@ -1,0 +1,19 @@
+name: "Lock"
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  lock:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: dessant/lock-threads@v5.0.1
+      continue-on-error: true
+      with:
+        add-issue-labels: 'locked'
+        remove-issue-labels: 'stale'
+        issue-lock-reason: ''
+        add-pr-labels: 'locked'
+        remove-pr-labels: 'stale'
+        pr-lock-reason: ''

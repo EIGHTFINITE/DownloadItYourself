@@ -1,0 +1,34 @@
+name: "jsonlint"
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  jsonlint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/setup-python@v6.0.0
+      with:
+        python-version: '3.11'
+    - name: Build demjson
+      shell: bash
+      run: |
+        python -c "import sys; print(sys.version)"
+        curl -sSo pip.pyz https://bootstrap.pypa.io/pip/pip.pyz
+        python pip.pyz -V
+        python pip.pyz install setuptools==57.5.0 wheel
+        python pip.pyz install git+https://github.com/EIGHTFINITE/demjson.git@master
+        rm pip.pyz
+    - uses: actions/checkout@v5.0.0
+      with:
+        path: DownloadItYourself
+    - name: jsonlint
+      shell: bash
+      run: |
+        # Forbid all
+        if [[ $(find . -type f -path ./.git -prune -o -name '*.json' -exec jsonlint -s --forbid any-type-at-start,bom,duplicate-keys,non-portable,non-bmp,zero-byte -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+          then exit 1
+        fi

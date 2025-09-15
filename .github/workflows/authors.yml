@@ -1,0 +1,52 @@
+name: "AUTHORS"
+
+on:
+  push:
+    branches: [ master ]
+
+permissions: write-all
+
+jobs:
+  authors:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v5.0.0
+      with:
+        fetch-depth: 0
+    - name: AUTHORS
+      shell: bash
+      run: |
+        bash --noprofile --norc -e -o pipefail .github/workflows/git-config.sh
+        git fetch origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
+        git fetch origin +refs/tags/latest:refs/tags/latest --no-tags
+        git log --format='%aN <%aE>%n%cN <%cE>' --all | sort -u > AUTHORS.txt
+        sort -muo .mailmap -- .mailmap AUTHORS.txt
+    - id: cpr
+      uses: peter-evans/create-pull-request@v7.0.8
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: Update AUTHORS
+        author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+        committer: GitHub <noreply@github.com>
+        title: Credit new contributors
+        body: |
+          Credit our new contributors :tada:
+        labels: automerge
+        branch: actions/authors
+        base: master
+    - name: get repository name
+      if: ${{ steps.cpr.outputs.pull-request-number }}
+      shell: bash
+      run: echo "REPOSITORY_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
+    - name: automerge
+      if: ${{ steps.cpr.outputs.pull-request-number }}
+      uses: actions/github-script@v8.0.0
+      with:
+        script: |
+          github.rest.pulls.merge({
+            owner: '${{ github.repository_owner }}',
+            repo: '${{ env.REPOSITORY_NAME }}',
+            pull_number: '${{ steps.cpr.outputs.pull-request-number }}',
+            sha: '${{ steps.cpr.outputs.pull-request-head-sha }}',
+            merge_method: 'merge'
+          })

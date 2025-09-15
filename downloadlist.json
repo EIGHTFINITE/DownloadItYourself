@@ -1,0 +1,34 @@
+{
+  "downloads": [
+  ],
+  "config": {
+    "minecraft-curseforge-version": "1738749986%3A5",
+    "minecraft-version": "1.7.10",
+    "p7zip-version": "2501",
+    "readme-footer": [
+      "Attribution",
+      "<br>",
+      ["https://stock.adobe.com/images/cogs-gears-icon/230449567", "https://www.iconfinder.com/icons/176306/business_cogs_finance_gears_sprockets_thinking_icon", "https://www.shutterstock.com/image-vector/cogs-gears-icon-professional-pixel-perfect-336130190"],
+      "Cogs / Gears Icon",
+      " is Copyright (c) 2013 ",
+      ["https://stock.adobe.com/contributor/205689395/13ree-design", "https://www.iconfinder.com/13ree.design", "https://www.shutterstock.com/g/13ree.design"],
+      "13ree.design",
+      ". Licensed to EIGHTFINITE by ",
+      ["https://www.adobe.com/"],
+      "Adobe Inc.",
+      ", ",
+      ["https://www.iconfinder.com/"],
+      "Iconfinder ApS",
+      ", ",
+      ["https://www.shutterstock.com/"],
+      "Shutterstock Inc."
+    ],
+    "readme-header": [
+      "Download It Yourself",
+      "<br>",
+      "EIGHTFINITE presents a small Vanilla+ modpack for Minecraft 1.7.10.",
+      "<br>",
+      "This README is a work in progress. Not all information might be accurate yet. Please report any inaccurate information."
+    ]
+  }
+}

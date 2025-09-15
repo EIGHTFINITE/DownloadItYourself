@@ -1,0 +1,9 @@
+/.gitmodules
+/.npm/
+/bin/
+/node_modules/
+/package-lock.json
+[Tt]humbs.db
+[Dd]esktop.ini
+.DS_Store
+*.lnk
