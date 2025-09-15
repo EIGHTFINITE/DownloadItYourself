@@ -121,9 +121,6 @@ function writeReadme() {
 				else if(pkg.name === 'npm' && d[k].license === 'Artistic-2.0') { // npm
 					d[k].license = 'npm license'
 				}
-				else if(pkg.name === 'npm-6' && d[k].license === 'Artistic-2.0') { // npm-6
-					d[k].license = 'npm license'
-				}
 				else if(pkg.name === 'npm-lifecycle' && d[k].license === 'Artistic-2.0') { // npm-lifecycle
 					d[k].license = 'npm license'
 				}
@@ -215,7 +212,7 @@ function writeReadme() {
 				if(d[k].name === 'corepack' && d[k].author === 'nodejs') {
 					d[k].author = 'Corepack contributors'
 				}
-				else if(d[k].name === 'npm-6' && d[k].author === 'Isaac Z. Schlueter') {
+				else if(d[k].name === 'npm' && d[k].author === 'Isaac Z. Schlueter') {
 					d[k].author = 'GitHub Inc.'
 				}
 				else if(pkg.name === 'postman-request' && d[k].author === 'EIGHTFINITE') {
@@ -632,16 +629,30 @@ function writeReadme() {
 			...traverseDependencies(require('./'+nodePackageLockLinuxPath+'/package-lock.json').dependencies, nodePackageLockLinuxPath, nodePackageLockLinuxPath.length),
 			...traverseDependencies(require('./package-lock.json').dependencies, null, 0)
 		]
+		// Start writing dependencies
 		if(t === 'md') {
 			html += '\n## Node dependencies\n\n'
 			html += '| Icon | Name | Author | License | Source&nbsp;Code | Distribution | Description | Version |\n'
 			html += '| :---: | --- | --- | --- | --- | :---: | --- | :---: |\n'
+			let seenNpm = 0
 			for (let i=0; i<dependencies.length; i++) {
 				const d = dependencies[i]
+				// The second npm is listed as npm-6 in devDependencies
+				if(seenNpm > 1) {
+					if(d.location.startsWith('npm/')) {
+						d.location = d.location.replace('npm/', 'npm-6/')
+					}
+				}
+				if(d.location === 'npm') {
+					if(seenNpm > 0) {
+						d.location = 'npm-6'
+					}
+					seenNpm++
+				}
+				// Skip dependencies that we know are fine to distribute thanks to npm
 				if(d.location.startsWith('npm/') || d.location.startsWith('npm-6/')) {
 					continue
 				}
-				const escName = escapeMd(d.name,true)
 				const escLocation = escapeMd(d.location,true)
 				const escIcon = escapeMd(d.icon,true)
 				const escHomepage = escapeUrl(d.homepage,true)
@@ -675,9 +686,21 @@ function writeReadme() {
 			html += '<th>Description</th>\n'
 			html += '<th>Version</th>\n'
 			html += '</tr>\n'
+			let seenNpm = 0
 			for (let i=0; i<dependencies.length; i++) {
 				const d = dependencies[i]
-				const escName = htmlspecialchars(d.name)
+				// The second npm is listed as npm-6 in devDependencies
+				if(seenNpm > 1) {
+					if(d.location.startsWith('npm/')) {
+						d.location = d.location.replace('npm/', 'npm-6/')
+					}
+				}
+				if(d.location === 'npm') {
+					if(seenNpm > 0) {
+						d.location = 'npm-6'
+					}
+					seenNpm++
+				}
 				const escLocation = htmlspecialchars(d.location)
 				const escIcon = htmlspecialchars(d.icon)
 				const escHomepage = escapeUrl(d.homepage,true)
