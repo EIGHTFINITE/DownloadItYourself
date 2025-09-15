@@ -106,22 +106,25 @@ function writeReadme() {
 				}
 
 				// License corrections
-				if(pkg.name === 'npm') { // npm
-					d[k].license = 'npm license'
-				}
-				else if(pkg.name === 'electron-chrome-extensions') { // electron-chrome-extensions
-					d[k].license = 'GPL-3.0'
-				}
-				else if(d[k].version === 'bin-links@1.1.8') { // bin-links
+				if(pkg.name === 'bin-links' && d[k].license === 'Artistic-2.0') { // bin-links
 					d[k].license = 'ISC'
 				}
-				else if(d[k].version === 'cyclist@0.2.2') { // cyclist
+				else if(pkg.name === 'cyclist' && d[k].license === 'All Rights Reserved') { // cyclist
 					d[k].license = 'MIT'
 				}
-				else if(d[k].version === 'gentle-fs@2.3.1') { // gentle-fs
+				else if(pkg.name === 'electron-chrome-extensions' && d[k].license === 'SEE LICENSE IN LICENSE.md') { // electron-chrome-extensions
+					d[k].license = 'GPL-3.0'
+				}
+				else if(pkg.name === 'gentle-fs' && d[k].license === 'Artistic-2.0') { // gentle-fs
 					d[k].license = 'npm license'
 				}
-				else if(d[k].version === 'npm-lifecycle@3.1.5') { // npm-lifecycle
+				else if(pkg.name === 'npm' && d[k].license === 'Artistic-2.0') { // npm
+					d[k].license = 'npm license'
+				}
+				else if(pkg.name === 'npm-6' && d[k].license === 'Artistic-2.0') { // npm-6
+					d[k].license = 'npm license'
+				}
+				else if(pkg.name === 'npm-lifecycle' && d[k].license === 'Artistic-2.0') { // npm-lifecycle
 					d[k].license = 'npm license'
 				}
 
@@ -209,10 +212,13 @@ function writeReadme() {
 				}
 				
 				// Author corrections
-				if(d[k].name === 'npm-6') {
+				if(d[k].name === 'corepack' && d[k].author === 'nodejs') {
+					d[k].author = 'Corepack contributors'
+				}
+				else if(d[k].name === 'npm-6' && d[k].author === 'Isaac Z. Schlueter') {
 					d[k].author = 'GitHub Inc.'
 				}
-				else if(pkg.name === 'postman-request') {
+				else if(pkg.name === 'postman-request' && d[k].author === 'EIGHTFINITE') {
 					d[k].author = 'Mikeal Rogers'
 				}
 				
@@ -250,7 +256,7 @@ function writeReadme() {
 				else if(d[k].source === 'https://github.com/substack/node-editor') { // editor
 					d[k].source = 'https://www.npmjs.com/package/editor?activeTab=code'
 				}
-				else if(pkg.name === 'electron-chrome-extensions') { // electron-chrome-extensions
+				else if(pkg.name === 'electron-chrome-extensions' && d[k].source === 'https://github.com/samuelmaddock/electron-browser-shell') { // electron-chrome-extensions
 					d[k].source = 'https://github.com/samuelmaddock/electron-browser-shell/tree/master/packages/electron-chrome-extensions'
 				}
 				else if(d[k].source === 'https://github.com/Gozala/events') { // events
