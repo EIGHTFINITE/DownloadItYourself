@@ -637,9 +637,19 @@ function writeReadme() {
 			html += '\n## Node dependencies\n\n'
 			html += '| Icon | Name | Author | License | Source&nbsp;Code | Distribution | Description | Version |\n'
 			html += '| :---: | --- | --- | --- | --- | :---: | --- | :---: |\n'
+			let seenCorepack = false
 			let seenNpm = 0
 			for (let i=0; i<dependencies.length; i++) {
 				const d = dependencies[i]
+				// Only write the first corepack
+				if(d.location === 'corepack') {
+					if(seenCorepack) {
+						continue
+					}
+					else {
+						seenCorepack = true
+					}
+				}
 				// The second npm is listed as npm-6 in devDependencies
 				if(seenNpm > 1) {
 					if(d.location.startsWith('npm/')) {
@@ -689,9 +699,19 @@ function writeReadme() {
 			html += '<th>Description</th>\n'
 			html += '<th>Version</th>\n'
 			html += '</tr>\n'
+			let seenCorepack = false
 			let seenNpm = 0
 			for (let i=0; i<dependencies.length; i++) {
 				const d = dependencies[i]
+				// Only write the first corepack
+				if(d.location === 'corepack') {
+					if(seenCorepack) {
+						continue
+					}
+					else {
+						seenCorepack = true
+					}
+				}
 				// The second npm is listed as npm-6 in devDependencies
 				if(seenNpm > 1) {
 					if(d.location.startsWith('npm/')) {
