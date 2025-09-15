@@ -98,15 +98,15 @@ function writeReadme() {
 				else {
 					d[k].license = pkg.license.type
 				}
+
+				// License corrections
 				if(d[k].license === 'Apache 2.0') {
 					d[k].license = 'Apache-2.0'
 				}
 				else if(d[k].license === 'FreeBSD') {
 					d[k].license = 'BSD-2-Clause-Views'
 				}
-
-				// License corrections
-				if(pkg.name === 'bin-links' && d[k].license === 'Artistic-2.0') { // bin-links
+				else if(pkg.name === 'bin-links' && d[k].license === 'Artistic-2.0') { // bin-links
 					d[k].license = 'ISC'
 				}
 				else if(pkg.name === 'cyclist' && d[k].license === 'All Rights Reserved') { // cyclist
@@ -209,13 +209,16 @@ function writeReadme() {
 				}
 				
 				// Author corrections
-				if(d[k].name === 'corepack' && d[k].author === 'nodejs') {
+				if(d[k].author === 'bdehamer@github.com') {
+					d[k].author = 'Brian DeHamer'
+				}
+				else if(d[k].name === 'corepack' && d[k].author === 'nodejs') { // corepack
 					d[k].author = 'Corepack contributors'
 				}
-				else if(d[k].name === 'npm' && d[k].author === 'Isaac Z. Schlueter') {
+				else if(d[k].name === 'npm' && d[k].author === 'Isaac Z. Schlueter') { // npm
 					d[k].author = 'GitHub Inc.'
 				}
-				else if(pkg.name === 'postman-request' && d[k].author === 'EIGHTFINITE') {
+				else if(pkg.name === 'postman-request' && d[k].author === 'EIGHTFINITE') { // postman-request
 					d[k].author = 'Mikeal Rogers'
 				}
 				
