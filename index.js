@@ -212,14 +212,17 @@ function writeReadme() {
 				if(d[k].author === 'bdehamer@github.com') {
 					d[k].author = 'Brian DeHamer'
 				}
-				else if(d[k].name === 'corepack' && d[k].author === 'nodejs') { // corepack
+				else if(d[k].name === 'corepack' && d[k].author === 'nodejs') {
 					d[k].author = 'Corepack contributors'
 				}
-				else if(d[k].name === 'npm' && d[k].author === 'Isaac Z. Schlueter') { // npm
+				else if(d[k].name === 'npm' && d[k].author === 'Isaac Z. Schlueter') {
 					d[k].author = 'GitHub Inc.'
 				}
-				else if(pkg.name === 'postman-request' && d[k].author === 'EIGHTFINITE') { // postman-request
+				else if(pkg.name === 'postman-request' && d[k].author === 'EIGHTFINITE') {
 					d[k].author = 'Mikeal Rogers'
+				}
+				else if(pkg.name === 'top-user-agents' && d[k].author === 'microlink.io') {
+					d[k].author = 'Kiko Beats'
 				}
 				
 				// Source Code corrections
