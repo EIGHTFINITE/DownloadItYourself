@@ -17,9 +17,9 @@ git remote add origin https://github.com/EIGHTFINITE/DownloadItYourself.git
 git fetch --force --all --tags
 git reset --hard
 git checkout -B master refs/remotes/origin/master
-git restore --source=artifacts -- bin/ node_modules/ package-lock.json
 for /f "tokens=1,2 delims=:, " %%a in (' find ":" ^< "package.json" ') do (
   set "%%~a_version=%%~b"
 )
+git restore --source=artifacts -- "bin/linux/x64/node/node-v%node_version%-linux-x64/lib/" bin/windows/ node_modules/ package-lock.json
 cmd /c "bin\windows\x64\node\node-v%node_version%-win-x64\node" --use_strict index.js
 pause

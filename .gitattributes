@@ -32,6 +32,13 @@
 /.nsprc export-ignore
 /README.md export-ignore
 /.github/ export-ignore
+/bin/linux/x64/electron/ export-ignore
+/bin/linux/x64/node/*/bin/ export-ignore
+/bin/linux/x64/node/*/include/ export-ignore
+/bin/linux/x64/node/*/share/ export-ignore
+/bin/linux/x64/node/*/CHANGELOG.md export-ignore
+/bin/linux/x64/node/*/LICENSE export-ignore
+/bin/linux/x64/node/*/README.md export-ignore
 /.github/ linguist-vendored
 /.github/* linguist-vendored
 /bin/ linguist-generated
