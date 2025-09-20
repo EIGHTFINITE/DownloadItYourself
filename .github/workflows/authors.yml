@@ -17,8 +17,6 @@ jobs:
       shell: bash
       run: |
         bash --noprofile --norc -e -o pipefail .github/workflows/git-config.sh
-        git fetch origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
-        git fetch origin +refs/tags/latest:refs/tags/latest --no-tags
         git log --format='%aN <%aE>%n%cN <%cE>' --all | sort -u > AUTHORS.txt
         sort -muo .mailmap -- .mailmap AUTHORS.txt
     - id: cpr
