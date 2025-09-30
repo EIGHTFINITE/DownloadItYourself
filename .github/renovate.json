@@ -27,10 +27,6 @@
       "automergeStrategy": "fast-forward",
       "ignoreTests": true,
       "rollbackPrs": false
-    },
-    {
-      "matchPackageNames": ["lodash.isarray"],
-      "allowedVersions": "/^([0-35-9]|[1-9][0-9]+)\\.[0-9]+\\.[0-9]+$/"
     }
   ],
   "vulnerabilityAlerts": {
