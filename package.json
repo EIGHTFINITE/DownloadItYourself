@@ -111,6 +111,7 @@
     "lodash.get",
     "lodash.isarraylike",
     "lodash.isfunction",
+    "lodash.isinteger",
     "lodash.isobjectlike",
     "lodash.isstring",
     "lodash.isundefined",
