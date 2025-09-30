@@ -29,7 +29,7 @@
   },
   "optionalDependencies": {
     "eslint": "9.34.0",
-    "neostandard": "0.12.1"
+    "neostandard": "0.12.2"
   },
   "devDependencies": {
     "corepack": "0.34.0",
