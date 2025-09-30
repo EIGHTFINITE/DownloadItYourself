@@ -1,7 +1,31 @@
 {
   "downloads": [
+    {
+      "name": "GregTech: New Horizons",
+      "description": "A big progressive questing modpack for Minecraft 1.7.10 balanced around the mod GregTech.",
+      "site": "https://www.gtnewhorizons.com/",
+      "code": ["https://github.com/GTNewHorizons/GT-New-Horizons-Modpack", "https://github.com/GTNewHorizons/DreamAssemblerXXL"],
+      "download": "https://github.com/GTNewHorizons/DreamAssemblerXXL/actions/workflows/daily-modpack-build.yml",
+      "file": [
+        {
+          "match-start": "gtnh-daily-",
+          "match-end": "-mmcprism-new-java"
+        },
+        {
+          "match-start": "gtnh-daily-",
+          "match-end": "-server-new-java"
+        }
+      ],
+      "unpack": [
+        ["zip", "zip", "dir"],
+        ["zip", "zip", "copy"]
+      ],
+      "type": "config",
+      "priority": 1
+    }
   ],
   "config": {
+    "github-version": "DH6wx8{yFk_SJs(X14CON%y(R*lj[$v1 G'Nw",
     "minecraft-curseforge-version": "1738749986%3A5",
     "minecraft-version": "1.7.10",
     "p7zip-version": "2501",
