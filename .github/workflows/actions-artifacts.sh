@@ -87,11 +87,9 @@ sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
 sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
 # Reinstall to fix dependency tree and update the package.json with the latest information from the registry
 export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest'])")
-eslint_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['optionalDependencies']['eslint'])")
-neostandard_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['optionalDependencies']['neostandard'])")
 cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "corepack@$corepack_version" "eslint@$eslint_version" "neostandard@$neostandard_version" "npm@$npm_version"
+bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "corepack@$corepack_version" "npm@$npm_version"
 rm -rf .npm/
 # Dedupe
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
