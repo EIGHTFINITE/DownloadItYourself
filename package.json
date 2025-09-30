@@ -28,6 +28,8 @@
     "top-user-agents-1": "github:EIGHTFINITE/top-user-agents-1#main"
   },
   "optionalDependencies": {
+    "eslint": "9.34.0",
+    "neostandard": "0.12.1"
   },
   "devDependencies": {
     "corepack": "0.34.0",
