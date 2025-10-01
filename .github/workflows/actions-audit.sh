@@ -25,6 +25,7 @@ better_npm_audit_version=$(cat package.json | python -c "import sys, json; print
 corepack_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['devDependencies']['corepack'])")
 electron_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['devDependencies']['electron'])")
 eslint_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['devDependencies']['eslint'])")
+jquery_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['optionalDependencies']['jquery'])")
 neostandard_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['devDependencies']['neostandard'])")
 # Ignore dependencies, devDependencies, optionalDependencies, peerDependencies, and bundleDependencies
 sed -i '/"dependencies": {/,/}/d' -- 'package.json'
@@ -33,7 +34,7 @@ sed -i '/"optionalDependencies": {/,/}/d' -- 'package.json'
 sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
 sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
 # Install
-bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline "corepack@$corepack_version" "electron@$electron_version" "eslint@$eslint_version" "neostandard@$neostandard_version" "npm@$new_npm_version" "npm-6@npm:npm@$npm_version" "better-npm-audit@$better_npm_audit_version"
+bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline "corepack@$corepack_version" "electron@$electron_version" "eslint@$eslint_version" "jquery@$jquery_version" "neostandard@$neostandard_version" "npm@$new_npm_version" "npm-6@npm:npm@$npm_version" "better-npm-audit@$better_npm_audit_version"
 rm -rf .npm/
 # Dedupe
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js dedupe
