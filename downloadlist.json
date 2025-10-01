@@ -1,6 +1,20 @@
 {
   "downloads": [
     {
+      "name": "Prism Launcher",
+      "description": "A custom launcher for Minecraft that allows you to easily manage multiple installations of Minecraft at once (Fork of MultiMC).",
+      "site": "https://prismlauncher.org/",
+      "code": "https://github.com/PrismLauncher/PrismLauncher",
+      "download": "https://github.com/PrismLauncher/PrismLauncher/releases",
+      "file": {
+          "match-start": "PrismLauncher-Windows-MinGW-w64-Portable-",
+          "match-end": ".zip"
+      },
+      "unpack": ["zip", "copy"],
+      "type": "application",
+      "priority": 0
+    },
+    {
       "name": "GregTech: New Horizons",
       "description": "A big progressive questing modpack for Minecraft 1.7.10 balanced around the mod GregTech.",
       "site": "https://www.gtnewhorizons.com/",

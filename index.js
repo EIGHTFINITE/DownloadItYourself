@@ -72,11 +72,32 @@ if(process.versions.electron) {
 				console.log('Navigating to: ' + download.download)
 				// GitHub
 				if(download.download.startsWith('https://github.com/')) {
+					// GitHub Releases
+					if(/^https:\/\/github\.com\/[a-zA-Z0-9._-]+\/[a-zA-Z0-9._-]+\/releases$/.test(download.download)) {
+						const release = await require('./lib/dl/gRelease.js')(i, backoff, download, workingDirectory)
+						if(Error.isError(release)) {
+							console.error(release)
+							process.exit(1)
+							return
+						}
+						else if(typeof release === 'object' && isInt(release.i) && isInt(release.backoff) && typeof release.download === 'object' && !Array.isArray(release.download)) {
+							downloadlist.downloads[i] = release.download
+							i = release.i
+							backoff = release.backoff
+						}
+						else {
+							console.error('Unexpected Response:', release)
+							process.exit(1)
+							return
+						}
+					}
 					// GitHub Workflows
-					if(/^https:\/\/github\.com\/[a-zA-Z0-9._-]+\/[a-zA-Z0-9._-]+\/actions\/workflows\/.*\.yml$/.test(download.download)) {
-						const workflow = await require('./lib/workflow.js')(i, backoff, download, workingDirectory)
+					else if(/^https:\/\/github\.com\/[a-zA-Z0-9._-]+\/[a-zA-Z0-9._-]+\/actions\/workflows\/.*\.yml$/.test(download.download)) {
+						const workflow = await require('./lib/dl/gWorkflow.js')(i, backoff, download, workingDirectory)
 						if(Error.isError(workflow)) {
-							throw workflow
+							console.error(workflow)
+							process.exit(1)
+							return
 						}
 						else if(typeof workflow === 'object' && isInt(workflow.i) && isInt(workflow.backoff) && typeof workflow.download === 'object' && !Array.isArray(workflow.download)) {
 							downloadlist.downloads[i] = workflow.download
@@ -84,15 +105,21 @@ if(process.versions.electron) {
 							backoff = workflow.backoff
 						}
 						else {
-							throw Error('Unimplemented')
+							console.error('Unexpected Response:', workflow)
+							process.exit(1)
+							return
 						}
 					}
 					else {
-						throw Error('Unimplemented')
+						console.error('Unrecognized GitHub url:', download.download)
+						process.exit(1)
+						return
 					}
 				}
 				else {
-					throw Error('Unimplemented')
+					console.error('Unrecognized domain name:', download.download)
+					process.exit(1)
+					return
 				}
 			}
 			win.close()

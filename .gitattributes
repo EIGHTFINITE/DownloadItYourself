@@ -23,6 +23,7 @@
 /.github/CODEOWNERS text working-tree-encoding=UTF-8 eol=lf
 /docs/legal/*.txt text working-tree-encoding=UTF-8 eol=lf
 /lib/*.js text working-tree-encoding=UTF-8 eol=lf
+/lib/dl/*.js text working-tree-encoding=UTF-8 eol=lf
 /.gitattributes export-ignore
 /.gitconfig export-ignore
 /.gitignore export-ignore
