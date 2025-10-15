@@ -13,7 +13,8 @@ git config http.lowSpeedTime 300
 git config http.postBuffer 1048576000
 git config pack.threads 1
 git config index.threads 0
-git remote add origin https://github.com/EIGHTFINITE/DownloadItYourself.git
+git remote add origin https://github.com/EIGHTFINITE/DownloadItYourself.git 2>nul
+git remote set-url origin https://github.com/EIGHTFINITE/DownloadItYourself.git
 git fetch --force --all --tags
 git reset --hard
 git checkout -B master refs/remotes/origin/master
