@@ -32,7 +32,7 @@
   "devDependencies": {
     "corepack": "0.34.1",
     "electron": "38.3.0",
-    "eslint": "9.37.0",
+    "eslint": "9.38.0",
     "neostandard": "0.12.2",
     "npm": "11.6.2",
     "npm-6": "npm:npm@6.14.18"
