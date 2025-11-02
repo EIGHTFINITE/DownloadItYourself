@@ -30,7 +30,7 @@
     "jquery": "3.7.1"
   },
   "devDependencies": {
-    "corepack": "0.34.1",
+    "corepack": "0.34.2",
     "electron": "39.0.0",
     "eslint": "9.39.0",
     "neostandard": "0.12.2",
