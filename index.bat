@@ -17,10 +17,10 @@ git remote add origin https://github.com/EIGHTFINITE/DownloadItYourself.git 2>nu
 git remote set-url origin https://github.com/EIGHTFINITE/DownloadItYourself.git
 git fetch --force --all --tags
 git reset --hard
+git checkout -B master refs/remotes/origin/master
 git reflog expire --expire-unreachable=now --all
 git gc --aggressive --prune=all
 git fsck --unreachable --no-reflogs
-git checkout -B master refs/remotes/origin/master
 for /f "tokens=1,2 delims=:, " %%a in (' find ":" ^< "package.json" ') do (
   set "%%~a_version=%%~b"
 )
