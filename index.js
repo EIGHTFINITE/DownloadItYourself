@@ -26,7 +26,7 @@ if(process.versions.electron) {
 	console.log('User Agent set to "' + electronUserAgent[0] + '"')
 	if(electronUserAgent[1] === require('./node_modules/top-user-agents/desktop.json')[0]) {
 		electronUserAgent = electronUserAgent[1]
-		console.log('Found bleeding edge User Agent "' + electronUserAgent + '"')
+		console.log('Found newer User Agent "' + electronUserAgent + '"')
 		console.log('User Agent set to "' + electronUserAgent + '"')
 	}
 	else {
@@ -70,45 +70,16 @@ if(process.versions.electron) {
 				download.id = download.name.replace(/[^a-zA-Z0-9]/g, ' ').trim().replace(/ +/g, ' ').replaceAll(' ', '_').toLowerCase()
 				console.log('Downloading: ' + download.name)
 				console.log('Navigating to: ' + download.download)
+				let response = Error('Response was never set')
 				// GitHub
 				if(download.download.startsWith('https://github.com/')) {
 					// GitHub Releases
 					if(/^https:\/\/github\.com\/[a-zA-Z0-9._-]+\/[a-zA-Z0-9._-]+\/releases$/.test(download.download)) {
-						const release = await require('./lib/dl/gRelease.js')(i, backoff, download, workingDirectory)
-						if(Error.isError(release)) {
-							console.error(release)
-							process.exit(1)
-							return
-						}
-						else if(typeof release === 'object' && isInt(release.i) && isInt(release.backoff) && typeof release.download === 'object' && !Array.isArray(release.download)) {
-							downloadlist.downloads[i] = release.download
-							i = release.i
-							backoff = release.backoff
-						}
-						else {
-							console.error('Unexpected Response:', release)
-							process.exit(1)
-							return
-						}
+						response = await require('./lib/dl/gRelease.js')(i, backoff, download, workingDirectory)
 					}
 					// GitHub Workflows
 					else if(/^https:\/\/github\.com\/[a-zA-Z0-9._-]+\/[a-zA-Z0-9._-]+\/actions\/workflows\/.*\.yml$/.test(download.download)) {
-						const workflow = await require('./lib/dl/gWorkflow.js')(i, backoff, download, workingDirectory)
-						if(Error.isError(workflow)) {
-							console.error(workflow)
-							process.exit(1)
-							return
-						}
-						else if(typeof workflow === 'object' && isInt(workflow.i) && isInt(workflow.backoff) && typeof workflow.download === 'object' && !Array.isArray(workflow.download)) {
-							downloadlist.downloads[i] = workflow.download
-							i = workflow.i
-							backoff = workflow.backoff
-						}
-						else {
-							console.error('Unexpected Response:', workflow)
-							process.exit(1)
-							return
-						}
+						response = await require('./lib/dl/gWorkflow.js')(i, backoff, download, workingDirectory)
 					}
 					else {
 						console.error('Unrecognized GitHub url:', download.download)
@@ -118,6 +89,22 @@ if(process.versions.electron) {
 				}
 				else {
 					console.error('Unrecognized domain name:', download.download)
+					process.exit(1)
+					return
+				}
+				// Handle response
+				if(Error.isError(response)) {
+					console.error(response)
+					process.exit(1)
+					return
+				}
+				else if(typeof response === 'object' && isInt(response.i) && isInt(response.backoff) && typeof response.download === 'object' && !Array.isArray(response.download)) {
+					downloadlist.downloads[i] = response.download
+					i = response.i
+					backoff = response.backoff
+				}
+				else {
+					console.error('Unexpected Response:', response)
 					process.exit(1)
 					return
 				}
