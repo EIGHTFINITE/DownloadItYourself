@@ -10,7 +10,7 @@
           "match-start": "PrismLauncher-Windows-MinGW-w64-Portable-",
           "match-end": ".zip"
       },
-      "unpack": ["zip", "copy"],
+      "unpack": ["zip", "all"],
       "type": "application",
       "priority": 0
     },
@@ -31,8 +31,8 @@
         }
       ],
       "unpack": [
-        ["zip", "zip", "dir"],
-        ["zip", "zip", "copy"]
+        ["zip", "zip", "one"],
+        ["zip", "zip", "all"]
       ],
       "type": "config",
       "priority": 1
