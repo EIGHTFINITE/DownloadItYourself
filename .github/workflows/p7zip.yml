@@ -12,7 +12,7 @@ jobs:
   p7zip:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v6.0.0
+    - uses: actions/checkout@v6.0.1
     - name: p7zip
       shell: bash
       run: |

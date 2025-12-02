@@ -22,7 +22,7 @@ jobs:
         python pip.pyz install setuptools==57.5.0 wheel
         python pip.pyz install git+https://github.com/EIGHTFINITE/demjson.git@master
         rm pip.pyz
-    - uses: actions/checkout@v6.0.0
+    - uses: actions/checkout@v6.0.1
       with:
         path: DownloadItYourself
     - name: jsonlint
