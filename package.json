@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "corepack": "0.34.5",
-    "electron": "39.2.4",
+    "electron": "39.2.5",
     "eslint": "9.39.1",
     "neostandard": "0.12.2",
     "npm": "11.6.4",
@@ -41,7 +41,7 @@
     "better-npm-audit": "3.11.0",
     "cheerio": "1.1.2",
     "cloudscraper": "4.6.0",
-    "electron": "39.2.4",
+    "electron": "39.2.5",
     "postman-request": "2.88.1-postman.46",
     "request-promise": "4.2.6",
     "request-promise-core": "1.1.4",
