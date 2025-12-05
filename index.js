@@ -21,6 +21,7 @@ if(process.versions.electron) {
 
 	// Require
 	const { app, BrowserWindow } = require('electron')
+	const { ElectronChromeExtensions } = require('electron-chrome-extensions')
 	const isInt = require('lodash.isinteger')
 	let electronUserAgent = require('./node_modules/top-user-agents-1/index.json')
 	console.log('User Agent set to "' + electronUserAgent[0] + '"')
@@ -37,21 +38,27 @@ if(process.versions.electron) {
 	app.whenReady().then(() => {
 		app.userAgentFallback = electronUserAgent;
 
-		const win = new BrowserWindow({
+		const extensions = new ElectronChromeExtensions({license: 'GPL-3.0'})
+		const browserWindow = new BrowserWindow({
 			width: 1920,
-			height: 953,
+			height: 969,
 			frame: false,
 			show: false,
 			webPreferences: {
+				sandbox: true, // Required for extension preload scripts
+				contextIsolation: true, // Recommended for loading remote content
 				devTools: false,
 				backgroundThrottling: false,
-				additionalArguments: ['--js-flags=--jitless']
-			}
+				additionalArguments: ['--js-flags="--jitless"']
+			},
 		})
+
+		// Adds the active tab of the browser
+		extensions.addTab(browserWindow.webContents, browserWindow)
 
 		// Disallow access to microphone, camera, location, clipboard, screen recording and so on
 		// Still allows images and JavaScript since they're not part of this system
-		win.webContents.session.setPermissionRequestHandler((webContents, permission, callback) => {
+		browserWindow.webContents.session.setPermissionRequestHandler((webContents, permission, callback) => {
 			console.log('Denied access to "' + permission + '" permission requested by site')
 			return callback(false)
 		})
@@ -109,11 +116,11 @@ if(process.versions.electron) {
 					return
 				}
 			}
-			win.close()
+			browserWindow.close()
 		}
 		downloadFiles()
 
-		win.on('close', () => {
+		browserWindow.on('close', () => {
 			app.exit()
 		})
 	})
