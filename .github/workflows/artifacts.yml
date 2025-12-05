@@ -77,7 +77,7 @@ jobs:
           then exit 1
         fi
     - id: cpr
-      uses: peter-evans/create-pull-request@v7.0.9
+      uses: peter-evans/create-pull-request@v7.0.11
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: Update README
