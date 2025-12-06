@@ -1,4 +1,4 @@
-name: "p7zip"
+name: "uBlock Origin"
 
 on:
   push:
@@ -9,20 +9,19 @@ on:
 permissions: write-all
 
 jobs:
-  p7zip:
+  ublock-origin:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v6.0.1
-    - name: p7zip
+    - name: "uBlock Origin"
       shell: bash
       run: |
         bash --noprofile --norc -e -o pipefail .github/workflows/git-config.sh
-        p7zip_version=$(curl -sSL "https://www.7-zip.org/" | tr '"' '\n' | tr "'" '\n' | grep -E '^a\/7z[0-9]+-x64\.exe$' | head -1)
-        p7zip_version=${p7zip_version:4:-8}
-        sed -i "0,/\"p7zip-version\": \".*\"/s//\"p7zip-version\": \"$p7zip_version\"/" downloadlist.json
+        ublock_origin_version=$(curl -sS "https://api.github.com/repos/gorhill/uBlock/releases/latest" | python -c "import sys, json; print(json.load(sys.stdin)['tag_name'])")
+        sed -i "0,/\"ublock-origin-version\": \".*\"/s//\"ublock-origin-version\": \"$ublock_origin_version\"/" downloadlist.json
         git add downloadlist.json
-        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update 7z to $p7zip_version" || true
-        echo "p7zip_version=$p7zip_version" >> $GITHUB_ENV
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update 7z to $ublock_origin_version" || true
+        echo "ublock_origin_version=$ublock_origin_version" >> $GITHUB_ENV
     - id: cpr
       uses: peter-evans/create-pull-request@v7.0.9
       with:
@@ -30,13 +29,13 @@ jobs:
         commit-message: Update README
         author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
         committer: GitHub <noreply@github.com>
-        title: "Update 7z to ${{ env.p7zip_version }}"
+        title: "Update uBlock Origin to ${{ env.ublock_origin_version }}"
         body: |
-          Update 7-Zip to the latest version found on https://www.7-zip.org/
+          Update uBlock Origin to the latest version found on https://github.com/gorhill/uBlock/releases
           
-          Changelog: https://www.7-zip.org/history.txt
+          Changelog: https://github.com/gorhill/uBlock/blob/master/CHANGELOG.md
         labels: automerge
-        branch: actions/p7zip
+        branch: actions/ublock-origin
         base: master
     - name: get repository name
       if: ${{ steps.cpr.outputs.pull-request-number }}
