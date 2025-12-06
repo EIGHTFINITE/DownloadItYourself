@@ -18,6 +18,20 @@ if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(
   then exit 1
 fi
 
+# uBlock Origin
+ublock_origin_version=$(cat downloadlist.json | python -c "import sys, json; print(json.load(sys.stdin)['config']['ublock-origin-version'])")
+curl -sSLo "uBlock0_$ublock_origin_version.chromium.zip" --header "Authorization: token $GITHUB_TOKEN" https://github.com/gorhill/uBlock/releases/download/$ublock_origin_version/uBlock0_$ublock_origin_version.chromium.zip
+mkdir -p "extensions"
+7z x -o"extensions" "uBlock0_$ublock_origin_version.chromium.zip" | grep "ing archive"
+rm "uBlock0_$ublock_origin_version.chromium.zip"
+sed -i '/\/extensions\//d' -- '.gitignore'
+git add "extensions/uBlock0.chromium"
+git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add uBlock Origin $ublock_origin_version release artifacts" | sed -n 1p
+git checkout -- '.gitignore'
+if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+  then exit 1
+fi
+
 # Node Linux x64
 export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
 corepack_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['devDependencies']['corepack'])")

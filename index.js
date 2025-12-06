@@ -35,7 +35,7 @@ if(process.versions.electron) {
 	}
 
 	// Run
-	app.whenReady().then(() => {
+	app.whenReady().then(async () => {
 		app.userAgentFallback = electronUserAgent;
 
 		const extensions = new ElectronChromeExtensions({license: 'GPL-3.0'})
@@ -53,8 +53,40 @@ if(process.versions.electron) {
 			},
 		})
 
-		// Adds the active tab of the browser
+		// Enable extensions
 		extensions.addTab(browserWindow.webContents, browserWindow)
+		console.log('Starting uBlock Origin ' + require('./extensions/uBlock0.chromium/manifest.json').version)
+		const extension = await browserWindow.webContents.session.extensions.loadExtension(workingDirectory + (isWindows ? '\\extensions\\uBlock0.chromium' : '/extensions/uBlock0.chromium'));
+		if (extension) {
+			if (extension.manifest.manifest_version === 3) {
+				if(extension.manifest.background?.service_worker) {
+					await browserWindow.webContents.session.serviceWorkers.startWorkerForScope('chrome-extension://' + extension.id).catch(() => {
+						console.error('Failed to start worker for extension')
+						process.exit(1)
+						return
+					})
+				}
+				console.log('Successfully started uBlock Origin as a MV3 extension')
+			}
+			else if(extension.manifest.manifest_version === 2) {
+				console.log('Successfully started uBlock Origin as a MV2 extension')
+			}
+			else {
+				console.error('Unrecognized extension manifest')
+				process.exit(1)
+				return
+			}
+		}
+		else {
+			console.error('Extension failed to load')
+			process.exit(1)
+			return
+		}
+
+		// Disallow new windows
+		browserWindow.webContents.setWindowOpenHandler(() => {
+			return { action: 'deny' }
+		});
 
 		// Disallow access to microphone, camera, location, clipboard, screen recording and so on
 		// Still allows images and JavaScript since they're not part of this system
@@ -63,63 +95,59 @@ if(process.versions.electron) {
 			return callback(false)
 		})
 
-		// Start processing the downloads
-		const downloadFiles = async () => {
-			// Set up the _download directory
-			const setUpDownloadDir = await require('./lib/setUpDownloadDir.js')()
-			if(setUpDownloadDir) {
-				throw setUpDownloadDir
-			}
-
-			// Loop over the downloads
-			for (let i = 0, backoff = 0; i < downloadlist.downloads.length; i++) {
-				const download = downloadlist.downloads[i]
-				download.id = download.name.replace(/[^a-zA-Z0-9]/g, ' ').trim().replace(/ +/g, ' ').replaceAll(' ', '_').toLowerCase()
-				console.log('Downloading: ' + download.name)
-				console.log('Navigating to: ' + download.download)
-				let response = Error('Response was never set')
-				// GitHub
-				if(download.download.startsWith('https://github.com/')) {
-					// GitHub Releases
-					if(/^https:\/\/github\.com\/[a-zA-Z0-9._-]+\/[a-zA-Z0-9._-]+\/releases$/.test(download.download)) {
-						response = await require('./lib/dl/gRelease.js')(i, backoff, download, workingDirectory)
-					}
-					// GitHub Workflows
-					else if(/^https:\/\/github\.com\/[a-zA-Z0-9._-]+\/[a-zA-Z0-9._-]+\/actions\/workflows\/.*\.yml$/.test(download.download)) {
-						response = await require('./lib/dl/gWorkflow.js')(i, backoff, download, workingDirectory)
-					}
-					else {
-						console.error('Unrecognized GitHub url:', download.download)
-						process.exit(1)
-						return
-					}
-				}
-				else {
-					console.error('Unrecognized domain name:', download.download)
-					process.exit(1)
-					return
-				}
-				// Handle response
-				if(Error.isError(response)) {
-					console.error(response)
-					process.exit(1)
-					return
-				}
-				else if(typeof response === 'object' && isInt(response.i) && isInt(response.backoff) && typeof response.download === 'object' && !Array.isArray(response.download)) {
-					downloadlist.downloads[i] = response.download
-					i = response.i
-					backoff = response.backoff
-				}
-				else {
-					console.error('Unexpected Response:', response)
-					process.exit(1)
-					return
-				}
-			}
-			browserWindow.close()
+		// Set up the _download directory
+		const setUpDownloadDir = await require('./lib/setUpDownloadDir.js')()
+		if(setUpDownloadDir) {
+			throw setUpDownloadDir
 		}
-		downloadFiles()
 
+		// Start processing the downloads
+		for (let i = 0, backoff = 0; i < downloadlist.downloads.length; i++) {
+			const download = downloadlist.downloads[i]
+			download.id = download.name.replace(/[^a-zA-Z0-9]/g, ' ').trim().replace(/ +/g, ' ').replaceAll(' ', '_').toLowerCase()
+			console.log('Downloading: ' + download.name)
+			console.log('Navigating to: ' + download.download)
+			let response = Error('Response was never set')
+			// GitHub
+			if(download.download.startsWith('https://github.com/')) {
+				// GitHub Releases
+				if(/^https:\/\/github\.com\/[a-zA-Z0-9._-]+\/[a-zA-Z0-9._-]+\/releases$/.test(download.download)) {
+					response = await require('./lib/dl/gRelease.js')(i, backoff, download, workingDirectory)
+				}
+				// GitHub Workflows
+				else if(/^https:\/\/github\.com\/[a-zA-Z0-9._-]+\/[a-zA-Z0-9._-]+\/actions\/workflows\/.*\.yml$/.test(download.download)) {
+					response = await require('./lib/dl/gWorkflow.js')(i, backoff, download, workingDirectory)
+				}
+				else {
+					console.error('Unrecognized GitHub url:', download.download)
+					process.exit(1)
+					return
+				}
+			}
+			else {
+				console.error('Unrecognized domain name:', download.download)
+				process.exit(1)
+				return
+			}
+			// Handle response
+			if(Error.isError(response)) {
+				console.error(response)
+				process.exit(1)
+				return
+			}
+			else if(typeof response === 'object' && isInt(response.i) && isInt(response.backoff) && typeof response.download === 'object' && !Array.isArray(response.download)) {
+				downloadlist.downloads[i] = response.download
+				i = response.i
+				backoff = response.backoff
+			}
+			else {
+				console.error('Unexpected Response:', response)
+				process.exit(1)
+				return
+			}
+		}
+
+		browserWindow.close()
 		browserWindow.on('close', () => {
 			app.exit()
 		})

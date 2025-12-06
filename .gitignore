@@ -2,6 +2,7 @@
 /.npm/
 /_download/
 /bin/
+/extensions/
 /node_modules/
 /package-lock.json
 [Tt]humbs.db
