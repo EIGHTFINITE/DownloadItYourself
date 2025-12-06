@@ -20,6 +20,7 @@
     "cloudscraper": "github:EIGHTFINITE/cloudscraper#master",
     "electron": "github:EIGHTFINITE/electron#main",
     "electron-chrome-extensions": "4.9.0",
+    "electron-chrome-web-store": "0.13.0",
     "lodash.isinteger": "4.0.4",
     "postman-request": "github:EIGHTFINITE/postman-request#master",
     "spdx-expression-parse": "github:EIGHTFINITE/spdx-expression-parse#main",
