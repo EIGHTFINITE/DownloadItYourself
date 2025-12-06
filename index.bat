@@ -24,7 +24,7 @@ git fsck --unreachable --no-reflogs
 for /f "tokens=1,2 delims=:, " %%a in (' find ":" ^< "package.json" ') do (
   set "%%~a_version=%%~b"
 )
-git checkout refs/tags/artifacts -- "bin/linux/x64/node/node-v%node_version%-linux-x64/lib/" bin/windows/ node_modules/ package-lock.json
-git clean -ffxe "bin/windows/x64/electron/electron-v%electron_version%-win32-x64/electron.exe" -- bin/ node_modules/
-git reset -- "bin/linux/x64/node/node-v%node_version%-linux-x64/lib/" bin/windows/ node_modules/ package-lock.json
+git checkout refs/tags/artifacts -- "bin/linux/x64/node/node-v%node_version%-linux-x64/lib/" bin/windows/ extensions/ node_modules/ package-lock.json
+git clean -ffxe "bin/windows/x64/electron/electron-v%electron_version%-win32-x64/electron.exe" -- bin/ extensions/ node_modules/
+git reset -- "bin/linux/x64/node/node-v%node_version%-linux-x64/lib/" bin/windows/ extensions/ node_modules/ package-lock.json
 cmd /c "bin\windows\x64\node\node-v%node_version%-win-x64\node" --use_strict index.js
