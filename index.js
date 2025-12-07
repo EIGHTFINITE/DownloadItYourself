@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
+require('events').EventEmitter.defaultMaxListeners = 11;
 const workingDirectory = __dirname
 const isWindows = /^win/.test(process.platform)
 const nodeVersion = require('./package.json').engines.node
@@ -20,7 +21,7 @@ if(process.versions.electron) {
 	}
 
 	// Require
-	const { app, BrowserWindow } = require('electron')
+	const { app, session, BrowserWindow } = require('electron')
 	const { ElectronChromeExtensions } = require('electron-chrome-extensions')
 	const isInt = require('lodash.isinteger')
 	let electronUserAgent = require('./node_modules/top-user-agents-1/index.json')
@@ -38,13 +39,18 @@ if(process.versions.electron) {
 	app.whenReady().then(async () => {
 		app.userAgentFallback = electronUserAgent;
 
-		const extensions = new ElectronChromeExtensions({license: 'GPL-3.0'})
+		const browserSession = session.fromPartition('persist:custom')
+		const extensions = new ElectronChromeExtensions({
+			license: 'GPL-3.0',
+			session: browserSession
+		})
 		const browserWindow = new BrowserWindow({
 			width: 1920,
 			height: 969,
 			frame: false,
 			show: false,
 			webPreferences: {
+				session: browserSession, // Use same session given to Extensions class
 				sandbox: true, // Required for extension preload scripts
 				contextIsolation: true, // Recommended for loading remote content
 				devTools: false,
@@ -55,21 +61,21 @@ if(process.versions.electron) {
 
 		// Enable extensions
 		extensions.addTab(browserWindow.webContents, browserWindow)
-		console.log('Starting uBlock Origin ' + require('./extensions/uBlock0.chromium/manifest.json').version)
-		const extension = await browserWindow.webContents.session.extensions.loadExtension(workingDirectory + (isWindows ? '\\extensions\\uBlock0.chromium' : '/extensions/uBlock0.chromium'));
+		console.log('Loading uBlock Origin ' + require('./extensions/uBlock0.chromium/manifest.json').version)
+		const extension = await browserSession.extensions.loadExtension(workingDirectory + (isWindows ? '\\extensions\\uBlock0.chromium' : '/extensions/uBlock0.chromium'));
 		if (extension) {
 			if (extension.manifest.manifest_version === 3) {
 				if(extension.manifest.background?.service_worker) {
-					await browserWindow.webContents.session.serviceWorkers.startWorkerForScope('chrome-extension://' + extension.id).catch(() => {
+					await browserSession.serviceWorkers.startWorkerForScope('chrome-extension://' + extension.id).catch(() => {
 						console.error('Failed to start worker for extension')
 						process.exit(1)
 						return
 					})
 				}
-				console.log('Successfully started uBlock Origin as a MV3 extension')
+				console.log('Successfully loaded MV3 extension uBlock Origin')
 			}
 			else if(extension.manifest.manifest_version === 2) {
-				console.log('Successfully started uBlock Origin as a MV2 extension')
+				console.log('Successfully loaded MV2 extension uBlock Origin')
 			}
 			else {
 				console.error('Unrecognized extension manifest')
@@ -86,14 +92,19 @@ if(process.versions.electron) {
 		// Disallow new windows
 		browserWindow.webContents.setWindowOpenHandler(() => {
 			return { action: 'deny' }
-		});
+		})
 
 		// Disallow access to microphone, camera, location, clipboard, screen recording and so on
 		// Still allows images and JavaScript since they're not part of this system
-		browserWindow.webContents.session.setPermissionRequestHandler((webContents, permission, callback) => {
+		browserSession.setPermissionRequestHandler((webContents, permission, callback) => {
 			console.log('Denied access to "' + permission + '" permission requested by site')
 			return callback(false)
 		})
+
+		console.log('Starting uBlock Origin...')
+		await browserWindow.loadURL('about:blank')
+		await new Promise(resolve => setTimeout(resolve, 60000))
+		console.log('uBlock Origin should be ready now')
 
 		// Set up the _download directory
 		const setUpDownloadDir = await require('./lib/setUpDownloadDir.js')()
