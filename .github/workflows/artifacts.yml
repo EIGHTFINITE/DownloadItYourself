@@ -45,7 +45,7 @@ jobs:
       run: |
         bash --noprofile --norc -e -o pipefail .github/workflows/git-config.sh
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
-        git restore --source=artifacts -- bin/ node_modules/ package-lock.json
+        git restore --source=artifacts -- bin/ extensions/ node_modules/ package-lock.json
         export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])") || $(cat bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")\"/" package.json
         git add package.json
@@ -58,6 +58,7 @@ jobs:
         bin/linux/x64/node/node-v$node_version-linux-x64/bin/node --use_strict index.js --readme_only
         rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
         rm -r bin/
+        rm -r extensions/
         rm -r node_modules/
         rm package-lock.json
         git add downloadlist.json
@@ -89,7 +90,7 @@ jobs:
         body: |
           Update files in the repository to reflect the latest changes.
         labels: automerge
-        branch: actions/readme
+        branch: actions/files
         base: master
     - name: get repository name
       if: ${{ steps.cpr.outputs.pull-request-number }}
