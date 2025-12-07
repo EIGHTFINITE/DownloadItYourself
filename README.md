@@ -8,12 +8,15 @@ This README is a work in progress. Not all information might be accurate yet. Pl
 
 | Icon | Name | Author | License | Source&nbsp;Code | Distribution | Description | Version |
 | :---: | --- | --- | --- | --- | :---: | --- | :---: |
+| [<img src="https://raw.githubusercontent.com/ip7z/7zip/main/CPP/7zip/UI/FileManager/7zipLogo.ico" width="31">](https://www.7-zip.org/) | [7-zip](https://www.7-zip.org/) | Igor Pavlov | [7-Zip license](docs/legal/7-Zip%20license.txt) | [Open Source](https://github.com/ip7z/7zip) | &#x2714;&#xFE0F; | 7-Zip is a file archiver with a high compression ratio. | 2501 |
+| [<img src="https://www.electronjs.org/assets/img/logo.svg" width="31">](https://www.electronjs.org/) | [Electron](https://www.electronjs.org/) | Electron contributors, GitHub Inc. | [MIT](docs/legal/MIT.txt) | [Open Source](https://github.com/electron/electron) | &#x2714;&#xFE0F; | Build cross-platform desktop apps with JavaScript, HTML, and CSS. | 39.2.6 |
+| [<img src="https://nodejs.org/static/logos/nodejsHex.svg" width="31">](https://nodejs.org/) | [Node](https://nodejs.org/en) | Node contributors, Joyent Inc., others | [Node license](docs/legal/Node%20license.txt) | [Open Source](https://github.com/nodejs/node) | &#x2714;&#xFE0F; | Node is a free, open-source, cross-platform JavaScript runtime environment that lets developers create servers, web apps, command line tools and scripts. | 24.11.1 |
 
 ## Browser extensions
 
 | Icon | Name | Author | License | Source&nbsp;Code | Distribution | Description | Version |
 | :---: | --- | --- | --- | --- | :---: | --- | :---: |
-| [![](https://raw.githubusercontent.com/gorhill/uBlock/master/src/img/ublock.svg)](https://github.com/gorhill/uBlock) | [uBlock Origin](https://github.com/gorhill/uBlock) | Raymond Hill (gorhill) | [GPL-3.0](docs/legal/GPL-3.0.txt) | [Open Source](https://github.com/gorhill/uBlock) | &#x2714;&#xFE0F; | Finally, an efficient blocker. Easy on CPU and memory. | 1.68.0 |
+| [<img src="https://raw.githubusercontent.com/gorhill/uBlock/master/src/img/ublock.svg" width="31">](https://github.com/gorhill/uBlock) | [uBlock Origin](https://github.com/gorhill/uBlock) | Raymond Hill (gorhill) | [GPL-3.0](docs/legal/GPL-3.0.txt) | [Open Source](https://github.com/gorhill/uBlock) | &#x2714;&#xFE0F; | Finally, an efficient blocker. Easy on CPU and memory. | 1.68.0 |
 
 ## Node dependencies
 
