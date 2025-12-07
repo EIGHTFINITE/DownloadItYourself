@@ -17,7 +17,9 @@ if(process.versions.electron) {
 	// Validate executable
 	console.log('Running on Electron ' + process.versions.electron + ' + Node ' + process.versions.node + ' + Chrome ' + process.versions.chrome)
 	if(process.versions.electron !== electronVersion) {
-		throw Error('Expected Electron ' + electronVersion + ' instead of Electron ' + process.versions.electron)
+		console.error('Expected Electron ' + electronVersion + ' instead of Electron ' + process.versions.electron)
+		process.exit(1)
+		return
 	}
 
 	// Require
