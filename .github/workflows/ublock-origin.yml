@@ -22,7 +22,7 @@ jobs:
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update uBlock Origin to $ublock_origin_version" || true
         echo "ublock_origin_version=$ublock_origin_version" >> $GITHUB_ENV
     - id: cpr
-      uses: peter-evans/create-pull-request@v7.0.9
+      uses: peter-evans/create-pull-request@v7.0.11
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: Update README
