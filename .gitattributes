@@ -25,7 +25,6 @@
 /lib/*.js text working-tree-encoding=UTF-8 eol=lf
 /lib/dl/*.js text working-tree-encoding=UTF-8 eol=lf
 /.gitattributes export-ignore
-/.gitconfig export-ignore
 /.gitignore export-ignore
 /.gitmodules export-ignore
 /.mailmap export-ignore
