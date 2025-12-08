@@ -16,7 +16,7 @@ This README is a work in progress. Not all information might be accurate yet. Pl
 
 | Icon | Name | Author | License | Source&nbsp;Code | Distribution | Description | Version |
 | :---: | --- | --- | --- | --- | :---: | --- | :---: |
-| [<img src="https://raw.githubusercontent.com/gorhill/uBlock/master/src/img/ublock.svg" width="31">](https://github.com/gorhill/uBlock) | [uBlock Origin](https://github.com/gorhill/uBlock) | Raymond Hill (gorhill) | [GPL-3.0](docs/legal/GPL-3.0.txt) | [Open Source](https://github.com/gorhill/uBlock) | &#x2714;&#xFE0F; | Finally, an efficient blocker. Easy on CPU and memory. | 1.68.0 |
+| [<img src="https://raw.githubusercontent.com/gorhill/uBlock/master/src/img/ublock.svg" width="31">](https://ublockorigin.com/) | [uBlock Origin](https://ublockorigin.com/) | Raymond Hill (gorhill) | [GPL-3.0](docs/legal/GPL-3.0.txt) | [Open Source](https://github.com/gorhill/uBlock) | &#x2714;&#xFE0F; | Finally, an efficient blocker. Easy on CPU and memory. | 1.68.0 |
 
 ## Node dependencies
 
