@@ -11,6 +11,14 @@ const downloadlist = require('./downloadlist.json')
 const writeReadme = require('./lib/writeReadme.js')
 const stringify = require('./bin/windows/x64/node/node-v'+nodeVersion+'-win-x64/node_modules/npm/node_modules/json-stringify-nice')
 const fs = require('./bin/windows/x64/node/node-v'+nodeVersion+'-win-x64/node_modules/npm/node_modules/graceful-fs')
+try {
+	fs.unlinkSync('.userData')
+}
+catch(err) {
+	if (err.code !== 'ENOENT') {
+		throw err
+	}
+}
 
 // Executable check
 if(process.versions.electron) {
@@ -26,6 +34,7 @@ if(process.versions.electron) {
 	const { app, session, BrowserWindow } = require('electron')
 	const { ElectronChromeExtensions } = require('electron-chrome-extensions')
 	const isInt = require('lodash.isinteger')
+	const isString = require('lodash.isstring')
 	let electronUserAgent = require('./node_modules/top-user-agents-1/index.json')
 	console.log('User Agent set to "' + electronUserAgent[0] + '"')
 	if(electronUserAgent[1] === require('./node_modules/top-user-agents/desktop.json')[0]) {
@@ -37,11 +46,65 @@ if(process.versions.electron) {
 		electronUserAgent = electronUserAgent[0]
 	}
 
+	// Clean up browser storage
+	const userData = app.getPath('userData')
+	let userDataDir = null
+	try {
+		userDataDir = fs.readdirSync(userData, {withFileTypes: true})
+	}
+	catch(err) {
+		if (err.code !== 'ENOENT') {
+			throw err
+		}
+	}
+	if(userDataDir !== null && userDataDir.length > 0) {
+		console.log('Cleaning "' + userData + '"')
+		for (let i = 0; i < userDataDir.length; i++) {
+			if(userDataDir[i].isDirectory()) {
+				try {
+					fs.rmSync(userData + (isWindows ? '\\' : '/') + userDataDir[i].name, { recursive: true })
+				}
+				catch(err) {
+					if (err.code !== 'ENOENT') {
+						throw err
+					}
+				}
+			}
+			else {
+				try {
+					fs.unlinkSync(userData + (isWindows ? '\\' : '/') + userDataDir[i].name)
+				}
+				catch(err) {
+					if (err.code !== 'ENOENT') {
+						throw err
+					}
+				}
+			}
+		}
+	}
+	// Confirm browser storage is clean
+	userDataDir = null
+	try {
+		userDataDir = fs.readdirSync(userData)
+	}
+	catch(err) {
+		if (err.code !== 'ENOENT') {
+			throw err
+		}
+	}
+	if(userDataDir !== null && userDataDir.length > 0) {
+		fs.writeFileSync('.userData', userData, 'utf-8')
+		console.error('Expected "' + userData + '" to be empty')
+		console.error('Directory will now be cleaned, run the application again after')
+		process.exit(1)
+		return
+	}
+
 	// Run
 	app.whenReady().then(async () => {
 		app.userAgentFallback = electronUserAgent;
 
-		const browserSession = session.fromPartition('persist:custom')
+		const browserSession = session.defaultSession
 		const extensions = new ElectronChromeExtensions({
 			license: 'GPL-3.0',
 			session: browserSession
@@ -60,6 +123,13 @@ if(process.versions.electron) {
 				additionalArguments: ['--js-flags="--jitless"']
 			},
 		})
+
+		const allExtensions = browserSession.extensions.getAllExtensions()
+		if(!Array.isArray(allExtensions) || allExtensions.length !== 0) {
+			console.error('Expected no extensions to be installed')
+			process.exit(1)
+			return
+		}
 
 		// Enable extensions
 		extensions.addTab(browserWindow.webContents, browserWindow)
@@ -92,88 +162,112 @@ if(process.versions.electron) {
 		}
 
 		// Disallow new windows
-		browserWindow.webContents.setWindowOpenHandler(() => {
+		browserWindow.webContents.setWindowOpenHandler(({ url }) => {
+			console.log('Blocked "' + url + '" because it would\'ve created a new window')
 			return { action: 'deny' }
 		})
 
 		// Disallow access to microphone, camera, location, clipboard, screen recording and so on
 		// Still allows images and JavaScript since they're not part of this system
-		browserSession.setPermissionRequestHandler((webContents, permission, callback) => {
-			console.log('Denied access to "' + permission + '" permission requested by site')
+		browserSession.setPermissionRequestHandler((webContents, permission, callback, details) => {
+			console.log('Denied access to "' + permission + '" permission requested by ' + (isString(details.requestingUrl) ? '"' + details.requestingUrl + '"' : 'site'))
 			return callback(false)
 		})
 		browserSession.setPermissionCheckHandler((webContents, permission, requestingOrigin, details) => {
-			console.log('Denied access to "' + permission + '" permission requested by site')
+			if(isString(details.embeddingOrigin) && details.embeddingOrigin.startsWith('chrome-extension://' + extension.id + '/')) {
+				if(permission === 'media') {
+					console.log('Allowed access to "media" (' + (isString(details.mediaType) ? details.mediaType : 'unknown') + ') permission requested by uBlock Origin')
+				}
+				else {
+					console.log('Allowed access to "' + permission + '" permission requested by uBlock Origin')
+				}
+				return true
+			}
+			if(permission === 'media') {
+				console.log('Denied access to "media" (' + (isString(details.mediaType) ? details.mediaType : 'unknown') + ') permission requested by ' + (isString(details.embeddingOrigin) ? '"' + details.embeddingOrigin + '"' : 'site'))
+			}
+			else {
+				console.log('Denied access to "' + permission + '" permission requested by ' + (isString(details.embeddingOrigin) ? '"' + details.embeddingOrigin + '"' : 'site'))
+			}
 			return false
 		})
 
-		console.log('Starting uBlock Origin...')
+		console.log('Initializing web browser')
 		await browserWindow.loadURL('about:blank')
-		await new Promise(resolve => setTimeout(resolve, 60000))
-		console.log('uBlock Origin should be ready now')
-
-		// Set up the _download directory
-		const setUpDownloadDir = await require('./lib/setUpDownloadDir.js')()
-		if(setUpDownloadDir) {
-			throw setUpDownloadDir
-		}
+		console.log('Starting uBlock Origin')
+		// One real web request is needed for uBlock Origin to load its filter lists
+		// We need a URL that'll always cause a redirect to give uBlock Origin time to start its filters
+		await browserWindow.loadURL('https://github.com/EIGHTFINITE/DownloadItYourself/releases/latest')
 
 		// Start processing the downloads
-		for (let i = 0, backoff = 0; i < downloadlist.downloads.length; i++) {
-			const download = downloadlist.downloads[i]
-			download.id = download.name.replace(/[^a-zA-Z0-9]/g, ' ').trim().replace(/ +/g, ' ').replaceAll(' ', '_').toLowerCase()
-			console.log('Downloading: ' + download.name)
-			console.log('Navigating to: ' + download.download)
-			let response = Error('Response was never set')
-			// GitHub
-			if(download.download.startsWith('https://github.com/')) {
-				// GitHub Releases
-				if(/^https:\/\/github\.com\/[a-zA-Z0-9._-]+\/[a-zA-Z0-9._-]+\/releases$/.test(download.download)) {
-					response = await require('./lib/dl/gRelease.js')(i, backoff, download, workingDirectory)
-				}
-				// GitHub Workflows
-				else if(/^https:\/\/github\.com\/[a-zA-Z0-9._-]+\/[a-zA-Z0-9._-]+\/actions\/workflows\/.*\.yml$/.test(download.download)) {
-					response = await require('./lib/dl/gWorkflow.js')(i, backoff, download, workingDirectory)
+		const downloadFiles = async () => {
+			// Set up the _download directory
+			const setUpDownloadDir = await require('./lib/setUpDownloadDir.js')()
+			if(setUpDownloadDir) {
+				throw setUpDownloadDir
+			}
+
+			// Loop over the downloads
+			for (let i = 0, backoff = 0; i < downloadlist.downloads.length; i++) {
+				const download = downloadlist.downloads[i]
+				download.id = download.name.replace(/[^a-zA-Z0-9]/g, ' ').trim().replace(/ +/g, ' ').replaceAll(' ', '_').toLowerCase()
+				console.log('Downloading: ' + download.name)
+				console.log('Navigating to: ' + download.download)
+				let response = Error('Response was never set')
+				// GitHub
+				if(download.download.startsWith('https://github.com/')) {
+					// GitHub Releases
+					if(/^https:\/\/github\.com\/[a-zA-Z0-9._-]+\/[a-zA-Z0-9._-]+\/releases$/.test(download.download)) {
+						response = await require('./lib/dl/gRelease.js')(i, backoff, download, workingDirectory)
+					}
+					// GitHub Workflows
+					else if(/^https:\/\/github\.com\/[a-zA-Z0-9._-]+\/[a-zA-Z0-9._-]+\/actions\/workflows\/.*\.yml$/.test(download.download)) {
+						response = await require('./lib/dl/gWorkflow.js')(i, backoff, download, workingDirectory)
+					}
+					else {
+						console.error('Unrecognized GitHub url:', download.download)
+						process.exit(1)
+						return
+					}
 				}
 				else {
-					console.error('Unrecognized GitHub url:', download.download)
+					console.error('Unrecognized domain name:', download.download)
+					process.exit(1)
+					return
+				}
+				// Handle response
+				if(Error.isError(response)) {
+					console.error(response)
+					process.exit(1)
+					return
+				}
+				else if(typeof response === 'object' && isInt(response.i) && isInt(response.backoff) && typeof response.download === 'object' && !Array.isArray(response.download)) {
+					downloadlist.downloads[i] = response.download
+					i = response.i
+					backoff = response.backoff
+				}
+				else {
+					console.error('Unexpected Response:', response)
 					process.exit(1)
 					return
 				}
 			}
-			else {
-				console.error('Unrecognized domain name:', download.download)
-				process.exit(1)
-				return
-			}
-			// Handle response
-			if(Error.isError(response)) {
-				console.error(response)
-				process.exit(1)
-				return
-			}
-			else if(typeof response === 'object' && isInt(response.i) && isInt(response.backoff) && typeof response.download === 'object' && !Array.isArray(response.download)) {
-				downloadlist.downloads[i] = response.download
-				i = response.i
-				backoff = response.backoff
-			}
-			else {
-				console.error('Unexpected Response:', response)
-				process.exit(1)
-				return
-			}
+			browserWindow.close()
 		}
+		downloadFiles()
 
-		browserWindow.close()
 		browserWindow.on('close', () => {
 			app.exit()
 		})
 	})
 
 	// Shutdown
-	app.on('quit', () => {
+	app.on('quit', async () => {
 		// Write Readme
 		writeReadme(downloadlist)
+		// Clean up browser storage
+		fs.writeFileSync('.userData', userData, 'utf-8')
+		// Exit message
 		console.log('Exiting Electron ' + process.versions.electron + ' + Node ' + process.versions.node + ' + Chrome ' + process.versions.chrome)
 	})
 	
@@ -245,6 +339,38 @@ else {
 
 	// Shutdown
 	process.on('exit', () => {
+		// Clean up browser storage
+		let userData = null
+		try {
+			userData = fs.readFileSync('.userData')
+		}
+		catch(err) {
+			if (err.code !== 'ENOENT') {
+				throw err
+			}
+		}
+		if(userData !== null) {
+			fs.unlinkSync('.userData')
+			let stat = null
+			try {
+				stat = fs.statSync(userData)
+			}
+			catch(err) {
+				if (err.code !== 'ENOENT') {
+					throw err
+				}
+			}
+			if(stat !== null) {
+				console.log('Cleaning "' + userData + '"')
+				if(stat.isDirectory()) {
+					fs.rmSync(userData, { recursive: true })
+				}
+				else {
+					fs.unlinkSync(userData)
+				}
+			}
+		}
+		// Exit message
 		console.log('Exiting Node ' + process.versions.node + ' + npm ' + npmVersion)
 	})
 }
