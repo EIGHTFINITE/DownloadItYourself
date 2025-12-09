@@ -102,6 +102,10 @@ if(process.versions.electron) {
 			console.log('Denied access to "' + permission + '" permission requested by site')
 			return callback(false)
 		})
+		browserSession.setPermissionCheckHandler((webContents, permission, requestingOrigin, details) => {
+			console.log('Denied access to "' + permission + '" permission requested by site')
+			return false
+		})
 
 		console.log('Starting uBlock Origin...')
 		await browserWindow.loadURL('about:blank')
