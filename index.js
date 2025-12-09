@@ -113,7 +113,7 @@ if(process.versions.electron) {
 			width: 1920,
 			height: 969,
 			frame: false,
-			show: false,
+			show: true,
 			webPreferences: {
 				session: browserSession, // Use same session given to Extensions class
 				sandbox: true, // Required for extension preload scripts
