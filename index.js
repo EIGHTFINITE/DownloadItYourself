@@ -113,7 +113,7 @@ if(process.versions.electron) {
 			width: 1920,
 			height: 969,
 			frame: false,
-			show: true,
+			show: false,
 			webPreferences: {
 				session: browserSession, // Use same session given to Extensions class
 				sandbox: true, // Required for extension preload scripts
@@ -167,27 +167,36 @@ if(process.versions.electron) {
 			return { action: 'deny' }
 		})
 
+		// Don't log permissions while setting up because it causes a lot of spam in the console
+		let logPermissions = false
+
 		// Disallow access to microphone, camera, location, clipboard, screen recording and so on
 		// Still allows images and JavaScript since they're not part of this system
 		browserSession.setPermissionRequestHandler((webContents, permission, callback, details) => {
-			console.log('Denied access to "' + permission + '" permission requested by ' + (isString(details.requestingUrl) ? '"' + details.requestingUrl + '"' : 'site'))
+			if(logPermissions) {
+				console.log('Denied access to "' + permission + '" permission requested by ' + (isString(details.requestingUrl) ? '"' + details.requestingUrl + '"' : 'site'))
+			}
 			return callback(false)
 		})
 		browserSession.setPermissionCheckHandler((webContents, permission, requestingOrigin, details) => {
 			if(isString(details.embeddingOrigin) && details.embeddingOrigin.startsWith('chrome-extension://' + extension.id + '/')) {
-				if(permission === 'media') {
-					console.log('Allowed access to "media" (' + (isString(details.mediaType) ? details.mediaType : 'unknown') + ') permission requested by uBlock Origin')
-				}
-				else {
-					console.log('Allowed access to "' + permission + '" permission requested by uBlock Origin')
+				if(logPermissions) {
+					if(permission === 'media') {
+						console.log('Allowed access to "media" (' + (isString(details.mediaType) ? details.mediaType : 'unknown') + ') permission requested by uBlock Origin')
+					}
+					else {
+						console.log('Allowed access to "' + permission + '" permission requested by uBlock Origin')
+					}
 				}
 				return true
 			}
-			if(permission === 'media') {
-				console.log('Denied access to "media" (' + (isString(details.mediaType) ? details.mediaType : 'unknown') + ') permission requested by ' + (isString(details.embeddingOrigin) ? '"' + details.embeddingOrigin + '"' : 'site'))
-			}
-			else {
-				console.log('Denied access to "' + permission + '" permission requested by ' + (isString(details.embeddingOrigin) ? '"' + details.embeddingOrigin + '"' : 'site'))
+			if(logPermissions && !(isString(details.mediaType) && details.embeddingOrigin === 'https://www.example.com/')) {
+				if(permission === 'media') {
+					console.log('Denied access to "media" (' + (isString(details.mediaType) ? details.mediaType : 'unknown') + ') permission requested by ' + (isString(details.embeddingOrigin) ? '"' + details.embeddingOrigin + '"' : 'site'))
+				}
+				else {
+					console.log('Denied access to "' + permission + '" permission requested by ' + (isString(details.embeddingOrigin) ? '"' + details.embeddingOrigin + '"' : 'site'))
+				}
 			}
 			return false
 		})
@@ -196,8 +205,10 @@ if(process.versions.electron) {
 		await browserWindow.loadURL('about:blank')
 		console.log('Starting uBlock Origin')
 		// One real web request is needed for uBlock Origin to load its filter lists
-		// We need a URL that'll always cause a redirect to give uBlock Origin time to start its filters
-		await browserWindow.loadURL('https://github.com/EIGHTFINITE/DownloadItYourself/releases/latest')
+		// Unfortunately this is the only real site that's reserved, functional, and without trackers
+		await browserWindow.loadURL('https://www.example.com/')
+		// Start logging permission requests
+		logPermissions = true
 
 		// Start processing the downloads
 		const downloadFiles = async () => {
