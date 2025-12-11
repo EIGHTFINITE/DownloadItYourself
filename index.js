@@ -174,7 +174,18 @@ if(process.versions.electron) {
 		// Still allows images and JavaScript since they're not part of this system
 		browserSession.setPermissionRequestHandler((webContents, permission, callback, details) => {
 			if(logPermissions) {
-				console.log('Denied access to "' + permission + '" permission requested by ' + (isString(details.requestingUrl) ? '"' + details.requestingUrl + '"' : 'site'))
+				if(permission === 'media') {
+					let mediaTypes = []
+					if(Array.isArray(details.mediaTypes)) {
+						mediaTypes = details.mediaTypes.filter((val) => {
+							return isString(val)
+						})
+					}
+					console.log('Denied access to "media" (' + (mediaTypes.length > 0 ? mediaTypes.join(', ') : 'unknown') + ') permission requested by ' + (isString(details.requestingUrl) ? '"' + details.requestingUrl + '"' : 'site'))
+				}
+				else {
+					console.log('Denied access to "' + permission + '" permission requested by ' + (isString(details.requestingUrl) ? '"' + details.requestingUrl + '"' : 'site'))
+				}
 			}
 			return callback(false)
 		})
