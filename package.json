@@ -42,7 +42,7 @@
     "cheerio": "1.1.2",
     "cloudscraper": "4.6.0",
     "electron": "39.2.6",
-    "postman-request": "2.88.1-postman.46",
+    "postman-request": "2.88.1-postman.47",
     "request-promise": "4.2.6",
     "request-promise-core": "1.1.4",
     "spdx-expression-parse": "4.0.0",
