@@ -24,6 +24,7 @@ curl -sSLo "PortableGit-$portable_git_version-64-bit.7z.exe" --header "Authoriza
 mkdir -p "bin/windows/x64/git/PortableGit-$portable_git_version-64-bit"
 7z x -o"bin/windows/x64/git/PortableGit-$portable_git_version-64-bit" "PortableGit-$portable_git_version-64-bit.7z.exe" | grep "ing archive"
 rm "PortableGit-$portable_git_version-64-bit.7z.exe"
+rm "bin/windows/x64/git/PortableGit-$portable_git_version-64-bit/post-install.bat"
 rmdir "bin/windows/x64/git/PortableGit-$portable_git_version-64-bit/dev/mqueue"
 rmdir "bin/windows/x64/git/PortableGit-$portable_git_version-64-bit/dev/shm"
 rmdir "bin/windows/x64/git/PortableGit-$portable_git_version-64-bit/tmp"
