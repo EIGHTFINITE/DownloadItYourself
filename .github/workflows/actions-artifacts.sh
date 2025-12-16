@@ -24,9 +24,11 @@ curl -sSLo "PortableGit-$portable_git_version-64-bit.7z.exe" --header "Authoriza
 mkdir -p "bin/windows/x64/git/PortableGit-$portable_git_version-64-bit"
 7z x -o"bin/windows/x64/git/PortableGit-$portable_git_version-64-bit" "PortableGit-$portable_git_version-64-bit.7z.exe" | grep "ing archive"
 rm "PortableGit-$portable_git_version-64-bit.7z.exe"
-rmdir "bin/windows/x64/git/PortableGit-$portable_git_version-64-bit/dev"
+rmdir "bin/windows/x64/git/PortableGit-$portable_git_version-64-bit/dev/mqueue"
+rmdir "bin/windows/x64/git/PortableGit-$portable_git_version-64-bit/dev/shm"
 rmdir "bin/windows/x64/git/PortableGit-$portable_git_version-64-bit/tmp"
-git submodule add -f -- https://github.com/EIGHTFINITE/void.git "bin/windows/x64/git/PortableGit-$portable_git_version-64-bit/dev"
+git submodule add -f -- https://github.com/EIGHTFINITE/void.git "bin/windows/x64/git/PortableGit-$portable_git_version-64-bit/dev/mqueue"
+git submodule add -f -- https://github.com/EIGHTFINITE/void.git "bin/windows/x64/git/PortableGit-$portable_git_version-64-bit/dev/shm"
 git submodule add -f -- https://github.com/EIGHTFINITE/void.git "bin/windows/x64/git/PortableGit-$portable_git_version-64-bit/tmp"
 sed -i '/\/bin\//d' -- '.gitignore'
 git add .gitmodules "bin/windows/x64/git/PortableGit-$portable_git_version-64-bit"
