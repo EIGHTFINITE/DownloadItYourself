@@ -1,6 +1,7 @@
 * text=false
 /.gitattributes text working-tree-encoding=UTF-8 eol=lf
 /.gitignore text working-tree-encoding=UTF-8 eol=lf
+/.gitmodules text working-tree-encoding=UTF-8 eol=lf
 /.mailmap text working-tree-encoding=UTF-8 eol=lf
 /.npmignore text working-tree-encoding=UTF-8 eol=lf
 /.npmrc text working-tree-encoding=UTF-8 eol=lf
