@@ -17,7 +17,7 @@ jobs:
         bash --noprofile --norc -e -o pipefail .github/workflows/git-config.sh
         portable_git_version=$(curl -sS "https://api.github.com/repos/git-for-windows/git/releases/latest" | python -c "import sys, json; print(json.load(sys.stdin)['tag_name'])")
         echo "$portable_git_version"
-        portable_git_version=${portable_git_version:1:-10}
+        portable_git_version=${portable_git_version:1}
         echo "$portable_git_version"
         sed -i "0,/\"portable-git-version\": \".*\"/s//\"portable-git-version\": \"$portable_git_version\"/" downloadlist.json
         git add downloadlist.json
