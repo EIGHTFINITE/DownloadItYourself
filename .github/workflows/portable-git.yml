@@ -1,4 +1,4 @@
-name: "p7zip"
+name: PortableGit
 
 on:
   schedule:
@@ -7,22 +7,22 @@ on:
 permissions: write-all
 
 jobs:
-  p7zip:
+  portable-git:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v6.0.1
-    - name: p7zip
+    - name: PortableGit
       shell: bash
       run: |
         bash --noprofile --norc -e -o pipefail .github/workflows/git-config.sh
-        p7zip_version=$(curl -sSL "https://www.7-zip.org/" | tr '"' '\n' | tr "'" '\n' | grep -E '^a\/7z[0-9]+-x64\.exe$' | head -1)
-        echo "$p7zip_version"
-        p7zip_version=${p7zip_version:4:-8}
-        echo "$p7zip_version"
-        sed -i "0,/\"p7zip-version\": \".*\"/s//\"p7zip-version\": \"$p7zip_version\"/" downloadlist.json
+        portable_git_version=$(curl -sS "https://api.github.com/repos/git-for-windows/git/releases/latest" | python -c "import sys, json; print(json.load(sys.stdin)['tag_name'])")
+        echo "$portable_git_version"
+        portable_git_version=${portable_git_version:1:-10}
+        echo "$portable_git_version"
+        sed -i "0,/\"portable-git-version\": \".*\"/s//\"portable-git-version\": \"$portable_git_version\"/" downloadlist.json
         git add downloadlist.json
-        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update 7z to $p7zip_version" || true
-        echo "p7zip_version=$p7zip_version" >> $GITHUB_ENV
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update PortableGit to $portable_git_version" || true
+        echo "portable_git_version=$portable_git_version" >> $GITHUB_ENV
     - id: cpr
       uses: peter-evans/create-pull-request@v8.0.0
       with:
@@ -30,13 +30,13 @@ jobs:
         commit-message: Update README
         author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
         committer: GitHub <noreply@github.com>
-        title: "Update 7z to ${{ env.p7zip_version }}"
+        title: "Update PortableGit to ${{ env.portable_git_version }}"
         body: |
-          Update 7-Zip to the latest version found on https://www.7-zip.org/
+          Update PortableGit to the latest version found on https://github.com/git-for-windows/git/releases
           
-          Changelog: https://www.7-zip.org/history.txt
+          Changes: https://github.com/git-for-windows/git/releases/latest
         labels: automerge
-        branch: actions/p7zip
+        branch: actions/portable-git
         base: master
     - name: get repository name
       if: ${{ steps.cpr.outputs.pull-request-number }}
