@@ -5,6 +5,7 @@
 /bin/
 /extensions/
 /node_modules/
+/artifacts.zip
 /package-lock.json
 [Tt]humbs.db
 [Dd]esktop.ini
