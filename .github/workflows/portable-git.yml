@@ -20,6 +20,11 @@ jobs:
         portable_git_version=${portable_git_version:1}
         echo "$portable_git_version"
         sed -i "0,/\"portable-git-version\": \".*\"/s//\"portable-git-version\": \"$portable_git_version\"/" downloadlist.json
+        portable_git_version=${portable_git_version/.windows.1/}
+        echo "$portable_git_version"
+        portable_git_version=${portable_git_version/.windows./.}
+        echo "$portable_git_version"
+        sed -i "0,/\"portable-git-short\": \".*\"/s//\"portable-git-short\": \"$portable_git_version\"/" downloadlist.json
         git add downloadlist.json
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update PortableGit to $portable_git_version" || true
         echo "portable_git_version=$portable_git_version" >> $GITHUB_ENV

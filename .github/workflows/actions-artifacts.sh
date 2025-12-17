@@ -19,21 +19,22 @@ if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(
 fi
 
 # PortableGit Windows x64
+portable_git_short=$(cat downloadlist.json | python -c "import sys, json; print(json.load(sys.stdin)['config']['portable-git-short'])")
 portable_git_version=$(cat downloadlist.json | python -c "import sys, json; print(json.load(sys.stdin)['config']['portable-git-version'])")
-curl -sSLo "PortableGit-$portable_git_version-64-bit.7z.exe" --header "Authorization: token $GITHUB_TOKEN" https://github.com/git-for-windows/git/releases/download/v$portable_git_version.windows.1/PortableGit-$portable_git_version-64-bit.7z.exe
-mkdir -p "bin/windows/x64/git/PortableGit-$portable_git_version-64-bit"
-7z x -o"bin/windows/x64/git/PortableGit-$portable_git_version-64-bit" "PortableGit-$portable_git_version-64-bit.7z.exe" | grep "ing archive"
-rm "PortableGit-$portable_git_version-64-bit.7z.exe"
-rm "bin/windows/x64/git/PortableGit-$portable_git_version-64-bit/post-install.bat"
-rmdir "bin/windows/x64/git/PortableGit-$portable_git_version-64-bit/dev/mqueue"
-rmdir "bin/windows/x64/git/PortableGit-$portable_git_version-64-bit/dev/shm"
-rmdir "bin/windows/x64/git/PortableGit-$portable_git_version-64-bit/tmp"
-git submodule add -f -- https://github.com/EIGHTFINITE/void.git "bin/windows/x64/git/PortableGit-$portable_git_version-64-bit/dev/mqueue"
-git submodule add -f -- https://github.com/EIGHTFINITE/void.git "bin/windows/x64/git/PortableGit-$portable_git_version-64-bit/dev/shm"
-git submodule add -f -- https://github.com/EIGHTFINITE/void.git "bin/windows/x64/git/PortableGit-$portable_git_version-64-bit/tmp"
+curl -sSLo "PortableGit-$portable_git_short-64-bit.7z.exe" --header "Authorization: token $GITHUB_TOKEN" https://github.com/git-for-windows/git/releases/download/v$portable_git_version/PortableGit-$portable_git_short-64-bit.7z.exe
+mkdir -p "bin/windows/x64/git/PortableGit-$portable_git_short-64-bit"
+7z x -o"bin/windows/x64/git/PortableGit-$portable_git_short-64-bit" "PortableGit-$portable_git_short-64-bit.7z.exe" | grep "ing archive"
+rm "PortableGit-$portable_git_short-64-bit.7z.exe"
+rm "bin/windows/x64/git/PortableGit-$portable_git_short-64-bit/post-install.bat"
+rmdir "bin/windows/x64/git/PortableGit-$portable_git_short-64-bit/dev/mqueue"
+rmdir "bin/windows/x64/git/PortableGit-$portable_git_short-64-bit/dev/shm"
+rmdir "bin/windows/x64/git/PortableGit-$portable_git_short-64-bit/tmp"
+git submodule add -f -- https://github.com/EIGHTFINITE/void.git "bin/windows/x64/git/PortableGit-$portable_git_short-64-bit/dev/mqueue"
+git submodule add -f -- https://github.com/EIGHTFINITE/void.git "bin/windows/x64/git/PortableGit-$portable_git_short-64-bit/dev/shm"
+git submodule add -f -- https://github.com/EIGHTFINITE/void.git "bin/windows/x64/git/PortableGit-$portable_git_short-64-bit/tmp"
 sed -i '/\/bin\//d' -- '.gitignore'
-git add .gitmodules "bin/windows/x64/git/PortableGit-$portable_git_version-64-bit"
-git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 PortableGit $portable_git_version release artifacts" | sed -n 1p
+git add .gitmodules "bin/windows/x64/git/PortableGit-$portable_git_short-64-bit"
+git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 PortableGit $portable_git_short release artifacts" | sed -n 1p
 git checkout -- '.gitignore'
 if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
   then exit 1
