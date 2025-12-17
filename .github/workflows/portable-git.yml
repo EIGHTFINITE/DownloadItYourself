@@ -39,7 +39,7 @@ jobs:
         body: |
           Update PortableGit to the latest version found on https://github.com/git-for-windows/git/releases
           
-          Changes: https://github.com/git-for-windows/git/releases/latest
+          Changes: https://github.com/git-for-windows/build-extra/blob/main/ReleaseNotes.md
         labels: automerge
         branch: actions/portable-git
         base: master
