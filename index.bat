@@ -5,6 +5,9 @@ cd /d "%~dp0"
 goto:start
 
 :git
+for /f "tokens=1,2 delims=:, " %%a in (' find ":" ^< "downloadlist.json" ') do (
+  set "%%~a-version=%%~b"
+)
 if not exist "bin\windows\x64\git\PortableGit-%portable-git-short-version%-64-bit\bin\git.exe" (
   echo git is missing. Downloading it now...
   curl.exe -#Lo"artifacts.zip" https://github.com/EIGHTFINITE/DownloadItYourself/archive/refs/tags/artifacts.zip
@@ -19,9 +22,6 @@ bin\windows\x64\git\PortableGit-%portable-git-short-version%-64-bit\bin\git.exe 
 goto:eof
 
 :start
-for /f "tokens=1,2 delims=:, " %%a in (' find ":" ^< "downloadlist.json" ') do (
-  set "%%~a-version=%%~b"
-)
 set GIT_ASK_YESNO=false
 call:git init .
 call:git config core.autocrlf false
@@ -36,6 +36,7 @@ call:git config http.lowSpeedTime 300
 call:git config http.postBuffer 1048576000
 call:git config pack.threads 1
 call:git config index.threads 0
+call:git config gc.auto 0
 call:git remote add origin https://github.com/EIGHTFINITE/DownloadItYourself.call:git 2>nul
 call:git remote set-url origin https://github.com/EIGHTFINITE/DownloadItYourself.git
 call:git fetch --force --all --tags
