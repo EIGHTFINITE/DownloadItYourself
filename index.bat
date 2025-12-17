@@ -6,9 +6,9 @@ goto:start
 
 :git
 if not exist "bin\windows\x64\git\PortableGit-%portable-git-short-version%-64-bit\bin\git.exe" (
-  echo Missing git. Downloading now...
+  echo git is missing. Downloading it now...
   curl.exe -#Lo"artifacts.zip" https://github.com/EIGHTFINITE/DownloadItYourself/archive/refs/tags/artifacts.zip
-  echo Extracting git...
+  echo Extracting...
   tar.exe -xf "artifacts.zip" --strip-components=1 -C "."
   del artifacts.zip
   for /f "tokens=1,2 delims=:, " %%a in (' find ":" ^< "downloadlist.json" ') do (
@@ -22,6 +22,7 @@ goto:eof
 for /f "tokens=1,2 delims=:, " %%a in (' find ":" ^< "downloadlist.json" ') do (
   set "%%~a-version=%%~b"
 )
+set GIT_ASK_YESNO=false
 call:git init .
 call:git config core.autocrlf false
 call:git config core.ignorecase false
