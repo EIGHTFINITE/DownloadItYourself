@@ -9,10 +9,11 @@ for /f "tokens=1,2 delims=:, " %%a in (' find ":" ^< "downloadlist.json" ') do (
   set "%%~a-version=%%~b"
 )
 if not exist "bin\windows\x64\git\PortableGit-%portable-git-short-version%-64-bit\bin\git.exe" (
-  echo git is missing. Downloading it now...
+  echo Missing git. Downloading it now...
   curl.exe -#Lo"artifacts.zip" https://github.com/EIGHTFINITE/DownloadItYourself/archive/refs/tags/artifacts.zip
-  echo Extracting...
-  tar.exe -xf "artifacts.zip" --strip-components=1 -C "."
+  echo Extracting now. Will give progress update every 500 files...
+  :: https://serverfault.com/a/716619
+  tar.exe -xvf "artifacts.zip" --strip-components=1 -C "." 2>&1 | findstr /n ^^ | findstr "^1: ^501: ^[1-9][05]01: ^[1-9][0-9][05]01:"
   del artifacts.zip
   for /f "tokens=1,2 delims=:, " %%a in (' find ":" ^< "downloadlist.json" ') do (
     set "%%~a-version=%%~b"
