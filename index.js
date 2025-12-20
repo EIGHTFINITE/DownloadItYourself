@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
-require('events').EventEmitter.defaultMaxListeners = 11;
+require('events').EventEmitter.defaultMaxListeners = 11
 const workingDirectory = __dirname
 const isWindows = /^win/.test(process.platform)
 const nodeVersion = require('./package.json').engines.node
@@ -167,41 +167,34 @@ if(process.versions.electron) {
 			return { action: 'deny' }
 		})
 
-		// Don't log permissions while setting up because it causes a lot of spam in the console
-		let logPermissions = false
-
 		// Disallow access to microphone, camera, location, clipboard, screen recording and so on
 		// Still allows images and JavaScript since they're not part of this system
 		browserSession.setPermissionRequestHandler((webContents, permission, callback, details) => {
-			if(logPermissions) {
-				if(permission === 'media') {
-					let mediaTypes = []
-					if(Array.isArray(details.mediaTypes)) {
-						mediaTypes = details.mediaTypes.filter((val) => {
-							return isString(val)
-						})
-					}
-					console.log('Denied access to "media" (' + (mediaTypes.length > 0 ? mediaTypes.join(', ') : 'unknown') + ') permission requested by ' + (isString(details.requestingUrl) ? '"' + details.requestingUrl + '"' : 'site'))
+			if(permission === 'media') {
+				let mediaTypes = []
+				if(Array.isArray(details.mediaTypes)) {
+					mediaTypes = details.mediaTypes.filter((val) => {
+						return isString(val)
+					})
 				}
-				else {
-					console.log('Denied access to "' + permission + '" permission requested by ' + (isString(details.requestingUrl) ? '"' + details.requestingUrl + '"' : 'site'))
-				}
+				console.log('Denied access to "media" (' + (mediaTypes.length > 0 ? mediaTypes.join(', ') : 'unknown') + ') permission requested by ' + (isString(details.requestingUrl) ? '"' + details.requestingUrl + '"' : 'site'))
+			}
+			else {
+				console.log('Denied access to "' + permission + '" permission requested by ' + (isString(details.requestingUrl) ? '"' + details.requestingUrl + '"' : 'site'))
 			}
 			return callback(false)
 		})
 		browserSession.setPermissionCheckHandler((webContents, permission, requestingOrigin, details) => {
 			if(isString(details.embeddingOrigin) && details.embeddingOrigin.startsWith('chrome-extension://' + extension.id + '/')) {
-				if(logPermissions) {
-					if(permission === 'media') {
-						console.log('Allowed access to "media" (' + (isString(details.mediaType) ? details.mediaType : 'unknown') + ') permission requested by uBlock Origin')
-					}
-					else {
-						console.log('Allowed access to "' + permission + '" permission requested by uBlock Origin')
-					}
+				if(permission === 'media') {
+					console.log('Allowed access to "media" (' + (isString(details.mediaType) ? details.mediaType : 'unknown') + ') permission requested by uBlock Origin')
+				}
+				else {
+					console.log('Allowed access to "' + permission + '" permission requested by uBlock Origin')
 				}
 				return true
 			}
-			if(logPermissions && !(isString(details.mediaType) && details.embeddingOrigin === 'https://www.example.com/')) {
+			if(!isString(details.mediaType) || details.embeddingOrigin !== 'https://www.example.com/') {
 				if(permission === 'media') {
 					console.log('Denied access to "media" (' + (isString(details.mediaType) ? details.mediaType : 'unknown') + ') permission requested by ' + (isString(details.embeddingOrigin) ? '"' + details.embeddingOrigin + '"' : 'site'))
 				}
@@ -218,8 +211,6 @@ if(process.versions.electron) {
 		// One real web request is needed for uBlock Origin to load its filter lists
 		// Unfortunately this is the only real site that's reserved, functional, and without trackers
 		await browserWindow.loadURL('https://www.example.com/')
-		// Start logging permission requests
-		logPermissions = true
 
 		// Start processing the downloads
 		const downloadFiles = async () => {
@@ -284,7 +275,7 @@ if(process.versions.electron) {
 	})
 
 	// Shutdown
-	app.on('quit', async () => {
+	app.on('quit', () => {
 		// Write Readme
 		writeReadme(downloadlist)
 		// Clean up browser storage
