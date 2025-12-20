@@ -187,20 +187,39 @@ if(process.versions.electron) {
 		browserSession.setPermissionCheckHandler((webContents, permission, requestingOrigin, details) => {
 			if(isString(details.embeddingOrigin) && details.embeddingOrigin.startsWith('chrome-extension://' + extension.id + '/')) {
 				if(permission === 'media') {
-					console.log('Allowed access to "media" (' + (isString(details.mediaType) ? details.mediaType : 'unknown') + ') permission requested by uBlock Origin')
+					if(isString(details.mediaType) && details.mediaType === 'video' || details.mediaType === 'audio') {
+						// Is always requested for every extension regardless of the extension's permissions and not used by the actual extension
+						// Allow access without spamming the console
+					}
+					else {
+						console.log('Allowed access to "media" (' + (isString(details.mediaType) ? details.mediaType : 'unknown') + ') permission requested by uBlock Origin')
+					}
+				}
+				else if(permission === 'geolocation') {
+					// Is always requested for every extension regardless of the extension's permissions and not used by the actual extension
+					// Allow access without spamming the console
 				}
 				else {
 					console.log('Allowed access to "' + permission + '" permission requested by uBlock Origin')
 				}
 				return true
 			}
-			if(!isString(details.mediaType) || details.embeddingOrigin !== 'https://www.example.com/') {
-				if(permission === 'media') {
-					console.log('Denied access to "media" (' + (isString(details.mediaType) ? details.mediaType : 'unknown') + ') permission requested by ' + (isString(details.embeddingOrigin) ? '"' + details.embeddingOrigin + '"' : 'site'))
+			if(permission === 'media') {
+				if(isString(details.mediaType) && details.mediaType === 'video' || details.mediaType === 'audio') {
+					// Is always requested for every site even internal pages
+					// Allow access without spamming the console
+					return true
 				}
 				else {
-					console.log('Denied access to "' + permission + '" permission requested by ' + (isString(details.embeddingOrigin) ? '"' + details.embeddingOrigin + '"' : 'site'))
+					console.log('Denied access to "media" (' + (isString(details.mediaType) ? details.mediaType : 'unknown') + ') permission requested by ' + (isString(details.embeddingOrigin) ? '"' + details.embeddingOrigin + '"' : 'site'))
 				}
+			}
+			else if(permission === 'geolocation') {
+				// Is always requested for every site even internal pages
+				// Deny access without spamming the console
+			}
+			else {
+				console.log('Denied access to "' + permission + '" permission requested by ' + (isString(details.embeddingOrigin) ? '"' + details.embeddingOrigin + '"' : 'site'))
 			}
 			return false
 		})
