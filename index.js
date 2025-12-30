@@ -35,7 +35,7 @@ if(process.versions.electron) {
 	const { ElectronChromeExtensions } = require('electron-chrome-extensions')
 	const isInt = require('lodash.isinteger')
 	const isString = require('lodash.isstring')
-	const electronUserAgent = require('./node_modules/top-user-agents-1/index.json')[0]
+	const electronUserAgent = require('./node_modules/top-user-agents/index.json')[0]
 	console.log('User Agent set to "' + electronUserAgent + '"')
 
 	// Clean up browser storage
