@@ -35,16 +35,8 @@ if(process.versions.electron) {
 	const { ElectronChromeExtensions } = require('electron-chrome-extensions')
 	const isInt = require('lodash.isinteger')
 	const isString = require('lodash.isstring')
-	let electronUserAgent = require('./node_modules/top-user-agents-1/index.json')
-	console.log('User Agent set to "' + electronUserAgent[0] + '"')
-	if(electronUserAgent[1] === require('./node_modules/top-user-agents/desktop.json')[0]) {
-		electronUserAgent = electronUserAgent[1]
-		console.log('Found newer User Agent "' + electronUserAgent + '"')
-		console.log('User Agent set to "' + electronUserAgent + '"')
-	}
-	else {
-		electronUserAgent = electronUserAgent[0]
-	}
+	const electronUserAgent = require('./node_modules/top-user-agents-1/index.json')[0]
+	console.log('User Agent set to "' + electronUserAgent + '"')
 
 	// Clean up browser storage
 	const userData = app.getPath('userData')
