@@ -35,6 +35,10 @@
     "active": true,
     "notes": "Only connects to the npm registry and cannot produce private IPs. Fixed in later versions of npm"
   },
+  "GHSA-6rw7-vpxm-498p": {
+    "active": true,
+    "notes": "Only parses sanitized data from the npm registry. Fixed in later versions of npm"
+  },
   "GHSA-p8p7-x288-28g6": {
     "active": true,
     "notes": "Only connects to the npm registry and cannot produce SSRF redirects. Fixed in EIGHTFINITE/postman-request and in later versions of npm"
@@ -52,10 +56,6 @@
     "notes": "Only parses sanitized data from the npm registry. Fixed in later versions of npm"
   },
   "GHSA-72xf-g2v4-qvf3": {
-    "active": true,
-    "notes": "Only parses sanitized data from the npm registry. Fixed in later versions of npm"
-  },
-  "GHSA-6rw7-vpxm-498p": {
     "active": true,
     "notes": "Only parses sanitized data from the npm registry. Fixed in later versions of npm"
   }
