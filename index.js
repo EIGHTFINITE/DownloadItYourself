@@ -159,6 +159,9 @@ if(process.versions.electron) {
 			return { action: 'deny' }
 		})
 
+		// Mute browser
+		browserWindow.webContents.setAudioMuted(true);
+
 		// Disallow access to microphone, camera, location, clipboard, screen recording and so on
 		// Still allows images and JavaScript since they're not part of this system
 		browserSession.setPermissionRequestHandler((webContents, permission, callback, details) => {
@@ -180,15 +183,19 @@ if(process.versions.electron) {
 			if(isString(details.embeddingOrigin) && details.embeddingOrigin.startsWith('chrome-extension://' + extension.id + '/')) {
 				if(permission === 'media') {
 					if(isString(details.mediaType) && details.mediaType === 'video' || details.mediaType === 'audio') {
-						// Is always requested for every extension regardless of the extension's permissions and not used by the actual extension
+						// Is always requested for every extension regardless of the extension's permissions
 						// Allow access without spamming the console
 					}
 					else {
 						console.log('Allowed access to "media" (' + (isString(details.mediaType) ? details.mediaType : 'unknown') + ') permission requested by uBlock Origin')
 					}
 				}
-				else if(permission === 'geolocation') {
-					// Is always requested for every extension regardless of the extension's permissions and not used by the actual extension
+				else if(permission === 'geolocation' || permission === 'window-management') {
+					// Is always requested for every extension regardless of the extension's permissions
+					// Allow access without spamming the console
+				}
+				else if(permission === 'background-sync') {
+					// Expected permission requested by uBlock Origin
 					// Allow access without spamming the console
 				}
 				else {
@@ -199,6 +206,7 @@ if(process.versions.electron) {
 			if(permission === 'media') {
 				if(isString(details.mediaType) && details.mediaType === 'video' || details.mediaType === 'audio') {
 					// Is always requested for every site even internal pages
+					// Needed to make sure that pages with video or audio content are rendered correctly
 					// Allow access without spamming the console
 					return true
 				}
@@ -206,7 +214,7 @@ if(process.versions.electron) {
 					console.log('Denied access to "media" (' + (isString(details.mediaType) ? details.mediaType : 'unknown') + ') permission requested by ' + (isString(details.embeddingOrigin) ? '"' + details.embeddingOrigin + '"' : 'site'))
 				}
 			}
-			else if(permission === 'geolocation') {
+			else if(permission === 'geolocation' || permission === 'window-management') {
 				// Is always requested for every site even internal pages
 				// Deny access without spamming the console
 			}
