@@ -10,7 +10,8 @@ mv -T "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm-tem
 cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 # Install
-bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline "corepack@$corepack_version" "electron@$electron_version" "eslint@$eslint_version" "jquery@$jquery_version" "neostandard@$neostandard_version" "npm@$new_npm_version" "npm-6@npm:npm@$npm_version" "better-npm-audit@$better_npm_audit_version"
+better_npm_audit_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['devDependencies']['better-npm-audit'])")
+bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline "better-npm-audit@$better_npm_audit_version"
 rm -rf .npm/
 # Audit
 sed -i '/cache-max = 0/d' -- '.npmrc'
@@ -25,7 +26,6 @@ rm -rf .npm/
 rm -r node_modules/
 rm package-lock.json
 git checkout -- '.npmrc'
-better_npm_audit_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['devDependencies']['better-npm-audit'])")
 corepack_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['devDependencies']['corepack'])")
 electron_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['devDependencies']['electron'])")
 eslint_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['devDependencies']['eslint'])")
