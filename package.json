@@ -16,7 +16,6 @@
   },
   "homepage": "https://github.com/EIGHTFINITE/DownloadItYourself/releases/latest",
   "dependencies": {
-    "better-npm-audit": "github:EIGHTFINITE/better-npm-audit#main",
     "cloudscraper": "github:EIGHTFINITE/cloudscraper#master",
     "electron": "github:EIGHTFINITE/electron#main",
     "electron-chrome-extensions": "4.9.0",
@@ -29,6 +28,7 @@
     "jquery": "3.7.1"
   },
   "devDependencies": {
+    "better-npm-audit": "github:EIGHTFINITE/better-npm-audit#main",
     "corepack": "0.34.5",
     "electron": "39.2.7",
     "eslint": "9.39.2",
@@ -37,7 +37,6 @@
     "npm-6": "npm:npm@6.14.18"
   },
   "peerDependencies": {
-    "better-npm-audit": "3.11.0",
     "cheerio": "1.1.2",
     "cloudscraper": "4.6.0",
     "electron": "39.2.7",
