@@ -190,7 +190,7 @@ if(process.versions.electron) {
 						console.log('Allowed access to "media" (' + (isString(details.mediaType) ? details.mediaType : 'unknown') + ') permission requested by uBlock Origin')
 					}
 				}
-				else if(permission === 'geolocation' || permission === 'window-management') {
+				else if(permission === 'geolocation' || permission === 'window-management' || permission === 'web-app-installation') {
 					// Is always requested for every extension regardless of the extension's permissions
 					// Allow access without spamming the console
 				}
@@ -214,7 +214,7 @@ if(process.versions.electron) {
 					console.log('Denied access to "media" (' + (isString(details.mediaType) ? details.mediaType : 'unknown') + ') permission requested by ' + (isString(details.embeddingOrigin) ? '"' + details.embeddingOrigin + '"' : 'site'))
 				}
 			}
-			else if(permission === 'geolocation' || permission === 'window-management') {
+			else if(permission === 'geolocation' || permission === 'window-management' || permission === 'web-app-installation') {
 				// Is always requested for every site even internal pages
 				// Deny access without spamming the console
 			}
