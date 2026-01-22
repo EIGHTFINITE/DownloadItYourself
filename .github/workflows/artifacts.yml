@@ -125,7 +125,7 @@ jobs:
         python -c "import sys; print(sys.version)"
         curl -sSo pip.pyz https://bootstrap.pypa.io/pip/zipapp/pip-25.2.pyz
         python pip.pyz -V
-        python pip.pyz install setuptools==57.5.0 wheel
+        python pip.pyz install setuptools==57.5.0 wheel==0.45.1
         python pip.pyz install git+https://github.com/EIGHTFINITE/demjson.git@master
         rm pip.pyz
     - uses: actions/checkout@v6.0.1
@@ -207,7 +207,7 @@ jobs:
         python -c "import sys; print(sys.version)"
         curl -sSo pip.pyz https://bootstrap.pypa.io/pip/zipapp/pip-25.2.pyz
         python pip.pyz -V
-        python pip.pyz install setuptools==57.5.0 wheel
+        python pip.pyz install setuptools==57.5.0 wheel==0.45.1
         python pip.pyz install git+https://github.com/EIGHTFINITE/demjson.git@master
         rm pip.pyz
     - uses: actions/checkout@v6.0.1
