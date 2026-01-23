@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "better-npm-audit": "github:EIGHTFINITE/better-npm-audit#main",
-    "corepack": "0.34.5",
+    "corepack": "0.34.6",
     "electron": "40.0.0",
     "eslint": "9.39.2",
     "neostandard": "0.12.2",
