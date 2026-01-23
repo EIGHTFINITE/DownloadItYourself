@@ -10,7 +10,7 @@ jobs:
   package_json:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v6.0.1
+    - uses: actions/checkout@v6.0.2
       continue-on-error: true
       with:
         ref: ${{ github.event.pull_request.head.ref }}
