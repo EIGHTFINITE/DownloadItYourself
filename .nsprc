@@ -67,6 +67,10 @@
     "active": true,
     "notes": "Only parses sanitized data from the npm registry. Fixed in later versions of npm"
   },
+  "GHSA-34x7-hfp2-rc4v": {
+    "active": true,
+    "notes": "Only parses sanitized data from the npm registry. Fixed in later versions of npm"
+  },
   "GHSA-72xf-g2v4-qvf3": {
     "active": true,
     "notes": "Only parses sanitized data from the npm registry. Fixed in later versions of npm"
