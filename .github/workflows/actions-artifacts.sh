@@ -76,9 +76,11 @@ sed -i '/"dependencies": {/,/}/d' -- 'package.json'
 sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
 sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
 sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
-# Reinstall to fix dependency tree and update the package.json with the latest information from the registry
-bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "corepack@$corepack_version" "npm@$npm_version"
+# Replace bundled npm with the latest version
+sed -i '/offline = true/d' -- '.npmrc'
+bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install "corepack@$corepack_version" "npm@$npm_version"
 rm -rf .npm/
+git checkout -- '.npmrc'
 # Dedupe
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
 rm -rf .npm/
@@ -123,8 +125,10 @@ sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": 
 # Replace bundled npm with the latest version
 cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "corepack@$corepack_version" "npm@$npm_version"
+sed -i '/offline = true/d' -- '.npmrc'
+bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install "corepack@$corepack_version" "npm@$npm_version"
 rm -rf .npm/
+git checkout -- '.npmrc'
 # Dedupe
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
 rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
@@ -161,8 +165,10 @@ sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": 
 # Install
 cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "electron@$electron_version"
+sed -i '/offline = true/d' -- '.npmrc'
+bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install "electron@$electron_version"
 rm -rf .npm/
+git checkout -- '.npmrc'
 # Dedupe
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe
 rm -rf .npm/
@@ -202,7 +208,9 @@ sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": 
 # Install
 cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "electron@$electron_version"
+sed -i '/offline = true/d' -- '.npmrc'
+bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install "electron@$electron_version"
+git checkout -- '.npmrc'
 rm -rf .npm/
 # Dedupe
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js dedupe

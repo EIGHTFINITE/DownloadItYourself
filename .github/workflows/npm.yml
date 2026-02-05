@@ -24,15 +24,10 @@ jobs:
         git restore --source=artifacts -- bin/
         bash --noprofile --norc -e -o pipefail .github/workflows/actions-npm.sh
         node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
-        sed -i '/cache-max = 0/d' -- '.npmrc'
-        sed -i '/only = prod/d' -- '.npmrc'
-        sed -i '/optional = false/d' -- '.npmrc'
-        sed -i '/production = true/d' -- '.npmrc'
         cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
         chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
         bin/linux/x64/node/node-v$node_version-linux-x64/bin/node node_modules/npm/bin/npm-cli.js ls || true
         rm -rf .npm/
-        git checkout -- '.npmrc'
         # Ignore peerDependencies
         sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
         cd ..
