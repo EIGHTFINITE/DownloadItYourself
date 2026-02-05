@@ -1,5 +1,5 @@
 #!/bin/bash
-# Execution starts in .github/workflows/npm.yml or .github/workflows/actions-artifacts.sh
+# Execution starts in .github/workflows/actions-artifacts.sh
 node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
 npm_version=$(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")
 # Correct engines
@@ -21,4 +21,4 @@ if [[ -d 'node_modules/@npmcli' ]]; then
   echo "Bundled npm dependencies found outside of npm"
   exit 1
 fi
-# Execution continues in .github/workflows/npm.yml or .github/workflows/actions-artifacts.sh ...
+# Execution continues in .github/workflows/actions-artifacts.sh

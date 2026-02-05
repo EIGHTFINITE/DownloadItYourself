@@ -231,4 +231,4 @@ bash --noprofile --norc -e -o pipefail .github/workflows/actions-npm.sh
 sed -i '/\/node_modules\//d' -- '.gitignore'
 find node_modules/ -mindepth 2 -maxdepth 3 -type f -name 'package.json' -exec bash -c 'path={}; git add -- "${path:0:-13}"; git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add ${path:13:-13} release artifacts" | sed -n 1p' ';'
 git add -f 'package-lock.json' 'node_modules/.package-lock.json'
-# Execution continues in .github/workflows/artifacts.yml ...
+# Execution continues in .github/workflows/artifacts.yml
