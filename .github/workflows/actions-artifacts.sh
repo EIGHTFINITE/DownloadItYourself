@@ -55,16 +55,15 @@ if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(
 fi
 
 # Node Linux x64
-export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
+node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
 corepack_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['devDependencies']['corepack'])")
 curl -sSo "node-v$node_version-linux-x64.tar.xz" https://nodejs.org/dist/v$node_version/node-v$node_version-linux-x64.tar.xz
 mkdir -p "bin/linux/x64/node"
 tar -xJf "node-v$node_version-linux-x64.tar.xz" -C "bin/linux/x64/node"
 rm "node-v$node_version-linux-x64.tar.xz"
 sed -i '/\/bin\//d' -- '.gitignore'
-# Replace bundled npm with npm 6
-# Later versions fail to create sane dependency trees
-export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest-6'])")
+# Replace bundled npm with the latest version
+npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest'])")
 curl -sSo "npm-$npm_version.tgz" "https://registry.npmjs.org/npm/-/npm-$npm_version.tgz"
 rm -r "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm"
 mkdir "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm"
@@ -121,8 +120,7 @@ sed -i '/"dependencies": {/,/}/d' -- 'package.json'
 sed -i '/"devDependencies": {/,/}/d' -- 'package.json'
 sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
 sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
-# Reinstall to fix dependency tree and update the package.json with the latest information from the registry
-export npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest'])")
+# Replace bundled npm with the latest version
 cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "corepack@$corepack_version" "npm@$npm_version"
@@ -152,7 +150,7 @@ fi
 export force_no_cache=true
 export npm_config_platform=linux
 export npm_config_arch=x64
-export electron_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['devDependencies']['electron'])")
+electron_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['devDependencies']['electron'])")
 # Correct engines
 sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$npm_version\"/" package.json
 # Ignore dependencies, devDependencies, peerDependencies, and bundleDependencies

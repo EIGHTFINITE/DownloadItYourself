@@ -1,7 +1,7 @@
 #!/bin/bash
 # Execution starts in .github/workflows/npm.yml or .github/workflows/actions-artifacts.sh
-export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
-export npm_version=$(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")
+node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
+npm_version=$(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")
 # Correct engines
 sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$npm_version\"/" package.json
 # Ignore devDependencies and bundleDependencies

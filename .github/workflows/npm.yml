@@ -23,7 +23,7 @@ jobs:
         git fetch --depth 1 origin +refs/tags/artifacts:refs/tags/artifacts --no-tags
         git restore --source=artifacts -- bin/
         bash --noprofile --norc -e -o pipefail .github/workflows/actions-npm.sh
-        export node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
+        node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         sed -i '/cache-max = 0/d' -- '.npmrc'
         sed -i '/only = prod/d' -- '.npmrc'
         sed -i '/optional = false/d' -- '.npmrc'
