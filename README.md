@@ -20,7 +20,6 @@ This README is a work in progress. Not all information might be accurate yet. Pl
 | [<img src="https://raw.githubusercontent.com/gorhill/uBlock/master/src/img/ublock.svg" width="31">](https://ublockorigin.com/) | [uBlock Origin](https://ublockorigin.com/) | Raymond Hill (gorhill) | [GPL-3.0](docs/legal/GPL-3.0.txt) | [Open Source](https://github.com/gorhill/uBlock) | &#x2714;&#xFE0F; | Finally, an efficient blocker. Easy on CPU and memory. | 1.69.0 |
 
 <h2>Attribution</h2>
-<p><br></p>
 <p><b>Cogs / Gears Icon</b></p>
 <p> is Copyright (c) 2013 </p>
 <p><b>13ree.design</b></p>
