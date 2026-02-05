@@ -22,7 +22,7 @@ jobs:
           bash --noprofile --norc -e -o pipefail .github/workflows/git-config.sh
           git fetch --depth 1 origin +master:master --no-tags
           npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest'])")
-          sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$npm_version || $npm_version\"/" -- package.json
+          sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$npm_version\"/" -- package.json
           git add package.json
           git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Fix package.json" | sed -n 1p || true
           git push
