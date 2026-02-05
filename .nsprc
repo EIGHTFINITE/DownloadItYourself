@@ -1,6 +1,2 @@
 {
-  "GHSA-p8p7-x288-28g6": {
-    "active": true,
-    "notes": "Only connects to the npm registry and cannot produce SSRF redirects. Fixed in EIGHTFINITE/postman-request and in later versions of npm"
-  }
 }
