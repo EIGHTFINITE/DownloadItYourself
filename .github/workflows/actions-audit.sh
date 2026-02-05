@@ -10,10 +10,8 @@ cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/
 chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 # Install
 better_npm_audit_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['devDependencies']['better-npm-audit'])")
-sed -i '/offline = true/d' -- '.npmrc'
-bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install "better-npm-audit@$better_npm_audit_version"
+bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline "better-npm-audit@$better_npm_audit_version"
 rm -rf .npm/
-git checkout -- '.npmrc'
 # Audit
 actions_PATH="$PATH"
 export PATH="$(pwd)/bin/linux/x64/node/node-v$node_version-linux-x64/bin:$PATH"
@@ -34,12 +32,7 @@ sed -i '/"optionalDependencies": {/,/}/d' -- 'package.json'
 sed -i '/"peerDependencies": {/,/}/d' -- 'package.json'
 sed -i -z 's|  "bundleDependencies": \[\n    ".*"\n  \]|  "bundleDependencies": \[\]|' -- 'package.json'
 # Install
-sed -i '/offline = true/d' -- '.npmrc'
-bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install "corepack@$corepack_version" "electron@$electron_version" "eslint@$eslint_version" "jquery@$jquery_version" "neostandard@$neostandard_version" "npm@$npm_version" "better-npm-audit@$better_npm_audit_version"
-rm -rf .npm/
-git checkout -- '.npmrc'
-# Dedupe
-bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js dedupe
+bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/bin/npm-cli.js install --no-offline "corepack@$corepack_version" "electron@$electron_version" "eslint@$eslint_version" "jquery@$jquery_version" "neostandard@$neostandard_version" "npm@$npm_version" "better-npm-audit@$better_npm_audit_version"
 rm -rf .npm/
 # Audit
 actions_PATH="$PATH"
