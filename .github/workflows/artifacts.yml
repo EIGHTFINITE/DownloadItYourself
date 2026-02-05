@@ -136,7 +136,7 @@ jobs:
       run: |
         node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         # Forbid all
-        if [[ $(find . -type f -path ./.git -prune -o -path ./package-lock.json -prune -o -path ./bin/windows/x64/node/node-v$node_version-win-x64/package-lock.json -prune -o -path ./bin/linux/x64/node/node-v$node_version-linux-x64/lib/package-lock.json -prune -o -path ./bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -path ./bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -path ./extensions/uBlock0.chromium/assets/assets.json -prune -o -path ./node_modules/iconv-lite/encodings/tables -prune -o -name '*.json' -exec jsonlint -s --forbid any-type-at-start,bom,duplicate-keys,non-portable,non-bmp,zero-byte -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        if [[ $(find . -type f -path ./.git -prune -o -path ./package-lock.json -prune -o -path ./bin/windows/x64/node/node-v$node_version-win-x64/package-lock.json -prune -o -path ./bin/linux/x64/node/node-v$node_version-linux-x64/lib/package-lock.json -prune -o -path ./bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -path ./bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -path ./extensions/uBlock0.chromium/assets/assets.json -prune -o -name '*.json' -exec jsonlint -s --forbid any-type-at-start,bom,duplicate-keys,non-portable,non-bmp,zero-byte -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         # Allow non-portable
@@ -148,7 +148,7 @@ jobs:
           then exit 1
         fi
         # Allow non-bmp, zero-byte
-        if [[ $(find ./bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/node_modules/iconv-lite/encodings/tables ./bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/node_modules/iconv-lite/encodings/tables ./node_modules/iconv-lite/encodings/tables -type f -name '*.json' -exec jsonlint -s --allow non-bmp,zero-byte --forbid any-type-at-start,bom,duplicate-keys,non-portable -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        if [[ $(find ./bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/node_modules/iconv-lite/encodings/tables ./bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/node_modules/iconv-lite/encodings/tables -type f -name '*.json' -exec jsonlint -s --allow non-bmp,zero-byte --forbid any-type-at-start,bom,duplicate-keys,non-portable -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
   artifacts_install:
@@ -218,7 +218,7 @@ jobs:
         bash --noprofile --norc -e -o pipefail .github/workflows/git-config.sh
         node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
         # Forbid all
-        if [[ $(find . -type f -path ./.git -prune -o -path ./package-lock.json -prune -o -path ./bin/windows/x64/node/node-v$node_version-win-x64/package-lock.json -prune -o -path ./bin/linux/x64/node/node-v$node_version-linux-x64/lib/package-lock.json -prune -o -path ./bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -path ./bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -path ./extensions/uBlock0.chromium/assets/assets.json -prune -o -path ./node_modules/iconv-lite/encodings/tables -prune -o -name '*.json' -exec jsonlint -s --forbid any-type-at-start,bom,duplicate-keys,non-portable,non-bmp,zero-byte -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        if [[ $(find . -type f -path ./.git -prune -o -path ./package-lock.json -prune -o -path ./bin/windows/x64/node/node-v$node_version-win-x64/package-lock.json -prune -o -path ./bin/linux/x64/node/node-v$node_version-linux-x64/lib/package-lock.json -prune -o -path ./bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -path ./bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/node_modules/iconv-lite/encodings/tables -prune -o -path ./extensions/uBlock0.chromium/assets/assets.json -prune -o -name '*.json' -exec jsonlint -s --forbid any-type-at-start,bom,duplicate-keys,non-portable,non-bmp,zero-byte -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         # Allow non-portable
@@ -230,7 +230,7 @@ jobs:
           then exit 1
         fi
         # Allow non-bmp, zero-byte
-        if [[ $(find ./bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/node_modules/iconv-lite/encodings/tables ./bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/node_modules/iconv-lite/encodings/tables ./node_modules/iconv-lite/encodings/tables -type f -name '*.json' -exec jsonlint -s --allow non-bmp,zero-byte --forbid any-type-at-start,bom,duplicate-keys,non-portable -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        if [[ $(find ./bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/node_modules/iconv-lite/encodings/tables ./bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/node_modules/iconv-lite/encodings/tables -type f -name '*.json' -exec jsonlint -s --allow non-bmp,zero-byte --forbid any-type-at-start,bom,duplicate-keys,non-portable -e utf8 -- '{}' ';' | grep -v -e ': ok' -e ': has errors' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         # Release
