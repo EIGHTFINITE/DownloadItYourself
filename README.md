@@ -22,3 +22,4 @@ This README is a work in progress. Not all information might be accurate yet. Pl
 ## Attribution
 
 **Cogs / Gears Icon**[[1]](https://stock.adobe.com/images/cogs-gears-icon/230449567)[[2]](https://web.archive.org/web/20220511105435/https://www.iconfinder.com/icons/176306/business_cogs_finance_gears_sprockets_thinking_icon)[[3]](https://www.shutterstock.com/image-vector/cogs-gears-icon-professional-pixel-perfect-336130190) is Copyright (c) 2013 **13ree.design**[[1]](https://stock.adobe.com/contributor/205689395/13ree-design)[[2]](https://web.archive.org/web/20220511110355/https://www.iconfinder.com/13ree.design)[[3]](https://www.shutterstock.com/g/13ree.design). Licensed to EIGHTFINITE by [Adobe Inc.](https://www.adobe.com/), [Iconfinder ApS](https://web.archive.org/web/20220511101024/https://www.iconfinder.com/), [Shutterstock Inc.](https://www.shutterstock.com/)
+
