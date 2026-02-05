@@ -1,11 +1,6 @@
 #!/bin/bash
 node_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['engines']['node'])")
-npm_version=$(cat bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")
-# Swap npm versions
-# Keeping this swap in actions means we can audit freely on real Windows machines
-mv -T "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm" "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm-temp"
-mv -T "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm" "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm"
-mv -T "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm-temp" "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm"
+npm_version=$(cat bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")
 cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 # Install
