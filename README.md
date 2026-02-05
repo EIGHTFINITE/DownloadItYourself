@@ -19,43 +19,14 @@ This README is a work in progress. Not all information might be accurate yet. Pl
 | :---: | --- | --- | --- | --- | :---: | --- | :---: |
 | [<img src="https://raw.githubusercontent.com/gorhill/uBlock/master/src/img/ublock.svg" width="31">](https://ublockorigin.com/) | [uBlock Origin](https://ublockorigin.com/) | Raymond Hill (gorhill) | [GPL-3.0](docs/legal/GPL-3.0.txt) | [Open Source](https://github.com/gorhill/uBlock) | &#x2714;&#xFE0F; | Finally, an efficient blocker. Easy on CPU and memory. | 1.69.0 |
 
-## Attribution
-
-<br>
-
-https://stock.adobe.com/images/cogs-gears-icon/230449567
-
-https://web.archive.org/web/20220511105435/https://www.iconfinder.com/icons/176306/business_cogs_finance_gears_sprockets_thinking_icon
-
-https://www.shutterstock.com/image-vector/cogs-gears-icon-professional-pixel-perfect-336130190
-
-Cogs / Gears Icon
-
- is Copyright (c) 2013 
-
-https://stock.adobe.com/contributor/205689395/13ree-design
-
-https://web.archive.org/web/20220511110355/https://www.iconfinder.com/13ree.design
-
-https://www.shutterstock.com/g/13ree.design
-
-13ree.design
-
-. Licensed to EIGHTFINITE by 
-
-https://www.adobe.com/
-
-Adobe Inc.
-
-, 
-
-https://web.archive.org/web/20220511101024/https://www.iconfinder.com/
-
-Iconfinder ApS
-
-, 
-
-https://www.shutterstock.com/
-
-Shutterstock Inc.
-
+<h2>Attribution</h2>
+<p><br></p>
+<p><b>Cogs / Gears Icon</b></p>
+<p> is Copyright (c) 2013 </p>
+<p><b>13ree.design</b></p>
+<p>. Licensed to EIGHTFINITE by </p>
+<p><a href="https://www.adobe.com/">Adobe Inc.</a></p>
+<p>, </p>
+<p><a href="https://web.archive.org/web/20220511101024/https://www.iconfinder.com/">Iconfinder ApS</a></p>
+<p>, </p>
+<p><a href="https://www.shutterstock.com/">Shutterstock Inc.</a></p>
