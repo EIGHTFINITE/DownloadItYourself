@@ -83,10 +83,11 @@ rm -rf .npm/
 bash --noprofile --norc -e -o pipefail .github/workflows/actions-clean-files.sh
 # Reset workspace
 rm -r "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules"
+rm package-lock.json
+rm node_modules/.package-lock.json
 mv -T "node_modules" "bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules"
 sed -i "0,/\"name\": \".*\"/s//\"name\": \"node\"/" -- package-lock.json
 sed -i "0,/\"version\": \".*\"/s//\"version\": \"$node_version\"/" -- package-lock.json
-mv package-lock.json "bin/linux/x64/node/node-v$node_version-linux-x64/lib/package-lock.json"
 git checkout -- 'package.json'
 # Commit
 if [[ $(stat -c%s "bin/linux/x64/node/node-v$node_version-linux-x64/bin/node") -gt 104857600 ]]; then
@@ -127,10 +128,11 @@ rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 bash --noprofile --norc -e -o pipefail .github/workflows/actions-clean-files.sh
 # Reset workspace
 rm -r "bin/windows/x64/node/node-v$node_version-win-x64/node_modules"
+rm package-lock.json
+rm node_modules/.package-lock.json
 mv -T "node_modules" "bin/windows/x64/node/node-v$node_version-win-x64/node_modules"
 sed -i "0,/\"name\": \".*\"/s//\"name\": \"node\"/" -- package-lock.json
 sed -i "0,/\"version\": \".*\"/s//\"version\": \"$node_version\"/" -- package-lock.json
-mv package-lock.json "bin/windows/x64/node/node-v$node_version-win-x64/package-lock.json"
 git checkout -- 'package.json'
 # Commit
 git add "bin/windows/x64/node/node-v$node_version-win-x64"
