@@ -20,9 +20,9 @@ This README is a work in progress. Not all information might be accurate yet. Pl
 | [<img src="https://raw.githubusercontent.com/gorhill/uBlock/master/src/img/ublock.svg" width="31">](https://ublockorigin.com/) | [uBlock Origin](https://ublockorigin.com/) | Raymond Hill (gorhill) | [GPL-3.0](docs/legal/GPL-3.0.txt) | [Open Source](https://github.com/gorhill/uBlock) | &#x2714;&#xFE0F; | Finally, an efficient blocker. Easy on CPU and memory. | 1.69.0 |
 
 <h2>Attribution</h2>
-<p><b>Cogs / Gears Icon</b><a href="https://stock.adobe.com/images/cogs-gears-icon/230449567">[0]</a><a href="https://web.archive.org/web/20220511105435/https://www.iconfinder.com/icons/176306/business_cogs_finance_gears_sprockets_thinking_icon">[1]</a><a href="https://www.shutterstock.com/image-vector/cogs-gears-icon-professional-pixel-perfect-336130190">[2]</a></p>
+<p><b>Cogs / Gears Icon</b><a href="https://stock.adobe.com/images/cogs-gears-icon/230449567">[1]</a><a href="https://web.archive.org/web/20220511105435/https://www.iconfinder.com/icons/176306/business_cogs_finance_gears_sprockets_thinking_icon">[2]</a><a href="https://www.shutterstock.com/image-vector/cogs-gears-icon-professional-pixel-perfect-336130190">[3]</a></p>
 <p> is Copyright (c) 2013 </p>
-<p><b>13ree.design</b><a href="https://stock.adobe.com/contributor/205689395/13ree-design">[0]</a><a href="https://web.archive.org/web/20220511110355/https://www.iconfinder.com/13ree.design">[1]</a><a href="https://www.shutterstock.com/g/13ree.design">[2]</a></p>
+<p><b>13ree.design</b><a href="https://stock.adobe.com/contributor/205689395/13ree-design">[1]</a><a href="https://web.archive.org/web/20220511110355/https://www.iconfinder.com/13ree.design">[2]</a><a href="https://www.shutterstock.com/g/13ree.design">[3]</a></p>
 <p>. Licensed to EIGHTFINITE by </p>
 <p><a href="https://www.adobe.com/">Adobe Inc.</a></p>
 <p>, </p>
