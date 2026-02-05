@@ -141,9 +141,6 @@ if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(
 fi
 
 # Electron Linux x64
-export force_no_cache=true
-export npm_config_platform=linux
-export npm_config_arch=x64
 electron_version=$(cat package.json | python -c "import sys, json; print(json.load(sys.stdin)['devDependencies']['electron'])")
 # Correct engines
 sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$npm_version\"/" package.json
@@ -157,32 +154,39 @@ cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/
 chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "electron@$electron_version"
 rm -rf .npm/
-export npm_config_target=$(cat node_modules/electron/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")
+electron_version_target=$(cat node_modules/electron/package.json | python -c "import sys, json; print(json.load(sys.stdin)['version'])")
+export force_no_cache=true
+export npm_config_platform=linux
+export npm_config_arch=x64
+export npm_config_target=$electron_version_target
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node "node_modules/electron/install.js"
+unset force_no_cache
+unset npm_config_platform
+unset npm_config_arch
+unset npm_config_target
 rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-mkdir -p "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64"
-mv -T node_modules/electron/dist "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64"
+mkdir -p "bin/linux/x64/electron/electron-v$electron_version_target-linux-x64"
+mv -T node_modules/electron/dist "bin/linux/x64/electron/electron-v$electron_version_target-linux-x64"
 rm -r node_modules/
 rm package-lock.json
 git checkout -- 'package.json'
-if [[ $(stat -c%s "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/electron") -gt 104857600 ]]; then
-  split -b 104857600 --numeric-suffixes=1 --suffix-length=3 "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/electron" "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/electron."
-  rm "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/electron"
+if [[ $(stat -c%s "bin/linux/x64/electron/electron-v$electron_version_target-linux-x64/electron") -gt 104857600 ]]; then
+  split -b 104857600 --numeric-suffixes=1 --suffix-length=3 "bin/linux/x64/electron/electron-v$electron_version_target-linux-x64/electron" "bin/linux/x64/electron/electron-v$electron_version_target-linux-x64/electron."
+  rm "bin/linux/x64/electron/electron-v$electron_version_target-linux-x64/electron"
 fi
-if [[ $(stat -c%s "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/libvk_swiftshader.so") -gt 104857600 ]]; then
-  split -b 104857600 --numeric-suffixes=1 --suffix-length=3 "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/libvk_swiftshader.so" "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/libvk_swiftshader.so."
-  rm "bin/linux/x64/electron/electron-v$npm_config_target-linux-x64/libvk_swiftshader.so"
+if [[ $(stat -c%s "bin/linux/x64/electron/electron-v$electron_version_target-linux-x64/libvk_swiftshader.so") -gt 104857600 ]]; then
+  split -b 104857600 --numeric-suffixes=1 --suffix-length=3 "bin/linux/x64/electron/electron-v$electron_version_target-linux-x64/libvk_swiftshader.so" "bin/linux/x64/electron/electron-v$electron_version_target-linux-x64/libvk_swiftshader.so."
+  rm "bin/linux/x64/electron/electron-v$electron_version_target-linux-x64/libvk_swiftshader.so"
 fi
 sed -i '/\/bin\//d' -- '.gitignore'
 git add "bin/linux/x64/electron"
-git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 Electron $npm_config_target release artifacts" | sed -n 1p
+git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Linux x64 Electron $electron_version_target release artifacts" | sed -n 1p
 git checkout -- '.gitignore'
 if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
   then exit 1
 fi
 
 # Electron Windows x64
-export npm_config_platform=win32
 # Correct engines
 sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$npm_version\"/" package.json
 # Ignore dependencies, devDependencies, peerDependencies, and bundleDependencies
@@ -195,20 +199,28 @@ cat bin/linux/x64/node/node-v$node_version-linux-x64/bin/node.* > bin/linux/x64/
 chmod +x bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node bin/linux/x64/node/node-v$node_version-linux-x64/lib/node_modules/npm/bin/npm-cli.js install --no-offline "electron@$electron_version"
 rm -rf .npm/
+export force_no_cache=true
+export npm_config_platform=win32
+export npm_config_arch=x64
+export npm_config_target=$electron_version_target
 bin/linux/x64/node/node-v$node_version-linux-x64/bin/node "node_modules/electron/install.js"
+unset force_no_cache
+unset npm_config_platform
+unset npm_config_arch
+unset npm_config_target
 rm bin/linux/x64/node/node-v$node_version-linux-x64/bin/node
-mkdir -p "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
-mv -T node_modules/electron/dist "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64"
+mkdir -p "bin/windows/x64/electron/electron-v$electron_version_target-win32-x64"
+mv -T node_modules/electron/dist "bin/windows/x64/electron/electron-v$electron_version_target-win32-x64"
 rm -r node_modules/
 rm package-lock.json
 git checkout -- 'package.json'
-if [[ $(stat -c%s "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64/electron.exe") -gt 104857600 ]]; then
-  split -b 104857600 --numeric-suffixes=1 --suffix-length=3 "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64/electron.exe" "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64/electron.exe."
-  rm "bin/windows/x64/electron/electron-v$npm_config_target-win32-x64/electron.exe"
+if [[ $(stat -c%s "bin/windows/x64/electron/electron-v$electron_version_target-win32-x64/electron.exe") -gt 104857600 ]]; then
+  split -b 104857600 --numeric-suffixes=1 --suffix-length=3 "bin/windows/x64/electron/electron-v$electron_version_target-win32-x64/electron.exe" "bin/windows/x64/electron/electron-v$electron_version_target-win32-x64/electron.exe."
+  rm "bin/windows/x64/electron/electron-v$electron_version_target-win32-x64/electron.exe"
 fi
 sed -i '/\/bin\//d' -- '.gitignore'
 git add "bin/windows/x64/electron"
-git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 Electron $npm_config_target release artifacts" | sed -n 1p
+git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 Electron $electron_version_target release artifacts" | sed -n 1p
 git checkout -- '.gitignore'
 if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
   then exit 1
