@@ -19,6 +19,24 @@ This README is a work in progress. Not all information might be accurate yet. Pl
 | :---: | --- | --- | --- | --- | :---: | --- | :---: |
 | [<img src="https://raw.githubusercontent.com/gorhill/uBlock/master/src/img/ublock.svg" width="31">](https://ublockorigin.com/) | [uBlock Origin](https://ublockorigin.com/) | Raymond Hill (gorhill) | [GPL-3.0](docs/legal/GPL-3.0.txt) | [Open Source](https://github.com/gorhill/uBlock) | &#x2714;&#xFE0F; | Finally, an efficient blocker. Easy on CPU and memory. | 1.69.0 |
 
+## Node dependencies
+
+| Icon | Name | Author | License | Source&nbsp;Code | Distribution | Description | Version |
+| :---: | --- | --- | --- | --- | :---: | --- | :---: |
+| [<img src="" width="31">]() | [corepack]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
+| [<img src="" width="31">]() | [npm]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
+| [<img src="" width="31">]() | [node_modules/debug]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
+| [<img src="" width="31">]() | [node_modules/electron]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
+| [<img src="" width="31">]() | [node_modules/electron-chrome-extensions]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
+| [<img src="" width="31">]() | [node_modules/lodash.isfunction]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
+| [<img src="" width="31">]() | [node_modules/lodash.isinteger]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
+| [<img src="" width="31">]() | [node_modules/lodash.isstring]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
+| [<img src="" width="31">]() | [node_modules/ms]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
+| [<img src="" width="31">]() | [node_modules/spdx-exceptions]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
+| [<img src="" width="31">]() | [node_modules/spdx-expression-parse]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
+| [<img src="" width="31">]() | [node_modules/spdx-license-ids]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
+| [<img src="" width="31">]() | [node_modules/top-user-agents]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
+
 ## Attribution
 
 **Cogs / Gears Icon**[[1]](https://stock.adobe.com/images/cogs-gears-icon/230449567)[[2]](https://web.archive.org/web/20220511105435/https://www.iconfinder.com/icons/176306/business_cogs_finance_gears_sprockets_thinking_icon)[[3]](https://www.shutterstock.com/image-vector/cogs-gears-icon-professional-pixel-perfect-336130190) is Copyright (c) 2013 **13ree.design**[[1]](https://stock.adobe.com/contributor/205689395/13ree-design)[[2]](https://web.archive.org/web/20220511110355/https://www.iconfinder.com/13ree.design)[[3]](https://www.shutterstock.com/g/13ree.design). Licensed to EIGHTFINITE by [Adobe Inc.](https://www.adobe.com/), [Iconfinder ApS](https://web.archive.org/web/20220511101024/https://www.iconfinder.com/), [Shutterstock Inc.](https://www.shutterstock.com/)
