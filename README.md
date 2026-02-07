@@ -23,19 +23,19 @@ This README is a work in progress. Not all information might be accurate yet. Pl
 
 | Icon | Name | Author | License | Source&nbsp;Code | Distribution | Description | Version |
 | :---: | --- | --- | --- | --- | :---: | --- | :---: |
-| [<img src="" width="31">]() | [corepack]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
-| [<img src="" width="31">]() | [npm]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
-| [<img src="" width="31">]() | [node_modules/debug]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
-| [<img src="" width="31">]() | [node_modules/electron]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
-| [<img src="" width="31">]() | [node_modules/electron-chrome-extensions]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
-| [<img src="" width="31">]() | [node_modules/lodash.isfunction]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
-| [<img src="" width="31">]() | [node_modules/lodash.isinteger]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
-| [<img src="" width="31">]() | [node_modules/lodash.isstring]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
-| [<img src="" width="31">]() | [node_modules/ms]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
-| [<img src="" width="31">]() | [node_modules/spdx-exceptions]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
-| [<img src="" width="31">]() | [node_modules/spdx-expression-parse]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
-| [<img src="" width="31">]() | [node_modules/spdx-license-ids]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
-| [<img src="" width="31">]() | [node_modules/top-user-agents]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
+| [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">]() | [corepack]() |  |  | [Open Source](https://github.com/nodejs/corepack.git) | &#x2714;&#xFE0F; |  | `corepack@0.34.6` |
+| [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">]() | [npm]() |  |  | [Open Source](git+https://github.com/npm/cli.git) | &#x2714;&#xFE0F; |  | `npm@11.9.0` |
+| [<img src="" width="31">]() | [debug]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
+| [<img src="" width="31">]() | [electron]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
+| [<img src="" width="31">]() | [electron-chrome-extensions]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
+| [<img src="" width="31">]() | [lodash.isfunction]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
+| [<img src="" width="31">]() | [lodash.isinteger]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
+| [<img src="" width="31">]() | [lodash.isstring]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
+| [<img src="" width="31">]() | [ms]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
+| [<img src="" width="31">]() | [spdx-exceptions]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
+| [<img src="" width="31">]() | [spdx-expression-parse]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
+| [<img src="" width="31">]() | [spdx-license-ids]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
+| [<img src="" width="31">]() | [top-user-agents]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
 
 ## Attribution
 
