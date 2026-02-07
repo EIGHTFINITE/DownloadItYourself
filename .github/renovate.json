@@ -11,7 +11,7 @@
   "rollbackPrs": true,
   "packageRules": [
     {
-      "matchPackageNames": ["corepack", "electron", "eslint", "neostandard", "node", "npm", "spdx-expression-parse"],
+      "matchPackageNames": ["corepack", "electron", "electron-chrome-extensions", "eslint", "neostandard", "node", "npm", "spdx-expression-parse"],
       "labels": ["dependencies", "automerge"],
       "automerge": true,
       "automergeType": "pr",
