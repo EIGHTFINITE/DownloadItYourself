@@ -49,7 +49,7 @@ call:git fsck --unreachable --no-reflogs
 for /f "tokens=1,2 delims=:, " %%a in (' find ":" ^< "package.json" ') do (
   set "%%~a-version=%%~b"
 )
-call:git checkout refs/tags/artifacts -- "bin/linux/x64/node/node-v%node-version%-linux-x64/lib/" bin/windows/ extensions/ node_modules/ package-lock.json
+call:git checkout refs/tags/artifacts -- bin/windows/ extensions/ node_modules/ package-lock.json
 call:git clean -ffxe "bin/windows/x64/electron/electron-v%electron-version%-win32-x64/electron.exe" -- bin/ extensions/ node_modules/
-call:git reset -- "bin/linux/x64/node/node-v%node-version%-linux-x64/lib/" bin/windows/ extensions/ node_modules/ package-lock.json
+call:git reset -- bin/windows/ extensions/ node_modules/ package-lock.json
 cmd /c "bin\windows\x64\node\node-v%node-version%-win-x64\node" --use_strict index.js
