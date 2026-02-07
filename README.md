@@ -23,8 +23,8 @@ This README is a work in progress. Not all information might be accurate yet. Pl
 
 | Icon | Name | Author | License | Source&nbsp;Code | Distribution | Description | Version |
 | :---: | --- | --- | --- | --- | :---: | --- | :---: |
-| [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">]() | [corepack]() |  |  | [Open Source](https://github.com/nodejs/corepack) | &#x2714;&#xFE0F; |  | `corepack@0.34.6` |
-| [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20square/n.svg" width="31">]() | [npm]() |  |  | [Open Source](https://github.com/npm/cli) | &#x2714;&#xFE0F; |  | `npm@11.9.0` |
+| [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">]() | [corepack]() | nodejs |  | [Open Source](https://github.com/nodejs/corepack) | &#x2714;&#xFE0F; |  | `corepack@0.34.6` |
+| [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20square/n.svg" width="31">]() | [npm]() | GitHub Inc. |  | [Open Source](https://github.com/npm/cli) | &#x2714;&#xFE0F; |  | `npm@11.9.0` |
 | [<img src="" width="31">]() | [debug]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
 | [<img src="" width="31">]() | [electron]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
 | [<img src="" width="31">]() | [electron-chrome-extensions]() |  |  | [Open Source]() | &#x2714;&#xFE0F; |  | `` |
