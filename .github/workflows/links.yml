@@ -20,12 +20,12 @@ jobs:
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       with:
-        args: '-m 0 -a "200" -t 300 --max-retries 0 --max-concurrency 1 --include-mail --require-https --include-wikilinks --format detailed -u "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" -- README.html'
+        args: '-m 0 -a "200" -t 300 --max-retries 0 --max-concurrency 1 --include-mail --require-https --include-wikilinks --format detailed -u "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36" -- README.html'
         fail: false # Don't fail action on broken links
     - name: Links
       shell: bash
       run: |
-        if [[ $(cat lychee/out.md | grep -Fe '- [ ] [' | grep -vFe '- [ ] [429] https://www.npmjs.com/package/' -e '- [ ] [403] https://www.shutterstock.com/' -e '- [ ] [403] https://www.pixiv.net/' -e '- [ ] [ERROR] https://www.pixiv.net/' -e '- [ ] [ERROR] https://www.adobe.com/ |' -e '- [ ] [TIMEOUT] https://www.adobe.com/ |' -e '- [ ] [ERROR] https://stock.adobe.com/' -e '- [ ] [302] https://stock.adobe.com/' -e '- [ ] [403] https://stock.adobe.com/' -e '- [ ] [500] https://stock.adobe.com/' -e '- [ ] [TIMEOUT] https://web.archive.org/web/' -e '- [ ] [ERROR] https://www.npmjs.com/package/' -e '- [ ] [403] https://www.npmjs.com/package/' -e '- [ ] [408] https://www.npmjs.com/package/' -e '- [ ] [500] https://www.npmjs.com/package/' -e '- [ ] [503] https://www.npmjs.com/package/' -e '- [ ] [503] https://web.archive.org/web/' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
+        if [[ $(cat lychee/out.md | grep -Fe '- [ ] [' | grep -vFe '- [ ] [429] https://www.npmjs.com/package/' -e '- [ ] [403] https://www.shutterstock.com/' -e '- [ ] [403] https://www.pixiv.net/' -e '- [ ] [ERROR] https://www.pixiv.net/' -e '- [ ] [ERROR] https://www.adobe.com/ |' -e '- [ ] [TIMEOUT] https://www.adobe.com/ |' -e '- [ ] [ERROR] https://stock.adobe.com/' -e '- [ ] [302] https://stock.adobe.com/' -e '- [ ] [403] https://stock.adobe.com/' -e '- [ ] [500] https://stock.adobe.com/' -e '- [ ] [TIMEOUT] https://web.archive.org/web/' -e '- [ ] [503] https://web.archive.org/web/' -e '- [ ] [502] https://web.archive.org/web/' -e '- [ ] [500] https://web.archive.org/web/' -e '- [ ] [302] https://web.archive.org/web/' -e '- [ ] [ERROR] https://www.npmjs.com/package/' -e '- [ ] [403] https://www.npmjs.com/package/' -e '- [ ] [408] https://www.npmjs.com/package/' -e '- [ ] [500] https://www.npmjs.com/package/' -e '- [ ] [503] https://www.npmjs.com/package/' | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
           then exit 1
         fi
         rm -r lychee/
