@@ -1,0 +1,9 @@
+[submodule "bin/windows/x64/git/PortableGit-2.53.0-64-bit/dev/mqueue"]
+	path = bin/windows/x64/git/PortableGit-2.53.0-64-bit/dev/mqueue
+	url = https://github.com/EIGHTFINITE/void.git
+[submodule "bin/windows/x64/git/PortableGit-2.53.0-64-bit/dev/shm"]
+	path = bin/windows/x64/git/PortableGit-2.53.0-64-bit/dev/shm
+	url = https://github.com/EIGHTFINITE/void.git
+[submodule "bin/windows/x64/git/PortableGit-2.53.0-64-bit/tmp"]
+	path = bin/windows/x64/git/PortableGit-2.53.0-64-bit/tmp
+	url = https://github.com/EIGHTFINITE/void.git
