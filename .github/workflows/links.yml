@@ -20,7 +20,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       with:
-        args: '-m 0 -a "200" -t 300 --max-retries 0 --max-concurrency 1 --include-mail --require-https --include-wikilinks --format detailed -u "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36" -- README.html'
+        args: '-m 0 -a "200" -t 300 --max-retries 0 --host-concurrency 1 --include-mail --require-https --include-wikilinks --format detailed -u "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36" -- README.html'
         fail: false # Don't fail action on broken links
     - name: Links
       shell: bash
