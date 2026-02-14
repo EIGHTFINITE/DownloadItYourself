@@ -1,0 +1,16 @@
+{
+  "author": "Electron Community",
+  "bin": {
+    "electron": "cli.js"
+  },
+  "description": "Build cross platform desktop apps with JavaScript, HTML, and CSS",
+  "keywords": [
+    "electron"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "electron",
+  "repository": "https://github.com/electron/electron",
+  "types": "electron.d.ts",
+  "version": "40.4.1"
+}
