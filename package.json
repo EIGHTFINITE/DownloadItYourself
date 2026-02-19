@@ -30,13 +30,13 @@
   "devDependencies": {
     "better-npm-audit": "github:EIGHTFINITE/better-npm-audit#main",
     "corepack": "0.34.6",
-    "electron": "40.5.0",
+    "electron": "40.6.0",
     "eslint": "10.0.0",
     "neostandard": "0.12.2",
     "npm": "11.10.0"
   },
   "peerDependencies": {
-    "electron": "40.5.0",
+    "electron": "40.6.0",
     "electron-chrome-extensions": "4.9.0",
     "spdx-expression-parse": "4.0.0",
     "top-user-agents": "1.0.66"
