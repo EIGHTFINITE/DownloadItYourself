@@ -24,7 +24,7 @@ This README is a work in progress. Not all information might be accurate yet. Pl
 | Icon | Name | Author | License | Source Code | Distribution | Description | Version |
 | :---: | --- | --- | --- | --- | :---: | --- | :---: |
 | [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">]() | [corepack]() | Corepack contributors | MIT | [Open Source](https://github.com/nodejs/corepack) | &#x2714;&#xFE0F; |  | `corepack@0.34.6` |
-| [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20square/n.svg" width="31">]() | [npm]() | GitHub Inc. | npm license | [Open Source](https://github.com/npm/cli) | &#x2714;&#xFE0F; |  | `npm@11.10.0` |
+| [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20square/n.svg" width="31">]() | [npm]() | GitHub Inc. | npm license | [Open Source](https://github.com/npm/cli) | &#x2714;&#xFE0F; |  | `npm@11.10.1` |
 | [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">]() | [debug]() | Josh Junon | MIT | [Open Source](https://github.com/debug-js/debug) | &#x2714;&#xFE0F; |  | `debug@4.4.3` |
 | [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">]() | [ms]() |  | MIT | [Open Source](vercel/ms) | &#x2714;&#xFE0F; |  | `ms@2.1.3` |
 | [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">]() | [electron]() | Electron Community | MIT | [Open Source](https://github.com/electron/electron) | &#x2714;&#xFE0F; |  | `electron@40.4.1` |
