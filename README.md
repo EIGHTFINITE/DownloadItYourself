@@ -34,7 +34,7 @@ This README is a work in progress. Not all information might be accurate yet. Pl
 | [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">]() | [lodash.isstring]() | John-David Dalton | MIT | [Open Source](lodash/lodash) | &#x2714;&#xFE0F; |  | `lodash.isstring@4.0.1` |
 | [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">]() | [spdx-exceptions]() | The Linux Foundation | CC-BY-3.0 | [Open Source](kemitchell/spdx-exceptions.json) | &#x2714;&#xFE0F; |  | `spdx-exceptions@2.5.0` |
 | [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">]() | [spdx-expression-parse]() | Kyle E. Mitchell | MIT | [Open Source](jslicense/spdx-expression-parse.js) | &#x2714;&#xFE0F; |  | `spdx-expression-parse@4.0.0` |
-| [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">]() | [spdx-license-ids]() | Shinnosuke Watanabe | CC0-1.0 | [Open Source](jslicense/spdx-license-ids) | &#x2714;&#xFE0F; |  | `spdx-license-ids@3.0.22` |
+| [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">]() | [spdx-license-ids]() | Shinnosuke Watanabe | CC0-1.0 | [Open Source](jslicense/spdx-license-ids) | &#x2714;&#xFE0F; |  | `spdx-license-ids@3.0.23` |
 | [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">]() | [top-user-agents]() | Kiko Beats | MIT | [Open Source](https://github.com/Kikobeats/top-user-agents) | &#x2714;&#xFE0F; |  | `top-user-agents@1.0.66` |
 
 ## Attribution
