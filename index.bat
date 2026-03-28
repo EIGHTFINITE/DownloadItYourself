@@ -49,7 +49,11 @@ call:git reflog expire --expire-unreachable=all --all
 for /f "tokens=1,2 delims=:, " %%a in (' find ":" ^< "package.json" ') do (
   set "%%~a-version=%%~b"
 )
+echo git Checkout
 call:git checkout refs/tags/artifacts -- bin/windows/ extensions/ node_modules/ package-lock.json
+echo git Clean
 call:git clean -ffxe "bin/windows/x64/electron/electron-v%electron-version%-win32-x64/electron.exe" -- bin/ extensions/ node_modules/
+echo git Reset
 call:git reset -- bin/windows/ extensions/ node_modules/ package-lock.json
+echo Ready to launch
 cmd /c "bin\windows\x64\node\node-v%node-version%-win-x64\node" --use_strict index.js
