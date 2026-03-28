@@ -35,6 +35,7 @@ if(process.versions.electron) {
 	const { ElectronChromeExtensions } = require('electron-chrome-extensions')
 	const isInt = require('lodash.isinteger')
 	const isString = require('lodash.isstring')
+	const randomInteger = require('./lib/randomInteger.js')
 	const electronUserAgent = require('./node_modules/top-user-agents/index.json')[0]
 	console.log('User Agent set to "' + electronUserAgent + '"')
 
@@ -227,9 +228,20 @@ if(process.versions.electron) {
 		console.log('Initializing web browser')
 		await browserWindow.loadURL('about:blank')
 		console.log('Starting uBlock Origin')
+		const randomInt = randomInteger(0,2);
 		// One real web request is needed for uBlock Origin to load its filter lists
 		// Unfortunately this is the only real site that's reserved, functional, and without trackers
-		await browserWindow.loadURL('https://www.example.com/')
+		if(randomInt === 0) {
+			await browserWindow.loadURL('https://www.example.com/')
+		}
+		else if(randomInt === 1) {
+			await browserWindow.loadURL('https://www.example.net/')
+		}
+		else { // randomInt === 2
+			await browserWindow.loadURL('https://www.example.org/')
+		}
+		// Uncomment the next line of code to test if uBlock Origin is functioning correctly
+		//await browserWindow.loadURL('https://browserleaks.com/proxy')
 
 		// Start processing the downloads
 		const downloadFiles = async () => {
