@@ -15,10 +15,11 @@ jobs:
       shell: bash
       run: |
         bash --noprofile --norc -e -o pipefail .github/workflows/git-config.sh
-        p7zip_version=$(curl -sSL "https://www.7-zip.org/" | tr '"' '\n' | tr "'" '\n' | grep -E '^a\/7z[0-9]+-x64\.exe$' | head -1)
+        p7zip_version=$(curl -sS "https://api.github.com/repos/ip7z/7zip/releases/latest" | python -c "import sys, json; print(json.load(sys.stdin)['tag_name'])")
         echo "$p7zip_version"
-        p7zip_version=${p7zip_version:4:-8}
-        echo "$p7zip_version"
+        p7zip_short=${p7zip_version//./}
+        echo "$p7zip_short"
+        sed -i "0,/\"p7zip-short\": \".*\"/s//\"p7zip-short\": \"$p7zip_short\"/" downloadlist.json
         sed -i "0,/\"p7zip-version\": \".*\"/s//\"p7zip-version\": \"$p7zip_version\"/" downloadlist.json
         git add downloadlist.json
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update 7z to $p7zip_version" || true
@@ -32,7 +33,7 @@ jobs:
         committer: GitHub <noreply@github.com>
         title: "Update 7z to ${{ env.p7zip_version }}"
         body: |
-          Update 7-Zip to the latest version found on https://www.7-zip.org/
+          Update 7-Zip to the latest version found on https://github.com/ip7z/7zip/releases
           
           Changelog: https://www.7-zip.org/history.txt
         labels: automerge
