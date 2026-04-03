@@ -31,7 +31,7 @@
     "better-npm-audit": "github:EIGHTFINITE/better-npm-audit#main",
     "corepack": "0.34.6",
     "electron": "41.1.1",
-    "eslint": "10.1.0",
+    "eslint": "10.2.0",
     "neostandard": "0.13.0",
     "npm": "11.12.1"
   },
