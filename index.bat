@@ -41,7 +41,7 @@ call:git config gc.auto 0
 call:git remote add origin https://github.com/EIGHTFINITE/DownloadItYourself.call:git 2>nul
 call:git remote set-url origin https://github.com/EIGHTFINITE/DownloadItYourself.git
 call:git fetch --force --all --tags
-call:git reset --hard
+call:git reset --hard refs/remotes/origin/master
 call:git checkout -B master refs/remotes/origin/master
 call:git reflog expire --expire-unreachable=all --all
 call:git gc --prune=all
