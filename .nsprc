@@ -1,2 +1,14 @@
 {
+  "GHSA-f886-m6hf-6m8v": {
+    "active": true,
+    "notes": "Will be addressed by npm in a future dependencies update"
+  },
+  "GHSA-3v7f-55p6-f55p": {
+    "active": true,
+    "notes": "Will be addressed by npm in a future dependencies update"
+  },
+  "GHSA-c2c7-rcm5-vvqj": {
+    "active": true,
+    "notes": "Will be addressed by npm in a future dependencies update"
+  }
 }
