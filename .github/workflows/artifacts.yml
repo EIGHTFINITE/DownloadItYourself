@@ -74,7 +74,9 @@ jobs:
           then exit 1
         fi
         return_commit="$(git log -1 --format=%H)"
-        git -c user.name="GitHub" -c user.email="noreply@github.com" rebase refs/tags/artifacts
+        git -c user.name="GitHub" -c user.email="noreply@github.com" rebase refs/tags/artifacts 2>/dev/null || true
+        git checkout refs/tags/artifacts -- .gitattributes
+        git rebase --continue || true
         git tag -f artifacts
         git push -f origin refs/tags/artifacts:refs/tags/artifacts
         if [[ $(git status --porcelain | tee /dev/stderr | head -c1 | wc -c) -ne 0 || $(git clean -dffx | tee /dev/stderr | head -c1 | wc -c) -ne 0 ]]
