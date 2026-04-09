@@ -45,7 +45,6 @@ call:git reset --hard
 call:git checkout -B master refs/remotes/origin/master
 call:git reflog expire --expire-unreachable=all --all
 call:git gc --prune=all
-call:git fsck --unreachable --no-reflogs
 for /f "tokens=1,2 delims=:, " %%a in (' find ":" ^< "package.json" ') do (
   set "%%~a-version=%%~b"
 )
