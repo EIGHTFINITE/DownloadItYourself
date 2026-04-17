@@ -1,0 +1,12 @@
+0 verbose cli /usr/local/bin/node /usr/local/bin/npm
+1 info using npm@10.9.7
+2 info using node@v22.22.2
+3 silly config load:file:/usr/local/lib/node_modules/npm/npmrc
+4 silly config load:file:/workspace/npm-jnoPLn/.npmrc
+5 silly config load:file:/usr/local/etc/npmrc
+6 verbose title npm pack
+7 verbose argv "pack" "--ignore-scripts"
+8 verbose logfile logs-max:10 dir:/workspace/npm-jnoPLn/.npm-cache/_logs/2026-04-16T01_20_59_393Z-
+9 verbose logfile /workspace/npm-jnoPLn/.npm-cache/_logs/2026-04-16T01_20_59_393Z-debug-0.log
+10 silly logfile done cleaning log files
+11 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
