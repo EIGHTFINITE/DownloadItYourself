@@ -23,11 +23,11 @@
       "file": [
         {
           "match-start": "GTNH-daily-",
-          "match-end": "-mmcprism-java17-25"
+          "match-end": "-mmcprism-java17-25.zip"
         },
         {
           "match-start": "GTNH-daily-",
-          "match-end": "-server-java17-25"
+          "match-end": "-server-java17-25.zip"
         }
       ],
       "unpack": [
