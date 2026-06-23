@@ -22,11 +22,11 @@
       "download": "https://github.com/GTNewHorizons/DreamAssemblerXXL/actions/workflows/daily-modpack-build.yml",
       "file": [
         {
-          "match-start": "gtnh-daily-",
+          "match-start": "GTNH-daily-",
           "match-end": "-mmcprism-java17-25"
         },
         {
-          "match-start": "gtnh-daily-",
+          "match-start": "GTNH-daily-",
           "match-end": "-server-java17-25"
         }
       ],
