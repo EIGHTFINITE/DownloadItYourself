@@ -31,8 +31,8 @@
         }
       ],
       "unpack": [
-        ["zip", "zip", "one"],
-        ["zip", "zip", "all"]
+        ["zip", "one"],
+        ["zip", "all"]
       ],
       "type": "config",
       "priority": 1
