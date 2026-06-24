@@ -120,7 +120,7 @@ jobs:
     needs: artifacts
     if: needs.artifacts.result == 'success'
     steps:
-    - uses: actions/setup-python@v6.2.0
+    - uses: actions/setup-python@v6.3.0
       with:
         python-version: '3.11'
     - name: Build demjson
@@ -173,7 +173,7 @@ jobs:
     needs: [artifacts_jsonlint, artifacts_audit]
     if: ${{ needs.artifacts_jsonlint.result == 'success' && needs.artifacts_audit.result == 'success' }}
     steps:
-    - uses: actions/setup-python@v6.2.0
+    - uses: actions/setup-python@v6.3.0
       with:
         python-version: '3.11'
     - name: Build demjson
