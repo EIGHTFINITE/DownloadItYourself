@@ -12,7 +12,7 @@ jobs:
   artifacts:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v7.0.0
+    - uses: actions/checkout@v7.0.1
     - name: Artifacts
       shell: bash
       run: |
@@ -41,7 +41,7 @@ jobs:
     needs: artifacts
     if: needs.artifacts.result == 'success'
     steps:
-    - uses: actions/checkout@v7.0.0
+    - uses: actions/checkout@v7.0.1
     - name: Files
       shell: bash
       run: |
@@ -132,7 +132,7 @@ jobs:
         python pip.pyz install setuptools==57.5.0 wheel==0.45.1
         python pip.pyz install git+https://github.com/EIGHTFINITE/demjson.git@master
         rm pip.pyz
-    - uses: actions/checkout@v7.0.0
+    - uses: actions/checkout@v7.0.1
       with:
         ref: artifacts
     - name: jsonlint
@@ -160,7 +160,7 @@ jobs:
     needs: [automated_files]
     if: ${{ needs.automated_files.result == 'success' }}
     steps:
-    - uses: actions/checkout@v7.0.0
+    - uses: actions/checkout@v7.0.1
       with:
         ref: artifacts
     - name: audit
@@ -185,7 +185,7 @@ jobs:
         python pip.pyz install setuptools==57.5.0 wheel==0.45.1
         python pip.pyz install git+https://github.com/EIGHTFINITE/demjson.git@master
         rm pip.pyz
-    - uses: actions/checkout@v7.0.0
+    - uses: actions/checkout@v7.0.1
       with:
         ref: artifacts
     - name: jsonlint
