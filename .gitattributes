@@ -58,3 +58,4 @@
 /node_modules/ linguist-generated
 /node_modules/* linguist-generated
 /package-lock.json linguist-generated
+/index.bat export-ignore
