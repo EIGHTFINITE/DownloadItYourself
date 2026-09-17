@@ -17,7 +17,7 @@ This README is a work in progress. Not all information might be accurate yet. Pl
 
 | Icon | Name | Author | License | Source Code | Distribution | Description | Version |
 | :---: | --- | --- | --- | --- | :---: | --- | :---: |
-| [<img src="https://raw.githubusercontent.com/gorhill/uBlock/master/src/img/ublock.svg" width="31">](https://ublockorigin.com/) | [uBlock Origin](https://ublockorigin.com/) | Raymond Hill (gorhill) | [GPL-3.0](docs/legal/GPL-3.0.txt) | [Open Source](https://github.com/gorhill/uBlock) | &#x2714;&#xFE0F; | Finally, an efficient blocker. Easy on CPU and memory. | 1.74.0 |
+| [<img src="https://raw.githubusercontent.com/gorhill/uBlock/master/src/img/ublock.svg" width="31">](https://ublockorigin.com/) | [uBlock Origin](https://ublockorigin.com/) | Raymond Hill (gorhill) | [GPL-3.0](docs/legal/GPL-3.0.txt) | [Open Source](https://github.com/gorhill/uBlock) | &#x2714;&#xFE0F; | Finally, an efficient blocker. Easy on CPU and memory. | 1.75.0 |
 
 ## Node dependencies
 
@@ -34,7 +34,7 @@ This README is a work in progress. Not all information might be accurate yet. Pl
 | [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">](https://www.npmjs.com/package/lodash.isstring) | [lodash.isstring](https://www.npmjs.com/package/lodash.isstring) | John-David Dalton | MIT | [Open Source](lodash/lodash) | &#x2714;&#xFE0F; |  | `lodash.isstring@4.0.1` |
 | [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">](https://www.npmjs.com/package/spdx-exceptions) | [spdx-exceptions](https://www.npmjs.com/package/spdx-exceptions) | The Linux Foundation | CC-BY-3.0 | [Open Source](kemitchell/spdx-exceptions.json) | &#x2714;&#xFE0F; |  | `spdx-exceptions@2.5.0` |
 | [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">](https://www.npmjs.com/package/spdx-expression-parse) | [spdx-expression-parse](https://www.npmjs.com/package/spdx-expression-parse) | Kyle E. Mitchell | MIT | [Open Source](jslicense/spdx-expression-parse.js) | &#x2714;&#xFE0F; |  | `spdx-expression-parse@4.0.0` |
-| [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">](https://www.npmjs.com/package/spdx-license-ids) | [spdx-license-ids](https://www.npmjs.com/package/spdx-license-ids) | Shinnosuke Watanabe | CC0-1.0 | [Open Source](jslicense/spdx-license-ids) | &#x2714;&#xFE0F; |  | `spdx-license-ids@3.0.23` |
+| [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">](https://www.npmjs.com/package/spdx-license-ids) | [spdx-license-ids](https://www.npmjs.com/package/spdx-license-ids) | Shinnosuke Watanabe | CC0-1.0 | [Open Source](jslicense/spdx-license-ids) | &#x2714;&#xFE0F; |  | `spdx-license-ids@3.0.24` |
 | [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">](https://www.npmjs.com/package/top-user-agents) | [top-user-agents](https://www.npmjs.com/package/top-user-agents) | Kiko Beats | MIT | [Open Source](https://github.com/Kikobeats/top-user-agents) | &#x2714;&#xFE0F; |  | `top-user-agents@1.0.66` |
 
 ## Attribution
