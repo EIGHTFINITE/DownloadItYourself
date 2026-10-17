@@ -22,7 +22,7 @@
     "lodash.isinteger": "4.0.4",
     "lodash.isstring": "4.0.1",
     "spdx-expression-parse": "github:EIGHTFINITE/spdx-expression-parse#main",
-    "top-user-agents": "github:EIGHTFINITE/top-user-agents-1#main"
+    "top-user-agents": "github:EIGHTFINITE/top-user-agents#main"
   },
   "optionalDependencies": {
     "jquery": "4.0.0"
