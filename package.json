@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/EIGHTFINITE/DownloadItYourself/releases/latest",
   "dependencies": {
-    "electron": "github:EIGHTFINITE/electron#main",
+    "electron": "44.9.0",
     "electron-chrome-extensions": "github:EIGHTFINITE/electron-chrome-extensions#main",
     "lodash.isfunction": "3.0.9",
     "lodash.isinteger": "4.0.4",
