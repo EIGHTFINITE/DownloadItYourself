@@ -36,7 +36,6 @@ jobs:
           
           Changelog: https://github.com/nodejs/node/blob/main/CHANGELOG.md
         labels: |
-          dependencies
           automerge
         branch: actions/node
         base: master
