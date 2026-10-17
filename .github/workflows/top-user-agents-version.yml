@@ -1,8 +1,6 @@
 name: "Update top-user-agents"
 
 on:
-  push:
-    branches: [ master ]
   schedule:
     - cron: '0 0 * * *'
 
