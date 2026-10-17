@@ -39,7 +39,7 @@
     "electron": "44.9.0",
     "electron-chrome-extensions": "4.9.0",
     "spdx-expression-parse": "4.0.0",
-    "top-user-agents": "1.0.66"
+    "top-user-agents": "2.1.140"
   },
   "bundleDependencies": [
     "debug",
