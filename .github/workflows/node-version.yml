@@ -19,7 +19,7 @@ jobs:
         echo "$node_version"
         node_version=${node_version:1}
         echo "$node_version"
-        sed -i "0,/\"node\": \".*\"/s//\"node\": \"$node_version\"/" package.json
+        perl -pi -e 's/"node": "[A-Za-z0-9<=>^~*.-]*"/"node": "'"$node_version"'"/' package.json
         git add package.json
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update Node to $node_version" || true
         echo "node_version=$node_version" >> $GITHUB_ENV

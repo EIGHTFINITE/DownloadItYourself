@@ -1,0 +1,60 @@
+name: "Update Electron"
+
+on:
+  push:
+    branches: [ master ]
+  schedule:
+    - cron: '0 0 * * *'
+
+permissions: write-all
+
+jobs:
+  electron:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v7.0.1
+    - name: "Electron"
+      shell: bash
+      run: |
+        bash --noprofile --norc -e -o pipefail .github/workflows/git-config.sh
+        electron_version=$(curl -sS "https://api.github.com/repos/electron/electron/releases/latest" | python -c "import sys, json; print(json.load(sys.stdin)['tag_name'])")
+        echo "$electron_version"
+        electron_version=${electron_version:1}
+        echo "$electron_version"
+        perl -pi -e 's/"electron": "[A-Za-z0-9<=>^~*.-]*"/"electron": "'"$electron_version"'"/' package.json
+        git add package.json
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update Electron to $electron_version" || true
+        echo "electron_version=$electron_version" >> $GITHUB_ENV
+    - id: cpr
+      uses: peter-evans/create-pull-request@v8.1.1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: "Update Electron to ${{ env.electron_version }}"
+        author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+        committer: GitHub <noreply@github.com>
+        title: "Update Electron to ${{ env.electron_version }}"
+        body: |
+          Update Electron to the latest version found on https://github.com/electron/electron/releases/latest
+          
+          Changelog: https://releases.electronjs.org/
+        labels: |
+          dependencies
+          automerge
+        branch: actions/electron
+        base: master
+    - name: get repository name
+      if: ${{ steps.cpr.outputs.pull-request-number }}
+      shell: bash
+      run: echo "REPOSITORY_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
+    - name: automerge
+      if: ${{ steps.cpr.outputs.pull-request-number }}
+      uses: actions/github-script@v9.0.0
+      with:
+        script: |
+          github.rest.pulls.merge({
+            owner: '${{ github.repository_owner }}',
+            repo: '${{ env.REPOSITORY_NAME }}',
+            pull_number: '${{ steps.cpr.outputs.pull-request-number }}',
+            sha: '${{ steps.cpr.outputs.pull-request-head-sha }}',
+            merge_method: 'merge'
+          })
