@@ -107,8 +107,7 @@ mkdir -p "bin/windows/x64/node"
 7z x -o"bin/windows/x64/node" "node-v$node_version-win-x64.7z" | grep "ing archive"
 rm "node-v$node_version-win-x64.7z"
 sed -i '/\/bin\//d' -- '.gitignore'
-# Replace bundled npm with npm latest
-# Install npm latest with npm 6 because later versions fail to create sane dependency trees
+# Replace bundled npm with the latest version
 rm -r "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm"
 mkdir "bin/windows/x64/node/node-v$node_version-win-x64/node_modules/npm"
 # Correct engines
@@ -133,6 +132,10 @@ rm node_modules/.package-lock.json
 mv -T "node_modules" "bin/windows/x64/node/node-v$node_version-win-x64/node_modules"
 git checkout -- 'package.json'
 # Commit
+if [[ $(stat -c%s "bin/windows/x64/node/node-v$node_version-win-x64/node.exe") -gt 104857600 ]]; then
+  split -b 104857600 --numeric-suffixes=1 --suffix-length=3 bin/windows/x64/node/node-v$node_version-win-x64/node.exe "bin/windows/x64/node/node-v$node_version-win-x64/node."
+  rm bin/windows/x64/node/node-v$node_version-win-x64/node.exe
+fi
 git add "bin/windows/x64/node/node-v$node_version-win-x64"
 git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Add Windows x64 Node $node_version release artifacts" | sed -n 1p
 git checkout -- '.gitignore'
