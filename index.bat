@@ -63,4 +63,5 @@ if not exist "bin\windows\x64\electron\electron-v%electron-version%-win32-x64\el
 )
 del /f "bin\windows\x64\electron\electron-v%electron-version%-win32-x64\electron.exe.001"
 del /f "bin\windows\x64\electron\electron-v%electron-version%-win32-x64\electron.exe.002"
+del /f "bin\windows\x64\electron\electron-v%electron-version%-win32-x64\electron.exe.003"
 cmd /c "bin\windows\x64\node\node-v%node-version%-win-x64\node.exe" --use_strict index.js
