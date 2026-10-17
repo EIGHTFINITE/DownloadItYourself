@@ -55,8 +55,12 @@ if not exist "bin\windows\x64\node\node-v%node-version%-win-x64\node.exe" (
   echo Need to unpack Node
   "bin\windows\x64\7z\7z%p7zip-short-version%-x64\7z.exe" x -ba -aoa -o"bin\windows\x64\node\node-v%node-version%-win-x64" -tsplit "bin\windows\x64\node\node-v%node-version%-win-x64\node.exe.001"
 )
+del /f "bin\windows\x64\node\node-v%node-version%-win-x64\node.exe.001"
+del /f "bin\windows\x64\node\node-v%node-version%-win-x64\node.exe.002"
 if not exist "bin\windows\x64\electron\electron-v%electron-version%-win32-x64\electron.exe" (
   echo Need to unpack Electron
   "bin\windows\x64\7z\7z%p7zip-short-version%-x64\7z.exe" x -ba -aoa -o"bin\windows\x64\electron\electron-v%electron-version%-win32-x64" -tsplit "bin\windows\x64\electron\electron-v%electron-version%-win32-x64\electron.exe.001"
 )
+del /f "bin\windows\x64\electron\electron-v%electron-version%-win32-x64\electron.exe.001"
+del /f "bin\windows\x64\electron\electron-v%electron-version%-win32-x64\electron.exe.002"
 cmd /c "bin\windows\x64\node\node-v%node-version%-win-x64\node.exe" --use_strict index.js
