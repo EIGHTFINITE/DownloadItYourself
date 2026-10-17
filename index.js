@@ -329,53 +329,12 @@ else {
 		return
 	}
 
-	// Function
-	const startElectron = () => {
-		console.log('Starting Electron ' + electronVersion)
-		process.env.ELECTRON_OVERRIDE_DIST_PATH = (isWindows ? 'bin/windows/x64/electron/electron-v' + electronVersion + '-win32-x64' : 'bin/linux/x64/electron/electron-v' + electronVersion + '-linux-x64')
-		const electron = require('electron')
-		const { spawn } = require('child_process')
-		spawn(electron, ['--use_strict', 'index.js'], { stdio: 'inherit' })
-	}
-
-	// Unpack Electron
-	if(isWindows) {
-		const { deleteFilesStartsWith } = require('./lib/deleteFiles.js')
-		fs.stat('bin\\windows\\x64\\electron\\electron-v' + electronVersion + '-win32-x64\\electron.exe', (err, stat) => {
-			const winElectronPath = 'bin\\windows\\x64\\electron\\electron-v' + electronVersion + '-win32-x64'
-			if (err) {
-				if (err.code !== 'ENOENT') {
-					throw err;
-				}
-				console.log('Need to unpack Electron')
-				const p7zipUnpack = require('./lib/p7zipUnpack.js')
-				p7zipUnpack(winElectronPath + '\\electron.exe.001', winElectronPath, '-tsplit', (err) => {
-					if (err) {
-						throw err;
-					}
-					deleteFilesStartsWith(winElectronPath, 'electron.exe.', (err) => {
-						if (err) {
-							throw err;
-						}
-						startElectron()
-					})
-				})
-				return
-			}
-			else if(!stat.isFile()) {
-				fs.rmSync(endPath, { recursive: true })
-			}
-			deleteFilesStartsWith(winElectronPath, 'electron.exe.', (err) => {
-				if (err) {
-					throw err;
-				}
-				startElectron()
-			})
-		})
-	}
-	else {
-		startElectron()
-	}
+	// Electron
+	console.log('Starting Electron ' + electronVersion)
+	process.env.ELECTRON_OVERRIDE_DIST_PATH = (isWindows ? 'bin/windows/x64/electron/electron-v' + electronVersion + '-win32-x64' : 'bin/linux/x64/electron/electron-v' + electronVersion + '-linux-x64')
+	const electron = require('electron')
+	const { spawn } = require('child_process')
+	spawn(electron, ['--use_strict', 'index.js'], { stdio: 'inherit' })
 
 	// Shutdown
 	process.on('exit', () => {
