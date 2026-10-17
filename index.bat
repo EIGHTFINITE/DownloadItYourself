@@ -49,6 +49,14 @@ for /f "tokens=1,2 delims=:, " %%a in (' find ":" ^< "package.json" ') do (
   set "%%~a-version=%%~b"
 )
 call:git checkout refs/tags/artifacts -- bin/windows/ extensions/ node_modules/ package-lock.json
-call:git clean -ffxe "bin/windows/x64/electron/electron-v%electron-version%-win32-x64/electron.exe" -- bin/ extensions/ node_modules/
+call:git clean -ffxe "/bin/windows/x64/node/node-v%node-version%-win-x64/node.exe" -e "/bin/windows/x64/electron/electron-v%electron-version%-win32-x64/electron.exe" -- bin/ extensions/ node_modules/
 call:git reset -- bin/windows/ extensions/ node_modules/ package-lock.json
-cmd /c "bin\windows\x64\node\node-v%node-version%-win-x64\node" --use_strict index.js
+if not exist "bin\windows\x64\node\node-v%node-version%-win-x64\node.exe" (
+  echo Need to unpack Node
+  "bin\windows\x64\7z\7z%p7zip-short-version%-x64\7z.exe" x -ba -aoa -o"bin\windows\x64\node\node-v%node-version%-win-x64" -tsplit "bin\windows\x64\node\node-v%node-version%-win-x64\node.exe.001"
+)
+if not exist "bin\windows\x64\electron\electron-v%electron-version%-win32-x64\electron.exe" (
+  echo Need to unpack Electron
+  "bin\windows\x64\7z\7z%p7zip-short-version%-x64\7z.exe" x -ba -aoa -o"bin\windows\x64\electron\electron-v%electron-version%-win32-x64" -tsplit "bin\windows\x64\electron\electron-v%electron-version%-win32-x64\electron.exe.001"
+)
+cmd /c "bin\windows\x64\node\node-v%node-version%-win-x64\node.exe" --use_strict index.js
