@@ -28,7 +28,7 @@ jobs:
       uses: peter-evans/create-pull-request@v8.1.1
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        commit-message: Update README
+        commit-message: "Update 7z to ${{ env.p7zip_version }}"
         author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
         committer: GitHub <noreply@github.com>
         title: "Update 7z to ${{ env.p7zip_version }}"

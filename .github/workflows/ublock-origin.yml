@@ -25,7 +25,7 @@ jobs:
       uses: peter-evans/create-pull-request@v8.1.1
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        commit-message: Update README
+        commit-message: "Update uBlock Origin to ${{ env.ublock_origin_version }}"
         author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
         committer: GitHub <noreply@github.com>
         title: "Update uBlock Origin to ${{ env.ublock_origin_version }}"
