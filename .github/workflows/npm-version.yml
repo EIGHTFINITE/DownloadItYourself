@@ -1,0 +1,56 @@
+name: "Update npm"
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+permissions: write-all
+
+jobs:
+  npm:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v7.0.1
+    - name: "npm"
+      shell: bash
+      run: |
+        bash --noprofile --norc -e -o pipefail .github/workflows/git-config.sh
+        npm_version=$(curl -sS 'https://registry.npmjs.org/npm' | python -c "import sys, json; print(json.load(sys.stdin)['dist-tags']['latest'])")
+        echo "$npm_version"
+        sed -i "0,/\"npm\": \".*\"/s//\"npm\": \"$npm_version\"/" package.json
+        git add package.json
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update npm to $npm_version" || true
+        echo "npm_version=$npm_version" >> $GITHUB_ENV
+    - id: cpr
+      uses: peter-evans/create-pull-request@v8.1.1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: "Update npm to ${{ env.npm_version }}"
+        author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+        committer: GitHub <noreply@github.com>
+        title: "Update npm to ${{ env.npm_version }}"
+        body: |
+          Update npm to the latest version found on http://npmjs.com/package/npm
+          
+          Changelog: https://github.com/npm/cli/blob/latest/CHANGELOG.md
+        labels: |
+          dependencies
+          automerge
+        branch: actions/npm
+        base: master
+    - name: get repository name
+      if: ${{ steps.cpr.outputs.pull-request-number }}
+      shell: bash
+      run: echo "REPOSITORY_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
+    - name: automerge
+      if: ${{ steps.cpr.outputs.pull-request-number }}
+      uses: actions/github-script@v9.0.0
+      with:
+        script: |
+          github.rest.pulls.merge({
+            owner: '${{ github.repository_owner }}',
+            repo: '${{ env.REPOSITORY_NAME }}',
+            pull_number: '${{ steps.cpr.outputs.pull-request-number }}',
+            sha: '${{ steps.cpr.outputs.pull-request-head-sha }}',
+            merge_method: 'merge'
+          })
