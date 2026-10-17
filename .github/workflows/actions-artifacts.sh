@@ -133,7 +133,7 @@ mv -T "node_modules" "bin/windows/x64/node/node-v$node_version-win-x64/node_modu
 git checkout -- 'package.json'
 # Commit
 if [[ $(stat -c%s "bin/windows/x64/node/node-v$node_version-win-x64/node.exe") -gt 104857600 ]]; then
-  split -b 104857600 --numeric-suffixes=1 --suffix-length=3 bin/windows/x64/node/node-v$node_version-win-x64/node.exe "bin/windows/x64/node/node-v$node_version-win-x64/node."
+  split -b 104857600 --numeric-suffixes=1 --suffix-length=3 bin/windows/x64/node/node-v$node_version-win-x64/node.exe "bin/windows/x64/node/node-v$node_version-win-x64/node.exe."
   rm bin/windows/x64/node/node-v$node_version-win-x64/node.exe
 fi
 git add "bin/windows/x64/node/node-v$node_version-win-x64"
