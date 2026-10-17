@@ -1,0 +1,58 @@
+name: "Update top-user-agents"
+
+on:
+  push:
+    branches: [ master ]
+  schedule:
+    - cron: '0 0 * * *'
+
+permissions: write-all
+
+jobs:
+  top-user-agents:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v7.0.1
+    - name: "top-user-agents"
+      shell: bash
+      run: |
+        bash --noprofile --norc -e -o pipefail .github/workflows/git-config.sh
+        top_user_agents_version=$(curl -sS "https://api.github.com/repos/EIGHTFINITE/top-user-agents/tags" | python -c "import sys, json; print(json.load(sys.stdin)[0]['name'])")
+        echo "$top_user_agents_version"
+        perl -pi -e 's/"top-user-agents": "[A-Za-z0-9<=>^~*.-]*"/"top-user-agents": "'"$top_user_agents_version"'"/' package.json
+        git add package.json
+        git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update top-user-agents to $top_user_agents_version" || true
+        echo "top_user_agents_version=$top_user_agents_version" >> $GITHUB_ENV
+    - id: cpr
+      uses: peter-evans/create-pull-request@v8.1.1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: "Update top-user-agents to ${{ env.top_user_agents_version }}"
+        author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+        committer: GitHub <noreply@github.com>
+        title: "Update top-user-agents to ${{ env.top_user_agents_version }}"
+        body: |
+          Update top-user-agents to the latest version found on https://github.com/EIGHTFINITE/top-user-agents/tags
+          
+          Changelog: https://github.com/microlinkhq/top-user-agents/blob/master/CHANGELOG.md
+        labels: |
+          dependencies
+          automerge
+        branch: actions/top-user-agents
+        base: master
+    - name: get repository name
+      if: ${{ steps.cpr.outputs.pull-request-number }}
+      shell: bash
+      run: echo "REPOSITORY_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
+    - name: automerge
+      if: ${{ steps.cpr.outputs.pull-request-number }}
+      uses: actions/github-script@v9.0.0
+      with:
+        script: |
+          github.rest.pulls.merge({
+            owner: '${{ github.repository_owner }}',
+            repo: '${{ env.REPOSITORY_NAME }}',
+            pull_number: '${{ steps.cpr.outputs.pull-request-number }}',
+            sha: '${{ steps.cpr.outputs.pull-request-head-sha }}',
+            merge_method: 'merge'
+          })
