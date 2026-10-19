@@ -260,10 +260,6 @@ if(process.versions.electron) {
 					if(/^https:\/\/github\.com\/[a-zA-Z0-9._-]+\/[a-zA-Z0-9._-]+\/releases$/.test(download.download)) {
 						response = await require('./lib/dl/gRelease.js')(i, backoff, download, workingDirectory)
 					}
-					// GitHub Workflows
-					else if(/^https:\/\/github\.com\/[a-zA-Z0-9._-]+\/[a-zA-Z0-9._-]+\/actions\/workflows\/.*\.yml$/.test(download.download)) {
-						response = await require('./lib/dl/gWorkflow.js')(i, backoff, download, workingDirectory)
-					}
 					else {
 						console.error('Unrecognized GitHub url:', download.download)
 						process.exit(1)
