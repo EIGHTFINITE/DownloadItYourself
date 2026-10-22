@@ -5,7 +5,7 @@
   "engineStrict": true,
   "engines": {
     "node": "26.12.0",
-    "npm": "12.2.0"
+    "npm": "12.2.1"
   },
   "main": "index.js",
   "author": "EIGHTFINITE",
@@ -33,7 +33,7 @@
     "electron": "45.0.0",
     "eslint": "10.13.0",
     "neostandard": "0.14.1",
-    "npm": "12.2.0"
+    "npm": "12.2.1"
   },
   "peerDependencies": {
     "electron": "45.0.0",
