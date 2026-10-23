@@ -1,49 +1,5 @@
 {
-  "GHSA-q2hr-2g5m-vwhr": {
-    "active": true,
-    "notes": "Only parses sanitized data from the npm registry. Will be addressed by npm in a future dependencies update"
-  },
-  "GHSA-qhr7-859c-m2p7": {
-    "active": true,
-    "notes": "Only parses sanitized data from the npm registry. Will be addressed by npm in a future dependencies update"
-  },
-  "GHSA-6j4f-fj2g-mc7p": {
-    "active": true,
-    "notes": "Only parses sanitized data from the npm registry. Will be addressed by npm in a future dependencies update"
-  },
-  "GHSA-ch52-4w7c-c8xp": {
-    "active": true,
-    "notes": "Only parses sanitized data from the npm registry. Will be addressed by npm in a future dependencies update"
-  },
-  "GHSA-rpw4-54j3-4h4q": {
-    "active": true,
-    "notes": "Only parses sanitized data from the npm registry. Will be addressed by npm in a future dependencies update"
-  },
-  "GHSA-2vr4-cq9g-pvrc": {
-    "active": true,
-    "notes": "Only parses sanitized data from the npm registry. Will be addressed by npm in a future dependencies update"
-  },
-  "GHSA-j6r3-76f7-8jcv": {
-    "active": true,
-    "notes": "Only parses sanitized data from the npm registry. Will be addressed by npm in a future dependencies update"
-  },
-  "GHSA-h3mg-xc3c-68pw": {
-    "active": true,
-    "notes": "Only parses sanitized data from the npm registry. Will be addressed by npm in a future dependencies update"
-  },
-  "GHSA-rj75-hqrm-r3gf": {
-    "active": true,
-    "notes": "Only parses sanitized data from the npm registry. Will be addressed by npm in a future dependencies update"
-  },
-  "GHSA-3wwx-pv8p-q78v": {
-    "active": true,
-    "notes": "Only parses sanitized data from the npm registry. Will be addressed by npm in a future dependencies update"
-  },
-  "GHSA-r53p-7pc4-xj5r": {
-    "active": true,
-    "notes": "Only parses sanitized data from the npm registry. Will be addressed by npm in a future dependencies update"
-  },
-  "GHSA-rfgv-xxqx-mfg5": {
+  "GHSA-rxp7-6hxx-x8q5": {
     "active": true,
     "notes": "Only parses sanitized data from the npm registry. Will be addressed by npm in a future dependencies update"
   }
