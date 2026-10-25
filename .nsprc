@@ -2,5 +2,13 @@
   "GHSA-rxp7-6hxx-x8q5": {
     "active": true,
     "notes": "Only parses sanitized data from the npm registry. Will be addressed by npm in a future dependencies update"
+  },
+  "GHSA-4qv8-2p9j-2685": {
+    "active": true,
+    "notes": "Only parses sanitized data from the npm registry. Will be addressed by npm in a future dependencies update"
+  },
+  "GHSA-xjj6-f33q-929c": {
+    "active": true,
+    "notes": "Only parses sanitized data from the npm registry. Will be addressed by npm in a future dependencies update"
   }
 }
