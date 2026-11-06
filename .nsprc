@@ -3,31 +3,7 @@
     "active": true,
     "notes": "Only parses sanitized data from the npm registry. Will be addressed by npm in a future dependencies update"
   },
-  "GHSA-rxp7-6hxx-x8q5": {
-    "active": true,
-    "notes": "Only parses sanitized data from the npm registry. Will be addressed by npm in a future dependencies update"
-  },
   "GHSA-g3hv-75wg-m249": {
-    "active": true,
-    "notes": "Only parses sanitized data from the npm registry. Will be addressed by npm in a future dependencies update"
-  },
-  "GHSA-4qv8-2p9j-2685": {
-    "active": true,
-    "notes": "Only parses sanitized data from the npm registry. Will be addressed by npm in a future dependencies update"
-  },
-  "GHSA-xjj6-f33q-929c": {
-    "active": true,
-    "notes": "Only parses sanitized data from the npm registry. Will be addressed by npm in a future dependencies update"
-  },
-  "GHSA-2m5v-pch6-74hx": {
-    "active": true,
-    "notes": "Only parses sanitized data from the npm registry. Will be addressed by npm in a future dependencies update"
-  },
-  "GHSA-qrxm-fqhp-jwvm": {
-    "active": true,
-    "notes": "Only parses sanitized data from the npm registry. Will be addressed by npm in a future dependencies update"
-  },
-  "GHSA-9fm3-97px-rjf6": {
     "active": true,
     "notes": "Only parses sanitized data from the npm registry. Will be addressed by npm in a future dependencies update"
   }
