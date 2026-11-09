@@ -17,7 +17,7 @@ This README is a work in progress. Not all information might be accurate yet. Pl
 
 | Icon | Name | Author | License | Source Code | Distribution | Description | Version |
 | :---: | --- | --- | --- | --- | :---: | --- | :---: |
-| [<img src="https://raw.githubusercontent.com/gorhill/uBlock/master/src/img/ublock.svg" width="31">](https://ublockorigin.com/) | [uBlock Origin](https://ublockorigin.com/) | Raymond Hill (gorhill) | [GPL-3.0](docs/legal/GPL-3.0.txt) | [Open Source](https://github.com/gorhill/uBlock) | &#x2714;&#xFE0F; | Finally, an efficient blocker. Easy on CPU and memory. | 1.75.4 |
+| [<img src="https://raw.githubusercontent.com/gorhill/uBlock/master/src/img/ublock.svg" width="31">](https://ublockorigin.com/) | [uBlock Origin](https://ublockorigin.com/) | Raymond Hill (gorhill) | [GPL-3.0](docs/legal/GPL-3.0.txt) | [Open Source](https://github.com/gorhill/uBlock) | &#x2714;&#xFE0F; | Finally, an efficient blocker. Easy on CPU and memory. | 1.76.0 |
 
 ## Node dependencies
 
@@ -35,7 +35,7 @@ This README is a work in progress. Not all information might be accurate yet. Pl
 | [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">](https://www.npmjs.com/package/spdx-exceptions) | [spdx-exceptions](https://www.npmjs.com/package/spdx-exceptions) | The Linux Foundation | CC-BY-3.0 | [Open Source](kemitchell/spdx-exceptions.json) | &#x2714;&#xFE0F; |  | `spdx-exceptions@2.5.0` |
 | [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">](https://www.npmjs.com/package/spdx-expression-parse) | [spdx-expression-parse](https://www.npmjs.com/package/spdx-expression-parse) | Kyle E. Mitchell | MIT | [Open Source](jslicense/spdx-expression-parse.js) | &#x2714;&#xFE0F; |  | `spdx-expression-parse@4.0.0` |
 | [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">](https://www.npmjs.com/package/spdx-license-ids) | [spdx-license-ids](https://www.npmjs.com/package/spdx-license-ids) | Shinnosuke Watanabe | CC0-1.0 | [Open Source](jslicense/spdx-license-ids) | &#x2714;&#xFE0F; |  | `spdx-license-ids@3.0.24` |
-| [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">](https://www.npmjs.com/package/top-user-agents) | [top-user-agents](https://www.npmjs.com/package/top-user-agents) | microlink.io | MIT | [Open Source](https://github.com/microlinkhq/top-user-agents) | &#x2714;&#xFE0F; |  | `top-user-agents@2.1.145` |
+| [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">](https://www.npmjs.com/package/top-user-agents) | [top-user-agents](https://www.npmjs.com/package/top-user-agents) | microlink.io | MIT | [Open Source](https://github.com/microlinkhq/top-user-agents) | &#x2714;&#xFE0F; |  | `top-user-agents@2.1.146` |
 
 ## Attribution
 
