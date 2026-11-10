@@ -22,7 +22,7 @@ jobs:
         git -c user.name="GitHub" -c user.email="noreply@github.com" commit --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" -m"Update npm to $npm_version" || true
         echo "npm_version=$npm_version" >> $GITHUB_ENV
     - id: cpr
-      uses: peter-evans/create-pull-request@v8.1.1
+      uses: peter-evans/create-pull-request@v8.1.2
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: "Update npm to ${{ env.npm_version }}"
