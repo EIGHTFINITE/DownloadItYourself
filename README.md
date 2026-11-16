@@ -10,14 +10,14 @@ This README is a work in progress. Not all information might be accurate yet. Pl
 | :---: | --- | --- | --- | --- | :---: | --- | :---: |
 | [<img src="https://raw.githubusercontent.com/ip7z/7zip/main/CPP/7zip/UI/FileManager/7zipLogo.ico" width="31">](https://www.7-zip.org/) | [7-Zip](https://www.7-zip.org/) | Igor Pavlov | [7-Zip license](docs/legal/7-Zip%20license.txt) | [Open Source](https://github.com/ip7z/7zip) | &#x2714;&#xFE0F; | 7-Zip is a file archiver with a high compression ratio. | 26.06 |
 | [<img src="https://avatars.githubusercontent.com/u/4571183" width="31">](https://gitforwindows.org/) | [Git for Windows](https://gitforwindows.org/) | Linus Torvalds | [git license](docs/legal/git%20license.txt) | [Open Source](https://github.com/git-for-windows/git) | &#x2714;&#xFE0F; | A fork of Git containing Windows-specific patches. | 2.56.1 |
-| [<img src="https://www.electronjs.org/assets/img/logo.svg" width="31">](https://www.electronjs.org/) | [Electron](https://www.electronjs.org/) | Electron contributors, GitHub Inc. | [MIT](docs/legal/MIT.txt) | [Open Source](https://github.com/electron/electron) | &#x2714;&#xFE0F; | Build cross-platform desktop apps with JavaScript, HTML, and CSS. | 45.3.2 |
+| [<img src="https://www.electronjs.org/assets/img/logo.svg" width="31">](https://www.electronjs.org/) | [Electron](https://www.electronjs.org/) | Electron contributors, GitHub Inc. | [MIT](docs/legal/MIT.txt) | [Open Source](https://github.com/electron/electron) | &#x2714;&#xFE0F; | Build cross-platform desktop apps with JavaScript, HTML, and CSS. | 45.3.3 |
 | [<img src="https://nodejs.org/static/logos/nodejsHex.svg" width="31">](https://nodejs.org/en) | [Node](https://nodejs.org/en) | Node contributors, Joyent Inc. | [Node license](docs/legal/Node%20license.txt) | [Open Source](https://github.com/nodejs/node) | &#x2714;&#xFE0F; | Node is an open-source, cross-platform JavaScript runtime environment. | 27.0.0-alpha.0.1.0 |
 
 ## Browser extensions
 
 | Icon | Name | Author | License | Source Code | Distribution | Description | Version |
 | :---: | --- | --- | --- | --- | :---: | --- | :---: |
-| [<img src="https://raw.githubusercontent.com/gorhill/uBlock/master/src/img/ublock.svg" width="31">](https://ublockorigin.com/) | [uBlock Origin](https://ublockorigin.com/) | Raymond Hill (gorhill) | [GPL-3.0](docs/legal/GPL-3.0.txt) | [Open Source](https://github.com/gorhill/uBlock) | &#x2714;&#xFE0F; | Finally, an efficient blocker. Easy on CPU and memory. | 1.76.2 |
+| [<img src="https://raw.githubusercontent.com/gorhill/uBlock/master/src/img/ublock.svg" width="31">](https://ublockorigin.com/) | [uBlock Origin](https://ublockorigin.com/) | Raymond Hill (gorhill) | [GPL-3.0](docs/legal/GPL-3.0.txt) | [Open Source](https://github.com/gorhill/uBlock) | &#x2714;&#xFE0F; | Finally, an efficient blocker. Easy on CPU and memory. | 1.76.4 |
 
 ## Node dependencies
 
@@ -35,7 +35,7 @@ This README is a work in progress. Not all information might be accurate yet. Pl
 | [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">](https://www.npmjs.com/package/spdx-exceptions) | [spdx-exceptions](https://www.npmjs.com/package/spdx-exceptions) | The Linux Foundation | CC-BY-3.0 | [Open Source](kemitchell/spdx-exceptions.json) | &#x2714;&#xFE0F; |  | `spdx-exceptions@2.5.0` |
 | [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">](https://www.npmjs.com/package/spdx-expression-parse) | [spdx-expression-parse](https://www.npmjs.com/package/spdx-expression-parse) | Kyle E. Mitchell | MIT | [Open Source](jslicense/spdx-expression-parse.js) | &#x2714;&#xFE0F; |  | `spdx-expression-parse@4.0.0` |
 | [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">](https://www.npmjs.com/package/spdx-license-ids) | [spdx-license-ids](https://www.npmjs.com/package/spdx-license-ids) | Shinnosuke Watanabe | CC0-1.0 | [Open Source](jslicense/spdx-license-ids) | &#x2714;&#xFE0F; |  | `spdx-license-ids@3.0.24` |
-| [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">](https://www.npmjs.com/package/top-user-agents) | [top-user-agents](https://www.npmjs.com/package/top-user-agents) | microlink.io | MIT | [Open Source](https://github.com/microlinkhq/top-user-agents) | &#x2714;&#xFE0F; |  | `top-user-agents@2.1.146` |
+| [<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/classic/npm-2009.svg" width="31">](https://www.npmjs.com/package/top-user-agents) | [top-user-agents](https://www.npmjs.com/package/top-user-agents) | microlink.io | MIT | [Open Source](https://github.com/microlinkhq/top-user-agents) | &#x2714;&#xFE0F; |  | `top-user-agents@2.1.147` |
 
 ## Attribution
 
