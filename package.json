@@ -25,7 +25,7 @@
     "top-user-agents": "github:EIGHTFINITE/top-user-agents#main"
   },
   "optionalDependencies": {
-    "jquery": "4.0.0"
+    "jquery": "4.1.0"
   },
   "devDependencies": {
     "better-npm-audit": "github:EIGHTFINITE/better-npm-audit#main",
